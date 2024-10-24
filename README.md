@@ -1,4 +1,4 @@
-[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.13759839.svg)](https://doi.org/10.5281/zenodo.13759839)
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.13987865.svg)](https://doi.org/10.5281/zenodo.13987865)
 
 # dapagliflozin model
 This repository provides the dapagliflozin physiologically based pharmacokinetics (PBPK) model.
@@ -20,11 +20,11 @@ The whole-body submodel is available from [`dapagliflozin_body.xml`](./models/da
 [https://sbml4humans.de/model_url?url=https://raw.githubusercontent.com/matthiaskoenig/dapagliflozin-model/main/models/dapagliflozin_body.xml](https://sbml4humans.de/model_url?url=https://raw.githubusercontent.com/matthiaskoenig/dapagliflozin-model/main/models/dapagliflozin_body.xml) and equations from [`dapagliflozin_body.md`](./models/dapagliflozin_body.md).
 
 ## How to cite
-[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.13759839.svg)](https://doi.org/10.5281/zenodo.13759839)
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.13987865.svg)](https://doi.org/10.5281/zenodo.13987865)
 
 > Nemitz, N., & König, M. (2024).
 > *Physiologically based pharmacokinetic (PBPK) model of dapagliflozin.*   
-> Zenodo. [https://doi.org/10.5281/zenodo.13759839](https://doi.org/10.5281/zenodo.13759839)
+> Zenodo. [https://doi.org/10.5281/zenodo.13987865](https://doi.org/10.5281/zenodo.13987865)
 
 ## License
 
