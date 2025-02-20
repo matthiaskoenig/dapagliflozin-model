@@ -12,7 +12,13 @@ length: [m]
 ## Parameters `p`
 ```
 D3GEX_k = 1.0  # [1/min] rate urinary excretion of dapagliflozin-3-o-glucuronide  
+D3GIM_Km_d3g = 0.033  # [mmol/l] Vmax dapagliflozin-3-O-glucuronide import  
+D3GIM_Vmax = 1000.0  # [mmol/min/l] Vmax dapagliflozin-3-O-glucuronide import  
+DAP2D3G_Km_dap = 0.479  # [mmol/l] Km dapagliflozin UGT1A9  
+DAP2D3G_Vmax = 0.04  # [mmol/min/l] Vmax dapagliflozin conversion  
 DAPEX_k = 1.0  # [1/min] rate urinary excretion of dapagliflozin  
+DAPIM_Km_dap = 0.033  # [mmol/l] Vmax dapagliflozin import  
+DAPIM_Vmax = 1000.0  # [mmol/min/l] Vmax dapagliflozin import  
 GFR_healthy = 100.0  # [ml/min] Glomerular filtration rate (healthy)  
 Mr_glc = 180.0  # [g/mol] Molecular weight glc [g/mole]  
 RTG_E50 = 2.5e-06  # [mmol/l] EC50 reduction in RTG  
@@ -26,12 +32,15 @@ Vurine = 1.0  # [l] urine
 cf_mg_per_g = 1000.0  # [mg/g] Conversion factor mg per g  
 cf_ml_per_l = 1000.0  # [ml/l] Conversion factor ml per l  
 f_renal_function = 1.0  # [-] parameter for renal function  
+f_ugt1a9 = 1.0  # [-] scaling factor UGT1A9 activity  
 ```
 
 ## Initial conditions `x0`
 ```
+d3g = 0.0  # [mmol/l] dapagliflozin-3-o-glucuronide (kidney) in Vki  
 d3g_ext = 0.0  # [mmol/l] dapagliflozin-3-o-glucuronide (plasma) in Vext  
 d3g_urine = 0.0  # [mmol] dapagliflozin-3-o-glucuronide (urine) in Vurine  
+dap = 0.0  # [mmol/l] dapagliflozin (kidney) in Vki  
 dap_ext = 0.0  # [mmol/l] dapagliflozin (plasma) in Vext  
 dap_urine = 0.0  # [mmol] dapagliflozin (urine) in Vurine  
 glc_ext = 5.0  # [mmol/l] glucose (plasma) in Vext  
@@ -41,17 +50,22 @@ glc_urine = 0.0  # [mmol] glucose (urine) in Vurine
 ## ODE system
 ```
 # y
-D3GEX = f_renal_function * D3GEX_k * Vki * d3g_ext  # [mmol/min] dapagliflozin-3-o-glucuronide excretion (D3GEX)  
-DAPEX = f_renal_function * DAPEX_k * Vki * dap_ext  # [mmol/min] dapagliflozin excretion (DAPEX)  
+D3GEX = f_renal_function * D3GEX_k * Vki * d3g_ext  # [mmol/min] D3GEX  
+D3GIM = (D3GIM_Vmax / D3GIM_Km_d3g) * Vki * (d3g_ext - d3g) / (1 + d3g_ext / D3GIM_Km_d3g + d3g / D3GIM_Km_d3g)  # [mmol/min] D3GIM  
+DAP2D3G = f_ugt1a9 * DAP2D3G_Vmax * Vki * dap / (dap + DAP2D3G_Km_dap)  # [mmol/min] UGT1A9 (dap -> d3g)  
+DAPEX = f_renal_function * DAPEX_k * Vki * dap_ext  # [mmol/min] DAPEX  
+DAPIM = (DAPIM_Vmax / DAPIM_Km_dap) * Vki * (dap_ext - dap) / (1 + dap_ext / DAPIM_Km_dap + dap / DAPIM_Km_dap)  # [mmol/min] DAPIM  
 GFR = f_renal_function * GFR_healthy  # [ml/min] glomerular filtration rate  
-RTG = RTG_base - RTG_delta * dap_ext**RTG_gamma / (RTG_E50**RTG_gamma + dap_ext**RTG_gamma)  # [mmol/l] renal threshold glucose (RTG)  
+RTG = RTG_base - RTG_delta * dap_ext**RTG_gamma / (RTG_E50**RTG_gamma + dap**RTG_gamma)  # [mmol/l] renal threshold glucose (RTG)  
 UGE = glc_urine * Mr_glc / cf_mg_per_g  # [gram] urinary glucose excretion (UGE)  
 GLCEX = piecewise((GFR / cf_ml_per_l) * (glc_ext - RTG), glc_ext > RTG, 0)  # [mmol/min] glucose excretion (GLCEX)  
 
 # odes
-d d3g_ext/dt = -D3GEX / Vext  # [mmol/l/min] dapagliflozin-3-o-glucuronide (plasma)  
+d d3g/dt = D3GIM / Vki + DAP2D3G / Vki  # [mmol/l/min] dapagliflozin-3-o-glucuronide (kidney)  
+d d3g_ext/dt = -D3GIM / Vext - D3GEX / Vext  # [mmol/l/min] dapagliflozin-3-o-glucuronide (plasma)  
 d d3g_urine/dt = D3GEX  # [mmol/min] dapagliflozin-3-o-glucuronide (urine)  
-d dap_ext/dt = -DAPEX / Vext  # [mmol/l/min] dapagliflozin (plasma)  
+d dap/dt = DAPIM / Vki - DAP2D3G / Vki  # [mmol/l/min] dapagliflozin (kidney)  
+d dap_ext/dt = -DAPIM / Vext - DAPEX / Vext  # [mmol/l/min] dapagliflozin (plasma)  
 d dap_urine/dt = DAPEX  # [mmol/min] dapagliflozin (urine)  
 d glc_ext/dt = 0  # [mmol/l/min] glucose (plasma)  
 d glc_urine/dt = GLCEX  # [mmol/min] glucose (urine)  

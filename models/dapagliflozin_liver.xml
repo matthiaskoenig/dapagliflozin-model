@@ -22,7 +22,7 @@
         <p>The content of this model has been carefully created in a manual research effort.
 This file has been created by <a href="https://livermetabolism.com">Matthias König</a>
 using <a href="https://github.com/matthiaskoenig/sbmlutils">sbmlutils</a>.
-For questions contact <a href="mailto:koenigmx@hu-berlin.de">koenigmx@hu-berlin.de</a>. Copyright © 2024 Matthias König.</p>
+For questions contact <a href="mailto:koenigmx@hu-berlin.de">koenigmx@hu-berlin.de</a>. Copyright © 2025 Matthias König.</p>
         <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">
           <img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by/4.0/88x31.png"/>
         </a>
@@ -260,13 +260,31 @@ FOR A PARTICULAR PURPOSE.</p></body>
       </species>
     </listOfSpecies>
     <listOfParameters>
-      <parameter metaid="meta_DAPIM_Vmax" sboTerm="SBO:0000186" id="DAPIM_Vmax" name="Vmax dapagliflozin import" value="1000" units="per_min" constant="true">
+      <parameter metaid="meta_DAPIM_Vmax" sboTerm="SBO:0000186" id="DAPIM_Vmax" name="Vmax dapagliflozin import" value="1000" units="mmole_per_min_l" constant="true">
         <annotation>
           <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:vCard="http://www.w3.org/2001/vcard-rdf/3.0#" xmlns:vCard4="http://www.w3.org/2006/vcard/ns#" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/" xmlns:bqmodel="http://biomodels.net/model-qualifiers/">
             <rdf:Description rdf:about="#meta_DAPIM_Vmax">
               <bqbiol:is>
                 <rdf:Bag>
                   <rdf:li rdf:resource="http://identifiers.org/SBO:0000186"/>
+                </rdf:Bag>
+              </bqbiol:is>
+            </rdf:Description>
+          </rdf:RDF>
+        </annotation>
+      </parameter>
+      <parameter metaid="meta_DAPIM_Km_dap" sboTerm="SBO:0000027" id="DAPIM_Km_dap" name="Vmax dapagliflozin import" value="0.033" units="mM" constant="true">
+        <notes>
+          <body xmlns="http://www.w3.org/1999/xhtml">
+            <p>Possibly catalyzed by OAT3 with Ki=33µM. [FDA]</p>
+          </body>
+        </notes>
+        <annotation>
+          <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:vCard="http://www.w3.org/2001/vcard-rdf/3.0#" xmlns:vCard4="http://www.w3.org/2006/vcard/ns#" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/" xmlns:bqmodel="http://biomodels.net/model-qualifiers/">
+            <rdf:Description rdf:about="#meta_DAPIM_Km_dap">
+              <bqbiol:is>
+                <rdf:Bag>
+                  <rdf:li rdf:resource="http://identifiers.org/SBO:0000027"/>
                 </rdf:Bag>
               </bqbiol:is>
             </rdf:Description>
@@ -324,7 +342,7 @@ Ki for UGT1A9 with other substrates 12-15 µM [Obermeier2010a].</p>
           </rdf:RDF>
         </annotation>
       </parameter>
-      <parameter metaid="meta_D3GEX_Vmax" sboTerm="SBO:0000186" id="D3GEX_Vmax" name="Vmax dapagliflozinat export" value="1000" units="per_min" constant="true">
+      <parameter metaid="meta_D3GEX_Vmax" sboTerm="SBO:0000186" id="D3GEX_Vmax" name="Vmax dapagliflozinat export" value="1000" units="mmole_per_min_l" constant="true">
         <annotation>
           <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:vCard="http://www.w3.org/2001/vcard-rdf/3.0#" xmlns:vCard4="http://www.w3.org/2006/vcard/ns#" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/" xmlns:bqmodel="http://biomodels.net/model-qualifiers/">
             <rdf:Description rdf:about="#meta_D3GEX_Vmax">
@@ -337,9 +355,32 @@ Ki for UGT1A9 with other substrates 12-15 µM [Obermeier2010a].</p>
           </rdf:RDF>
         </annotation>
       </parameter>
+      <parameter metaid="meta_D3GEX_Km_d3g" sboTerm="SBO:0000027" id="D3GEX_Km_d3g" name="Vmax dapagliflozinat export" value="0.115" units="mM" constant="true">
+        <notes>
+          <body xmlns="http://www.w3.org/1999/xhtml">
+            <p>Substrate of hOAT3 and its Km value for hOAT3-mediated uptake was 115µM [FDA].</p>
+          </body>
+        </notes>
+        <annotation>
+          <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:vCard="http://www.w3.org/2001/vcard-rdf/3.0#" xmlns:vCard4="http://www.w3.org/2006/vcard/ns#" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/" xmlns:bqmodel="http://biomodels.net/model-qualifiers/">
+            <rdf:Description rdf:about="#meta_D3GEX_Km_d3g">
+              <bqbiol:is>
+                <rdf:Bag>
+                  <rdf:li rdf:resource="http://identifiers.org/SBO:0000027"/>
+                </rdf:Bag>
+              </bqbiol:is>
+            </rdf:Description>
+          </rdf:RDF>
+        </annotation>
+      </parameter>
     </listOfParameters>
     <listOfReactions>
-      <reaction metaid="meta_DAPIM" sboTerm="SBO:0000655" id="DAPIM" name="dapagliflozin import (DAPIM) OTP1B1" reversible="false" compartment="Vmem">
+      <reaction metaid="meta_DAPIM" sboTerm="SBO:0000655" id="DAPIM" name="dapagliflozin import (DAPIM, OAT3)" reversible="true" compartment="Vmem">
+        <notes>
+          <body xmlns="http://www.w3.org/1999/xhtml">
+            <p>Possibly catalyzed by OAT3 with Ki=33µM. [FDA]</p>
+          </body>
+        </notes>
         <annotation>
           <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:vCard="http://www.w3.org/2001/vcard-rdf/3.0#" xmlns:vCard4="http://www.w3.org/2006/vcard/ns#" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/" xmlns:bqmodel="http://biomodels.net/model-qualifiers/">
             <rdf:Description rdf:about="#meta_DAPIM">
@@ -358,12 +399,37 @@ Ki for UGT1A9 with other substrates 12-15 µM [Obermeier2010a].</p>
           <speciesReference species="dap" stoichiometry="1" constant="true"/>
         </listOfProducts>
         <kineticLaw>
-          <math xmlns="http://www.w3.org/1998/Math/MathML">
+          <math xmlns="http://www.w3.org/1998/Math/MathML" xmlns:sbml="http://www.sbml.org/sbml/level3/version2/core">
             <apply>
-              <times/>
-              <ci> DAPIM_Vmax </ci>
-              <ci> Vli </ci>
-              <ci> dap_ext </ci>
+              <divide/>
+              <apply>
+                <times/>
+                <apply>
+                  <divide/>
+                  <ci> DAPIM_Vmax </ci>
+                  <ci> DAPIM_Km_dap </ci>
+                </apply>
+                <ci> Vli </ci>
+                <apply>
+                  <minus/>
+                  <ci> dap_ext </ci>
+                  <ci> dap </ci>
+                </apply>
+              </apply>
+              <apply>
+                <plus/>
+                <cn sbml:units="dimensionless" type="integer"> 1 </cn>
+                <apply>
+                  <divide/>
+                  <ci> dap_ext </ci>
+                  <ci> DAPIM_Km_dap </ci>
+                </apply>
+                <apply>
+                  <divide/>
+                  <ci> dap </ci>
+                  <ci> DAPIM_Km_dap </ci>
+                </apply>
+              </apply>
             </apply>
           </math>
         </kineticLaw>
@@ -407,6 +473,11 @@ Ki for UGT1A9 with other substrates 12-15 µM [Obermeier2010a].</p>
         </kineticLaw>
       </reaction>
       <reaction metaid="meta_D3GEX" sboTerm="SBO:0000655" id="D3GEX" name="dapagliflozin-3-o-glucuronide export (D3GEX)" reversible="true" compartment="Vmem">
+        <notes>
+          <body xmlns="http://www.w3.org/1999/xhtml">
+            <p>Possibly catalyzed by OAT3 with Km=115µM. [FDA]</p>
+          </body>
+        </notes>
         <annotation>
           <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:vCard="http://www.w3.org/2001/vcard-rdf/3.0#" xmlns:vCard4="http://www.w3.org/2006/vcard/ns#" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/" xmlns:bqmodel="http://biomodels.net/model-qualifiers/">
             <rdf:Description rdf:about="#meta_D3GEX">
@@ -425,15 +496,36 @@ Ki for UGT1A9 with other substrates 12-15 µM [Obermeier2010a].</p>
           <speciesReference species="d3g_ext" stoichiometry="1" constant="true"/>
         </listOfProducts>
         <kineticLaw>
-          <math xmlns="http://www.w3.org/1998/Math/MathML">
+          <math xmlns="http://www.w3.org/1998/Math/MathML" xmlns:sbml="http://www.sbml.org/sbml/level3/version2/core">
             <apply>
-              <times/>
-              <ci> D3GEX_Vmax </ci>
-              <ci> Vli </ci>
+              <divide/>
               <apply>
-                <minus/>
-                <ci> d3g </ci>
-                <ci> d3g_ext </ci>
+                <times/>
+                <apply>
+                  <divide/>
+                  <ci> D3GEX_Vmax </ci>
+                  <ci> D3GEX_Km_d3g </ci>
+                </apply>
+                <ci> Vli </ci>
+                <apply>
+                  <minus/>
+                  <ci> d3g </ci>
+                  <ci> d3g_ext </ci>
+                </apply>
+              </apply>
+              <apply>
+                <plus/>
+                <cn sbml:units="dimensionless" type="integer"> 1 </cn>
+                <apply>
+                  <divide/>
+                  <ci> d3g </ci>
+                  <ci> D3GEX_Km_d3g </ci>
+                </apply>
+                <apply>
+                  <divide/>
+                  <ci> d3g_ext </ci>
+                  <ci> D3GEX_Km_d3g </ci>
+                </apply>
               </apply>
             </apply>
           </math>

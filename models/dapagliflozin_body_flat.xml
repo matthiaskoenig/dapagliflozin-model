@@ -20,7 +20,7 @@ dox: oxid (~10%) [Callegari2021]</p>
         <p>The content of this model has been carefully created in a manual research effort.
 This file has been created by <a href="https://livermetabolism.com">Matthias König</a>
 using <a href="https://github.com/matthiaskoenig/sbmlutils">sbmlutils</a>.
-For questions contact <a href="mailto:koenigmx@hu-berlin.de">koenigmx@hu-berlin.de</a>. Copyright © 2024 Matthias König.</p>
+For questions contact <a href="mailto:koenigmx@hu-berlin.de">koenigmx@hu-berlin.de</a>. Copyright © 2025 Matthias König.</p>
         <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">
           <img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by/4.0/88x31.png"/>
         </a>
@@ -1043,7 +1043,7 @@ FOR A PARTICULAR PURPOSE.</p></body>
           </rdf:RDF>
         </annotation>
       </compartment>
-      <compartment metaid="GU__meta_Vlumen" sboTerm="SBO:0000290" id="GU__Vlumen" name="intestinal lumen (inner part of intestine)" spatialDimensions="3" size="1.15425" units="litre" constant="false">
+      <compartment metaid="GU__meta_Vlumen" sboTerm="SBO:0000290" id="GU__Vlumen" name="intestinal lumen (inner part of intestine)" spatialDimensions="3" size="1.15425" units="litre" constant="true">
         <annotation>
           <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:vCard="http://www.w3.org/2001/vcard-rdf/3.0#" xmlns:vCard4="http://www.w3.org/2006/vcard/ns#" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/" xmlns:bqmodel="http://biomodels.net/model-qualifiers/">
             <rdf:Description rdf:about="#GU__meta_Vlumen">
@@ -1058,7 +1058,7 @@ FOR A PARTICULAR PURPOSE.</p></body>
           </rdf:RDF>
         </annotation>
       </compartment>
-      <compartment metaid="GU__meta_Ventero" sboTerm="SBO:0000290" id="GU__Ventero" name="intestinal lining (enterocytes)" spatialDimensions="3" size="1" units="litre" constant="false">
+      <compartment metaid="GU__meta_Ventero" sboTerm="SBO:0000290" id="GU__Ventero" name="intestinal lining (enterocytes)" spatialDimensions="3" size="1" units="litre" constant="true">
         <annotation>
           <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:vCard="http://www.w3.org/2001/vcard-rdf/3.0#" xmlns:vCard4="http://www.w3.org/2006/vcard/ns#" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/" xmlns:bqmodel="http://biomodels.net/model-qualifiers/">
             <rdf:Description rdf:about="#GU__meta_Ventero">
@@ -1506,6 +1506,49 @@ FOR A PARTICULAR PURPOSE.</p></body>
           </rdf:RDF>
         </annotation>
       </species>
+      <species metaid="meta_Afeces_daptot" sboTerm="SBO:0000247" id="Afeces_daptot" name="total dapagliflozin (feces)" compartment="Vurine" initialConcentration="0" substanceUnits="mmole" hasOnlySubstanceUnits="true" boundaryCondition="false" constant="false">
+        <annotation>
+          <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:vCard="http://www.w3.org/2001/vcard-rdf/3.0#" xmlns:vCard4="http://www.w3.org/2006/vcard/ns#" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/" xmlns:bqmodel="http://biomodels.net/model-qualifiers/">
+            <rdf:Description rdf:about="#meta_Afeces_daptot">
+              <bqbiol:is>
+                <rdf:Bag>
+                  <rdf:li rdf:resource="http://identifiers.org/SBO:0000247"/>
+                </rdf:Bag>
+              </bqbiol:is>
+            </rdf:Description>
+          </rdf:RDF>
+        </annotation>
+      </species>
+      <species metaid="KI__meta_dap" sboTerm="SBO:0000247" id="KI__dap" name="dapagliflozin (kidney)" compartment="Vki_tissue" initialConcentration="0" substanceUnits="KI__mmole" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false">
+        <annotation>
+          <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:vCard="http://www.w3.org/2001/vcard-rdf/3.0#" xmlns:vCard4="http://www.w3.org/2006/vcard/ns#" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/" xmlns:bqmodel="http://biomodels.net/model-qualifiers/">
+            <rdf:Description rdf:about="#KI__meta_dap">
+              <bqbiol:is>
+                <rdf:Bag>
+                  <rdf:li rdf:resource="http://identifiers.org/SBO:0000247"/>
+                  <rdf:li rdf:resource="http://identifiers.org/CHEBI:85078"/>
+                  <rdf:li rdf:resource="http://identifiers.org/ncit/C78126"/>
+                </rdf:Bag>
+              </bqbiol:is>
+            </rdf:Description>
+          </rdf:RDF>
+        </annotation>
+      </species>
+      <species metaid="KI__meta_d3g" sboTerm="SBO:0000247" id="KI__d3g" name="dapagliflozin-3-o-glucuronide (kidney)" compartment="Vki_tissue" initialConcentration="0" substanceUnits="KI__mmole" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false">
+        <annotation>
+          <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:vCard="http://www.w3.org/2001/vcard-rdf/3.0#" xmlns:vCard4="http://www.w3.org/2006/vcard/ns#" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/" xmlns:bqmodel="http://biomodels.net/model-qualifiers/">
+            <rdf:Description rdf:about="#KI__meta_d3g">
+              <bqbiol:is>
+                <rdf:Bag>
+                  <rdf:li rdf:resource="http://identifiers.org/SBO:0000247"/>
+                  <rdf:li rdf:resource="http://identifiers.org/pubchem.compound/91617971"/>
+                  <rdf:li rdf:resource="http://identifiers.org/inchikey/ZYZULHSUKTZGTR-PTNNFGGUSA-N"/>
+                </rdf:Bag>
+              </bqbiol:is>
+            </rdf:Description>
+          </rdf:RDF>
+        </annotation>
+      </species>
       <species metaid="KI__meta_glc_ext" sboTerm="SBO:0000247" id="KI__glc_ext" name="glucose (plasma)" compartment="Vki_plasma" initialConcentration="5" substanceUnits="KI__mmole" hasOnlySubstanceUnits="false" boundaryCondition="true" constant="false">
         <annotation>
           <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:vCard="http://www.w3.org/2001/vcard-rdf/3.0#" xmlns:vCard4="http://www.w3.org/2006/vcard/ns#" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/" xmlns:bqmodel="http://biomodels.net/model-qualifiers/">
@@ -1674,7 +1717,7 @@ FOR A PARTICULAR PURPOSE.</p></body>
           </rdf:RDF>
         </annotation>
       </parameter>
-      <parameter metaid="meta_f_cardiac_function" sboTerm="SBO:0000002" id="f_cardiac_function" name="heart function" value="1" units="dimensionless" constant="false">
+      <parameter metaid="meta_f_cardiac_function" sboTerm="SBO:0000002" id="f_cardiac_function" name="heart function" value="1" units="dimensionless" constant="true">
         <notes>
           <body xmlns="http://www.w3.org/1999/xhtml">
             <p>1.0: normal function;
@@ -1732,7 +1775,7 @@ FOR A PARTICULAR PURPOSE.</p></body>
           </rdf:RDF>
         </annotation>
       </parameter>
-      <parameter metaid="meta_Fblood" sboTerm="SBO:0000002" id="Fblood" name="blood fraction of organ volume" value="0.02" units="dimensionless" constant="false">
+      <parameter metaid="meta_Fblood" sboTerm="SBO:0000002" id="Fblood" name="blood fraction of organ volume" value="0.02" units="dimensionless" constant="true">
         <annotation>
           <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:vCard="http://www.w3.org/2001/vcard-rdf/3.0#" xmlns:vCard4="http://www.w3.org/2006/vcard/ns#" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/" xmlns:bqmodel="http://biomodels.net/model-qualifiers/">
             <rdf:Description rdf:about="#meta_Fblood">
@@ -2105,19 +2148,6 @@ with FQgu=0.146, FQsp=0.017, FQpa=0.017</p>
           </rdf:RDF>
         </annotation>
       </parameter>
-      <parameter metaid="meta_cum_dose_dap" sboTerm="SBO:0000002" id="cum_dose_dap" name="Cumulative dose due to infusion dap" value="0" units="mg" constant="false">
-        <annotation>
-          <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:vCard="http://www.w3.org/2001/vcard-rdf/3.0#" xmlns:vCard4="http://www.w3.org/2006/vcard/ns#" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/" xmlns:bqmodel="http://biomodels.net/model-qualifiers/">
-            <rdf:Description rdf:about="#meta_cum_dose_dap">
-              <bqbiol:is>
-                <rdf:Bag>
-                  <rdf:li rdf:resource="http://identifiers.org/SBO:0000002"/>
-                </rdf:Bag>
-              </bqbiol:is>
-            </rdf:Description>
-          </rdf:RDF>
-        </annotation>
-      </parameter>
       <parameter metaid="meta_Mr_d3g" sboTerm="SBO:0000647" id="Mr_d3g" name="Molecular weight d3g [g/mole]" value="585" units="g_per_mole" constant="true">
         <annotation>
           <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:vCard="http://www.w3.org/2001/vcard-rdf/3.0#" xmlns:vCard4="http://www.w3.org/2006/vcard/ns#" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/" xmlns:bqmodel="http://biomodels.net/model-qualifiers/">
@@ -2138,62 +2168,8 @@ with FQgu=0.146, FQsp=0.017, FQpa=0.017</p>
       <parameter id="Qlu" name="lung blood flow" value="NaN" units="l_per_min" constant="false"/>
       <parameter id="Qre" name="rest of body blood flow" value="NaN" units="l_per_min" constant="false"/>
       <parameter id="Qpo" name="portal blood flow" value="NaN" units="l_per_min" constant="false"/>
-      <parameter id="Aki_plasma_dap" name="dapagliflozin amount (kidney) [mmole]" value="NaN" units="mmole" constant="false"/>
-      <parameter id="Xki_plasma_dap" name="dapagliflozin amount (kidney) [mg]" value="NaN" units="mg" constant="false"/>
-      <parameter id="Mki_plasma_dap" name="dapagliflozin concentration (kidney) [mg/l]" value="NaN" units="mg_per_l" constant="false"/>
-      <parameter id="Ali_plasma_dap" name="dapagliflozin amount (liver) [mmole]" value="NaN" units="mmole" constant="false"/>
-      <parameter id="Xli_plasma_dap" name="dapagliflozin amount (liver) [mg]" value="NaN" units="mg" constant="false"/>
-      <parameter id="Mli_plasma_dap" name="dapagliflozin concentration (liver) [mg/l]" value="NaN" units="mg_per_l" constant="false"/>
-      <parameter id="Alu_plasma_dap" name="dapagliflozin amount (lung) [mmole]" value="NaN" units="mmole" constant="false"/>
-      <parameter id="Xlu_plasma_dap" name="dapagliflozin amount (lung) [mg]" value="NaN" units="mg" constant="false"/>
-      <parameter id="Mlu_plasma_dap" name="dapagliflozin concentration (lung) [mg/l]" value="NaN" units="mg_per_l" constant="false"/>
-      <parameter id="Agu_plasma_dap" name="dapagliflozin amount (gut) [mmole]" value="NaN" units="mmole" constant="false"/>
-      <parameter id="Xgu_plasma_dap" name="dapagliflozin amount (gut) [mg]" value="NaN" units="mg" constant="false"/>
-      <parameter id="Mgu_plasma_dap" name="dapagliflozin concentration (gut) [mg/l]" value="NaN" units="mg_per_l" constant="false"/>
-      <parameter id="Are_plasma_dap" name="dapagliflozin amount (rest) [mmole]" value="NaN" units="mmole" constant="false"/>
-      <parameter id="Xre_plasma_dap" name="dapagliflozin amount (rest) [mg]" value="NaN" units="mg" constant="false"/>
-      <parameter id="Mre_plasma_dap" name="dapagliflozin concentration (rest) [mg/l]" value="NaN" units="mg_per_l" constant="false"/>
-      <parameter id="Aar_dap" name="dapagliflozin amount (arterial blood) [mmole]" value="NaN" units="mmole" constant="false"/>
-      <parameter id="Xar_dap" name="dapagliflozin amount (arterial blood) [mg]" value="NaN" units="mg" constant="false"/>
-      <parameter id="Mar_dap" name="dapagliflozin concentration (arterial blood) [mg/l]" value="NaN" units="mg_per_l" constant="false"/>
-      <parameter id="Ave_dap" name="dapagliflozin amount (venous blood) [mmole]" value="NaN" units="mmole" constant="false"/>
-      <parameter id="Xve_dap" name="dapagliflozin amount (venous blood) [mg]" value="NaN" units="mg" constant="false"/>
-      <parameter id="Mve_dap" name="dapagliflozin concentration (venous blood) [mg/l]" value="NaN" units="mg_per_l" constant="false"/>
-      <parameter id="Apo_dap" name="dapagliflozin amount (portal vein) [mmole]" value="NaN" units="mmole" constant="false"/>
-      <parameter id="Xpo_dap" name="dapagliflozin amount (portal vein) [mg]" value="NaN" units="mg" constant="false"/>
-      <parameter id="Mpo_dap" name="dapagliflozin concentration (portal vein) [mg/l]" value="NaN" units="mg_per_l" constant="false"/>
-      <parameter id="Ahv_dap" name="dapagliflozin amount (hepatic vein) [mmole]" value="NaN" units="mmole" constant="false"/>
-      <parameter id="Xhv_dap" name="dapagliflozin amount (hepatic vein) [mg]" value="NaN" units="mg" constant="false"/>
-      <parameter id="Mhv_dap" name="dapagliflozin concentration (hepatic vein) [mg/l]" value="NaN" units="mg_per_l" constant="false"/>
       <parameter id="Xurine_dap" name="dapagliflozin amount (urine) [mg]" value="NaN" units="mg" constant="false"/>
       <parameter id="Xfeces_dap" name="dapagliflozin amount (feces)" value="NaN" units="mg" constant="false"/>
-      <parameter id="Aki_plasma_d3g" name="dapagliflozin-3-o-glucuronide amount (kidney) [mmole]" value="NaN" units="mmole" constant="false"/>
-      <parameter id="Xki_plasma_d3g" name="dapagliflozin-3-o-glucuronide amount (kidney) [mg]" value="NaN" units="mg" constant="false"/>
-      <parameter id="Mki_plasma_d3g" name="dapagliflozin-3-o-glucuronide concentration (kidney) [mg/l]" value="NaN" units="mg_per_l" constant="false"/>
-      <parameter id="Ali_plasma_d3g" name="dapagliflozin-3-o-glucuronide amount (liver) [mmole]" value="NaN" units="mmole" constant="false"/>
-      <parameter id="Xli_plasma_d3g" name="dapagliflozin-3-o-glucuronide amount (liver) [mg]" value="NaN" units="mg" constant="false"/>
-      <parameter id="Mli_plasma_d3g" name="dapagliflozin-3-o-glucuronide concentration (liver) [mg/l]" value="NaN" units="mg_per_l" constant="false"/>
-      <parameter id="Alu_plasma_d3g" name="dapagliflozin-3-o-glucuronide amount (lung) [mmole]" value="NaN" units="mmole" constant="false"/>
-      <parameter id="Xlu_plasma_d3g" name="dapagliflozin-3-o-glucuronide amount (lung) [mg]" value="NaN" units="mg" constant="false"/>
-      <parameter id="Mlu_plasma_d3g" name="dapagliflozin-3-o-glucuronide concentration (lung) [mg/l]" value="NaN" units="mg_per_l" constant="false"/>
-      <parameter id="Agu_plasma_d3g" name="dapagliflozin-3-o-glucuronide amount (gut) [mmole]" value="NaN" units="mmole" constant="false"/>
-      <parameter id="Xgu_plasma_d3g" name="dapagliflozin-3-o-glucuronide amount (gut) [mg]" value="NaN" units="mg" constant="false"/>
-      <parameter id="Mgu_plasma_d3g" name="dapagliflozin-3-o-glucuronide concentration (gut) [mg/l]" value="NaN" units="mg_per_l" constant="false"/>
-      <parameter id="Are_plasma_d3g" name="dapagliflozin-3-o-glucuronide amount (rest) [mmole]" value="NaN" units="mmole" constant="false"/>
-      <parameter id="Xre_plasma_d3g" name="dapagliflozin-3-o-glucuronide amount (rest) [mg]" value="NaN" units="mg" constant="false"/>
-      <parameter id="Mre_plasma_d3g" name="dapagliflozin-3-o-glucuronide concentration (rest) [mg/l]" value="NaN" units="mg_per_l" constant="false"/>
-      <parameter id="Aar_d3g" name="dapagliflozin-3-o-glucuronide amount (arterial blood) [mmole]" value="NaN" units="mmole" constant="false"/>
-      <parameter id="Xar_d3g" name="dapagliflozin-3-o-glucuronide amount (arterial blood) [mg]" value="NaN" units="mg" constant="false"/>
-      <parameter id="Mar_d3g" name="dapagliflozin-3-o-glucuronide concentration (arterial blood) [mg/l]" value="NaN" units="mg_per_l" constant="false"/>
-      <parameter id="Ave_d3g" name="dapagliflozin-3-o-glucuronide amount (venous blood) [mmole]" value="NaN" units="mmole" constant="false"/>
-      <parameter id="Xve_d3g" name="dapagliflozin-3-o-glucuronide amount (venous blood) [mg]" value="NaN" units="mg" constant="false"/>
-      <parameter id="Mve_d3g" name="dapagliflozin-3-o-glucuronide concentration (venous blood) [mg/l]" value="NaN" units="mg_per_l" constant="false"/>
-      <parameter id="Apo_d3g" name="dapagliflozin-3-o-glucuronide amount (portal vein) [mmole]" value="NaN" units="mmole" constant="false"/>
-      <parameter id="Xpo_d3g" name="dapagliflozin-3-o-glucuronide amount (portal vein) [mg]" value="NaN" units="mg" constant="false"/>
-      <parameter id="Mpo_d3g" name="dapagliflozin-3-o-glucuronide concentration (portal vein) [mg/l]" value="NaN" units="mg_per_l" constant="false"/>
-      <parameter id="Ahv_d3g" name="dapagliflozin-3-o-glucuronide amount (hepatic vein) [mmole]" value="NaN" units="mmole" constant="false"/>
-      <parameter id="Xhv_d3g" name="dapagliflozin-3-o-glucuronide amount (hepatic vein) [mg]" value="NaN" units="mg" constant="false"/>
-      <parameter id="Mhv_d3g" name="dapagliflozin-3-o-glucuronide concentration (hepatic vein) [mg/l]" value="NaN" units="mg_per_l" constant="false"/>
       <parameter id="Xurine_d3g" name="dapagliflozin-3-o-glucuronide amount (urine) [mg]" value="NaN" units="mg" constant="false"/>
       <parameter metaid="KI__meta_f_renal_function" sboTerm="SBO:0000009" id="KI__f_renal_function" name="parameter for renal function" value="1" units="dimensionless" constant="true">
         <notes>
@@ -2275,6 +2251,119 @@ with FQgu=0.146, FQsp=0.017, FQpa=0.017</p>
         </notes>
       </parameter>
       <parameter id="KI__GFR_healthy" name="Glomerular filtration rate (healthy)" value="100" units="KI__ml_per_min" constant="true"/>
+      <parameter metaid="KI__meta_DAPIM_Vmax" sboTerm="SBO:0000186" id="KI__DAPIM_Vmax" name="Vmax dapagliflozin import" value="1000" units="KI__mmole_per_min_l" constant="true">
+        <annotation>
+          <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:vCard="http://www.w3.org/2001/vcard-rdf/3.0#" xmlns:vCard4="http://www.w3.org/2006/vcard/ns#" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/" xmlns:bqmodel="http://biomodels.net/model-qualifiers/">
+            <rdf:Description rdf:about="#KI__meta_DAPIM_Vmax">
+              <bqbiol:is>
+                <rdf:Bag>
+                  <rdf:li rdf:resource="http://identifiers.org/SBO:0000186"/>
+                </rdf:Bag>
+              </bqbiol:is>
+            </rdf:Description>
+          </rdf:RDF>
+        </annotation>
+      </parameter>
+      <parameter metaid="KI__meta_DAPIM_Km_dap" sboTerm="SBO:0000027" id="KI__DAPIM_Km_dap" name="Vmax dapagliflozin import" value="0.033" units="KI__mM" constant="true">
+        <notes>
+          <body xmlns="http://www.w3.org/1999/xhtml">
+            <p>Possibly catalyzed by OAT3 with Ki=33µM. [FDA]</p>
+          </body>
+        </notes>
+        <annotation>
+          <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:vCard="http://www.w3.org/2001/vcard-rdf/3.0#" xmlns:vCard4="http://www.w3.org/2006/vcard/ns#" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/" xmlns:bqmodel="http://biomodels.net/model-qualifiers/">
+            <rdf:Description rdf:about="#KI__meta_DAPIM_Km_dap">
+              <bqbiol:is>
+                <rdf:Bag>
+                  <rdf:li rdf:resource="http://identifiers.org/SBO:0000027"/>
+                </rdf:Bag>
+              </bqbiol:is>
+            </rdf:Description>
+          </rdf:RDF>
+        </annotation>
+      </parameter>
+      <parameter metaid="KI__meta_D3GIM_Vmax" sboTerm="SBO:0000186" id="KI__D3GIM_Vmax" name="Vmax dapagliflozin-3-O-glucuronide import" value="1000" units="KI__mmole_per_min_l" constant="true">
+        <annotation>
+          <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:vCard="http://www.w3.org/2001/vcard-rdf/3.0#" xmlns:vCard4="http://www.w3.org/2006/vcard/ns#" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/" xmlns:bqmodel="http://biomodels.net/model-qualifiers/">
+            <rdf:Description rdf:about="#KI__meta_D3GIM_Vmax">
+              <bqbiol:is>
+                <rdf:Bag>
+                  <rdf:li rdf:resource="http://identifiers.org/SBO:0000186"/>
+                </rdf:Bag>
+              </bqbiol:is>
+            </rdf:Description>
+          </rdf:RDF>
+        </annotation>
+      </parameter>
+      <parameter metaid="KI__meta_D3GIM_Km_d3g" sboTerm="SBO:0000027" id="KI__D3GIM_Km_d3g" name="Vmax dapagliflozin-3-O-glucuronide import" value="0.033" units="KI__mM" constant="true">
+        <notes>
+          <body xmlns="http://www.w3.org/1999/xhtml">
+            <p>Using Km identical to dap</p>
+          </body>
+        </notes>
+        <annotation>
+          <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:vCard="http://www.w3.org/2001/vcard-rdf/3.0#" xmlns:vCard4="http://www.w3.org/2006/vcard/ns#" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/" xmlns:bqmodel="http://biomodels.net/model-qualifiers/">
+            <rdf:Description rdf:about="#KI__meta_D3GIM_Km_d3g">
+              <bqbiol:is>
+                <rdf:Bag>
+                  <rdf:li rdf:resource="http://identifiers.org/SBO:0000027"/>
+                </rdf:Bag>
+              </bqbiol:is>
+            </rdf:Description>
+          </rdf:RDF>
+        </annotation>
+      </parameter>
+      <parameter metaid="KI__meta_DAP2D3G_Vmax" sboTerm="SBO:0000186" id="KI__DAP2D3G_Vmax" name="Vmax dapagliflozin conversion" value="0.04" units="KI__mmole_per_min_l" constant="true">
+        <annotation>
+          <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:vCard="http://www.w3.org/2001/vcard-rdf/3.0#" xmlns:vCard4="http://www.w3.org/2006/vcard/ns#" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/" xmlns:bqmodel="http://biomodels.net/model-qualifiers/">
+            <rdf:Description rdf:about="#KI__meta_DAP2D3G_Vmax">
+              <bqbiol:is>
+                <rdf:Bag>
+                  <rdf:li rdf:resource="http://identifiers.org/SBO:0000186"/>
+                </rdf:Bag>
+              </bqbiol:is>
+            </rdf:Description>
+          </rdf:RDF>
+        </annotation>
+      </parameter>
+      <parameter metaid="KI__meta_DAP2D3G_Km_dap" sboTerm="SBO:0000027" id="KI__DAP2D3G_Km_dap" name="Km dapagliflozin UGT1A9" value="0.479" units="KI__mM" constant="true">
+        <notes>
+          <body xmlns="http://www.w3.org/1999/xhtml">
+            <p>Km apparent in kidney microsomes for dapagliflozin; 479 µM [Kasichaynula2013]
+Ki for UGT1A9 with other substrates 12-15 µM [Obermeier2010a].</p>
+          </body>
+        </notes>
+        <annotation>
+          <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:vCard="http://www.w3.org/2001/vcard-rdf/3.0#" xmlns:vCard4="http://www.w3.org/2006/vcard/ns#" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/" xmlns:bqmodel="http://biomodels.net/model-qualifiers/">
+            <rdf:Description rdf:about="#KI__meta_DAP2D3G_Km_dap">
+              <bqbiol:is>
+                <rdf:Bag>
+                  <rdf:li rdf:resource="http://identifiers.org/SBO:0000027"/>
+                </rdf:Bag>
+              </bqbiol:is>
+            </rdf:Description>
+          </rdf:RDF>
+        </annotation>
+      </parameter>
+      <parameter metaid="KI__meta_f_ugt1a9" sboTerm="SBO:0000002" id="KI__f_ugt1a9" name="scaling factor UGT1A9 activity" value="1" units="dimensionless" constant="true">
+        <notes>
+          <body xmlns="http://www.w3.org/1999/xhtml">
+            <p>Scaling factor to vary UGT1A9 activity.
+1.0: unchanged activity; &lt; 1.0 decreased activity; &gt;1.0 increased activity.</p>
+          </body>
+        </notes>
+        <annotation>
+          <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:vCard="http://www.w3.org/2001/vcard-rdf/3.0#" xmlns:vCard4="http://www.w3.org/2006/vcard/ns#" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/" xmlns:bqmodel="http://biomodels.net/model-qualifiers/">
+            <rdf:Description rdf:about="#KI__meta_f_ugt1a9">
+              <bqbiol:is>
+                <rdf:Bag>
+                  <rdf:li rdf:resource="http://identifiers.org/SBO:0000002"/>
+                </rdf:Bag>
+              </bqbiol:is>
+            </rdf:Description>
+          </rdf:RDF>
+        </annotation>
+      </parameter>
       <parameter metaid="KI__meta_D3GEX_k" sboTerm="SBO:0000009" id="KI__D3GEX_k" name="rate urinary excretion of dapagliflozin-3-o-glucuronide" value="1" units="KI__per_min" constant="true">
         <annotation>
           <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:vCard="http://www.w3.org/2001/vcard-rdf/3.0#" xmlns:vCard4="http://www.w3.org/2006/vcard/ns#" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/" xmlns:bqmodel="http://biomodels.net/model-qualifiers/">
@@ -2304,13 +2393,31 @@ with FQgu=0.146, FQsp=0.017, FQpa=0.017</p>
       <parameter id="KI__RTG" name="renal threshold glucose (RTG)" value="NaN" units="KI__mM" constant="false"/>
       <parameter id="KI__GFR" name="glomerular filtration rate" value="NaN" units="KI__ml_per_min" constant="false"/>
       <parameter id="KI__UGE" name="urinary glucose excretion (UGE)" value="NaN" units="gram" constant="false"/>
-      <parameter metaid="LI__meta_DAPIM_Vmax" sboTerm="SBO:0000186" id="LI__DAPIM_Vmax" name="Vmax dapagliflozin import" value="1000" units="LI__per_min" constant="true">
+      <parameter metaid="LI__meta_DAPIM_Vmax" sboTerm="SBO:0000186" id="LI__DAPIM_Vmax" name="Vmax dapagliflozin import" value="1000" units="LI__mmole_per_min_l" constant="true">
         <annotation>
           <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:vCard="http://www.w3.org/2001/vcard-rdf/3.0#" xmlns:vCard4="http://www.w3.org/2006/vcard/ns#" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/" xmlns:bqmodel="http://biomodels.net/model-qualifiers/">
             <rdf:Description rdf:about="#LI__meta_DAPIM_Vmax">
               <bqbiol:is>
                 <rdf:Bag>
                   <rdf:li rdf:resource="http://identifiers.org/SBO:0000186"/>
+                </rdf:Bag>
+              </bqbiol:is>
+            </rdf:Description>
+          </rdf:RDF>
+        </annotation>
+      </parameter>
+      <parameter metaid="LI__meta_DAPIM_Km_dap" sboTerm="SBO:0000027" id="LI__DAPIM_Km_dap" name="Vmax dapagliflozin import" value="0.033" units="LI__mM" constant="true">
+        <notes>
+          <body xmlns="http://www.w3.org/1999/xhtml">
+            <p>Possibly catalyzed by OAT3 with Ki=33µM. [FDA]</p>
+          </body>
+        </notes>
+        <annotation>
+          <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:vCard="http://www.w3.org/2001/vcard-rdf/3.0#" xmlns:vCard4="http://www.w3.org/2006/vcard/ns#" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/" xmlns:bqmodel="http://biomodels.net/model-qualifiers/">
+            <rdf:Description rdf:about="#LI__meta_DAPIM_Km_dap">
+              <bqbiol:is>
+                <rdf:Bag>
+                  <rdf:li rdf:resource="http://identifiers.org/SBO:0000027"/>
                 </rdf:Bag>
               </bqbiol:is>
             </rdf:Description>
@@ -2368,13 +2475,31 @@ Ki for UGT1A9 with other substrates 12-15 µM [Obermeier2010a].</p>
           </rdf:RDF>
         </annotation>
       </parameter>
-      <parameter metaid="LI__meta_D3GEX_Vmax" sboTerm="SBO:0000186" id="LI__D3GEX_Vmax" name="Vmax dapagliflozinat export" value="1000" units="LI__per_min" constant="true">
+      <parameter metaid="LI__meta_D3GEX_Vmax" sboTerm="SBO:0000186" id="LI__D3GEX_Vmax" name="Vmax dapagliflozinat export" value="1000" units="LI__mmole_per_min_l" constant="true">
         <annotation>
           <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:vCard="http://www.w3.org/2001/vcard-rdf/3.0#" xmlns:vCard4="http://www.w3.org/2006/vcard/ns#" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/" xmlns:bqmodel="http://biomodels.net/model-qualifiers/">
             <rdf:Description rdf:about="#LI__meta_D3GEX_Vmax">
               <bqbiol:is>
                 <rdf:Bag>
                   <rdf:li rdf:resource="http://identifiers.org/SBO:0000186"/>
+                </rdf:Bag>
+              </bqbiol:is>
+            </rdf:Description>
+          </rdf:RDF>
+        </annotation>
+      </parameter>
+      <parameter metaid="LI__meta_D3GEX_Km_d3g" sboTerm="SBO:0000027" id="LI__D3GEX_Km_d3g" name="Vmax dapagliflozinat export" value="0.115" units="LI__mM" constant="true">
+        <notes>
+          <body xmlns="http://www.w3.org/1999/xhtml">
+            <p>Substrate of hOAT3 and its Km value for hOAT3-mediated uptake was 115µM [FDA].</p>
+          </body>
+        </notes>
+        <annotation>
+          <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:vCard="http://www.w3.org/2001/vcard-rdf/3.0#" xmlns:vCard4="http://www.w3.org/2006/vcard/ns#" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/" xmlns:bqmodel="http://biomodels.net/model-qualifiers/">
+            <rdf:Description rdf:about="#LI__meta_D3GEX_Km_d3g">
+              <bqbiol:is>
+                <rdf:Bag>
+                  <rdf:li rdf:resource="http://identifiers.org/SBO:0000027"/>
                 </rdf:Bag>
               </bqbiol:is>
             </rdf:Description>
@@ -2493,6 +2618,11 @@ is absorbed. This parameter determines how much of the dapagliflozin is excreted
             <ci> Aurine_dap </ci>
             <ci> Aurine_d3g </ci>
           </apply>
+        </math>
+      </assignmentRule>
+      <assignmentRule name="Sum of dapagliflozin feces" variable="Afeces_daptot">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+          <ci> Afeces_dap </ci>
         </math>
       </assignmentRule>
       <assignmentRule variable="FVre">
@@ -3017,285 +3147,6 @@ injection rate.</p>
           </apply>
         </math>
       </assignmentRule>
-      <assignmentRule name="dapagliflozin amount (kidney) [mmole]" variable="Aki_plasma_dap">
-        <math xmlns="http://www.w3.org/1998/Math/MathML">
-          <apply>
-            <times/>
-            <ci> Cki_plasma_dap </ci>
-            <ci> Vki_plasma </ci>
-          </apply>
-        </math>
-      </assignmentRule>
-      <assignmentRule name="dapagliflozin amount (kidney) [mg]" variable="Xki_plasma_dap">
-        <math xmlns="http://www.w3.org/1998/Math/MathML">
-          <apply>
-            <times/>
-            <ci> Aki_plasma_dap </ci>
-            <ci> Mr_dap </ci>
-          </apply>
-        </math>
-      </assignmentRule>
-      <assignmentRule name="dapagliflozin concentration (kidney) [mg/l]" variable="Mki_plasma_dap">
-        <math xmlns="http://www.w3.org/1998/Math/MathML">
-          <apply>
-            <times/>
-            <apply>
-              <divide/>
-              <ci> Aki_plasma_dap </ci>
-              <ci> Vki_plasma </ci>
-            </apply>
-            <ci> Mr_dap </ci>
-          </apply>
-        </math>
-      </assignmentRule>
-      <assignmentRule name="dapagliflozin amount (liver) [mmole]" variable="Ali_plasma_dap">
-        <math xmlns="http://www.w3.org/1998/Math/MathML">
-          <apply>
-            <times/>
-            <ci> Cli_plasma_dap </ci>
-            <ci> Vli_plasma </ci>
-          </apply>
-        </math>
-      </assignmentRule>
-      <assignmentRule name="dapagliflozin amount (liver) [mg]" variable="Xli_plasma_dap">
-        <math xmlns="http://www.w3.org/1998/Math/MathML">
-          <apply>
-            <times/>
-            <ci> Ali_plasma_dap </ci>
-            <ci> Mr_dap </ci>
-          </apply>
-        </math>
-      </assignmentRule>
-      <assignmentRule name="dapagliflozin concentration (liver) [mg/l]" variable="Mli_plasma_dap">
-        <math xmlns="http://www.w3.org/1998/Math/MathML">
-          <apply>
-            <times/>
-            <apply>
-              <divide/>
-              <ci> Ali_plasma_dap </ci>
-              <ci> Vli_plasma </ci>
-            </apply>
-            <ci> Mr_dap </ci>
-          </apply>
-        </math>
-      </assignmentRule>
-      <assignmentRule name="dapagliflozin amount (lung) [mmole]" variable="Alu_plasma_dap">
-        <math xmlns="http://www.w3.org/1998/Math/MathML">
-          <apply>
-            <times/>
-            <ci> Clu_plasma_dap </ci>
-            <ci> Vlu_plasma </ci>
-          </apply>
-        </math>
-      </assignmentRule>
-      <assignmentRule name="dapagliflozin amount (lung) [mg]" variable="Xlu_plasma_dap">
-        <math xmlns="http://www.w3.org/1998/Math/MathML">
-          <apply>
-            <times/>
-            <ci> Alu_plasma_dap </ci>
-            <ci> Mr_dap </ci>
-          </apply>
-        </math>
-      </assignmentRule>
-      <assignmentRule name="dapagliflozin concentration (lung) [mg/l]" variable="Mlu_plasma_dap">
-        <math xmlns="http://www.w3.org/1998/Math/MathML">
-          <apply>
-            <times/>
-            <apply>
-              <divide/>
-              <ci> Alu_plasma_dap </ci>
-              <ci> Vlu_plasma </ci>
-            </apply>
-            <ci> Mr_dap </ci>
-          </apply>
-        </math>
-      </assignmentRule>
-      <assignmentRule name="dapagliflozin amount (gut) [mmole]" variable="Agu_plasma_dap">
-        <math xmlns="http://www.w3.org/1998/Math/MathML">
-          <apply>
-            <times/>
-            <ci> Cgu_plasma_dap </ci>
-            <ci> Vgu_plasma </ci>
-          </apply>
-        </math>
-      </assignmentRule>
-      <assignmentRule name="dapagliflozin amount (gut) [mg]" variable="Xgu_plasma_dap">
-        <math xmlns="http://www.w3.org/1998/Math/MathML">
-          <apply>
-            <times/>
-            <ci> Agu_plasma_dap </ci>
-            <ci> Mr_dap </ci>
-          </apply>
-        </math>
-      </assignmentRule>
-      <assignmentRule name="dapagliflozin concentration (gut) [mg/l]" variable="Mgu_plasma_dap">
-        <math xmlns="http://www.w3.org/1998/Math/MathML">
-          <apply>
-            <times/>
-            <apply>
-              <divide/>
-              <ci> Agu_plasma_dap </ci>
-              <ci> Vgu_plasma </ci>
-            </apply>
-            <ci> Mr_dap </ci>
-          </apply>
-        </math>
-      </assignmentRule>
-      <assignmentRule name="dapagliflozin amount (rest) [mmole]" variable="Are_plasma_dap">
-        <math xmlns="http://www.w3.org/1998/Math/MathML">
-          <apply>
-            <times/>
-            <ci> Cre_plasma_dap </ci>
-            <ci> Vre_plasma </ci>
-          </apply>
-        </math>
-      </assignmentRule>
-      <assignmentRule name="dapagliflozin amount (rest) [mg]" variable="Xre_plasma_dap">
-        <math xmlns="http://www.w3.org/1998/Math/MathML">
-          <apply>
-            <times/>
-            <ci> Are_plasma_dap </ci>
-            <ci> Mr_dap </ci>
-          </apply>
-        </math>
-      </assignmentRule>
-      <assignmentRule name="dapagliflozin concentration (rest) [mg/l]" variable="Mre_plasma_dap">
-        <math xmlns="http://www.w3.org/1998/Math/MathML">
-          <apply>
-            <times/>
-            <apply>
-              <divide/>
-              <ci> Are_plasma_dap </ci>
-              <ci> Vre_plasma </ci>
-            </apply>
-            <ci> Mr_dap </ci>
-          </apply>
-        </math>
-      </assignmentRule>
-      <assignmentRule name="dapagliflozin amount (arterial blood) [mmole]" variable="Aar_dap">
-        <math xmlns="http://www.w3.org/1998/Math/MathML">
-          <apply>
-            <times/>
-            <ci> Car_dap </ci>
-            <ci> Var </ci>
-          </apply>
-        </math>
-      </assignmentRule>
-      <assignmentRule name="dapagliflozin amount (arterial blood) [mg]" variable="Xar_dap">
-        <math xmlns="http://www.w3.org/1998/Math/MathML">
-          <apply>
-            <times/>
-            <ci> Aar_dap </ci>
-            <ci> Mr_dap </ci>
-          </apply>
-        </math>
-      </assignmentRule>
-      <assignmentRule name="dapagliflozin concentration (arterial blood) [mg/l]" variable="Mar_dap">
-        <math xmlns="http://www.w3.org/1998/Math/MathML">
-          <apply>
-            <times/>
-            <apply>
-              <divide/>
-              <ci> Aar_dap </ci>
-              <ci> Var </ci>
-            </apply>
-            <ci> Mr_dap </ci>
-          </apply>
-        </math>
-      </assignmentRule>
-      <assignmentRule name="dapagliflozin amount (venous blood) [mmole]" variable="Ave_dap">
-        <math xmlns="http://www.w3.org/1998/Math/MathML">
-          <apply>
-            <times/>
-            <ci> Cve_dap </ci>
-            <ci> Vve </ci>
-          </apply>
-        </math>
-      </assignmentRule>
-      <assignmentRule name="dapagliflozin amount (venous blood) [mg]" variable="Xve_dap">
-        <math xmlns="http://www.w3.org/1998/Math/MathML">
-          <apply>
-            <times/>
-            <ci> Ave_dap </ci>
-            <ci> Mr_dap </ci>
-          </apply>
-        </math>
-      </assignmentRule>
-      <assignmentRule name="dapagliflozin concentration (venous blood) [mg/l]" variable="Mve_dap">
-        <math xmlns="http://www.w3.org/1998/Math/MathML">
-          <apply>
-            <times/>
-            <apply>
-              <divide/>
-              <ci> Ave_dap </ci>
-              <ci> Vve </ci>
-            </apply>
-            <ci> Mr_dap </ci>
-          </apply>
-        </math>
-      </assignmentRule>
-      <assignmentRule name="dapagliflozin amount (portal vein) [mmole]" variable="Apo_dap">
-        <math xmlns="http://www.w3.org/1998/Math/MathML">
-          <apply>
-            <times/>
-            <ci> Cpo_dap </ci>
-            <ci> Vpo </ci>
-          </apply>
-        </math>
-      </assignmentRule>
-      <assignmentRule name="dapagliflozin amount (portal vein) [mg]" variable="Xpo_dap">
-        <math xmlns="http://www.w3.org/1998/Math/MathML">
-          <apply>
-            <times/>
-            <ci> Apo_dap </ci>
-            <ci> Mr_dap </ci>
-          </apply>
-        </math>
-      </assignmentRule>
-      <assignmentRule name="dapagliflozin concentration (portal vein) [mg/l]" variable="Mpo_dap">
-        <math xmlns="http://www.w3.org/1998/Math/MathML">
-          <apply>
-            <times/>
-            <apply>
-              <divide/>
-              <ci> Apo_dap </ci>
-              <ci> Vpo </ci>
-            </apply>
-            <ci> Mr_dap </ci>
-          </apply>
-        </math>
-      </assignmentRule>
-      <assignmentRule name="dapagliflozin amount (hepatic vein) [mmole]" variable="Ahv_dap">
-        <math xmlns="http://www.w3.org/1998/Math/MathML">
-          <apply>
-            <times/>
-            <ci> Chv_dap </ci>
-            <ci> Vhv </ci>
-          </apply>
-        </math>
-      </assignmentRule>
-      <assignmentRule name="dapagliflozin amount (hepatic vein) [mg]" variable="Xhv_dap">
-        <math xmlns="http://www.w3.org/1998/Math/MathML">
-          <apply>
-            <times/>
-            <ci> Ahv_dap </ci>
-            <ci> Mr_dap </ci>
-          </apply>
-        </math>
-      </assignmentRule>
-      <assignmentRule name="dapagliflozin concentration (hepatic vein) [mg/l]" variable="Mhv_dap">
-        <math xmlns="http://www.w3.org/1998/Math/MathML">
-          <apply>
-            <times/>
-            <apply>
-              <divide/>
-              <ci> Ahv_dap </ci>
-              <ci> Vhv </ci>
-            </apply>
-            <ci> Mr_dap </ci>
-          </apply>
-        </math>
-      </assignmentRule>
       <assignmentRule name="dapagliflozin amount (urine) [mg]" variable="Xurine_dap">
         <math xmlns="http://www.w3.org/1998/Math/MathML">
           <apply>
@@ -3311,285 +3162,6 @@ injection rate.</p>
             <times/>
             <ci> Afeces_dap </ci>
             <ci> Mr_dap </ci>
-          </apply>
-        </math>
-      </assignmentRule>
-      <assignmentRule name="dapagliflozin-3-o-glucuronide amount (kidney) [mmole]" variable="Aki_plasma_d3g">
-        <math xmlns="http://www.w3.org/1998/Math/MathML">
-          <apply>
-            <times/>
-            <ci> Cki_plasma_d3g </ci>
-            <ci> Vki_plasma </ci>
-          </apply>
-        </math>
-      </assignmentRule>
-      <assignmentRule name="dapagliflozin-3-o-glucuronide amount (kidney) [mg]" variable="Xki_plasma_d3g">
-        <math xmlns="http://www.w3.org/1998/Math/MathML">
-          <apply>
-            <times/>
-            <ci> Aki_plasma_d3g </ci>
-            <ci> Mr_d3g </ci>
-          </apply>
-        </math>
-      </assignmentRule>
-      <assignmentRule name="dapagliflozin-3-o-glucuronide concentration (kidney) [mg/l]" variable="Mki_plasma_d3g">
-        <math xmlns="http://www.w3.org/1998/Math/MathML">
-          <apply>
-            <times/>
-            <apply>
-              <divide/>
-              <ci> Aki_plasma_d3g </ci>
-              <ci> Vki_plasma </ci>
-            </apply>
-            <ci> Mr_d3g </ci>
-          </apply>
-        </math>
-      </assignmentRule>
-      <assignmentRule name="dapagliflozin-3-o-glucuronide amount (liver) [mmole]" variable="Ali_plasma_d3g">
-        <math xmlns="http://www.w3.org/1998/Math/MathML">
-          <apply>
-            <times/>
-            <ci> Cli_plasma_d3g </ci>
-            <ci> Vli_plasma </ci>
-          </apply>
-        </math>
-      </assignmentRule>
-      <assignmentRule name="dapagliflozin-3-o-glucuronide amount (liver) [mg]" variable="Xli_plasma_d3g">
-        <math xmlns="http://www.w3.org/1998/Math/MathML">
-          <apply>
-            <times/>
-            <ci> Ali_plasma_d3g </ci>
-            <ci> Mr_d3g </ci>
-          </apply>
-        </math>
-      </assignmentRule>
-      <assignmentRule name="dapagliflozin-3-o-glucuronide concentration (liver) [mg/l]" variable="Mli_plasma_d3g">
-        <math xmlns="http://www.w3.org/1998/Math/MathML">
-          <apply>
-            <times/>
-            <apply>
-              <divide/>
-              <ci> Ali_plasma_d3g </ci>
-              <ci> Vli_plasma </ci>
-            </apply>
-            <ci> Mr_d3g </ci>
-          </apply>
-        </math>
-      </assignmentRule>
-      <assignmentRule name="dapagliflozin-3-o-glucuronide amount (lung) [mmole]" variable="Alu_plasma_d3g">
-        <math xmlns="http://www.w3.org/1998/Math/MathML">
-          <apply>
-            <times/>
-            <ci> Clu_plasma_d3g </ci>
-            <ci> Vlu_plasma </ci>
-          </apply>
-        </math>
-      </assignmentRule>
-      <assignmentRule name="dapagliflozin-3-o-glucuronide amount (lung) [mg]" variable="Xlu_plasma_d3g">
-        <math xmlns="http://www.w3.org/1998/Math/MathML">
-          <apply>
-            <times/>
-            <ci> Alu_plasma_d3g </ci>
-            <ci> Mr_d3g </ci>
-          </apply>
-        </math>
-      </assignmentRule>
-      <assignmentRule name="dapagliflozin-3-o-glucuronide concentration (lung) [mg/l]" variable="Mlu_plasma_d3g">
-        <math xmlns="http://www.w3.org/1998/Math/MathML">
-          <apply>
-            <times/>
-            <apply>
-              <divide/>
-              <ci> Alu_plasma_d3g </ci>
-              <ci> Vlu_plasma </ci>
-            </apply>
-            <ci> Mr_d3g </ci>
-          </apply>
-        </math>
-      </assignmentRule>
-      <assignmentRule name="dapagliflozin-3-o-glucuronide amount (gut) [mmole]" variable="Agu_plasma_d3g">
-        <math xmlns="http://www.w3.org/1998/Math/MathML">
-          <apply>
-            <times/>
-            <ci> Cgu_plasma_d3g </ci>
-            <ci> Vgu_plasma </ci>
-          </apply>
-        </math>
-      </assignmentRule>
-      <assignmentRule name="dapagliflozin-3-o-glucuronide amount (gut) [mg]" variable="Xgu_plasma_d3g">
-        <math xmlns="http://www.w3.org/1998/Math/MathML">
-          <apply>
-            <times/>
-            <ci> Agu_plasma_d3g </ci>
-            <ci> Mr_d3g </ci>
-          </apply>
-        </math>
-      </assignmentRule>
-      <assignmentRule name="dapagliflozin-3-o-glucuronide concentration (gut) [mg/l]" variable="Mgu_plasma_d3g">
-        <math xmlns="http://www.w3.org/1998/Math/MathML">
-          <apply>
-            <times/>
-            <apply>
-              <divide/>
-              <ci> Agu_plasma_d3g </ci>
-              <ci> Vgu_plasma </ci>
-            </apply>
-            <ci> Mr_d3g </ci>
-          </apply>
-        </math>
-      </assignmentRule>
-      <assignmentRule name="dapagliflozin-3-o-glucuronide amount (rest) [mmole]" variable="Are_plasma_d3g">
-        <math xmlns="http://www.w3.org/1998/Math/MathML">
-          <apply>
-            <times/>
-            <ci> Cre_plasma_d3g </ci>
-            <ci> Vre_plasma </ci>
-          </apply>
-        </math>
-      </assignmentRule>
-      <assignmentRule name="dapagliflozin-3-o-glucuronide amount (rest) [mg]" variable="Xre_plasma_d3g">
-        <math xmlns="http://www.w3.org/1998/Math/MathML">
-          <apply>
-            <times/>
-            <ci> Are_plasma_d3g </ci>
-            <ci> Mr_d3g </ci>
-          </apply>
-        </math>
-      </assignmentRule>
-      <assignmentRule name="dapagliflozin-3-o-glucuronide concentration (rest) [mg/l]" variable="Mre_plasma_d3g">
-        <math xmlns="http://www.w3.org/1998/Math/MathML">
-          <apply>
-            <times/>
-            <apply>
-              <divide/>
-              <ci> Are_plasma_d3g </ci>
-              <ci> Vre_plasma </ci>
-            </apply>
-            <ci> Mr_d3g </ci>
-          </apply>
-        </math>
-      </assignmentRule>
-      <assignmentRule name="dapagliflozin-3-o-glucuronide amount (arterial blood) [mmole]" variable="Aar_d3g">
-        <math xmlns="http://www.w3.org/1998/Math/MathML">
-          <apply>
-            <times/>
-            <ci> Car_d3g </ci>
-            <ci> Var </ci>
-          </apply>
-        </math>
-      </assignmentRule>
-      <assignmentRule name="dapagliflozin-3-o-glucuronide amount (arterial blood) [mg]" variable="Xar_d3g">
-        <math xmlns="http://www.w3.org/1998/Math/MathML">
-          <apply>
-            <times/>
-            <ci> Aar_d3g </ci>
-            <ci> Mr_d3g </ci>
-          </apply>
-        </math>
-      </assignmentRule>
-      <assignmentRule name="dapagliflozin-3-o-glucuronide concentration (arterial blood) [mg/l]" variable="Mar_d3g">
-        <math xmlns="http://www.w3.org/1998/Math/MathML">
-          <apply>
-            <times/>
-            <apply>
-              <divide/>
-              <ci> Aar_d3g </ci>
-              <ci> Var </ci>
-            </apply>
-            <ci> Mr_d3g </ci>
-          </apply>
-        </math>
-      </assignmentRule>
-      <assignmentRule name="dapagliflozin-3-o-glucuronide amount (venous blood) [mmole]" variable="Ave_d3g">
-        <math xmlns="http://www.w3.org/1998/Math/MathML">
-          <apply>
-            <times/>
-            <ci> Cve_d3g </ci>
-            <ci> Vve </ci>
-          </apply>
-        </math>
-      </assignmentRule>
-      <assignmentRule name="dapagliflozin-3-o-glucuronide amount (venous blood) [mg]" variable="Xve_d3g">
-        <math xmlns="http://www.w3.org/1998/Math/MathML">
-          <apply>
-            <times/>
-            <ci> Ave_d3g </ci>
-            <ci> Mr_d3g </ci>
-          </apply>
-        </math>
-      </assignmentRule>
-      <assignmentRule name="dapagliflozin-3-o-glucuronide concentration (venous blood) [mg/l]" variable="Mve_d3g">
-        <math xmlns="http://www.w3.org/1998/Math/MathML">
-          <apply>
-            <times/>
-            <apply>
-              <divide/>
-              <ci> Ave_d3g </ci>
-              <ci> Vve </ci>
-            </apply>
-            <ci> Mr_d3g </ci>
-          </apply>
-        </math>
-      </assignmentRule>
-      <assignmentRule name="dapagliflozin-3-o-glucuronide amount (portal vein) [mmole]" variable="Apo_d3g">
-        <math xmlns="http://www.w3.org/1998/Math/MathML">
-          <apply>
-            <times/>
-            <ci> Cpo_d3g </ci>
-            <ci> Vpo </ci>
-          </apply>
-        </math>
-      </assignmentRule>
-      <assignmentRule name="dapagliflozin-3-o-glucuronide amount (portal vein) [mg]" variable="Xpo_d3g">
-        <math xmlns="http://www.w3.org/1998/Math/MathML">
-          <apply>
-            <times/>
-            <ci> Apo_d3g </ci>
-            <ci> Mr_d3g </ci>
-          </apply>
-        </math>
-      </assignmentRule>
-      <assignmentRule name="dapagliflozin-3-o-glucuronide concentration (portal vein) [mg/l]" variable="Mpo_d3g">
-        <math xmlns="http://www.w3.org/1998/Math/MathML">
-          <apply>
-            <times/>
-            <apply>
-              <divide/>
-              <ci> Apo_d3g </ci>
-              <ci> Vpo </ci>
-            </apply>
-            <ci> Mr_d3g </ci>
-          </apply>
-        </math>
-      </assignmentRule>
-      <assignmentRule name="dapagliflozin-3-o-glucuronide amount (hepatic vein) [mmole]" variable="Ahv_d3g">
-        <math xmlns="http://www.w3.org/1998/Math/MathML">
-          <apply>
-            <times/>
-            <ci> Chv_d3g </ci>
-            <ci> Vhv </ci>
-          </apply>
-        </math>
-      </assignmentRule>
-      <assignmentRule name="dapagliflozin-3-o-glucuronide amount (hepatic vein) [mg]" variable="Xhv_d3g">
-        <math xmlns="http://www.w3.org/1998/Math/MathML">
-          <apply>
-            <times/>
-            <ci> Ahv_d3g </ci>
-            <ci> Mr_d3g </ci>
-          </apply>
-        </math>
-      </assignmentRule>
-      <assignmentRule name="dapagliflozin-3-o-glucuronide concentration (hepatic vein) [mg/l]" variable="Mhv_d3g">
-        <math xmlns="http://www.w3.org/1998/Math/MathML">
-          <apply>
-            <times/>
-            <apply>
-              <divide/>
-              <ci> Ahv_d3g </ci>
-              <ci> Vhv </ci>
-            </apply>
-            <ci> Mr_d3g </ci>
           </apply>
         </math>
       </assignmentRule>
@@ -3616,11 +3188,6 @@ injection rate.</p>
             </apply>
             <ci> Ri_dap </ci>
           </apply>
-        </math>
-      </rateRule>
-      <rateRule variable="cum_dose_dap">
-        <math xmlns="http://www.w3.org/1998/Math/MathML">
-          <ci> Ri_dap </ci>
         </math>
       </rateRule>
       <assignmentRule name="renal threshold glucose (RTG)" variable="KI__RTG">
@@ -3657,7 +3224,7 @@ to the glucose concentration above this threshold.
                 </apply>
                 <apply>
                   <power/>
-                  <ci> Cki_plasma_dap </ci>
+                  <ci> KI__dap </ci>
                   <ci> KI__RTG_gamma </ci>
                 </apply>
               </apply>
@@ -4645,7 +4212,153 @@ to the glucose concentration above this threshold.
           </math>
         </kineticLaw>
       </reaction>
-      <reaction metaid="KI__meta_D3GEX" sboTerm="SBO:0000655" id="KI__D3GEX" name="dapagliflozin-3-o-glucuronide excretion (D3GEX)" reversible="false" compartment="Vki_tissue">
+      <reaction metaid="KI__meta_DAPIM" sboTerm="SBO:0000655" id="KI__DAPIM" name="DAPIM" reversible="true" compartment="KI__Vmem">
+        <annotation>
+          <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:vCard="http://www.w3.org/2001/vcard-rdf/3.0#" xmlns:vCard4="http://www.w3.org/2006/vcard/ns#" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/" xmlns:bqmodel="http://biomodels.net/model-qualifiers/">
+            <rdf:Description rdf:about="#KI__meta_DAPIM">
+              <bqbiol:is>
+                <rdf:Bag>
+                  <rdf:li rdf:resource="http://identifiers.org/SBO:0000655"/>
+                </rdf:Bag>
+              </bqbiol:is>
+            </rdf:Description>
+          </rdf:RDF>
+        </annotation>
+        <listOfReactants>
+          <speciesReference species="Cki_plasma_dap" stoichiometry="1" constant="true"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="KI__dap" stoichiometry="1" constant="true"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML" xmlns:sbml="http://www.sbml.org/sbml/level3/version2/core">
+            <apply>
+              <divide/>
+              <apply>
+                <times/>
+                <apply>
+                  <divide/>
+                  <ci> KI__DAPIM_Vmax </ci>
+                  <ci> KI__DAPIM_Km_dap </ci>
+                </apply>
+                <ci> Vki_tissue </ci>
+                <apply>
+                  <minus/>
+                  <ci> Cki_plasma_dap </ci>
+                  <ci> KI__dap </ci>
+                </apply>
+              </apply>
+              <apply>
+                <plus/>
+                <cn sbml:units="dimensionless" type="integer"> 1 </cn>
+                <apply>
+                  <divide/>
+                  <ci> Cki_plasma_dap </ci>
+                  <ci> KI__DAPIM_Km_dap </ci>
+                </apply>
+                <apply>
+                  <divide/>
+                  <ci> KI__dap </ci>
+                  <ci> KI__DAPIM_Km_dap </ci>
+                </apply>
+              </apply>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+      <reaction metaid="KI__meta_D3GIM" sboTerm="SBO:0000655" id="KI__D3GIM" name="D3GIM" reversible="true" compartment="KI__Vmem">
+        <annotation>
+          <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:vCard="http://www.w3.org/2001/vcard-rdf/3.0#" xmlns:vCard4="http://www.w3.org/2006/vcard/ns#" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/" xmlns:bqmodel="http://biomodels.net/model-qualifiers/">
+            <rdf:Description rdf:about="#KI__meta_D3GIM">
+              <bqbiol:is>
+                <rdf:Bag>
+                  <rdf:li rdf:resource="http://identifiers.org/SBO:0000655"/>
+                </rdf:Bag>
+              </bqbiol:is>
+            </rdf:Description>
+          </rdf:RDF>
+        </annotation>
+        <listOfReactants>
+          <speciesReference species="Cki_plasma_d3g" stoichiometry="1" constant="true"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="KI__d3g" stoichiometry="1" constant="true"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML" xmlns:sbml="http://www.sbml.org/sbml/level3/version2/core">
+            <apply>
+              <divide/>
+              <apply>
+                <times/>
+                <apply>
+                  <divide/>
+                  <ci> KI__D3GIM_Vmax </ci>
+                  <ci> KI__D3GIM_Km_d3g </ci>
+                </apply>
+                <ci> Vki_tissue </ci>
+                <apply>
+                  <minus/>
+                  <ci> Cki_plasma_d3g </ci>
+                  <ci> KI__d3g </ci>
+                </apply>
+              </apply>
+              <apply>
+                <plus/>
+                <cn sbml:units="dimensionless" type="integer"> 1 </cn>
+                <apply>
+                  <divide/>
+                  <ci> Cki_plasma_d3g </ci>
+                  <ci> KI__D3GIM_Km_d3g </ci>
+                </apply>
+                <apply>
+                  <divide/>
+                  <ci> KI__d3g </ci>
+                  <ci> KI__D3GIM_Km_d3g </ci>
+                </apply>
+              </apply>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+      <reaction metaid="KI__meta_DAP2D3G" sboTerm="SBO:0000176" id="KI__DAP2D3G" name="UGT1A9 (dap -&gt; d3g)" reversible="false" compartment="Vki_tissue">
+        <annotation>
+          <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:vCard="http://www.w3.org/2001/vcard-rdf/3.0#" xmlns:vCard4="http://www.w3.org/2006/vcard/ns#" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/" xmlns:bqmodel="http://biomodels.net/model-qualifiers/">
+            <rdf:Description rdf:about="#KI__meta_DAP2D3G">
+              <bqbiol:is>
+                <rdf:Bag>
+                  <rdf:li rdf:resource="http://identifiers.org/SBO:0000176"/>
+                </rdf:Bag>
+              </bqbiol:is>
+            </rdf:Description>
+          </rdf:RDF>
+        </annotation>
+        <listOfReactants>
+          <speciesReference species="KI__dap" stoichiometry="1" constant="true"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="KI__d3g" stoichiometry="1" constant="true"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <divide/>
+              <apply>
+                <times/>
+                <ci> KI__f_ugt1a9 </ci>
+                <ci> KI__DAP2D3G_Vmax </ci>
+                <ci> Vki_tissue </ci>
+                <ci> KI__dap </ci>
+              </apply>
+              <apply>
+                <plus/>
+                <ci> KI__dap </ci>
+                <ci> KI__DAP2D3G_Km_dap </ci>
+              </apply>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+      <reaction metaid="KI__meta_D3GEX" sboTerm="SBO:0000655" id="KI__D3GEX" name="D3GEX" reversible="false" compartment="Vki_tissue">
         <annotation>
           <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:vCard="http://www.w3.org/2001/vcard-rdf/3.0#" xmlns:vCard4="http://www.w3.org/2006/vcard/ns#" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/" xmlns:bqmodel="http://biomodels.net/model-qualifiers/">
             <rdf:Description rdf:about="#KI__meta_D3GEX">
@@ -4675,7 +4388,7 @@ to the glucose concentration above this threshold.
           </math>
         </kineticLaw>
       </reaction>
-      <reaction metaid="KI__meta_DAPEX" sboTerm="SBO:0000655" id="KI__DAPEX" name="dapagliflozin excretion (DAPEX)" reversible="false" compartment="Vki_tissue">
+      <reaction metaid="KI__meta_DAPEX" sboTerm="SBO:0000655" id="KI__DAPEX" name="DAPEX" reversible="false" compartment="Vki_tissue">
         <annotation>
           <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:vCard="http://www.w3.org/2001/vcard-rdf/3.0#" xmlns:vCard4="http://www.w3.org/2006/vcard/ns#" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/" xmlns:bqmodel="http://biomodels.net/model-qualifiers/">
             <rdf:Description rdf:about="#KI__meta_DAPEX">
@@ -4724,7 +4437,7 @@ to the glucose concentration above this threshold.
           <speciesReference species="KI__glc_urine" stoichiometry="1" constant="true"/>
         </listOfProducts>
         <listOfModifiers>
-          <modifierSpeciesReference species="Cki_plasma_dap"/>
+          <modifierSpeciesReference species="KI__dap"/>
         </listOfModifiers>
         <kineticLaw>
           <math xmlns="http://www.w3.org/1998/Math/MathML" xmlns:sbml="http://www.sbml.org/sbml/level3/version2/core">
@@ -4756,7 +4469,12 @@ to the glucose concentration above this threshold.
           </math>
         </kineticLaw>
       </reaction>
-      <reaction metaid="LI__meta_DAPIM" sboTerm="SBO:0000655" id="LI__DAPIM" name="dapagliflozin import (DAPIM) OTP1B1" reversible="false" compartment="LI__Vmem">
+      <reaction metaid="LI__meta_DAPIM" sboTerm="SBO:0000655" id="LI__DAPIM" name="dapagliflozin import (DAPIM, OAT3)" reversible="true" compartment="LI__Vmem">
+        <notes>
+          <body xmlns="http://www.w3.org/1999/xhtml">
+            <p>Possibly catalyzed by OAT3 with Ki=33µM. [FDA]</p>
+          </body>
+        </notes>
         <annotation>
           <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:vCard="http://www.w3.org/2001/vcard-rdf/3.0#" xmlns:vCard4="http://www.w3.org/2006/vcard/ns#" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/" xmlns:bqmodel="http://biomodels.net/model-qualifiers/">
             <rdf:Description rdf:about="#LI__meta_DAPIM">
@@ -4775,12 +4493,37 @@ to the glucose concentration above this threshold.
           <speciesReference species="LI__dap" stoichiometry="1" constant="true"/>
         </listOfProducts>
         <kineticLaw>
-          <math xmlns="http://www.w3.org/1998/Math/MathML">
+          <math xmlns="http://www.w3.org/1998/Math/MathML" xmlns:sbml="http://www.sbml.org/sbml/level3/version2/core">
             <apply>
-              <times/>
-              <ci> LI__DAPIM_Vmax </ci>
-              <ci> Vli_tissue </ci>
-              <ci> Cli_plasma_dap </ci>
+              <divide/>
+              <apply>
+                <times/>
+                <apply>
+                  <divide/>
+                  <ci> LI__DAPIM_Vmax </ci>
+                  <ci> LI__DAPIM_Km_dap </ci>
+                </apply>
+                <ci> Vli_tissue </ci>
+                <apply>
+                  <minus/>
+                  <ci> Cli_plasma_dap </ci>
+                  <ci> LI__dap </ci>
+                </apply>
+              </apply>
+              <apply>
+                <plus/>
+                <cn sbml:units="dimensionless" type="integer"> 1 </cn>
+                <apply>
+                  <divide/>
+                  <ci> Cli_plasma_dap </ci>
+                  <ci> LI__DAPIM_Km_dap </ci>
+                </apply>
+                <apply>
+                  <divide/>
+                  <ci> LI__dap </ci>
+                  <ci> LI__DAPIM_Km_dap </ci>
+                </apply>
+              </apply>
             </apply>
           </math>
         </kineticLaw>
@@ -4824,6 +4567,11 @@ to the glucose concentration above this threshold.
         </kineticLaw>
       </reaction>
       <reaction metaid="LI__meta_D3GEX" sboTerm="SBO:0000655" id="LI__D3GEX" name="dapagliflozin-3-o-glucuronide export (D3GEX)" reversible="true" compartment="LI__Vmem">
+        <notes>
+          <body xmlns="http://www.w3.org/1999/xhtml">
+            <p>Possibly catalyzed by OAT3 with Km=115µM. [FDA]</p>
+          </body>
+        </notes>
         <annotation>
           <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:vCard="http://www.w3.org/2001/vcard-rdf/3.0#" xmlns:vCard4="http://www.w3.org/2006/vcard/ns#" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/" xmlns:bqmodel="http://biomodels.net/model-qualifiers/">
             <rdf:Description rdf:about="#LI__meta_D3GEX">
@@ -4842,15 +4590,36 @@ to the glucose concentration above this threshold.
           <speciesReference species="Cli_plasma_d3g" stoichiometry="1" constant="true"/>
         </listOfProducts>
         <kineticLaw>
-          <math xmlns="http://www.w3.org/1998/Math/MathML">
+          <math xmlns="http://www.w3.org/1998/Math/MathML" xmlns:sbml="http://www.sbml.org/sbml/level3/version2/core">
             <apply>
-              <times/>
-              <ci> LI__D3GEX_Vmax </ci>
-              <ci> Vli_tissue </ci>
+              <divide/>
               <apply>
-                <minus/>
-                <ci> LI__d3g </ci>
-                <ci> Cli_plasma_d3g </ci>
+                <times/>
+                <apply>
+                  <divide/>
+                  <ci> LI__D3GEX_Vmax </ci>
+                  <ci> LI__D3GEX_Km_d3g </ci>
+                </apply>
+                <ci> Vli_tissue </ci>
+                <apply>
+                  <minus/>
+                  <ci> LI__d3g </ci>
+                  <ci> Cli_plasma_d3g </ci>
+                </apply>
+              </apply>
+              <apply>
+                <plus/>
+                <cn sbml:units="dimensionless" type="integer"> 1 </cn>
+                <apply>
+                  <divide/>
+                  <ci> LI__d3g </ci>
+                  <ci> LI__D3GEX_Km_d3g </ci>
+                </apply>
+                <apply>
+                  <divide/>
+                  <ci> Cli_plasma_d3g </ci>
+                  <ci> LI__D3GEX_Km_d3g </ci>
+                </apply>
               </apply>
             </apply>
           </math>

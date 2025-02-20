@@ -20,7 +20,7 @@ dox: oxid (~10%) [Callegari2021]</p>
         <p>The content of this model has been carefully created in a manual research effort.
 This file has been created by <a href="https://livermetabolism.com">Matthias König</a>
 using <a href="https://github.com/matthiaskoenig/sbmlutils">sbmlutils</a>.
-For questions contact <a href="mailto:koenigmx@hu-berlin.de">koenigmx@hu-berlin.de</a>. Copyright © 2024 Matthias König.</p>
+For questions contact <a href="mailto:koenigmx@hu-berlin.de">koenigmx@hu-berlin.de</a>. Copyright © 2025 Matthias König.</p>
         <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">
           <img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by/4.0/88x31.png"/>
         </a>
@@ -1199,6 +1199,19 @@ FOR A PARTICULAR PURPOSE.</p></body>
           </rdf:RDF>
         </annotation>
       </species>
+      <species metaid="meta_Afeces_daptot" sboTerm="SBO:0000247" id="Afeces_daptot" name="total dapagliflozin (feces)" compartment="Vurine" initialConcentration="0" substanceUnits="mmole" hasOnlySubstanceUnits="true" boundaryCondition="false" constant="false">
+        <annotation>
+          <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:vCard="http://www.w3.org/2001/vcard-rdf/3.0#" xmlns:vCard4="http://www.w3.org/2006/vcard/ns#" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/" xmlns:bqmodel="http://biomodels.net/model-qualifiers/">
+            <rdf:Description rdf:about="#meta_Afeces_daptot">
+              <bqbiol:is>
+                <rdf:Bag>
+                  <rdf:li rdf:resource="http://identifiers.org/SBO:0000247"/>
+                </rdf:Bag>
+              </bqbiol:is>
+            </rdf:Description>
+          </rdf:RDF>
+        </annotation>
+      </species>
     </listOfSpecies>
     <listOfParameters>
       <parameter metaid="meta_BW" sboTerm="SBO:0000002" id="BW" name="body weight [kg]" value="75" units="kg" constant="true">
@@ -1292,7 +1305,7 @@ FOR A PARTICULAR PURPOSE.</p></body>
           </rdf:RDF>
         </annotation>
       </parameter>
-      <parameter metaid="meta_f_cardiac_function" sboTerm="SBO:0000002" id="f_cardiac_function" name="heart function" value="1" units="dimensionless" constant="false">
+      <parameter metaid="meta_f_cardiac_function" sboTerm="SBO:0000002" id="f_cardiac_function" name="heart function" value="1" units="dimensionless" constant="true">
         <notes>
           <body xmlns="http://www.w3.org/1999/xhtml">
             <p>1.0: normal function;
@@ -1350,7 +1363,7 @@ FOR A PARTICULAR PURPOSE.</p></body>
           </rdf:RDF>
         </annotation>
       </parameter>
-      <parameter metaid="meta_Fblood" sboTerm="SBO:0000002" id="Fblood" name="blood fraction of organ volume" value="0.02" units="dimensionless" constant="false">
+      <parameter metaid="meta_Fblood" sboTerm="SBO:0000002" id="Fblood" name="blood fraction of organ volume" value="0.02" units="dimensionless" constant="true">
         <annotation>
           <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:vCard="http://www.w3.org/2001/vcard-rdf/3.0#" xmlns:vCard4="http://www.w3.org/2006/vcard/ns#" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/" xmlns:bqmodel="http://biomodels.net/model-qualifiers/">
             <rdf:Description rdf:about="#meta_Fblood">
@@ -1726,19 +1739,6 @@ with FQgu=0.146, FQsp=0.017, FQpa=0.017</p>
           </rdf:RDF>
         </annotation>
       </parameter>
-      <parameter metaid="meta_cum_dose_dap" sboTerm="SBO:0000002" id="cum_dose_dap" name="Cumulative dose due to infusion dap" value="0" units="mg" constant="false">
-        <annotation>
-          <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:vCard="http://www.w3.org/2001/vcard-rdf/3.0#" xmlns:vCard4="http://www.w3.org/2006/vcard/ns#" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/" xmlns:bqmodel="http://biomodels.net/model-qualifiers/">
-            <rdf:Description rdf:about="#meta_cum_dose_dap">
-              <bqbiol:is>
-                <rdf:Bag>
-                  <rdf:li rdf:resource="http://identifiers.org/SBO:0000002"/>
-                </rdf:Bag>
-              </bqbiol:is>
-            </rdf:Description>
-          </rdf:RDF>
-        </annotation>
-      </parameter>
       <parameter metaid="meta_Mr_d3g" sboTerm="SBO:0000647" id="Mr_d3g" name="Molecular weight d3g [g/mole]" value="585" units="g_per_mole" constant="true">
         <annotation>
           <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:vCard="http://www.w3.org/2001/vcard-rdf/3.0#" xmlns:vCard4="http://www.w3.org/2006/vcard/ns#" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/" xmlns:bqmodel="http://biomodels.net/model-qualifiers/">
@@ -1759,62 +1759,8 @@ with FQgu=0.146, FQsp=0.017, FQpa=0.017</p>
       <parameter id="Qlu" name="lung blood flow" value="NaN" units="l_per_min" constant="false"/>
       <parameter id="Qre" name="rest of body blood flow" value="NaN" units="l_per_min" constant="false"/>
       <parameter id="Qpo" name="portal blood flow" value="NaN" units="l_per_min" constant="false"/>
-      <parameter id="Aki_plasma_dap" name="dapagliflozin amount (kidney) [mmole]" value="NaN" units="mmole" constant="false"/>
-      <parameter id="Xki_plasma_dap" name="dapagliflozin amount (kidney) [mg]" value="NaN" units="mg" constant="false"/>
-      <parameter id="Mki_plasma_dap" name="dapagliflozin concentration (kidney) [mg/l]" value="NaN" units="mg_per_l" constant="false"/>
-      <parameter id="Ali_plasma_dap" name="dapagliflozin amount (liver) [mmole]" value="NaN" units="mmole" constant="false"/>
-      <parameter id="Xli_plasma_dap" name="dapagliflozin amount (liver) [mg]" value="NaN" units="mg" constant="false"/>
-      <parameter id="Mli_plasma_dap" name="dapagliflozin concentration (liver) [mg/l]" value="NaN" units="mg_per_l" constant="false"/>
-      <parameter id="Alu_plasma_dap" name="dapagliflozin amount (lung) [mmole]" value="NaN" units="mmole" constant="false"/>
-      <parameter id="Xlu_plasma_dap" name="dapagliflozin amount (lung) [mg]" value="NaN" units="mg" constant="false"/>
-      <parameter id="Mlu_plasma_dap" name="dapagliflozin concentration (lung) [mg/l]" value="NaN" units="mg_per_l" constant="false"/>
-      <parameter id="Agu_plasma_dap" name="dapagliflozin amount (gut) [mmole]" value="NaN" units="mmole" constant="false"/>
-      <parameter id="Xgu_plasma_dap" name="dapagliflozin amount (gut) [mg]" value="NaN" units="mg" constant="false"/>
-      <parameter id="Mgu_plasma_dap" name="dapagliflozin concentration (gut) [mg/l]" value="NaN" units="mg_per_l" constant="false"/>
-      <parameter id="Are_plasma_dap" name="dapagliflozin amount (rest) [mmole]" value="NaN" units="mmole" constant="false"/>
-      <parameter id="Xre_plasma_dap" name="dapagliflozin amount (rest) [mg]" value="NaN" units="mg" constant="false"/>
-      <parameter id="Mre_plasma_dap" name="dapagliflozin concentration (rest) [mg/l]" value="NaN" units="mg_per_l" constant="false"/>
-      <parameter id="Aar_dap" name="dapagliflozin amount (arterial blood) [mmole]" value="NaN" units="mmole" constant="false"/>
-      <parameter id="Xar_dap" name="dapagliflozin amount (arterial blood) [mg]" value="NaN" units="mg" constant="false"/>
-      <parameter id="Mar_dap" name="dapagliflozin concentration (arterial blood) [mg/l]" value="NaN" units="mg_per_l" constant="false"/>
-      <parameter id="Ave_dap" name="dapagliflozin amount (venous blood) [mmole]" value="NaN" units="mmole" constant="false"/>
-      <parameter id="Xve_dap" name="dapagliflozin amount (venous blood) [mg]" value="NaN" units="mg" constant="false"/>
-      <parameter id="Mve_dap" name="dapagliflozin concentration (venous blood) [mg/l]" value="NaN" units="mg_per_l" constant="false"/>
-      <parameter id="Apo_dap" name="dapagliflozin amount (portal vein) [mmole]" value="NaN" units="mmole" constant="false"/>
-      <parameter id="Xpo_dap" name="dapagliflozin amount (portal vein) [mg]" value="NaN" units="mg" constant="false"/>
-      <parameter id="Mpo_dap" name="dapagliflozin concentration (portal vein) [mg/l]" value="NaN" units="mg_per_l" constant="false"/>
-      <parameter id="Ahv_dap" name="dapagliflozin amount (hepatic vein) [mmole]" value="NaN" units="mmole" constant="false"/>
-      <parameter id="Xhv_dap" name="dapagliflozin amount (hepatic vein) [mg]" value="NaN" units="mg" constant="false"/>
-      <parameter id="Mhv_dap" name="dapagliflozin concentration (hepatic vein) [mg/l]" value="NaN" units="mg_per_l" constant="false"/>
       <parameter id="Xurine_dap" name="dapagliflozin amount (urine) [mg]" value="NaN" units="mg" constant="false"/>
       <parameter id="Xfeces_dap" name="dapagliflozin amount (feces)" value="NaN" units="mg" constant="false"/>
-      <parameter id="Aki_plasma_d3g" name="dapagliflozin-3-o-glucuronide amount (kidney) [mmole]" value="NaN" units="mmole" constant="false"/>
-      <parameter id="Xki_plasma_d3g" name="dapagliflozin-3-o-glucuronide amount (kidney) [mg]" value="NaN" units="mg" constant="false"/>
-      <parameter id="Mki_plasma_d3g" name="dapagliflozin-3-o-glucuronide concentration (kidney) [mg/l]" value="NaN" units="mg_per_l" constant="false"/>
-      <parameter id="Ali_plasma_d3g" name="dapagliflozin-3-o-glucuronide amount (liver) [mmole]" value="NaN" units="mmole" constant="false"/>
-      <parameter id="Xli_plasma_d3g" name="dapagliflozin-3-o-glucuronide amount (liver) [mg]" value="NaN" units="mg" constant="false"/>
-      <parameter id="Mli_plasma_d3g" name="dapagliflozin-3-o-glucuronide concentration (liver) [mg/l]" value="NaN" units="mg_per_l" constant="false"/>
-      <parameter id="Alu_plasma_d3g" name="dapagliflozin-3-o-glucuronide amount (lung) [mmole]" value="NaN" units="mmole" constant="false"/>
-      <parameter id="Xlu_plasma_d3g" name="dapagliflozin-3-o-glucuronide amount (lung) [mg]" value="NaN" units="mg" constant="false"/>
-      <parameter id="Mlu_plasma_d3g" name="dapagliflozin-3-o-glucuronide concentration (lung) [mg/l]" value="NaN" units="mg_per_l" constant="false"/>
-      <parameter id="Agu_plasma_d3g" name="dapagliflozin-3-o-glucuronide amount (gut) [mmole]" value="NaN" units="mmole" constant="false"/>
-      <parameter id="Xgu_plasma_d3g" name="dapagliflozin-3-o-glucuronide amount (gut) [mg]" value="NaN" units="mg" constant="false"/>
-      <parameter id="Mgu_plasma_d3g" name="dapagliflozin-3-o-glucuronide concentration (gut) [mg/l]" value="NaN" units="mg_per_l" constant="false"/>
-      <parameter id="Are_plasma_d3g" name="dapagliflozin-3-o-glucuronide amount (rest) [mmole]" value="NaN" units="mmole" constant="false"/>
-      <parameter id="Xre_plasma_d3g" name="dapagliflozin-3-o-glucuronide amount (rest) [mg]" value="NaN" units="mg" constant="false"/>
-      <parameter id="Mre_plasma_d3g" name="dapagliflozin-3-o-glucuronide concentration (rest) [mg/l]" value="NaN" units="mg_per_l" constant="false"/>
-      <parameter id="Aar_d3g" name="dapagliflozin-3-o-glucuronide amount (arterial blood) [mmole]" value="NaN" units="mmole" constant="false"/>
-      <parameter id="Xar_d3g" name="dapagliflozin-3-o-glucuronide amount (arterial blood) [mg]" value="NaN" units="mg" constant="false"/>
-      <parameter id="Mar_d3g" name="dapagliflozin-3-o-glucuronide concentration (arterial blood) [mg/l]" value="NaN" units="mg_per_l" constant="false"/>
-      <parameter id="Ave_d3g" name="dapagliflozin-3-o-glucuronide amount (venous blood) [mmole]" value="NaN" units="mmole" constant="false"/>
-      <parameter id="Xve_d3g" name="dapagliflozin-3-o-glucuronide amount (venous blood) [mg]" value="NaN" units="mg" constant="false"/>
-      <parameter id="Mve_d3g" name="dapagliflozin-3-o-glucuronide concentration (venous blood) [mg/l]" value="NaN" units="mg_per_l" constant="false"/>
-      <parameter id="Apo_d3g" name="dapagliflozin-3-o-glucuronide amount (portal vein) [mmole]" value="NaN" units="mmole" constant="false"/>
-      <parameter id="Xpo_d3g" name="dapagliflozin-3-o-glucuronide amount (portal vein) [mg]" value="NaN" units="mg" constant="false"/>
-      <parameter id="Mpo_d3g" name="dapagliflozin-3-o-glucuronide concentration (portal vein) [mg/l]" value="NaN" units="mg_per_l" constant="false"/>
-      <parameter id="Ahv_d3g" name="dapagliflozin-3-o-glucuronide amount (hepatic vein) [mmole]" value="NaN" units="mmole" constant="false"/>
-      <parameter id="Xhv_d3g" name="dapagliflozin-3-o-glucuronide amount (hepatic vein) [mg]" value="NaN" units="mg" constant="false"/>
-      <parameter id="Mhv_d3g" name="dapagliflozin-3-o-glucuronide concentration (hepatic vein) [mg/l]" value="NaN" units="mg_per_l" constant="false"/>
       <parameter id="Xurine_d3g" name="dapagliflozin-3-o-glucuronide amount (urine) [mg]" value="NaN" units="mg" constant="false"/>
     </listOfParameters>
     <listOfRules>
@@ -1844,6 +1790,11 @@ with FQgu=0.146, FQsp=0.017, FQpa=0.017</p>
             <ci> Aurine_dap </ci>
             <ci> Aurine_d3g </ci>
           </apply>
+        </math>
+      </assignmentRule>
+      <assignmentRule name="Sum of dapagliflozin feces" variable="Afeces_daptot">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+          <ci> Afeces_dap </ci>
         </math>
       </assignmentRule>
       <assignmentRule variable="FVre">
@@ -2368,285 +2319,6 @@ injection rate.</p>
           </apply>
         </math>
       </assignmentRule>
-      <assignmentRule name="dapagliflozin amount (kidney) [mmole]" variable="Aki_plasma_dap">
-        <math xmlns="http://www.w3.org/1998/Math/MathML">
-          <apply>
-            <times/>
-            <ci> Cki_plasma_dap </ci>
-            <ci> Vki_plasma </ci>
-          </apply>
-        </math>
-      </assignmentRule>
-      <assignmentRule name="dapagliflozin amount (kidney) [mg]" variable="Xki_plasma_dap">
-        <math xmlns="http://www.w3.org/1998/Math/MathML">
-          <apply>
-            <times/>
-            <ci> Aki_plasma_dap </ci>
-            <ci> Mr_dap </ci>
-          </apply>
-        </math>
-      </assignmentRule>
-      <assignmentRule name="dapagliflozin concentration (kidney) [mg/l]" variable="Mki_plasma_dap">
-        <math xmlns="http://www.w3.org/1998/Math/MathML">
-          <apply>
-            <times/>
-            <apply>
-              <divide/>
-              <ci> Aki_plasma_dap </ci>
-              <ci> Vki_plasma </ci>
-            </apply>
-            <ci> Mr_dap </ci>
-          </apply>
-        </math>
-      </assignmentRule>
-      <assignmentRule name="dapagliflozin amount (liver) [mmole]" variable="Ali_plasma_dap">
-        <math xmlns="http://www.w3.org/1998/Math/MathML">
-          <apply>
-            <times/>
-            <ci> Cli_plasma_dap </ci>
-            <ci> Vli_plasma </ci>
-          </apply>
-        </math>
-      </assignmentRule>
-      <assignmentRule name="dapagliflozin amount (liver) [mg]" variable="Xli_plasma_dap">
-        <math xmlns="http://www.w3.org/1998/Math/MathML">
-          <apply>
-            <times/>
-            <ci> Ali_plasma_dap </ci>
-            <ci> Mr_dap </ci>
-          </apply>
-        </math>
-      </assignmentRule>
-      <assignmentRule name="dapagliflozin concentration (liver) [mg/l]" variable="Mli_plasma_dap">
-        <math xmlns="http://www.w3.org/1998/Math/MathML">
-          <apply>
-            <times/>
-            <apply>
-              <divide/>
-              <ci> Ali_plasma_dap </ci>
-              <ci> Vli_plasma </ci>
-            </apply>
-            <ci> Mr_dap </ci>
-          </apply>
-        </math>
-      </assignmentRule>
-      <assignmentRule name="dapagliflozin amount (lung) [mmole]" variable="Alu_plasma_dap">
-        <math xmlns="http://www.w3.org/1998/Math/MathML">
-          <apply>
-            <times/>
-            <ci> Clu_plasma_dap </ci>
-            <ci> Vlu_plasma </ci>
-          </apply>
-        </math>
-      </assignmentRule>
-      <assignmentRule name="dapagliflozin amount (lung) [mg]" variable="Xlu_plasma_dap">
-        <math xmlns="http://www.w3.org/1998/Math/MathML">
-          <apply>
-            <times/>
-            <ci> Alu_plasma_dap </ci>
-            <ci> Mr_dap </ci>
-          </apply>
-        </math>
-      </assignmentRule>
-      <assignmentRule name="dapagliflozin concentration (lung) [mg/l]" variable="Mlu_plasma_dap">
-        <math xmlns="http://www.w3.org/1998/Math/MathML">
-          <apply>
-            <times/>
-            <apply>
-              <divide/>
-              <ci> Alu_plasma_dap </ci>
-              <ci> Vlu_plasma </ci>
-            </apply>
-            <ci> Mr_dap </ci>
-          </apply>
-        </math>
-      </assignmentRule>
-      <assignmentRule name="dapagliflozin amount (gut) [mmole]" variable="Agu_plasma_dap">
-        <math xmlns="http://www.w3.org/1998/Math/MathML">
-          <apply>
-            <times/>
-            <ci> Cgu_plasma_dap </ci>
-            <ci> Vgu_plasma </ci>
-          </apply>
-        </math>
-      </assignmentRule>
-      <assignmentRule name="dapagliflozin amount (gut) [mg]" variable="Xgu_plasma_dap">
-        <math xmlns="http://www.w3.org/1998/Math/MathML">
-          <apply>
-            <times/>
-            <ci> Agu_plasma_dap </ci>
-            <ci> Mr_dap </ci>
-          </apply>
-        </math>
-      </assignmentRule>
-      <assignmentRule name="dapagliflozin concentration (gut) [mg/l]" variable="Mgu_plasma_dap">
-        <math xmlns="http://www.w3.org/1998/Math/MathML">
-          <apply>
-            <times/>
-            <apply>
-              <divide/>
-              <ci> Agu_plasma_dap </ci>
-              <ci> Vgu_plasma </ci>
-            </apply>
-            <ci> Mr_dap </ci>
-          </apply>
-        </math>
-      </assignmentRule>
-      <assignmentRule name="dapagliflozin amount (rest) [mmole]" variable="Are_plasma_dap">
-        <math xmlns="http://www.w3.org/1998/Math/MathML">
-          <apply>
-            <times/>
-            <ci> Cre_plasma_dap </ci>
-            <ci> Vre_plasma </ci>
-          </apply>
-        </math>
-      </assignmentRule>
-      <assignmentRule name="dapagliflozin amount (rest) [mg]" variable="Xre_plasma_dap">
-        <math xmlns="http://www.w3.org/1998/Math/MathML">
-          <apply>
-            <times/>
-            <ci> Are_plasma_dap </ci>
-            <ci> Mr_dap </ci>
-          </apply>
-        </math>
-      </assignmentRule>
-      <assignmentRule name="dapagliflozin concentration (rest) [mg/l]" variable="Mre_plasma_dap">
-        <math xmlns="http://www.w3.org/1998/Math/MathML">
-          <apply>
-            <times/>
-            <apply>
-              <divide/>
-              <ci> Are_plasma_dap </ci>
-              <ci> Vre_plasma </ci>
-            </apply>
-            <ci> Mr_dap </ci>
-          </apply>
-        </math>
-      </assignmentRule>
-      <assignmentRule name="dapagliflozin amount (arterial blood) [mmole]" variable="Aar_dap">
-        <math xmlns="http://www.w3.org/1998/Math/MathML">
-          <apply>
-            <times/>
-            <ci> Car_dap </ci>
-            <ci> Var </ci>
-          </apply>
-        </math>
-      </assignmentRule>
-      <assignmentRule name="dapagliflozin amount (arterial blood) [mg]" variable="Xar_dap">
-        <math xmlns="http://www.w3.org/1998/Math/MathML">
-          <apply>
-            <times/>
-            <ci> Aar_dap </ci>
-            <ci> Mr_dap </ci>
-          </apply>
-        </math>
-      </assignmentRule>
-      <assignmentRule name="dapagliflozin concentration (arterial blood) [mg/l]" variable="Mar_dap">
-        <math xmlns="http://www.w3.org/1998/Math/MathML">
-          <apply>
-            <times/>
-            <apply>
-              <divide/>
-              <ci> Aar_dap </ci>
-              <ci> Var </ci>
-            </apply>
-            <ci> Mr_dap </ci>
-          </apply>
-        </math>
-      </assignmentRule>
-      <assignmentRule name="dapagliflozin amount (venous blood) [mmole]" variable="Ave_dap">
-        <math xmlns="http://www.w3.org/1998/Math/MathML">
-          <apply>
-            <times/>
-            <ci> Cve_dap </ci>
-            <ci> Vve </ci>
-          </apply>
-        </math>
-      </assignmentRule>
-      <assignmentRule name="dapagliflozin amount (venous blood) [mg]" variable="Xve_dap">
-        <math xmlns="http://www.w3.org/1998/Math/MathML">
-          <apply>
-            <times/>
-            <ci> Ave_dap </ci>
-            <ci> Mr_dap </ci>
-          </apply>
-        </math>
-      </assignmentRule>
-      <assignmentRule name="dapagliflozin concentration (venous blood) [mg/l]" variable="Mve_dap">
-        <math xmlns="http://www.w3.org/1998/Math/MathML">
-          <apply>
-            <times/>
-            <apply>
-              <divide/>
-              <ci> Ave_dap </ci>
-              <ci> Vve </ci>
-            </apply>
-            <ci> Mr_dap </ci>
-          </apply>
-        </math>
-      </assignmentRule>
-      <assignmentRule name="dapagliflozin amount (portal vein) [mmole]" variable="Apo_dap">
-        <math xmlns="http://www.w3.org/1998/Math/MathML">
-          <apply>
-            <times/>
-            <ci> Cpo_dap </ci>
-            <ci> Vpo </ci>
-          </apply>
-        </math>
-      </assignmentRule>
-      <assignmentRule name="dapagliflozin amount (portal vein) [mg]" variable="Xpo_dap">
-        <math xmlns="http://www.w3.org/1998/Math/MathML">
-          <apply>
-            <times/>
-            <ci> Apo_dap </ci>
-            <ci> Mr_dap </ci>
-          </apply>
-        </math>
-      </assignmentRule>
-      <assignmentRule name="dapagliflozin concentration (portal vein) [mg/l]" variable="Mpo_dap">
-        <math xmlns="http://www.w3.org/1998/Math/MathML">
-          <apply>
-            <times/>
-            <apply>
-              <divide/>
-              <ci> Apo_dap </ci>
-              <ci> Vpo </ci>
-            </apply>
-            <ci> Mr_dap </ci>
-          </apply>
-        </math>
-      </assignmentRule>
-      <assignmentRule name="dapagliflozin amount (hepatic vein) [mmole]" variable="Ahv_dap">
-        <math xmlns="http://www.w3.org/1998/Math/MathML">
-          <apply>
-            <times/>
-            <ci> Chv_dap </ci>
-            <ci> Vhv </ci>
-          </apply>
-        </math>
-      </assignmentRule>
-      <assignmentRule name="dapagliflozin amount (hepatic vein) [mg]" variable="Xhv_dap">
-        <math xmlns="http://www.w3.org/1998/Math/MathML">
-          <apply>
-            <times/>
-            <ci> Ahv_dap </ci>
-            <ci> Mr_dap </ci>
-          </apply>
-        </math>
-      </assignmentRule>
-      <assignmentRule name="dapagliflozin concentration (hepatic vein) [mg/l]" variable="Mhv_dap">
-        <math xmlns="http://www.w3.org/1998/Math/MathML">
-          <apply>
-            <times/>
-            <apply>
-              <divide/>
-              <ci> Ahv_dap </ci>
-              <ci> Vhv </ci>
-            </apply>
-            <ci> Mr_dap </ci>
-          </apply>
-        </math>
-      </assignmentRule>
       <assignmentRule name="dapagliflozin amount (urine) [mg]" variable="Xurine_dap">
         <math xmlns="http://www.w3.org/1998/Math/MathML">
           <apply>
@@ -2662,285 +2334,6 @@ injection rate.</p>
             <times/>
             <ci> Afeces_dap </ci>
             <ci> Mr_dap </ci>
-          </apply>
-        </math>
-      </assignmentRule>
-      <assignmentRule name="dapagliflozin-3-o-glucuronide amount (kidney) [mmole]" variable="Aki_plasma_d3g">
-        <math xmlns="http://www.w3.org/1998/Math/MathML">
-          <apply>
-            <times/>
-            <ci> Cki_plasma_d3g </ci>
-            <ci> Vki_plasma </ci>
-          </apply>
-        </math>
-      </assignmentRule>
-      <assignmentRule name="dapagliflozin-3-o-glucuronide amount (kidney) [mg]" variable="Xki_plasma_d3g">
-        <math xmlns="http://www.w3.org/1998/Math/MathML">
-          <apply>
-            <times/>
-            <ci> Aki_plasma_d3g </ci>
-            <ci> Mr_d3g </ci>
-          </apply>
-        </math>
-      </assignmentRule>
-      <assignmentRule name="dapagliflozin-3-o-glucuronide concentration (kidney) [mg/l]" variable="Mki_plasma_d3g">
-        <math xmlns="http://www.w3.org/1998/Math/MathML">
-          <apply>
-            <times/>
-            <apply>
-              <divide/>
-              <ci> Aki_plasma_d3g </ci>
-              <ci> Vki_plasma </ci>
-            </apply>
-            <ci> Mr_d3g </ci>
-          </apply>
-        </math>
-      </assignmentRule>
-      <assignmentRule name="dapagliflozin-3-o-glucuronide amount (liver) [mmole]" variable="Ali_plasma_d3g">
-        <math xmlns="http://www.w3.org/1998/Math/MathML">
-          <apply>
-            <times/>
-            <ci> Cli_plasma_d3g </ci>
-            <ci> Vli_plasma </ci>
-          </apply>
-        </math>
-      </assignmentRule>
-      <assignmentRule name="dapagliflozin-3-o-glucuronide amount (liver) [mg]" variable="Xli_plasma_d3g">
-        <math xmlns="http://www.w3.org/1998/Math/MathML">
-          <apply>
-            <times/>
-            <ci> Ali_plasma_d3g </ci>
-            <ci> Mr_d3g </ci>
-          </apply>
-        </math>
-      </assignmentRule>
-      <assignmentRule name="dapagliflozin-3-o-glucuronide concentration (liver) [mg/l]" variable="Mli_plasma_d3g">
-        <math xmlns="http://www.w3.org/1998/Math/MathML">
-          <apply>
-            <times/>
-            <apply>
-              <divide/>
-              <ci> Ali_plasma_d3g </ci>
-              <ci> Vli_plasma </ci>
-            </apply>
-            <ci> Mr_d3g </ci>
-          </apply>
-        </math>
-      </assignmentRule>
-      <assignmentRule name="dapagliflozin-3-o-glucuronide amount (lung) [mmole]" variable="Alu_plasma_d3g">
-        <math xmlns="http://www.w3.org/1998/Math/MathML">
-          <apply>
-            <times/>
-            <ci> Clu_plasma_d3g </ci>
-            <ci> Vlu_plasma </ci>
-          </apply>
-        </math>
-      </assignmentRule>
-      <assignmentRule name="dapagliflozin-3-o-glucuronide amount (lung) [mg]" variable="Xlu_plasma_d3g">
-        <math xmlns="http://www.w3.org/1998/Math/MathML">
-          <apply>
-            <times/>
-            <ci> Alu_plasma_d3g </ci>
-            <ci> Mr_d3g </ci>
-          </apply>
-        </math>
-      </assignmentRule>
-      <assignmentRule name="dapagliflozin-3-o-glucuronide concentration (lung) [mg/l]" variable="Mlu_plasma_d3g">
-        <math xmlns="http://www.w3.org/1998/Math/MathML">
-          <apply>
-            <times/>
-            <apply>
-              <divide/>
-              <ci> Alu_plasma_d3g </ci>
-              <ci> Vlu_plasma </ci>
-            </apply>
-            <ci> Mr_d3g </ci>
-          </apply>
-        </math>
-      </assignmentRule>
-      <assignmentRule name="dapagliflozin-3-o-glucuronide amount (gut) [mmole]" variable="Agu_plasma_d3g">
-        <math xmlns="http://www.w3.org/1998/Math/MathML">
-          <apply>
-            <times/>
-            <ci> Cgu_plasma_d3g </ci>
-            <ci> Vgu_plasma </ci>
-          </apply>
-        </math>
-      </assignmentRule>
-      <assignmentRule name="dapagliflozin-3-o-glucuronide amount (gut) [mg]" variable="Xgu_plasma_d3g">
-        <math xmlns="http://www.w3.org/1998/Math/MathML">
-          <apply>
-            <times/>
-            <ci> Agu_plasma_d3g </ci>
-            <ci> Mr_d3g </ci>
-          </apply>
-        </math>
-      </assignmentRule>
-      <assignmentRule name="dapagliflozin-3-o-glucuronide concentration (gut) [mg/l]" variable="Mgu_plasma_d3g">
-        <math xmlns="http://www.w3.org/1998/Math/MathML">
-          <apply>
-            <times/>
-            <apply>
-              <divide/>
-              <ci> Agu_plasma_d3g </ci>
-              <ci> Vgu_plasma </ci>
-            </apply>
-            <ci> Mr_d3g </ci>
-          </apply>
-        </math>
-      </assignmentRule>
-      <assignmentRule name="dapagliflozin-3-o-glucuronide amount (rest) [mmole]" variable="Are_plasma_d3g">
-        <math xmlns="http://www.w3.org/1998/Math/MathML">
-          <apply>
-            <times/>
-            <ci> Cre_plasma_d3g </ci>
-            <ci> Vre_plasma </ci>
-          </apply>
-        </math>
-      </assignmentRule>
-      <assignmentRule name="dapagliflozin-3-o-glucuronide amount (rest) [mg]" variable="Xre_plasma_d3g">
-        <math xmlns="http://www.w3.org/1998/Math/MathML">
-          <apply>
-            <times/>
-            <ci> Are_plasma_d3g </ci>
-            <ci> Mr_d3g </ci>
-          </apply>
-        </math>
-      </assignmentRule>
-      <assignmentRule name="dapagliflozin-3-o-glucuronide concentration (rest) [mg/l]" variable="Mre_plasma_d3g">
-        <math xmlns="http://www.w3.org/1998/Math/MathML">
-          <apply>
-            <times/>
-            <apply>
-              <divide/>
-              <ci> Are_plasma_d3g </ci>
-              <ci> Vre_plasma </ci>
-            </apply>
-            <ci> Mr_d3g </ci>
-          </apply>
-        </math>
-      </assignmentRule>
-      <assignmentRule name="dapagliflozin-3-o-glucuronide amount (arterial blood) [mmole]" variable="Aar_d3g">
-        <math xmlns="http://www.w3.org/1998/Math/MathML">
-          <apply>
-            <times/>
-            <ci> Car_d3g </ci>
-            <ci> Var </ci>
-          </apply>
-        </math>
-      </assignmentRule>
-      <assignmentRule name="dapagliflozin-3-o-glucuronide amount (arterial blood) [mg]" variable="Xar_d3g">
-        <math xmlns="http://www.w3.org/1998/Math/MathML">
-          <apply>
-            <times/>
-            <ci> Aar_d3g </ci>
-            <ci> Mr_d3g </ci>
-          </apply>
-        </math>
-      </assignmentRule>
-      <assignmentRule name="dapagliflozin-3-o-glucuronide concentration (arterial blood) [mg/l]" variable="Mar_d3g">
-        <math xmlns="http://www.w3.org/1998/Math/MathML">
-          <apply>
-            <times/>
-            <apply>
-              <divide/>
-              <ci> Aar_d3g </ci>
-              <ci> Var </ci>
-            </apply>
-            <ci> Mr_d3g </ci>
-          </apply>
-        </math>
-      </assignmentRule>
-      <assignmentRule name="dapagliflozin-3-o-glucuronide amount (venous blood) [mmole]" variable="Ave_d3g">
-        <math xmlns="http://www.w3.org/1998/Math/MathML">
-          <apply>
-            <times/>
-            <ci> Cve_d3g </ci>
-            <ci> Vve </ci>
-          </apply>
-        </math>
-      </assignmentRule>
-      <assignmentRule name="dapagliflozin-3-o-glucuronide amount (venous blood) [mg]" variable="Xve_d3g">
-        <math xmlns="http://www.w3.org/1998/Math/MathML">
-          <apply>
-            <times/>
-            <ci> Ave_d3g </ci>
-            <ci> Mr_d3g </ci>
-          </apply>
-        </math>
-      </assignmentRule>
-      <assignmentRule name="dapagliflozin-3-o-glucuronide concentration (venous blood) [mg/l]" variable="Mve_d3g">
-        <math xmlns="http://www.w3.org/1998/Math/MathML">
-          <apply>
-            <times/>
-            <apply>
-              <divide/>
-              <ci> Ave_d3g </ci>
-              <ci> Vve </ci>
-            </apply>
-            <ci> Mr_d3g </ci>
-          </apply>
-        </math>
-      </assignmentRule>
-      <assignmentRule name="dapagliflozin-3-o-glucuronide amount (portal vein) [mmole]" variable="Apo_d3g">
-        <math xmlns="http://www.w3.org/1998/Math/MathML">
-          <apply>
-            <times/>
-            <ci> Cpo_d3g </ci>
-            <ci> Vpo </ci>
-          </apply>
-        </math>
-      </assignmentRule>
-      <assignmentRule name="dapagliflozin-3-o-glucuronide amount (portal vein) [mg]" variable="Xpo_d3g">
-        <math xmlns="http://www.w3.org/1998/Math/MathML">
-          <apply>
-            <times/>
-            <ci> Apo_d3g </ci>
-            <ci> Mr_d3g </ci>
-          </apply>
-        </math>
-      </assignmentRule>
-      <assignmentRule name="dapagliflozin-3-o-glucuronide concentration (portal vein) [mg/l]" variable="Mpo_d3g">
-        <math xmlns="http://www.w3.org/1998/Math/MathML">
-          <apply>
-            <times/>
-            <apply>
-              <divide/>
-              <ci> Apo_d3g </ci>
-              <ci> Vpo </ci>
-            </apply>
-            <ci> Mr_d3g </ci>
-          </apply>
-        </math>
-      </assignmentRule>
-      <assignmentRule name="dapagliflozin-3-o-glucuronide amount (hepatic vein) [mmole]" variable="Ahv_d3g">
-        <math xmlns="http://www.w3.org/1998/Math/MathML">
-          <apply>
-            <times/>
-            <ci> Chv_d3g </ci>
-            <ci> Vhv </ci>
-          </apply>
-        </math>
-      </assignmentRule>
-      <assignmentRule name="dapagliflozin-3-o-glucuronide amount (hepatic vein) [mg]" variable="Xhv_d3g">
-        <math xmlns="http://www.w3.org/1998/Math/MathML">
-          <apply>
-            <times/>
-            <ci> Ahv_d3g </ci>
-            <ci> Mr_d3g </ci>
-          </apply>
-        </math>
-      </assignmentRule>
-      <assignmentRule name="dapagliflozin-3-o-glucuronide concentration (hepatic vein) [mg/l]" variable="Mhv_d3g">
-        <math xmlns="http://www.w3.org/1998/Math/MathML">
-          <apply>
-            <times/>
-            <apply>
-              <divide/>
-              <ci> Ahv_d3g </ci>
-              <ci> Vhv </ci>
-            </apply>
-            <ci> Mr_d3g </ci>
           </apply>
         </math>
       </assignmentRule>
@@ -2967,11 +2360,6 @@ injection rate.</p>
             </apply>
             <ci> Ri_dap </ci>
           </apply>
-        </math>
-      </rateRule>
-      <rateRule variable="cum_dose_dap">
-        <math xmlns="http://www.w3.org/1998/Math/MathML">
-          <ci> Ri_dap </ci>
         </math>
       </rateRule>
     </listOfRules>

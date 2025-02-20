@@ -11,10 +11,12 @@ length: [m]
 
 ## Parameters `p`
 ```
-D3GEX_Vmax = 1000.0  # [1/min] Vmax dapagliflozinat export  
+D3GEX_Km_d3g = 0.115  # [mmol/l] Vmax dapagliflozinat export  
+D3GEX_Vmax = 1000.0  # [mmol/min/l] Vmax dapagliflozinat export  
 DAP2D3G_Km_dap = 0.479  # [mmol/l] Km dapagliflozin UGT1A9  
 DAP2D3G_Vmax = 0.04  # [mmol/min/l] Vmax dapagliflozin conversion  
-DAPIM_Vmax = 1000.0  # [1/min] Vmax dapagliflozin import  
+DAPIM_Km_dap = 0.033  # [mmol/l] Vmax dapagliflozin import  
+DAPIM_Vmax = 1000.0  # [mmol/min/l] Vmax dapagliflozin import  
 Vext = 1.5  # [l] plasma  
 Vli = 1.5  # [l] liver  
 Vmem = nan  # [m^2] plasma membrane  
@@ -32,9 +34,9 @@ dap_ext = 0.0  # [mmol/l] dapagliflozin (plasma) in Vext
 ## ODE system
 ```
 # y
-D3GEX = D3GEX_Vmax * Vli * (d3g - d3g_ext)  # [mmol/min] dapagliflozin-3-o-glucuronide export (D3GEX)  
+D3GEX = (D3GEX_Vmax / D3GEX_Km_d3g) * Vli * (d3g - d3g_ext) / (1 + d3g / D3GEX_Km_d3g + d3g_ext / D3GEX_Km_d3g)  # [mmol/min] dapagliflozin-3-o-glucuronide export (D3GEX)  
 DAP2D3G = f_ugt1a9 * DAP2D3G_Vmax * Vli * dap / (dap + DAP2D3G_Km_dap)  # [mmol/min] dapagliflozin conversion (DAP2D3G) UGT1A9  
-DAPIM = DAPIM_Vmax * Vli * dap_ext  # [mmol/min] dapagliflozin import (DAPIM) OTP1B1  
+DAPIM = (DAPIM_Vmax / DAPIM_Km_dap) * Vli * (dap_ext - dap) / (1 + dap_ext / DAPIM_Km_dap + dap / DAPIM_Km_dap)  # [mmol/min] dapagliflozin import (DAPIM, OAT3)  
 
 # odes
 d d3g/dt = DAP2D3G / Vli - D3GEX / Vli  # [mmol/l/min] dapagliflozin-3-o-glucuronide (liver)  
