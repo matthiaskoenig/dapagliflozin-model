@@ -67,6 +67,18 @@ FOR A PARTICULAR PURPOSE.</p></body>
           <dcterms:modified rdf:parseType="Resource">
             <dcterms:W3CDTF>1900-01-01T00:00:00Z</dcterms:W3CDTF>
           </dcterms:modified>
+          <bqbiol:hasTaxon>
+            <rdf:Bag>
+              <rdf:li rdf:resource="http://identifiers.org/taxonomy/9606"/>
+              <rdf:li rdf:resource="http://identifiers.org/VTO:0011993"/>
+              <rdf:li rdf:resource="http://identifiers.org/snomed/337915000"/>
+            </rdf:Bag>
+          </bqbiol:hasTaxon>
+          <bqbiol:isDescribedBy>
+            <rdf:Bag>
+              <rdf:li rdf:resource="https://doi.org/10.5281/zenodo.14976788"/>
+            </rdf:Bag>
+          </bqbiol:isDescribedBy>
         </rdf:Description>
       </rdf:RDF>
     </annotation>

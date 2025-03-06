@@ -67,6 +67,18 @@ FOR A PARTICULAR PURPOSE.</p></body>
           <dcterms:modified rdf:parseType="Resource">
             <dcterms:W3CDTF>1900-01-01T00:00:00Z</dcterms:W3CDTF>
           </dcterms:modified>
+          <bqbiol:hasTaxon>
+            <rdf:Bag>
+              <rdf:li rdf:resource="http://identifiers.org/taxonomy/9606"/>
+              <rdf:li rdf:resource="http://identifiers.org/VTO:0011993"/>
+              <rdf:li rdf:resource="http://identifiers.org/snomed/337915000"/>
+            </rdf:Bag>
+          </bqbiol:hasTaxon>
+          <bqbiol:isDescribedBy>
+            <rdf:Bag>
+              <rdf:li rdf:resource="https://doi.org/10.5281/zenodo.14976788"/>
+            </rdf:Bag>
+          </bqbiol:isDescribedBy>
         </rdf:Description>
       </rdf:RDF>
     </annotation>
@@ -2264,7 +2276,7 @@ with FQgu=0.146, FQsp=0.017, FQpa=0.017</p>
           </rdf:RDF>
         </annotation>
       </parameter>
-      <parameter metaid="KI__meta_DAPIM_Km_dap" sboTerm="SBO:0000027" id="KI__DAPIM_Km_dap" name="Vmax dapagliflozin import" value="0.033" units="KI__mM" constant="true">
+      <parameter metaid="KI__meta_DAPIM_Km_dap" sboTerm="SBO:0000027" id="KI__DAPIM_Km_dap" name="Km dapagliflozin import" value="0.033" units="KI__mM" constant="true">
         <notes>
           <body xmlns="http://www.w3.org/1999/xhtml">
             <p>Possibly catalyzed by OAT3 with Ki=33µM. [FDA]</p>
@@ -2295,7 +2307,7 @@ with FQgu=0.146, FQsp=0.017, FQpa=0.017</p>
           </rdf:RDF>
         </annotation>
       </parameter>
-      <parameter metaid="KI__meta_D3GIM_Km_d3g" sboTerm="SBO:0000027" id="KI__D3GIM_Km_d3g" name="Vmax dapagliflozin-3-O-glucuronide import" value="0.033" units="KI__mM" constant="true">
+      <parameter metaid="KI__meta_D3GIM_Km_d3g" sboTerm="SBO:0000027" id="KI__D3GIM_Km_d3g" name="Km dapagliflozin-3-O-glucuronide import" value="0.033" units="KI__mM" constant="true">
         <notes>
           <body xmlns="http://www.w3.org/1999/xhtml">
             <p>Using Km identical to dap</p>

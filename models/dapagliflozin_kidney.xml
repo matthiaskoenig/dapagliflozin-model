@@ -455,7 +455,7 @@ FOR A PARTICULAR PURPOSE.</p></body>
           </rdf:RDF>
         </annotation>
       </parameter>
-      <parameter metaid="meta_DAPIM_Km_dap" sboTerm="SBO:0000027" id="DAPIM_Km_dap" name="Vmax dapagliflozin import" value="0.033" units="mM" constant="true">
+      <parameter metaid="meta_DAPIM_Km_dap" sboTerm="SBO:0000027" id="DAPIM_Km_dap" name="Km dapagliflozin import" value="0.033" units="mM" constant="true">
         <notes>
           <body xmlns="http://www.w3.org/1999/xhtml">
             <p>Possibly catalyzed by OAT3 with Ki=33µM. [FDA]</p>
@@ -486,7 +486,7 @@ FOR A PARTICULAR PURPOSE.</p></body>
           </rdf:RDF>
         </annotation>
       </parameter>
-      <parameter metaid="meta_D3GIM_Km_d3g" sboTerm="SBO:0000027" id="D3GIM_Km_d3g" name="Vmax dapagliflozin-3-O-glucuronide import" value="0.033" units="mM" constant="true">
+      <parameter metaid="meta_D3GIM_Km_d3g" sboTerm="SBO:0000027" id="D3GIM_Km_d3g" name="Km dapagliflozin-3-O-glucuronide import" value="0.033" units="mM" constant="true">
         <notes>
           <body xmlns="http://www.w3.org/1999/xhtml">
             <p>Using Km identical to dap</p>

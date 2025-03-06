@@ -12,12 +12,12 @@ length: [m]
 ## Parameters `p`
 ```
 D3GEX_k = 1.0  # [1/min] rate urinary excretion of dapagliflozin-3-o-glucuronide  
-D3GIM_Km_d3g = 0.033  # [mmol/l] Vmax dapagliflozin-3-O-glucuronide import  
+D3GIM_Km_d3g = 0.033  # [mmol/l] Km dapagliflozin-3-O-glucuronide import  
 D3GIM_Vmax = 1000.0  # [mmol/min/l] Vmax dapagliflozin-3-O-glucuronide import  
 DAP2D3G_Km_dap = 0.479  # [mmol/l] Km dapagliflozin UGT1A9  
 DAP2D3G_Vmax = 0.04  # [mmol/min/l] Vmax dapagliflozin conversion  
 DAPEX_k = 1.0  # [1/min] rate urinary excretion of dapagliflozin  
-DAPIM_Km_dap = 0.033  # [mmol/l] Vmax dapagliflozin import  
+DAPIM_Km_dap = 0.033  # [mmol/l] Km dapagliflozin import  
 DAPIM_Vmax = 1000.0  # [mmol/min/l] Vmax dapagliflozin import  
 GFR_healthy = 100.0  # [ml/min] Glomerular filtration rate (healthy)  
 Mr_glc = 180.0  # [g/mol] Molecular weight glc [g/mole]  
