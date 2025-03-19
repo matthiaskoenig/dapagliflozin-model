@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui">
+    <title>Kasichayanula2011b</title>
+    <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/@mdi/font@4.x/css/materialdesignicons.min.css" rel="stylesheet">
+    <!--<link href="https://cdn.jsdelivr.net/npm/vuetify@2.x/dist/vuetify.min.css" rel="stylesheet">-->
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.2/styles/default.min.css">
+</head>
+
+<body>
+<div id="app">
+    <!-- Vue app-->
+    <v-app>
+        <v-content>
+
+            <a href="../index.html">Experiments</a>
+            <h1>Kasichayanula2011b</h1>
+
+            <h2>Models</h2>
+            <p>
+            <ul>
+                <li><strong>model</strong>: <a href="../../../../models/results/models/dapagliflozin_body_flat.xml">../../../../models/results/models/dapagliflozin_body_flat.xml</a></li>
+            </ul>
+            </p>
+
+            <h2>Datasets</h2>
+            <p>
+            <ul>
+                <li><strong>dapagliflozin 3-o-glucuronide_DAP10_fasted</strong>: <a href="Kasichayanula2011b_dapagliflozin 3-o-glucuronide_DAP10_fasted.tsv">Kasichayanula2011b_dapagliflozin 3-o-glucuronide_DAP10_fasted.tsv</a></li>
+                <li><strong>dapagliflozin 3-o-glucuronide_DAP10_fed</strong>: <a href="Kasichayanula2011b_dapagliflozin 3-o-glucuronide_DAP10_fed.tsv">Kasichayanula2011b_dapagliflozin 3-o-glucuronide_DAP10_fed.tsv</a></li>
+                <li><strong>dapagliflozin_DAP10_fasted</strong>: <a href="Kasichayanula2011b_dapagliflozin_DAP10_fasted.tsv">Kasichayanula2011b_dapagliflozin_DAP10_fasted.tsv</a></li>
+                <li><strong>dapagliflozin_DAP10_fed</strong>: <a href="Kasichayanula2011b_dapagliflozin_DAP10_fed.tsv">Kasichayanula2011b_dapagliflozin_DAP10_fed.tsv</a></li>
+            </ul>
+            </p>
+
+            <h2>Figures</h2>
+            <p>
+            <ul>
+                <li><strong>Fig1</strong>: <a href="Kasichayanula2011b_Fig1.svg">Kasichayanula2011b_Fig1.svg</a></li>
+            </ul>
+            </p>
+
+            <h3>Fig1</h3>
+            <p>
+            <table>
+                <tr>
+                    <td>
+                        <!--<v-img src="Kasichayanula2011b_Fig1.svg" max-width="600" width="600"></v-img>-->
+                        <img src="Kasichayanula2011b_Fig1.svg" width="600">
+                    </td>
+                    <!--
+                    <td>
+                    </td>
+                    -->
+                </tr>
+            </table>
+            </p>
+
+            <h2>Code</h2>
+            <p>
+                <a href="../../../../experiments/studies/kasichayanula2011b.py">../../../../experiments/studies/kasichayanula2011b.py</a>
+            <pre>
+<code class="python">from typing import Dict
+
+from sbmlsim.data import DataSet, load_pkdb_dataframe
+from sbmlsim.fit import FitMapping, FitData
+from sbmlutils.console import console
+
+from pkdb_models.models.dapagliflozin.experiments.base_experiment import (
+    DapagliflozinSimulationExperiment,
+)
+from pkdb_models.models.dapagliflozin.experiments.metadata import Tissue, Route, Dosing, ApplicationForm, Health, \
+    Fasting, DapagliflozinMappingMetaData
+
+from sbmlsim.plot import Axis, Figure
+from sbmlsim.simulation import Timecourse, TimecourseSim
+
+from pkdb_models.models.dapagliflozin.helpers import run_experiments
+
+
+class Kasichayanula2011b(DapagliflozinSimulationExperiment):
+    """Simulation experiment of Kasichayanula2011b."""
+
+    conditions = ["fasted", "fed"]
+
+    def datasets(self) -> Dict[str, DataSet]:
+        dsets = {}
+        for fig_id in ["Fig1"]:
+            df = load_pkdb_dataframe(f"{self.sid}_{fig_id}", data_path=self.data_path)
+            for label, df_label in df.groupby("label"):
+                dset = DataSet.from_df(df_label, self.ureg)
+
+                # unit conversion to mole/l
+                if label.startswith("dapagliflozin_"):
+                    dset.unit_conversion("mean", 1 / self.Mr.dap)
+                elif label.startswith("dapagliflozin 3-o-glucuronide"):
+                    dset.unit_conversion("mean", 1 / self.Mr.d3g)
+                dsets[f"{label}"] = dset
+
+        # console.print(dsets)
+        # console.print(dsets.keys())
+        return dsets
+
+    def simulations(self) -> Dict[str, TimecourseSim]:
+        Q_ = self.Q_
+        tcsims = {}
+        for condition in self.conditions:
+            tcsims[f"po_dap10_{condition}"] = TimecourseSim(
+                [Timecourse(
+                    start=0,
+                    end=80 * 60,  # [min]
+                    steps=500,
+                    changes={
+                        **self.default_changes(),
+
+                        # physiological changes
+                        "BW": Q_(self.bodyweight_default, "kg"),
+                        "[KI__glc_ext]": Q_(self.fpg_healthy, "mM"),
+                        "GU__f_absorption": Q_(self.fasting_map[condition], "dimensionless"),
+                        "f_cirrhosis": Q_(self.cirrhosis_map["Control"], "dimensionless"),
+                        "KI__f_renal_function": Q_(self.renal_map["Normal renal function"], "dimensionless"),
+
+                        # dose (IVDOSE, PODOSE)
+                        "PODOSE_dap": Q_(10, "mg"),
+                    },
+                )]
+            )
+        return tcsims
+
+    def fit_mappings(self) -> Dict[str, FitMapping]:
+        mappings = {}
+        for condition in self.conditions:
+            for sid, name in [("dap", "dapagliflozin"), ("d3g", "dapagliflozin 3-o-glucuronide")]:
+                mappings[f"fm_po_dap10_{condition}_{sid}"] = FitMapping(
+                    self,
+                    reference=FitData(
+                        self,
+                        dataset=f"{name}_DAP10_{condition}",
+                        xid="time",
+                        yid="mean",
+                        yid_sd="mean_sd",
+                        count="count",
+                    ),
+                    observable=FitData(
+                        self, task=f"task_po_dap10_{condition}", xid="time", yid=f"[Cve_{sid}]",
+                    ),
+                    metadata=DapagliflozinMappingMetaData(
+                        tissue=Tissue.PLASMA,
+                        route=Route.PO,
+                        application_form=ApplicationForm.TABLET,
+                        dosing=Dosing.SINGLE,
+                        health=Health.HEALTHY,
+                        fasting=Fasting.FASTED if condition == "fasted" else Fasting.FED,
+                    ),
+                )
+        return mappings
+
+    def figures(self) -> Dict[str, Figure]:
+        fig = Figure(
+            experiment=self,
+            sid="Fig1",
+            num_rows=2,
+            num_cols=1,
+            name=f"{self.__class__.__name__}",
+        )
+        plots = fig.create_plots(xaxis=Axis(self.label_time, unit=self.unit_time), legend=True)
+        plots[0].set_yaxis(self.label_dap_plasma, unit=self.unit_dap)
+        plots[1].set_yaxis(self.label_d3g_plasma, unit=self.unit_d3g)
+
+        for condition in self.conditions:
+            # simulation
+            plots[0].add_data(
+                task=f"task_po_dap10_{condition}",
+                xid="time",
+                yid=f"[Cve_dap]",
+                label=f"dap ({condition})",
+                color=self.fasting_colors[condition],
+            )
+            plots[1].add_data(
+                task=f"task_po_dap10_{condition}",
+                xid="time",
+                yid=f"[Cve_d3g]",
+                label=f"dap ({condition})",
+                color=self.fasting_colors[condition],
+            )
+            # data
+            plots[0].add_data(
+                dataset=f"dapagliflozin_DAP10_{condition}",
+                xid="time",
+                yid="mean",
+                yid_sd="mean_sd",
+                count="count",
+                label=f"{condition}_DAP10",
+                color=self.fasting_colors[condition],
+            )
+            plots[1].add_data(
+                dataset=f"dapagliflozin 3-o-glucuronide_DAP10_{condition}",
+                xid="time",
+                yid="mean",
+                yid_sd="mean_sd",
+                count="count",
+                label=f"{condition}_DAP10",
+                color=self.fasting_colors[condition],
+            )
+
+        return {
+            fig.sid: fig,
+        }
+
+
+if __name__ == "__main__":
+    run_experiments(Kasichayanula2011b, output_dir=Kasichayanula2011b.__name__)
+</code>
+        </pre>
+            </p>
+
+        </v-content>
+    </v-app>
+</div>
+
+
+<!-- loading dependencies -->
+<script src="https://cdn.jsdelivr.net/npm/vue@2.6.11"></script>
+<script src="https://cdn.jsdelivr.net/npm/vuetify@2.2.6/dist/vuetify.js"></script>
+<link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/@mdi/font@4.x/css/materialdesignicons.min.css" rel="stylesheet">
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.2/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+<script>
+    const app = new Vue({
+        el: '#app',
+        vuetify: new Vuetify(),
+        delimiters: ['${', '}'],
+        data() {
+            return {}
+        }
+    })
+</script>
+
+
+</body>
+</html>

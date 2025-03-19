@@ -1,0 +1,5378 @@
+{
+  "experiment_id": "DapagliflozinParameterScan",
+  "base_path": "/home/mkoenig/git/pkdb_models/pkdb_models/models/dapagliflozin",
+  "data_path": "[PosixPath('/home/mkoenig/git/pkdb_data/studies/dapagliflozin'), PosixPath('/home/mkoenig/git/pkdb_data/studies/canagliflozin')]",
+  "models": {
+    "model": {
+      "sid": null,
+      "name": null,
+      "language": "SBML",
+      "language_type": "SBML",
+      "source": {
+        "source": "/home/mkoenig/git/pkdb_models/pkdb_models/models/dapagliflozin/models/results/models/dapagliflozin_body_flat.xml",
+        "path": "/home/mkoenig/git/pkdb_models/pkdb_models/models/dapagliflozin/models/results/models/dapagliflozin_body_flat.xml",
+        "content": "None"
+      },
+      "changes": {}
+    }
+  },
+  "tasks": {
+    "task_scan_po_hepatic_scan_Normal renal function": {
+      "model": "model",
+      "simulation": "scan_po_hepatic_scan_Normal renal function"
+    },
+    "task_scan_po_hepatic_scan_Mild renal impairment": {
+      "model": "model",
+      "simulation": "scan_po_hepatic_scan_Mild renal impairment"
+    },
+    "task_scan_po_hepatic_scan_Moderate renal impairment": {
+      "model": "model",
+      "simulation": "scan_po_hepatic_scan_Moderate renal impairment"
+    },
+    "task_scan_po_hepatic_scan_Severe renal impairment": {
+      "model": "model",
+      "simulation": "scan_po_hepatic_scan_Severe renal impairment"
+    },
+    "task_scan_po_hepatic_scan_Control": {
+      "model": "model",
+      "simulation": "scan_po_hepatic_scan_Control"
+    },
+    "task_scan_po_hepatic_scan_Mild cirrhosis": {
+      "model": "model",
+      "simulation": "scan_po_hepatic_scan_Mild cirrhosis"
+    },
+    "task_scan_po_hepatic_scan_Moderate cirrhosis": {
+      "model": "model",
+      "simulation": "scan_po_hepatic_scan_Moderate cirrhosis"
+    },
+    "task_scan_po_hepatic_scan_Severe cirrhosis": {
+      "model": "model",
+      "simulation": "scan_po_hepatic_scan_Severe cirrhosis"
+    },
+    "task_scan_po_renal_scan_Normal renal function": {
+      "model": "model",
+      "simulation": "scan_po_renal_scan_Normal renal function"
+    },
+    "task_scan_po_renal_scan_Mild renal impairment": {
+      "model": "model",
+      "simulation": "scan_po_renal_scan_Mild renal impairment"
+    },
+    "task_scan_po_renal_scan_Moderate renal impairment": {
+      "model": "model",
+      "simulation": "scan_po_renal_scan_Moderate renal impairment"
+    },
+    "task_scan_po_renal_scan_Severe renal impairment": {
+      "model": "model",
+      "simulation": "scan_po_renal_scan_Severe renal impairment"
+    },
+    "task_scan_po_renal_scan_Control": {
+      "model": "model",
+      "simulation": "scan_po_renal_scan_Control"
+    },
+    "task_scan_po_renal_scan_Mild cirrhosis": {
+      "model": "model",
+      "simulation": "scan_po_renal_scan_Mild cirrhosis"
+    },
+    "task_scan_po_renal_scan_Moderate cirrhosis": {
+      "model": "model",
+      "simulation": "scan_po_renal_scan_Moderate cirrhosis"
+    },
+    "task_scan_po_renal_scan_Severe cirrhosis": {
+      "model": "model",
+      "simulation": "scan_po_renal_scan_Severe cirrhosis"
+    },
+    "task_scan_po_food_scan_Normal renal function": {
+      "model": "model",
+      "simulation": "scan_po_food_scan_Normal renal function"
+    },
+    "task_scan_po_food_scan_Mild renal impairment": {
+      "model": "model",
+      "simulation": "scan_po_food_scan_Mild renal impairment"
+    },
+    "task_scan_po_food_scan_Moderate renal impairment": {
+      "model": "model",
+      "simulation": "scan_po_food_scan_Moderate renal impairment"
+    },
+    "task_scan_po_food_scan_Severe renal impairment": {
+      "model": "model",
+      "simulation": "scan_po_food_scan_Severe renal impairment"
+    },
+    "task_scan_po_food_scan_Control": {
+      "model": "model",
+      "simulation": "scan_po_food_scan_Control"
+    },
+    "task_scan_po_food_scan_Mild cirrhosis": {
+      "model": "model",
+      "simulation": "scan_po_food_scan_Mild cirrhosis"
+    },
+    "task_scan_po_food_scan_Moderate cirrhosis": {
+      "model": "model",
+      "simulation": "scan_po_food_scan_Moderate cirrhosis"
+    },
+    "task_scan_po_food_scan_Severe cirrhosis": {
+      "model": "model",
+      "simulation": "scan_po_food_scan_Severe cirrhosis"
+    }
+  },
+  "simulations": {
+    "scan_po_hepatic_scan_Normal renal function": {
+      "type": "ScanSim"
+    },
+    "scan_po_hepatic_scan_Mild renal impairment": {
+      "type": "ScanSim"
+    },
+    "scan_po_hepatic_scan_Moderate renal impairment": {
+      "type": "ScanSim"
+    },
+    "scan_po_hepatic_scan_Severe renal impairment": {
+      "type": "ScanSim"
+    },
+    "scan_po_hepatic_scan_Control": {
+      "type": "ScanSim"
+    },
+    "scan_po_hepatic_scan_Mild cirrhosis": {
+      "type": "ScanSim"
+    },
+    "scan_po_hepatic_scan_Moderate cirrhosis": {
+      "type": "ScanSim"
+    },
+    "scan_po_hepatic_scan_Severe cirrhosis": {
+      "type": "ScanSim"
+    },
+    "scan_po_renal_scan_Normal renal function": {
+      "type": "ScanSim"
+    },
+    "scan_po_renal_scan_Mild renal impairment": {
+      "type": "ScanSim"
+    },
+    "scan_po_renal_scan_Moderate renal impairment": {
+      "type": "ScanSim"
+    },
+    "scan_po_renal_scan_Severe renal impairment": {
+      "type": "ScanSim"
+    },
+    "scan_po_renal_scan_Control": {
+      "type": "ScanSim"
+    },
+    "scan_po_renal_scan_Mild cirrhosis": {
+      "type": "ScanSim"
+    },
+    "scan_po_renal_scan_Moderate cirrhosis": {
+      "type": "ScanSim"
+    },
+    "scan_po_renal_scan_Severe cirrhosis": {
+      "type": "ScanSim"
+    },
+    "scan_po_food_scan_Normal renal function": {
+      "type": "ScanSim"
+    },
+    "scan_po_food_scan_Mild renal impairment": {
+      "type": "ScanSim"
+    },
+    "scan_po_food_scan_Moderate renal impairment": {
+      "type": "ScanSim"
+    },
+    "scan_po_food_scan_Severe renal impairment": {
+      "type": "ScanSim"
+    },
+    "scan_po_food_scan_Control": {
+      "type": "ScanSim"
+    },
+    "scan_po_food_scan_Mild cirrhosis": {
+      "type": "ScanSim"
+    },
+    "scan_po_food_scan_Moderate cirrhosis": {
+      "type": "ScanSim"
+    },
+    "scan_po_food_scan_Severe cirrhosis": {
+      "type": "ScanSim"
+    }
+  },
+  "data": {
+    "task_scan_po_hepatic_scan_Normal renal function__time": {
+      "type": "TASK",
+      "index": "time",
+      "unit": null,
+      "task": "task_scan_po_hepatic_scan_Normal renal function",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_hepatic_scan_Normal renal function__IVDOSE_dap": {
+      "type": "TASK",
+      "index": "IVDOSE_dap",
+      "unit": null,
+      "task": "task_scan_po_hepatic_scan_Normal renal function",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_hepatic_scan_Normal renal function__PODOSE_dap": {
+      "type": "TASK",
+      "index": "PODOSE_dap",
+      "unit": null,
+      "task": "task_scan_po_hepatic_scan_Normal renal function",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_hepatic_scan_Normal renal function__Cve_daptot": {
+      "type": "TASK",
+      "index": "Cve_daptot",
+      "unit": null,
+      "task": "task_scan_po_hepatic_scan_Normal renal function",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_hepatic_scan_Normal renal function__Cve_dap": {
+      "type": "TASK",
+      "index": "Cve_dap",
+      "unit": null,
+      "task": "task_scan_po_hepatic_scan_Normal renal function",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_hepatic_scan_Normal renal function__Cve_d3g": {
+      "type": "TASK",
+      "index": "Cve_d3g",
+      "unit": null,
+      "task": "task_scan_po_hepatic_scan_Normal renal function",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_hepatic_scan_Normal renal function__KI__glc_ext": {
+      "type": "TASK",
+      "index": "KI__glc_ext",
+      "unit": null,
+      "task": "task_scan_po_hepatic_scan_Normal renal function",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_hepatic_scan_Normal renal function__LI__dap": {
+      "type": "TASK",
+      "index": "LI__dap",
+      "unit": null,
+      "task": "task_scan_po_hepatic_scan_Normal renal function",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_hepatic_scan_Normal renal function__LI__d3g": {
+      "type": "TASK",
+      "index": "LI__d3g",
+      "unit": null,
+      "task": "task_scan_po_hepatic_scan_Normal renal function",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_hepatic_scan_Normal renal function__Aurine_daptot": {
+      "type": "TASK",
+      "index": "Aurine_daptot",
+      "unit": null,
+      "task": "task_scan_po_hepatic_scan_Normal renal function",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_hepatic_scan_Normal renal function__Aurine_dap": {
+      "type": "TASK",
+      "index": "Aurine_dap",
+      "unit": null,
+      "task": "task_scan_po_hepatic_scan_Normal renal function",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_hepatic_scan_Normal renal function__Aurine_d3g": {
+      "type": "TASK",
+      "index": "Aurine_d3g",
+      "unit": null,
+      "task": "task_scan_po_hepatic_scan_Normal renal function",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_hepatic_scan_Normal renal function__KI__glc_urine": {
+      "type": "TASK",
+      "index": "KI__glc_urine",
+      "unit": null,
+      "task": "task_scan_po_hepatic_scan_Normal renal function",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_hepatic_scan_Normal renal function__KI__UGE": {
+      "type": "TASK",
+      "index": "KI__UGE",
+      "unit": null,
+      "task": "task_scan_po_hepatic_scan_Normal renal function",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_hepatic_scan_Normal renal function__KI__RTG": {
+      "type": "TASK",
+      "index": "KI__RTG",
+      "unit": null,
+      "task": "task_scan_po_hepatic_scan_Normal renal function",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_hepatic_scan_Normal renal function__Afeces_dap": {
+      "type": "TASK",
+      "index": "Afeces_dap",
+      "unit": null,
+      "task": "task_scan_po_hepatic_scan_Normal renal function",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_hepatic_scan_Normal renal function__Afeces_daptot": {
+      "type": "TASK",
+      "index": "Afeces_daptot",
+      "unit": null,
+      "task": "task_scan_po_hepatic_scan_Normal renal function",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_hepatic_scan_Normal renal function__KI__D3GEX": {
+      "type": "TASK",
+      "index": "KI__D3GEX",
+      "unit": null,
+      "task": "task_scan_po_hepatic_scan_Normal renal function",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_hepatic_scan_Normal renal function__KI__DAPEX": {
+      "type": "TASK",
+      "index": "KI__DAPEX",
+      "unit": null,
+      "task": "task_scan_po_hepatic_scan_Normal renal function",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_hepatic_scan_Normal renal function__KI__GLCEX": {
+      "type": "TASK",
+      "index": "KI__GLCEX",
+      "unit": null,
+      "task": "task_scan_po_hepatic_scan_Normal renal function",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_hepatic_scan_Normal renal function__KI__f_renal_function": {
+      "type": "TASK",
+      "index": "KI__f_renal_function",
+      "unit": null,
+      "task": "task_scan_po_hepatic_scan_Normal renal function",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_hepatic_scan_Normal renal function__f_cirrhosis": {
+      "type": "TASK",
+      "index": "f_cirrhosis",
+      "unit": null,
+      "task": "task_scan_po_hepatic_scan_Normal renal function",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_hepatic_scan_Normal renal function__GU__f_absorption": {
+      "type": "TASK",
+      "index": "GU__f_absorption",
+      "unit": null,
+      "task": "task_scan_po_hepatic_scan_Normal renal function",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_hepatic_scan_Normal renal function__LI__f_ugt1a9": {
+      "type": "TASK",
+      "index": "LI__f_ugt1a9",
+      "unit": null,
+      "task": "task_scan_po_hepatic_scan_Normal renal function",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_hepatic_scan_Mild renal impairment__time": {
+      "type": "TASK",
+      "index": "time",
+      "unit": null,
+      "task": "task_scan_po_hepatic_scan_Mild renal impairment",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_hepatic_scan_Mild renal impairment__IVDOSE_dap": {
+      "type": "TASK",
+      "index": "IVDOSE_dap",
+      "unit": null,
+      "task": "task_scan_po_hepatic_scan_Mild renal impairment",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_hepatic_scan_Mild renal impairment__PODOSE_dap": {
+      "type": "TASK",
+      "index": "PODOSE_dap",
+      "unit": null,
+      "task": "task_scan_po_hepatic_scan_Mild renal impairment",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_hepatic_scan_Mild renal impairment__Cve_daptot": {
+      "type": "TASK",
+      "index": "Cve_daptot",
+      "unit": null,
+      "task": "task_scan_po_hepatic_scan_Mild renal impairment",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_hepatic_scan_Mild renal impairment__Cve_dap": {
+      "type": "TASK",
+      "index": "Cve_dap",
+      "unit": null,
+      "task": "task_scan_po_hepatic_scan_Mild renal impairment",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_hepatic_scan_Mild renal impairment__Cve_d3g": {
+      "type": "TASK",
+      "index": "Cve_d3g",
+      "unit": null,
+      "task": "task_scan_po_hepatic_scan_Mild renal impairment",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_hepatic_scan_Mild renal impairment__KI__glc_ext": {
+      "type": "TASK",
+      "index": "KI__glc_ext",
+      "unit": null,
+      "task": "task_scan_po_hepatic_scan_Mild renal impairment",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_hepatic_scan_Mild renal impairment__LI__dap": {
+      "type": "TASK",
+      "index": "LI__dap",
+      "unit": null,
+      "task": "task_scan_po_hepatic_scan_Mild renal impairment",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_hepatic_scan_Mild renal impairment__LI__d3g": {
+      "type": "TASK",
+      "index": "LI__d3g",
+      "unit": null,
+      "task": "task_scan_po_hepatic_scan_Mild renal impairment",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_hepatic_scan_Mild renal impairment__Aurine_daptot": {
+      "type": "TASK",
+      "index": "Aurine_daptot",
+      "unit": null,
+      "task": "task_scan_po_hepatic_scan_Mild renal impairment",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_hepatic_scan_Mild renal impairment__Aurine_dap": {
+      "type": "TASK",
+      "index": "Aurine_dap",
+      "unit": null,
+      "task": "task_scan_po_hepatic_scan_Mild renal impairment",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_hepatic_scan_Mild renal impairment__Aurine_d3g": {
+      "type": "TASK",
+      "index": "Aurine_d3g",
+      "unit": null,
+      "task": "task_scan_po_hepatic_scan_Mild renal impairment",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_hepatic_scan_Mild renal impairment__KI__glc_urine": {
+      "type": "TASK",
+      "index": "KI__glc_urine",
+      "unit": null,
+      "task": "task_scan_po_hepatic_scan_Mild renal impairment",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_hepatic_scan_Mild renal impairment__KI__UGE": {
+      "type": "TASK",
+      "index": "KI__UGE",
+      "unit": null,
+      "task": "task_scan_po_hepatic_scan_Mild renal impairment",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_hepatic_scan_Mild renal impairment__KI__RTG": {
+      "type": "TASK",
+      "index": "KI__RTG",
+      "unit": null,
+      "task": "task_scan_po_hepatic_scan_Mild renal impairment",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_hepatic_scan_Mild renal impairment__Afeces_dap": {
+      "type": "TASK",
+      "index": "Afeces_dap",
+      "unit": null,
+      "task": "task_scan_po_hepatic_scan_Mild renal impairment",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_hepatic_scan_Mild renal impairment__Afeces_daptot": {
+      "type": "TASK",
+      "index": "Afeces_daptot",
+      "unit": null,
+      "task": "task_scan_po_hepatic_scan_Mild renal impairment",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_hepatic_scan_Mild renal impairment__KI__D3GEX": {
+      "type": "TASK",
+      "index": "KI__D3GEX",
+      "unit": null,
+      "task": "task_scan_po_hepatic_scan_Mild renal impairment",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_hepatic_scan_Mild renal impairment__KI__DAPEX": {
+      "type": "TASK",
+      "index": "KI__DAPEX",
+      "unit": null,
+      "task": "task_scan_po_hepatic_scan_Mild renal impairment",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_hepatic_scan_Mild renal impairment__KI__GLCEX": {
+      "type": "TASK",
+      "index": "KI__GLCEX",
+      "unit": null,
+      "task": "task_scan_po_hepatic_scan_Mild renal impairment",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_hepatic_scan_Mild renal impairment__KI__f_renal_function": {
+      "type": "TASK",
+      "index": "KI__f_renal_function",
+      "unit": null,
+      "task": "task_scan_po_hepatic_scan_Mild renal impairment",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_hepatic_scan_Mild renal impairment__f_cirrhosis": {
+      "type": "TASK",
+      "index": "f_cirrhosis",
+      "unit": null,
+      "task": "task_scan_po_hepatic_scan_Mild renal impairment",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_hepatic_scan_Mild renal impairment__GU__f_absorption": {
+      "type": "TASK",
+      "index": "GU__f_absorption",
+      "unit": null,
+      "task": "task_scan_po_hepatic_scan_Mild renal impairment",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_hepatic_scan_Mild renal impairment__LI__f_ugt1a9": {
+      "type": "TASK",
+      "index": "LI__f_ugt1a9",
+      "unit": null,
+      "task": "task_scan_po_hepatic_scan_Mild renal impairment",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_hepatic_scan_Moderate renal impairment__time": {
+      "type": "TASK",
+      "index": "time",
+      "unit": null,
+      "task": "task_scan_po_hepatic_scan_Moderate renal impairment",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_hepatic_scan_Moderate renal impairment__IVDOSE_dap": {
+      "type": "TASK",
+      "index": "IVDOSE_dap",
+      "unit": null,
+      "task": "task_scan_po_hepatic_scan_Moderate renal impairment",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_hepatic_scan_Moderate renal impairment__PODOSE_dap": {
+      "type": "TASK",
+      "index": "PODOSE_dap",
+      "unit": null,
+      "task": "task_scan_po_hepatic_scan_Moderate renal impairment",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_hepatic_scan_Moderate renal impairment__Cve_daptot": {
+      "type": "TASK",
+      "index": "Cve_daptot",
+      "unit": null,
+      "task": "task_scan_po_hepatic_scan_Moderate renal impairment",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_hepatic_scan_Moderate renal impairment__Cve_dap": {
+      "type": "TASK",
+      "index": "Cve_dap",
+      "unit": null,
+      "task": "task_scan_po_hepatic_scan_Moderate renal impairment",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_hepatic_scan_Moderate renal impairment__Cve_d3g": {
+      "type": "TASK",
+      "index": "Cve_d3g",
+      "unit": null,
+      "task": "task_scan_po_hepatic_scan_Moderate renal impairment",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_hepatic_scan_Moderate renal impairment__KI__glc_ext": {
+      "type": "TASK",
+      "index": "KI__glc_ext",
+      "unit": null,
+      "task": "task_scan_po_hepatic_scan_Moderate renal impairment",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_hepatic_scan_Moderate renal impairment__LI__dap": {
+      "type": "TASK",
+      "index": "LI__dap",
+      "unit": null,
+      "task": "task_scan_po_hepatic_scan_Moderate renal impairment",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_hepatic_scan_Moderate renal impairment__LI__d3g": {
+      "type": "TASK",
+      "index": "LI__d3g",
+      "unit": null,
+      "task": "task_scan_po_hepatic_scan_Moderate renal impairment",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_hepatic_scan_Moderate renal impairment__Aurine_daptot": {
+      "type": "TASK",
+      "index": "Aurine_daptot",
+      "unit": null,
+      "task": "task_scan_po_hepatic_scan_Moderate renal impairment",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_hepatic_scan_Moderate renal impairment__Aurine_dap": {
+      "type": "TASK",
+      "index": "Aurine_dap",
+      "unit": null,
+      "task": "task_scan_po_hepatic_scan_Moderate renal impairment",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_hepatic_scan_Moderate renal impairment__Aurine_d3g": {
+      "type": "TASK",
+      "index": "Aurine_d3g",
+      "unit": null,
+      "task": "task_scan_po_hepatic_scan_Moderate renal impairment",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_hepatic_scan_Moderate renal impairment__KI__glc_urine": {
+      "type": "TASK",
+      "index": "KI__glc_urine",
+      "unit": null,
+      "task": "task_scan_po_hepatic_scan_Moderate renal impairment",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_hepatic_scan_Moderate renal impairment__KI__UGE": {
+      "type": "TASK",
+      "index": "KI__UGE",
+      "unit": null,
+      "task": "task_scan_po_hepatic_scan_Moderate renal impairment",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_hepatic_scan_Moderate renal impairment__KI__RTG": {
+      "type": "TASK",
+      "index": "KI__RTG",
+      "unit": null,
+      "task": "task_scan_po_hepatic_scan_Moderate renal impairment",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_hepatic_scan_Moderate renal impairment__Afeces_dap": {
+      "type": "TASK",
+      "index": "Afeces_dap",
+      "unit": null,
+      "task": "task_scan_po_hepatic_scan_Moderate renal impairment",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_hepatic_scan_Moderate renal impairment__Afeces_daptot": {
+      "type": "TASK",
+      "index": "Afeces_daptot",
+      "unit": null,
+      "task": "task_scan_po_hepatic_scan_Moderate renal impairment",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_hepatic_scan_Moderate renal impairment__KI__D3GEX": {
+      "type": "TASK",
+      "index": "KI__D3GEX",
+      "unit": null,
+      "task": "task_scan_po_hepatic_scan_Moderate renal impairment",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_hepatic_scan_Moderate renal impairment__KI__DAPEX": {
+      "type": "TASK",
+      "index": "KI__DAPEX",
+      "unit": null,
+      "task": "task_scan_po_hepatic_scan_Moderate renal impairment",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_hepatic_scan_Moderate renal impairment__KI__GLCEX": {
+      "type": "TASK",
+      "index": "KI__GLCEX",
+      "unit": null,
+      "task": "task_scan_po_hepatic_scan_Moderate renal impairment",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_hepatic_scan_Moderate renal impairment__KI__f_renal_function": {
+      "type": "TASK",
+      "index": "KI__f_renal_function",
+      "unit": null,
+      "task": "task_scan_po_hepatic_scan_Moderate renal impairment",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_hepatic_scan_Moderate renal impairment__f_cirrhosis": {
+      "type": "TASK",
+      "index": "f_cirrhosis",
+      "unit": null,
+      "task": "task_scan_po_hepatic_scan_Moderate renal impairment",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_hepatic_scan_Moderate renal impairment__GU__f_absorption": {
+      "type": "TASK",
+      "index": "GU__f_absorption",
+      "unit": null,
+      "task": "task_scan_po_hepatic_scan_Moderate renal impairment",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_hepatic_scan_Moderate renal impairment__LI__f_ugt1a9": {
+      "type": "TASK",
+      "index": "LI__f_ugt1a9",
+      "unit": null,
+      "task": "task_scan_po_hepatic_scan_Moderate renal impairment",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_hepatic_scan_Severe renal impairment__time": {
+      "type": "TASK",
+      "index": "time",
+      "unit": null,
+      "task": "task_scan_po_hepatic_scan_Severe renal impairment",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_hepatic_scan_Severe renal impairment__IVDOSE_dap": {
+      "type": "TASK",
+      "index": "IVDOSE_dap",
+      "unit": null,
+      "task": "task_scan_po_hepatic_scan_Severe renal impairment",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_hepatic_scan_Severe renal impairment__PODOSE_dap": {
+      "type": "TASK",
+      "index": "PODOSE_dap",
+      "unit": null,
+      "task": "task_scan_po_hepatic_scan_Severe renal impairment",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_hepatic_scan_Severe renal impairment__Cve_daptot": {
+      "type": "TASK",
+      "index": "Cve_daptot",
+      "unit": null,
+      "task": "task_scan_po_hepatic_scan_Severe renal impairment",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_hepatic_scan_Severe renal impairment__Cve_dap": {
+      "type": "TASK",
+      "index": "Cve_dap",
+      "unit": null,
+      "task": "task_scan_po_hepatic_scan_Severe renal impairment",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_hepatic_scan_Severe renal impairment__Cve_d3g": {
+      "type": "TASK",
+      "index": "Cve_d3g",
+      "unit": null,
+      "task": "task_scan_po_hepatic_scan_Severe renal impairment",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_hepatic_scan_Severe renal impairment__KI__glc_ext": {
+      "type": "TASK",
+      "index": "KI__glc_ext",
+      "unit": null,
+      "task": "task_scan_po_hepatic_scan_Severe renal impairment",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_hepatic_scan_Severe renal impairment__LI__dap": {
+      "type": "TASK",
+      "index": "LI__dap",
+      "unit": null,
+      "task": "task_scan_po_hepatic_scan_Severe renal impairment",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_hepatic_scan_Severe renal impairment__LI__d3g": {
+      "type": "TASK",
+      "index": "LI__d3g",
+      "unit": null,
+      "task": "task_scan_po_hepatic_scan_Severe renal impairment",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_hepatic_scan_Severe renal impairment__Aurine_daptot": {
+      "type": "TASK",
+      "index": "Aurine_daptot",
+      "unit": null,
+      "task": "task_scan_po_hepatic_scan_Severe renal impairment",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_hepatic_scan_Severe renal impairment__Aurine_dap": {
+      "type": "TASK",
+      "index": "Aurine_dap",
+      "unit": null,
+      "task": "task_scan_po_hepatic_scan_Severe renal impairment",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_hepatic_scan_Severe renal impairment__Aurine_d3g": {
+      "type": "TASK",
+      "index": "Aurine_d3g",
+      "unit": null,
+      "task": "task_scan_po_hepatic_scan_Severe renal impairment",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_hepatic_scan_Severe renal impairment__KI__glc_urine": {
+      "type": "TASK",
+      "index": "KI__glc_urine",
+      "unit": null,
+      "task": "task_scan_po_hepatic_scan_Severe renal impairment",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_hepatic_scan_Severe renal impairment__KI__UGE": {
+      "type": "TASK",
+      "index": "KI__UGE",
+      "unit": null,
+      "task": "task_scan_po_hepatic_scan_Severe renal impairment",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_hepatic_scan_Severe renal impairment__KI__RTG": {
+      "type": "TASK",
+      "index": "KI__RTG",
+      "unit": null,
+      "task": "task_scan_po_hepatic_scan_Severe renal impairment",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_hepatic_scan_Severe renal impairment__Afeces_dap": {
+      "type": "TASK",
+      "index": "Afeces_dap",
+      "unit": null,
+      "task": "task_scan_po_hepatic_scan_Severe renal impairment",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_hepatic_scan_Severe renal impairment__Afeces_daptot": {
+      "type": "TASK",
+      "index": "Afeces_daptot",
+      "unit": null,
+      "task": "task_scan_po_hepatic_scan_Severe renal impairment",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_hepatic_scan_Severe renal impairment__KI__D3GEX": {
+      "type": "TASK",
+      "index": "KI__D3GEX",
+      "unit": null,
+      "task": "task_scan_po_hepatic_scan_Severe renal impairment",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_hepatic_scan_Severe renal impairment__KI__DAPEX": {
+      "type": "TASK",
+      "index": "KI__DAPEX",
+      "unit": null,
+      "task": "task_scan_po_hepatic_scan_Severe renal impairment",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_hepatic_scan_Severe renal impairment__KI__GLCEX": {
+      "type": "TASK",
+      "index": "KI__GLCEX",
+      "unit": null,
+      "task": "task_scan_po_hepatic_scan_Severe renal impairment",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_hepatic_scan_Severe renal impairment__KI__f_renal_function": {
+      "type": "TASK",
+      "index": "KI__f_renal_function",
+      "unit": null,
+      "task": "task_scan_po_hepatic_scan_Severe renal impairment",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_hepatic_scan_Severe renal impairment__f_cirrhosis": {
+      "type": "TASK",
+      "index": "f_cirrhosis",
+      "unit": null,
+      "task": "task_scan_po_hepatic_scan_Severe renal impairment",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_hepatic_scan_Severe renal impairment__GU__f_absorption": {
+      "type": "TASK",
+      "index": "GU__f_absorption",
+      "unit": null,
+      "task": "task_scan_po_hepatic_scan_Severe renal impairment",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_hepatic_scan_Severe renal impairment__LI__f_ugt1a9": {
+      "type": "TASK",
+      "index": "LI__f_ugt1a9",
+      "unit": null,
+      "task": "task_scan_po_hepatic_scan_Severe renal impairment",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_hepatic_scan_Control__time": {
+      "type": "TASK",
+      "index": "time",
+      "unit": null,
+      "task": "task_scan_po_hepatic_scan_Control",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_hepatic_scan_Control__IVDOSE_dap": {
+      "type": "TASK",
+      "index": "IVDOSE_dap",
+      "unit": null,
+      "task": "task_scan_po_hepatic_scan_Control",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_hepatic_scan_Control__PODOSE_dap": {
+      "type": "TASK",
+      "index": "PODOSE_dap",
+      "unit": null,
+      "task": "task_scan_po_hepatic_scan_Control",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_hepatic_scan_Control__Cve_daptot": {
+      "type": "TASK",
+      "index": "Cve_daptot",
+      "unit": null,
+      "task": "task_scan_po_hepatic_scan_Control",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_hepatic_scan_Control__Cve_dap": {
+      "type": "TASK",
+      "index": "Cve_dap",
+      "unit": null,
+      "task": "task_scan_po_hepatic_scan_Control",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_hepatic_scan_Control__Cve_d3g": {
+      "type": "TASK",
+      "index": "Cve_d3g",
+      "unit": null,
+      "task": "task_scan_po_hepatic_scan_Control",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_hepatic_scan_Control__KI__glc_ext": {
+      "type": "TASK",
+      "index": "KI__glc_ext",
+      "unit": null,
+      "task": "task_scan_po_hepatic_scan_Control",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_hepatic_scan_Control__LI__dap": {
+      "type": "TASK",
+      "index": "LI__dap",
+      "unit": null,
+      "task": "task_scan_po_hepatic_scan_Control",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_hepatic_scan_Control__LI__d3g": {
+      "type": "TASK",
+      "index": "LI__d3g",
+      "unit": null,
+      "task": "task_scan_po_hepatic_scan_Control",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_hepatic_scan_Control__Aurine_daptot": {
+      "type": "TASK",
+      "index": "Aurine_daptot",
+      "unit": null,
+      "task": "task_scan_po_hepatic_scan_Control",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_hepatic_scan_Control__Aurine_dap": {
+      "type": "TASK",
+      "index": "Aurine_dap",
+      "unit": null,
+      "task": "task_scan_po_hepatic_scan_Control",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_hepatic_scan_Control__Aurine_d3g": {
+      "type": "TASK",
+      "index": "Aurine_d3g",
+      "unit": null,
+      "task": "task_scan_po_hepatic_scan_Control",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_hepatic_scan_Control__KI__glc_urine": {
+      "type": "TASK",
+      "index": "KI__glc_urine",
+      "unit": null,
+      "task": "task_scan_po_hepatic_scan_Control",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_hepatic_scan_Control__KI__UGE": {
+      "type": "TASK",
+      "index": "KI__UGE",
+      "unit": null,
+      "task": "task_scan_po_hepatic_scan_Control",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_hepatic_scan_Control__KI__RTG": {
+      "type": "TASK",
+      "index": "KI__RTG",
+      "unit": null,
+      "task": "task_scan_po_hepatic_scan_Control",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_hepatic_scan_Control__Afeces_dap": {
+      "type": "TASK",
+      "index": "Afeces_dap",
+      "unit": null,
+      "task": "task_scan_po_hepatic_scan_Control",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_hepatic_scan_Control__Afeces_daptot": {
+      "type": "TASK",
+      "index": "Afeces_daptot",
+      "unit": null,
+      "task": "task_scan_po_hepatic_scan_Control",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_hepatic_scan_Control__KI__D3GEX": {
+      "type": "TASK",
+      "index": "KI__D3GEX",
+      "unit": null,
+      "task": "task_scan_po_hepatic_scan_Control",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_hepatic_scan_Control__KI__DAPEX": {
+      "type": "TASK",
+      "index": "KI__DAPEX",
+      "unit": null,
+      "task": "task_scan_po_hepatic_scan_Control",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_hepatic_scan_Control__KI__GLCEX": {
+      "type": "TASK",
+      "index": "KI__GLCEX",
+      "unit": null,
+      "task": "task_scan_po_hepatic_scan_Control",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_hepatic_scan_Control__KI__f_renal_function": {
+      "type": "TASK",
+      "index": "KI__f_renal_function",
+      "unit": null,
+      "task": "task_scan_po_hepatic_scan_Control",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_hepatic_scan_Control__f_cirrhosis": {
+      "type": "TASK",
+      "index": "f_cirrhosis",
+      "unit": null,
+      "task": "task_scan_po_hepatic_scan_Control",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_hepatic_scan_Control__GU__f_absorption": {
+      "type": "TASK",
+      "index": "GU__f_absorption",
+      "unit": null,
+      "task": "task_scan_po_hepatic_scan_Control",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_hepatic_scan_Control__LI__f_ugt1a9": {
+      "type": "TASK",
+      "index": "LI__f_ugt1a9",
+      "unit": null,
+      "task": "task_scan_po_hepatic_scan_Control",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_hepatic_scan_Mild cirrhosis__time": {
+      "type": "TASK",
+      "index": "time",
+      "unit": null,
+      "task": "task_scan_po_hepatic_scan_Mild cirrhosis",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_hepatic_scan_Mild cirrhosis__IVDOSE_dap": {
+      "type": "TASK",
+      "index": "IVDOSE_dap",
+      "unit": null,
+      "task": "task_scan_po_hepatic_scan_Mild cirrhosis",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_hepatic_scan_Mild cirrhosis__PODOSE_dap": {
+      "type": "TASK",
+      "index": "PODOSE_dap",
+      "unit": null,
+      "task": "task_scan_po_hepatic_scan_Mild cirrhosis",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_hepatic_scan_Mild cirrhosis__Cve_daptot": {
+      "type": "TASK",
+      "index": "Cve_daptot",
+      "unit": null,
+      "task": "task_scan_po_hepatic_scan_Mild cirrhosis",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_hepatic_scan_Mild cirrhosis__Cve_dap": {
+      "type": "TASK",
+      "index": "Cve_dap",
+      "unit": null,
+      "task": "task_scan_po_hepatic_scan_Mild cirrhosis",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_hepatic_scan_Mild cirrhosis__Cve_d3g": {
+      "type": "TASK",
+      "index": "Cve_d3g",
+      "unit": null,
+      "task": "task_scan_po_hepatic_scan_Mild cirrhosis",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_hepatic_scan_Mild cirrhosis__KI__glc_ext": {
+      "type": "TASK",
+      "index": "KI__glc_ext",
+      "unit": null,
+      "task": "task_scan_po_hepatic_scan_Mild cirrhosis",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_hepatic_scan_Mild cirrhosis__LI__dap": {
+      "type": "TASK",
+      "index": "LI__dap",
+      "unit": null,
+      "task": "task_scan_po_hepatic_scan_Mild cirrhosis",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_hepatic_scan_Mild cirrhosis__LI__d3g": {
+      "type": "TASK",
+      "index": "LI__d3g",
+      "unit": null,
+      "task": "task_scan_po_hepatic_scan_Mild cirrhosis",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_hepatic_scan_Mild cirrhosis__Aurine_daptot": {
+      "type": "TASK",
+      "index": "Aurine_daptot",
+      "unit": null,
+      "task": "task_scan_po_hepatic_scan_Mild cirrhosis",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_hepatic_scan_Mild cirrhosis__Aurine_dap": {
+      "type": "TASK",
+      "index": "Aurine_dap",
+      "unit": null,
+      "task": "task_scan_po_hepatic_scan_Mild cirrhosis",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_hepatic_scan_Mild cirrhosis__Aurine_d3g": {
+      "type": "TASK",
+      "index": "Aurine_d3g",
+      "unit": null,
+      "task": "task_scan_po_hepatic_scan_Mild cirrhosis",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_hepatic_scan_Mild cirrhosis__KI__glc_urine": {
+      "type": "TASK",
+      "index": "KI__glc_urine",
+      "unit": null,
+      "task": "task_scan_po_hepatic_scan_Mild cirrhosis",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_hepatic_scan_Mild cirrhosis__KI__UGE": {
+      "type": "TASK",
+      "index": "KI__UGE",
+      "unit": null,
+      "task": "task_scan_po_hepatic_scan_Mild cirrhosis",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_hepatic_scan_Mild cirrhosis__KI__RTG": {
+      "type": "TASK",
+      "index": "KI__RTG",
+      "unit": null,
+      "task": "task_scan_po_hepatic_scan_Mild cirrhosis",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_hepatic_scan_Mild cirrhosis__Afeces_dap": {
+      "type": "TASK",
+      "index": "Afeces_dap",
+      "unit": null,
+      "task": "task_scan_po_hepatic_scan_Mild cirrhosis",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_hepatic_scan_Mild cirrhosis__Afeces_daptot": {
+      "type": "TASK",
+      "index": "Afeces_daptot",
+      "unit": null,
+      "task": "task_scan_po_hepatic_scan_Mild cirrhosis",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_hepatic_scan_Mild cirrhosis__KI__D3GEX": {
+      "type": "TASK",
+      "index": "KI__D3GEX",
+      "unit": null,
+      "task": "task_scan_po_hepatic_scan_Mild cirrhosis",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_hepatic_scan_Mild cirrhosis__KI__DAPEX": {
+      "type": "TASK",
+      "index": "KI__DAPEX",
+      "unit": null,
+      "task": "task_scan_po_hepatic_scan_Mild cirrhosis",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_hepatic_scan_Mild cirrhosis__KI__GLCEX": {
+      "type": "TASK",
+      "index": "KI__GLCEX",
+      "unit": null,
+      "task": "task_scan_po_hepatic_scan_Mild cirrhosis",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_hepatic_scan_Mild cirrhosis__KI__f_renal_function": {
+      "type": "TASK",
+      "index": "KI__f_renal_function",
+      "unit": null,
+      "task": "task_scan_po_hepatic_scan_Mild cirrhosis",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_hepatic_scan_Mild cirrhosis__f_cirrhosis": {
+      "type": "TASK",
+      "index": "f_cirrhosis",
+      "unit": null,
+      "task": "task_scan_po_hepatic_scan_Mild cirrhosis",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_hepatic_scan_Mild cirrhosis__GU__f_absorption": {
+      "type": "TASK",
+      "index": "GU__f_absorption",
+      "unit": null,
+      "task": "task_scan_po_hepatic_scan_Mild cirrhosis",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_hepatic_scan_Mild cirrhosis__LI__f_ugt1a9": {
+      "type": "TASK",
+      "index": "LI__f_ugt1a9",
+      "unit": null,
+      "task": "task_scan_po_hepatic_scan_Mild cirrhosis",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_hepatic_scan_Moderate cirrhosis__time": {
+      "type": "TASK",
+      "index": "time",
+      "unit": null,
+      "task": "task_scan_po_hepatic_scan_Moderate cirrhosis",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_hepatic_scan_Moderate cirrhosis__IVDOSE_dap": {
+      "type": "TASK",
+      "index": "IVDOSE_dap",
+      "unit": null,
+      "task": "task_scan_po_hepatic_scan_Moderate cirrhosis",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_hepatic_scan_Moderate cirrhosis__PODOSE_dap": {
+      "type": "TASK",
+      "index": "PODOSE_dap",
+      "unit": null,
+      "task": "task_scan_po_hepatic_scan_Moderate cirrhosis",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_hepatic_scan_Moderate cirrhosis__Cve_daptot": {
+      "type": "TASK",
+      "index": "Cve_daptot",
+      "unit": null,
+      "task": "task_scan_po_hepatic_scan_Moderate cirrhosis",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_hepatic_scan_Moderate cirrhosis__Cve_dap": {
+      "type": "TASK",
+      "index": "Cve_dap",
+      "unit": null,
+      "task": "task_scan_po_hepatic_scan_Moderate cirrhosis",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_hepatic_scan_Moderate cirrhosis__Cve_d3g": {
+      "type": "TASK",
+      "index": "Cve_d3g",
+      "unit": null,
+      "task": "task_scan_po_hepatic_scan_Moderate cirrhosis",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_hepatic_scan_Moderate cirrhosis__KI__glc_ext": {
+      "type": "TASK",
+      "index": "KI__glc_ext",
+      "unit": null,
+      "task": "task_scan_po_hepatic_scan_Moderate cirrhosis",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_hepatic_scan_Moderate cirrhosis__LI__dap": {
+      "type": "TASK",
+      "index": "LI__dap",
+      "unit": null,
+      "task": "task_scan_po_hepatic_scan_Moderate cirrhosis",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_hepatic_scan_Moderate cirrhosis__LI__d3g": {
+      "type": "TASK",
+      "index": "LI__d3g",
+      "unit": null,
+      "task": "task_scan_po_hepatic_scan_Moderate cirrhosis",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_hepatic_scan_Moderate cirrhosis__Aurine_daptot": {
+      "type": "TASK",
+      "index": "Aurine_daptot",
+      "unit": null,
+      "task": "task_scan_po_hepatic_scan_Moderate cirrhosis",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_hepatic_scan_Moderate cirrhosis__Aurine_dap": {
+      "type": "TASK",
+      "index": "Aurine_dap",
+      "unit": null,
+      "task": "task_scan_po_hepatic_scan_Moderate cirrhosis",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_hepatic_scan_Moderate cirrhosis__Aurine_d3g": {
+      "type": "TASK",
+      "index": "Aurine_d3g",
+      "unit": null,
+      "task": "task_scan_po_hepatic_scan_Moderate cirrhosis",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_hepatic_scan_Moderate cirrhosis__KI__glc_urine": {
+      "type": "TASK",
+      "index": "KI__glc_urine",
+      "unit": null,
+      "task": "task_scan_po_hepatic_scan_Moderate cirrhosis",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_hepatic_scan_Moderate cirrhosis__KI__UGE": {
+      "type": "TASK",
+      "index": "KI__UGE",
+      "unit": null,
+      "task": "task_scan_po_hepatic_scan_Moderate cirrhosis",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_hepatic_scan_Moderate cirrhosis__KI__RTG": {
+      "type": "TASK",
+      "index": "KI__RTG",
+      "unit": null,
+      "task": "task_scan_po_hepatic_scan_Moderate cirrhosis",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_hepatic_scan_Moderate cirrhosis__Afeces_dap": {
+      "type": "TASK",
+      "index": "Afeces_dap",
+      "unit": null,
+      "task": "task_scan_po_hepatic_scan_Moderate cirrhosis",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_hepatic_scan_Moderate cirrhosis__Afeces_daptot": {
+      "type": "TASK",
+      "index": "Afeces_daptot",
+      "unit": null,
+      "task": "task_scan_po_hepatic_scan_Moderate cirrhosis",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_hepatic_scan_Moderate cirrhosis__KI__D3GEX": {
+      "type": "TASK",
+      "index": "KI__D3GEX",
+      "unit": null,
+      "task": "task_scan_po_hepatic_scan_Moderate cirrhosis",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_hepatic_scan_Moderate cirrhosis__KI__DAPEX": {
+      "type": "TASK",
+      "index": "KI__DAPEX",
+      "unit": null,
+      "task": "task_scan_po_hepatic_scan_Moderate cirrhosis",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_hepatic_scan_Moderate cirrhosis__KI__GLCEX": {
+      "type": "TASK",
+      "index": "KI__GLCEX",
+      "unit": null,
+      "task": "task_scan_po_hepatic_scan_Moderate cirrhosis",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_hepatic_scan_Moderate cirrhosis__KI__f_renal_function": {
+      "type": "TASK",
+      "index": "KI__f_renal_function",
+      "unit": null,
+      "task": "task_scan_po_hepatic_scan_Moderate cirrhosis",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_hepatic_scan_Moderate cirrhosis__f_cirrhosis": {
+      "type": "TASK",
+      "index": "f_cirrhosis",
+      "unit": null,
+      "task": "task_scan_po_hepatic_scan_Moderate cirrhosis",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_hepatic_scan_Moderate cirrhosis__GU__f_absorption": {
+      "type": "TASK",
+      "index": "GU__f_absorption",
+      "unit": null,
+      "task": "task_scan_po_hepatic_scan_Moderate cirrhosis",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_hepatic_scan_Moderate cirrhosis__LI__f_ugt1a9": {
+      "type": "TASK",
+      "index": "LI__f_ugt1a9",
+      "unit": null,
+      "task": "task_scan_po_hepatic_scan_Moderate cirrhosis",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_hepatic_scan_Severe cirrhosis__time": {
+      "type": "TASK",
+      "index": "time",
+      "unit": null,
+      "task": "task_scan_po_hepatic_scan_Severe cirrhosis",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_hepatic_scan_Severe cirrhosis__IVDOSE_dap": {
+      "type": "TASK",
+      "index": "IVDOSE_dap",
+      "unit": null,
+      "task": "task_scan_po_hepatic_scan_Severe cirrhosis",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_hepatic_scan_Severe cirrhosis__PODOSE_dap": {
+      "type": "TASK",
+      "index": "PODOSE_dap",
+      "unit": null,
+      "task": "task_scan_po_hepatic_scan_Severe cirrhosis",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_hepatic_scan_Severe cirrhosis__Cve_daptot": {
+      "type": "TASK",
+      "index": "Cve_daptot",
+      "unit": null,
+      "task": "task_scan_po_hepatic_scan_Severe cirrhosis",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_hepatic_scan_Severe cirrhosis__Cve_dap": {
+      "type": "TASK",
+      "index": "Cve_dap",
+      "unit": null,
+      "task": "task_scan_po_hepatic_scan_Severe cirrhosis",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_hepatic_scan_Severe cirrhosis__Cve_d3g": {
+      "type": "TASK",
+      "index": "Cve_d3g",
+      "unit": null,
+      "task": "task_scan_po_hepatic_scan_Severe cirrhosis",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_hepatic_scan_Severe cirrhosis__KI__glc_ext": {
+      "type": "TASK",
+      "index": "KI__glc_ext",
+      "unit": null,
+      "task": "task_scan_po_hepatic_scan_Severe cirrhosis",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_hepatic_scan_Severe cirrhosis__LI__dap": {
+      "type": "TASK",
+      "index": "LI__dap",
+      "unit": null,
+      "task": "task_scan_po_hepatic_scan_Severe cirrhosis",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_hepatic_scan_Severe cirrhosis__LI__d3g": {
+      "type": "TASK",
+      "index": "LI__d3g",
+      "unit": null,
+      "task": "task_scan_po_hepatic_scan_Severe cirrhosis",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_hepatic_scan_Severe cirrhosis__Aurine_daptot": {
+      "type": "TASK",
+      "index": "Aurine_daptot",
+      "unit": null,
+      "task": "task_scan_po_hepatic_scan_Severe cirrhosis",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_hepatic_scan_Severe cirrhosis__Aurine_dap": {
+      "type": "TASK",
+      "index": "Aurine_dap",
+      "unit": null,
+      "task": "task_scan_po_hepatic_scan_Severe cirrhosis",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_hepatic_scan_Severe cirrhosis__Aurine_d3g": {
+      "type": "TASK",
+      "index": "Aurine_d3g",
+      "unit": null,
+      "task": "task_scan_po_hepatic_scan_Severe cirrhosis",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_hepatic_scan_Severe cirrhosis__KI__glc_urine": {
+      "type": "TASK",
+      "index": "KI__glc_urine",
+      "unit": null,
+      "task": "task_scan_po_hepatic_scan_Severe cirrhosis",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_hepatic_scan_Severe cirrhosis__KI__UGE": {
+      "type": "TASK",
+      "index": "KI__UGE",
+      "unit": null,
+      "task": "task_scan_po_hepatic_scan_Severe cirrhosis",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_hepatic_scan_Severe cirrhosis__KI__RTG": {
+      "type": "TASK",
+      "index": "KI__RTG",
+      "unit": null,
+      "task": "task_scan_po_hepatic_scan_Severe cirrhosis",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_hepatic_scan_Severe cirrhosis__Afeces_dap": {
+      "type": "TASK",
+      "index": "Afeces_dap",
+      "unit": null,
+      "task": "task_scan_po_hepatic_scan_Severe cirrhosis",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_hepatic_scan_Severe cirrhosis__Afeces_daptot": {
+      "type": "TASK",
+      "index": "Afeces_daptot",
+      "unit": null,
+      "task": "task_scan_po_hepatic_scan_Severe cirrhosis",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_hepatic_scan_Severe cirrhosis__KI__D3GEX": {
+      "type": "TASK",
+      "index": "KI__D3GEX",
+      "unit": null,
+      "task": "task_scan_po_hepatic_scan_Severe cirrhosis",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_hepatic_scan_Severe cirrhosis__KI__DAPEX": {
+      "type": "TASK",
+      "index": "KI__DAPEX",
+      "unit": null,
+      "task": "task_scan_po_hepatic_scan_Severe cirrhosis",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_hepatic_scan_Severe cirrhosis__KI__GLCEX": {
+      "type": "TASK",
+      "index": "KI__GLCEX",
+      "unit": null,
+      "task": "task_scan_po_hepatic_scan_Severe cirrhosis",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_hepatic_scan_Severe cirrhosis__KI__f_renal_function": {
+      "type": "TASK",
+      "index": "KI__f_renal_function",
+      "unit": null,
+      "task": "task_scan_po_hepatic_scan_Severe cirrhosis",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_hepatic_scan_Severe cirrhosis__f_cirrhosis": {
+      "type": "TASK",
+      "index": "f_cirrhosis",
+      "unit": null,
+      "task": "task_scan_po_hepatic_scan_Severe cirrhosis",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_hepatic_scan_Severe cirrhosis__GU__f_absorption": {
+      "type": "TASK",
+      "index": "GU__f_absorption",
+      "unit": null,
+      "task": "task_scan_po_hepatic_scan_Severe cirrhosis",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_hepatic_scan_Severe cirrhosis__LI__f_ugt1a9": {
+      "type": "TASK",
+      "index": "LI__f_ugt1a9",
+      "unit": null,
+      "task": "task_scan_po_hepatic_scan_Severe cirrhosis",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_renal_scan_Normal renal function__time": {
+      "type": "TASK",
+      "index": "time",
+      "unit": null,
+      "task": "task_scan_po_renal_scan_Normal renal function",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_renal_scan_Normal renal function__IVDOSE_dap": {
+      "type": "TASK",
+      "index": "IVDOSE_dap",
+      "unit": null,
+      "task": "task_scan_po_renal_scan_Normal renal function",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_renal_scan_Normal renal function__PODOSE_dap": {
+      "type": "TASK",
+      "index": "PODOSE_dap",
+      "unit": null,
+      "task": "task_scan_po_renal_scan_Normal renal function",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_renal_scan_Normal renal function__Cve_daptot": {
+      "type": "TASK",
+      "index": "Cve_daptot",
+      "unit": null,
+      "task": "task_scan_po_renal_scan_Normal renal function",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_renal_scan_Normal renal function__Cve_dap": {
+      "type": "TASK",
+      "index": "Cve_dap",
+      "unit": null,
+      "task": "task_scan_po_renal_scan_Normal renal function",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_renal_scan_Normal renal function__Cve_d3g": {
+      "type": "TASK",
+      "index": "Cve_d3g",
+      "unit": null,
+      "task": "task_scan_po_renal_scan_Normal renal function",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_renal_scan_Normal renal function__KI__glc_ext": {
+      "type": "TASK",
+      "index": "KI__glc_ext",
+      "unit": null,
+      "task": "task_scan_po_renal_scan_Normal renal function",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_renal_scan_Normal renal function__LI__dap": {
+      "type": "TASK",
+      "index": "LI__dap",
+      "unit": null,
+      "task": "task_scan_po_renal_scan_Normal renal function",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_renal_scan_Normal renal function__LI__d3g": {
+      "type": "TASK",
+      "index": "LI__d3g",
+      "unit": null,
+      "task": "task_scan_po_renal_scan_Normal renal function",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_renal_scan_Normal renal function__Aurine_daptot": {
+      "type": "TASK",
+      "index": "Aurine_daptot",
+      "unit": null,
+      "task": "task_scan_po_renal_scan_Normal renal function",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_renal_scan_Normal renal function__Aurine_dap": {
+      "type": "TASK",
+      "index": "Aurine_dap",
+      "unit": null,
+      "task": "task_scan_po_renal_scan_Normal renal function",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_renal_scan_Normal renal function__Aurine_d3g": {
+      "type": "TASK",
+      "index": "Aurine_d3g",
+      "unit": null,
+      "task": "task_scan_po_renal_scan_Normal renal function",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_renal_scan_Normal renal function__KI__glc_urine": {
+      "type": "TASK",
+      "index": "KI__glc_urine",
+      "unit": null,
+      "task": "task_scan_po_renal_scan_Normal renal function",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_renal_scan_Normal renal function__KI__UGE": {
+      "type": "TASK",
+      "index": "KI__UGE",
+      "unit": null,
+      "task": "task_scan_po_renal_scan_Normal renal function",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_renal_scan_Normal renal function__KI__RTG": {
+      "type": "TASK",
+      "index": "KI__RTG",
+      "unit": null,
+      "task": "task_scan_po_renal_scan_Normal renal function",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_renal_scan_Normal renal function__Afeces_dap": {
+      "type": "TASK",
+      "index": "Afeces_dap",
+      "unit": null,
+      "task": "task_scan_po_renal_scan_Normal renal function",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_renal_scan_Normal renal function__Afeces_daptot": {
+      "type": "TASK",
+      "index": "Afeces_daptot",
+      "unit": null,
+      "task": "task_scan_po_renal_scan_Normal renal function",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_renal_scan_Normal renal function__KI__D3GEX": {
+      "type": "TASK",
+      "index": "KI__D3GEX",
+      "unit": null,
+      "task": "task_scan_po_renal_scan_Normal renal function",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_renal_scan_Normal renal function__KI__DAPEX": {
+      "type": "TASK",
+      "index": "KI__DAPEX",
+      "unit": null,
+      "task": "task_scan_po_renal_scan_Normal renal function",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_renal_scan_Normal renal function__KI__GLCEX": {
+      "type": "TASK",
+      "index": "KI__GLCEX",
+      "unit": null,
+      "task": "task_scan_po_renal_scan_Normal renal function",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_renal_scan_Normal renal function__KI__f_renal_function": {
+      "type": "TASK",
+      "index": "KI__f_renal_function",
+      "unit": null,
+      "task": "task_scan_po_renal_scan_Normal renal function",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_renal_scan_Normal renal function__f_cirrhosis": {
+      "type": "TASK",
+      "index": "f_cirrhosis",
+      "unit": null,
+      "task": "task_scan_po_renal_scan_Normal renal function",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_renal_scan_Normal renal function__GU__f_absorption": {
+      "type": "TASK",
+      "index": "GU__f_absorption",
+      "unit": null,
+      "task": "task_scan_po_renal_scan_Normal renal function",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_renal_scan_Normal renal function__LI__f_ugt1a9": {
+      "type": "TASK",
+      "index": "LI__f_ugt1a9",
+      "unit": null,
+      "task": "task_scan_po_renal_scan_Normal renal function",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_renal_scan_Mild renal impairment__time": {
+      "type": "TASK",
+      "index": "time",
+      "unit": null,
+      "task": "task_scan_po_renal_scan_Mild renal impairment",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_renal_scan_Mild renal impairment__IVDOSE_dap": {
+      "type": "TASK",
+      "index": "IVDOSE_dap",
+      "unit": null,
+      "task": "task_scan_po_renal_scan_Mild renal impairment",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_renal_scan_Mild renal impairment__PODOSE_dap": {
+      "type": "TASK",
+      "index": "PODOSE_dap",
+      "unit": null,
+      "task": "task_scan_po_renal_scan_Mild renal impairment",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_renal_scan_Mild renal impairment__Cve_daptot": {
+      "type": "TASK",
+      "index": "Cve_daptot",
+      "unit": null,
+      "task": "task_scan_po_renal_scan_Mild renal impairment",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_renal_scan_Mild renal impairment__Cve_dap": {
+      "type": "TASK",
+      "index": "Cve_dap",
+      "unit": null,
+      "task": "task_scan_po_renal_scan_Mild renal impairment",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_renal_scan_Mild renal impairment__Cve_d3g": {
+      "type": "TASK",
+      "index": "Cve_d3g",
+      "unit": null,
+      "task": "task_scan_po_renal_scan_Mild renal impairment",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_renal_scan_Mild renal impairment__KI__glc_ext": {
+      "type": "TASK",
+      "index": "KI__glc_ext",
+      "unit": null,
+      "task": "task_scan_po_renal_scan_Mild renal impairment",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_renal_scan_Mild renal impairment__LI__dap": {
+      "type": "TASK",
+      "index": "LI__dap",
+      "unit": null,
+      "task": "task_scan_po_renal_scan_Mild renal impairment",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_renal_scan_Mild renal impairment__LI__d3g": {
+      "type": "TASK",
+      "index": "LI__d3g",
+      "unit": null,
+      "task": "task_scan_po_renal_scan_Mild renal impairment",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_renal_scan_Mild renal impairment__Aurine_daptot": {
+      "type": "TASK",
+      "index": "Aurine_daptot",
+      "unit": null,
+      "task": "task_scan_po_renal_scan_Mild renal impairment",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_renal_scan_Mild renal impairment__Aurine_dap": {
+      "type": "TASK",
+      "index": "Aurine_dap",
+      "unit": null,
+      "task": "task_scan_po_renal_scan_Mild renal impairment",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_renal_scan_Mild renal impairment__Aurine_d3g": {
+      "type": "TASK",
+      "index": "Aurine_d3g",
+      "unit": null,
+      "task": "task_scan_po_renal_scan_Mild renal impairment",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_renal_scan_Mild renal impairment__KI__glc_urine": {
+      "type": "TASK",
+      "index": "KI__glc_urine",
+      "unit": null,
+      "task": "task_scan_po_renal_scan_Mild renal impairment",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_renal_scan_Mild renal impairment__KI__UGE": {
+      "type": "TASK",
+      "index": "KI__UGE",
+      "unit": null,
+      "task": "task_scan_po_renal_scan_Mild renal impairment",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_renal_scan_Mild renal impairment__KI__RTG": {
+      "type": "TASK",
+      "index": "KI__RTG",
+      "unit": null,
+      "task": "task_scan_po_renal_scan_Mild renal impairment",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_renal_scan_Mild renal impairment__Afeces_dap": {
+      "type": "TASK",
+      "index": "Afeces_dap",
+      "unit": null,
+      "task": "task_scan_po_renal_scan_Mild renal impairment",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_renal_scan_Mild renal impairment__Afeces_daptot": {
+      "type": "TASK",
+      "index": "Afeces_daptot",
+      "unit": null,
+      "task": "task_scan_po_renal_scan_Mild renal impairment",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_renal_scan_Mild renal impairment__KI__D3GEX": {
+      "type": "TASK",
+      "index": "KI__D3GEX",
+      "unit": null,
+      "task": "task_scan_po_renal_scan_Mild renal impairment",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_renal_scan_Mild renal impairment__KI__DAPEX": {
+      "type": "TASK",
+      "index": "KI__DAPEX",
+      "unit": null,
+      "task": "task_scan_po_renal_scan_Mild renal impairment",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_renal_scan_Mild renal impairment__KI__GLCEX": {
+      "type": "TASK",
+      "index": "KI__GLCEX",
+      "unit": null,
+      "task": "task_scan_po_renal_scan_Mild renal impairment",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_renal_scan_Mild renal impairment__KI__f_renal_function": {
+      "type": "TASK",
+      "index": "KI__f_renal_function",
+      "unit": null,
+      "task": "task_scan_po_renal_scan_Mild renal impairment",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_renal_scan_Mild renal impairment__f_cirrhosis": {
+      "type": "TASK",
+      "index": "f_cirrhosis",
+      "unit": null,
+      "task": "task_scan_po_renal_scan_Mild renal impairment",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_renal_scan_Mild renal impairment__GU__f_absorption": {
+      "type": "TASK",
+      "index": "GU__f_absorption",
+      "unit": null,
+      "task": "task_scan_po_renal_scan_Mild renal impairment",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_renal_scan_Mild renal impairment__LI__f_ugt1a9": {
+      "type": "TASK",
+      "index": "LI__f_ugt1a9",
+      "unit": null,
+      "task": "task_scan_po_renal_scan_Mild renal impairment",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_renal_scan_Moderate renal impairment__time": {
+      "type": "TASK",
+      "index": "time",
+      "unit": null,
+      "task": "task_scan_po_renal_scan_Moderate renal impairment",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_renal_scan_Moderate renal impairment__IVDOSE_dap": {
+      "type": "TASK",
+      "index": "IVDOSE_dap",
+      "unit": null,
+      "task": "task_scan_po_renal_scan_Moderate renal impairment",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_renal_scan_Moderate renal impairment__PODOSE_dap": {
+      "type": "TASK",
+      "index": "PODOSE_dap",
+      "unit": null,
+      "task": "task_scan_po_renal_scan_Moderate renal impairment",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_renal_scan_Moderate renal impairment__Cve_daptot": {
+      "type": "TASK",
+      "index": "Cve_daptot",
+      "unit": null,
+      "task": "task_scan_po_renal_scan_Moderate renal impairment",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_renal_scan_Moderate renal impairment__Cve_dap": {
+      "type": "TASK",
+      "index": "Cve_dap",
+      "unit": null,
+      "task": "task_scan_po_renal_scan_Moderate renal impairment",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_renal_scan_Moderate renal impairment__Cve_d3g": {
+      "type": "TASK",
+      "index": "Cve_d3g",
+      "unit": null,
+      "task": "task_scan_po_renal_scan_Moderate renal impairment",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_renal_scan_Moderate renal impairment__KI__glc_ext": {
+      "type": "TASK",
+      "index": "KI__glc_ext",
+      "unit": null,
+      "task": "task_scan_po_renal_scan_Moderate renal impairment",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_renal_scan_Moderate renal impairment__LI__dap": {
+      "type": "TASK",
+      "index": "LI__dap",
+      "unit": null,
+      "task": "task_scan_po_renal_scan_Moderate renal impairment",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_renal_scan_Moderate renal impairment__LI__d3g": {
+      "type": "TASK",
+      "index": "LI__d3g",
+      "unit": null,
+      "task": "task_scan_po_renal_scan_Moderate renal impairment",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_renal_scan_Moderate renal impairment__Aurine_daptot": {
+      "type": "TASK",
+      "index": "Aurine_daptot",
+      "unit": null,
+      "task": "task_scan_po_renal_scan_Moderate renal impairment",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_renal_scan_Moderate renal impairment__Aurine_dap": {
+      "type": "TASK",
+      "index": "Aurine_dap",
+      "unit": null,
+      "task": "task_scan_po_renal_scan_Moderate renal impairment",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_renal_scan_Moderate renal impairment__Aurine_d3g": {
+      "type": "TASK",
+      "index": "Aurine_d3g",
+      "unit": null,
+      "task": "task_scan_po_renal_scan_Moderate renal impairment",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_renal_scan_Moderate renal impairment__KI__glc_urine": {
+      "type": "TASK",
+      "index": "KI__glc_urine",
+      "unit": null,
+      "task": "task_scan_po_renal_scan_Moderate renal impairment",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_renal_scan_Moderate renal impairment__KI__UGE": {
+      "type": "TASK",
+      "index": "KI__UGE",
+      "unit": null,
+      "task": "task_scan_po_renal_scan_Moderate renal impairment",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_renal_scan_Moderate renal impairment__KI__RTG": {
+      "type": "TASK",
+      "index": "KI__RTG",
+      "unit": null,
+      "task": "task_scan_po_renal_scan_Moderate renal impairment",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_renal_scan_Moderate renal impairment__Afeces_dap": {
+      "type": "TASK",
+      "index": "Afeces_dap",
+      "unit": null,
+      "task": "task_scan_po_renal_scan_Moderate renal impairment",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_renal_scan_Moderate renal impairment__Afeces_daptot": {
+      "type": "TASK",
+      "index": "Afeces_daptot",
+      "unit": null,
+      "task": "task_scan_po_renal_scan_Moderate renal impairment",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_renal_scan_Moderate renal impairment__KI__D3GEX": {
+      "type": "TASK",
+      "index": "KI__D3GEX",
+      "unit": null,
+      "task": "task_scan_po_renal_scan_Moderate renal impairment",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_renal_scan_Moderate renal impairment__KI__DAPEX": {
+      "type": "TASK",
+      "index": "KI__DAPEX",
+      "unit": null,
+      "task": "task_scan_po_renal_scan_Moderate renal impairment",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_renal_scan_Moderate renal impairment__KI__GLCEX": {
+      "type": "TASK",
+      "index": "KI__GLCEX",
+      "unit": null,
+      "task": "task_scan_po_renal_scan_Moderate renal impairment",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_renal_scan_Moderate renal impairment__KI__f_renal_function": {
+      "type": "TASK",
+      "index": "KI__f_renal_function",
+      "unit": null,
+      "task": "task_scan_po_renal_scan_Moderate renal impairment",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_renal_scan_Moderate renal impairment__f_cirrhosis": {
+      "type": "TASK",
+      "index": "f_cirrhosis",
+      "unit": null,
+      "task": "task_scan_po_renal_scan_Moderate renal impairment",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_renal_scan_Moderate renal impairment__GU__f_absorption": {
+      "type": "TASK",
+      "index": "GU__f_absorption",
+      "unit": null,
+      "task": "task_scan_po_renal_scan_Moderate renal impairment",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_renal_scan_Moderate renal impairment__LI__f_ugt1a9": {
+      "type": "TASK",
+      "index": "LI__f_ugt1a9",
+      "unit": null,
+      "task": "task_scan_po_renal_scan_Moderate renal impairment",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_renal_scan_Severe renal impairment__time": {
+      "type": "TASK",
+      "index": "time",
+      "unit": null,
+      "task": "task_scan_po_renal_scan_Severe renal impairment",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_renal_scan_Severe renal impairment__IVDOSE_dap": {
+      "type": "TASK",
+      "index": "IVDOSE_dap",
+      "unit": null,
+      "task": "task_scan_po_renal_scan_Severe renal impairment",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_renal_scan_Severe renal impairment__PODOSE_dap": {
+      "type": "TASK",
+      "index": "PODOSE_dap",
+      "unit": null,
+      "task": "task_scan_po_renal_scan_Severe renal impairment",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_renal_scan_Severe renal impairment__Cve_daptot": {
+      "type": "TASK",
+      "index": "Cve_daptot",
+      "unit": null,
+      "task": "task_scan_po_renal_scan_Severe renal impairment",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_renal_scan_Severe renal impairment__Cve_dap": {
+      "type": "TASK",
+      "index": "Cve_dap",
+      "unit": null,
+      "task": "task_scan_po_renal_scan_Severe renal impairment",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_renal_scan_Severe renal impairment__Cve_d3g": {
+      "type": "TASK",
+      "index": "Cve_d3g",
+      "unit": null,
+      "task": "task_scan_po_renal_scan_Severe renal impairment",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_renal_scan_Severe renal impairment__KI__glc_ext": {
+      "type": "TASK",
+      "index": "KI__glc_ext",
+      "unit": null,
+      "task": "task_scan_po_renal_scan_Severe renal impairment",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_renal_scan_Severe renal impairment__LI__dap": {
+      "type": "TASK",
+      "index": "LI__dap",
+      "unit": null,
+      "task": "task_scan_po_renal_scan_Severe renal impairment",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_renal_scan_Severe renal impairment__LI__d3g": {
+      "type": "TASK",
+      "index": "LI__d3g",
+      "unit": null,
+      "task": "task_scan_po_renal_scan_Severe renal impairment",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_renal_scan_Severe renal impairment__Aurine_daptot": {
+      "type": "TASK",
+      "index": "Aurine_daptot",
+      "unit": null,
+      "task": "task_scan_po_renal_scan_Severe renal impairment",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_renal_scan_Severe renal impairment__Aurine_dap": {
+      "type": "TASK",
+      "index": "Aurine_dap",
+      "unit": null,
+      "task": "task_scan_po_renal_scan_Severe renal impairment",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_renal_scan_Severe renal impairment__Aurine_d3g": {
+      "type": "TASK",
+      "index": "Aurine_d3g",
+      "unit": null,
+      "task": "task_scan_po_renal_scan_Severe renal impairment",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_renal_scan_Severe renal impairment__KI__glc_urine": {
+      "type": "TASK",
+      "index": "KI__glc_urine",
+      "unit": null,
+      "task": "task_scan_po_renal_scan_Severe renal impairment",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_renal_scan_Severe renal impairment__KI__UGE": {
+      "type": "TASK",
+      "index": "KI__UGE",
+      "unit": null,
+      "task": "task_scan_po_renal_scan_Severe renal impairment",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_renal_scan_Severe renal impairment__KI__RTG": {
+      "type": "TASK",
+      "index": "KI__RTG",
+      "unit": null,
+      "task": "task_scan_po_renal_scan_Severe renal impairment",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_renal_scan_Severe renal impairment__Afeces_dap": {
+      "type": "TASK",
+      "index": "Afeces_dap",
+      "unit": null,
+      "task": "task_scan_po_renal_scan_Severe renal impairment",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_renal_scan_Severe renal impairment__Afeces_daptot": {
+      "type": "TASK",
+      "index": "Afeces_daptot",
+      "unit": null,
+      "task": "task_scan_po_renal_scan_Severe renal impairment",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_renal_scan_Severe renal impairment__KI__D3GEX": {
+      "type": "TASK",
+      "index": "KI__D3GEX",
+      "unit": null,
+      "task": "task_scan_po_renal_scan_Severe renal impairment",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_renal_scan_Severe renal impairment__KI__DAPEX": {
+      "type": "TASK",
+      "index": "KI__DAPEX",
+      "unit": null,
+      "task": "task_scan_po_renal_scan_Severe renal impairment",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_renal_scan_Severe renal impairment__KI__GLCEX": {
+      "type": "TASK",
+      "index": "KI__GLCEX",
+      "unit": null,
+      "task": "task_scan_po_renal_scan_Severe renal impairment",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_renal_scan_Severe renal impairment__KI__f_renal_function": {
+      "type": "TASK",
+      "index": "KI__f_renal_function",
+      "unit": null,
+      "task": "task_scan_po_renal_scan_Severe renal impairment",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_renal_scan_Severe renal impairment__f_cirrhosis": {
+      "type": "TASK",
+      "index": "f_cirrhosis",
+      "unit": null,
+      "task": "task_scan_po_renal_scan_Severe renal impairment",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_renal_scan_Severe renal impairment__GU__f_absorption": {
+      "type": "TASK",
+      "index": "GU__f_absorption",
+      "unit": null,
+      "task": "task_scan_po_renal_scan_Severe renal impairment",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_renal_scan_Severe renal impairment__LI__f_ugt1a9": {
+      "type": "TASK",
+      "index": "LI__f_ugt1a9",
+      "unit": null,
+      "task": "task_scan_po_renal_scan_Severe renal impairment",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_renal_scan_Control__time": {
+      "type": "TASK",
+      "index": "time",
+      "unit": null,
+      "task": "task_scan_po_renal_scan_Control",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_renal_scan_Control__IVDOSE_dap": {
+      "type": "TASK",
+      "index": "IVDOSE_dap",
+      "unit": null,
+      "task": "task_scan_po_renal_scan_Control",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_renal_scan_Control__PODOSE_dap": {
+      "type": "TASK",
+      "index": "PODOSE_dap",
+      "unit": null,
+      "task": "task_scan_po_renal_scan_Control",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_renal_scan_Control__Cve_daptot": {
+      "type": "TASK",
+      "index": "Cve_daptot",
+      "unit": null,
+      "task": "task_scan_po_renal_scan_Control",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_renal_scan_Control__Cve_dap": {
+      "type": "TASK",
+      "index": "Cve_dap",
+      "unit": null,
+      "task": "task_scan_po_renal_scan_Control",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_renal_scan_Control__Cve_d3g": {
+      "type": "TASK",
+      "index": "Cve_d3g",
+      "unit": null,
+      "task": "task_scan_po_renal_scan_Control",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_renal_scan_Control__KI__glc_ext": {
+      "type": "TASK",
+      "index": "KI__glc_ext",
+      "unit": null,
+      "task": "task_scan_po_renal_scan_Control",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_renal_scan_Control__LI__dap": {
+      "type": "TASK",
+      "index": "LI__dap",
+      "unit": null,
+      "task": "task_scan_po_renal_scan_Control",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_renal_scan_Control__LI__d3g": {
+      "type": "TASK",
+      "index": "LI__d3g",
+      "unit": null,
+      "task": "task_scan_po_renal_scan_Control",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_renal_scan_Control__Aurine_daptot": {
+      "type": "TASK",
+      "index": "Aurine_daptot",
+      "unit": null,
+      "task": "task_scan_po_renal_scan_Control",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_renal_scan_Control__Aurine_dap": {
+      "type": "TASK",
+      "index": "Aurine_dap",
+      "unit": null,
+      "task": "task_scan_po_renal_scan_Control",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_renal_scan_Control__Aurine_d3g": {
+      "type": "TASK",
+      "index": "Aurine_d3g",
+      "unit": null,
+      "task": "task_scan_po_renal_scan_Control",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_renal_scan_Control__KI__glc_urine": {
+      "type": "TASK",
+      "index": "KI__glc_urine",
+      "unit": null,
+      "task": "task_scan_po_renal_scan_Control",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_renal_scan_Control__KI__UGE": {
+      "type": "TASK",
+      "index": "KI__UGE",
+      "unit": null,
+      "task": "task_scan_po_renal_scan_Control",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_renal_scan_Control__KI__RTG": {
+      "type": "TASK",
+      "index": "KI__RTG",
+      "unit": null,
+      "task": "task_scan_po_renal_scan_Control",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_renal_scan_Control__Afeces_dap": {
+      "type": "TASK",
+      "index": "Afeces_dap",
+      "unit": null,
+      "task": "task_scan_po_renal_scan_Control",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_renal_scan_Control__Afeces_daptot": {
+      "type": "TASK",
+      "index": "Afeces_daptot",
+      "unit": null,
+      "task": "task_scan_po_renal_scan_Control",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_renal_scan_Control__KI__D3GEX": {
+      "type": "TASK",
+      "index": "KI__D3GEX",
+      "unit": null,
+      "task": "task_scan_po_renal_scan_Control",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_renal_scan_Control__KI__DAPEX": {
+      "type": "TASK",
+      "index": "KI__DAPEX",
+      "unit": null,
+      "task": "task_scan_po_renal_scan_Control",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_renal_scan_Control__KI__GLCEX": {
+      "type": "TASK",
+      "index": "KI__GLCEX",
+      "unit": null,
+      "task": "task_scan_po_renal_scan_Control",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_renal_scan_Control__KI__f_renal_function": {
+      "type": "TASK",
+      "index": "KI__f_renal_function",
+      "unit": null,
+      "task": "task_scan_po_renal_scan_Control",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_renal_scan_Control__f_cirrhosis": {
+      "type": "TASK",
+      "index": "f_cirrhosis",
+      "unit": null,
+      "task": "task_scan_po_renal_scan_Control",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_renal_scan_Control__GU__f_absorption": {
+      "type": "TASK",
+      "index": "GU__f_absorption",
+      "unit": null,
+      "task": "task_scan_po_renal_scan_Control",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_renal_scan_Control__LI__f_ugt1a9": {
+      "type": "TASK",
+      "index": "LI__f_ugt1a9",
+      "unit": null,
+      "task": "task_scan_po_renal_scan_Control",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_renal_scan_Mild cirrhosis__time": {
+      "type": "TASK",
+      "index": "time",
+      "unit": null,
+      "task": "task_scan_po_renal_scan_Mild cirrhosis",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_renal_scan_Mild cirrhosis__IVDOSE_dap": {
+      "type": "TASK",
+      "index": "IVDOSE_dap",
+      "unit": null,
+      "task": "task_scan_po_renal_scan_Mild cirrhosis",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_renal_scan_Mild cirrhosis__PODOSE_dap": {
+      "type": "TASK",
+      "index": "PODOSE_dap",
+      "unit": null,
+      "task": "task_scan_po_renal_scan_Mild cirrhosis",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_renal_scan_Mild cirrhosis__Cve_daptot": {
+      "type": "TASK",
+      "index": "Cve_daptot",
+      "unit": null,
+      "task": "task_scan_po_renal_scan_Mild cirrhosis",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_renal_scan_Mild cirrhosis__Cve_dap": {
+      "type": "TASK",
+      "index": "Cve_dap",
+      "unit": null,
+      "task": "task_scan_po_renal_scan_Mild cirrhosis",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_renal_scan_Mild cirrhosis__Cve_d3g": {
+      "type": "TASK",
+      "index": "Cve_d3g",
+      "unit": null,
+      "task": "task_scan_po_renal_scan_Mild cirrhosis",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_renal_scan_Mild cirrhosis__KI__glc_ext": {
+      "type": "TASK",
+      "index": "KI__glc_ext",
+      "unit": null,
+      "task": "task_scan_po_renal_scan_Mild cirrhosis",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_renal_scan_Mild cirrhosis__LI__dap": {
+      "type": "TASK",
+      "index": "LI__dap",
+      "unit": null,
+      "task": "task_scan_po_renal_scan_Mild cirrhosis",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_renal_scan_Mild cirrhosis__LI__d3g": {
+      "type": "TASK",
+      "index": "LI__d3g",
+      "unit": null,
+      "task": "task_scan_po_renal_scan_Mild cirrhosis",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_renal_scan_Mild cirrhosis__Aurine_daptot": {
+      "type": "TASK",
+      "index": "Aurine_daptot",
+      "unit": null,
+      "task": "task_scan_po_renal_scan_Mild cirrhosis",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_renal_scan_Mild cirrhosis__Aurine_dap": {
+      "type": "TASK",
+      "index": "Aurine_dap",
+      "unit": null,
+      "task": "task_scan_po_renal_scan_Mild cirrhosis",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_renal_scan_Mild cirrhosis__Aurine_d3g": {
+      "type": "TASK",
+      "index": "Aurine_d3g",
+      "unit": null,
+      "task": "task_scan_po_renal_scan_Mild cirrhosis",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_renal_scan_Mild cirrhosis__KI__glc_urine": {
+      "type": "TASK",
+      "index": "KI__glc_urine",
+      "unit": null,
+      "task": "task_scan_po_renal_scan_Mild cirrhosis",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_renal_scan_Mild cirrhosis__KI__UGE": {
+      "type": "TASK",
+      "index": "KI__UGE",
+      "unit": null,
+      "task": "task_scan_po_renal_scan_Mild cirrhosis",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_renal_scan_Mild cirrhosis__KI__RTG": {
+      "type": "TASK",
+      "index": "KI__RTG",
+      "unit": null,
+      "task": "task_scan_po_renal_scan_Mild cirrhosis",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_renal_scan_Mild cirrhosis__Afeces_dap": {
+      "type": "TASK",
+      "index": "Afeces_dap",
+      "unit": null,
+      "task": "task_scan_po_renal_scan_Mild cirrhosis",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_renal_scan_Mild cirrhosis__Afeces_daptot": {
+      "type": "TASK",
+      "index": "Afeces_daptot",
+      "unit": null,
+      "task": "task_scan_po_renal_scan_Mild cirrhosis",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_renal_scan_Mild cirrhosis__KI__D3GEX": {
+      "type": "TASK",
+      "index": "KI__D3GEX",
+      "unit": null,
+      "task": "task_scan_po_renal_scan_Mild cirrhosis",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_renal_scan_Mild cirrhosis__KI__DAPEX": {
+      "type": "TASK",
+      "index": "KI__DAPEX",
+      "unit": null,
+      "task": "task_scan_po_renal_scan_Mild cirrhosis",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_renal_scan_Mild cirrhosis__KI__GLCEX": {
+      "type": "TASK",
+      "index": "KI__GLCEX",
+      "unit": null,
+      "task": "task_scan_po_renal_scan_Mild cirrhosis",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_renal_scan_Mild cirrhosis__KI__f_renal_function": {
+      "type": "TASK",
+      "index": "KI__f_renal_function",
+      "unit": null,
+      "task": "task_scan_po_renal_scan_Mild cirrhosis",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_renal_scan_Mild cirrhosis__f_cirrhosis": {
+      "type": "TASK",
+      "index": "f_cirrhosis",
+      "unit": null,
+      "task": "task_scan_po_renal_scan_Mild cirrhosis",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_renal_scan_Mild cirrhosis__GU__f_absorption": {
+      "type": "TASK",
+      "index": "GU__f_absorption",
+      "unit": null,
+      "task": "task_scan_po_renal_scan_Mild cirrhosis",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_renal_scan_Mild cirrhosis__LI__f_ugt1a9": {
+      "type": "TASK",
+      "index": "LI__f_ugt1a9",
+      "unit": null,
+      "task": "task_scan_po_renal_scan_Mild cirrhosis",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_renal_scan_Moderate cirrhosis__time": {
+      "type": "TASK",
+      "index": "time",
+      "unit": null,
+      "task": "task_scan_po_renal_scan_Moderate cirrhosis",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_renal_scan_Moderate cirrhosis__IVDOSE_dap": {
+      "type": "TASK",
+      "index": "IVDOSE_dap",
+      "unit": null,
+      "task": "task_scan_po_renal_scan_Moderate cirrhosis",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_renal_scan_Moderate cirrhosis__PODOSE_dap": {
+      "type": "TASK",
+      "index": "PODOSE_dap",
+      "unit": null,
+      "task": "task_scan_po_renal_scan_Moderate cirrhosis",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_renal_scan_Moderate cirrhosis__Cve_daptot": {
+      "type": "TASK",
+      "index": "Cve_daptot",
+      "unit": null,
+      "task": "task_scan_po_renal_scan_Moderate cirrhosis",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_renal_scan_Moderate cirrhosis__Cve_dap": {
+      "type": "TASK",
+      "index": "Cve_dap",
+      "unit": null,
+      "task": "task_scan_po_renal_scan_Moderate cirrhosis",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_renal_scan_Moderate cirrhosis__Cve_d3g": {
+      "type": "TASK",
+      "index": "Cve_d3g",
+      "unit": null,
+      "task": "task_scan_po_renal_scan_Moderate cirrhosis",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_renal_scan_Moderate cirrhosis__KI__glc_ext": {
+      "type": "TASK",
+      "index": "KI__glc_ext",
+      "unit": null,
+      "task": "task_scan_po_renal_scan_Moderate cirrhosis",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_renal_scan_Moderate cirrhosis__LI__dap": {
+      "type": "TASK",
+      "index": "LI__dap",
+      "unit": null,
+      "task": "task_scan_po_renal_scan_Moderate cirrhosis",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_renal_scan_Moderate cirrhosis__LI__d3g": {
+      "type": "TASK",
+      "index": "LI__d3g",
+      "unit": null,
+      "task": "task_scan_po_renal_scan_Moderate cirrhosis",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_renal_scan_Moderate cirrhosis__Aurine_daptot": {
+      "type": "TASK",
+      "index": "Aurine_daptot",
+      "unit": null,
+      "task": "task_scan_po_renal_scan_Moderate cirrhosis",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_renal_scan_Moderate cirrhosis__Aurine_dap": {
+      "type": "TASK",
+      "index": "Aurine_dap",
+      "unit": null,
+      "task": "task_scan_po_renal_scan_Moderate cirrhosis",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_renal_scan_Moderate cirrhosis__Aurine_d3g": {
+      "type": "TASK",
+      "index": "Aurine_d3g",
+      "unit": null,
+      "task": "task_scan_po_renal_scan_Moderate cirrhosis",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_renal_scan_Moderate cirrhosis__KI__glc_urine": {
+      "type": "TASK",
+      "index": "KI__glc_urine",
+      "unit": null,
+      "task": "task_scan_po_renal_scan_Moderate cirrhosis",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_renal_scan_Moderate cirrhosis__KI__UGE": {
+      "type": "TASK",
+      "index": "KI__UGE",
+      "unit": null,
+      "task": "task_scan_po_renal_scan_Moderate cirrhosis",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_renal_scan_Moderate cirrhosis__KI__RTG": {
+      "type": "TASK",
+      "index": "KI__RTG",
+      "unit": null,
+      "task": "task_scan_po_renal_scan_Moderate cirrhosis",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_renal_scan_Moderate cirrhosis__Afeces_dap": {
+      "type": "TASK",
+      "index": "Afeces_dap",
+      "unit": null,
+      "task": "task_scan_po_renal_scan_Moderate cirrhosis",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_renal_scan_Moderate cirrhosis__Afeces_daptot": {
+      "type": "TASK",
+      "index": "Afeces_daptot",
+      "unit": null,
+      "task": "task_scan_po_renal_scan_Moderate cirrhosis",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_renal_scan_Moderate cirrhosis__KI__D3GEX": {
+      "type": "TASK",
+      "index": "KI__D3GEX",
+      "unit": null,
+      "task": "task_scan_po_renal_scan_Moderate cirrhosis",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_renal_scan_Moderate cirrhosis__KI__DAPEX": {
+      "type": "TASK",
+      "index": "KI__DAPEX",
+      "unit": null,
+      "task": "task_scan_po_renal_scan_Moderate cirrhosis",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_renal_scan_Moderate cirrhosis__KI__GLCEX": {
+      "type": "TASK",
+      "index": "KI__GLCEX",
+      "unit": null,
+      "task": "task_scan_po_renal_scan_Moderate cirrhosis",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_renal_scan_Moderate cirrhosis__KI__f_renal_function": {
+      "type": "TASK",
+      "index": "KI__f_renal_function",
+      "unit": null,
+      "task": "task_scan_po_renal_scan_Moderate cirrhosis",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_renal_scan_Moderate cirrhosis__f_cirrhosis": {
+      "type": "TASK",
+      "index": "f_cirrhosis",
+      "unit": null,
+      "task": "task_scan_po_renal_scan_Moderate cirrhosis",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_renal_scan_Moderate cirrhosis__GU__f_absorption": {
+      "type": "TASK",
+      "index": "GU__f_absorption",
+      "unit": null,
+      "task": "task_scan_po_renal_scan_Moderate cirrhosis",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_renal_scan_Moderate cirrhosis__LI__f_ugt1a9": {
+      "type": "TASK",
+      "index": "LI__f_ugt1a9",
+      "unit": null,
+      "task": "task_scan_po_renal_scan_Moderate cirrhosis",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_renal_scan_Severe cirrhosis__time": {
+      "type": "TASK",
+      "index": "time",
+      "unit": null,
+      "task": "task_scan_po_renal_scan_Severe cirrhosis",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_renal_scan_Severe cirrhosis__IVDOSE_dap": {
+      "type": "TASK",
+      "index": "IVDOSE_dap",
+      "unit": null,
+      "task": "task_scan_po_renal_scan_Severe cirrhosis",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_renal_scan_Severe cirrhosis__PODOSE_dap": {
+      "type": "TASK",
+      "index": "PODOSE_dap",
+      "unit": null,
+      "task": "task_scan_po_renal_scan_Severe cirrhosis",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_renal_scan_Severe cirrhosis__Cve_daptot": {
+      "type": "TASK",
+      "index": "Cve_daptot",
+      "unit": null,
+      "task": "task_scan_po_renal_scan_Severe cirrhosis",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_renal_scan_Severe cirrhosis__Cve_dap": {
+      "type": "TASK",
+      "index": "Cve_dap",
+      "unit": null,
+      "task": "task_scan_po_renal_scan_Severe cirrhosis",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_renal_scan_Severe cirrhosis__Cve_d3g": {
+      "type": "TASK",
+      "index": "Cve_d3g",
+      "unit": null,
+      "task": "task_scan_po_renal_scan_Severe cirrhosis",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_renal_scan_Severe cirrhosis__KI__glc_ext": {
+      "type": "TASK",
+      "index": "KI__glc_ext",
+      "unit": null,
+      "task": "task_scan_po_renal_scan_Severe cirrhosis",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_renal_scan_Severe cirrhosis__LI__dap": {
+      "type": "TASK",
+      "index": "LI__dap",
+      "unit": null,
+      "task": "task_scan_po_renal_scan_Severe cirrhosis",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_renal_scan_Severe cirrhosis__LI__d3g": {
+      "type": "TASK",
+      "index": "LI__d3g",
+      "unit": null,
+      "task": "task_scan_po_renal_scan_Severe cirrhosis",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_renal_scan_Severe cirrhosis__Aurine_daptot": {
+      "type": "TASK",
+      "index": "Aurine_daptot",
+      "unit": null,
+      "task": "task_scan_po_renal_scan_Severe cirrhosis",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_renal_scan_Severe cirrhosis__Aurine_dap": {
+      "type": "TASK",
+      "index": "Aurine_dap",
+      "unit": null,
+      "task": "task_scan_po_renal_scan_Severe cirrhosis",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_renal_scan_Severe cirrhosis__Aurine_d3g": {
+      "type": "TASK",
+      "index": "Aurine_d3g",
+      "unit": null,
+      "task": "task_scan_po_renal_scan_Severe cirrhosis",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_renal_scan_Severe cirrhosis__KI__glc_urine": {
+      "type": "TASK",
+      "index": "KI__glc_urine",
+      "unit": null,
+      "task": "task_scan_po_renal_scan_Severe cirrhosis",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_renal_scan_Severe cirrhosis__KI__UGE": {
+      "type": "TASK",
+      "index": "KI__UGE",
+      "unit": null,
+      "task": "task_scan_po_renal_scan_Severe cirrhosis",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_renal_scan_Severe cirrhosis__KI__RTG": {
+      "type": "TASK",
+      "index": "KI__RTG",
+      "unit": null,
+      "task": "task_scan_po_renal_scan_Severe cirrhosis",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_renal_scan_Severe cirrhosis__Afeces_dap": {
+      "type": "TASK",
+      "index": "Afeces_dap",
+      "unit": null,
+      "task": "task_scan_po_renal_scan_Severe cirrhosis",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_renal_scan_Severe cirrhosis__Afeces_daptot": {
+      "type": "TASK",
+      "index": "Afeces_daptot",
+      "unit": null,
+      "task": "task_scan_po_renal_scan_Severe cirrhosis",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_renal_scan_Severe cirrhosis__KI__D3GEX": {
+      "type": "TASK",
+      "index": "KI__D3GEX",
+      "unit": null,
+      "task": "task_scan_po_renal_scan_Severe cirrhosis",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_renal_scan_Severe cirrhosis__KI__DAPEX": {
+      "type": "TASK",
+      "index": "KI__DAPEX",
+      "unit": null,
+      "task": "task_scan_po_renal_scan_Severe cirrhosis",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_renal_scan_Severe cirrhosis__KI__GLCEX": {
+      "type": "TASK",
+      "index": "KI__GLCEX",
+      "unit": null,
+      "task": "task_scan_po_renal_scan_Severe cirrhosis",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_renal_scan_Severe cirrhosis__KI__f_renal_function": {
+      "type": "TASK",
+      "index": "KI__f_renal_function",
+      "unit": null,
+      "task": "task_scan_po_renal_scan_Severe cirrhosis",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_renal_scan_Severe cirrhosis__f_cirrhosis": {
+      "type": "TASK",
+      "index": "f_cirrhosis",
+      "unit": null,
+      "task": "task_scan_po_renal_scan_Severe cirrhosis",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_renal_scan_Severe cirrhosis__GU__f_absorption": {
+      "type": "TASK",
+      "index": "GU__f_absorption",
+      "unit": null,
+      "task": "task_scan_po_renal_scan_Severe cirrhosis",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_renal_scan_Severe cirrhosis__LI__f_ugt1a9": {
+      "type": "TASK",
+      "index": "LI__f_ugt1a9",
+      "unit": null,
+      "task": "task_scan_po_renal_scan_Severe cirrhosis",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_food_scan_Normal renal function__time": {
+      "type": "TASK",
+      "index": "time",
+      "unit": null,
+      "task": "task_scan_po_food_scan_Normal renal function",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_food_scan_Normal renal function__IVDOSE_dap": {
+      "type": "TASK",
+      "index": "IVDOSE_dap",
+      "unit": null,
+      "task": "task_scan_po_food_scan_Normal renal function",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_food_scan_Normal renal function__PODOSE_dap": {
+      "type": "TASK",
+      "index": "PODOSE_dap",
+      "unit": null,
+      "task": "task_scan_po_food_scan_Normal renal function",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_food_scan_Normal renal function__Cve_daptot": {
+      "type": "TASK",
+      "index": "Cve_daptot",
+      "unit": null,
+      "task": "task_scan_po_food_scan_Normal renal function",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_food_scan_Normal renal function__Cve_dap": {
+      "type": "TASK",
+      "index": "Cve_dap",
+      "unit": null,
+      "task": "task_scan_po_food_scan_Normal renal function",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_food_scan_Normal renal function__Cve_d3g": {
+      "type": "TASK",
+      "index": "Cve_d3g",
+      "unit": null,
+      "task": "task_scan_po_food_scan_Normal renal function",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_food_scan_Normal renal function__KI__glc_ext": {
+      "type": "TASK",
+      "index": "KI__glc_ext",
+      "unit": null,
+      "task": "task_scan_po_food_scan_Normal renal function",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_food_scan_Normal renal function__LI__dap": {
+      "type": "TASK",
+      "index": "LI__dap",
+      "unit": null,
+      "task": "task_scan_po_food_scan_Normal renal function",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_food_scan_Normal renal function__LI__d3g": {
+      "type": "TASK",
+      "index": "LI__d3g",
+      "unit": null,
+      "task": "task_scan_po_food_scan_Normal renal function",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_food_scan_Normal renal function__Aurine_daptot": {
+      "type": "TASK",
+      "index": "Aurine_daptot",
+      "unit": null,
+      "task": "task_scan_po_food_scan_Normal renal function",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_food_scan_Normal renal function__Aurine_dap": {
+      "type": "TASK",
+      "index": "Aurine_dap",
+      "unit": null,
+      "task": "task_scan_po_food_scan_Normal renal function",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_food_scan_Normal renal function__Aurine_d3g": {
+      "type": "TASK",
+      "index": "Aurine_d3g",
+      "unit": null,
+      "task": "task_scan_po_food_scan_Normal renal function",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_food_scan_Normal renal function__KI__glc_urine": {
+      "type": "TASK",
+      "index": "KI__glc_urine",
+      "unit": null,
+      "task": "task_scan_po_food_scan_Normal renal function",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_food_scan_Normal renal function__KI__UGE": {
+      "type": "TASK",
+      "index": "KI__UGE",
+      "unit": null,
+      "task": "task_scan_po_food_scan_Normal renal function",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_food_scan_Normal renal function__KI__RTG": {
+      "type": "TASK",
+      "index": "KI__RTG",
+      "unit": null,
+      "task": "task_scan_po_food_scan_Normal renal function",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_food_scan_Normal renal function__Afeces_dap": {
+      "type": "TASK",
+      "index": "Afeces_dap",
+      "unit": null,
+      "task": "task_scan_po_food_scan_Normal renal function",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_food_scan_Normal renal function__Afeces_daptot": {
+      "type": "TASK",
+      "index": "Afeces_daptot",
+      "unit": null,
+      "task": "task_scan_po_food_scan_Normal renal function",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_food_scan_Normal renal function__KI__D3GEX": {
+      "type": "TASK",
+      "index": "KI__D3GEX",
+      "unit": null,
+      "task": "task_scan_po_food_scan_Normal renal function",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_food_scan_Normal renal function__KI__DAPEX": {
+      "type": "TASK",
+      "index": "KI__DAPEX",
+      "unit": null,
+      "task": "task_scan_po_food_scan_Normal renal function",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_food_scan_Normal renal function__KI__GLCEX": {
+      "type": "TASK",
+      "index": "KI__GLCEX",
+      "unit": null,
+      "task": "task_scan_po_food_scan_Normal renal function",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_food_scan_Normal renal function__KI__f_renal_function": {
+      "type": "TASK",
+      "index": "KI__f_renal_function",
+      "unit": null,
+      "task": "task_scan_po_food_scan_Normal renal function",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_food_scan_Normal renal function__f_cirrhosis": {
+      "type": "TASK",
+      "index": "f_cirrhosis",
+      "unit": null,
+      "task": "task_scan_po_food_scan_Normal renal function",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_food_scan_Normal renal function__GU__f_absorption": {
+      "type": "TASK",
+      "index": "GU__f_absorption",
+      "unit": null,
+      "task": "task_scan_po_food_scan_Normal renal function",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_food_scan_Normal renal function__LI__f_ugt1a9": {
+      "type": "TASK",
+      "index": "LI__f_ugt1a9",
+      "unit": null,
+      "task": "task_scan_po_food_scan_Normal renal function",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_food_scan_Mild renal impairment__time": {
+      "type": "TASK",
+      "index": "time",
+      "unit": null,
+      "task": "task_scan_po_food_scan_Mild renal impairment",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_food_scan_Mild renal impairment__IVDOSE_dap": {
+      "type": "TASK",
+      "index": "IVDOSE_dap",
+      "unit": null,
+      "task": "task_scan_po_food_scan_Mild renal impairment",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_food_scan_Mild renal impairment__PODOSE_dap": {
+      "type": "TASK",
+      "index": "PODOSE_dap",
+      "unit": null,
+      "task": "task_scan_po_food_scan_Mild renal impairment",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_food_scan_Mild renal impairment__Cve_daptot": {
+      "type": "TASK",
+      "index": "Cve_daptot",
+      "unit": null,
+      "task": "task_scan_po_food_scan_Mild renal impairment",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_food_scan_Mild renal impairment__Cve_dap": {
+      "type": "TASK",
+      "index": "Cve_dap",
+      "unit": null,
+      "task": "task_scan_po_food_scan_Mild renal impairment",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_food_scan_Mild renal impairment__Cve_d3g": {
+      "type": "TASK",
+      "index": "Cve_d3g",
+      "unit": null,
+      "task": "task_scan_po_food_scan_Mild renal impairment",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_food_scan_Mild renal impairment__KI__glc_ext": {
+      "type": "TASK",
+      "index": "KI__glc_ext",
+      "unit": null,
+      "task": "task_scan_po_food_scan_Mild renal impairment",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_food_scan_Mild renal impairment__LI__dap": {
+      "type": "TASK",
+      "index": "LI__dap",
+      "unit": null,
+      "task": "task_scan_po_food_scan_Mild renal impairment",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_food_scan_Mild renal impairment__LI__d3g": {
+      "type": "TASK",
+      "index": "LI__d3g",
+      "unit": null,
+      "task": "task_scan_po_food_scan_Mild renal impairment",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_food_scan_Mild renal impairment__Aurine_daptot": {
+      "type": "TASK",
+      "index": "Aurine_daptot",
+      "unit": null,
+      "task": "task_scan_po_food_scan_Mild renal impairment",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_food_scan_Mild renal impairment__Aurine_dap": {
+      "type": "TASK",
+      "index": "Aurine_dap",
+      "unit": null,
+      "task": "task_scan_po_food_scan_Mild renal impairment",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_food_scan_Mild renal impairment__Aurine_d3g": {
+      "type": "TASK",
+      "index": "Aurine_d3g",
+      "unit": null,
+      "task": "task_scan_po_food_scan_Mild renal impairment",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_food_scan_Mild renal impairment__KI__glc_urine": {
+      "type": "TASK",
+      "index": "KI__glc_urine",
+      "unit": null,
+      "task": "task_scan_po_food_scan_Mild renal impairment",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_food_scan_Mild renal impairment__KI__UGE": {
+      "type": "TASK",
+      "index": "KI__UGE",
+      "unit": null,
+      "task": "task_scan_po_food_scan_Mild renal impairment",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_food_scan_Mild renal impairment__KI__RTG": {
+      "type": "TASK",
+      "index": "KI__RTG",
+      "unit": null,
+      "task": "task_scan_po_food_scan_Mild renal impairment",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_food_scan_Mild renal impairment__Afeces_dap": {
+      "type": "TASK",
+      "index": "Afeces_dap",
+      "unit": null,
+      "task": "task_scan_po_food_scan_Mild renal impairment",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_food_scan_Mild renal impairment__Afeces_daptot": {
+      "type": "TASK",
+      "index": "Afeces_daptot",
+      "unit": null,
+      "task": "task_scan_po_food_scan_Mild renal impairment",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_food_scan_Mild renal impairment__KI__D3GEX": {
+      "type": "TASK",
+      "index": "KI__D3GEX",
+      "unit": null,
+      "task": "task_scan_po_food_scan_Mild renal impairment",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_food_scan_Mild renal impairment__KI__DAPEX": {
+      "type": "TASK",
+      "index": "KI__DAPEX",
+      "unit": null,
+      "task": "task_scan_po_food_scan_Mild renal impairment",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_food_scan_Mild renal impairment__KI__GLCEX": {
+      "type": "TASK",
+      "index": "KI__GLCEX",
+      "unit": null,
+      "task": "task_scan_po_food_scan_Mild renal impairment",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_food_scan_Mild renal impairment__KI__f_renal_function": {
+      "type": "TASK",
+      "index": "KI__f_renal_function",
+      "unit": null,
+      "task": "task_scan_po_food_scan_Mild renal impairment",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_food_scan_Mild renal impairment__f_cirrhosis": {
+      "type": "TASK",
+      "index": "f_cirrhosis",
+      "unit": null,
+      "task": "task_scan_po_food_scan_Mild renal impairment",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_food_scan_Mild renal impairment__GU__f_absorption": {
+      "type": "TASK",
+      "index": "GU__f_absorption",
+      "unit": null,
+      "task": "task_scan_po_food_scan_Mild renal impairment",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_food_scan_Mild renal impairment__LI__f_ugt1a9": {
+      "type": "TASK",
+      "index": "LI__f_ugt1a9",
+      "unit": null,
+      "task": "task_scan_po_food_scan_Mild renal impairment",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_food_scan_Moderate renal impairment__time": {
+      "type": "TASK",
+      "index": "time",
+      "unit": null,
+      "task": "task_scan_po_food_scan_Moderate renal impairment",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_food_scan_Moderate renal impairment__IVDOSE_dap": {
+      "type": "TASK",
+      "index": "IVDOSE_dap",
+      "unit": null,
+      "task": "task_scan_po_food_scan_Moderate renal impairment",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_food_scan_Moderate renal impairment__PODOSE_dap": {
+      "type": "TASK",
+      "index": "PODOSE_dap",
+      "unit": null,
+      "task": "task_scan_po_food_scan_Moderate renal impairment",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_food_scan_Moderate renal impairment__Cve_daptot": {
+      "type": "TASK",
+      "index": "Cve_daptot",
+      "unit": null,
+      "task": "task_scan_po_food_scan_Moderate renal impairment",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_food_scan_Moderate renal impairment__Cve_dap": {
+      "type": "TASK",
+      "index": "Cve_dap",
+      "unit": null,
+      "task": "task_scan_po_food_scan_Moderate renal impairment",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_food_scan_Moderate renal impairment__Cve_d3g": {
+      "type": "TASK",
+      "index": "Cve_d3g",
+      "unit": null,
+      "task": "task_scan_po_food_scan_Moderate renal impairment",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_food_scan_Moderate renal impairment__KI__glc_ext": {
+      "type": "TASK",
+      "index": "KI__glc_ext",
+      "unit": null,
+      "task": "task_scan_po_food_scan_Moderate renal impairment",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_food_scan_Moderate renal impairment__LI__dap": {
+      "type": "TASK",
+      "index": "LI__dap",
+      "unit": null,
+      "task": "task_scan_po_food_scan_Moderate renal impairment",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_food_scan_Moderate renal impairment__LI__d3g": {
+      "type": "TASK",
+      "index": "LI__d3g",
+      "unit": null,
+      "task": "task_scan_po_food_scan_Moderate renal impairment",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_food_scan_Moderate renal impairment__Aurine_daptot": {
+      "type": "TASK",
+      "index": "Aurine_daptot",
+      "unit": null,
+      "task": "task_scan_po_food_scan_Moderate renal impairment",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_food_scan_Moderate renal impairment__Aurine_dap": {
+      "type": "TASK",
+      "index": "Aurine_dap",
+      "unit": null,
+      "task": "task_scan_po_food_scan_Moderate renal impairment",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_food_scan_Moderate renal impairment__Aurine_d3g": {
+      "type": "TASK",
+      "index": "Aurine_d3g",
+      "unit": null,
+      "task": "task_scan_po_food_scan_Moderate renal impairment",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_food_scan_Moderate renal impairment__KI__glc_urine": {
+      "type": "TASK",
+      "index": "KI__glc_urine",
+      "unit": null,
+      "task": "task_scan_po_food_scan_Moderate renal impairment",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_food_scan_Moderate renal impairment__KI__UGE": {
+      "type": "TASK",
+      "index": "KI__UGE",
+      "unit": null,
+      "task": "task_scan_po_food_scan_Moderate renal impairment",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_food_scan_Moderate renal impairment__KI__RTG": {
+      "type": "TASK",
+      "index": "KI__RTG",
+      "unit": null,
+      "task": "task_scan_po_food_scan_Moderate renal impairment",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_food_scan_Moderate renal impairment__Afeces_dap": {
+      "type": "TASK",
+      "index": "Afeces_dap",
+      "unit": null,
+      "task": "task_scan_po_food_scan_Moderate renal impairment",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_food_scan_Moderate renal impairment__Afeces_daptot": {
+      "type": "TASK",
+      "index": "Afeces_daptot",
+      "unit": null,
+      "task": "task_scan_po_food_scan_Moderate renal impairment",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_food_scan_Moderate renal impairment__KI__D3GEX": {
+      "type": "TASK",
+      "index": "KI__D3GEX",
+      "unit": null,
+      "task": "task_scan_po_food_scan_Moderate renal impairment",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_food_scan_Moderate renal impairment__KI__DAPEX": {
+      "type": "TASK",
+      "index": "KI__DAPEX",
+      "unit": null,
+      "task": "task_scan_po_food_scan_Moderate renal impairment",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_food_scan_Moderate renal impairment__KI__GLCEX": {
+      "type": "TASK",
+      "index": "KI__GLCEX",
+      "unit": null,
+      "task": "task_scan_po_food_scan_Moderate renal impairment",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_food_scan_Moderate renal impairment__KI__f_renal_function": {
+      "type": "TASK",
+      "index": "KI__f_renal_function",
+      "unit": null,
+      "task": "task_scan_po_food_scan_Moderate renal impairment",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_food_scan_Moderate renal impairment__f_cirrhosis": {
+      "type": "TASK",
+      "index": "f_cirrhosis",
+      "unit": null,
+      "task": "task_scan_po_food_scan_Moderate renal impairment",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_food_scan_Moderate renal impairment__GU__f_absorption": {
+      "type": "TASK",
+      "index": "GU__f_absorption",
+      "unit": null,
+      "task": "task_scan_po_food_scan_Moderate renal impairment",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_food_scan_Moderate renal impairment__LI__f_ugt1a9": {
+      "type": "TASK",
+      "index": "LI__f_ugt1a9",
+      "unit": null,
+      "task": "task_scan_po_food_scan_Moderate renal impairment",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_food_scan_Severe renal impairment__time": {
+      "type": "TASK",
+      "index": "time",
+      "unit": null,
+      "task": "task_scan_po_food_scan_Severe renal impairment",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_food_scan_Severe renal impairment__IVDOSE_dap": {
+      "type": "TASK",
+      "index": "IVDOSE_dap",
+      "unit": null,
+      "task": "task_scan_po_food_scan_Severe renal impairment",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_food_scan_Severe renal impairment__PODOSE_dap": {
+      "type": "TASK",
+      "index": "PODOSE_dap",
+      "unit": null,
+      "task": "task_scan_po_food_scan_Severe renal impairment",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_food_scan_Severe renal impairment__Cve_daptot": {
+      "type": "TASK",
+      "index": "Cve_daptot",
+      "unit": null,
+      "task": "task_scan_po_food_scan_Severe renal impairment",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_food_scan_Severe renal impairment__Cve_dap": {
+      "type": "TASK",
+      "index": "Cve_dap",
+      "unit": null,
+      "task": "task_scan_po_food_scan_Severe renal impairment",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_food_scan_Severe renal impairment__Cve_d3g": {
+      "type": "TASK",
+      "index": "Cve_d3g",
+      "unit": null,
+      "task": "task_scan_po_food_scan_Severe renal impairment",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_food_scan_Severe renal impairment__KI__glc_ext": {
+      "type": "TASK",
+      "index": "KI__glc_ext",
+      "unit": null,
+      "task": "task_scan_po_food_scan_Severe renal impairment",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_food_scan_Severe renal impairment__LI__dap": {
+      "type": "TASK",
+      "index": "LI__dap",
+      "unit": null,
+      "task": "task_scan_po_food_scan_Severe renal impairment",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_food_scan_Severe renal impairment__LI__d3g": {
+      "type": "TASK",
+      "index": "LI__d3g",
+      "unit": null,
+      "task": "task_scan_po_food_scan_Severe renal impairment",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_food_scan_Severe renal impairment__Aurine_daptot": {
+      "type": "TASK",
+      "index": "Aurine_daptot",
+      "unit": null,
+      "task": "task_scan_po_food_scan_Severe renal impairment",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_food_scan_Severe renal impairment__Aurine_dap": {
+      "type": "TASK",
+      "index": "Aurine_dap",
+      "unit": null,
+      "task": "task_scan_po_food_scan_Severe renal impairment",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_food_scan_Severe renal impairment__Aurine_d3g": {
+      "type": "TASK",
+      "index": "Aurine_d3g",
+      "unit": null,
+      "task": "task_scan_po_food_scan_Severe renal impairment",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_food_scan_Severe renal impairment__KI__glc_urine": {
+      "type": "TASK",
+      "index": "KI__glc_urine",
+      "unit": null,
+      "task": "task_scan_po_food_scan_Severe renal impairment",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_food_scan_Severe renal impairment__KI__UGE": {
+      "type": "TASK",
+      "index": "KI__UGE",
+      "unit": null,
+      "task": "task_scan_po_food_scan_Severe renal impairment",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_food_scan_Severe renal impairment__KI__RTG": {
+      "type": "TASK",
+      "index": "KI__RTG",
+      "unit": null,
+      "task": "task_scan_po_food_scan_Severe renal impairment",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_food_scan_Severe renal impairment__Afeces_dap": {
+      "type": "TASK",
+      "index": "Afeces_dap",
+      "unit": null,
+      "task": "task_scan_po_food_scan_Severe renal impairment",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_food_scan_Severe renal impairment__Afeces_daptot": {
+      "type": "TASK",
+      "index": "Afeces_daptot",
+      "unit": null,
+      "task": "task_scan_po_food_scan_Severe renal impairment",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_food_scan_Severe renal impairment__KI__D3GEX": {
+      "type": "TASK",
+      "index": "KI__D3GEX",
+      "unit": null,
+      "task": "task_scan_po_food_scan_Severe renal impairment",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_food_scan_Severe renal impairment__KI__DAPEX": {
+      "type": "TASK",
+      "index": "KI__DAPEX",
+      "unit": null,
+      "task": "task_scan_po_food_scan_Severe renal impairment",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_food_scan_Severe renal impairment__KI__GLCEX": {
+      "type": "TASK",
+      "index": "KI__GLCEX",
+      "unit": null,
+      "task": "task_scan_po_food_scan_Severe renal impairment",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_food_scan_Severe renal impairment__KI__f_renal_function": {
+      "type": "TASK",
+      "index": "KI__f_renal_function",
+      "unit": null,
+      "task": "task_scan_po_food_scan_Severe renal impairment",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_food_scan_Severe renal impairment__f_cirrhosis": {
+      "type": "TASK",
+      "index": "f_cirrhosis",
+      "unit": null,
+      "task": "task_scan_po_food_scan_Severe renal impairment",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_food_scan_Severe renal impairment__GU__f_absorption": {
+      "type": "TASK",
+      "index": "GU__f_absorption",
+      "unit": null,
+      "task": "task_scan_po_food_scan_Severe renal impairment",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_food_scan_Severe renal impairment__LI__f_ugt1a9": {
+      "type": "TASK",
+      "index": "LI__f_ugt1a9",
+      "unit": null,
+      "task": "task_scan_po_food_scan_Severe renal impairment",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_food_scan_Control__time": {
+      "type": "TASK",
+      "index": "time",
+      "unit": null,
+      "task": "task_scan_po_food_scan_Control",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_food_scan_Control__IVDOSE_dap": {
+      "type": "TASK",
+      "index": "IVDOSE_dap",
+      "unit": null,
+      "task": "task_scan_po_food_scan_Control",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_food_scan_Control__PODOSE_dap": {
+      "type": "TASK",
+      "index": "PODOSE_dap",
+      "unit": null,
+      "task": "task_scan_po_food_scan_Control",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_food_scan_Control__Cve_daptot": {
+      "type": "TASK",
+      "index": "Cve_daptot",
+      "unit": null,
+      "task": "task_scan_po_food_scan_Control",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_food_scan_Control__Cve_dap": {
+      "type": "TASK",
+      "index": "Cve_dap",
+      "unit": null,
+      "task": "task_scan_po_food_scan_Control",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_food_scan_Control__Cve_d3g": {
+      "type": "TASK",
+      "index": "Cve_d3g",
+      "unit": null,
+      "task": "task_scan_po_food_scan_Control",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_food_scan_Control__KI__glc_ext": {
+      "type": "TASK",
+      "index": "KI__glc_ext",
+      "unit": null,
+      "task": "task_scan_po_food_scan_Control",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_food_scan_Control__LI__dap": {
+      "type": "TASK",
+      "index": "LI__dap",
+      "unit": null,
+      "task": "task_scan_po_food_scan_Control",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_food_scan_Control__LI__d3g": {
+      "type": "TASK",
+      "index": "LI__d3g",
+      "unit": null,
+      "task": "task_scan_po_food_scan_Control",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_food_scan_Control__Aurine_daptot": {
+      "type": "TASK",
+      "index": "Aurine_daptot",
+      "unit": null,
+      "task": "task_scan_po_food_scan_Control",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_food_scan_Control__Aurine_dap": {
+      "type": "TASK",
+      "index": "Aurine_dap",
+      "unit": null,
+      "task": "task_scan_po_food_scan_Control",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_food_scan_Control__Aurine_d3g": {
+      "type": "TASK",
+      "index": "Aurine_d3g",
+      "unit": null,
+      "task": "task_scan_po_food_scan_Control",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_food_scan_Control__KI__glc_urine": {
+      "type": "TASK",
+      "index": "KI__glc_urine",
+      "unit": null,
+      "task": "task_scan_po_food_scan_Control",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_food_scan_Control__KI__UGE": {
+      "type": "TASK",
+      "index": "KI__UGE",
+      "unit": null,
+      "task": "task_scan_po_food_scan_Control",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_food_scan_Control__KI__RTG": {
+      "type": "TASK",
+      "index": "KI__RTG",
+      "unit": null,
+      "task": "task_scan_po_food_scan_Control",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_food_scan_Control__Afeces_dap": {
+      "type": "TASK",
+      "index": "Afeces_dap",
+      "unit": null,
+      "task": "task_scan_po_food_scan_Control",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_food_scan_Control__Afeces_daptot": {
+      "type": "TASK",
+      "index": "Afeces_daptot",
+      "unit": null,
+      "task": "task_scan_po_food_scan_Control",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_food_scan_Control__KI__D3GEX": {
+      "type": "TASK",
+      "index": "KI__D3GEX",
+      "unit": null,
+      "task": "task_scan_po_food_scan_Control",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_food_scan_Control__KI__DAPEX": {
+      "type": "TASK",
+      "index": "KI__DAPEX",
+      "unit": null,
+      "task": "task_scan_po_food_scan_Control",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_food_scan_Control__KI__GLCEX": {
+      "type": "TASK",
+      "index": "KI__GLCEX",
+      "unit": null,
+      "task": "task_scan_po_food_scan_Control",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_food_scan_Control__KI__f_renal_function": {
+      "type": "TASK",
+      "index": "KI__f_renal_function",
+      "unit": null,
+      "task": "task_scan_po_food_scan_Control",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_food_scan_Control__f_cirrhosis": {
+      "type": "TASK",
+      "index": "f_cirrhosis",
+      "unit": null,
+      "task": "task_scan_po_food_scan_Control",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_food_scan_Control__GU__f_absorption": {
+      "type": "TASK",
+      "index": "GU__f_absorption",
+      "unit": null,
+      "task": "task_scan_po_food_scan_Control",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_food_scan_Control__LI__f_ugt1a9": {
+      "type": "TASK",
+      "index": "LI__f_ugt1a9",
+      "unit": null,
+      "task": "task_scan_po_food_scan_Control",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_food_scan_Mild cirrhosis__time": {
+      "type": "TASK",
+      "index": "time",
+      "unit": null,
+      "task": "task_scan_po_food_scan_Mild cirrhosis",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_food_scan_Mild cirrhosis__IVDOSE_dap": {
+      "type": "TASK",
+      "index": "IVDOSE_dap",
+      "unit": null,
+      "task": "task_scan_po_food_scan_Mild cirrhosis",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_food_scan_Mild cirrhosis__PODOSE_dap": {
+      "type": "TASK",
+      "index": "PODOSE_dap",
+      "unit": null,
+      "task": "task_scan_po_food_scan_Mild cirrhosis",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_food_scan_Mild cirrhosis__Cve_daptot": {
+      "type": "TASK",
+      "index": "Cve_daptot",
+      "unit": null,
+      "task": "task_scan_po_food_scan_Mild cirrhosis",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_food_scan_Mild cirrhosis__Cve_dap": {
+      "type": "TASK",
+      "index": "Cve_dap",
+      "unit": null,
+      "task": "task_scan_po_food_scan_Mild cirrhosis",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_food_scan_Mild cirrhosis__Cve_d3g": {
+      "type": "TASK",
+      "index": "Cve_d3g",
+      "unit": null,
+      "task": "task_scan_po_food_scan_Mild cirrhosis",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_food_scan_Mild cirrhosis__KI__glc_ext": {
+      "type": "TASK",
+      "index": "KI__glc_ext",
+      "unit": null,
+      "task": "task_scan_po_food_scan_Mild cirrhosis",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_food_scan_Mild cirrhosis__LI__dap": {
+      "type": "TASK",
+      "index": "LI__dap",
+      "unit": null,
+      "task": "task_scan_po_food_scan_Mild cirrhosis",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_food_scan_Mild cirrhosis__LI__d3g": {
+      "type": "TASK",
+      "index": "LI__d3g",
+      "unit": null,
+      "task": "task_scan_po_food_scan_Mild cirrhosis",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_food_scan_Mild cirrhosis__Aurine_daptot": {
+      "type": "TASK",
+      "index": "Aurine_daptot",
+      "unit": null,
+      "task": "task_scan_po_food_scan_Mild cirrhosis",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_food_scan_Mild cirrhosis__Aurine_dap": {
+      "type": "TASK",
+      "index": "Aurine_dap",
+      "unit": null,
+      "task": "task_scan_po_food_scan_Mild cirrhosis",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_food_scan_Mild cirrhosis__Aurine_d3g": {
+      "type": "TASK",
+      "index": "Aurine_d3g",
+      "unit": null,
+      "task": "task_scan_po_food_scan_Mild cirrhosis",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_food_scan_Mild cirrhosis__KI__glc_urine": {
+      "type": "TASK",
+      "index": "KI__glc_urine",
+      "unit": null,
+      "task": "task_scan_po_food_scan_Mild cirrhosis",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_food_scan_Mild cirrhosis__KI__UGE": {
+      "type": "TASK",
+      "index": "KI__UGE",
+      "unit": null,
+      "task": "task_scan_po_food_scan_Mild cirrhosis",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_food_scan_Mild cirrhosis__KI__RTG": {
+      "type": "TASK",
+      "index": "KI__RTG",
+      "unit": null,
+      "task": "task_scan_po_food_scan_Mild cirrhosis",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_food_scan_Mild cirrhosis__Afeces_dap": {
+      "type": "TASK",
+      "index": "Afeces_dap",
+      "unit": null,
+      "task": "task_scan_po_food_scan_Mild cirrhosis",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_food_scan_Mild cirrhosis__Afeces_daptot": {
+      "type": "TASK",
+      "index": "Afeces_daptot",
+      "unit": null,
+      "task": "task_scan_po_food_scan_Mild cirrhosis",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_food_scan_Mild cirrhosis__KI__D3GEX": {
+      "type": "TASK",
+      "index": "KI__D3GEX",
+      "unit": null,
+      "task": "task_scan_po_food_scan_Mild cirrhosis",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_food_scan_Mild cirrhosis__KI__DAPEX": {
+      "type": "TASK",
+      "index": "KI__DAPEX",
+      "unit": null,
+      "task": "task_scan_po_food_scan_Mild cirrhosis",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_food_scan_Mild cirrhosis__KI__GLCEX": {
+      "type": "TASK",
+      "index": "KI__GLCEX",
+      "unit": null,
+      "task": "task_scan_po_food_scan_Mild cirrhosis",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_food_scan_Mild cirrhosis__KI__f_renal_function": {
+      "type": "TASK",
+      "index": "KI__f_renal_function",
+      "unit": null,
+      "task": "task_scan_po_food_scan_Mild cirrhosis",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_food_scan_Mild cirrhosis__f_cirrhosis": {
+      "type": "TASK",
+      "index": "f_cirrhosis",
+      "unit": null,
+      "task": "task_scan_po_food_scan_Mild cirrhosis",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_food_scan_Mild cirrhosis__GU__f_absorption": {
+      "type": "TASK",
+      "index": "GU__f_absorption",
+      "unit": null,
+      "task": "task_scan_po_food_scan_Mild cirrhosis",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_food_scan_Mild cirrhosis__LI__f_ugt1a9": {
+      "type": "TASK",
+      "index": "LI__f_ugt1a9",
+      "unit": null,
+      "task": "task_scan_po_food_scan_Mild cirrhosis",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_food_scan_Moderate cirrhosis__time": {
+      "type": "TASK",
+      "index": "time",
+      "unit": null,
+      "task": "task_scan_po_food_scan_Moderate cirrhosis",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_food_scan_Moderate cirrhosis__IVDOSE_dap": {
+      "type": "TASK",
+      "index": "IVDOSE_dap",
+      "unit": null,
+      "task": "task_scan_po_food_scan_Moderate cirrhosis",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_food_scan_Moderate cirrhosis__PODOSE_dap": {
+      "type": "TASK",
+      "index": "PODOSE_dap",
+      "unit": null,
+      "task": "task_scan_po_food_scan_Moderate cirrhosis",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_food_scan_Moderate cirrhosis__Cve_daptot": {
+      "type": "TASK",
+      "index": "Cve_daptot",
+      "unit": null,
+      "task": "task_scan_po_food_scan_Moderate cirrhosis",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_food_scan_Moderate cirrhosis__Cve_dap": {
+      "type": "TASK",
+      "index": "Cve_dap",
+      "unit": null,
+      "task": "task_scan_po_food_scan_Moderate cirrhosis",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_food_scan_Moderate cirrhosis__Cve_d3g": {
+      "type": "TASK",
+      "index": "Cve_d3g",
+      "unit": null,
+      "task": "task_scan_po_food_scan_Moderate cirrhosis",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_food_scan_Moderate cirrhosis__KI__glc_ext": {
+      "type": "TASK",
+      "index": "KI__glc_ext",
+      "unit": null,
+      "task": "task_scan_po_food_scan_Moderate cirrhosis",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_food_scan_Moderate cirrhosis__LI__dap": {
+      "type": "TASK",
+      "index": "LI__dap",
+      "unit": null,
+      "task": "task_scan_po_food_scan_Moderate cirrhosis",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_food_scan_Moderate cirrhosis__LI__d3g": {
+      "type": "TASK",
+      "index": "LI__d3g",
+      "unit": null,
+      "task": "task_scan_po_food_scan_Moderate cirrhosis",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_food_scan_Moderate cirrhosis__Aurine_daptot": {
+      "type": "TASK",
+      "index": "Aurine_daptot",
+      "unit": null,
+      "task": "task_scan_po_food_scan_Moderate cirrhosis",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_food_scan_Moderate cirrhosis__Aurine_dap": {
+      "type": "TASK",
+      "index": "Aurine_dap",
+      "unit": null,
+      "task": "task_scan_po_food_scan_Moderate cirrhosis",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_food_scan_Moderate cirrhosis__Aurine_d3g": {
+      "type": "TASK",
+      "index": "Aurine_d3g",
+      "unit": null,
+      "task": "task_scan_po_food_scan_Moderate cirrhosis",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_food_scan_Moderate cirrhosis__KI__glc_urine": {
+      "type": "TASK",
+      "index": "KI__glc_urine",
+      "unit": null,
+      "task": "task_scan_po_food_scan_Moderate cirrhosis",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_food_scan_Moderate cirrhosis__KI__UGE": {
+      "type": "TASK",
+      "index": "KI__UGE",
+      "unit": null,
+      "task": "task_scan_po_food_scan_Moderate cirrhosis",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_food_scan_Moderate cirrhosis__KI__RTG": {
+      "type": "TASK",
+      "index": "KI__RTG",
+      "unit": null,
+      "task": "task_scan_po_food_scan_Moderate cirrhosis",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_food_scan_Moderate cirrhosis__Afeces_dap": {
+      "type": "TASK",
+      "index": "Afeces_dap",
+      "unit": null,
+      "task": "task_scan_po_food_scan_Moderate cirrhosis",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_food_scan_Moderate cirrhosis__Afeces_daptot": {
+      "type": "TASK",
+      "index": "Afeces_daptot",
+      "unit": null,
+      "task": "task_scan_po_food_scan_Moderate cirrhosis",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_food_scan_Moderate cirrhosis__KI__D3GEX": {
+      "type": "TASK",
+      "index": "KI__D3GEX",
+      "unit": null,
+      "task": "task_scan_po_food_scan_Moderate cirrhosis",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_food_scan_Moderate cirrhosis__KI__DAPEX": {
+      "type": "TASK",
+      "index": "KI__DAPEX",
+      "unit": null,
+      "task": "task_scan_po_food_scan_Moderate cirrhosis",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_food_scan_Moderate cirrhosis__KI__GLCEX": {
+      "type": "TASK",
+      "index": "KI__GLCEX",
+      "unit": null,
+      "task": "task_scan_po_food_scan_Moderate cirrhosis",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_food_scan_Moderate cirrhosis__KI__f_renal_function": {
+      "type": "TASK",
+      "index": "KI__f_renal_function",
+      "unit": null,
+      "task": "task_scan_po_food_scan_Moderate cirrhosis",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_food_scan_Moderate cirrhosis__f_cirrhosis": {
+      "type": "TASK",
+      "index": "f_cirrhosis",
+      "unit": null,
+      "task": "task_scan_po_food_scan_Moderate cirrhosis",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_food_scan_Moderate cirrhosis__GU__f_absorption": {
+      "type": "TASK",
+      "index": "GU__f_absorption",
+      "unit": null,
+      "task": "task_scan_po_food_scan_Moderate cirrhosis",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_food_scan_Moderate cirrhosis__LI__f_ugt1a9": {
+      "type": "TASK",
+      "index": "LI__f_ugt1a9",
+      "unit": null,
+      "task": "task_scan_po_food_scan_Moderate cirrhosis",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_food_scan_Severe cirrhosis__time": {
+      "type": "TASK",
+      "index": "time",
+      "unit": null,
+      "task": "task_scan_po_food_scan_Severe cirrhosis",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_food_scan_Severe cirrhosis__IVDOSE_dap": {
+      "type": "TASK",
+      "index": "IVDOSE_dap",
+      "unit": null,
+      "task": "task_scan_po_food_scan_Severe cirrhosis",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_food_scan_Severe cirrhosis__PODOSE_dap": {
+      "type": "TASK",
+      "index": "PODOSE_dap",
+      "unit": null,
+      "task": "task_scan_po_food_scan_Severe cirrhosis",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_food_scan_Severe cirrhosis__Cve_daptot": {
+      "type": "TASK",
+      "index": "Cve_daptot",
+      "unit": null,
+      "task": "task_scan_po_food_scan_Severe cirrhosis",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_food_scan_Severe cirrhosis__Cve_dap": {
+      "type": "TASK",
+      "index": "Cve_dap",
+      "unit": null,
+      "task": "task_scan_po_food_scan_Severe cirrhosis",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_food_scan_Severe cirrhosis__Cve_d3g": {
+      "type": "TASK",
+      "index": "Cve_d3g",
+      "unit": null,
+      "task": "task_scan_po_food_scan_Severe cirrhosis",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_food_scan_Severe cirrhosis__KI__glc_ext": {
+      "type": "TASK",
+      "index": "KI__glc_ext",
+      "unit": null,
+      "task": "task_scan_po_food_scan_Severe cirrhosis",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_food_scan_Severe cirrhosis__LI__dap": {
+      "type": "TASK",
+      "index": "LI__dap",
+      "unit": null,
+      "task": "task_scan_po_food_scan_Severe cirrhosis",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_food_scan_Severe cirrhosis__LI__d3g": {
+      "type": "TASK",
+      "index": "LI__d3g",
+      "unit": null,
+      "task": "task_scan_po_food_scan_Severe cirrhosis",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_food_scan_Severe cirrhosis__Aurine_daptot": {
+      "type": "TASK",
+      "index": "Aurine_daptot",
+      "unit": null,
+      "task": "task_scan_po_food_scan_Severe cirrhosis",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_food_scan_Severe cirrhosis__Aurine_dap": {
+      "type": "TASK",
+      "index": "Aurine_dap",
+      "unit": null,
+      "task": "task_scan_po_food_scan_Severe cirrhosis",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_food_scan_Severe cirrhosis__Aurine_d3g": {
+      "type": "TASK",
+      "index": "Aurine_d3g",
+      "unit": null,
+      "task": "task_scan_po_food_scan_Severe cirrhosis",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_food_scan_Severe cirrhosis__KI__glc_urine": {
+      "type": "TASK",
+      "index": "KI__glc_urine",
+      "unit": null,
+      "task": "task_scan_po_food_scan_Severe cirrhosis",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_food_scan_Severe cirrhosis__KI__UGE": {
+      "type": "TASK",
+      "index": "KI__UGE",
+      "unit": null,
+      "task": "task_scan_po_food_scan_Severe cirrhosis",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_food_scan_Severe cirrhosis__KI__RTG": {
+      "type": "TASK",
+      "index": "KI__RTG",
+      "unit": null,
+      "task": "task_scan_po_food_scan_Severe cirrhosis",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_food_scan_Severe cirrhosis__Afeces_dap": {
+      "type": "TASK",
+      "index": "Afeces_dap",
+      "unit": null,
+      "task": "task_scan_po_food_scan_Severe cirrhosis",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_food_scan_Severe cirrhosis__Afeces_daptot": {
+      "type": "TASK",
+      "index": "Afeces_daptot",
+      "unit": null,
+      "task": "task_scan_po_food_scan_Severe cirrhosis",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_food_scan_Severe cirrhosis__KI__D3GEX": {
+      "type": "TASK",
+      "index": "KI__D3GEX",
+      "unit": null,
+      "task": "task_scan_po_food_scan_Severe cirrhosis",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_food_scan_Severe cirrhosis__KI__DAPEX": {
+      "type": "TASK",
+      "index": "KI__DAPEX",
+      "unit": null,
+      "task": "task_scan_po_food_scan_Severe cirrhosis",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_food_scan_Severe cirrhosis__KI__GLCEX": {
+      "type": "TASK",
+      "index": "KI__GLCEX",
+      "unit": null,
+      "task": "task_scan_po_food_scan_Severe cirrhosis",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_food_scan_Severe cirrhosis__KI__f_renal_function": {
+      "type": "TASK",
+      "index": "KI__f_renal_function",
+      "unit": null,
+      "task": "task_scan_po_food_scan_Severe cirrhosis",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_food_scan_Severe cirrhosis__f_cirrhosis": {
+      "type": "TASK",
+      "index": "f_cirrhosis",
+      "unit": null,
+      "task": "task_scan_po_food_scan_Severe cirrhosis",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_food_scan_Severe cirrhosis__GU__f_absorption": {
+      "type": "TASK",
+      "index": "GU__f_absorption",
+      "unit": null,
+      "task": "task_scan_po_food_scan_Severe cirrhosis",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_food_scan_Severe cirrhosis__LI__f_ugt1a9": {
+      "type": "TASK",
+      "index": "LI__f_ugt1a9",
+      "unit": null,
+      "task": "task_scan_po_food_scan_Severe cirrhosis",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    }
+  },
+  "figures": {}
+}

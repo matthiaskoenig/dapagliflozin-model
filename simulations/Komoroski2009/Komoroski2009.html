@@ -1,0 +1,689 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui">
+    <title>Komoroski2009</title>
+    <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/@mdi/font@4.x/css/materialdesignicons.min.css" rel="stylesheet">
+    <!--<link href="https://cdn.jsdelivr.net/npm/vuetify@2.x/dist/vuetify.min.css" rel="stylesheet">-->
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.2/styles/default.min.css">
+</head>
+
+<body>
+<div id="app">
+    <!-- Vue app-->
+    <v-app>
+        <v-content>
+
+            <a href="../index.html">Experiments</a>
+            <h1>Komoroski2009</h1>
+
+            <h2>Models</h2>
+            <p>
+            <ul>
+                <li><strong>model</strong>: <a href="../../../../models/results/models/dapagliflozin_body_flat.xml">../../../../models/results/models/dapagliflozin_body_flat.xml</a></li>
+            </ul>
+            </p>
+
+            <h2>Datasets</h2>
+            <p>
+            <ul>
+                <li><strong>dapagliflozin_DAP250_fasted</strong>: <a href="Komoroski2009_dapagliflozin_DAP250_fasted.tsv">Komoroski2009_dapagliflozin_DAP250_fasted.tsv</a></li>
+                <li><strong>dapagliflozin_DAP250_fed</strong>: <a href="Komoroski2009_dapagliflozin_DAP250_fed.tsv">Komoroski2009_dapagliflozin_DAP250_fed.tsv</a></li>
+                <li><strong>dapagliflozin_cumulative amount_fasted</strong>: <a href="Komoroski2009_dapagliflozin_cumulative amount_fasted.tsv">Komoroski2009_dapagliflozin_cumulative amount_fasted.tsv</a></li>
+                <li><strong>dapagliflozin_cumulative amount_fed</strong>: <a href="Komoroski2009_dapagliflozin_cumulative amount_fed.tsv">Komoroski2009_dapagliflozin_cumulative amount_fed.tsv</a></li>
+                <li><strong>dapagliflozin_recovery_fasted</strong>: <a href="Komoroski2009_dapagliflozin_recovery_fasted.tsv">Komoroski2009_dapagliflozin_recovery_fasted.tsv</a></li>
+                <li><strong>dapagliflozin_recovery_fed</strong>: <a href="Komoroski2009_dapagliflozin_recovery_fed.tsv">Komoroski2009_dapagliflozin_recovery_fed.tsv</a></li>
+                <li><strong>dapagliflozin_DAP10</strong>: <a href="Komoroski2009_dapagliflozin_DAP10.tsv">Komoroski2009_dapagliflozin_DAP10.tsv</a></li>
+                <li><strong>dapagliflozin_DAP100</strong>: <a href="Komoroski2009_dapagliflozin_DAP100.tsv">Komoroski2009_dapagliflozin_DAP100.tsv</a></li>
+                <li><strong>dapagliflozin_DAP2.5</strong>: <a href="Komoroski2009_dapagliflozin_DAP2.5.tsv">Komoroski2009_dapagliflozin_DAP2.5.tsv</a></li>
+                <li><strong>dapagliflozin_DAP20</strong>: <a href="Komoroski2009_dapagliflozin_DAP20.tsv">Komoroski2009_dapagliflozin_DAP20.tsv</a></li>
+                <li><strong>dapagliflozin_DAP50</strong>: <a href="Komoroski2009_dapagliflozin_DAP50.tsv">Komoroski2009_dapagliflozin_DAP50.tsv</a></li>
+                <li><strong>dapagliflozin_DAPM10</strong>: <a href="Komoroski2009_dapagliflozin_DAPM10.tsv">Komoroski2009_dapagliflozin_DAPM10.tsv</a></li>
+                <li><strong>dapagliflozin_DAPM100</strong>: <a href="Komoroski2009_dapagliflozin_DAPM100.tsv">Komoroski2009_dapagliflozin_DAPM100.tsv</a></li>
+                <li><strong>dapagliflozin_DAPM2.5</strong>: <a href="Komoroski2009_dapagliflozin_DAPM2.5.tsv">Komoroski2009_dapagliflozin_DAPM2.5.tsv</a></li>
+                <li><strong>dapagliflozin_DAPM20</strong>: <a href="Komoroski2009_dapagliflozin_DAPM20.tsv">Komoroski2009_dapagliflozin_DAPM20.tsv</a></li>
+                <li><strong>dapagliflozin_DAPM50</strong>: <a href="Komoroski2009_dapagliflozin_DAPM50.tsv">Komoroski2009_dapagliflozin_DAPM50.tsv</a></li>
+                <li><strong>glucose_cumulative amount_DAP0</strong>: <a href="Komoroski2009_glucose_cumulative amount_DAP0.tsv">Komoroski2009_glucose_cumulative amount_DAP0.tsv</a></li>
+                <li><strong>glucose_cumulative amount_DAP10</strong>: <a href="Komoroski2009_glucose_cumulative amount_DAP10.tsv">Komoroski2009_glucose_cumulative amount_DAP10.tsv</a></li>
+                <li><strong>glucose_cumulative amount_DAP100</strong>: <a href="Komoroski2009_glucose_cumulative amount_DAP100.tsv">Komoroski2009_glucose_cumulative amount_DAP100.tsv</a></li>
+                <li><strong>glucose_cumulative amount_DAP2.5</strong>: <a href="Komoroski2009_glucose_cumulative amount_DAP2.5.tsv">Komoroski2009_glucose_cumulative amount_DAP2.5.tsv</a></li>
+                <li><strong>glucose_cumulative amount_DAP20</strong>: <a href="Komoroski2009_glucose_cumulative amount_DAP20.tsv">Komoroski2009_glucose_cumulative amount_DAP20.tsv</a></li>
+                <li><strong>glucose_cumulative amount_DAP250</strong>: <a href="Komoroski2009_glucose_cumulative amount_DAP250.tsv">Komoroski2009_glucose_cumulative amount_DAP250.tsv</a></li>
+                <li><strong>glucose_cumulative amount_DAP5</strong>: <a href="Komoroski2009_glucose_cumulative amount_DAP5.tsv">Komoroski2009_glucose_cumulative amount_DAP5.tsv</a></li>
+                <li><strong>glucose_cumulative amount_DAP50</strong>: <a href="Komoroski2009_glucose_cumulative amount_DAP50.tsv">Komoroski2009_glucose_cumulative amount_DAP50.tsv</a></li>
+                <li><strong>glucose_cumulative amount_DAP500</strong>: <a href="Komoroski2009_glucose_cumulative amount_DAP500.tsv">Komoroski2009_glucose_cumulative amount_DAP500.tsv</a></li>
+                <li><strong>glucose_cumulative amount_DAPM10</strong>: <a href="Komoroski2009_glucose_cumulative amount_DAPM10.tsv">Komoroski2009_glucose_cumulative amount_DAPM10.tsv</a></li>
+                <li><strong>glucose_cumulative amount_DAPM100</strong>: <a href="Komoroski2009_glucose_cumulative amount_DAPM100.tsv">Komoroski2009_glucose_cumulative amount_DAPM100.tsv</a></li>
+                <li><strong>glucose_cumulative amount_DAPM2.5</strong>: <a href="Komoroski2009_glucose_cumulative amount_DAPM2.5.tsv">Komoroski2009_glucose_cumulative amount_DAPM2.5.tsv</a></li>
+                <li><strong>glucose_cumulative amount_DAPM20</strong>: <a href="Komoroski2009_glucose_cumulative amount_DAPM20.tsv">Komoroski2009_glucose_cumulative amount_DAPM20.tsv</a></li>
+                <li><strong>glucose_cumulative amount_DAPM50</strong>: <a href="Komoroski2009_glucose_cumulative amount_DAPM50.tsv">Komoroski2009_glucose_cumulative amount_DAPM50.tsv</a></li>
+            </ul>
+            </p>
+
+            <h2>Figures</h2>
+            <p>
+            <ul>
+                <li><strong>Fig_fasting</strong>: <a href="Komoroski2009_Fig_fasting.svg">Komoroski2009_Fig_fasting.svg</a></li>
+                <li><strong>Fig_uge_single</strong>: <a href="Komoroski2009_Fig_uge_single.svg">Komoroski2009_Fig_uge_single.svg</a></li>
+                <li><strong>Fig_multi</strong>: <a href="Komoroski2009_Fig_multi.svg">Komoroski2009_Fig_multi.svg</a></li>
+                <li><strong>Fig_uge_multi</strong>: <a href="Komoroski2009_Fig_uge_multi.svg">Komoroski2009_Fig_uge_multi.svg</a></li>
+            </ul>
+            </p>
+
+            <h3>Fig_fasting</h3>
+            <p>
+            <table>
+                <tr>
+                    <td>
+                        <!--<v-img src="Komoroski2009_Fig_fasting.svg" max-width="600" width="600"></v-img>-->
+                        <img src="Komoroski2009_Fig_fasting.svg" width="600">
+                    </td>
+                    <!--
+                    <td>
+                    </td>
+                    -->
+                </tr>
+            </table>
+            </p>
+            <h3>Fig_uge_single</h3>
+            <p>
+            <table>
+                <tr>
+                    <td>
+                        <!--<v-img src="Komoroski2009_Fig_uge_single.svg" max-width="600" width="600"></v-img>-->
+                        <img src="Komoroski2009_Fig_uge_single.svg" width="600">
+                    </td>
+                    <!--
+                    <td>
+                    </td>
+                    -->
+                </tr>
+            </table>
+            </p>
+            <h3>Fig_multi</h3>
+            <p>
+            <table>
+                <tr>
+                    <td>
+                        <!--<v-img src="Komoroski2009_Fig_multi.svg" max-width="600" width="600"></v-img>-->
+                        <img src="Komoroski2009_Fig_multi.svg" width="600">
+                    </td>
+                    <!--
+                    <td>
+                    </td>
+                    -->
+                </tr>
+            </table>
+            </p>
+            <h3>Fig_uge_multi</h3>
+            <p>
+            <table>
+                <tr>
+                    <td>
+                        <!--<v-img src="Komoroski2009_Fig_uge_multi.svg" max-width="600" width="600"></v-img>-->
+                        <img src="Komoroski2009_Fig_uge_multi.svg" width="600">
+                    </td>
+                    <!--
+                    <td>
+                    </td>
+                    -->
+                </tr>
+            </table>
+            </p>
+
+            <h2>Code</h2>
+            <p>
+                <a href="../../../../experiments/studies/komoroski2009.py">../../../../experiments/studies/komoroski2009.py</a>
+            <pre>
+<code class="python">from typing import Dict
+
+from sbmlsim.data import DataSet, load_pkdb_dataframe
+from sbmlsim.fit import FitMapping, FitData
+from sbmlutils.console import console
+
+from pkdb_models.models.dapagliflozin.experiments.base_experiment import (
+    DapagliflozinSimulationExperiment,
+)
+from pkdb_models.models.dapagliflozin.experiments.metadata import Tissue, Route, Dosing, ApplicationForm, Health, \
+    Fasting, DapagliflozinMappingMetaData
+
+from sbmlsim.plot import Axis, Figure
+from sbmlsim.simulation import Timecourse, TimecourseSim
+
+from pkdb_models.models.dapagliflozin.helpers import run_experiments
+
+
+class Komoroski2009(DapagliflozinSimulationExperiment):
+    """Simulation experiment of Komoroski2009."""
+
+    #FIXME: Fig6
+
+    conditions = ["fasted", "fed"]
+    doses_multi = [2.5, 10, 20, 50, 100]
+    doses_uge_single = [0, 2.5, 5, 10, 20, 50, 100, 250, 500]
+    doses_uge_multi = [2.5, 10, 20, 50, 100]
+    colors = {
+        0: "black",
+        2.5: "tab:blue",
+        5: "tab:orange",
+        10: "tab:green",
+        20: "tab:red",
+        50: "tab:purple",
+        100: "tab:brown",
+        250: "tab:pink",
+        500: "tab:grey",
+    }
+    bodyweight = (74 + 84)/2  # [kg] range [74, 84]
+
+    def datasets(self) -> Dict[str, DataSet]:
+        dsets = {}
+        for fig_id in ["Fig3", "Tab1A", "Fig4", "Fig5", "Fig6"]:
+            df = load_pkdb_dataframe(f"{self.sid}_{fig_id}", data_path=self.data_path)
+            for label, df_label in df.groupby("label"):
+                dset = DataSet.from_df(df_label, self.ureg)
+                # unit conversion to mole/l
+                if label.startswith("dapagliflozin_"):
+                    dset.unit_conversion("mean", 1 / self.Mr.dap)
+
+                dsets[f"{label}"] = dset
+
+        # console.print(dsets)
+        # console.print(dsets.keys())
+        return dsets
+
+    def simulations(self) -> Dict[str, TimecourseSim]:
+        Q_ = self.Q_
+        tcsims = {}
+        # fasting simulation
+        for condition in self.conditions:
+            tcsims[f"po_dap_250_{condition}"] = TimecourseSim(
+                [Timecourse(
+                    start=0,
+                    end=25 * 60,  # [min]
+                    steps=500,
+                    changes={
+                        **self.default_changes(),
+
+                        # physiological changes
+                        "BW": Q_(self.bodyweight, "kg"),
+                        "GU__f_absorption": Q_(self.fasting_map[condition], "dimensionless"),
+                        "[KI__glc_ext]": Q_(self.fpg_healthy, "mM"),
+                        "f_cirrhosis": Q_(self.cirrhosis_map["Control"], "dimensionless"),
+                        "KI__f_renal_function": Q_(self.renal_map["Normal renal function"], "dimensionless"),
+
+                        # dose (IVDOSE, PODOSE)
+                        "PODOSE_dap": Q_(250, "mg"),
+                    },
+                )]
+            )
+
+        # single dose simulation
+        for dose in self.doses_uge_single:
+            tcsims[f"po_dap_{dose}_single"] = TimecourseSim(
+                [Timecourse(
+                    start=0,
+                    end=125 * 60,  # [min]
+                    steps=1000,
+                    changes={
+                        **self.default_changes(),
+                        "BW": Q_(self.bodyweight, "kg"),
+                        "GU__f_absorption": Q_(self.fasting_map["fasted"], "dimensionless"),
+                        "[KI__glc_ext]": Q_(self.fpg_healthy, "mM"),
+                        "f_cirrhosis": Q_(self.cirrhosis_map["Control"], "dimensionless"),
+                        "KI__f_renal_function": Q_(self.renal_map["Normal renal function"], "dimensionless"),
+                        "PODOSE_dap": Q_(dose, "mg"),
+                    },
+                )]
+            )
+
+        # multi dose simulation
+        for dose in self.doses_multi:
+            tc0 = Timecourse(
+                start=0,
+                end=24 * 60,  # [min]
+                steps=500,
+                changes={
+                    **self.default_changes(),
+                    "BW": Q_(self.bodyweight, "kg"),
+                    "GU__f_absorption": Q_(self.fasting_map["fasted"], "dimensionless"),
+                    "[KI__glc_ext]": Q_(self.fpg_healthy, "mM"),
+                    "f_cirrhosis": Q_(self.cirrhosis_map["Control"], "dimensionless"),
+                    "KI__f_renal_function": Q_(self.renal_map["Normal renal function"], "dimensionless"),
+                    "PODOSE_dap": Q_(dose, "mg"),
+                },
+            )
+            tc1 = Timecourse(
+                start=0,
+                end=24 * 60,  # [min]
+                steps=500,
+                changes={
+                    "PODOSE_dap": Q_(dose, "mg"),
+                },
+            )
+            tc2 = Timecourse(
+                start=0,
+                end=30 * 60,  # [min]
+                steps=500,
+                changes={
+                    "PODOSE_dap": Q_(dose, "mg"),
+                },
+            )
+            tcsims[f"po_dap_{dose}_multi"] = TimecourseSim(
+                [tc0] + [tc1 for _ in range(12)] + [tc2],
+                time_offset=-24*60*13
+            )
+
+            # multi dose simulation
+            for dose in self.doses_uge_multi:
+                tc0 = Timecourse(
+                    start=0,
+                    end=24 * 60,  # [min]
+                    steps=500,
+                    changes={
+                        **self.default_changes(),
+                        "BW": Q_(self.bodyweight, "kg"),
+                        "GU__f_absorption": Q_(self.fasting_map["fasted"], "dimensionless"),
+                        "[KI__glc_ext]": Q_(self.fpg_healthy, "mM"),
+                        "f_cirrhosis": Q_(self.cirrhosis_map["Control"], "dimensionless"),
+                        "KI__f_renal_function": Q_(self.renal_map["Normal renal function"], "dimensionless"),
+                        "PODOSE_dap": Q_(dose, "mg"),
+                    },
+                )
+                tc1 = Timecourse(
+                    start=0,
+                    end=24 * 60,  # [min]
+                    steps=500,
+                    changes={
+                        "KI__glc_urine": Q_(0, "mmole"),  # reset UGE
+                        "PODOSE_dap": Q_(dose, "mg"),
+                    },
+                )
+                tc2 = Timecourse(
+                    start=0,
+                    end=30 * 60,  # [min]
+                    steps=500,
+                    changes={
+                        "KI__glc_urine": Q_(0, "mmole"),  # reset UGE
+                        "PODOSE_dap": Q_(dose, "mg"),
+                    },
+                )
+                tcsims[f"po_dap_{dose}_uge_multi"] = TimecourseSim(
+                    [tc0] + [tc1 for _ in range(12)] + [tc2],
+                    time_offset=0
+                )
+
+        return tcsims
+
+    def fit_mappings(self) -> Dict[str, FitMapping]:
+
+        mappings = {}
+        # fasting
+        for condition in self.conditions:
+            mappings[f"fm_po_dap250_{condition}"] = FitMapping(
+                self,
+                reference=FitData(
+                    self,
+                    dataset=f"dapagliflozin_DAP250_{condition}",
+                    xid="time",
+                    yid="mean",
+                    yid_sd="mean_sd",
+                    count="count",
+                ),
+                observable=FitData(
+                    self, task=f"task_po_dap_250_{condition}", xid="time", yid=f"[Cve_dap]",
+                ),
+                metadata=DapagliflozinMappingMetaData(
+                    tissue=Tissue.PLASMA,
+                    route=Route.PO,
+                    application_form=ApplicationForm.CAPSULE,
+                    dosing=Dosing.SINGLE,
+                    health=Health.HEALTHY,
+                    fasting=Fasting.FASTED if condition == "fasted" else Fasting.FED,
+                ),
+            )
+
+        for condition in self.conditions:
+                mappings[f"fm_po_dap250_{condition}"] = FitMapping(
+                    self,
+                    reference=FitData(
+                        self,
+                        dataset=f"dapagliflozin_cumulative amount_{condition}",
+                        xid="time",
+                        yid="mean",
+                        yid_sd="mean_sd",
+                        count="count",
+                    ),
+                    observable=FitData(
+                        self, task=f"task_po_dap_250_{condition}", xid="time", yid=f"Aurine_dap",
+                    ),
+                    metadata=DapagliflozinMappingMetaData(
+                        tissue=Tissue.PLASMA,
+                        route=Route.PO,
+                        application_form=ApplicationForm.CAPSULE,
+                        dosing=Dosing.SINGLE,
+                        health=Health.HEALTHY,
+                        fasting=Fasting.FASTED if condition == "fasted" else Fasting.FED,
+                    ),
+                )
+        # FIXME: plot0 uge
+        for dose in self.doses_uge_single:
+            mappings[f"fm_po_dap_{dose}_single"] = FitMapping(
+                self,
+                reference=FitData(
+                    self,
+                    dataset=f"glucose_cumulative amount_DAP{dose}",
+                    xid="time",
+                    yid="mean",
+                    yid_sd="mean_sd",
+                    count="count",
+                ),
+                observable=FitData(
+                    self, task=f"task_po_dap_{dose}_single", xid="time", yid=f"KI__UGE",
+                ),
+                metadata=DapagliflozinMappingMetaData(
+                    tissue=Tissue.PLASMA,
+                    route=Route.PO,
+                    application_form=ApplicationForm.CAPSULE,
+                    dosing=Dosing.SINGLE,
+                    health=Health.HEALTHY,
+                    fasting=Fasting.FASTED,
+                ),
+            )
+        # multi
+        for dose in self.doses_multi:
+                mappings[f"fm_po_dap{dose}_MD_single"] = FitMapping(
+                    self,
+                    reference=FitData(
+                        self,
+                        dataset=f"dapagliflozin_DAP{dose}",
+                        xid="time",
+                        yid="mean",
+                        yid_sd="mean_sd",
+                        count="count",
+                    ),
+                    observable=FitData(
+                        self, task=f"task_po_dap_{dose}_single", xid="time", yid=f"[Cve_dap]",
+                    ),
+                    metadata=DapagliflozinMappingMetaData(
+                        tissue=Tissue.PLASMA,
+                        route=Route.PO,
+                        application_form=ApplicationForm.CAPSULE,
+                        dosing=Dosing.SINGLE,
+                        health=Health.HEALTHY,
+                        fasting=Fasting.FASTED,
+                    ),
+                )
+        for dose in self.doses_multi:
+            mappings[f"fm_po_dap{dose}_MD_multi"] = FitMapping(
+                self,
+                reference=FitData(
+                    self,
+                    dataset=f"dapagliflozin_DAPM{dose}",
+                    xid="time",
+                    yid="mean",
+                    yid_sd="mean_sd",
+                    count="count",
+                ),
+                observable=FitData(
+                    self, task=f"task_po_dap_{dose}_multi", xid="time", yid=f"[Cve_dap]",
+                ),
+                metadata=DapagliflozinMappingMetaData(
+                    tissue=Tissue.PLASMA,
+                    route=Route.PO,
+                    application_form=ApplicationForm.CAPSULE,
+                    dosing=Dosing.SINGLE,
+                    health=Health.HEALTHY,
+                    fasting=Fasting.FASTED,
+                ),
+            )
+        for dose in self.doses_uge_multi:
+            mappings[f"fm_po_dap_{dose}_uge_multi"] = FitMapping(
+                self,
+                reference=FitData(
+                    self,
+                    dataset=f"glucose_cumulative amount_DAPM{dose}",
+                    xid="time",
+                    yid="mean",
+                    yid_sd="mean_sd",
+                    count="count",
+                ),
+                observable=FitData(
+                    self, task=f"task_po_dap_{dose}_uge_multi", xid="time", yid=f"KI__UGE",
+                ),
+                metadata=DapagliflozinMappingMetaData(
+                    tissue=Tissue.PLASMA,
+                    route=Route.PO,
+                    application_form=ApplicationForm.CAPSULE,
+                    dosing=Dosing.MULTIPLE,
+                    health=Health.HEALTHY,
+                    fasting=Fasting.FASTED,
+                ),
+            )
+
+        # console.print(mappings)
+        return mappings
+
+
+    def figures(self) -> Dict[str, Figure]:
+        return {
+            **self.figure_fasting(),
+            **self.figure_uge_single(),
+            **self.figure_multi(),
+            **self.figure_uge_multi(),
+        }
+
+    def figure_fasting(self) -> Dict[str, Figure]:
+
+        fig = Figure(
+            experiment=self,
+            sid="Fig_fasting",
+            num_rows=2,
+            num_cols=1,
+            name=f"{self.__class__.__name__}",
+        )
+        plots = fig.create_plots(xaxis=Axis(self.label_time, unit=self.unit_time), legend=True)
+        plots[0].set_yaxis(self.label_dap_plasma, unit=self.unit_dap)
+        plots[1].set_yaxis(self.label_dap_urine, unit=self.unit_dap_urine)
+
+        for condition in self.conditions:
+            # simulation
+            plots[0].add_data(
+                task=f"task_po_dap_250_{condition}",
+                xid="time",
+                yid=f"[Cve_dap]",
+                label=f"Sim dap {condition}",
+                color=self.fasting_colors[condition],
+            )
+            plots[1].add_data(
+                task=f"task_po_dap_250_{condition}",
+                xid="time",
+                yid=f"Aurine_dap",
+                label=f"Sim dap {condition}",
+                color=self.fasting_colors[condition],
+            )
+            # data
+            plots[0].add_data(
+                dataset=f"dapagliflozin_DAP250_{condition}",
+                xid="time",
+                yid="mean",
+                yid_sd="mean_sd",
+                count="count",
+                label=f"dap {condition}",
+                color=self.fasting_colors[condition],
+            )
+            plots[1].add_data(
+                dataset=f"dapagliflozin_cumulative amount_{condition}",
+                xid="time",
+                yid="mean",
+                yid_sd="mean_sd",
+                count="count",
+                label=f"dap {condition}",
+                color=self.fasting_colors[condition],
+            )
+
+        return {
+            fig.sid: fig,
+        }
+
+    def figure_uge_single(self) -> Dict[str, Figure]:
+        fig = Figure(
+            experiment=self,
+            sid="Fig_uge_single",
+            name=f"{self.__class__.__name__}",
+        )
+        plots = fig.create_plots(xaxis=Axis(self.label_time, unit=self.unit_time), legend=False)
+        plots[0].set_yaxis(self.label_uge, unit=self.unit_uge)
+
+        for dose in self.doses_uge_single:
+            # simulation
+            plots[0].add_data(
+                task=f"task_po_dap_{dose}_single",
+                xid="time",
+                yid=f"KI__UGE",
+                label=f"Sim {dose} mg",
+                color=self.colors[dose],
+            )
+        # data
+        for dose in self.doses_uge_single:
+            plots[0].add_data(
+                dataset=f"glucose_cumulative amount_DAP{dose}",
+                xid="time",
+                yid="mean",
+                yid_sd=None,
+                count="count",
+                label=f"UGE {dose} mg",
+                color=self.colors[dose],
+            )
+
+        return {
+            fig.sid: fig,
+        }
+
+    def figure_multi(self) -> Dict[str, Figure]:
+        fig = Figure(
+            experiment=self,
+            sid="Fig_multi",
+            num_rows=2,
+            num_cols=1,
+            name=f"{self.__class__.__name__}",
+        )
+        plots = fig.create_plots(xaxis=Axis(self.label_time, unit=self.unit_time), legend=False)
+        plots[0].set_yaxis(self.label_dap_plasma, unit=self.unit_dap)
+        plots[1].set_yaxis(self.label_dap_plasma, unit=self.unit_dap)
+        plots[0].xaxis.min = -3
+        plots[0].xaxis.max = 30
+        plots[1].xaxis.min = -24
+        plots[1].xaxis.max = 30
+
+        for dose in self.doses_multi:
+            # simulation
+            plots[0].add_data(
+                task=f"task_po_dap_{dose}_single",
+                xid="time",
+                yid=f"[Cve_dap]",
+                label=f"Sim {dose} mg",
+                color=self.colors[dose],
+            )
+            plots[1].add_data(
+                task=f"task_po_dap_{dose}_multi",
+                xid="time",
+                yid=f"[Cve_dap]",
+                label=f"Sim {dose} mg",
+                color=self.colors[dose],
+            )
+            # data
+            plots[0].add_data(
+                dataset=f"dapagliflozin_DAP{dose}",
+                xid="time",
+                yid="mean",
+                yid_sd="mean_sd",
+                count="count",
+                label=f"dap {dose} mg",
+                color=self.colors[dose],
+            )
+            plots[1].add_data(
+                dataset=f"dapagliflozin_DAPM{dose}",
+                xid="time",
+                yid="mean",
+                yid_sd="mean_sd",
+                count="count",
+                label=f"dap {dose} mg",
+                color=self.colors[dose],
+            )
+
+        return {
+            fig.sid: fig,
+        }
+
+    def figure_uge_multi(self) -> Dict[str, Figure]:
+        # Fig6
+        fig = Figure(
+            experiment=self,
+            sid="Fig_uge_multi",
+            name=f"{self.__class__.__name__}",
+        )
+        plots = fig.create_plots(xaxis=Axis(self.label_time, unit=self.unit_time), legend=False)
+        plots[0].set_yaxis(self.label_uge, unit=self.unit_uge)
+
+        for dose in self.doses_uge_multi:
+            # simulation
+            plots[0].add_data(
+                task=f"task_po_dap_{dose}_uge_multi",
+                xid="time",
+                yid=f"KI__UGE",
+                label=f"Sim {dose} mg",
+                color=self.colors[dose],
+            )
+        # data
+        for dose in self.doses_uge_multi:
+            plots[0].add_data(
+                dataset=f"glucose_cumulative amount_DAPM{dose}",
+                xid="time",
+                yid="mean",
+                yid_sd=None,
+                count="count",
+                label=f"UGE {dose} mg",
+                color=self.colors[dose],
+                linestyle="",
+            )
+
+        return {
+            fig.sid: fig,
+        }
+
+if __name__ == "__main__":
+    run_experiments(Komoroski2009, output_dir=Komoroski2009.__name__)
+</code>
+        </pre>
+            </p>
+
+        </v-content>
+    </v-app>
+</div>
+
+
+<!-- loading dependencies -->
+<script src="https://cdn.jsdelivr.net/npm/vue@2.6.11"></script>
+<script src="https://cdn.jsdelivr.net/npm/vuetify@2.2.6/dist/vuetify.js"></script>
+<link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/@mdi/font@4.x/css/materialdesignicons.min.css" rel="stylesheet">
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.2/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+<script>
+    const app = new Vue({
+        el: '#app',
+        vuetify: new Vuetify(),
+        delimiters: ['${', '}'],
+        data() {
+            return {}
+        }
+    })
+</script>
+
+
+</body>
+</html>

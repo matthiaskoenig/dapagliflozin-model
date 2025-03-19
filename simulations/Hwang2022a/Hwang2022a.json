@@ -1,0 +1,4544 @@
+{
+  "experiment_id": "Hwang2022a",
+  "base_path": "/home/mkoenig/git/pkdb_models/pkdb_models/models/dapagliflozin",
+  "data_path": "[PosixPath('/home/mkoenig/git/pkdb_data/studies/dapagliflozin'), PosixPath('/home/mkoenig/git/pkdb_data/studies/canagliflozin')]",
+  "models": {
+    "model": {
+      "sid": null,
+      "name": null,
+      "language": "SBML",
+      "language_type": "SBML",
+      "source": {
+        "source": "/home/mkoenig/git/pkdb_models/pkdb_models/models/dapagliflozin/models/results/models/dapagliflozin_body_flat.xml",
+        "path": "/home/mkoenig/git/pkdb_models/pkdb_models/models/dapagliflozin/models/results/models/dapagliflozin_body_flat.xml",
+        "content": "None"
+      },
+      "changes": {}
+    }
+  },
+  "tasks": {
+    "task_po_dap10_C1236T_CC": {
+      "model": "model",
+      "simulation": "po_dap10_C1236T_CC"
+    },
+    "task_po_dap10_C1236T_CT": {
+      "model": "model",
+      "simulation": "po_dap10_C1236T_CT"
+    },
+    "task_po_dap10_C1236T_TT": {
+      "model": "model",
+      "simulation": "po_dap10_C1236T_TT"
+    },
+    "task_po_dap10_G2677TA_GG": {
+      "model": "model",
+      "simulation": "po_dap10_G2677TA_GG"
+    },
+    "task_po_dap10_G2677TA_GT": {
+      "model": "model",
+      "simulation": "po_dap10_G2677TA_GT"
+    },
+    "task_po_dap10_G2677TA_GA": {
+      "model": "model",
+      "simulation": "po_dap10_G2677TA_GA"
+    },
+    "task_po_dap10_G2677TA_TT": {
+      "model": "model",
+      "simulation": "po_dap10_G2677TA_TT"
+    },
+    "task_po_dap10_G2677TA_TA": {
+      "model": "model",
+      "simulation": "po_dap10_G2677TA_TA"
+    },
+    "task_po_dap10_G2677TA_AA": {
+      "model": "model",
+      "simulation": "po_dap10_G2677TA_AA"
+    },
+    "task_po_dap10_C3435T_CC": {
+      "model": "model",
+      "simulation": "po_dap10_C3435T_CC"
+    },
+    "task_po_dap10_C3435T_CT": {
+      "model": "model",
+      "simulation": "po_dap10_C3435T_CT"
+    },
+    "task_po_dap10_C3435T_TT": {
+      "model": "model",
+      "simulation": "po_dap10_C3435T_TT"
+    }
+  },
+  "simulations": {
+    "po_dap10_C1236T_CC": {
+      "type": "TimecourseSim",
+      "selections": null,
+      "reset": true,
+      "time_offset": 0.0,
+      "timecourses": [
+        {
+          "start": 0,
+          "end": 3000,
+          "steps": 1000,
+          "changes": {
+            "ftissue_dap": {
+              "_magnitude": 0.010000059900567992,
+              "_units": "l_per_min"
+            },
+            "Kp_dap": {
+              "_magnitude": 31.042533719411505,
+              "_units": "dimensionless"
+            },
+            "LI__DAPIM_Vmax": {
+              "_magnitude": 237.86295115687793,
+              "_units": "LI__mmole_per_min_l"
+            },
+            "LI__DAP2D3G_Vmax": {
+              "_magnitude": 0.001006430350333675,
+              "_units": "LI__mmole_per_min_l"
+            },
+            "LI__D3GEX_Vmax": {
+              "_magnitude": 0.001000000002413061,
+              "_units": "LI__mmole_per_min_l"
+            },
+            "KI__DAPIM_Vmax": {
+              "_magnitude": 1.1617732990568852,
+              "_units": "KI__mmole_per_min_l"
+            },
+            "KI__DAP2D3G_Vmax": {
+              "_magnitude": 0.27222357579082207,
+              "_units": "KI__mmole_per_min_l"
+            },
+            "KI__D3GIM_Vmax": {
+              "_magnitude": 19.793547404872445,
+              "_units": "KI__mmole_per_min_l"
+            },
+            "KI__DAPEX_k": {
+              "_magnitude": 0.01720563003558135,
+              "_units": "KI__per_min"
+            },
+            "KI__D3GEX_k": {
+              "_magnitude": 0.3390785144688731,
+              "_units": "KI__per_min"
+            },
+            "GU__Ka_dis_dap": {
+              "_magnitude": 1.0200604498935186,
+              "_units": "GU__per_hr"
+            },
+            "GU__DAPABS_k": {
+              "_magnitude": 0.04858558323976285,
+              "_units": "GU__per_min"
+            },
+            "BW": {
+              "_magnitude": 71.03,
+              "_units": "kilogram"
+            },
+            "[KI__glc_ext]": {
+              "_magnitude": 5.000000000000001,
+              "_units": "KI__mmole / liter"
+            },
+            "GU__f_absorption": {
+              "_magnitude": 1.0,
+              "_units": "dimensionless"
+            },
+            "f_cirrhosis": {
+              "_magnitude": 0,
+              "_units": "dimensionless"
+            },
+            "KI__f_renal_function": {
+              "_magnitude": 1.0,
+              "_units": "dimensionless"
+            },
+            "PODOSE_dap": {
+              "_magnitude": 10,
+              "_units": "milligram"
+            }
+          },
+          "model_changes": {},
+          "model_manipulations": {},
+          "discard": false
+        }
+      ]
+    },
+    "po_dap10_C1236T_CT": {
+      "type": "TimecourseSim",
+      "selections": null,
+      "reset": true,
+      "time_offset": 0.0,
+      "timecourses": [
+        {
+          "start": 0,
+          "end": 3000,
+          "steps": 1000,
+          "changes": {
+            "ftissue_dap": {
+              "_magnitude": 0.010000059900567992,
+              "_units": "l_per_min"
+            },
+            "Kp_dap": {
+              "_magnitude": 31.042533719411505,
+              "_units": "dimensionless"
+            },
+            "LI__DAPIM_Vmax": {
+              "_magnitude": 237.86295115687793,
+              "_units": "LI__mmole_per_min_l"
+            },
+            "LI__DAP2D3G_Vmax": {
+              "_magnitude": 0.001006430350333675,
+              "_units": "LI__mmole_per_min_l"
+            },
+            "LI__D3GEX_Vmax": {
+              "_magnitude": 0.001000000002413061,
+              "_units": "LI__mmole_per_min_l"
+            },
+            "KI__DAPIM_Vmax": {
+              "_magnitude": 1.1617732990568852,
+              "_units": "KI__mmole_per_min_l"
+            },
+            "KI__DAP2D3G_Vmax": {
+              "_magnitude": 0.27222357579082207,
+              "_units": "KI__mmole_per_min_l"
+            },
+            "KI__D3GIM_Vmax": {
+              "_magnitude": 19.793547404872445,
+              "_units": "KI__mmole_per_min_l"
+            },
+            "KI__DAPEX_k": {
+              "_magnitude": 0.01720563003558135,
+              "_units": "KI__per_min"
+            },
+            "KI__D3GEX_k": {
+              "_magnitude": 0.3390785144688731,
+              "_units": "KI__per_min"
+            },
+            "GU__Ka_dis_dap": {
+              "_magnitude": 1.0200604498935186,
+              "_units": "GU__per_hr"
+            },
+            "GU__DAPABS_k": {
+              "_magnitude": 0.04858558323976285,
+              "_units": "GU__per_min"
+            },
+            "BW": {
+              "_magnitude": 71.79,
+              "_units": "kilogram"
+            },
+            "[KI__glc_ext]": {
+              "_magnitude": 5.000000000000001,
+              "_units": "KI__mmole / liter"
+            },
+            "GU__f_absorption": {
+              "_magnitude": 1.0,
+              "_units": "dimensionless"
+            },
+            "f_cirrhosis": {
+              "_magnitude": 0,
+              "_units": "dimensionless"
+            },
+            "KI__f_renal_function": {
+              "_magnitude": 1.0,
+              "_units": "dimensionless"
+            },
+            "PODOSE_dap": {
+              "_magnitude": 10,
+              "_units": "milligram"
+            }
+          },
+          "model_changes": {},
+          "model_manipulations": {},
+          "discard": false
+        }
+      ]
+    },
+    "po_dap10_C1236T_TT": {
+      "type": "TimecourseSim",
+      "selections": null,
+      "reset": true,
+      "time_offset": 0.0,
+      "timecourses": [
+        {
+          "start": 0,
+          "end": 3000,
+          "steps": 1000,
+          "changes": {
+            "ftissue_dap": {
+              "_magnitude": 0.010000059900567992,
+              "_units": "l_per_min"
+            },
+            "Kp_dap": {
+              "_magnitude": 31.042533719411505,
+              "_units": "dimensionless"
+            },
+            "LI__DAPIM_Vmax": {
+              "_magnitude": 237.86295115687793,
+              "_units": "LI__mmole_per_min_l"
+            },
+            "LI__DAP2D3G_Vmax": {
+              "_magnitude": 0.001006430350333675,
+              "_units": "LI__mmole_per_min_l"
+            },
+            "LI__D3GEX_Vmax": {
+              "_magnitude": 0.001000000002413061,
+              "_units": "LI__mmole_per_min_l"
+            },
+            "KI__DAPIM_Vmax": {
+              "_magnitude": 1.1617732990568852,
+              "_units": "KI__mmole_per_min_l"
+            },
+            "KI__DAP2D3G_Vmax": {
+              "_magnitude": 0.27222357579082207,
+              "_units": "KI__mmole_per_min_l"
+            },
+            "KI__D3GIM_Vmax": {
+              "_magnitude": 19.793547404872445,
+              "_units": "KI__mmole_per_min_l"
+            },
+            "KI__DAPEX_k": {
+              "_magnitude": 0.01720563003558135,
+              "_units": "KI__per_min"
+            },
+            "KI__D3GEX_k": {
+              "_magnitude": 0.3390785144688731,
+              "_units": "KI__per_min"
+            },
+            "GU__Ka_dis_dap": {
+              "_magnitude": 1.0200604498935186,
+              "_units": "GU__per_hr"
+            },
+            "GU__DAPABS_k": {
+              "_magnitude": 0.04858558323976285,
+              "_units": "GU__per_min"
+            },
+            "BW": {
+              "_magnitude": 72.44,
+              "_units": "kilogram"
+            },
+            "[KI__glc_ext]": {
+              "_magnitude": 5.000000000000001,
+              "_units": "KI__mmole / liter"
+            },
+            "GU__f_absorption": {
+              "_magnitude": 1.0,
+              "_units": "dimensionless"
+            },
+            "f_cirrhosis": {
+              "_magnitude": 0,
+              "_units": "dimensionless"
+            },
+            "KI__f_renal_function": {
+              "_magnitude": 1.0,
+              "_units": "dimensionless"
+            },
+            "PODOSE_dap": {
+              "_magnitude": 10,
+              "_units": "milligram"
+            }
+          },
+          "model_changes": {},
+          "model_manipulations": {},
+          "discard": false
+        }
+      ]
+    },
+    "po_dap10_G2677TA_GG": {
+      "type": "TimecourseSim",
+      "selections": null,
+      "reset": true,
+      "time_offset": 0.0,
+      "timecourses": [
+        {
+          "start": 0,
+          "end": 3000,
+          "steps": 1000,
+          "changes": {
+            "ftissue_dap": {
+              "_magnitude": 0.010000059900567992,
+              "_units": "l_per_min"
+            },
+            "Kp_dap": {
+              "_magnitude": 31.042533719411505,
+              "_units": "dimensionless"
+            },
+            "LI__DAPIM_Vmax": {
+              "_magnitude": 237.86295115687793,
+              "_units": "LI__mmole_per_min_l"
+            },
+            "LI__DAP2D3G_Vmax": {
+              "_magnitude": 0.001006430350333675,
+              "_units": "LI__mmole_per_min_l"
+            },
+            "LI__D3GEX_Vmax": {
+              "_magnitude": 0.001000000002413061,
+              "_units": "LI__mmole_per_min_l"
+            },
+            "KI__DAPIM_Vmax": {
+              "_magnitude": 1.1617732990568852,
+              "_units": "KI__mmole_per_min_l"
+            },
+            "KI__DAP2D3G_Vmax": {
+              "_magnitude": 0.27222357579082207,
+              "_units": "KI__mmole_per_min_l"
+            },
+            "KI__D3GIM_Vmax": {
+              "_magnitude": 19.793547404872445,
+              "_units": "KI__mmole_per_min_l"
+            },
+            "KI__DAPEX_k": {
+              "_magnitude": 0.01720563003558135,
+              "_units": "KI__per_min"
+            },
+            "KI__D3GEX_k": {
+              "_magnitude": 0.3390785144688731,
+              "_units": "KI__per_min"
+            },
+            "GU__Ka_dis_dap": {
+              "_magnitude": 1.0200604498935186,
+              "_units": "GU__per_hr"
+            },
+            "GU__DAPABS_k": {
+              "_magnitude": 0.04858558323976285,
+              "_units": "GU__per_min"
+            },
+            "BW": {
+              "_magnitude": 71.18,
+              "_units": "kilogram"
+            },
+            "[KI__glc_ext]": {
+              "_magnitude": 5.000000000000001,
+              "_units": "KI__mmole / liter"
+            },
+            "GU__f_absorption": {
+              "_magnitude": 1.0,
+              "_units": "dimensionless"
+            },
+            "f_cirrhosis": {
+              "_magnitude": 0,
+              "_units": "dimensionless"
+            },
+            "KI__f_renal_function": {
+              "_magnitude": 1.0,
+              "_units": "dimensionless"
+            },
+            "PODOSE_dap": {
+              "_magnitude": 10,
+              "_units": "milligram"
+            }
+          },
+          "model_changes": {},
+          "model_manipulations": {},
+          "discard": false
+        }
+      ]
+    },
+    "po_dap10_G2677TA_GT": {
+      "type": "TimecourseSim",
+      "selections": null,
+      "reset": true,
+      "time_offset": 0.0,
+      "timecourses": [
+        {
+          "start": 0,
+          "end": 3000,
+          "steps": 1000,
+          "changes": {
+            "ftissue_dap": {
+              "_magnitude": 0.010000059900567992,
+              "_units": "l_per_min"
+            },
+            "Kp_dap": {
+              "_magnitude": 31.042533719411505,
+              "_units": "dimensionless"
+            },
+            "LI__DAPIM_Vmax": {
+              "_magnitude": 237.86295115687793,
+              "_units": "LI__mmole_per_min_l"
+            },
+            "LI__DAP2D3G_Vmax": {
+              "_magnitude": 0.001006430350333675,
+              "_units": "LI__mmole_per_min_l"
+            },
+            "LI__D3GEX_Vmax": {
+              "_magnitude": 0.001000000002413061,
+              "_units": "LI__mmole_per_min_l"
+            },
+            "KI__DAPIM_Vmax": {
+              "_magnitude": 1.1617732990568852,
+              "_units": "KI__mmole_per_min_l"
+            },
+            "KI__DAP2D3G_Vmax": {
+              "_magnitude": 0.27222357579082207,
+              "_units": "KI__mmole_per_min_l"
+            },
+            "KI__D3GIM_Vmax": {
+              "_magnitude": 19.793547404872445,
+              "_units": "KI__mmole_per_min_l"
+            },
+            "KI__DAPEX_k": {
+              "_magnitude": 0.01720563003558135,
+              "_units": "KI__per_min"
+            },
+            "KI__D3GEX_k": {
+              "_magnitude": 0.3390785144688731,
+              "_units": "KI__per_min"
+            },
+            "GU__Ka_dis_dap": {
+              "_magnitude": 1.0200604498935186,
+              "_units": "GU__per_hr"
+            },
+            "GU__DAPABS_k": {
+              "_magnitude": 0.04858558323976285,
+              "_units": "GU__per_min"
+            },
+            "BW": {
+              "_magnitude": 71,
+              "_units": "kilogram"
+            },
+            "[KI__glc_ext]": {
+              "_magnitude": 5.000000000000001,
+              "_units": "KI__mmole / liter"
+            },
+            "GU__f_absorption": {
+              "_magnitude": 1.0,
+              "_units": "dimensionless"
+            },
+            "f_cirrhosis": {
+              "_magnitude": 0,
+              "_units": "dimensionless"
+            },
+            "KI__f_renal_function": {
+              "_magnitude": 1.0,
+              "_units": "dimensionless"
+            },
+            "PODOSE_dap": {
+              "_magnitude": 10,
+              "_units": "milligram"
+            }
+          },
+          "model_changes": {},
+          "model_manipulations": {},
+          "discard": false
+        }
+      ]
+    },
+    "po_dap10_G2677TA_GA": {
+      "type": "TimecourseSim",
+      "selections": null,
+      "reset": true,
+      "time_offset": 0.0,
+      "timecourses": [
+        {
+          "start": 0,
+          "end": 3000,
+          "steps": 1000,
+          "changes": {
+            "ftissue_dap": {
+              "_magnitude": 0.010000059900567992,
+              "_units": "l_per_min"
+            },
+            "Kp_dap": {
+              "_magnitude": 31.042533719411505,
+              "_units": "dimensionless"
+            },
+            "LI__DAPIM_Vmax": {
+              "_magnitude": 237.86295115687793,
+              "_units": "LI__mmole_per_min_l"
+            },
+            "LI__DAP2D3G_Vmax": {
+              "_magnitude": 0.001006430350333675,
+              "_units": "LI__mmole_per_min_l"
+            },
+            "LI__D3GEX_Vmax": {
+              "_magnitude": 0.001000000002413061,
+              "_units": "LI__mmole_per_min_l"
+            },
+            "KI__DAPIM_Vmax": {
+              "_magnitude": 1.1617732990568852,
+              "_units": "KI__mmole_per_min_l"
+            },
+            "KI__DAP2D3G_Vmax": {
+              "_magnitude": 0.27222357579082207,
+              "_units": "KI__mmole_per_min_l"
+            },
+            "KI__D3GIM_Vmax": {
+              "_magnitude": 19.793547404872445,
+              "_units": "KI__mmole_per_min_l"
+            },
+            "KI__DAPEX_k": {
+              "_magnitude": 0.01720563003558135,
+              "_units": "KI__per_min"
+            },
+            "KI__D3GEX_k": {
+              "_magnitude": 0.3390785144688731,
+              "_units": "KI__per_min"
+            },
+            "GU__Ka_dis_dap": {
+              "_magnitude": 1.0200604498935186,
+              "_units": "GU__per_hr"
+            },
+            "GU__DAPABS_k": {
+              "_magnitude": 0.04858558323976285,
+              "_units": "GU__per_min"
+            },
+            "BW": {
+              "_magnitude": 73.61,
+              "_units": "kilogram"
+            },
+            "[KI__glc_ext]": {
+              "_magnitude": 5.000000000000001,
+              "_units": "KI__mmole / liter"
+            },
+            "GU__f_absorption": {
+              "_magnitude": 1.0,
+              "_units": "dimensionless"
+            },
+            "f_cirrhosis": {
+              "_magnitude": 0,
+              "_units": "dimensionless"
+            },
+            "KI__f_renal_function": {
+              "_magnitude": 1.0,
+              "_units": "dimensionless"
+            },
+            "PODOSE_dap": {
+              "_magnitude": 10,
+              "_units": "milligram"
+            }
+          },
+          "model_changes": {},
+          "model_manipulations": {},
+          "discard": false
+        }
+      ]
+    },
+    "po_dap10_G2677TA_TT": {
+      "type": "TimecourseSim",
+      "selections": null,
+      "reset": true,
+      "time_offset": 0.0,
+      "timecourses": [
+        {
+          "start": 0,
+          "end": 3000,
+          "steps": 1000,
+          "changes": {
+            "ftissue_dap": {
+              "_magnitude": 0.010000059900567992,
+              "_units": "l_per_min"
+            },
+            "Kp_dap": {
+              "_magnitude": 31.042533719411505,
+              "_units": "dimensionless"
+            },
+            "LI__DAPIM_Vmax": {
+              "_magnitude": 237.86295115687793,
+              "_units": "LI__mmole_per_min_l"
+            },
+            "LI__DAP2D3G_Vmax": {
+              "_magnitude": 0.001006430350333675,
+              "_units": "LI__mmole_per_min_l"
+            },
+            "LI__D3GEX_Vmax": {
+              "_magnitude": 0.001000000002413061,
+              "_units": "LI__mmole_per_min_l"
+            },
+            "KI__DAPIM_Vmax": {
+              "_magnitude": 1.1617732990568852,
+              "_units": "KI__mmole_per_min_l"
+            },
+            "KI__DAP2D3G_Vmax": {
+              "_magnitude": 0.27222357579082207,
+              "_units": "KI__mmole_per_min_l"
+            },
+            "KI__D3GIM_Vmax": {
+              "_magnitude": 19.793547404872445,
+              "_units": "KI__mmole_per_min_l"
+            },
+            "KI__DAPEX_k": {
+              "_magnitude": 0.01720563003558135,
+              "_units": "KI__per_min"
+            },
+            "KI__D3GEX_k": {
+              "_magnitude": 0.3390785144688731,
+              "_units": "KI__per_min"
+            },
+            "GU__Ka_dis_dap": {
+              "_magnitude": 1.0200604498935186,
+              "_units": "GU__per_hr"
+            },
+            "GU__DAPABS_k": {
+              "_magnitude": 0.04858558323976285,
+              "_units": "GU__per_min"
+            },
+            "BW": {
+              "_magnitude": 71.43,
+              "_units": "kilogram"
+            },
+            "[KI__glc_ext]": {
+              "_magnitude": 5.000000000000001,
+              "_units": "KI__mmole / liter"
+            },
+            "GU__f_absorption": {
+              "_magnitude": 1.0,
+              "_units": "dimensionless"
+            },
+            "f_cirrhosis": {
+              "_magnitude": 0,
+              "_units": "dimensionless"
+            },
+            "KI__f_renal_function": {
+              "_magnitude": 1.0,
+              "_units": "dimensionless"
+            },
+            "PODOSE_dap": {
+              "_magnitude": 10,
+              "_units": "milligram"
+            }
+          },
+          "model_changes": {},
+          "model_manipulations": {},
+          "discard": false
+        }
+      ]
+    },
+    "po_dap10_G2677TA_TA": {
+      "type": "TimecourseSim",
+      "selections": null,
+      "reset": true,
+      "time_offset": 0.0,
+      "timecourses": [
+        {
+          "start": 0,
+          "end": 3000,
+          "steps": 1000,
+          "changes": {
+            "ftissue_dap": {
+              "_magnitude": 0.010000059900567992,
+              "_units": "l_per_min"
+            },
+            "Kp_dap": {
+              "_magnitude": 31.042533719411505,
+              "_units": "dimensionless"
+            },
+            "LI__DAPIM_Vmax": {
+              "_magnitude": 237.86295115687793,
+              "_units": "LI__mmole_per_min_l"
+            },
+            "LI__DAP2D3G_Vmax": {
+              "_magnitude": 0.001006430350333675,
+              "_units": "LI__mmole_per_min_l"
+            },
+            "LI__D3GEX_Vmax": {
+              "_magnitude": 0.001000000002413061,
+              "_units": "LI__mmole_per_min_l"
+            },
+            "KI__DAPIM_Vmax": {
+              "_magnitude": 1.1617732990568852,
+              "_units": "KI__mmole_per_min_l"
+            },
+            "KI__DAP2D3G_Vmax": {
+              "_magnitude": 0.27222357579082207,
+              "_units": "KI__mmole_per_min_l"
+            },
+            "KI__D3GIM_Vmax": {
+              "_magnitude": 19.793547404872445,
+              "_units": "KI__mmole_per_min_l"
+            },
+            "KI__DAPEX_k": {
+              "_magnitude": 0.01720563003558135,
+              "_units": "KI__per_min"
+            },
+            "KI__D3GEX_k": {
+              "_magnitude": 0.3390785144688731,
+              "_units": "KI__per_min"
+            },
+            "GU__Ka_dis_dap": {
+              "_magnitude": 1.0200604498935186,
+              "_units": "GU__per_hr"
+            },
+            "GU__DAPABS_k": {
+              "_magnitude": 0.04858558323976285,
+              "_units": "GU__per_min"
+            },
+            "BW": {
+              "_magnitude": 72.78,
+              "_units": "kilogram"
+            },
+            "[KI__glc_ext]": {
+              "_magnitude": 5.000000000000001,
+              "_units": "KI__mmole / liter"
+            },
+            "GU__f_absorption": {
+              "_magnitude": 1.0,
+              "_units": "dimensionless"
+            },
+            "f_cirrhosis": {
+              "_magnitude": 0,
+              "_units": "dimensionless"
+            },
+            "KI__f_renal_function": {
+              "_magnitude": 1.0,
+              "_units": "dimensionless"
+            },
+            "PODOSE_dap": {
+              "_magnitude": 10,
+              "_units": "milligram"
+            }
+          },
+          "model_changes": {},
+          "model_manipulations": {},
+          "discard": false
+        }
+      ]
+    },
+    "po_dap10_G2677TA_AA": {
+      "type": "TimecourseSim",
+      "selections": null,
+      "reset": true,
+      "time_offset": 0.0,
+      "timecourses": [
+        {
+          "start": 0,
+          "end": 3000,
+          "steps": 1000,
+          "changes": {
+            "ftissue_dap": {
+              "_magnitude": 0.010000059900567992,
+              "_units": "l_per_min"
+            },
+            "Kp_dap": {
+              "_magnitude": 31.042533719411505,
+              "_units": "dimensionless"
+            },
+            "LI__DAPIM_Vmax": {
+              "_magnitude": 237.86295115687793,
+              "_units": "LI__mmole_per_min_l"
+            },
+            "LI__DAP2D3G_Vmax": {
+              "_magnitude": 0.001006430350333675,
+              "_units": "LI__mmole_per_min_l"
+            },
+            "LI__D3GEX_Vmax": {
+              "_magnitude": 0.001000000002413061,
+              "_units": "LI__mmole_per_min_l"
+            },
+            "KI__DAPIM_Vmax": {
+              "_magnitude": 1.1617732990568852,
+              "_units": "KI__mmole_per_min_l"
+            },
+            "KI__DAP2D3G_Vmax": {
+              "_magnitude": 0.27222357579082207,
+              "_units": "KI__mmole_per_min_l"
+            },
+            "KI__D3GIM_Vmax": {
+              "_magnitude": 19.793547404872445,
+              "_units": "KI__mmole_per_min_l"
+            },
+            "KI__DAPEX_k": {
+              "_magnitude": 0.01720563003558135,
+              "_units": "KI__per_min"
+            },
+            "KI__D3GEX_k": {
+              "_magnitude": 0.3390785144688731,
+              "_units": "KI__per_min"
+            },
+            "GU__Ka_dis_dap": {
+              "_magnitude": 1.0200604498935186,
+              "_units": "GU__per_hr"
+            },
+            "GU__DAPABS_k": {
+              "_magnitude": 0.04858558323976285,
+              "_units": "GU__per_min"
+            },
+            "BW": {
+              "_magnitude": 67.05,
+              "_units": "kilogram"
+            },
+            "[KI__glc_ext]": {
+              "_magnitude": 5.000000000000001,
+              "_units": "KI__mmole / liter"
+            },
+            "GU__f_absorption": {
+              "_magnitude": 1.0,
+              "_units": "dimensionless"
+            },
+            "f_cirrhosis": {
+              "_magnitude": 0,
+              "_units": "dimensionless"
+            },
+            "KI__f_renal_function": {
+              "_magnitude": 1.0,
+              "_units": "dimensionless"
+            },
+            "PODOSE_dap": {
+              "_magnitude": 10,
+              "_units": "milligram"
+            }
+          },
+          "model_changes": {},
+          "model_manipulations": {},
+          "discard": false
+        }
+      ]
+    },
+    "po_dap10_C3435T_CC": {
+      "type": "TimecourseSim",
+      "selections": null,
+      "reset": true,
+      "time_offset": 0.0,
+      "timecourses": [
+        {
+          "start": 0,
+          "end": 3000,
+          "steps": 1000,
+          "changes": {
+            "ftissue_dap": {
+              "_magnitude": 0.010000059900567992,
+              "_units": "l_per_min"
+            },
+            "Kp_dap": {
+              "_magnitude": 31.042533719411505,
+              "_units": "dimensionless"
+            },
+            "LI__DAPIM_Vmax": {
+              "_magnitude": 237.86295115687793,
+              "_units": "LI__mmole_per_min_l"
+            },
+            "LI__DAP2D3G_Vmax": {
+              "_magnitude": 0.001006430350333675,
+              "_units": "LI__mmole_per_min_l"
+            },
+            "LI__D3GEX_Vmax": {
+              "_magnitude": 0.001000000002413061,
+              "_units": "LI__mmole_per_min_l"
+            },
+            "KI__DAPIM_Vmax": {
+              "_magnitude": 1.1617732990568852,
+              "_units": "KI__mmole_per_min_l"
+            },
+            "KI__DAP2D3G_Vmax": {
+              "_magnitude": 0.27222357579082207,
+              "_units": "KI__mmole_per_min_l"
+            },
+            "KI__D3GIM_Vmax": {
+              "_magnitude": 19.793547404872445,
+              "_units": "KI__mmole_per_min_l"
+            },
+            "KI__DAPEX_k": {
+              "_magnitude": 0.01720563003558135,
+              "_units": "KI__per_min"
+            },
+            "KI__D3GEX_k": {
+              "_magnitude": 0.3390785144688731,
+              "_units": "KI__per_min"
+            },
+            "GU__Ka_dis_dap": {
+              "_magnitude": 1.0200604498935186,
+              "_units": "GU__per_hr"
+            },
+            "GU__DAPABS_k": {
+              "_magnitude": 0.04858558323976285,
+              "_units": "GU__per_min"
+            },
+            "BW": {
+              "_magnitude": 71.13,
+              "_units": "kilogram"
+            },
+            "[KI__glc_ext]": {
+              "_magnitude": 5.000000000000001,
+              "_units": "KI__mmole / liter"
+            },
+            "GU__f_absorption": {
+              "_magnitude": 1.0,
+              "_units": "dimensionless"
+            },
+            "f_cirrhosis": {
+              "_magnitude": 0,
+              "_units": "dimensionless"
+            },
+            "KI__f_renal_function": {
+              "_magnitude": 1.0,
+              "_units": "dimensionless"
+            },
+            "PODOSE_dap": {
+              "_magnitude": 10,
+              "_units": "milligram"
+            }
+          },
+          "model_changes": {},
+          "model_manipulations": {},
+          "discard": false
+        }
+      ]
+    },
+    "po_dap10_C3435T_CT": {
+      "type": "TimecourseSim",
+      "selections": null,
+      "reset": true,
+      "time_offset": 0.0,
+      "timecourses": [
+        {
+          "start": 0,
+          "end": 3000,
+          "steps": 1000,
+          "changes": {
+            "ftissue_dap": {
+              "_magnitude": 0.010000059900567992,
+              "_units": "l_per_min"
+            },
+            "Kp_dap": {
+              "_magnitude": 31.042533719411505,
+              "_units": "dimensionless"
+            },
+            "LI__DAPIM_Vmax": {
+              "_magnitude": 237.86295115687793,
+              "_units": "LI__mmole_per_min_l"
+            },
+            "LI__DAP2D3G_Vmax": {
+              "_magnitude": 0.001006430350333675,
+              "_units": "LI__mmole_per_min_l"
+            },
+            "LI__D3GEX_Vmax": {
+              "_magnitude": 0.001000000002413061,
+              "_units": "LI__mmole_per_min_l"
+            },
+            "KI__DAPIM_Vmax": {
+              "_magnitude": 1.1617732990568852,
+              "_units": "KI__mmole_per_min_l"
+            },
+            "KI__DAP2D3G_Vmax": {
+              "_magnitude": 0.27222357579082207,
+              "_units": "KI__mmole_per_min_l"
+            },
+            "KI__D3GIM_Vmax": {
+              "_magnitude": 19.793547404872445,
+              "_units": "KI__mmole_per_min_l"
+            },
+            "KI__DAPEX_k": {
+              "_magnitude": 0.01720563003558135,
+              "_units": "KI__per_min"
+            },
+            "KI__D3GEX_k": {
+              "_magnitude": 0.3390785144688731,
+              "_units": "KI__per_min"
+            },
+            "GU__Ka_dis_dap": {
+              "_magnitude": 1.0200604498935186,
+              "_units": "GU__per_hr"
+            },
+            "GU__DAPABS_k": {
+              "_magnitude": 0.04858558323976285,
+              "_units": "GU__per_min"
+            },
+            "BW": {
+              "_magnitude": 73.44,
+              "_units": "kilogram"
+            },
+            "[KI__glc_ext]": {
+              "_magnitude": 5.000000000000001,
+              "_units": "KI__mmole / liter"
+            },
+            "GU__f_absorption": {
+              "_magnitude": 1.0,
+              "_units": "dimensionless"
+            },
+            "f_cirrhosis": {
+              "_magnitude": 0,
+              "_units": "dimensionless"
+            },
+            "KI__f_renal_function": {
+              "_magnitude": 1.0,
+              "_units": "dimensionless"
+            },
+            "PODOSE_dap": {
+              "_magnitude": 10,
+              "_units": "milligram"
+            }
+          },
+          "model_changes": {},
+          "model_manipulations": {},
+          "discard": false
+        }
+      ]
+    },
+    "po_dap10_C3435T_TT": {
+      "type": "TimecourseSim",
+      "selections": null,
+      "reset": true,
+      "time_offset": 0.0,
+      "timecourses": [
+        {
+          "start": 0,
+          "end": 3000,
+          "steps": 1000,
+          "changes": {
+            "ftissue_dap": {
+              "_magnitude": 0.010000059900567992,
+              "_units": "l_per_min"
+            },
+            "Kp_dap": {
+              "_magnitude": 31.042533719411505,
+              "_units": "dimensionless"
+            },
+            "LI__DAPIM_Vmax": {
+              "_magnitude": 237.86295115687793,
+              "_units": "LI__mmole_per_min_l"
+            },
+            "LI__DAP2D3G_Vmax": {
+              "_magnitude": 0.001006430350333675,
+              "_units": "LI__mmole_per_min_l"
+            },
+            "LI__D3GEX_Vmax": {
+              "_magnitude": 0.001000000002413061,
+              "_units": "LI__mmole_per_min_l"
+            },
+            "KI__DAPIM_Vmax": {
+              "_magnitude": 1.1617732990568852,
+              "_units": "KI__mmole_per_min_l"
+            },
+            "KI__DAP2D3G_Vmax": {
+              "_magnitude": 0.27222357579082207,
+              "_units": "KI__mmole_per_min_l"
+            },
+            "KI__D3GIM_Vmax": {
+              "_magnitude": 19.793547404872445,
+              "_units": "KI__mmole_per_min_l"
+            },
+            "KI__DAPEX_k": {
+              "_magnitude": 0.01720563003558135,
+              "_units": "KI__per_min"
+            },
+            "KI__D3GEX_k": {
+              "_magnitude": 0.3390785144688731,
+              "_units": "KI__per_min"
+            },
+            "GU__Ka_dis_dap": {
+              "_magnitude": 1.0200604498935186,
+              "_units": "GU__per_hr"
+            },
+            "GU__DAPABS_k": {
+              "_magnitude": 0.04858558323976285,
+              "_units": "GU__per_min"
+            },
+            "BW": {
+              "_magnitude": 68.09,
+              "_units": "kilogram"
+            },
+            "[KI__glc_ext]": {
+              "_magnitude": 5.000000000000001,
+              "_units": "KI__mmole / liter"
+            },
+            "GU__f_absorption": {
+              "_magnitude": 1.0,
+              "_units": "dimensionless"
+            },
+            "f_cirrhosis": {
+              "_magnitude": 0,
+              "_units": "dimensionless"
+            },
+            "KI__f_renal_function": {
+              "_magnitude": 1.0,
+              "_units": "dimensionless"
+            },
+            "PODOSE_dap": {
+              "_magnitude": 10,
+              "_units": "milligram"
+            }
+          },
+          "model_changes": {},
+          "model_manipulations": {},
+          "discard": false
+        }
+      ]
+    }
+  },
+  "data": {
+    "task_po_dap10_C1236T_CC__time": {
+      "type": "TASK",
+      "index": "time",
+      "unit": null,
+      "task": "task_po_dap10_C1236T_CC",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_dap10_C1236T_CC__IVDOSE_dap": {
+      "type": "TASK",
+      "index": "IVDOSE_dap",
+      "unit": null,
+      "task": "task_po_dap10_C1236T_CC",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_dap10_C1236T_CC__PODOSE_dap": {
+      "type": "TASK",
+      "index": "PODOSE_dap",
+      "unit": null,
+      "task": "task_po_dap10_C1236T_CC",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_dap10_C1236T_CC__Cve_daptot": {
+      "type": "TASK",
+      "index": "Cve_daptot",
+      "unit": null,
+      "task": "task_po_dap10_C1236T_CC",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_dap10_C1236T_CC__Cve_dap": {
+      "type": "TASK",
+      "index": "Cve_dap",
+      "unit": null,
+      "task": "task_po_dap10_C1236T_CC",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_dap10_C1236T_CC__Cve_d3g": {
+      "type": "TASK",
+      "index": "Cve_d3g",
+      "unit": null,
+      "task": "task_po_dap10_C1236T_CC",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_dap10_C1236T_CC__KI__glc_ext": {
+      "type": "TASK",
+      "index": "KI__glc_ext",
+      "unit": null,
+      "task": "task_po_dap10_C1236T_CC",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_dap10_C1236T_CC__LI__dap": {
+      "type": "TASK",
+      "index": "LI__dap",
+      "unit": null,
+      "task": "task_po_dap10_C1236T_CC",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_dap10_C1236T_CC__LI__d3g": {
+      "type": "TASK",
+      "index": "LI__d3g",
+      "unit": null,
+      "task": "task_po_dap10_C1236T_CC",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_dap10_C1236T_CC__Aurine_daptot": {
+      "type": "TASK",
+      "index": "Aurine_daptot",
+      "unit": null,
+      "task": "task_po_dap10_C1236T_CC",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_dap10_C1236T_CC__Aurine_dap": {
+      "type": "TASK",
+      "index": "Aurine_dap",
+      "unit": null,
+      "task": "task_po_dap10_C1236T_CC",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_dap10_C1236T_CC__Aurine_d3g": {
+      "type": "TASK",
+      "index": "Aurine_d3g",
+      "unit": null,
+      "task": "task_po_dap10_C1236T_CC",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_dap10_C1236T_CC__KI__glc_urine": {
+      "type": "TASK",
+      "index": "KI__glc_urine",
+      "unit": null,
+      "task": "task_po_dap10_C1236T_CC",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_dap10_C1236T_CC__KI__UGE": {
+      "type": "TASK",
+      "index": "KI__UGE",
+      "unit": null,
+      "task": "task_po_dap10_C1236T_CC",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_dap10_C1236T_CC__KI__RTG": {
+      "type": "TASK",
+      "index": "KI__RTG",
+      "unit": null,
+      "task": "task_po_dap10_C1236T_CC",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_dap10_C1236T_CC__Afeces_dap": {
+      "type": "TASK",
+      "index": "Afeces_dap",
+      "unit": null,
+      "task": "task_po_dap10_C1236T_CC",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_dap10_C1236T_CC__Afeces_daptot": {
+      "type": "TASK",
+      "index": "Afeces_daptot",
+      "unit": null,
+      "task": "task_po_dap10_C1236T_CC",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_dap10_C1236T_CC__KI__D3GEX": {
+      "type": "TASK",
+      "index": "KI__D3GEX",
+      "unit": null,
+      "task": "task_po_dap10_C1236T_CC",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_dap10_C1236T_CC__KI__DAPEX": {
+      "type": "TASK",
+      "index": "KI__DAPEX",
+      "unit": null,
+      "task": "task_po_dap10_C1236T_CC",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_dap10_C1236T_CC__KI__GLCEX": {
+      "type": "TASK",
+      "index": "KI__GLCEX",
+      "unit": null,
+      "task": "task_po_dap10_C1236T_CC",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_dap10_C1236T_CC__KI__f_renal_function": {
+      "type": "TASK",
+      "index": "KI__f_renal_function",
+      "unit": null,
+      "task": "task_po_dap10_C1236T_CC",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_dap10_C1236T_CC__f_cirrhosis": {
+      "type": "TASK",
+      "index": "f_cirrhosis",
+      "unit": null,
+      "task": "task_po_dap10_C1236T_CC",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_dap10_C1236T_CC__GU__f_absorption": {
+      "type": "TASK",
+      "index": "GU__f_absorption",
+      "unit": null,
+      "task": "task_po_dap10_C1236T_CC",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_dap10_C1236T_CC__LI__f_ugt1a9": {
+      "type": "TASK",
+      "index": "LI__f_ugt1a9",
+      "unit": null,
+      "task": "task_po_dap10_C1236T_CC",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_dap10_C1236T_CT__time": {
+      "type": "TASK",
+      "index": "time",
+      "unit": null,
+      "task": "task_po_dap10_C1236T_CT",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_dap10_C1236T_CT__IVDOSE_dap": {
+      "type": "TASK",
+      "index": "IVDOSE_dap",
+      "unit": null,
+      "task": "task_po_dap10_C1236T_CT",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_dap10_C1236T_CT__PODOSE_dap": {
+      "type": "TASK",
+      "index": "PODOSE_dap",
+      "unit": null,
+      "task": "task_po_dap10_C1236T_CT",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_dap10_C1236T_CT__Cve_daptot": {
+      "type": "TASK",
+      "index": "Cve_daptot",
+      "unit": null,
+      "task": "task_po_dap10_C1236T_CT",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_dap10_C1236T_CT__Cve_dap": {
+      "type": "TASK",
+      "index": "Cve_dap",
+      "unit": null,
+      "task": "task_po_dap10_C1236T_CT",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_dap10_C1236T_CT__Cve_d3g": {
+      "type": "TASK",
+      "index": "Cve_d3g",
+      "unit": null,
+      "task": "task_po_dap10_C1236T_CT",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_dap10_C1236T_CT__KI__glc_ext": {
+      "type": "TASK",
+      "index": "KI__glc_ext",
+      "unit": null,
+      "task": "task_po_dap10_C1236T_CT",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_dap10_C1236T_CT__LI__dap": {
+      "type": "TASK",
+      "index": "LI__dap",
+      "unit": null,
+      "task": "task_po_dap10_C1236T_CT",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_dap10_C1236T_CT__LI__d3g": {
+      "type": "TASK",
+      "index": "LI__d3g",
+      "unit": null,
+      "task": "task_po_dap10_C1236T_CT",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_dap10_C1236T_CT__Aurine_daptot": {
+      "type": "TASK",
+      "index": "Aurine_daptot",
+      "unit": null,
+      "task": "task_po_dap10_C1236T_CT",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_dap10_C1236T_CT__Aurine_dap": {
+      "type": "TASK",
+      "index": "Aurine_dap",
+      "unit": null,
+      "task": "task_po_dap10_C1236T_CT",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_dap10_C1236T_CT__Aurine_d3g": {
+      "type": "TASK",
+      "index": "Aurine_d3g",
+      "unit": null,
+      "task": "task_po_dap10_C1236T_CT",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_dap10_C1236T_CT__KI__glc_urine": {
+      "type": "TASK",
+      "index": "KI__glc_urine",
+      "unit": null,
+      "task": "task_po_dap10_C1236T_CT",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_dap10_C1236T_CT__KI__UGE": {
+      "type": "TASK",
+      "index": "KI__UGE",
+      "unit": null,
+      "task": "task_po_dap10_C1236T_CT",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_dap10_C1236T_CT__KI__RTG": {
+      "type": "TASK",
+      "index": "KI__RTG",
+      "unit": null,
+      "task": "task_po_dap10_C1236T_CT",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_dap10_C1236T_CT__Afeces_dap": {
+      "type": "TASK",
+      "index": "Afeces_dap",
+      "unit": null,
+      "task": "task_po_dap10_C1236T_CT",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_dap10_C1236T_CT__Afeces_daptot": {
+      "type": "TASK",
+      "index": "Afeces_daptot",
+      "unit": null,
+      "task": "task_po_dap10_C1236T_CT",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_dap10_C1236T_CT__KI__D3GEX": {
+      "type": "TASK",
+      "index": "KI__D3GEX",
+      "unit": null,
+      "task": "task_po_dap10_C1236T_CT",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_dap10_C1236T_CT__KI__DAPEX": {
+      "type": "TASK",
+      "index": "KI__DAPEX",
+      "unit": null,
+      "task": "task_po_dap10_C1236T_CT",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_dap10_C1236T_CT__KI__GLCEX": {
+      "type": "TASK",
+      "index": "KI__GLCEX",
+      "unit": null,
+      "task": "task_po_dap10_C1236T_CT",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_dap10_C1236T_CT__KI__f_renal_function": {
+      "type": "TASK",
+      "index": "KI__f_renal_function",
+      "unit": null,
+      "task": "task_po_dap10_C1236T_CT",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_dap10_C1236T_CT__f_cirrhosis": {
+      "type": "TASK",
+      "index": "f_cirrhosis",
+      "unit": null,
+      "task": "task_po_dap10_C1236T_CT",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_dap10_C1236T_CT__GU__f_absorption": {
+      "type": "TASK",
+      "index": "GU__f_absorption",
+      "unit": null,
+      "task": "task_po_dap10_C1236T_CT",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_dap10_C1236T_CT__LI__f_ugt1a9": {
+      "type": "TASK",
+      "index": "LI__f_ugt1a9",
+      "unit": null,
+      "task": "task_po_dap10_C1236T_CT",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_dap10_C1236T_TT__time": {
+      "type": "TASK",
+      "index": "time",
+      "unit": null,
+      "task": "task_po_dap10_C1236T_TT",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_dap10_C1236T_TT__IVDOSE_dap": {
+      "type": "TASK",
+      "index": "IVDOSE_dap",
+      "unit": null,
+      "task": "task_po_dap10_C1236T_TT",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_dap10_C1236T_TT__PODOSE_dap": {
+      "type": "TASK",
+      "index": "PODOSE_dap",
+      "unit": null,
+      "task": "task_po_dap10_C1236T_TT",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_dap10_C1236T_TT__Cve_daptot": {
+      "type": "TASK",
+      "index": "Cve_daptot",
+      "unit": null,
+      "task": "task_po_dap10_C1236T_TT",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_dap10_C1236T_TT__Cve_dap": {
+      "type": "TASK",
+      "index": "Cve_dap",
+      "unit": null,
+      "task": "task_po_dap10_C1236T_TT",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_dap10_C1236T_TT__Cve_d3g": {
+      "type": "TASK",
+      "index": "Cve_d3g",
+      "unit": null,
+      "task": "task_po_dap10_C1236T_TT",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_dap10_C1236T_TT__KI__glc_ext": {
+      "type": "TASK",
+      "index": "KI__glc_ext",
+      "unit": null,
+      "task": "task_po_dap10_C1236T_TT",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_dap10_C1236T_TT__LI__dap": {
+      "type": "TASK",
+      "index": "LI__dap",
+      "unit": null,
+      "task": "task_po_dap10_C1236T_TT",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_dap10_C1236T_TT__LI__d3g": {
+      "type": "TASK",
+      "index": "LI__d3g",
+      "unit": null,
+      "task": "task_po_dap10_C1236T_TT",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_dap10_C1236T_TT__Aurine_daptot": {
+      "type": "TASK",
+      "index": "Aurine_daptot",
+      "unit": null,
+      "task": "task_po_dap10_C1236T_TT",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_dap10_C1236T_TT__Aurine_dap": {
+      "type": "TASK",
+      "index": "Aurine_dap",
+      "unit": null,
+      "task": "task_po_dap10_C1236T_TT",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_dap10_C1236T_TT__Aurine_d3g": {
+      "type": "TASK",
+      "index": "Aurine_d3g",
+      "unit": null,
+      "task": "task_po_dap10_C1236T_TT",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_dap10_C1236T_TT__KI__glc_urine": {
+      "type": "TASK",
+      "index": "KI__glc_urine",
+      "unit": null,
+      "task": "task_po_dap10_C1236T_TT",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_dap10_C1236T_TT__KI__UGE": {
+      "type": "TASK",
+      "index": "KI__UGE",
+      "unit": null,
+      "task": "task_po_dap10_C1236T_TT",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_dap10_C1236T_TT__KI__RTG": {
+      "type": "TASK",
+      "index": "KI__RTG",
+      "unit": null,
+      "task": "task_po_dap10_C1236T_TT",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_dap10_C1236T_TT__Afeces_dap": {
+      "type": "TASK",
+      "index": "Afeces_dap",
+      "unit": null,
+      "task": "task_po_dap10_C1236T_TT",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_dap10_C1236T_TT__Afeces_daptot": {
+      "type": "TASK",
+      "index": "Afeces_daptot",
+      "unit": null,
+      "task": "task_po_dap10_C1236T_TT",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_dap10_C1236T_TT__KI__D3GEX": {
+      "type": "TASK",
+      "index": "KI__D3GEX",
+      "unit": null,
+      "task": "task_po_dap10_C1236T_TT",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_dap10_C1236T_TT__KI__DAPEX": {
+      "type": "TASK",
+      "index": "KI__DAPEX",
+      "unit": null,
+      "task": "task_po_dap10_C1236T_TT",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_dap10_C1236T_TT__KI__GLCEX": {
+      "type": "TASK",
+      "index": "KI__GLCEX",
+      "unit": null,
+      "task": "task_po_dap10_C1236T_TT",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_dap10_C1236T_TT__KI__f_renal_function": {
+      "type": "TASK",
+      "index": "KI__f_renal_function",
+      "unit": null,
+      "task": "task_po_dap10_C1236T_TT",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_dap10_C1236T_TT__f_cirrhosis": {
+      "type": "TASK",
+      "index": "f_cirrhosis",
+      "unit": null,
+      "task": "task_po_dap10_C1236T_TT",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_dap10_C1236T_TT__GU__f_absorption": {
+      "type": "TASK",
+      "index": "GU__f_absorption",
+      "unit": null,
+      "task": "task_po_dap10_C1236T_TT",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_dap10_C1236T_TT__LI__f_ugt1a9": {
+      "type": "TASK",
+      "index": "LI__f_ugt1a9",
+      "unit": null,
+      "task": "task_po_dap10_C1236T_TT",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_dap10_G2677TA_GG__time": {
+      "type": "TASK",
+      "index": "time",
+      "unit": null,
+      "task": "task_po_dap10_G2677TA_GG",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_dap10_G2677TA_GG__IVDOSE_dap": {
+      "type": "TASK",
+      "index": "IVDOSE_dap",
+      "unit": null,
+      "task": "task_po_dap10_G2677TA_GG",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_dap10_G2677TA_GG__PODOSE_dap": {
+      "type": "TASK",
+      "index": "PODOSE_dap",
+      "unit": null,
+      "task": "task_po_dap10_G2677TA_GG",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_dap10_G2677TA_GG__Cve_daptot": {
+      "type": "TASK",
+      "index": "Cve_daptot",
+      "unit": null,
+      "task": "task_po_dap10_G2677TA_GG",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_dap10_G2677TA_GG__Cve_dap": {
+      "type": "TASK",
+      "index": "Cve_dap",
+      "unit": null,
+      "task": "task_po_dap10_G2677TA_GG",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_dap10_G2677TA_GG__Cve_d3g": {
+      "type": "TASK",
+      "index": "Cve_d3g",
+      "unit": null,
+      "task": "task_po_dap10_G2677TA_GG",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_dap10_G2677TA_GG__KI__glc_ext": {
+      "type": "TASK",
+      "index": "KI__glc_ext",
+      "unit": null,
+      "task": "task_po_dap10_G2677TA_GG",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_dap10_G2677TA_GG__LI__dap": {
+      "type": "TASK",
+      "index": "LI__dap",
+      "unit": null,
+      "task": "task_po_dap10_G2677TA_GG",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_dap10_G2677TA_GG__LI__d3g": {
+      "type": "TASK",
+      "index": "LI__d3g",
+      "unit": null,
+      "task": "task_po_dap10_G2677TA_GG",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_dap10_G2677TA_GG__Aurine_daptot": {
+      "type": "TASK",
+      "index": "Aurine_daptot",
+      "unit": null,
+      "task": "task_po_dap10_G2677TA_GG",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_dap10_G2677TA_GG__Aurine_dap": {
+      "type": "TASK",
+      "index": "Aurine_dap",
+      "unit": null,
+      "task": "task_po_dap10_G2677TA_GG",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_dap10_G2677TA_GG__Aurine_d3g": {
+      "type": "TASK",
+      "index": "Aurine_d3g",
+      "unit": null,
+      "task": "task_po_dap10_G2677TA_GG",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_dap10_G2677TA_GG__KI__glc_urine": {
+      "type": "TASK",
+      "index": "KI__glc_urine",
+      "unit": null,
+      "task": "task_po_dap10_G2677TA_GG",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_dap10_G2677TA_GG__KI__UGE": {
+      "type": "TASK",
+      "index": "KI__UGE",
+      "unit": null,
+      "task": "task_po_dap10_G2677TA_GG",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_dap10_G2677TA_GG__KI__RTG": {
+      "type": "TASK",
+      "index": "KI__RTG",
+      "unit": null,
+      "task": "task_po_dap10_G2677TA_GG",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_dap10_G2677TA_GG__Afeces_dap": {
+      "type": "TASK",
+      "index": "Afeces_dap",
+      "unit": null,
+      "task": "task_po_dap10_G2677TA_GG",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_dap10_G2677TA_GG__Afeces_daptot": {
+      "type": "TASK",
+      "index": "Afeces_daptot",
+      "unit": null,
+      "task": "task_po_dap10_G2677TA_GG",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_dap10_G2677TA_GG__KI__D3GEX": {
+      "type": "TASK",
+      "index": "KI__D3GEX",
+      "unit": null,
+      "task": "task_po_dap10_G2677TA_GG",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_dap10_G2677TA_GG__KI__DAPEX": {
+      "type": "TASK",
+      "index": "KI__DAPEX",
+      "unit": null,
+      "task": "task_po_dap10_G2677TA_GG",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_dap10_G2677TA_GG__KI__GLCEX": {
+      "type": "TASK",
+      "index": "KI__GLCEX",
+      "unit": null,
+      "task": "task_po_dap10_G2677TA_GG",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_dap10_G2677TA_GG__KI__f_renal_function": {
+      "type": "TASK",
+      "index": "KI__f_renal_function",
+      "unit": null,
+      "task": "task_po_dap10_G2677TA_GG",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_dap10_G2677TA_GG__f_cirrhosis": {
+      "type": "TASK",
+      "index": "f_cirrhosis",
+      "unit": null,
+      "task": "task_po_dap10_G2677TA_GG",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_dap10_G2677TA_GG__GU__f_absorption": {
+      "type": "TASK",
+      "index": "GU__f_absorption",
+      "unit": null,
+      "task": "task_po_dap10_G2677TA_GG",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_dap10_G2677TA_GG__LI__f_ugt1a9": {
+      "type": "TASK",
+      "index": "LI__f_ugt1a9",
+      "unit": null,
+      "task": "task_po_dap10_G2677TA_GG",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_dap10_G2677TA_GT__time": {
+      "type": "TASK",
+      "index": "time",
+      "unit": null,
+      "task": "task_po_dap10_G2677TA_GT",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_dap10_G2677TA_GT__IVDOSE_dap": {
+      "type": "TASK",
+      "index": "IVDOSE_dap",
+      "unit": null,
+      "task": "task_po_dap10_G2677TA_GT",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_dap10_G2677TA_GT__PODOSE_dap": {
+      "type": "TASK",
+      "index": "PODOSE_dap",
+      "unit": null,
+      "task": "task_po_dap10_G2677TA_GT",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_dap10_G2677TA_GT__Cve_daptot": {
+      "type": "TASK",
+      "index": "Cve_daptot",
+      "unit": null,
+      "task": "task_po_dap10_G2677TA_GT",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_dap10_G2677TA_GT__Cve_dap": {
+      "type": "TASK",
+      "index": "Cve_dap",
+      "unit": null,
+      "task": "task_po_dap10_G2677TA_GT",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_dap10_G2677TA_GT__Cve_d3g": {
+      "type": "TASK",
+      "index": "Cve_d3g",
+      "unit": null,
+      "task": "task_po_dap10_G2677TA_GT",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_dap10_G2677TA_GT__KI__glc_ext": {
+      "type": "TASK",
+      "index": "KI__glc_ext",
+      "unit": null,
+      "task": "task_po_dap10_G2677TA_GT",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_dap10_G2677TA_GT__LI__dap": {
+      "type": "TASK",
+      "index": "LI__dap",
+      "unit": null,
+      "task": "task_po_dap10_G2677TA_GT",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_dap10_G2677TA_GT__LI__d3g": {
+      "type": "TASK",
+      "index": "LI__d3g",
+      "unit": null,
+      "task": "task_po_dap10_G2677TA_GT",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_dap10_G2677TA_GT__Aurine_daptot": {
+      "type": "TASK",
+      "index": "Aurine_daptot",
+      "unit": null,
+      "task": "task_po_dap10_G2677TA_GT",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_dap10_G2677TA_GT__Aurine_dap": {
+      "type": "TASK",
+      "index": "Aurine_dap",
+      "unit": null,
+      "task": "task_po_dap10_G2677TA_GT",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_dap10_G2677TA_GT__Aurine_d3g": {
+      "type": "TASK",
+      "index": "Aurine_d3g",
+      "unit": null,
+      "task": "task_po_dap10_G2677TA_GT",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_dap10_G2677TA_GT__KI__glc_urine": {
+      "type": "TASK",
+      "index": "KI__glc_urine",
+      "unit": null,
+      "task": "task_po_dap10_G2677TA_GT",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_dap10_G2677TA_GT__KI__UGE": {
+      "type": "TASK",
+      "index": "KI__UGE",
+      "unit": null,
+      "task": "task_po_dap10_G2677TA_GT",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_dap10_G2677TA_GT__KI__RTG": {
+      "type": "TASK",
+      "index": "KI__RTG",
+      "unit": null,
+      "task": "task_po_dap10_G2677TA_GT",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_dap10_G2677TA_GT__Afeces_dap": {
+      "type": "TASK",
+      "index": "Afeces_dap",
+      "unit": null,
+      "task": "task_po_dap10_G2677TA_GT",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_dap10_G2677TA_GT__Afeces_daptot": {
+      "type": "TASK",
+      "index": "Afeces_daptot",
+      "unit": null,
+      "task": "task_po_dap10_G2677TA_GT",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_dap10_G2677TA_GT__KI__D3GEX": {
+      "type": "TASK",
+      "index": "KI__D3GEX",
+      "unit": null,
+      "task": "task_po_dap10_G2677TA_GT",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_dap10_G2677TA_GT__KI__DAPEX": {
+      "type": "TASK",
+      "index": "KI__DAPEX",
+      "unit": null,
+      "task": "task_po_dap10_G2677TA_GT",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_dap10_G2677TA_GT__KI__GLCEX": {
+      "type": "TASK",
+      "index": "KI__GLCEX",
+      "unit": null,
+      "task": "task_po_dap10_G2677TA_GT",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_dap10_G2677TA_GT__KI__f_renal_function": {
+      "type": "TASK",
+      "index": "KI__f_renal_function",
+      "unit": null,
+      "task": "task_po_dap10_G2677TA_GT",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_dap10_G2677TA_GT__f_cirrhosis": {
+      "type": "TASK",
+      "index": "f_cirrhosis",
+      "unit": null,
+      "task": "task_po_dap10_G2677TA_GT",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_dap10_G2677TA_GT__GU__f_absorption": {
+      "type": "TASK",
+      "index": "GU__f_absorption",
+      "unit": null,
+      "task": "task_po_dap10_G2677TA_GT",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_dap10_G2677TA_GT__LI__f_ugt1a9": {
+      "type": "TASK",
+      "index": "LI__f_ugt1a9",
+      "unit": null,
+      "task": "task_po_dap10_G2677TA_GT",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_dap10_G2677TA_GA__time": {
+      "type": "TASK",
+      "index": "time",
+      "unit": null,
+      "task": "task_po_dap10_G2677TA_GA",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_dap10_G2677TA_GA__IVDOSE_dap": {
+      "type": "TASK",
+      "index": "IVDOSE_dap",
+      "unit": null,
+      "task": "task_po_dap10_G2677TA_GA",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_dap10_G2677TA_GA__PODOSE_dap": {
+      "type": "TASK",
+      "index": "PODOSE_dap",
+      "unit": null,
+      "task": "task_po_dap10_G2677TA_GA",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_dap10_G2677TA_GA__Cve_daptot": {
+      "type": "TASK",
+      "index": "Cve_daptot",
+      "unit": null,
+      "task": "task_po_dap10_G2677TA_GA",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_dap10_G2677TA_GA__Cve_dap": {
+      "type": "TASK",
+      "index": "Cve_dap",
+      "unit": null,
+      "task": "task_po_dap10_G2677TA_GA",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_dap10_G2677TA_GA__Cve_d3g": {
+      "type": "TASK",
+      "index": "Cve_d3g",
+      "unit": null,
+      "task": "task_po_dap10_G2677TA_GA",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_dap10_G2677TA_GA__KI__glc_ext": {
+      "type": "TASK",
+      "index": "KI__glc_ext",
+      "unit": null,
+      "task": "task_po_dap10_G2677TA_GA",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_dap10_G2677TA_GA__LI__dap": {
+      "type": "TASK",
+      "index": "LI__dap",
+      "unit": null,
+      "task": "task_po_dap10_G2677TA_GA",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_dap10_G2677TA_GA__LI__d3g": {
+      "type": "TASK",
+      "index": "LI__d3g",
+      "unit": null,
+      "task": "task_po_dap10_G2677TA_GA",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_dap10_G2677TA_GA__Aurine_daptot": {
+      "type": "TASK",
+      "index": "Aurine_daptot",
+      "unit": null,
+      "task": "task_po_dap10_G2677TA_GA",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_dap10_G2677TA_GA__Aurine_dap": {
+      "type": "TASK",
+      "index": "Aurine_dap",
+      "unit": null,
+      "task": "task_po_dap10_G2677TA_GA",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_dap10_G2677TA_GA__Aurine_d3g": {
+      "type": "TASK",
+      "index": "Aurine_d3g",
+      "unit": null,
+      "task": "task_po_dap10_G2677TA_GA",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_dap10_G2677TA_GA__KI__glc_urine": {
+      "type": "TASK",
+      "index": "KI__glc_urine",
+      "unit": null,
+      "task": "task_po_dap10_G2677TA_GA",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_dap10_G2677TA_GA__KI__UGE": {
+      "type": "TASK",
+      "index": "KI__UGE",
+      "unit": null,
+      "task": "task_po_dap10_G2677TA_GA",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_dap10_G2677TA_GA__KI__RTG": {
+      "type": "TASK",
+      "index": "KI__RTG",
+      "unit": null,
+      "task": "task_po_dap10_G2677TA_GA",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_dap10_G2677TA_GA__Afeces_dap": {
+      "type": "TASK",
+      "index": "Afeces_dap",
+      "unit": null,
+      "task": "task_po_dap10_G2677TA_GA",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_dap10_G2677TA_GA__Afeces_daptot": {
+      "type": "TASK",
+      "index": "Afeces_daptot",
+      "unit": null,
+      "task": "task_po_dap10_G2677TA_GA",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_dap10_G2677TA_GA__KI__D3GEX": {
+      "type": "TASK",
+      "index": "KI__D3GEX",
+      "unit": null,
+      "task": "task_po_dap10_G2677TA_GA",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_dap10_G2677TA_GA__KI__DAPEX": {
+      "type": "TASK",
+      "index": "KI__DAPEX",
+      "unit": null,
+      "task": "task_po_dap10_G2677TA_GA",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_dap10_G2677TA_GA__KI__GLCEX": {
+      "type": "TASK",
+      "index": "KI__GLCEX",
+      "unit": null,
+      "task": "task_po_dap10_G2677TA_GA",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_dap10_G2677TA_GA__KI__f_renal_function": {
+      "type": "TASK",
+      "index": "KI__f_renal_function",
+      "unit": null,
+      "task": "task_po_dap10_G2677TA_GA",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_dap10_G2677TA_GA__f_cirrhosis": {
+      "type": "TASK",
+      "index": "f_cirrhosis",
+      "unit": null,
+      "task": "task_po_dap10_G2677TA_GA",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_dap10_G2677TA_GA__GU__f_absorption": {
+      "type": "TASK",
+      "index": "GU__f_absorption",
+      "unit": null,
+      "task": "task_po_dap10_G2677TA_GA",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_dap10_G2677TA_GA__LI__f_ugt1a9": {
+      "type": "TASK",
+      "index": "LI__f_ugt1a9",
+      "unit": null,
+      "task": "task_po_dap10_G2677TA_GA",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_dap10_G2677TA_TT__time": {
+      "type": "TASK",
+      "index": "time",
+      "unit": null,
+      "task": "task_po_dap10_G2677TA_TT",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_dap10_G2677TA_TT__IVDOSE_dap": {
+      "type": "TASK",
+      "index": "IVDOSE_dap",
+      "unit": null,
+      "task": "task_po_dap10_G2677TA_TT",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_dap10_G2677TA_TT__PODOSE_dap": {
+      "type": "TASK",
+      "index": "PODOSE_dap",
+      "unit": null,
+      "task": "task_po_dap10_G2677TA_TT",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_dap10_G2677TA_TT__Cve_daptot": {
+      "type": "TASK",
+      "index": "Cve_daptot",
+      "unit": null,
+      "task": "task_po_dap10_G2677TA_TT",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_dap10_G2677TA_TT__Cve_dap": {
+      "type": "TASK",
+      "index": "Cve_dap",
+      "unit": null,
+      "task": "task_po_dap10_G2677TA_TT",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_dap10_G2677TA_TT__Cve_d3g": {
+      "type": "TASK",
+      "index": "Cve_d3g",
+      "unit": null,
+      "task": "task_po_dap10_G2677TA_TT",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_dap10_G2677TA_TT__KI__glc_ext": {
+      "type": "TASK",
+      "index": "KI__glc_ext",
+      "unit": null,
+      "task": "task_po_dap10_G2677TA_TT",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_dap10_G2677TA_TT__LI__dap": {
+      "type": "TASK",
+      "index": "LI__dap",
+      "unit": null,
+      "task": "task_po_dap10_G2677TA_TT",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_dap10_G2677TA_TT__LI__d3g": {
+      "type": "TASK",
+      "index": "LI__d3g",
+      "unit": null,
+      "task": "task_po_dap10_G2677TA_TT",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_dap10_G2677TA_TT__Aurine_daptot": {
+      "type": "TASK",
+      "index": "Aurine_daptot",
+      "unit": null,
+      "task": "task_po_dap10_G2677TA_TT",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_dap10_G2677TA_TT__Aurine_dap": {
+      "type": "TASK",
+      "index": "Aurine_dap",
+      "unit": null,
+      "task": "task_po_dap10_G2677TA_TT",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_dap10_G2677TA_TT__Aurine_d3g": {
+      "type": "TASK",
+      "index": "Aurine_d3g",
+      "unit": null,
+      "task": "task_po_dap10_G2677TA_TT",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_dap10_G2677TA_TT__KI__glc_urine": {
+      "type": "TASK",
+      "index": "KI__glc_urine",
+      "unit": null,
+      "task": "task_po_dap10_G2677TA_TT",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_dap10_G2677TA_TT__KI__UGE": {
+      "type": "TASK",
+      "index": "KI__UGE",
+      "unit": null,
+      "task": "task_po_dap10_G2677TA_TT",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_dap10_G2677TA_TT__KI__RTG": {
+      "type": "TASK",
+      "index": "KI__RTG",
+      "unit": null,
+      "task": "task_po_dap10_G2677TA_TT",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_dap10_G2677TA_TT__Afeces_dap": {
+      "type": "TASK",
+      "index": "Afeces_dap",
+      "unit": null,
+      "task": "task_po_dap10_G2677TA_TT",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_dap10_G2677TA_TT__Afeces_daptot": {
+      "type": "TASK",
+      "index": "Afeces_daptot",
+      "unit": null,
+      "task": "task_po_dap10_G2677TA_TT",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_dap10_G2677TA_TT__KI__D3GEX": {
+      "type": "TASK",
+      "index": "KI__D3GEX",
+      "unit": null,
+      "task": "task_po_dap10_G2677TA_TT",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_dap10_G2677TA_TT__KI__DAPEX": {
+      "type": "TASK",
+      "index": "KI__DAPEX",
+      "unit": null,
+      "task": "task_po_dap10_G2677TA_TT",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_dap10_G2677TA_TT__KI__GLCEX": {
+      "type": "TASK",
+      "index": "KI__GLCEX",
+      "unit": null,
+      "task": "task_po_dap10_G2677TA_TT",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_dap10_G2677TA_TT__KI__f_renal_function": {
+      "type": "TASK",
+      "index": "KI__f_renal_function",
+      "unit": null,
+      "task": "task_po_dap10_G2677TA_TT",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_dap10_G2677TA_TT__f_cirrhosis": {
+      "type": "TASK",
+      "index": "f_cirrhosis",
+      "unit": null,
+      "task": "task_po_dap10_G2677TA_TT",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_dap10_G2677TA_TT__GU__f_absorption": {
+      "type": "TASK",
+      "index": "GU__f_absorption",
+      "unit": null,
+      "task": "task_po_dap10_G2677TA_TT",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_dap10_G2677TA_TT__LI__f_ugt1a9": {
+      "type": "TASK",
+      "index": "LI__f_ugt1a9",
+      "unit": null,
+      "task": "task_po_dap10_G2677TA_TT",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_dap10_G2677TA_TA__time": {
+      "type": "TASK",
+      "index": "time",
+      "unit": null,
+      "task": "task_po_dap10_G2677TA_TA",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_dap10_G2677TA_TA__IVDOSE_dap": {
+      "type": "TASK",
+      "index": "IVDOSE_dap",
+      "unit": null,
+      "task": "task_po_dap10_G2677TA_TA",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_dap10_G2677TA_TA__PODOSE_dap": {
+      "type": "TASK",
+      "index": "PODOSE_dap",
+      "unit": null,
+      "task": "task_po_dap10_G2677TA_TA",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_dap10_G2677TA_TA__Cve_daptot": {
+      "type": "TASK",
+      "index": "Cve_daptot",
+      "unit": null,
+      "task": "task_po_dap10_G2677TA_TA",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_dap10_G2677TA_TA__Cve_dap": {
+      "type": "TASK",
+      "index": "Cve_dap",
+      "unit": null,
+      "task": "task_po_dap10_G2677TA_TA",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_dap10_G2677TA_TA__Cve_d3g": {
+      "type": "TASK",
+      "index": "Cve_d3g",
+      "unit": null,
+      "task": "task_po_dap10_G2677TA_TA",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_dap10_G2677TA_TA__KI__glc_ext": {
+      "type": "TASK",
+      "index": "KI__glc_ext",
+      "unit": null,
+      "task": "task_po_dap10_G2677TA_TA",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_dap10_G2677TA_TA__LI__dap": {
+      "type": "TASK",
+      "index": "LI__dap",
+      "unit": null,
+      "task": "task_po_dap10_G2677TA_TA",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_dap10_G2677TA_TA__LI__d3g": {
+      "type": "TASK",
+      "index": "LI__d3g",
+      "unit": null,
+      "task": "task_po_dap10_G2677TA_TA",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_dap10_G2677TA_TA__Aurine_daptot": {
+      "type": "TASK",
+      "index": "Aurine_daptot",
+      "unit": null,
+      "task": "task_po_dap10_G2677TA_TA",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_dap10_G2677TA_TA__Aurine_dap": {
+      "type": "TASK",
+      "index": "Aurine_dap",
+      "unit": null,
+      "task": "task_po_dap10_G2677TA_TA",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_dap10_G2677TA_TA__Aurine_d3g": {
+      "type": "TASK",
+      "index": "Aurine_d3g",
+      "unit": null,
+      "task": "task_po_dap10_G2677TA_TA",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_dap10_G2677TA_TA__KI__glc_urine": {
+      "type": "TASK",
+      "index": "KI__glc_urine",
+      "unit": null,
+      "task": "task_po_dap10_G2677TA_TA",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_dap10_G2677TA_TA__KI__UGE": {
+      "type": "TASK",
+      "index": "KI__UGE",
+      "unit": null,
+      "task": "task_po_dap10_G2677TA_TA",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_dap10_G2677TA_TA__KI__RTG": {
+      "type": "TASK",
+      "index": "KI__RTG",
+      "unit": null,
+      "task": "task_po_dap10_G2677TA_TA",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_dap10_G2677TA_TA__Afeces_dap": {
+      "type": "TASK",
+      "index": "Afeces_dap",
+      "unit": null,
+      "task": "task_po_dap10_G2677TA_TA",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_dap10_G2677TA_TA__Afeces_daptot": {
+      "type": "TASK",
+      "index": "Afeces_daptot",
+      "unit": null,
+      "task": "task_po_dap10_G2677TA_TA",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_dap10_G2677TA_TA__KI__D3GEX": {
+      "type": "TASK",
+      "index": "KI__D3GEX",
+      "unit": null,
+      "task": "task_po_dap10_G2677TA_TA",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_dap10_G2677TA_TA__KI__DAPEX": {
+      "type": "TASK",
+      "index": "KI__DAPEX",
+      "unit": null,
+      "task": "task_po_dap10_G2677TA_TA",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_dap10_G2677TA_TA__KI__GLCEX": {
+      "type": "TASK",
+      "index": "KI__GLCEX",
+      "unit": null,
+      "task": "task_po_dap10_G2677TA_TA",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_dap10_G2677TA_TA__KI__f_renal_function": {
+      "type": "TASK",
+      "index": "KI__f_renal_function",
+      "unit": null,
+      "task": "task_po_dap10_G2677TA_TA",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_dap10_G2677TA_TA__f_cirrhosis": {
+      "type": "TASK",
+      "index": "f_cirrhosis",
+      "unit": null,
+      "task": "task_po_dap10_G2677TA_TA",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_dap10_G2677TA_TA__GU__f_absorption": {
+      "type": "TASK",
+      "index": "GU__f_absorption",
+      "unit": null,
+      "task": "task_po_dap10_G2677TA_TA",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_dap10_G2677TA_TA__LI__f_ugt1a9": {
+      "type": "TASK",
+      "index": "LI__f_ugt1a9",
+      "unit": null,
+      "task": "task_po_dap10_G2677TA_TA",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_dap10_G2677TA_AA__time": {
+      "type": "TASK",
+      "index": "time",
+      "unit": null,
+      "task": "task_po_dap10_G2677TA_AA",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_dap10_G2677TA_AA__IVDOSE_dap": {
+      "type": "TASK",
+      "index": "IVDOSE_dap",
+      "unit": null,
+      "task": "task_po_dap10_G2677TA_AA",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_dap10_G2677TA_AA__PODOSE_dap": {
+      "type": "TASK",
+      "index": "PODOSE_dap",
+      "unit": null,
+      "task": "task_po_dap10_G2677TA_AA",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_dap10_G2677TA_AA__Cve_daptot": {
+      "type": "TASK",
+      "index": "Cve_daptot",
+      "unit": null,
+      "task": "task_po_dap10_G2677TA_AA",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_dap10_G2677TA_AA__Cve_dap": {
+      "type": "TASK",
+      "index": "Cve_dap",
+      "unit": null,
+      "task": "task_po_dap10_G2677TA_AA",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_dap10_G2677TA_AA__Cve_d3g": {
+      "type": "TASK",
+      "index": "Cve_d3g",
+      "unit": null,
+      "task": "task_po_dap10_G2677TA_AA",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_dap10_G2677TA_AA__KI__glc_ext": {
+      "type": "TASK",
+      "index": "KI__glc_ext",
+      "unit": null,
+      "task": "task_po_dap10_G2677TA_AA",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_dap10_G2677TA_AA__LI__dap": {
+      "type": "TASK",
+      "index": "LI__dap",
+      "unit": null,
+      "task": "task_po_dap10_G2677TA_AA",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_dap10_G2677TA_AA__LI__d3g": {
+      "type": "TASK",
+      "index": "LI__d3g",
+      "unit": null,
+      "task": "task_po_dap10_G2677TA_AA",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_dap10_G2677TA_AA__Aurine_daptot": {
+      "type": "TASK",
+      "index": "Aurine_daptot",
+      "unit": null,
+      "task": "task_po_dap10_G2677TA_AA",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_dap10_G2677TA_AA__Aurine_dap": {
+      "type": "TASK",
+      "index": "Aurine_dap",
+      "unit": null,
+      "task": "task_po_dap10_G2677TA_AA",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_dap10_G2677TA_AA__Aurine_d3g": {
+      "type": "TASK",
+      "index": "Aurine_d3g",
+      "unit": null,
+      "task": "task_po_dap10_G2677TA_AA",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_dap10_G2677TA_AA__KI__glc_urine": {
+      "type": "TASK",
+      "index": "KI__glc_urine",
+      "unit": null,
+      "task": "task_po_dap10_G2677TA_AA",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_dap10_G2677TA_AA__KI__UGE": {
+      "type": "TASK",
+      "index": "KI__UGE",
+      "unit": null,
+      "task": "task_po_dap10_G2677TA_AA",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_dap10_G2677TA_AA__KI__RTG": {
+      "type": "TASK",
+      "index": "KI__RTG",
+      "unit": null,
+      "task": "task_po_dap10_G2677TA_AA",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_dap10_G2677TA_AA__Afeces_dap": {
+      "type": "TASK",
+      "index": "Afeces_dap",
+      "unit": null,
+      "task": "task_po_dap10_G2677TA_AA",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_dap10_G2677TA_AA__Afeces_daptot": {
+      "type": "TASK",
+      "index": "Afeces_daptot",
+      "unit": null,
+      "task": "task_po_dap10_G2677TA_AA",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_dap10_G2677TA_AA__KI__D3GEX": {
+      "type": "TASK",
+      "index": "KI__D3GEX",
+      "unit": null,
+      "task": "task_po_dap10_G2677TA_AA",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_dap10_G2677TA_AA__KI__DAPEX": {
+      "type": "TASK",
+      "index": "KI__DAPEX",
+      "unit": null,
+      "task": "task_po_dap10_G2677TA_AA",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_dap10_G2677TA_AA__KI__GLCEX": {
+      "type": "TASK",
+      "index": "KI__GLCEX",
+      "unit": null,
+      "task": "task_po_dap10_G2677TA_AA",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_dap10_G2677TA_AA__KI__f_renal_function": {
+      "type": "TASK",
+      "index": "KI__f_renal_function",
+      "unit": null,
+      "task": "task_po_dap10_G2677TA_AA",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_dap10_G2677TA_AA__f_cirrhosis": {
+      "type": "TASK",
+      "index": "f_cirrhosis",
+      "unit": null,
+      "task": "task_po_dap10_G2677TA_AA",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_dap10_G2677TA_AA__GU__f_absorption": {
+      "type": "TASK",
+      "index": "GU__f_absorption",
+      "unit": null,
+      "task": "task_po_dap10_G2677TA_AA",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_dap10_G2677TA_AA__LI__f_ugt1a9": {
+      "type": "TASK",
+      "index": "LI__f_ugt1a9",
+      "unit": null,
+      "task": "task_po_dap10_G2677TA_AA",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_dap10_C3435T_CC__time": {
+      "type": "TASK",
+      "index": "time",
+      "unit": null,
+      "task": "task_po_dap10_C3435T_CC",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_dap10_C3435T_CC__IVDOSE_dap": {
+      "type": "TASK",
+      "index": "IVDOSE_dap",
+      "unit": null,
+      "task": "task_po_dap10_C3435T_CC",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_dap10_C3435T_CC__PODOSE_dap": {
+      "type": "TASK",
+      "index": "PODOSE_dap",
+      "unit": null,
+      "task": "task_po_dap10_C3435T_CC",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_dap10_C3435T_CC__Cve_daptot": {
+      "type": "TASK",
+      "index": "Cve_daptot",
+      "unit": null,
+      "task": "task_po_dap10_C3435T_CC",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_dap10_C3435T_CC__Cve_dap": {
+      "type": "TASK",
+      "index": "Cve_dap",
+      "unit": null,
+      "task": "task_po_dap10_C3435T_CC",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_dap10_C3435T_CC__Cve_d3g": {
+      "type": "TASK",
+      "index": "Cve_d3g",
+      "unit": null,
+      "task": "task_po_dap10_C3435T_CC",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_dap10_C3435T_CC__KI__glc_ext": {
+      "type": "TASK",
+      "index": "KI__glc_ext",
+      "unit": null,
+      "task": "task_po_dap10_C3435T_CC",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_dap10_C3435T_CC__LI__dap": {
+      "type": "TASK",
+      "index": "LI__dap",
+      "unit": null,
+      "task": "task_po_dap10_C3435T_CC",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_dap10_C3435T_CC__LI__d3g": {
+      "type": "TASK",
+      "index": "LI__d3g",
+      "unit": null,
+      "task": "task_po_dap10_C3435T_CC",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_dap10_C3435T_CC__Aurine_daptot": {
+      "type": "TASK",
+      "index": "Aurine_daptot",
+      "unit": null,
+      "task": "task_po_dap10_C3435T_CC",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_dap10_C3435T_CC__Aurine_dap": {
+      "type": "TASK",
+      "index": "Aurine_dap",
+      "unit": null,
+      "task": "task_po_dap10_C3435T_CC",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_dap10_C3435T_CC__Aurine_d3g": {
+      "type": "TASK",
+      "index": "Aurine_d3g",
+      "unit": null,
+      "task": "task_po_dap10_C3435T_CC",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_dap10_C3435T_CC__KI__glc_urine": {
+      "type": "TASK",
+      "index": "KI__glc_urine",
+      "unit": null,
+      "task": "task_po_dap10_C3435T_CC",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_dap10_C3435T_CC__KI__UGE": {
+      "type": "TASK",
+      "index": "KI__UGE",
+      "unit": null,
+      "task": "task_po_dap10_C3435T_CC",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_dap10_C3435T_CC__KI__RTG": {
+      "type": "TASK",
+      "index": "KI__RTG",
+      "unit": null,
+      "task": "task_po_dap10_C3435T_CC",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_dap10_C3435T_CC__Afeces_dap": {
+      "type": "TASK",
+      "index": "Afeces_dap",
+      "unit": null,
+      "task": "task_po_dap10_C3435T_CC",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_dap10_C3435T_CC__Afeces_daptot": {
+      "type": "TASK",
+      "index": "Afeces_daptot",
+      "unit": null,
+      "task": "task_po_dap10_C3435T_CC",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_dap10_C3435T_CC__KI__D3GEX": {
+      "type": "TASK",
+      "index": "KI__D3GEX",
+      "unit": null,
+      "task": "task_po_dap10_C3435T_CC",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_dap10_C3435T_CC__KI__DAPEX": {
+      "type": "TASK",
+      "index": "KI__DAPEX",
+      "unit": null,
+      "task": "task_po_dap10_C3435T_CC",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_dap10_C3435T_CC__KI__GLCEX": {
+      "type": "TASK",
+      "index": "KI__GLCEX",
+      "unit": null,
+      "task": "task_po_dap10_C3435T_CC",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_dap10_C3435T_CC__KI__f_renal_function": {
+      "type": "TASK",
+      "index": "KI__f_renal_function",
+      "unit": null,
+      "task": "task_po_dap10_C3435T_CC",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_dap10_C3435T_CC__f_cirrhosis": {
+      "type": "TASK",
+      "index": "f_cirrhosis",
+      "unit": null,
+      "task": "task_po_dap10_C3435T_CC",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_dap10_C3435T_CC__GU__f_absorption": {
+      "type": "TASK",
+      "index": "GU__f_absorption",
+      "unit": null,
+      "task": "task_po_dap10_C3435T_CC",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_dap10_C3435T_CC__LI__f_ugt1a9": {
+      "type": "TASK",
+      "index": "LI__f_ugt1a9",
+      "unit": null,
+      "task": "task_po_dap10_C3435T_CC",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_dap10_C3435T_CT__time": {
+      "type": "TASK",
+      "index": "time",
+      "unit": null,
+      "task": "task_po_dap10_C3435T_CT",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_dap10_C3435T_CT__IVDOSE_dap": {
+      "type": "TASK",
+      "index": "IVDOSE_dap",
+      "unit": null,
+      "task": "task_po_dap10_C3435T_CT",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_dap10_C3435T_CT__PODOSE_dap": {
+      "type": "TASK",
+      "index": "PODOSE_dap",
+      "unit": null,
+      "task": "task_po_dap10_C3435T_CT",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_dap10_C3435T_CT__Cve_daptot": {
+      "type": "TASK",
+      "index": "Cve_daptot",
+      "unit": null,
+      "task": "task_po_dap10_C3435T_CT",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_dap10_C3435T_CT__Cve_dap": {
+      "type": "TASK",
+      "index": "Cve_dap",
+      "unit": null,
+      "task": "task_po_dap10_C3435T_CT",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_dap10_C3435T_CT__Cve_d3g": {
+      "type": "TASK",
+      "index": "Cve_d3g",
+      "unit": null,
+      "task": "task_po_dap10_C3435T_CT",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_dap10_C3435T_CT__KI__glc_ext": {
+      "type": "TASK",
+      "index": "KI__glc_ext",
+      "unit": null,
+      "task": "task_po_dap10_C3435T_CT",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_dap10_C3435T_CT__LI__dap": {
+      "type": "TASK",
+      "index": "LI__dap",
+      "unit": null,
+      "task": "task_po_dap10_C3435T_CT",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_dap10_C3435T_CT__LI__d3g": {
+      "type": "TASK",
+      "index": "LI__d3g",
+      "unit": null,
+      "task": "task_po_dap10_C3435T_CT",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_dap10_C3435T_CT__Aurine_daptot": {
+      "type": "TASK",
+      "index": "Aurine_daptot",
+      "unit": null,
+      "task": "task_po_dap10_C3435T_CT",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_dap10_C3435T_CT__Aurine_dap": {
+      "type": "TASK",
+      "index": "Aurine_dap",
+      "unit": null,
+      "task": "task_po_dap10_C3435T_CT",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_dap10_C3435T_CT__Aurine_d3g": {
+      "type": "TASK",
+      "index": "Aurine_d3g",
+      "unit": null,
+      "task": "task_po_dap10_C3435T_CT",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_dap10_C3435T_CT__KI__glc_urine": {
+      "type": "TASK",
+      "index": "KI__glc_urine",
+      "unit": null,
+      "task": "task_po_dap10_C3435T_CT",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_dap10_C3435T_CT__KI__UGE": {
+      "type": "TASK",
+      "index": "KI__UGE",
+      "unit": null,
+      "task": "task_po_dap10_C3435T_CT",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_dap10_C3435T_CT__KI__RTG": {
+      "type": "TASK",
+      "index": "KI__RTG",
+      "unit": null,
+      "task": "task_po_dap10_C3435T_CT",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_dap10_C3435T_CT__Afeces_dap": {
+      "type": "TASK",
+      "index": "Afeces_dap",
+      "unit": null,
+      "task": "task_po_dap10_C3435T_CT",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_dap10_C3435T_CT__Afeces_daptot": {
+      "type": "TASK",
+      "index": "Afeces_daptot",
+      "unit": null,
+      "task": "task_po_dap10_C3435T_CT",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_dap10_C3435T_CT__KI__D3GEX": {
+      "type": "TASK",
+      "index": "KI__D3GEX",
+      "unit": null,
+      "task": "task_po_dap10_C3435T_CT",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_dap10_C3435T_CT__KI__DAPEX": {
+      "type": "TASK",
+      "index": "KI__DAPEX",
+      "unit": null,
+      "task": "task_po_dap10_C3435T_CT",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_dap10_C3435T_CT__KI__GLCEX": {
+      "type": "TASK",
+      "index": "KI__GLCEX",
+      "unit": null,
+      "task": "task_po_dap10_C3435T_CT",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_dap10_C3435T_CT__KI__f_renal_function": {
+      "type": "TASK",
+      "index": "KI__f_renal_function",
+      "unit": null,
+      "task": "task_po_dap10_C3435T_CT",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_dap10_C3435T_CT__f_cirrhosis": {
+      "type": "TASK",
+      "index": "f_cirrhosis",
+      "unit": null,
+      "task": "task_po_dap10_C3435T_CT",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_dap10_C3435T_CT__GU__f_absorption": {
+      "type": "TASK",
+      "index": "GU__f_absorption",
+      "unit": null,
+      "task": "task_po_dap10_C3435T_CT",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_dap10_C3435T_CT__LI__f_ugt1a9": {
+      "type": "TASK",
+      "index": "LI__f_ugt1a9",
+      "unit": null,
+      "task": "task_po_dap10_C3435T_CT",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_dap10_C3435T_TT__time": {
+      "type": "TASK",
+      "index": "time",
+      "unit": null,
+      "task": "task_po_dap10_C3435T_TT",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_dap10_C3435T_TT__IVDOSE_dap": {
+      "type": "TASK",
+      "index": "IVDOSE_dap",
+      "unit": null,
+      "task": "task_po_dap10_C3435T_TT",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_dap10_C3435T_TT__PODOSE_dap": {
+      "type": "TASK",
+      "index": "PODOSE_dap",
+      "unit": null,
+      "task": "task_po_dap10_C3435T_TT",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_dap10_C3435T_TT__Cve_daptot": {
+      "type": "TASK",
+      "index": "Cve_daptot",
+      "unit": null,
+      "task": "task_po_dap10_C3435T_TT",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_dap10_C3435T_TT__Cve_dap": {
+      "type": "TASK",
+      "index": "Cve_dap",
+      "unit": null,
+      "task": "task_po_dap10_C3435T_TT",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_dap10_C3435T_TT__Cve_d3g": {
+      "type": "TASK",
+      "index": "Cve_d3g",
+      "unit": null,
+      "task": "task_po_dap10_C3435T_TT",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_dap10_C3435T_TT__KI__glc_ext": {
+      "type": "TASK",
+      "index": "KI__glc_ext",
+      "unit": null,
+      "task": "task_po_dap10_C3435T_TT",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_dap10_C3435T_TT__LI__dap": {
+      "type": "TASK",
+      "index": "LI__dap",
+      "unit": null,
+      "task": "task_po_dap10_C3435T_TT",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_dap10_C3435T_TT__LI__d3g": {
+      "type": "TASK",
+      "index": "LI__d3g",
+      "unit": null,
+      "task": "task_po_dap10_C3435T_TT",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_dap10_C3435T_TT__Aurine_daptot": {
+      "type": "TASK",
+      "index": "Aurine_daptot",
+      "unit": null,
+      "task": "task_po_dap10_C3435T_TT",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_dap10_C3435T_TT__Aurine_dap": {
+      "type": "TASK",
+      "index": "Aurine_dap",
+      "unit": null,
+      "task": "task_po_dap10_C3435T_TT",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_dap10_C3435T_TT__Aurine_d3g": {
+      "type": "TASK",
+      "index": "Aurine_d3g",
+      "unit": null,
+      "task": "task_po_dap10_C3435T_TT",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_dap10_C3435T_TT__KI__glc_urine": {
+      "type": "TASK",
+      "index": "KI__glc_urine",
+      "unit": null,
+      "task": "task_po_dap10_C3435T_TT",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_dap10_C3435T_TT__KI__UGE": {
+      "type": "TASK",
+      "index": "KI__UGE",
+      "unit": null,
+      "task": "task_po_dap10_C3435T_TT",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_dap10_C3435T_TT__KI__RTG": {
+      "type": "TASK",
+      "index": "KI__RTG",
+      "unit": null,
+      "task": "task_po_dap10_C3435T_TT",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_dap10_C3435T_TT__Afeces_dap": {
+      "type": "TASK",
+      "index": "Afeces_dap",
+      "unit": null,
+      "task": "task_po_dap10_C3435T_TT",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_dap10_C3435T_TT__Afeces_daptot": {
+      "type": "TASK",
+      "index": "Afeces_daptot",
+      "unit": null,
+      "task": "task_po_dap10_C3435T_TT",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_dap10_C3435T_TT__KI__D3GEX": {
+      "type": "TASK",
+      "index": "KI__D3GEX",
+      "unit": null,
+      "task": "task_po_dap10_C3435T_TT",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_dap10_C3435T_TT__KI__DAPEX": {
+      "type": "TASK",
+      "index": "KI__DAPEX",
+      "unit": null,
+      "task": "task_po_dap10_C3435T_TT",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_dap10_C3435T_TT__KI__GLCEX": {
+      "type": "TASK",
+      "index": "KI__GLCEX",
+      "unit": null,
+      "task": "task_po_dap10_C3435T_TT",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_dap10_C3435T_TT__KI__f_renal_function": {
+      "type": "TASK",
+      "index": "KI__f_renal_function",
+      "unit": null,
+      "task": "task_po_dap10_C3435T_TT",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_dap10_C3435T_TT__f_cirrhosis": {
+      "type": "TASK",
+      "index": "f_cirrhosis",
+      "unit": null,
+      "task": "task_po_dap10_C3435T_TT",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_dap10_C3435T_TT__GU__f_absorption": {
+      "type": "TASK",
+      "index": "GU__f_absorption",
+      "unit": null,
+      "task": "task_po_dap10_C3435T_TT",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_po_dap10_C3435T_TT__LI__f_ugt1a9": {
+      "type": "TASK",
+      "index": "LI__f_ugt1a9",
+      "unit": null,
+      "task": "task_po_dap10_C3435T_TT",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    }
+  },
+  "figures": {
+    "Fig2": {
+      "sid": "Fig2",
+      "name": "Hwang2022a",
+      "num_rows": 1,
+      "num_cols": 1,
+      "width": 7.0,
+      "height": 5.0,
+      "subplots": [
+        {
+          "sid": null,
+          "name": null,
+          "plot": {
+            "sid": "Fig2__plot0",
+            "name": null,
+            "xaxis": {
+              "sid": "Fig2__plot0_xaxis",
+              "name": "time [hr]",
+              "label": "time",
+              "unit": "hr",
+              "scale": "LINEAR",
+              "min": null,
+              "max": null,
+              "grid": false,
+              "label_visible": true,
+              "ticks_visible": true
+            },
+            "yaxis": {
+              "sid": "Fig2__plot0_yaxis",
+              "name": "dapagliflozin plasma [\u00b5M]",
+              "label": "dapagliflozin plasma",
+              "unit": "\u00b5M",
+              "scale": "LINEAR",
+              "min": null,
+              "max": null,
+              "grid": false,
+              "label_visible": true,
+              "ticks_visible": true
+            },
+            "yaxis_right": null,
+            "legend": true,
+            "facecolor": "#ffffffff",
+            "title_visible": true,
+            "curves": [
+              {
+                "sid": "Fig2__plot0_curve0",
+                "name": null,
+                "x": "task_po_dap10_C1236T_CC__time",
+                "y": "task_po_dap10_C1236T_CC__Cve_dap",
+                "xerr": null,
+                "yerr": null,
+                "yaxis_position": null,
+                "style": {
+                  "sid": null,
+                  "name": null,
+                  "base_style": null,
+                  "line": {
+                    "type": "SOLID",
+                    "color": "#000000ff",
+                    "thickness": 2.0
+                  },
+                  "marker": {
+                    "size": null,
+                    "type": "NONE",
+                    "fill": "#000000ff",
+                    "line_color": "#000000ff",
+                    "line_thickness": null
+                  },
+                  "fill": {
+                    "color": "#000000ff",
+                    "second_color": null
+                  }
+                },
+                "order": 0
+              },
+              {
+                "sid": "Fig2__plot0_curve1",
+                "name": "C1236T_CC\u00b1SD (n=19)",
+                "x": "dapagliflozin_DAP10_C1236T_CC__time",
+                "y": "dapagliflozin_DAP10_C1236T_CC__mean",
+                "xerr": null,
+                "yerr": "dapagliflozin_DAP10_C1236T_CC__mean_sd",
+                "yaxis_position": null,
+                "style": {
+                  "sid": null,
+                  "name": null,
+                  "base_style": null,
+                  "line": {
+                    "type": "DASH",
+                    "color": "#000000ff",
+                    "thickness": 1.0
+                  },
+                  "marker": {
+                    "size": null,
+                    "type": "SQUARE",
+                    "fill": "#000000ff",
+                    "line_color": "#000000ff",
+                    "line_thickness": null
+                  },
+                  "fill": {
+                    "color": "#000000ff",
+                    "second_color": null
+                  }
+                },
+                "order": 1
+              },
+              {
+                "sid": "Fig2__plot0_curve2",
+                "name": null,
+                "x": "task_po_dap10_C1236T_CT__time",
+                "y": "task_po_dap10_C1236T_CT__Cve_dap",
+                "xerr": null,
+                "yerr": null,
+                "yaxis_position": null,
+                "style": {
+                  "sid": null,
+                  "name": null,
+                  "base_style": null,
+                  "line": {
+                    "type": "SOLID",
+                    "color": "#1f77b4ff",
+                    "thickness": 2.0
+                  },
+                  "marker": {
+                    "size": null,
+                    "type": "NONE",
+                    "fill": "#1f77b4ff",
+                    "line_color": "#000000ff",
+                    "line_thickness": null
+                  },
+                  "fill": {
+                    "color": "#1f77b4ff",
+                    "second_color": null
+                  }
+                },
+                "order": 2
+              },
+              {
+                "sid": "Fig2__plot0_curve3",
+                "name": "C1236T_CT\u00b1SD (n=58)",
+                "x": "dapagliflozin_DAP10_C1236T_CT__time",
+                "y": "dapagliflozin_DAP10_C1236T_CT__mean",
+                "xerr": null,
+                "yerr": "dapagliflozin_DAP10_C1236T_CT__mean_sd",
+                "yaxis_position": null,
+                "style": {
+                  "sid": null,
+                  "name": null,
+                  "base_style": null,
+                  "line": {
+                    "type": "DASH",
+                    "color": "#1f77b4ff",
+                    "thickness": 1.0
+                  },
+                  "marker": {
+                    "size": null,
+                    "type": "SQUARE",
+                    "fill": "#1f77b4ff",
+                    "line_color": "#000000ff",
+                    "line_thickness": null
+                  },
+                  "fill": {
+                    "color": "#1f77b4ff",
+                    "second_color": null
+                  }
+                },
+                "order": 3
+              },
+              {
+                "sid": "Fig2__plot0_curve4",
+                "name": null,
+                "x": "task_po_dap10_C1236T_TT__time",
+                "y": "task_po_dap10_C1236T_TT__Cve_dap",
+                "xerr": null,
+                "yerr": null,
+                "yaxis_position": null,
+                "style": {
+                  "sid": null,
+                  "name": null,
+                  "base_style": null,
+                  "line": {
+                    "type": "SOLID",
+                    "color": "#ff7f0eff",
+                    "thickness": 2.0
+                  },
+                  "marker": {
+                    "size": null,
+                    "type": "NONE",
+                    "fill": "#ff7f0eff",
+                    "line_color": "#000000ff",
+                    "line_thickness": null
+                  },
+                  "fill": {
+                    "color": "#ff7f0eff",
+                    "second_color": null
+                  }
+                },
+                "order": 4
+              },
+              {
+                "sid": "Fig2__plot0_curve5",
+                "name": "C1236T_TT\u00b1SD (n=28)",
+                "x": "dapagliflozin_DAP10_C1236T_TT__time",
+                "y": "dapagliflozin_DAP10_C1236T_TT__mean",
+                "xerr": null,
+                "yerr": "dapagliflozin_DAP10_C1236T_TT__mean_sd",
+                "yaxis_position": null,
+                "style": {
+                  "sid": null,
+                  "name": null,
+                  "base_style": null,
+                  "line": {
+                    "type": "DASH",
+                    "color": "#ff7f0eff",
+                    "thickness": 1.0
+                  },
+                  "marker": {
+                    "size": null,
+                    "type": "SQUARE",
+                    "fill": "#ff7f0eff",
+                    "line_color": "#000000ff",
+                    "line_thickness": null
+                  },
+                  "fill": {
+                    "color": "#ff7f0eff",
+                    "second_color": null
+                  }
+                },
+                "order": 5
+              },
+              {
+                "sid": "Fig2__plot0_curve6",
+                "name": null,
+                "x": "task_po_dap10_G2677TA_GG__time",
+                "y": "task_po_dap10_G2677TA_GG__Cve_dap",
+                "xerr": null,
+                "yerr": null,
+                "yaxis_position": null,
+                "style": {
+                  "sid": null,
+                  "name": null,
+                  "base_style": null,
+                  "line": {
+                    "type": "SOLID",
+                    "color": "#d62728ff",
+                    "thickness": 2.0
+                  },
+                  "marker": {
+                    "size": null,
+                    "type": "NONE",
+                    "fill": "#d62728ff",
+                    "line_color": "#000000ff",
+                    "line_thickness": null
+                  },
+                  "fill": {
+                    "color": "#d62728ff",
+                    "second_color": null
+                  }
+                },
+                "order": 6
+              },
+              {
+                "sid": "Fig2__plot0_curve7",
+                "name": "G2677TA_GG\u00b1SD (n=25)",
+                "x": "dapagliflozin_DAP10_G2677TA_GG__time",
+                "y": "dapagliflozin_DAP10_G2677TA_GG__mean",
+                "xerr": null,
+                "yerr": "dapagliflozin_DAP10_G2677TA_GG__mean_sd",
+                "yaxis_position": null,
+                "style": {
+                  "sid": null,
+                  "name": null,
+                  "base_style": null,
+                  "line": {
+                    "type": "DASH",
+                    "color": "#d62728ff",
+                    "thickness": 1.0
+                  },
+                  "marker": {
+                    "size": null,
+                    "type": "SQUARE",
+                    "fill": "#d62728ff",
+                    "line_color": "#000000ff",
+                    "line_thickness": null
+                  },
+                  "fill": {
+                    "color": "#d62728ff",
+                    "second_color": null
+                  }
+                },
+                "order": 7
+              },
+              {
+                "sid": "Fig2__plot0_curve8",
+                "name": null,
+                "x": "task_po_dap10_G2677TA_GT__time",
+                "y": "task_po_dap10_G2677TA_GT__Cve_dap",
+                "xerr": null,
+                "yerr": null,
+                "yaxis_position": null,
+                "style": {
+                  "sid": null,
+                  "name": null,
+                  "base_style": null,
+                  "line": {
+                    "type": "SOLID",
+                    "color": "#2ca02cff",
+                    "thickness": 2.0
+                  },
+                  "marker": {
+                    "size": null,
+                    "type": "NONE",
+                    "fill": "#2ca02cff",
+                    "line_color": "#000000ff",
+                    "line_thickness": null
+                  },
+                  "fill": {
+                    "color": "#2ca02cff",
+                    "second_color": null
+                  }
+                },
+                "order": 8
+              },
+              {
+                "sid": "Fig2__plot0_curve9",
+                "name": "G2677TA_GT\u00b1SD (n=27)",
+                "x": "dapagliflozin_DAP10_G2677TA_GT__time",
+                "y": "dapagliflozin_DAP10_G2677TA_GT__mean",
+                "xerr": null,
+                "yerr": "dapagliflozin_DAP10_G2677TA_GT__mean_sd",
+                "yaxis_position": null,
+                "style": {
+                  "sid": null,
+                  "name": null,
+                  "base_style": null,
+                  "line": {
+                    "type": "DASH",
+                    "color": "#2ca02cff",
+                    "thickness": 1.0
+                  },
+                  "marker": {
+                    "size": null,
+                    "type": "SQUARE",
+                    "fill": "#2ca02cff",
+                    "line_color": "#000000ff",
+                    "line_thickness": null
+                  },
+                  "fill": {
+                    "color": "#2ca02cff",
+                    "second_color": null
+                  }
+                },
+                "order": 9
+              },
+              {
+                "sid": "Fig2__plot0_curve10",
+                "name": null,
+                "x": "task_po_dap10_G2677TA_GA__time",
+                "y": "task_po_dap10_G2677TA_GA__Cve_dap",
+                "xerr": null,
+                "yerr": null,
+                "yaxis_position": null,
+                "style": {
+                  "sid": null,
+                  "name": null,
+                  "base_style": null,
+                  "line": {
+                    "type": "SOLID",
+                    "color": "#8c564bff",
+                    "thickness": 2.0
+                  },
+                  "marker": {
+                    "size": null,
+                    "type": "NONE",
+                    "fill": "#8c564bff",
+                    "line_color": "#000000ff",
+                    "line_thickness": null
+                  },
+                  "fill": {
+                    "color": "#8c564bff",
+                    "second_color": null
+                  }
+                },
+                "order": 10
+              },
+              {
+                "sid": "Fig2__plot0_curve11",
+                "name": "G2677TA_GA\u00b1SD (n=20)",
+                "x": "dapagliflozin_DAP10_G2677TA_GA__time",
+                "y": "dapagliflozin_DAP10_G2677TA_GA__mean",
+                "xerr": null,
+                "yerr": "dapagliflozin_DAP10_G2677TA_GA__mean_sd",
+                "yaxis_position": null,
+                "style": {
+                  "sid": null,
+                  "name": null,
+                  "base_style": null,
+                  "line": {
+                    "type": "DASH",
+                    "color": "#8c564bff",
+                    "thickness": 1.0
+                  },
+                  "marker": {
+                    "size": null,
+                    "type": "SQUARE",
+                    "fill": "#8c564bff",
+                    "line_color": "#000000ff",
+                    "line_thickness": null
+                  },
+                  "fill": {
+                    "color": "#8c564bff",
+                    "second_color": null
+                  }
+                },
+                "order": 11
+              },
+              {
+                "sid": "Fig2__plot0_curve12",
+                "name": null,
+                "x": "task_po_dap10_G2677TA_TT__time",
+                "y": "task_po_dap10_G2677TA_TT__Cve_dap",
+                "xerr": null,
+                "yerr": null,
+                "yaxis_position": null,
+                "style": {
+                  "sid": null,
+                  "name": null,
+                  "base_style": null,
+                  "line": {
+                    "type": "SOLID",
+                    "color": "#0000ffff",
+                    "thickness": 2.0
+                  },
+                  "marker": {
+                    "size": null,
+                    "type": "NONE",
+                    "fill": "#0000ffff",
+                    "line_color": "#000000ff",
+                    "line_thickness": null
+                  },
+                  "fill": {
+                    "color": "#0000ffff",
+                    "second_color": null
+                  }
+                },
+                "order": 12
+              },
+              {
+                "sid": "Fig2__plot0_curve13",
+                "name": "G2677TA_TT\u00b1SD (n=9)",
+                "x": "dapagliflozin_DAP10_G2677TA_TT__time",
+                "y": "dapagliflozin_DAP10_G2677TA_TT__mean",
+                "xerr": null,
+                "yerr": "dapagliflozin_DAP10_G2677TA_TT__mean_sd",
+                "yaxis_position": null,
+                "style": {
+                  "sid": null,
+                  "name": null,
+                  "base_style": null,
+                  "line": {
+                    "type": "DASH",
+                    "color": "#0000ffff",
+                    "thickness": 1.0
+                  },
+                  "marker": {
+                    "size": null,
+                    "type": "SQUARE",
+                    "fill": "#0000ffff",
+                    "line_color": "#000000ff",
+                    "line_thickness": null
+                  },
+                  "fill": {
+                    "color": "#0000ffff",
+                    "second_color": null
+                  }
+                },
+                "order": 13
+              },
+              {
+                "sid": "Fig2__plot0_curve14",
+                "name": null,
+                "x": "task_po_dap10_G2677TA_TA__time",
+                "y": "task_po_dap10_G2677TA_TA__Cve_dap",
+                "xerr": null,
+                "yerr": null,
+                "yaxis_position": null,
+                "style": {
+                  "sid": null,
+                  "name": null,
+                  "base_style": null,
+                  "line": {
+                    "type": "SOLID",
+                    "color": "#ffa500ff",
+                    "thickness": 2.0
+                  },
+                  "marker": {
+                    "size": null,
+                    "type": "NONE",
+                    "fill": "#ffa500ff",
+                    "line_color": "#000000ff",
+                    "line_thickness": null
+                  },
+                  "fill": {
+                    "color": "#ffa500ff",
+                    "second_color": null
+                  }
+                },
+                "order": 14
+              },
+              {
+                "sid": "Fig2__plot0_curve15",
+                "name": "G2677TA_TA\u00b1SD (n=17)",
+                "x": "dapagliflozin_DAP10_G2677TA_TA__time",
+                "y": "dapagliflozin_DAP10_G2677TA_TA__mean",
+                "xerr": null,
+                "yerr": "dapagliflozin_DAP10_G2677TA_TA__mean_sd",
+                "yaxis_position": null,
+                "style": {
+                  "sid": null,
+                  "name": null,
+                  "base_style": null,
+                  "line": {
+                    "type": "DASH",
+                    "color": "#ffa500ff",
+                    "thickness": 1.0
+                  },
+                  "marker": {
+                    "size": null,
+                    "type": "SQUARE",
+                    "fill": "#ffa500ff",
+                    "line_color": "#000000ff",
+                    "line_thickness": null
+                  },
+                  "fill": {
+                    "color": "#ffa500ff",
+                    "second_color": null
+                  }
+                },
+                "order": 15
+              },
+              {
+                "sid": "Fig2__plot0_curve16",
+                "name": null,
+                "x": "task_po_dap10_G2677TA_AA__time",
+                "y": "task_po_dap10_G2677TA_AA__Cve_dap",
+                "xerr": null,
+                "yerr": null,
+                "yaxis_position": null,
+                "style": {
+                  "sid": null,
+                  "name": null,
+                  "base_style": null,
+                  "line": {
+                    "type": "SOLID",
+                    "color": "#ff0000ff",
+                    "thickness": 2.0
+                  },
+                  "marker": {
+                    "size": null,
+                    "type": "NONE",
+                    "fill": "#ff0000ff",
+                    "line_color": "#000000ff",
+                    "line_thickness": null
+                  },
+                  "fill": {
+                    "color": "#ff0000ff",
+                    "second_color": null
+                  }
+                },
+                "order": 16
+              },
+              {
+                "sid": "Fig2__plot0_curve17",
+                "name": "G2677TA_AA\u00b1SD (n=2)",
+                "x": "dapagliflozin_DAP10_G2677TA_AA__time",
+                "y": "dapagliflozin_DAP10_G2677TA_AA__mean",
+                "xerr": null,
+                "yerr": "dapagliflozin_DAP10_G2677TA_AA__mean_sd",
+                "yaxis_position": null,
+                "style": {
+                  "sid": null,
+                  "name": null,
+                  "base_style": null,
+                  "line": {
+                    "type": "DASH",
+                    "color": "#ff0000ff",
+                    "thickness": 1.0
+                  },
+                  "marker": {
+                    "size": null,
+                    "type": "SQUARE",
+                    "fill": "#ff0000ff",
+                    "line_color": "#000000ff",
+                    "line_thickness": null
+                  },
+                  "fill": {
+                    "color": "#ff0000ff",
+                    "second_color": null
+                  }
+                },
+                "order": 17
+              },
+              {
+                "sid": "Fig2__plot0_curve18",
+                "name": null,
+                "x": "task_po_dap10_C3435T_CC__time",
+                "y": "task_po_dap10_C3435T_CC__Cve_dap",
+                "xerr": null,
+                "yerr": null,
+                "yaxis_position": null,
+                "style": {
+                  "sid": null,
+                  "name": null,
+                  "base_style": null,
+                  "line": {
+                    "type": "SOLID",
+                    "color": "#008000ff",
+                    "thickness": 2.0
+                  },
+                  "marker": {
+                    "size": null,
+                    "type": "NONE",
+                    "fill": "#008000ff",
+                    "line_color": "#000000ff",
+                    "line_thickness": null
+                  },
+                  "fill": {
+                    "color": "#008000ff",
+                    "second_color": null
+                  }
+                },
+                "order": 18
+              },
+              {
+                "sid": "Fig2__plot0_curve19",
+                "name": "C3435T_CC\u00b1SD (n=49)",
+                "x": "dapagliflozin_DAP10_C3435T_CC__time",
+                "y": "dapagliflozin_DAP10_C3435T_CC__mean",
+                "xerr": null,
+                "yerr": "dapagliflozin_DAP10_C3435T_CC__mean_sd",
+                "yaxis_position": null,
+                "style": {
+                  "sid": null,
+                  "name": null,
+                  "base_style": null,
+                  "line": {
+                    "type": "DASH",
+                    "color": "#008000ff",
+                    "thickness": 1.0
+                  },
+                  "marker": {
+                    "size": null,
+                    "type": "SQUARE",
+                    "fill": "#008000ff",
+                    "line_color": "#000000ff",
+                    "line_thickness": null
+                  },
+                  "fill": {
+                    "color": "#008000ff",
+                    "second_color": null
+                  }
+                },
+                "order": 19
+              },
+              {
+                "sid": "Fig2__plot0_curve20",
+                "name": null,
+                "x": "task_po_dap10_C3435T_CT__time",
+                "y": "task_po_dap10_C3435T_CT__Cve_dap",
+                "xerr": null,
+                "yerr": null,
+                "yaxis_position": null,
+                "style": {
+                  "sid": null,
+                  "name": null,
+                  "base_style": null,
+                  "line": {
+                    "type": "SOLID",
+                    "color": "#a52a2aff",
+                    "thickness": 2.0
+                  },
+                  "marker": {
+                    "size": null,
+                    "type": "NONE",
+                    "fill": "#a52a2aff",
+                    "line_color": "#000000ff",
+                    "line_thickness": null
+                  },
+                  "fill": {
+                    "color": "#a52a2aff",
+                    "second_color": null
+                  }
+                },
+                "order": 20
+              },
+              {
+                "sid": "Fig2__plot0_curve21",
+                "name": "C3435T_CT\u00b1SD (n=42)",
+                "x": "dapagliflozin_DAP10_C3435T_CT__time",
+                "y": "dapagliflozin_DAP10_C3435T_CT__mean",
+                "xerr": null,
+                "yerr": "dapagliflozin_DAP10_C3435T_CT__mean_sd",
+                "yaxis_position": null,
+                "style": {
+                  "sid": null,
+                  "name": null,
+                  "base_style": null,
+                  "line": {
+                    "type": "DASH",
+                    "color": "#a52a2aff",
+                    "thickness": 1.0
+                  },
+                  "marker": {
+                    "size": null,
+                    "type": "SQUARE",
+                    "fill": "#a52a2aff",
+                    "line_color": "#000000ff",
+                    "line_thickness": null
+                  },
+                  "fill": {
+                    "color": "#a52a2aff",
+                    "second_color": null
+                  }
+                },
+                "order": 21
+              },
+              {
+                "sid": "Fig2__plot0_curve22",
+                "name": null,
+                "x": "task_po_dap10_C3435T_TT__time",
+                "y": "task_po_dap10_C3435T_TT__Cve_dap",
+                "xerr": null,
+                "yerr": null,
+                "yaxis_position": null,
+                "style": {
+                  "sid": null,
+                  "name": null,
+                  "base_style": null,
+                  "line": {
+                    "type": "SOLID",
+                    "color": "#808080ff",
+                    "thickness": 2.0
+                  },
+                  "marker": {
+                    "size": null,
+                    "type": "NONE",
+                    "fill": "#808080ff",
+                    "line_color": "#000000ff",
+                    "line_thickness": null
+                  },
+                  "fill": {
+                    "color": "#808080ff",
+                    "second_color": null
+                  }
+                },
+                "order": 22
+              },
+              {
+                "sid": "Fig2__plot0_curve23",
+                "name": "C3435T_TT\u00b1SD (n=9)",
+                "x": "dapagliflozin_DAP10_C3435T_TT__time",
+                "y": "dapagliflozin_DAP10_C3435T_TT__mean",
+                "xerr": null,
+                "yerr": "dapagliflozin_DAP10_C3435T_TT__mean_sd",
+                "yaxis_position": null,
+                "style": {
+                  "sid": null,
+                  "name": null,
+                  "base_style": null,
+                  "line": {
+                    "type": "DASH",
+                    "color": "#808080ff",
+                    "thickness": 1.0
+                  },
+                  "marker": {
+                    "size": null,
+                    "type": "SQUARE",
+                    "fill": "#808080ff",
+                    "line_color": "#000000ff",
+                    "line_thickness": null
+                  },
+                  "fill": {
+                    "color": "#808080ff",
+                    "second_color": null
+                  }
+                },
+                "order": 23
+              }
+            ],
+            "areas": []
+          },
+          "row": 1,
+          "col": 1,
+          "row_span": 1,
+          "col_span": 1
+        }
+      ]
+    }
+  }
+}

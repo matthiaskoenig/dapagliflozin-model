@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui">
+    <title>Kim2023</title>
+    <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/@mdi/font@4.x/css/materialdesignicons.min.css" rel="stylesheet">
+    <!--<link href="https://cdn.jsdelivr.net/npm/vuetify@2.x/dist/vuetify.min.css" rel="stylesheet">-->
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.2/styles/default.min.css">
+</head>
+
+<body>
+<div id="app">
+    <!-- Vue app-->
+    <v-app>
+        <v-content>
+
+            <a href="../index.html">Experiments</a>
+            <h1>Kim2023</h1>
+
+            <h2>Models</h2>
+            <p>
+            <ul>
+                <li><strong>model</strong>: <a href="../../../../models/results/models/dapagliflozin_body_flat.xml">../../../../models/results/models/dapagliflozin_body_flat.xml</a></li>
+            </ul>
+            </p>
+
+            <h2>Datasets</h2>
+            <p>
+            <ul>
+                <li><strong>dapagliflozin_DAP10</strong>: <a href="Kim2023_dapagliflozin_DAP10.tsv">Kim2023_dapagliflozin_DAP10.tsv</a></li>
+                <li><strong>dapagliflozin_EV5, DAP10</strong>: <a href="Kim2023_dapagliflozin_EV5, DAP10.tsv">Kim2023_dapagliflozin_EV5, DAP10.tsv</a></li>
+                <li><strong>evogliptin2_EV5</strong>: <a href="Kim2023_evogliptin2_EV5.tsv">Kim2023_evogliptin2_EV5.tsv</a></li>
+                <li><strong>evogliptin_EV5, DAP10</strong>: <a href="Kim2023_evogliptin_EV5, DAP10.tsv">Kim2023_evogliptin_EV5, DAP10.tsv</a></li>
+                <li><strong>uge_DAP10</strong>: <a href="Kim2023_uge_DAP10.tsv">Kim2023_uge_DAP10.tsv</a></li>
+                <li><strong>uge_EP25</strong>: <a href="Kim2023_uge_EP25.tsv">Kim2023_uge_EP25.tsv</a></li>
+                <li><strong>uge_EV5, DAP10</strong>: <a href="Kim2023_uge_EV5, DAP10.tsv">Kim2023_uge_EV5, DAP10.tsv</a></li>
+                <li><strong>uge_EV5, EP25</strong>: <a href="Kim2023_uge_EV5, EP25.tsv">Kim2023_uge_EV5, EP25.tsv</a></li>
+            </ul>
+            </p>
+
+            <h2>Figures</h2>
+            <p>
+            <ul>
+                <li><strong>Fig2_S2</strong>: <a href="Kim2023_Fig2_S2.svg">Kim2023_Fig2_S2.svg</a></li>
+            </ul>
+            </p>
+
+            <h3>Fig2_S2</h3>
+            <p>
+            <table>
+                <tr>
+                    <td>
+                        <!--<v-img src="Kim2023_Fig2_S2.svg" max-width="600" width="600"></v-img>-->
+                        <img src="Kim2023_Fig2_S2.svg" width="600">
+                    </td>
+                    <!--
+                    <td>
+                    </td>
+                    -->
+                </tr>
+            </table>
+            </p>
+
+            <h2>Code</h2>
+            <p>
+                <a href="../../../../experiments/studies/kim2023.py">../../../../experiments/studies/kim2023.py</a>
+            <pre>
+<code class="python">from typing import Dict
+
+from sbmlsim.data import DataSet, load_pkdb_dataframe
+from sbmlsim.fit import FitMapping, FitData
+from sbmlutils.console import console
+
+from pkdb_models.models.dapagliflozin.experiments.base_experiment import (
+    DapagliflozinSimulationExperiment,
+)
+from pkdb_models.models.dapagliflozin.experiments.metadata import Tissue, Route, Dosing, ApplicationForm, Health, \
+    Fasting, DapagliflozinMappingMetaData, Coadministration
+
+from sbmlsim.plot import Axis, Figure
+from sbmlsim.simulation import Timecourse, TimecourseSim
+
+from pkdb_models.models.dapagliflozin.helpers import run_experiments
+
+
+class Kim2023(DapagliflozinSimulationExperiment):
+    """Simulation experiment of Kim2023."""
+
+    interventions = ["DAP10", "EV5, DAP10"]
+    colors = {
+        "DAP10": "black",
+        "EV5, DAP10": "tab:blue",
+    }
+    info = {
+        "[Cve_dap]": "dapagliflozin",
+        "KI__UGE": "uge",
+    }
+
+    bodyweight = 69.1  # [kg] Group2, Arm2
+
+    def datasets(self) -> Dict[str, DataSet]:
+        dsets = {}
+        for fig_id in ["Fig2", "TabS2"]:
+            df = load_pkdb_dataframe(f"{self.sid}_{fig_id}", data_path=self.data_path)
+            for label, df_label in df.groupby("label"):
+                dset = DataSet.from_df(df_label, self.ureg)
+                # unit conversion
+                if label.startswith("dapagliflozin_"):
+                    dset.unit_conversion("mean", 1 / self.Mr.dap)
+                dsets[f"{label}"] = dset
+
+        # console.print(dsets)
+        # console.print(dsets.keys())
+        return dsets
+
+    def simulations(self) -> Dict[str, TimecourseSim]:
+        Q_ = self.Q_
+        tcsims = {}
+
+        tc0 = Timecourse(
+            start=0,
+            end=24 * 60,  # [min]
+            steps=500,
+            changes={
+                **self.default_changes(),
+
+                # physiological changes
+                "BW": Q_(self.bodyweight, "kg"),
+                "[KI__glc_ext]": Q_(self.fpg_healthy, "mM"),
+                "GU__f_absorption": Q_(self.fasting_map["fasted"], "dimensionless"),
+                "f_cirrhosis": Q_(self.cirrhosis_map["Control"], "dimensionless"),
+                "KI__f_renal_function": Q_(self.renal_map["Normal renal function"], "dimensionless"),
+
+                # dose (IVDOSE, PODOSE)
+                "PODOSE_dap": Q_(10, "mg"),
+            },
+        )
+        tc1 = Timecourse(
+            start=0,
+            end=24 * 60,  # [min]
+            steps=500,
+            changes={
+                "PODOSE_dap": Q_(10, "mg"),
+                "KI__glc_urine": Q_(0, "mmole"),  # reset UGE
+            },
+        )
+        tc2 = Timecourse(
+            start=0,
+            end=48 * 60,  # [min]
+            steps=500,
+            changes={
+                "PODOSE_dap": Q_(10, "mg"),
+                "KI__glc_urine": Q_(0, "mmole"),  # reset UGE
+            },
+        )
+
+        tcsims[f"po_dap10"] = TimecourseSim(
+            [tc0] + [tc1 for _ in range(3)] + [tc2],
+            time_offset=-4 * 24 * 60,
+        )
+        return tcsims
+
+    def fit_mappings(self) -> Dict[str, FitMapping]:
+        mappings = {}
+        for intervention in self.interventions:
+            for kp, sid in enumerate(self.info):
+                name = self.info[sid]
+                mappings[f"fm_dap10_{intervention}_{name}"] = FitMapping(
+                    self,
+                    reference=FitData(
+                        self,
+                        dataset=f"{name}_{intervention}",
+                        xid="time",
+                        yid="mean",
+                        yid_sd="mean_sd",
+                        count="count",
+                    ),
+                    observable=FitData(
+                        self, task=f"task_po_dap10", xid="time", yid=sid,
+                    ),
+                    metadata=DapagliflozinMappingMetaData(
+                        tissue=Tissue.PLASMA,
+                        route=Route.PO,
+                        application_form=ApplicationForm.TABLET,
+                        dosing=Dosing.MULTIPLE,
+                        health=Health.HEALTHY,
+                        fasting=Fasting.FASTED,
+                        coadministration=Coadministration.EVOGLIPTIN if "EV5" in intervention else Coadministration.NONE
+                    ),
+                )
+
+        # console.print(mappings)
+        return mappings
+
+    def figures(self) -> Dict[str, Figure]:
+        fig = Figure(
+            experiment=self,
+            sid="Fig2_S2",
+            num_rows=2,
+            num_cols=1,
+            name=f"{self.__class__.__name__}",
+        )
+        plots = fig.create_plots(xaxis=Axis(self.label_time, unit=self.unit_time), legend=True)
+        plots[0].set_yaxis(self.label_dap_plasma, unit=self.unit_dap)
+        plots[1].set_yaxis(self.label_uge, unit=self.unit_uge)
+
+        for k in [0, 1]:
+            plots[k].xaxis.min = -5
+            plots[k].xaxis.max = 25
+
+        # simulation
+        for k, sid in enumerate(self.info):
+            name = self.info[sid]
+
+            plots[k].add_data(
+                task=f"task_po_dap10",
+                xid="time",
+                yid=sid,
+                label=name,
+                color="black",
+            )
+
+            # data
+            for intervention in self.interventions:
+                plots[k].add_data(
+                    dataset=f"{name}_{intervention}",
+                    xid="time",
+                    yid="mean",
+                    yid_sd="mean_sd",
+                    count="count",
+                    label=intervention,
+                    color=self.colors[intervention]
+                )
+
+        return {
+            fig.sid: fig,
+        }
+
+
+if __name__ == "__main__":
+    run_experiments(Kim2023, output_dir=Kim2023.__name__)
+</code>
+        </pre>
+            </p>
+
+        </v-content>
+    </v-app>
+</div>
+
+
+<!-- loading dependencies -->
+<script src="https://cdn.jsdelivr.net/npm/vue@2.6.11"></script>
+<script src="https://cdn.jsdelivr.net/npm/vuetify@2.2.6/dist/vuetify.js"></script>
+<link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/@mdi/font@4.x/css/materialdesignicons.min.css" rel="stylesheet">
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.2/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+<script>
+    const app = new Vue({
+        el: '#app',
+        vuetify: new Vuetify(),
+        delimiters: ['${', '}'],
+        data() {
+            return {}
+        }
+    })
+</script>
+
+
+</body>
+</html>
