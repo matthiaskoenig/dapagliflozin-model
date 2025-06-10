@@ -35,20 +35,20 @@
             <h2>Figures</h2>
             <p>
             <ul>
-                <li><strong>Fig_dose_dependency_pk</strong>: <a href="DoseDependencyExperiment_Fig_dose_dependency_pk.svg">DoseDependencyExperiment_Fig_dose_dependency_pk.svg</a></li>
+                <li><strong>Fig_dapagliflozin_dependency_pk</strong>: <a href="DoseDependencyExperiment_Fig_dapagliflozin_dependency_pk.svg">DoseDependencyExperiment_Fig_dapagliflozin_dependency_pk.svg</a></li>
                 <li><strong>Fig_glucose_dependency_pk</strong>: <a href="DoseDependencyExperiment_Fig_glucose_dependency_pk.svg">DoseDependencyExperiment_Fig_glucose_dependency_pk.svg</a></li>
-                <li><strong>Fig_dose_dependency_pd</strong>: <a href="DoseDependencyExperiment_Fig_dose_dependency_pd.svg">DoseDependencyExperiment_Fig_dose_dependency_pd.svg</a></li>
+                <li><strong>Fig_dapagliflozin_dependency_pd</strong>: <a href="DoseDependencyExperiment_Fig_dapagliflozin_dependency_pd.svg">DoseDependencyExperiment_Fig_dapagliflozin_dependency_pd.svg</a></li>
                 <li><strong>Fig_glucose_dependency_pd</strong>: <a href="DoseDependencyExperiment_Fig_glucose_dependency_pd.svg">DoseDependencyExperiment_Fig_glucose_dependency_pd.svg</a></li>
             </ul>
             </p>
 
-            <h3>Fig_dose_dependency_pk</h3>
+            <h3>Fig_dapagliflozin_dependency_pk</h3>
             <p>
             <table>
                 <tr>
                     <td>
-                        <!--<v-img src="DoseDependencyExperiment_Fig_dose_dependency_pk.svg" max-width="600" width="600"></v-img>-->
-                        <img src="DoseDependencyExperiment_Fig_dose_dependency_pk.svg" width="600">
+                        <!--<v-img src="DoseDependencyExperiment_Fig_dapagliflozin_dependency_pk.svg" max-width="600" width="600"></v-img>-->
+                        <img src="DoseDependencyExperiment_Fig_dapagliflozin_dependency_pk.svg" width="600">
                     </td>
                     <!--
                     <td>
@@ -72,13 +72,13 @@
                 </tr>
             </table>
             </p>
-            <h3>Fig_dose_dependency_pd</h3>
+            <h3>Fig_dapagliflozin_dependency_pd</h3>
             <p>
             <table>
                 <tr>
                     <td>
-                        <!--<v-img src="DoseDependencyExperiment_Fig_dose_dependency_pd.svg" max-width="600" width="600"></v-img>-->
-                        <img src="DoseDependencyExperiment_Fig_dose_dependency_pd.svg" width="600">
+                        <!--<v-img src="DoseDependencyExperiment_Fig_dapagliflozin_dependency_pd.svg" max-width="600" width="600"></v-img>-->
+                        <img src="DoseDependencyExperiment_Fig_dapagliflozin_dependency_pd.svg" width="600">
                     </td>
                     <!--
                     <td>
@@ -108,7 +108,9 @@
                 <a href="../../../../experiments/misc/dose_dependency.py">../../../../experiments/misc/dose_dependency.py</a>
             <pre>
 <code class="python">from copy import deepcopy
+import matplotlib
 from typing import Dict
+import numpy as np
 
 from sbmlsim.plot import Axis, Figure, Plot
 from sbmlsim.simulation import Timecourse, TimecourseSim
@@ -120,32 +122,35 @@ from pkdb_models.models.dapagliflozin.helpers import run_experiments
 
 
 class DoseDependencyExperiment(DapagliflozinSimulationExperiment):
-    """Tests po application."""
+    """Test different doses of dapagliflozin and different glucose concentrations."""
 
-    doses = [0, 2.5, 5, 10, 20, 50, 100]  # [mg]
-    glucoses = [5, 6, 7, 8, 9, 10, 11]  # [mM]
+    dapagliflozin_values = [0, 2.5, 5, 10, 20, 50, 100]  # [mg]
+    glucose_values = [3, 5, 7, 9, 11, 13, 15]  # [mM]
 
-    colors = ["black", "tab:blue", "tab:orange", "tab:green", "tab:red", "tab:purple", "red"]
+    # colors_dap = ["black", '#f1eef6', '#d0d1e6', '#a6bddb', '#74a9cf', '#2b8cbe', '#045a8d']
+    # colors_dap = ['black', '#d53e4f','#fc8d59','#fee08b','#e6f598','#99d594','#3288bd']
+    colors_dap = ['black', 'tab:brown', 'tab:red', 'tab:orange', 'orange', 'tab:green', 'tab:blue']
+    colors_glc = ["black", '#f1eef6','#d4b9da','#c994c7','#df65b0','#dd1c77','#980043']
 
     def simulations(self) -> Dict[str, TimecourseSim]:
         Q_ = self.Q_
         tcsims = {}
 
-        for dose in self.doses:
-            tcsims[f"dap_dose_{dose}"] = TimecourseSim(
+        for dap in self.dapagliflozin_values:
+            tcsims[f"dapagliflozin_{dap}"] = TimecourseSim(
                 Timecourse(
                     start=0,
                     end=24 * 60,  # [min]
                     steps=3000,
                     changes={
                         **self.default_changes(),
-                        f"PODOSE_dap": Q_(dose, "mg"),
+                        f"PODOSE_dap": Q_(dap, "mg"),
                     },
                 )
             )
 
-        for glc in self.glucoses:
-            tcsims[f"dap_glucose_{glc}"] = TimecourseSim(
+        for glc in self.glucose_values:
+            tcsims[f"glucose_{glc}"] = TimecourseSim(
                 Timecourse(
                     start=0,
                     end=24 * 60,  # [min]
@@ -168,18 +173,22 @@ class DoseDependencyExperiment(DapagliflozinSimulationExperiment):
 
     def figure_pk(self) -> Dict[str, Figure]:
         figures = {}
-        for key in ["dose", "glucose"]:
-            if key == "dose":
-                values = self.doses
+        for key in ["dapagliflozin", "glucose"]:
+            if key == "dapagliflozin":
+                values = self.dapagliflozin_values
+                colors = self.colors_dap
             elif key == "glucose":
-                values = self.glucoses
+                values = self.glucose_values
+                colors = self.colors_glc
             fig = Figure(
                 experiment=self,
                 sid=f"Fig_{key}_dependency_pk",
                 num_rows=3,
                 num_cols=3,
+                # name=f"Pharmacokinetics: {key.title()} dependency"
             )
             plots = fig.create_plots(xaxis=Axis("time", unit="hr"), legend=True)
+            plots[7].xaxis = None
             sids = [
                 # plasma
                 "[Cve_dap]",
@@ -203,11 +212,11 @@ class DoseDependencyExperiment(DapagliflozinSimulationExperiment):
                 plots[ksid].set_yaxis(label=self.labels[sid], unit=self.units[sid])
                 for kval, value in enumerate(values):
                     plots[ksid].add_data(
-                        task=f"task_dap_{key}_{value}",
+                        task=f"task_{key}_{value}",
                         xid="time",
                         yid=sid,
-                        label=f"{value}",
-                        color=self.colors[kval],
+                        label=f"{value} {'mg' if key == 'dapagliflozin' else 'mM'}" if ksid == 0 else None,
+                        color=colors[kval],
                     )
 
             figures[fig.sid] = fig
@@ -215,23 +224,26 @@ class DoseDependencyExperiment(DapagliflozinSimulationExperiment):
 
     def figure_pd(self) -> Dict[str, Figure]:
         figures = {}
-        for key in ["dose", "glucose"]:
-            if key == "dose":
-                values = self.doses
+        for key in ["dapagliflozin", "glucose"]:
+            if key == "dapagliflozin":
+                values = self.dapagliflozin_values
+                colors = self.colors_dap
             elif key == "glucose":
-                values = self.glucoses
+                values = self.glucose_values
+                colors = self.colors_glc
 
             fig = Figure(
                 experiment=self,
                 sid=f"Fig_{key}_dependency_pd",
                 num_rows=2,
                 num_cols=3,
+                # name=f"Pharmacodynamics: {key.title()} dependency",
             )
             plots = fig.create_plots(xaxis=Axis("time", unit="hr"), legend=True)
             sids = [
-                "KI__UGE",
-                "KI__RTG",
                 "[KI__glc_ext]",
+                "KI__RTG",
+                "KI__UGE",
             ]
             for ksid, sid in enumerate(sids):
                 plots[ksid].set_yaxis(label=self.labels[sid], unit=self.units[sid])
@@ -240,43 +252,42 @@ class DoseDependencyExperiment(DapagliflozinSimulationExperiment):
                 for kval, value in enumerate(values):
                     # simulations
                     plots[ksid].add_data(
-                        task=f"task_dap_{key}_{value}",
+                        task=f"task_{key}_{value}",
                         xid="time",
                         yid=sid,
-                        label=f"{value}",
-                        color=self.colors[kval],
+                        label=f"{value} {'mg' if key == 'dapagliflozin' else 'mM'}",
+                        color=colors[kval],
                     )
 
             for ksid in range(3, 6):
                 plots[ksid].set_xaxis(label=self.label_dap_plasma, unit=self.unit_dap)
 
-            plots[3].set_yaxis(label="Rate glucose excretion", unit="mmole/min")
-            plots[4].set_yaxis(label=self.label_rtg, unit=self.unit_rtg)
+            plots[3].set_yaxis(label=self.label_rtg, unit=self.unit_rtg)
+            plots[4].set_yaxis(label=self.labels["KI__GLCEX"], unit=self.units["KI__GLCEX"])
             plots[5].set_yaxis(label=self.label_uge, unit=self.unit_uge)
             for kval, value in enumerate(values):
                 # simulations
                 plots[3].add_data(
-                    task=f"task_dap_{key}_{value}",
-                    xid="[Cve_dap]",
-                    yid="KI__GLCEX",
-                    label=f"{value} mg",
-                    color=self.colors[kval],
-                )
-                plots[4].add_data(
-                    task=f"task_dap_{key}_{value}",
+                    task=f"task_{key}_{value}",
                     xid="[Cve_dap]",
                     yid="KI__RTG",
-                    label=f"{value} mg",
-                    color=self.colors[kval],
+                    label=None,  # f"{value} mg",
+                    color=colors[kval],
+                )
+                plots[4].add_data(
+                    task=f"task_{key}_{value}",
+                    xid="[Cve_dap]",
+                    yid="KI__GLCEX",
+                    label=None,  # f"{value} mg",
+                    color=colors[kval],
                 )
                 plots[5].add_data(
-                    task=f"task_dap_{key}_{value}",
+                    task=f"task_{key}_{value}",
                     xid="[Cve_dap]",
                     yid="KI__UGE",
-                    label=f"{value} mg",
-                    color=self.colors[kval],
+                    label=None,  # f"{value} mg",
+                    color=colors[kval],
                 )
-
             figures[fig.sid] = fig
         return figures
 

@@ -180,13 +180,13 @@ class FDAMB102006(DapagliflozinSimulationExperiment):
         fig = Figure(
             experiment=self,
             sid=f"Tab11",
-            num_rows=2,
-            num_cols=1,
+            num_rows=1,
+            num_cols=2,
             name=f"{self.__class__.__name__} (healthy)",
         )
         plots = fig.create_plots(xaxis=Axis(self.label_time, unit="day"), legend=True)
-        plots[0].set_yaxis("metabolites urine", unit=self.unit_daptot_urine)
-        plots[1].set_yaxis("metabolites feces", unit=self.unit_daptot_feces)
+        plots[0].set_yaxis(self.label_daptot_urine, unit=self.unit_daptot_urine)
+        plots[1].set_yaxis(self.label_daptot_feces, unit=self.unit_daptot_feces)
 
         for sid, name in self.info.items():
 

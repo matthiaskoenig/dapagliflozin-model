@@ -16,27 +16,23 @@ dap: dapagliflozin
 d3g: 3-0-glucuronide (~66%) [Callegari2021]
 d2g: 2-0-glucuronide (~6%) [Callegari2021]
 dox: oxid (~10%) [Callegari2021]</p>
+        <p>The content of this model has been carefully created in a manual research effort.</p>
         <h2>Terms of use</h2>
-        <p>The content of this model has been carefully created in a manual research effort.
-This file has been created by <a href="https://livermetabolism.com">Matthias König</a>
-using <a href="https://github.com/matthiaskoenig/sbmlutils">sbmlutils</a>.
-For questions contact <a href="mailto:koenigmx@hu-berlin.de">koenigmx@hu-berlin.de</a>. Copyright © 2025 Matthias König.</p>
+        <p>Copyright © 2025 <a href="https://livermetabolism.com" title="Matthias König" target="_blank">Matthias König</a>.</p>
         <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">
           <img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by/4.0/88x31.png"/>
         </a>
         <br/>This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.
-<p>Redistribution and use of any part of this model, with or without modification,
-are permitted provided that the following conditions are met:</p>
-        <ol>
-          <li>Redistributions of this SBML file must retain the above copyright notice, this
-list of conditions and the following disclaimer.</li>
-          <li>Redistributions in a different form must reproduce the above copyright notice,
-this list of conditions and the following disclaimer in the documentation and/or
-other materials provided with the distribution.</li>
-        </ol>
-        <p>This model is distributed in the hope that it will be useful, but WITHOUT ANY
-WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
-FOR A PARTICULAR PURPOSE.</p></body>
+<p>Redistribution and use of any part of this model, with or without modification, are permitted provided
+that the following conditions are met:</p>
+        <ul>
+          <li>Redistributions of this SBML file must retain the above copyright notice, this list of conditions and the following disclaimer.</li>
+          <li>Redistributions in a different form must reproduce the above copyright notice, this list of conditions
+and the following disclaimer in the documentation and/or other materials provided
+with the distribution.</li>
+        </ul>
+        <p>This model is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the
+implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.</p></body>
       </notes>
     <annotation>
       <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:vCard="http://www.w3.org/2001/vcard-rdf/3.0#" xmlns:vCard4="http://www.w3.org/2006/vcard/ns#" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/" xmlns:bqmodel="http://biomodels.net/model-qualifiers/">
@@ -1644,6 +1640,69 @@ with FQgu=0.146, FQsp=0.017, FQpa=0.017</p>
           </rdf:RDF>
         </annotation>
       </parameter>
+      <parameter metaid="meta_DAP2D3G_Vmax" sboTerm="SBO:0000186" id="DAP2D3G_Vmax" name="Vmax dapagliflozin conversion" value="0.019920054768051" units="mmole_per_min_l" constant="true">
+        <annotation>
+          <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:vCard="http://www.w3.org/2001/vcard-rdf/3.0#" xmlns:vCard4="http://www.w3.org/2006/vcard/ns#" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/" xmlns:bqmodel="http://biomodels.net/model-qualifiers/">
+            <rdf:Description rdf:about="#meta_DAP2D3G_Vmax">
+              <bqbiol:is>
+                <rdf:Bag>
+                  <rdf:li rdf:resource="http://identifiers.org/SBO:0000186"/>
+                </rdf:Bag>
+              </bqbiol:is>
+            </rdf:Description>
+          </rdf:RDF>
+        </annotation>
+        <comp:listOfReplacedElements>
+          <comp:replacedElement metaid="DAP2D3G_Vmax_li_RE" comp:portRef="DAP2D3G_Vmax_port" comp:submodelRef="LI"/>
+          <comp:replacedElement metaid="DAP2D3G_Vmax_ki_RE" comp:portRef="DAP2D3G_Vmax_port" comp:submodelRef="KI"/>
+        </comp:listOfReplacedElements>
+      </parameter>
+      <parameter metaid="meta_DAP2D3G_Km_dap" sboTerm="SBO:0000027" id="DAP2D3G_Km_dap" name="Km dapagliflozin UGT1A9" value="0.479" units="mM" constant="true">
+        <notes>
+          <body xmlns="http://www.w3.org/1999/xhtml">
+            <p>Km apparent in kidney microsomes for dapagliflozin; 479 µM [Kasichaynula2013]
+Ki for UGT1A9 with other substrates 12-15 µM [Obermeier2010a].</p>
+          </body>
+        </notes>
+        <annotation>
+          <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:vCard="http://www.w3.org/2001/vcard-rdf/3.0#" xmlns:vCard4="http://www.w3.org/2006/vcard/ns#" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/" xmlns:bqmodel="http://biomodels.net/model-qualifiers/">
+            <rdf:Description rdf:about="#meta_DAP2D3G_Km_dap">
+              <bqbiol:is>
+                <rdf:Bag>
+                  <rdf:li rdf:resource="http://identifiers.org/SBO:0000027"/>
+                </rdf:Bag>
+              </bqbiol:is>
+            </rdf:Description>
+          </rdf:RDF>
+        </annotation>
+        <comp:listOfReplacedElements>
+          <comp:replacedElement metaid="DAP2D3G_Km_dap_li_RE" comp:portRef="DAP2D3G_Km_dap_port" comp:submodelRef="LI"/>
+          <comp:replacedElement metaid="DAP2D3G_Km_dap_ki_RE" comp:portRef="DAP2D3G_Km_dap_port" comp:submodelRef="KI"/>
+        </comp:listOfReplacedElements>
+      </parameter>
+      <parameter metaid="meta_f_ugt1a9" sboTerm="SBO:0000002" id="f_ugt1a9" name="scaling factor UGT1A9 activity" value="1" units="dimensionless" constant="true">
+        <notes>
+          <body xmlns="http://www.w3.org/1999/xhtml">
+            <p>Scaling factor to vary UGT1A9 activity.
+1.0: unchanged activity; &lt; 1.0 decreased activity; &gt;1.0 increased activity.</p>
+          </body>
+        </notes>
+        <annotation>
+          <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:vCard="http://www.w3.org/2001/vcard-rdf/3.0#" xmlns:vCard4="http://www.w3.org/2006/vcard/ns#" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/" xmlns:bqmodel="http://biomodels.net/model-qualifiers/">
+            <rdf:Description rdf:about="#meta_f_ugt1a9">
+              <bqbiol:is>
+                <rdf:Bag>
+                  <rdf:li rdf:resource="http://identifiers.org/SBO:0000002"/>
+                </rdf:Bag>
+              </bqbiol:is>
+            </rdf:Description>
+          </rdf:RDF>
+        </annotation>
+        <comp:listOfReplacedElements>
+          <comp:replacedElement metaid="f_ugt1a9_li_RE" comp:portRef="f_ugt1a9_port" comp:submodelRef="LI"/>
+          <comp:replacedElement metaid="f_ugt1a9_ki_RE" comp:portRef="f_ugt1a9_port" comp:submodelRef="KI"/>
+        </comp:listOfReplacedElements>
+      </parameter>
       <parameter metaid="meta_PODOSE_dap" sboTerm="SBO:0000002" id="PODOSE_dap" name="oral dose dap [mg]" value="0" units="mg" constant="false">
         <annotation>
           <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:vCard="http://www.w3.org/2001/vcard-rdf/3.0#" xmlns:vCard4="http://www.w3.org/2006/vcard/ns#" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/" xmlns:bqmodel="http://biomodels.net/model-qualifiers/">
@@ -1673,7 +1732,7 @@ with FQgu=0.146, FQsp=0.017, FQpa=0.017</p>
           </rdf:RDF>
         </annotation>
       </parameter>
-      <parameter metaid="meta_ftissue_dap" sboTerm="SBO:0000002" id="ftissue_dap" name="tissue distribution dap" value="1" units="l_per_min" constant="true">
+      <parameter metaid="meta_ftissue_dap" sboTerm="SBO:0000002" id="ftissue_dap" name="tissue distribution dap" value="0.0100001227476663" units="l_per_min" constant="true">
         <annotation>
           <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:vCard="http://www.w3.org/2001/vcard-rdf/3.0#" xmlns:vCard4="http://www.w3.org/2006/vcard/ns#" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/" xmlns:bqmodel="http://biomodels.net/model-qualifiers/">
             <rdf:Description rdf:about="#meta_ftissue_dap">
@@ -1686,7 +1745,7 @@ with FQgu=0.146, FQsp=0.017, FQpa=0.017</p>
           </rdf:RDF>
         </annotation>
       </parameter>
-      <parameter metaid="meta_Kp_dap" sboTerm="SBO:0000002" id="Kp_dap" name="tissue/plasma partition coefficient dap" value="10" units="dimensionless" constant="true">
+      <parameter metaid="meta_Kp_dap" sboTerm="SBO:0000002" id="Kp_dap" name="tissue/plasma partition coefficient dap" value="25.517380513186" units="dimensionless" constant="true">
         <annotation>
           <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:vCard="http://www.w3.org/2001/vcard-rdf/3.0#" xmlns:vCard4="http://www.w3.org/2006/vcard/ns#" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/" xmlns:bqmodel="http://biomodels.net/model-qualifiers/">
             <rdf:Description rdf:about="#meta_Kp_dap">
@@ -1771,9 +1830,6 @@ with FQgu=0.146, FQsp=0.017, FQpa=0.017</p>
       <parameter id="Qlu" name="lung blood flow" value="NaN" units="l_per_min" constant="false"/>
       <parameter id="Qre" name="rest of body blood flow" value="NaN" units="l_per_min" constant="false"/>
       <parameter id="Qpo" name="portal blood flow" value="NaN" units="l_per_min" constant="false"/>
-      <parameter id="Xurine_dap" name="dapagliflozin amount (urine) [mg]" value="NaN" units="mg" constant="false"/>
-      <parameter id="Xfeces_dap" name="dapagliflozin amount (feces)" value="NaN" units="mg" constant="false"/>
-      <parameter id="Xurine_d3g" name="dapagliflozin-3-o-glucuronide amount (urine) [mg]" value="NaN" units="mg" constant="false"/>
     </listOfParameters>
     <listOfRules>
       <assignmentRule variable="f_shunts">
@@ -2328,33 +2384,6 @@ injection rate.</p>
               <ci> ti_dap </ci>
             </apply>
             <cn sbml:units="s_per_min" type="integer"> 60 </cn>
-          </apply>
-        </math>
-      </assignmentRule>
-      <assignmentRule name="dapagliflozin amount (urine) [mg]" variable="Xurine_dap">
-        <math xmlns="http://www.w3.org/1998/Math/MathML">
-          <apply>
-            <times/>
-            <ci> Aurine_dap </ci>
-            <ci> Mr_dap </ci>
-          </apply>
-        </math>
-      </assignmentRule>
-      <assignmentRule name="dapagliflozin amount (feces)" variable="Xfeces_dap">
-        <math xmlns="http://www.w3.org/1998/Math/MathML">
-          <apply>
-            <times/>
-            <ci> Afeces_dap </ci>
-            <ci> Mr_dap </ci>
-          </apply>
-        </math>
-      </assignmentRule>
-      <assignmentRule name="dapagliflozin-3-o-glucuronide amount (urine) [mg]" variable="Xurine_d3g">
-        <math xmlns="http://www.w3.org/1998/Math/MathML">
-          <apply>
-            <times/>
-            <ci> Aurine_d3g </ci>
-            <ci> Mr_d3g </ci>
           </apply>
         </math>
       </assignmentRule>
@@ -3311,6 +3340,9 @@ injection rate.</p>
       <comp:submodel comp:id="GU" comp:name="gut submodel" comp:modelRef="gut"/>
     </comp:listOfSubmodels>
     <comp:listOfPorts>
+      <comp:port metaid="DAP2D3G_Vmax_port" sboTerm="SBO:0000599" comp:idRef="DAP2D3G_Vmax" comp:id="DAP2D3G_Vmax_port" comp:name="Port of DAP2D3G_Vmax"/>
+      <comp:port metaid="DAP2D3G_Km_dap_port" sboTerm="SBO:0000599" comp:idRef="DAP2D3G_Km_dap" comp:id="DAP2D3G_Km_dap_port" comp:name="Port of DAP2D3G_Km_dap"/>
+      <comp:port metaid="f_ugt1a9_port" sboTerm="SBO:0000599" comp:idRef="f_ugt1a9" comp:id="f_ugt1a9_port" comp:name="Port of f_ugt1a9"/>
       <comp:port metaid="Vki_tissue_port" sboTerm="SBO:0000599" comp:idRef="Vki_tissue" comp:id="Vki_tissue_port" comp:name="Port of Vki_tissue"/>
       <comp:port metaid="Vki_plasma_port" sboTerm="SBO:0000599" comp:idRef="Vki_plasma" comp:id="Vki_plasma_port" comp:name="Port of Vki_plasma"/>
       <comp:port metaid="Vli_tissue_port" sboTerm="SBO:0000599" comp:idRef="Vli_tissue" comp:id="Vli_tissue_port" comp:name="Port of Vli_tissue"/>

@@ -74,54 +74,6 @@
           "end": 2160,
           "steps": 4000,
           "changes": {
-            "ftissue_dap": {
-              "_magnitude": 0.010000059900567992,
-              "_units": "l_per_min"
-            },
-            "Kp_dap": {
-              "_magnitude": 31.042533719411505,
-              "_units": "dimensionless"
-            },
-            "LI__DAPIM_Vmax": {
-              "_magnitude": 237.86295115687793,
-              "_units": "LI__mmole_per_min_l"
-            },
-            "LI__DAP2D3G_Vmax": {
-              "_magnitude": 0.001006430350333675,
-              "_units": "LI__mmole_per_min_l"
-            },
-            "LI__D3GEX_Vmax": {
-              "_magnitude": 0.001000000002413061,
-              "_units": "LI__mmole_per_min_l"
-            },
-            "KI__DAPIM_Vmax": {
-              "_magnitude": 1.1617732990568852,
-              "_units": "KI__mmole_per_min_l"
-            },
-            "KI__DAP2D3G_Vmax": {
-              "_magnitude": 0.27222357579082207,
-              "_units": "KI__mmole_per_min_l"
-            },
-            "KI__D3GIM_Vmax": {
-              "_magnitude": 19.793547404872445,
-              "_units": "KI__mmole_per_min_l"
-            },
-            "KI__DAPEX_k": {
-              "_magnitude": 0.01720563003558135,
-              "_units": "KI__per_min"
-            },
-            "KI__D3GEX_k": {
-              "_magnitude": 0.3390785144688731,
-              "_units": "KI__per_min"
-            },
-            "GU__Ka_dis_dap": {
-              "_magnitude": 1.0200604498935186,
-              "_units": "GU__per_hr"
-            },
-            "GU__DAPABS_k": {
-              "_magnitude": 0.04858558323976285,
-              "_units": "GU__per_min"
-            },
             "PODOSE_dap": {
               "_magnitude": 5,
               "_units": "milligram"
@@ -148,54 +100,6 @@
           "end": 2160,
           "steps": 4000,
           "changes": {
-            "ftissue_dap": {
-              "_magnitude": 0.010000059900567992,
-              "_units": "l_per_min"
-            },
-            "Kp_dap": {
-              "_magnitude": 31.042533719411505,
-              "_units": "dimensionless"
-            },
-            "LI__DAPIM_Vmax": {
-              "_magnitude": 237.86295115687793,
-              "_units": "LI__mmole_per_min_l"
-            },
-            "LI__DAP2D3G_Vmax": {
-              "_magnitude": 0.001006430350333675,
-              "_units": "LI__mmole_per_min_l"
-            },
-            "LI__D3GEX_Vmax": {
-              "_magnitude": 0.001000000002413061,
-              "_units": "LI__mmole_per_min_l"
-            },
-            "KI__DAPIM_Vmax": {
-              "_magnitude": 1.1617732990568852,
-              "_units": "KI__mmole_per_min_l"
-            },
-            "KI__DAP2D3G_Vmax": {
-              "_magnitude": 0.27222357579082207,
-              "_units": "KI__mmole_per_min_l"
-            },
-            "KI__D3GIM_Vmax": {
-              "_magnitude": 19.793547404872445,
-              "_units": "KI__mmole_per_min_l"
-            },
-            "KI__DAPEX_k": {
-              "_magnitude": 0.01720563003558135,
-              "_units": "KI__per_min"
-            },
-            "KI__D3GEX_k": {
-              "_magnitude": 0.3390785144688731,
-              "_units": "KI__per_min"
-            },
-            "GU__Ka_dis_dap": {
-              "_magnitude": 1.0200604498935186,
-              "_units": "GU__per_hr"
-            },
-            "GU__DAPABS_k": {
-              "_magnitude": 0.04858558323976285,
-              "_units": "GU__per_min"
-            },
             "PODOSE_dap": {
               "_magnitude": 5,
               "_units": "milligram"
@@ -222,54 +126,6 @@
           "end": 2160,
           "steps": 4000,
           "changes": {
-            "ftissue_dap": {
-              "_magnitude": 0.010000059900567992,
-              "_units": "l_per_min"
-            },
-            "Kp_dap": {
-              "_magnitude": 31.042533719411505,
-              "_units": "dimensionless"
-            },
-            "LI__DAPIM_Vmax": {
-              "_magnitude": 237.86295115687793,
-              "_units": "LI__mmole_per_min_l"
-            },
-            "LI__DAP2D3G_Vmax": {
-              "_magnitude": 0.001006430350333675,
-              "_units": "LI__mmole_per_min_l"
-            },
-            "LI__D3GEX_Vmax": {
-              "_magnitude": 0.001000000002413061,
-              "_units": "LI__mmole_per_min_l"
-            },
-            "KI__DAPIM_Vmax": {
-              "_magnitude": 1.1617732990568852,
-              "_units": "KI__mmole_per_min_l"
-            },
-            "KI__DAP2D3G_Vmax": {
-              "_magnitude": 0.27222357579082207,
-              "_units": "KI__mmole_per_min_l"
-            },
-            "KI__D3GIM_Vmax": {
-              "_magnitude": 19.793547404872445,
-              "_units": "KI__mmole_per_min_l"
-            },
-            "KI__DAPEX_k": {
-              "_magnitude": 0.01720563003558135,
-              "_units": "KI__per_min"
-            },
-            "KI__D3GEX_k": {
-              "_magnitude": 0.3390785144688731,
-              "_units": "KI__per_min"
-            },
-            "GU__Ka_dis_dap": {
-              "_magnitude": 1.0200604498935186,
-              "_units": "GU__per_hr"
-            },
-            "GU__DAPABS_k": {
-              "_magnitude": 0.04858558323976285,
-              "_units": "GU__per_min"
-            },
             "PODOSE_dap": {
               "_magnitude": 5,
               "_units": "milligram"
@@ -296,54 +152,6 @@
           "end": 2160,
           "steps": 4000,
           "changes": {
-            "ftissue_dap": {
-              "_magnitude": 0.010000059900567992,
-              "_units": "l_per_min"
-            },
-            "Kp_dap": {
-              "_magnitude": 31.042533719411505,
-              "_units": "dimensionless"
-            },
-            "LI__DAPIM_Vmax": {
-              "_magnitude": 237.86295115687793,
-              "_units": "LI__mmole_per_min_l"
-            },
-            "LI__DAP2D3G_Vmax": {
-              "_magnitude": 0.001006430350333675,
-              "_units": "LI__mmole_per_min_l"
-            },
-            "LI__D3GEX_Vmax": {
-              "_magnitude": 0.001000000002413061,
-              "_units": "LI__mmole_per_min_l"
-            },
-            "KI__DAPIM_Vmax": {
-              "_magnitude": 1.1617732990568852,
-              "_units": "KI__mmole_per_min_l"
-            },
-            "KI__DAP2D3G_Vmax": {
-              "_magnitude": 0.27222357579082207,
-              "_units": "KI__mmole_per_min_l"
-            },
-            "KI__D3GIM_Vmax": {
-              "_magnitude": 19.793547404872445,
-              "_units": "KI__mmole_per_min_l"
-            },
-            "KI__DAPEX_k": {
-              "_magnitude": 0.01720563003558135,
-              "_units": "KI__per_min"
-            },
-            "KI__D3GEX_k": {
-              "_magnitude": 0.3390785144688731,
-              "_units": "KI__per_min"
-            },
-            "GU__Ka_dis_dap": {
-              "_magnitude": 1.0200604498935186,
-              "_units": "GU__per_hr"
-            },
-            "GU__DAPABS_k": {
-              "_magnitude": 0.04858558323976285,
-              "_units": "GU__per_min"
-            },
             "PODOSE_dap": {
               "_magnitude": 5,
               "_units": "milligram"
@@ -370,54 +178,6 @@
           "end": 2160,
           "steps": 4000,
           "changes": {
-            "ftissue_dap": {
-              "_magnitude": 0.010000059900567992,
-              "_units": "l_per_min"
-            },
-            "Kp_dap": {
-              "_magnitude": 31.042533719411505,
-              "_units": "dimensionless"
-            },
-            "LI__DAPIM_Vmax": {
-              "_magnitude": 237.86295115687793,
-              "_units": "LI__mmole_per_min_l"
-            },
-            "LI__DAP2D3G_Vmax": {
-              "_magnitude": 0.001006430350333675,
-              "_units": "LI__mmole_per_min_l"
-            },
-            "LI__D3GEX_Vmax": {
-              "_magnitude": 0.001000000002413061,
-              "_units": "LI__mmole_per_min_l"
-            },
-            "KI__DAPIM_Vmax": {
-              "_magnitude": 1.1617732990568852,
-              "_units": "KI__mmole_per_min_l"
-            },
-            "KI__DAP2D3G_Vmax": {
-              "_magnitude": 0.27222357579082207,
-              "_units": "KI__mmole_per_min_l"
-            },
-            "KI__D3GIM_Vmax": {
-              "_magnitude": 19.793547404872445,
-              "_units": "KI__mmole_per_min_l"
-            },
-            "KI__DAPEX_k": {
-              "_magnitude": 0.01720563003558135,
-              "_units": "KI__per_min"
-            },
-            "KI__D3GEX_k": {
-              "_magnitude": 0.3390785144688731,
-              "_units": "KI__per_min"
-            },
-            "GU__Ka_dis_dap": {
-              "_magnitude": 1.0200604498935186,
-              "_units": "GU__per_hr"
-            },
-            "GU__DAPABS_k": {
-              "_magnitude": 0.04858558323976285,
-              "_units": "GU__per_min"
-            },
             "PODOSE_dap": {
               "_magnitude": 5,
               "_units": "milligram"
@@ -444,54 +204,6 @@
           "end": 2160,
           "steps": 4000,
           "changes": {
-            "ftissue_dap": {
-              "_magnitude": 0.010000059900567992,
-              "_units": "l_per_min"
-            },
-            "Kp_dap": {
-              "_magnitude": 31.042533719411505,
-              "_units": "dimensionless"
-            },
-            "LI__DAPIM_Vmax": {
-              "_magnitude": 237.86295115687793,
-              "_units": "LI__mmole_per_min_l"
-            },
-            "LI__DAP2D3G_Vmax": {
-              "_magnitude": 0.001006430350333675,
-              "_units": "LI__mmole_per_min_l"
-            },
-            "LI__D3GEX_Vmax": {
-              "_magnitude": 0.001000000002413061,
-              "_units": "LI__mmole_per_min_l"
-            },
-            "KI__DAPIM_Vmax": {
-              "_magnitude": 1.1617732990568852,
-              "_units": "KI__mmole_per_min_l"
-            },
-            "KI__DAP2D3G_Vmax": {
-              "_magnitude": 0.27222357579082207,
-              "_units": "KI__mmole_per_min_l"
-            },
-            "KI__D3GIM_Vmax": {
-              "_magnitude": 19.793547404872445,
-              "_units": "KI__mmole_per_min_l"
-            },
-            "KI__DAPEX_k": {
-              "_magnitude": 0.01720563003558135,
-              "_units": "KI__per_min"
-            },
-            "KI__D3GEX_k": {
-              "_magnitude": 0.3390785144688731,
-              "_units": "KI__per_min"
-            },
-            "GU__Ka_dis_dap": {
-              "_magnitude": 1.0200604498935186,
-              "_units": "GU__per_hr"
-            },
-            "GU__DAPABS_k": {
-              "_magnitude": 0.04858558323976285,
-              "_units": "GU__per_min"
-            },
             "PODOSE_dap": {
               "_magnitude": 5,
               "_units": "milligram"
@@ -518,54 +230,6 @@
           "end": 2160,
           "steps": 4000,
           "changes": {
-            "ftissue_dap": {
-              "_magnitude": 0.010000059900567992,
-              "_units": "l_per_min"
-            },
-            "Kp_dap": {
-              "_magnitude": 31.042533719411505,
-              "_units": "dimensionless"
-            },
-            "LI__DAPIM_Vmax": {
-              "_magnitude": 237.86295115687793,
-              "_units": "LI__mmole_per_min_l"
-            },
-            "LI__DAP2D3G_Vmax": {
-              "_magnitude": 0.001006430350333675,
-              "_units": "LI__mmole_per_min_l"
-            },
-            "LI__D3GEX_Vmax": {
-              "_magnitude": 0.001000000002413061,
-              "_units": "LI__mmole_per_min_l"
-            },
-            "KI__DAPIM_Vmax": {
-              "_magnitude": 1.1617732990568852,
-              "_units": "KI__mmole_per_min_l"
-            },
-            "KI__DAP2D3G_Vmax": {
-              "_magnitude": 0.27222357579082207,
-              "_units": "KI__mmole_per_min_l"
-            },
-            "KI__D3GIM_Vmax": {
-              "_magnitude": 19.793547404872445,
-              "_units": "KI__mmole_per_min_l"
-            },
-            "KI__DAPEX_k": {
-              "_magnitude": 0.01720563003558135,
-              "_units": "KI__per_min"
-            },
-            "KI__D3GEX_k": {
-              "_magnitude": 0.3390785144688731,
-              "_units": "KI__per_min"
-            },
-            "GU__Ka_dis_dap": {
-              "_magnitude": 1.0200604498935186,
-              "_units": "GU__per_hr"
-            },
-            "GU__DAPABS_k": {
-              "_magnitude": 0.04858558323976285,
-              "_units": "GU__per_min"
-            },
             "PODOSE_dap": {
               "_magnitude": 5,
               "_units": "milligram"
@@ -592,54 +256,6 @@
           "end": 2160,
           "steps": 4000,
           "changes": {
-            "ftissue_dap": {
-              "_magnitude": 0.010000059900567992,
-              "_units": "l_per_min"
-            },
-            "Kp_dap": {
-              "_magnitude": 31.042533719411505,
-              "_units": "dimensionless"
-            },
-            "LI__DAPIM_Vmax": {
-              "_magnitude": 237.86295115687793,
-              "_units": "LI__mmole_per_min_l"
-            },
-            "LI__DAP2D3G_Vmax": {
-              "_magnitude": 0.001006430350333675,
-              "_units": "LI__mmole_per_min_l"
-            },
-            "LI__D3GEX_Vmax": {
-              "_magnitude": 0.001000000002413061,
-              "_units": "LI__mmole_per_min_l"
-            },
-            "KI__DAPIM_Vmax": {
-              "_magnitude": 1.1617732990568852,
-              "_units": "KI__mmole_per_min_l"
-            },
-            "KI__DAP2D3G_Vmax": {
-              "_magnitude": 0.27222357579082207,
-              "_units": "KI__mmole_per_min_l"
-            },
-            "KI__D3GIM_Vmax": {
-              "_magnitude": 19.793547404872445,
-              "_units": "KI__mmole_per_min_l"
-            },
-            "KI__DAPEX_k": {
-              "_magnitude": 0.01720563003558135,
-              "_units": "KI__per_min"
-            },
-            "KI__D3GEX_k": {
-              "_magnitude": 0.3390785144688731,
-              "_units": "KI__per_min"
-            },
-            "GU__Ka_dis_dap": {
-              "_magnitude": 1.0200604498935186,
-              "_units": "GU__per_hr"
-            },
-            "GU__DAPABS_k": {
-              "_magnitude": 0.04858558323976285,
-              "_units": "GU__per_min"
-            },
             "PODOSE_dap": {
               "_magnitude": 5,
               "_units": "milligram"
@@ -666,54 +282,6 @@
           "end": 2160,
           "steps": 4000,
           "changes": {
-            "ftissue_dap": {
-              "_magnitude": 0.010000059900567992,
-              "_units": "l_per_min"
-            },
-            "Kp_dap": {
-              "_magnitude": 31.042533719411505,
-              "_units": "dimensionless"
-            },
-            "LI__DAPIM_Vmax": {
-              "_magnitude": 237.86295115687793,
-              "_units": "LI__mmole_per_min_l"
-            },
-            "LI__DAP2D3G_Vmax": {
-              "_magnitude": 0.001006430350333675,
-              "_units": "LI__mmole_per_min_l"
-            },
-            "LI__D3GEX_Vmax": {
-              "_magnitude": 0.001000000002413061,
-              "_units": "LI__mmole_per_min_l"
-            },
-            "KI__DAPIM_Vmax": {
-              "_magnitude": 1.1617732990568852,
-              "_units": "KI__mmole_per_min_l"
-            },
-            "KI__DAP2D3G_Vmax": {
-              "_magnitude": 0.27222357579082207,
-              "_units": "KI__mmole_per_min_l"
-            },
-            "KI__D3GIM_Vmax": {
-              "_magnitude": 19.793547404872445,
-              "_units": "KI__mmole_per_min_l"
-            },
-            "KI__DAPEX_k": {
-              "_magnitude": 0.01720563003558135,
-              "_units": "KI__per_min"
-            },
-            "KI__D3GEX_k": {
-              "_magnitude": 0.3390785144688731,
-              "_units": "KI__per_min"
-            },
-            "GU__Ka_dis_dap": {
-              "_magnitude": 1.0200604498935186,
-              "_units": "GU__per_hr"
-            },
-            "GU__DAPABS_k": {
-              "_magnitude": 0.04858558323976285,
-              "_units": "GU__per_min"
-            },
             "PODOSE_dap": {
               "_magnitude": 5,
               "_units": "milligram"
@@ -740,54 +308,6 @@
           "end": 2160,
           "steps": 4000,
           "changes": {
-            "ftissue_dap": {
-              "_magnitude": 0.010000059900567992,
-              "_units": "l_per_min"
-            },
-            "Kp_dap": {
-              "_magnitude": 31.042533719411505,
-              "_units": "dimensionless"
-            },
-            "LI__DAPIM_Vmax": {
-              "_magnitude": 237.86295115687793,
-              "_units": "LI__mmole_per_min_l"
-            },
-            "LI__DAP2D3G_Vmax": {
-              "_magnitude": 0.001006430350333675,
-              "_units": "LI__mmole_per_min_l"
-            },
-            "LI__D3GEX_Vmax": {
-              "_magnitude": 0.001000000002413061,
-              "_units": "LI__mmole_per_min_l"
-            },
-            "KI__DAPIM_Vmax": {
-              "_magnitude": 1.1617732990568852,
-              "_units": "KI__mmole_per_min_l"
-            },
-            "KI__DAP2D3G_Vmax": {
-              "_magnitude": 0.27222357579082207,
-              "_units": "KI__mmole_per_min_l"
-            },
-            "KI__D3GIM_Vmax": {
-              "_magnitude": 19.793547404872445,
-              "_units": "KI__mmole_per_min_l"
-            },
-            "KI__DAPEX_k": {
-              "_magnitude": 0.01720563003558135,
-              "_units": "KI__per_min"
-            },
-            "KI__D3GEX_k": {
-              "_magnitude": 0.3390785144688731,
-              "_units": "KI__per_min"
-            },
-            "GU__Ka_dis_dap": {
-              "_magnitude": 1.0200604498935186,
-              "_units": "GU__per_hr"
-            },
-            "GU__DAPABS_k": {
-              "_magnitude": 0.04858558323976285,
-              "_units": "GU__per_min"
-            },
             "PODOSE_dap": {
               "_magnitude": 5,
               "_units": "milligram"
@@ -814,54 +334,6 @@
           "end": 2160,
           "steps": 4000,
           "changes": {
-            "ftissue_dap": {
-              "_magnitude": 0.010000059900567992,
-              "_units": "l_per_min"
-            },
-            "Kp_dap": {
-              "_magnitude": 31.042533719411505,
-              "_units": "dimensionless"
-            },
-            "LI__DAPIM_Vmax": {
-              "_magnitude": 237.86295115687793,
-              "_units": "LI__mmole_per_min_l"
-            },
-            "LI__DAP2D3G_Vmax": {
-              "_magnitude": 0.001006430350333675,
-              "_units": "LI__mmole_per_min_l"
-            },
-            "LI__D3GEX_Vmax": {
-              "_magnitude": 0.001000000002413061,
-              "_units": "LI__mmole_per_min_l"
-            },
-            "KI__DAPIM_Vmax": {
-              "_magnitude": 1.1617732990568852,
-              "_units": "KI__mmole_per_min_l"
-            },
-            "KI__DAP2D3G_Vmax": {
-              "_magnitude": 0.27222357579082207,
-              "_units": "KI__mmole_per_min_l"
-            },
-            "KI__D3GIM_Vmax": {
-              "_magnitude": 19.793547404872445,
-              "_units": "KI__mmole_per_min_l"
-            },
-            "KI__DAPEX_k": {
-              "_magnitude": 0.01720563003558135,
-              "_units": "KI__per_min"
-            },
-            "KI__D3GEX_k": {
-              "_magnitude": 0.3390785144688731,
-              "_units": "KI__per_min"
-            },
-            "GU__Ka_dis_dap": {
-              "_magnitude": 1.0200604498935186,
-              "_units": "GU__per_hr"
-            },
-            "GU__DAPABS_k": {
-              "_magnitude": 0.04858558323976285,
-              "_units": "GU__per_min"
-            },
             "PODOSE_dap": {
               "_magnitude": 5,
               "_units": "milligram"
@@ -1086,9 +558,9 @@
       "function": null,
       "variables": null
     },
-    "task_dap_GU__f_absorption_0.1__LI__f_ugt1a9": {
+    "task_dap_GU__f_absorption_0.1__f_ugt1a9": {
       "type": "TASK",
-      "index": "LI__f_ugt1a9",
+      "index": "f_ugt1a9",
       "unit": null,
       "task": "task_dap_GU__f_absorption_0.1",
       "dataset": null,
@@ -1302,9 +774,9 @@
       "function": null,
       "variables": null
     },
-    "task_dap_GU__f_absorption_0.16681005372000587__LI__f_ugt1a9": {
+    "task_dap_GU__f_absorption_0.16681005372000587__f_ugt1a9": {
       "type": "TASK",
-      "index": "LI__f_ugt1a9",
+      "index": "f_ugt1a9",
       "unit": null,
       "task": "task_dap_GU__f_absorption_0.16681005372000587",
       "dataset": null,
@@ -1518,9 +990,9 @@
       "function": null,
       "variables": null
     },
-    "task_dap_GU__f_absorption_0.2782559402207124__LI__f_ugt1a9": {
+    "task_dap_GU__f_absorption_0.2782559402207124__f_ugt1a9": {
       "type": "TASK",
-      "index": "LI__f_ugt1a9",
+      "index": "f_ugt1a9",
       "unit": null,
       "task": "task_dap_GU__f_absorption_0.2782559402207124",
       "dataset": null,
@@ -1734,9 +1206,9 @@
       "function": null,
       "variables": null
     },
-    "task_dap_GU__f_absorption_0.46415888336127786__LI__f_ugt1a9": {
+    "task_dap_GU__f_absorption_0.46415888336127786__f_ugt1a9": {
       "type": "TASK",
-      "index": "LI__f_ugt1a9",
+      "index": "f_ugt1a9",
       "unit": null,
       "task": "task_dap_GU__f_absorption_0.46415888336127786",
       "dataset": null,
@@ -1950,9 +1422,9 @@
       "function": null,
       "variables": null
     },
-    "task_dap_GU__f_absorption_0.774263682681127__LI__f_ugt1a9": {
+    "task_dap_GU__f_absorption_0.774263682681127__f_ugt1a9": {
       "type": "TASK",
-      "index": "LI__f_ugt1a9",
+      "index": "f_ugt1a9",
       "unit": null,
       "task": "task_dap_GU__f_absorption_0.774263682681127",
       "dataset": null,
@@ -2166,9 +1638,9 @@
       "function": null,
       "variables": null
     },
-    "task_dap_GU__f_absorption_1.0__LI__f_ugt1a9": {
+    "task_dap_GU__f_absorption_1.0__f_ugt1a9": {
       "type": "TASK",
-      "index": "LI__f_ugt1a9",
+      "index": "f_ugt1a9",
       "unit": null,
       "task": "task_dap_GU__f_absorption_1.0",
       "dataset": null,
@@ -2382,9 +1854,9 @@
       "function": null,
       "variables": null
     },
-    "task_dap_GU__f_absorption_1.291549665014884__LI__f_ugt1a9": {
+    "task_dap_GU__f_absorption_1.291549665014884__f_ugt1a9": {
       "type": "TASK",
-      "index": "LI__f_ugt1a9",
+      "index": "f_ugt1a9",
       "unit": null,
       "task": "task_dap_GU__f_absorption_1.291549665014884",
       "dataset": null,
@@ -2598,9 +2070,9 @@
       "function": null,
       "variables": null
     },
-    "task_dap_GU__f_absorption_2.1544346900318834__LI__f_ugt1a9": {
+    "task_dap_GU__f_absorption_2.1544346900318834__f_ugt1a9": {
       "type": "TASK",
-      "index": "LI__f_ugt1a9",
+      "index": "f_ugt1a9",
       "unit": null,
       "task": "task_dap_GU__f_absorption_2.1544346900318834",
       "dataset": null,
@@ -2814,9 +2286,9 @@
       "function": null,
       "variables": null
     },
-    "task_dap_GU__f_absorption_3.593813663804626__LI__f_ugt1a9": {
+    "task_dap_GU__f_absorption_3.593813663804626__f_ugt1a9": {
       "type": "TASK",
-      "index": "LI__f_ugt1a9",
+      "index": "f_ugt1a9",
       "unit": null,
       "task": "task_dap_GU__f_absorption_3.593813663804626",
       "dataset": null,
@@ -3030,9 +2502,9 @@
       "function": null,
       "variables": null
     },
-    "task_dap_GU__f_absorption_5.994842503189409__LI__f_ugt1a9": {
+    "task_dap_GU__f_absorption_5.994842503189409__f_ugt1a9": {
       "type": "TASK",
-      "index": "LI__f_ugt1a9",
+      "index": "f_ugt1a9",
       "unit": null,
       "task": "task_dap_GU__f_absorption_5.994842503189409",
       "dataset": null,
@@ -3246,9 +2718,9 @@
       "function": null,
       "variables": null
     },
-    "task_dap_GU__f_absorption_10.0__LI__f_ugt1a9": {
+    "task_dap_GU__f_absorption_10.0__f_ugt1a9": {
       "type": "TASK",
-      "index": "LI__f_ugt1a9",
+      "index": "f_ugt1a9",
       "unit": null,
       "task": "task_dap_GU__f_absorption_10.0",
       "dataset": null,
@@ -3259,7 +2731,7 @@
   "figures": {
     "Fig_GU__f_absorption_pk": {
       "sid": "Fig_GU__f_absorption_pk",
-      "name": "Effect: Absorption rate (GU__f_absorption)",
+      "name": null,
       "num_rows": 3,
       "num_cols": 3,
       "width": 21.0,
@@ -3285,8 +2757,8 @@
             },
             "yaxis": {
               "sid": "Fig_GU__f_absorption_pk__plot0_yaxis",
-              "name": "dapagliflozin plasma [\u00b5M]",
-              "label": "dapagliflozin plasma",
+              "name": "dapagliflozin\nplasma [\u00b5M]",
+              "label": "dapagliflozin\nplasma",
               "unit": "\u00b5M",
               "scale": "LINEAR",
               "min": null,
@@ -3669,8 +3141,8 @@
             },
             "yaxis": {
               "sid": "Fig_GU__f_absorption_pk__plot1_yaxis",
-              "name": "dapagliflozin-3-o-\nglucuronide plasma [\u00b5M]",
-              "label": "dapagliflozin-3-o-\nglucuronide plasma",
+              "name": "dapagliflozin-3-O-\nglucuronide plasma [\u00b5M]",
+              "label": "dapagliflozin-3-O-\nglucuronide plasma",
               "unit": "\u00b5M",
               "scale": "LINEAR",
               "min": null,
@@ -3686,7 +3158,7 @@
             "curves": [
               {
                 "sid": "Fig_GU__f_absorption_pk__plot1_curve0",
-                "name": "0.10",
+                "name": null,
                 "x": "task_dap_GU__f_absorption_0.1__time",
                 "y": "task_dap_GU__f_absorption_0.1__Cve_d3g",
                 "xerr": null,
@@ -3717,7 +3189,7 @@
               },
               {
                 "sid": "Fig_GU__f_absorption_pk__plot1_curve1",
-                "name": "0.17",
+                "name": null,
                 "x": "task_dap_GU__f_absorption_0.16681005372000587__time",
                 "y": "task_dap_GU__f_absorption_0.16681005372000587__Cve_d3g",
                 "xerr": null,
@@ -3748,7 +3220,7 @@
               },
               {
                 "sid": "Fig_GU__f_absorption_pk__plot1_curve2",
-                "name": "0.28",
+                "name": null,
                 "x": "task_dap_GU__f_absorption_0.2782559402207124__time",
                 "y": "task_dap_GU__f_absorption_0.2782559402207124__Cve_d3g",
                 "xerr": null,
@@ -3779,7 +3251,7 @@
               },
               {
                 "sid": "Fig_GU__f_absorption_pk__plot1_curve3",
-                "name": "0.46",
+                "name": null,
                 "x": "task_dap_GU__f_absorption_0.46415888336127786__time",
                 "y": "task_dap_GU__f_absorption_0.46415888336127786__Cve_d3g",
                 "xerr": null,
@@ -3810,7 +3282,7 @@
               },
               {
                 "sid": "Fig_GU__f_absorption_pk__plot1_curve4",
-                "name": "0.77",
+                "name": null,
                 "x": "task_dap_GU__f_absorption_0.774263682681127__time",
                 "y": "task_dap_GU__f_absorption_0.774263682681127__Cve_d3g",
                 "xerr": null,
@@ -3841,7 +3313,7 @@
               },
               {
                 "sid": "Fig_GU__f_absorption_pk__plot1_curve5",
-                "name": "1.00",
+                "name": null,
                 "x": "task_dap_GU__f_absorption_1.0__time",
                 "y": "task_dap_GU__f_absorption_1.0__Cve_d3g",
                 "xerr": null,
@@ -3872,7 +3344,7 @@
               },
               {
                 "sid": "Fig_GU__f_absorption_pk__plot1_curve6",
-                "name": "1.29",
+                "name": null,
                 "x": "task_dap_GU__f_absorption_1.291549665014884__time",
                 "y": "task_dap_GU__f_absorption_1.291549665014884__Cve_d3g",
                 "xerr": null,
@@ -3903,7 +3375,7 @@
               },
               {
                 "sid": "Fig_GU__f_absorption_pk__plot1_curve7",
-                "name": "2.15",
+                "name": null,
                 "x": "task_dap_GU__f_absorption_2.1544346900318834__time",
                 "y": "task_dap_GU__f_absorption_2.1544346900318834__Cve_d3g",
                 "xerr": null,
@@ -3934,7 +3406,7 @@
               },
               {
                 "sid": "Fig_GU__f_absorption_pk__plot1_curve8",
-                "name": "3.59",
+                "name": null,
                 "x": "task_dap_GU__f_absorption_3.593813663804626__time",
                 "y": "task_dap_GU__f_absorption_3.593813663804626__Cve_d3g",
                 "xerr": null,
@@ -3965,7 +3437,7 @@
               },
               {
                 "sid": "Fig_GU__f_absorption_pk__plot1_curve9",
-                "name": "5.99",
+                "name": null,
                 "x": "task_dap_GU__f_absorption_5.994842503189409__time",
                 "y": "task_dap_GU__f_absorption_5.994842503189409__Cve_d3g",
                 "xerr": null,
@@ -3996,7 +3468,7 @@
               },
               {
                 "sid": "Fig_GU__f_absorption_pk__plot1_curve10",
-                "name": "10.00",
+                "name": null,
                 "x": "task_dap_GU__f_absorption_10.0__time",
                 "y": "task_dap_GU__f_absorption_10.0__Cve_d3g",
                 "xerr": null,
@@ -4053,8 +3525,8 @@
             },
             "yaxis": {
               "sid": "Fig_GU__f_absorption_pk__plot2_yaxis",
-              "name": "dapagliflozin total\n plasma [\u00b5M]",
-              "label": "dapagliflozin total\n plasma",
+              "name": "DAP + D3G\nplasma [\u00b5M]",
+              "label": "DAP + D3G\nplasma",
               "unit": "\u00b5M",
               "scale": "LINEAR",
               "min": null,
@@ -4070,7 +3542,7 @@
             "curves": [
               {
                 "sid": "Fig_GU__f_absorption_pk__plot2_curve0",
-                "name": "0.10",
+                "name": null,
                 "x": "task_dap_GU__f_absorption_0.1__time",
                 "y": "task_dap_GU__f_absorption_0.1__Cve_daptot",
                 "xerr": null,
@@ -4101,7 +3573,7 @@
               },
               {
                 "sid": "Fig_GU__f_absorption_pk__plot2_curve1",
-                "name": "0.17",
+                "name": null,
                 "x": "task_dap_GU__f_absorption_0.16681005372000587__time",
                 "y": "task_dap_GU__f_absorption_0.16681005372000587__Cve_daptot",
                 "xerr": null,
@@ -4132,7 +3604,7 @@
               },
               {
                 "sid": "Fig_GU__f_absorption_pk__plot2_curve2",
-                "name": "0.28",
+                "name": null,
                 "x": "task_dap_GU__f_absorption_0.2782559402207124__time",
                 "y": "task_dap_GU__f_absorption_0.2782559402207124__Cve_daptot",
                 "xerr": null,
@@ -4163,7 +3635,7 @@
               },
               {
                 "sid": "Fig_GU__f_absorption_pk__plot2_curve3",
-                "name": "0.46",
+                "name": null,
                 "x": "task_dap_GU__f_absorption_0.46415888336127786__time",
                 "y": "task_dap_GU__f_absorption_0.46415888336127786__Cve_daptot",
                 "xerr": null,
@@ -4194,7 +3666,7 @@
               },
               {
                 "sid": "Fig_GU__f_absorption_pk__plot2_curve4",
-                "name": "0.77",
+                "name": null,
                 "x": "task_dap_GU__f_absorption_0.774263682681127__time",
                 "y": "task_dap_GU__f_absorption_0.774263682681127__Cve_daptot",
                 "xerr": null,
@@ -4225,7 +3697,7 @@
               },
               {
                 "sid": "Fig_GU__f_absorption_pk__plot2_curve5",
-                "name": "1.00",
+                "name": null,
                 "x": "task_dap_GU__f_absorption_1.0__time",
                 "y": "task_dap_GU__f_absorption_1.0__Cve_daptot",
                 "xerr": null,
@@ -4256,7 +3728,7 @@
               },
               {
                 "sid": "Fig_GU__f_absorption_pk__plot2_curve6",
-                "name": "1.29",
+                "name": null,
                 "x": "task_dap_GU__f_absorption_1.291549665014884__time",
                 "y": "task_dap_GU__f_absorption_1.291549665014884__Cve_daptot",
                 "xerr": null,
@@ -4287,7 +3759,7 @@
               },
               {
                 "sid": "Fig_GU__f_absorption_pk__plot2_curve7",
-                "name": "2.15",
+                "name": null,
                 "x": "task_dap_GU__f_absorption_2.1544346900318834__time",
                 "y": "task_dap_GU__f_absorption_2.1544346900318834__Cve_daptot",
                 "xerr": null,
@@ -4318,7 +3790,7 @@
               },
               {
                 "sid": "Fig_GU__f_absorption_pk__plot2_curve8",
-                "name": "3.59",
+                "name": null,
                 "x": "task_dap_GU__f_absorption_3.593813663804626__time",
                 "y": "task_dap_GU__f_absorption_3.593813663804626__Cve_daptot",
                 "xerr": null,
@@ -4349,7 +3821,7 @@
               },
               {
                 "sid": "Fig_GU__f_absorption_pk__plot2_curve9",
-                "name": "5.99",
+                "name": null,
                 "x": "task_dap_GU__f_absorption_5.994842503189409__time",
                 "y": "task_dap_GU__f_absorption_5.994842503189409__Cve_daptot",
                 "xerr": null,
@@ -4380,7 +3852,7 @@
               },
               {
                 "sid": "Fig_GU__f_absorption_pk__plot2_curve10",
-                "name": "10.00",
+                "name": null,
                 "x": "task_dap_GU__f_absorption_10.0__time",
                 "y": "task_dap_GU__f_absorption_10.0__Cve_daptot",
                 "xerr": null,
@@ -4437,8 +3909,8 @@
             },
             "yaxis": {
               "sid": "Fig_GU__f_absorption_pk__plot3_yaxis",
-              "name": "dapagliflozin plasma urine [\u00b5mole]",
-              "label": "dapagliflozin plasma urine",
+              "name": "dapagliflozin\nurine [\u00b5mole]",
+              "label": "dapagliflozin\nurine",
               "unit": "\u00b5mole",
               "scale": "LINEAR",
               "min": null,
@@ -4454,7 +3926,7 @@
             "curves": [
               {
                 "sid": "Fig_GU__f_absorption_pk__plot3_curve0",
-                "name": "0.10",
+                "name": null,
                 "x": "task_dap_GU__f_absorption_0.1__time",
                 "y": "task_dap_GU__f_absorption_0.1__Aurine_dap",
                 "xerr": null,
@@ -4485,7 +3957,7 @@
               },
               {
                 "sid": "Fig_GU__f_absorption_pk__plot3_curve1",
-                "name": "0.17",
+                "name": null,
                 "x": "task_dap_GU__f_absorption_0.16681005372000587__time",
                 "y": "task_dap_GU__f_absorption_0.16681005372000587__Aurine_dap",
                 "xerr": null,
@@ -4516,7 +3988,7 @@
               },
               {
                 "sid": "Fig_GU__f_absorption_pk__plot3_curve2",
-                "name": "0.28",
+                "name": null,
                 "x": "task_dap_GU__f_absorption_0.2782559402207124__time",
                 "y": "task_dap_GU__f_absorption_0.2782559402207124__Aurine_dap",
                 "xerr": null,
@@ -4547,7 +4019,7 @@
               },
               {
                 "sid": "Fig_GU__f_absorption_pk__plot3_curve3",
-                "name": "0.46",
+                "name": null,
                 "x": "task_dap_GU__f_absorption_0.46415888336127786__time",
                 "y": "task_dap_GU__f_absorption_0.46415888336127786__Aurine_dap",
                 "xerr": null,
@@ -4578,7 +4050,7 @@
               },
               {
                 "sid": "Fig_GU__f_absorption_pk__plot3_curve4",
-                "name": "0.77",
+                "name": null,
                 "x": "task_dap_GU__f_absorption_0.774263682681127__time",
                 "y": "task_dap_GU__f_absorption_0.774263682681127__Aurine_dap",
                 "xerr": null,
@@ -4609,7 +4081,7 @@
               },
               {
                 "sid": "Fig_GU__f_absorption_pk__plot3_curve5",
-                "name": "1.00",
+                "name": null,
                 "x": "task_dap_GU__f_absorption_1.0__time",
                 "y": "task_dap_GU__f_absorption_1.0__Aurine_dap",
                 "xerr": null,
@@ -4640,7 +4112,7 @@
               },
               {
                 "sid": "Fig_GU__f_absorption_pk__plot3_curve6",
-                "name": "1.29",
+                "name": null,
                 "x": "task_dap_GU__f_absorption_1.291549665014884__time",
                 "y": "task_dap_GU__f_absorption_1.291549665014884__Aurine_dap",
                 "xerr": null,
@@ -4671,7 +4143,7 @@
               },
               {
                 "sid": "Fig_GU__f_absorption_pk__plot3_curve7",
-                "name": "2.15",
+                "name": null,
                 "x": "task_dap_GU__f_absorption_2.1544346900318834__time",
                 "y": "task_dap_GU__f_absorption_2.1544346900318834__Aurine_dap",
                 "xerr": null,
@@ -4702,7 +4174,7 @@
               },
               {
                 "sid": "Fig_GU__f_absorption_pk__plot3_curve8",
-                "name": "3.59",
+                "name": null,
                 "x": "task_dap_GU__f_absorption_3.593813663804626__time",
                 "y": "task_dap_GU__f_absorption_3.593813663804626__Aurine_dap",
                 "xerr": null,
@@ -4733,7 +4205,7 @@
               },
               {
                 "sid": "Fig_GU__f_absorption_pk__plot3_curve9",
-                "name": "5.99",
+                "name": null,
                 "x": "task_dap_GU__f_absorption_5.994842503189409__time",
                 "y": "task_dap_GU__f_absorption_5.994842503189409__Aurine_dap",
                 "xerr": null,
@@ -4764,7 +4236,7 @@
               },
               {
                 "sid": "Fig_GU__f_absorption_pk__plot3_curve10",
-                "name": "10.00",
+                "name": null,
                 "x": "task_dap_GU__f_absorption_10.0__time",
                 "y": "task_dap_GU__f_absorption_10.0__Aurine_dap",
                 "xerr": null,
@@ -4821,8 +4293,8 @@
             },
             "yaxis": {
               "sid": "Fig_GU__f_absorption_pk__plot4_yaxis",
-              "name": "dapagliflozin-3-o-\nglucuronide plasma urine [\u00b5mole]",
-              "label": "dapagliflozin-3-o-\nglucuronide plasma urine",
+              "name": "dapagliflozin-3-O-\nglucuronide urine [\u00b5mole]",
+              "label": "dapagliflozin-3-O-\nglucuronide urine",
               "unit": "\u00b5mole",
               "scale": "LINEAR",
               "min": null,
@@ -4838,7 +4310,7 @@
             "curves": [
               {
                 "sid": "Fig_GU__f_absorption_pk__plot4_curve0",
-                "name": "0.10",
+                "name": null,
                 "x": "task_dap_GU__f_absorption_0.1__time",
                 "y": "task_dap_GU__f_absorption_0.1__Aurine_d3g",
                 "xerr": null,
@@ -4869,7 +4341,7 @@
               },
               {
                 "sid": "Fig_GU__f_absorption_pk__plot4_curve1",
-                "name": "0.17",
+                "name": null,
                 "x": "task_dap_GU__f_absorption_0.16681005372000587__time",
                 "y": "task_dap_GU__f_absorption_0.16681005372000587__Aurine_d3g",
                 "xerr": null,
@@ -4900,7 +4372,7 @@
               },
               {
                 "sid": "Fig_GU__f_absorption_pk__plot4_curve2",
-                "name": "0.28",
+                "name": null,
                 "x": "task_dap_GU__f_absorption_0.2782559402207124__time",
                 "y": "task_dap_GU__f_absorption_0.2782559402207124__Aurine_d3g",
                 "xerr": null,
@@ -4931,7 +4403,7 @@
               },
               {
                 "sid": "Fig_GU__f_absorption_pk__plot4_curve3",
-                "name": "0.46",
+                "name": null,
                 "x": "task_dap_GU__f_absorption_0.46415888336127786__time",
                 "y": "task_dap_GU__f_absorption_0.46415888336127786__Aurine_d3g",
                 "xerr": null,
@@ -4962,7 +4434,7 @@
               },
               {
                 "sid": "Fig_GU__f_absorption_pk__plot4_curve4",
-                "name": "0.77",
+                "name": null,
                 "x": "task_dap_GU__f_absorption_0.774263682681127__time",
                 "y": "task_dap_GU__f_absorption_0.774263682681127__Aurine_d3g",
                 "xerr": null,
@@ -4993,7 +4465,7 @@
               },
               {
                 "sid": "Fig_GU__f_absorption_pk__plot4_curve5",
-                "name": "1.00",
+                "name": null,
                 "x": "task_dap_GU__f_absorption_1.0__time",
                 "y": "task_dap_GU__f_absorption_1.0__Aurine_d3g",
                 "xerr": null,
@@ -5024,7 +4496,7 @@
               },
               {
                 "sid": "Fig_GU__f_absorption_pk__plot4_curve6",
-                "name": "1.29",
+                "name": null,
                 "x": "task_dap_GU__f_absorption_1.291549665014884__time",
                 "y": "task_dap_GU__f_absorption_1.291549665014884__Aurine_d3g",
                 "xerr": null,
@@ -5055,7 +4527,7 @@
               },
               {
                 "sid": "Fig_GU__f_absorption_pk__plot4_curve7",
-                "name": "2.15",
+                "name": null,
                 "x": "task_dap_GU__f_absorption_2.1544346900318834__time",
                 "y": "task_dap_GU__f_absorption_2.1544346900318834__Aurine_d3g",
                 "xerr": null,
@@ -5086,7 +4558,7 @@
               },
               {
                 "sid": "Fig_GU__f_absorption_pk__plot4_curve8",
-                "name": "3.59",
+                "name": null,
                 "x": "task_dap_GU__f_absorption_3.593813663804626__time",
                 "y": "task_dap_GU__f_absorption_3.593813663804626__Aurine_d3g",
                 "xerr": null,
@@ -5117,7 +4589,7 @@
               },
               {
                 "sid": "Fig_GU__f_absorption_pk__plot4_curve9",
-                "name": "5.99",
+                "name": null,
                 "x": "task_dap_GU__f_absorption_5.994842503189409__time",
                 "y": "task_dap_GU__f_absorption_5.994842503189409__Aurine_d3g",
                 "xerr": null,
@@ -5148,7 +4620,7 @@
               },
               {
                 "sid": "Fig_GU__f_absorption_pk__plot4_curve10",
-                "name": "10.00",
+                "name": null,
                 "x": "task_dap_GU__f_absorption_10.0__time",
                 "y": "task_dap_GU__f_absorption_10.0__Aurine_d3g",
                 "xerr": null,
@@ -5205,8 +4677,8 @@
             },
             "yaxis": {
               "sid": "Fig_GU__f_absorption_pk__plot5_yaxis",
-              "name": "dapagliflozin total\n plasma urine [\u00b5mole]",
-              "label": "dapagliflozin total\n plasma urine",
+              "name": "DAP + D3G\nurine [\u00b5mole]",
+              "label": "DAP + D3G\nurine",
               "unit": "\u00b5mole",
               "scale": "LINEAR",
               "min": null,
@@ -5222,7 +4694,7 @@
             "curves": [
               {
                 "sid": "Fig_GU__f_absorption_pk__plot5_curve0",
-                "name": "0.10",
+                "name": null,
                 "x": "task_dap_GU__f_absorption_0.1__time",
                 "y": "task_dap_GU__f_absorption_0.1__Aurine_daptot",
                 "xerr": null,
@@ -5253,7 +4725,7 @@
               },
               {
                 "sid": "Fig_GU__f_absorption_pk__plot5_curve1",
-                "name": "0.17",
+                "name": null,
                 "x": "task_dap_GU__f_absorption_0.16681005372000587__time",
                 "y": "task_dap_GU__f_absorption_0.16681005372000587__Aurine_daptot",
                 "xerr": null,
@@ -5284,7 +4756,7 @@
               },
               {
                 "sid": "Fig_GU__f_absorption_pk__plot5_curve2",
-                "name": "0.28",
+                "name": null,
                 "x": "task_dap_GU__f_absorption_0.2782559402207124__time",
                 "y": "task_dap_GU__f_absorption_0.2782559402207124__Aurine_daptot",
                 "xerr": null,
@@ -5315,7 +4787,7 @@
               },
               {
                 "sid": "Fig_GU__f_absorption_pk__plot5_curve3",
-                "name": "0.46",
+                "name": null,
                 "x": "task_dap_GU__f_absorption_0.46415888336127786__time",
                 "y": "task_dap_GU__f_absorption_0.46415888336127786__Aurine_daptot",
                 "xerr": null,
@@ -5346,7 +4818,7 @@
               },
               {
                 "sid": "Fig_GU__f_absorption_pk__plot5_curve4",
-                "name": "0.77",
+                "name": null,
                 "x": "task_dap_GU__f_absorption_0.774263682681127__time",
                 "y": "task_dap_GU__f_absorption_0.774263682681127__Aurine_daptot",
                 "xerr": null,
@@ -5377,7 +4849,7 @@
               },
               {
                 "sid": "Fig_GU__f_absorption_pk__plot5_curve5",
-                "name": "1.00",
+                "name": null,
                 "x": "task_dap_GU__f_absorption_1.0__time",
                 "y": "task_dap_GU__f_absorption_1.0__Aurine_daptot",
                 "xerr": null,
@@ -5408,7 +4880,7 @@
               },
               {
                 "sid": "Fig_GU__f_absorption_pk__plot5_curve6",
-                "name": "1.29",
+                "name": null,
                 "x": "task_dap_GU__f_absorption_1.291549665014884__time",
                 "y": "task_dap_GU__f_absorption_1.291549665014884__Aurine_daptot",
                 "xerr": null,
@@ -5439,7 +4911,7 @@
               },
               {
                 "sid": "Fig_GU__f_absorption_pk__plot5_curve7",
-                "name": "2.15",
+                "name": null,
                 "x": "task_dap_GU__f_absorption_2.1544346900318834__time",
                 "y": "task_dap_GU__f_absorption_2.1544346900318834__Aurine_daptot",
                 "xerr": null,
@@ -5470,7 +4942,7 @@
               },
               {
                 "sid": "Fig_GU__f_absorption_pk__plot5_curve8",
-                "name": "3.59",
+                "name": null,
                 "x": "task_dap_GU__f_absorption_3.593813663804626__time",
                 "y": "task_dap_GU__f_absorption_3.593813663804626__Aurine_daptot",
                 "xerr": null,
@@ -5501,7 +4973,7 @@
               },
               {
                 "sid": "Fig_GU__f_absorption_pk__plot5_curve9",
-                "name": "5.99",
+                "name": null,
                 "x": "task_dap_GU__f_absorption_5.994842503189409__time",
                 "y": "task_dap_GU__f_absorption_5.994842503189409__Aurine_daptot",
                 "xerr": null,
@@ -5532,7 +5004,7 @@
               },
               {
                 "sid": "Fig_GU__f_absorption_pk__plot5_curve10",
-                "name": "10.00",
+                "name": null,
                 "x": "task_dap_GU__f_absorption_10.0__time",
                 "y": "task_dap_GU__f_absorption_10.0__Aurine_daptot",
                 "xerr": null,
@@ -5589,8 +5061,8 @@
             },
             "yaxis": {
               "sid": "Fig_GU__f_absorption_pk__plot6_yaxis",
-              "name": "dapagliflozin plasma feces [\u00b5mole]",
-              "label": "dapagliflozin plasma feces",
+              "name": "dapagliflozin\nfeces [\u00b5mole]",
+              "label": "dapagliflozin\nfeces",
               "unit": "\u00b5mole",
               "scale": "LINEAR",
               "min": null,
@@ -5606,7 +5078,7 @@
             "curves": [
               {
                 "sid": "Fig_GU__f_absorption_pk__plot6_curve0",
-                "name": "0.10",
+                "name": null,
                 "x": "task_dap_GU__f_absorption_0.1__time",
                 "y": "task_dap_GU__f_absorption_0.1__Afeces_dap",
                 "xerr": null,
@@ -5637,7 +5109,7 @@
               },
               {
                 "sid": "Fig_GU__f_absorption_pk__plot6_curve1",
-                "name": "0.17",
+                "name": null,
                 "x": "task_dap_GU__f_absorption_0.16681005372000587__time",
                 "y": "task_dap_GU__f_absorption_0.16681005372000587__Afeces_dap",
                 "xerr": null,
@@ -5668,7 +5140,7 @@
               },
               {
                 "sid": "Fig_GU__f_absorption_pk__plot6_curve2",
-                "name": "0.28",
+                "name": null,
                 "x": "task_dap_GU__f_absorption_0.2782559402207124__time",
                 "y": "task_dap_GU__f_absorption_0.2782559402207124__Afeces_dap",
                 "xerr": null,
@@ -5699,7 +5171,7 @@
               },
               {
                 "sid": "Fig_GU__f_absorption_pk__plot6_curve3",
-                "name": "0.46",
+                "name": null,
                 "x": "task_dap_GU__f_absorption_0.46415888336127786__time",
                 "y": "task_dap_GU__f_absorption_0.46415888336127786__Afeces_dap",
                 "xerr": null,
@@ -5730,7 +5202,7 @@
               },
               {
                 "sid": "Fig_GU__f_absorption_pk__plot6_curve4",
-                "name": "0.77",
+                "name": null,
                 "x": "task_dap_GU__f_absorption_0.774263682681127__time",
                 "y": "task_dap_GU__f_absorption_0.774263682681127__Afeces_dap",
                 "xerr": null,
@@ -5761,7 +5233,7 @@
               },
               {
                 "sid": "Fig_GU__f_absorption_pk__plot6_curve5",
-                "name": "1.00",
+                "name": null,
                 "x": "task_dap_GU__f_absorption_1.0__time",
                 "y": "task_dap_GU__f_absorption_1.0__Afeces_dap",
                 "xerr": null,
@@ -5792,7 +5264,7 @@
               },
               {
                 "sid": "Fig_GU__f_absorption_pk__plot6_curve6",
-                "name": "1.29",
+                "name": null,
                 "x": "task_dap_GU__f_absorption_1.291549665014884__time",
                 "y": "task_dap_GU__f_absorption_1.291549665014884__Afeces_dap",
                 "xerr": null,
@@ -5823,7 +5295,7 @@
               },
               {
                 "sid": "Fig_GU__f_absorption_pk__plot6_curve7",
-                "name": "2.15",
+                "name": null,
                 "x": "task_dap_GU__f_absorption_2.1544346900318834__time",
                 "y": "task_dap_GU__f_absorption_2.1544346900318834__Afeces_dap",
                 "xerr": null,
@@ -5854,7 +5326,7 @@
               },
               {
                 "sid": "Fig_GU__f_absorption_pk__plot6_curve8",
-                "name": "3.59",
+                "name": null,
                 "x": "task_dap_GU__f_absorption_3.593813663804626__time",
                 "y": "task_dap_GU__f_absorption_3.593813663804626__Afeces_dap",
                 "xerr": null,
@@ -5885,7 +5357,7 @@
               },
               {
                 "sid": "Fig_GU__f_absorption_pk__plot6_curve9",
-                "name": "5.99",
+                "name": null,
                 "x": "task_dap_GU__f_absorption_5.994842503189409__time",
                 "y": "task_dap_GU__f_absorption_5.994842503189409__Afeces_dap",
                 "xerr": null,
@@ -5916,7 +5388,7 @@
               },
               {
                 "sid": "Fig_GU__f_absorption_pk__plot6_curve10",
-                "name": "10.00",
+                "name": null,
                 "x": "task_dap_GU__f_absorption_10.0__time",
                 "y": "task_dap_GU__f_absorption_10.0__Afeces_dap",
                 "xerr": null,
@@ -5959,18 +5431,7 @@
           "plot": {
             "sid": "Fig_GU__f_absorption_pk__plot7",
             "name": null,
-            "xaxis": {
-              "sid": "Fig_GU__f_absorption_pk__plot7_xaxis",
-              "name": "time [hr]",
-              "label": "time",
-              "unit": "hr",
-              "scale": "LINEAR",
-              "min": null,
-              "max": null,
-              "grid": false,
-              "label_visible": true,
-              "ticks_visible": true
-            },
+            "xaxis": null,
             "yaxis": null,
             "yaxis_right": null,
             "legend": true,
@@ -6004,8 +5465,8 @@
             },
             "yaxis": {
               "sid": "Fig_GU__f_absorption_pk__plot8_yaxis",
-              "name": "dapagliflozin total\n plasma feces [\u00b5mole]",
-              "label": "dapagliflozin total\n plasma feces",
+              "name": "DAP + D3G\nfeces [\u00b5mole]",
+              "label": "DAP + D3G\nfeces",
               "unit": "\u00b5mole",
               "scale": "LINEAR",
               "min": null,
@@ -6021,7 +5482,7 @@
             "curves": [
               {
                 "sid": "Fig_GU__f_absorption_pk__plot8_curve0",
-                "name": "0.10",
+                "name": null,
                 "x": "task_dap_GU__f_absorption_0.1__time",
                 "y": "task_dap_GU__f_absorption_0.1__Afeces_daptot",
                 "xerr": null,
@@ -6052,7 +5513,7 @@
               },
               {
                 "sid": "Fig_GU__f_absorption_pk__plot8_curve1",
-                "name": "0.17",
+                "name": null,
                 "x": "task_dap_GU__f_absorption_0.16681005372000587__time",
                 "y": "task_dap_GU__f_absorption_0.16681005372000587__Afeces_daptot",
                 "xerr": null,
@@ -6083,7 +5544,7 @@
               },
               {
                 "sid": "Fig_GU__f_absorption_pk__plot8_curve2",
-                "name": "0.28",
+                "name": null,
                 "x": "task_dap_GU__f_absorption_0.2782559402207124__time",
                 "y": "task_dap_GU__f_absorption_0.2782559402207124__Afeces_daptot",
                 "xerr": null,
@@ -6114,7 +5575,7 @@
               },
               {
                 "sid": "Fig_GU__f_absorption_pk__plot8_curve3",
-                "name": "0.46",
+                "name": null,
                 "x": "task_dap_GU__f_absorption_0.46415888336127786__time",
                 "y": "task_dap_GU__f_absorption_0.46415888336127786__Afeces_daptot",
                 "xerr": null,
@@ -6145,7 +5606,7 @@
               },
               {
                 "sid": "Fig_GU__f_absorption_pk__plot8_curve4",
-                "name": "0.77",
+                "name": null,
                 "x": "task_dap_GU__f_absorption_0.774263682681127__time",
                 "y": "task_dap_GU__f_absorption_0.774263682681127__Afeces_daptot",
                 "xerr": null,
@@ -6176,7 +5637,7 @@
               },
               {
                 "sid": "Fig_GU__f_absorption_pk__plot8_curve5",
-                "name": "1.00",
+                "name": null,
                 "x": "task_dap_GU__f_absorption_1.0__time",
                 "y": "task_dap_GU__f_absorption_1.0__Afeces_daptot",
                 "xerr": null,
@@ -6207,7 +5668,7 @@
               },
               {
                 "sid": "Fig_GU__f_absorption_pk__plot8_curve6",
-                "name": "1.29",
+                "name": null,
                 "x": "task_dap_GU__f_absorption_1.291549665014884__time",
                 "y": "task_dap_GU__f_absorption_1.291549665014884__Afeces_daptot",
                 "xerr": null,
@@ -6238,7 +5699,7 @@
               },
               {
                 "sid": "Fig_GU__f_absorption_pk__plot8_curve7",
-                "name": "2.15",
+                "name": null,
                 "x": "task_dap_GU__f_absorption_2.1544346900318834__time",
                 "y": "task_dap_GU__f_absorption_2.1544346900318834__Afeces_daptot",
                 "xerr": null,
@@ -6269,7 +5730,7 @@
               },
               {
                 "sid": "Fig_GU__f_absorption_pk__plot8_curve8",
-                "name": "3.59",
+                "name": null,
                 "x": "task_dap_GU__f_absorption_3.593813663804626__time",
                 "y": "task_dap_GU__f_absorption_3.593813663804626__Afeces_daptot",
                 "xerr": null,
@@ -6300,7 +5761,7 @@
               },
               {
                 "sid": "Fig_GU__f_absorption_pk__plot8_curve9",
-                "name": "5.99",
+                "name": null,
                 "x": "task_dap_GU__f_absorption_5.994842503189409__time",
                 "y": "task_dap_GU__f_absorption_5.994842503189409__Afeces_daptot",
                 "xerr": null,
@@ -6331,7 +5792,7 @@
               },
               {
                 "sid": "Fig_GU__f_absorption_pk__plot8_curve10",
-                "name": "10.00",
+                "name": null,
                 "x": "task_dap_GU__f_absorption_10.0__time",
                 "y": "task_dap_GU__f_absorption_10.0__Afeces_daptot",
                 "xerr": null,
@@ -6372,7 +5833,7 @@
     },
     "Fig_GU__f_absorption_pd": {
       "sid": "Fig_GU__f_absorption_pd",
-      "name": "Effect: Absorption rate (GU__f_absorption)",
+      "name": null,
       "num_rows": 2,
       "num_cols": 3,
       "width": 21.0,
@@ -6398,9 +5859,9 @@
             },
             "yaxis": {
               "sid": "Fig_GU__f_absorption_pd__plot0_yaxis",
-              "name": "UGE [g]",
-              "label": "UGE",
-              "unit": "g",
+              "name": "glucose plasma [mM]",
+              "label": "glucose plasma",
+              "unit": "mM",
               "scale": "LINEAR",
               "min": null,
               "max": null,
@@ -6417,7 +5878,7 @@
                 "sid": "Fig_GU__f_absorption_pd__plot0_curve0",
                 "name": "0.10",
                 "x": "task_dap_GU__f_absorption_0.1__time",
-                "y": "task_dap_GU__f_absorption_0.1__KI__UGE",
+                "y": "task_dap_GU__f_absorption_0.1__KI__glc_ext",
                 "xerr": null,
                 "yerr": null,
                 "yaxis_position": null,
@@ -6448,7 +5909,7 @@
                 "sid": "Fig_GU__f_absorption_pd__plot0_curve1",
                 "name": "0.17",
                 "x": "task_dap_GU__f_absorption_0.16681005372000587__time",
-                "y": "task_dap_GU__f_absorption_0.16681005372000587__KI__UGE",
+                "y": "task_dap_GU__f_absorption_0.16681005372000587__KI__glc_ext",
                 "xerr": null,
                 "yerr": null,
                 "yaxis_position": null,
@@ -6479,7 +5940,7 @@
                 "sid": "Fig_GU__f_absorption_pd__plot0_curve2",
                 "name": "0.28",
                 "x": "task_dap_GU__f_absorption_0.2782559402207124__time",
-                "y": "task_dap_GU__f_absorption_0.2782559402207124__KI__UGE",
+                "y": "task_dap_GU__f_absorption_0.2782559402207124__KI__glc_ext",
                 "xerr": null,
                 "yerr": null,
                 "yaxis_position": null,
@@ -6510,7 +5971,7 @@
                 "sid": "Fig_GU__f_absorption_pd__plot0_curve3",
                 "name": "0.46",
                 "x": "task_dap_GU__f_absorption_0.46415888336127786__time",
-                "y": "task_dap_GU__f_absorption_0.46415888336127786__KI__UGE",
+                "y": "task_dap_GU__f_absorption_0.46415888336127786__KI__glc_ext",
                 "xerr": null,
                 "yerr": null,
                 "yaxis_position": null,
@@ -6541,7 +6002,7 @@
                 "sid": "Fig_GU__f_absorption_pd__plot0_curve4",
                 "name": "0.77",
                 "x": "task_dap_GU__f_absorption_0.774263682681127__time",
-                "y": "task_dap_GU__f_absorption_0.774263682681127__KI__UGE",
+                "y": "task_dap_GU__f_absorption_0.774263682681127__KI__glc_ext",
                 "xerr": null,
                 "yerr": null,
                 "yaxis_position": null,
@@ -6572,7 +6033,7 @@
                 "sid": "Fig_GU__f_absorption_pd__plot0_curve5",
                 "name": "1.00",
                 "x": "task_dap_GU__f_absorption_1.0__time",
-                "y": "task_dap_GU__f_absorption_1.0__KI__UGE",
+                "y": "task_dap_GU__f_absorption_1.0__KI__glc_ext",
                 "xerr": null,
                 "yerr": null,
                 "yaxis_position": null,
@@ -6603,7 +6064,7 @@
                 "sid": "Fig_GU__f_absorption_pd__plot0_curve6",
                 "name": "1.29",
                 "x": "task_dap_GU__f_absorption_1.291549665014884__time",
-                "y": "task_dap_GU__f_absorption_1.291549665014884__KI__UGE",
+                "y": "task_dap_GU__f_absorption_1.291549665014884__KI__glc_ext",
                 "xerr": null,
                 "yerr": null,
                 "yaxis_position": null,
@@ -6634,7 +6095,7 @@
                 "sid": "Fig_GU__f_absorption_pd__plot0_curve7",
                 "name": "2.15",
                 "x": "task_dap_GU__f_absorption_2.1544346900318834__time",
-                "y": "task_dap_GU__f_absorption_2.1544346900318834__KI__UGE",
+                "y": "task_dap_GU__f_absorption_2.1544346900318834__KI__glc_ext",
                 "xerr": null,
                 "yerr": null,
                 "yaxis_position": null,
@@ -6665,7 +6126,7 @@
                 "sid": "Fig_GU__f_absorption_pd__plot0_curve8",
                 "name": "3.59",
                 "x": "task_dap_GU__f_absorption_3.593813663804626__time",
-                "y": "task_dap_GU__f_absorption_3.593813663804626__KI__UGE",
+                "y": "task_dap_GU__f_absorption_3.593813663804626__KI__glc_ext",
                 "xerr": null,
                 "yerr": null,
                 "yaxis_position": null,
@@ -6696,7 +6157,7 @@
                 "sid": "Fig_GU__f_absorption_pd__plot0_curve9",
                 "name": "5.99",
                 "x": "task_dap_GU__f_absorption_5.994842503189409__time",
-                "y": "task_dap_GU__f_absorption_5.994842503189409__KI__UGE",
+                "y": "task_dap_GU__f_absorption_5.994842503189409__KI__glc_ext",
                 "xerr": null,
                 "yerr": null,
                 "yaxis_position": null,
@@ -6727,7 +6188,7 @@
                 "sid": "Fig_GU__f_absorption_pd__plot0_curve10",
                 "name": "10.00",
                 "x": "task_dap_GU__f_absorption_10.0__time",
-                "y": "task_dap_GU__f_absorption_10.0__KI__UGE",
+                "y": "task_dap_GU__f_absorption_10.0__KI__glc_ext",
                 "xerr": null,
                 "yerr": null,
                 "yaxis_position": null,
@@ -6799,7 +6260,7 @@
             "curves": [
               {
                 "sid": "Fig_GU__f_absorption_pd__plot1_curve0",
-                "name": "0.10",
+                "name": null,
                 "x": "task_dap_GU__f_absorption_0.1__time",
                 "y": "task_dap_GU__f_absorption_0.1__KI__RTG",
                 "xerr": null,
@@ -6830,7 +6291,7 @@
               },
               {
                 "sid": "Fig_GU__f_absorption_pd__plot1_curve1",
-                "name": "0.17",
+                "name": null,
                 "x": "task_dap_GU__f_absorption_0.16681005372000587__time",
                 "y": "task_dap_GU__f_absorption_0.16681005372000587__KI__RTG",
                 "xerr": null,
@@ -6861,7 +6322,7 @@
               },
               {
                 "sid": "Fig_GU__f_absorption_pd__plot1_curve2",
-                "name": "0.28",
+                "name": null,
                 "x": "task_dap_GU__f_absorption_0.2782559402207124__time",
                 "y": "task_dap_GU__f_absorption_0.2782559402207124__KI__RTG",
                 "xerr": null,
@@ -6892,7 +6353,7 @@
               },
               {
                 "sid": "Fig_GU__f_absorption_pd__plot1_curve3",
-                "name": "0.46",
+                "name": null,
                 "x": "task_dap_GU__f_absorption_0.46415888336127786__time",
                 "y": "task_dap_GU__f_absorption_0.46415888336127786__KI__RTG",
                 "xerr": null,
@@ -6923,7 +6384,7 @@
               },
               {
                 "sid": "Fig_GU__f_absorption_pd__plot1_curve4",
-                "name": "0.77",
+                "name": null,
                 "x": "task_dap_GU__f_absorption_0.774263682681127__time",
                 "y": "task_dap_GU__f_absorption_0.774263682681127__KI__RTG",
                 "xerr": null,
@@ -6954,7 +6415,7 @@
               },
               {
                 "sid": "Fig_GU__f_absorption_pd__plot1_curve5",
-                "name": "1.00",
+                "name": null,
                 "x": "task_dap_GU__f_absorption_1.0__time",
                 "y": "task_dap_GU__f_absorption_1.0__KI__RTG",
                 "xerr": null,
@@ -6985,7 +6446,7 @@
               },
               {
                 "sid": "Fig_GU__f_absorption_pd__plot1_curve6",
-                "name": "1.29",
+                "name": null,
                 "x": "task_dap_GU__f_absorption_1.291549665014884__time",
                 "y": "task_dap_GU__f_absorption_1.291549665014884__KI__RTG",
                 "xerr": null,
@@ -7016,7 +6477,7 @@
               },
               {
                 "sid": "Fig_GU__f_absorption_pd__plot1_curve7",
-                "name": "2.15",
+                "name": null,
                 "x": "task_dap_GU__f_absorption_2.1544346900318834__time",
                 "y": "task_dap_GU__f_absorption_2.1544346900318834__KI__RTG",
                 "xerr": null,
@@ -7047,7 +6508,7 @@
               },
               {
                 "sid": "Fig_GU__f_absorption_pd__plot1_curve8",
-                "name": "3.59",
+                "name": null,
                 "x": "task_dap_GU__f_absorption_3.593813663804626__time",
                 "y": "task_dap_GU__f_absorption_3.593813663804626__KI__RTG",
                 "xerr": null,
@@ -7078,7 +6539,7 @@
               },
               {
                 "sid": "Fig_GU__f_absorption_pd__plot1_curve9",
-                "name": "5.99",
+                "name": null,
                 "x": "task_dap_GU__f_absorption_5.994842503189409__time",
                 "y": "task_dap_GU__f_absorption_5.994842503189409__KI__RTG",
                 "xerr": null,
@@ -7109,7 +6570,7 @@
               },
               {
                 "sid": "Fig_GU__f_absorption_pd__plot1_curve10",
-                "name": "10.00",
+                "name": null,
                 "x": "task_dap_GU__f_absorption_10.0__time",
                 "y": "task_dap_GU__f_absorption_10.0__KI__RTG",
                 "xerr": null,
@@ -7166,9 +6627,9 @@
             },
             "yaxis": {
               "sid": "Fig_GU__f_absorption_pd__plot2_yaxis",
-              "name": "glucose [mM]",
-              "label": "glucose",
-              "unit": "mM",
+              "name": "UGE [g]",
+              "label": "UGE",
+              "unit": "g",
               "scale": "LINEAR",
               "min": null,
               "max": null,
@@ -7183,9 +6644,9 @@
             "curves": [
               {
                 "sid": "Fig_GU__f_absorption_pd__plot2_curve0",
-                "name": "0.10",
+                "name": null,
                 "x": "task_dap_GU__f_absorption_0.1__time",
-                "y": "task_dap_GU__f_absorption_0.1__KI__glc_ext",
+                "y": "task_dap_GU__f_absorption_0.1__KI__UGE",
                 "xerr": null,
                 "yerr": null,
                 "yaxis_position": null,
@@ -7214,9 +6675,9 @@
               },
               {
                 "sid": "Fig_GU__f_absorption_pd__plot2_curve1",
-                "name": "0.17",
+                "name": null,
                 "x": "task_dap_GU__f_absorption_0.16681005372000587__time",
-                "y": "task_dap_GU__f_absorption_0.16681005372000587__KI__glc_ext",
+                "y": "task_dap_GU__f_absorption_0.16681005372000587__KI__UGE",
                 "xerr": null,
                 "yerr": null,
                 "yaxis_position": null,
@@ -7245,9 +6706,9 @@
               },
               {
                 "sid": "Fig_GU__f_absorption_pd__plot2_curve2",
-                "name": "0.28",
+                "name": null,
                 "x": "task_dap_GU__f_absorption_0.2782559402207124__time",
-                "y": "task_dap_GU__f_absorption_0.2782559402207124__KI__glc_ext",
+                "y": "task_dap_GU__f_absorption_0.2782559402207124__KI__UGE",
                 "xerr": null,
                 "yerr": null,
                 "yaxis_position": null,
@@ -7276,9 +6737,9 @@
               },
               {
                 "sid": "Fig_GU__f_absorption_pd__plot2_curve3",
-                "name": "0.46",
+                "name": null,
                 "x": "task_dap_GU__f_absorption_0.46415888336127786__time",
-                "y": "task_dap_GU__f_absorption_0.46415888336127786__KI__glc_ext",
+                "y": "task_dap_GU__f_absorption_0.46415888336127786__KI__UGE",
                 "xerr": null,
                 "yerr": null,
                 "yaxis_position": null,
@@ -7307,9 +6768,9 @@
               },
               {
                 "sid": "Fig_GU__f_absorption_pd__plot2_curve4",
-                "name": "0.77",
+                "name": null,
                 "x": "task_dap_GU__f_absorption_0.774263682681127__time",
-                "y": "task_dap_GU__f_absorption_0.774263682681127__KI__glc_ext",
+                "y": "task_dap_GU__f_absorption_0.774263682681127__KI__UGE",
                 "xerr": null,
                 "yerr": null,
                 "yaxis_position": null,
@@ -7338,9 +6799,9 @@
               },
               {
                 "sid": "Fig_GU__f_absorption_pd__plot2_curve5",
-                "name": "1.00",
+                "name": null,
                 "x": "task_dap_GU__f_absorption_1.0__time",
-                "y": "task_dap_GU__f_absorption_1.0__KI__glc_ext",
+                "y": "task_dap_GU__f_absorption_1.0__KI__UGE",
                 "xerr": null,
                 "yerr": null,
                 "yaxis_position": null,
@@ -7369,9 +6830,9 @@
               },
               {
                 "sid": "Fig_GU__f_absorption_pd__plot2_curve6",
-                "name": "1.29",
+                "name": null,
                 "x": "task_dap_GU__f_absorption_1.291549665014884__time",
-                "y": "task_dap_GU__f_absorption_1.291549665014884__KI__glc_ext",
+                "y": "task_dap_GU__f_absorption_1.291549665014884__KI__UGE",
                 "xerr": null,
                 "yerr": null,
                 "yaxis_position": null,
@@ -7400,9 +6861,9 @@
               },
               {
                 "sid": "Fig_GU__f_absorption_pd__plot2_curve7",
-                "name": "2.15",
+                "name": null,
                 "x": "task_dap_GU__f_absorption_2.1544346900318834__time",
-                "y": "task_dap_GU__f_absorption_2.1544346900318834__KI__glc_ext",
+                "y": "task_dap_GU__f_absorption_2.1544346900318834__KI__UGE",
                 "xerr": null,
                 "yerr": null,
                 "yaxis_position": null,
@@ -7431,9 +6892,9 @@
               },
               {
                 "sid": "Fig_GU__f_absorption_pd__plot2_curve8",
-                "name": "3.59",
+                "name": null,
                 "x": "task_dap_GU__f_absorption_3.593813663804626__time",
-                "y": "task_dap_GU__f_absorption_3.593813663804626__KI__glc_ext",
+                "y": "task_dap_GU__f_absorption_3.593813663804626__KI__UGE",
                 "xerr": null,
                 "yerr": null,
                 "yaxis_position": null,
@@ -7462,9 +6923,9 @@
               },
               {
                 "sid": "Fig_GU__f_absorption_pd__plot2_curve9",
-                "name": "5.99",
+                "name": null,
                 "x": "task_dap_GU__f_absorption_5.994842503189409__time",
-                "y": "task_dap_GU__f_absorption_5.994842503189409__KI__glc_ext",
+                "y": "task_dap_GU__f_absorption_5.994842503189409__KI__UGE",
                 "xerr": null,
                 "yerr": null,
                 "yaxis_position": null,
@@ -7493,9 +6954,9 @@
               },
               {
                 "sid": "Fig_GU__f_absorption_pd__plot2_curve10",
-                "name": "10.00",
+                "name": null,
                 "x": "task_dap_GU__f_absorption_10.0__time",
-                "y": "task_dap_GU__f_absorption_10.0__KI__glc_ext",
+                "y": "task_dap_GU__f_absorption_10.0__KI__UGE",
                 "xerr": null,
                 "yerr": null,
                 "yaxis_position": null,
@@ -7538,8 +6999,8 @@
             "name": null,
             "xaxis": {
               "sid": "Fig_GU__f_absorption_pd__plot3_xaxis",
-              "name": "dapagliflozin plasma [\u00b5M]",
-              "label": "dapagliflozin plasma",
+              "name": "dapagliflozin\nplasma [\u00b5M]",
+              "label": "dapagliflozin\nplasma",
               "unit": "\u00b5M",
               "scale": "LINEAR",
               "min": null,
@@ -7550,9 +7011,9 @@
             },
             "yaxis": {
               "sid": "Fig_GU__f_absorption_pd__plot3_yaxis",
-              "name": "Rate glucose excretion [mmole/min]",
-              "label": "Rate glucose excretion",
-              "unit": "mmole/min",
+              "name": "RTG [mM]",
+              "label": "RTG",
+              "unit": "mM",
               "scale": "LINEAR",
               "min": null,
               "max": null,
@@ -7567,9 +7028,9 @@
             "curves": [
               {
                 "sid": "Fig_GU__f_absorption_pd__plot3_curve0",
-                "name": "0.10",
+                "name": null,
                 "x": "task_dap_GU__f_absorption_0.1__Cve_dap",
-                "y": "task_dap_GU__f_absorption_0.1__KI__GLCEX",
+                "y": "task_dap_GU__f_absorption_0.1__KI__RTG",
                 "xerr": null,
                 "yerr": null,
                 "yaxis_position": null,
@@ -7598,9 +7059,9 @@
               },
               {
                 "sid": "Fig_GU__f_absorption_pd__plot3_curve1",
-                "name": "0.17",
+                "name": null,
                 "x": "task_dap_GU__f_absorption_0.16681005372000587__Cve_dap",
-                "y": "task_dap_GU__f_absorption_0.16681005372000587__KI__GLCEX",
+                "y": "task_dap_GU__f_absorption_0.16681005372000587__KI__RTG",
                 "xerr": null,
                 "yerr": null,
                 "yaxis_position": null,
@@ -7629,9 +7090,9 @@
               },
               {
                 "sid": "Fig_GU__f_absorption_pd__plot3_curve2",
-                "name": "0.28",
+                "name": null,
                 "x": "task_dap_GU__f_absorption_0.2782559402207124__Cve_dap",
-                "y": "task_dap_GU__f_absorption_0.2782559402207124__KI__GLCEX",
+                "y": "task_dap_GU__f_absorption_0.2782559402207124__KI__RTG",
                 "xerr": null,
                 "yerr": null,
                 "yaxis_position": null,
@@ -7660,9 +7121,9 @@
               },
               {
                 "sid": "Fig_GU__f_absorption_pd__plot3_curve3",
-                "name": "0.46",
+                "name": null,
                 "x": "task_dap_GU__f_absorption_0.46415888336127786__Cve_dap",
-                "y": "task_dap_GU__f_absorption_0.46415888336127786__KI__GLCEX",
+                "y": "task_dap_GU__f_absorption_0.46415888336127786__KI__RTG",
                 "xerr": null,
                 "yerr": null,
                 "yaxis_position": null,
@@ -7691,9 +7152,9 @@
               },
               {
                 "sid": "Fig_GU__f_absorption_pd__plot3_curve4",
-                "name": "0.77",
+                "name": null,
                 "x": "task_dap_GU__f_absorption_0.774263682681127__Cve_dap",
-                "y": "task_dap_GU__f_absorption_0.774263682681127__KI__GLCEX",
+                "y": "task_dap_GU__f_absorption_0.774263682681127__KI__RTG",
                 "xerr": null,
                 "yerr": null,
                 "yaxis_position": null,
@@ -7722,9 +7183,9 @@
               },
               {
                 "sid": "Fig_GU__f_absorption_pd__plot3_curve5",
-                "name": "1.00",
+                "name": null,
                 "x": "task_dap_GU__f_absorption_1.0__Cve_dap",
-                "y": "task_dap_GU__f_absorption_1.0__KI__GLCEX",
+                "y": "task_dap_GU__f_absorption_1.0__KI__RTG",
                 "xerr": null,
                 "yerr": null,
                 "yaxis_position": null,
@@ -7753,9 +7214,9 @@
               },
               {
                 "sid": "Fig_GU__f_absorption_pd__plot3_curve6",
-                "name": "1.29",
+                "name": null,
                 "x": "task_dap_GU__f_absorption_1.291549665014884__Cve_dap",
-                "y": "task_dap_GU__f_absorption_1.291549665014884__KI__GLCEX",
+                "y": "task_dap_GU__f_absorption_1.291549665014884__KI__RTG",
                 "xerr": null,
                 "yerr": null,
                 "yaxis_position": null,
@@ -7784,9 +7245,9 @@
               },
               {
                 "sid": "Fig_GU__f_absorption_pd__plot3_curve7",
-                "name": "2.15",
+                "name": null,
                 "x": "task_dap_GU__f_absorption_2.1544346900318834__Cve_dap",
-                "y": "task_dap_GU__f_absorption_2.1544346900318834__KI__GLCEX",
+                "y": "task_dap_GU__f_absorption_2.1544346900318834__KI__RTG",
                 "xerr": null,
                 "yerr": null,
                 "yaxis_position": null,
@@ -7815,9 +7276,9 @@
               },
               {
                 "sid": "Fig_GU__f_absorption_pd__plot3_curve8",
-                "name": "3.59",
+                "name": null,
                 "x": "task_dap_GU__f_absorption_3.593813663804626__Cve_dap",
-                "y": "task_dap_GU__f_absorption_3.593813663804626__KI__GLCEX",
+                "y": "task_dap_GU__f_absorption_3.593813663804626__KI__RTG",
                 "xerr": null,
                 "yerr": null,
                 "yaxis_position": null,
@@ -7846,9 +7307,9 @@
               },
               {
                 "sid": "Fig_GU__f_absorption_pd__plot3_curve9",
-                "name": "5.99",
+                "name": null,
                 "x": "task_dap_GU__f_absorption_5.994842503189409__Cve_dap",
-                "y": "task_dap_GU__f_absorption_5.994842503189409__KI__GLCEX",
+                "y": "task_dap_GU__f_absorption_5.994842503189409__KI__RTG",
                 "xerr": null,
                 "yerr": null,
                 "yaxis_position": null,
@@ -7877,9 +7338,9 @@
               },
               {
                 "sid": "Fig_GU__f_absorption_pd__plot3_curve10",
-                "name": "10.00",
+                "name": null,
                 "x": "task_dap_GU__f_absorption_10.0__Cve_dap",
-                "y": "task_dap_GU__f_absorption_10.0__KI__GLCEX",
+                "y": "task_dap_GU__f_absorption_10.0__KI__RTG",
                 "xerr": null,
                 "yerr": null,
                 "yaxis_position": null,
@@ -7922,8 +7383,8 @@
             "name": null,
             "xaxis": {
               "sid": "Fig_GU__f_absorption_pd__plot4_xaxis",
-              "name": "dapagliflozin plasma [\u00b5M]",
-              "label": "dapagliflozin plasma",
+              "name": "dapagliflozin\nplasma [\u00b5M]",
+              "label": "dapagliflozin\nplasma",
               "unit": "\u00b5M",
               "scale": "LINEAR",
               "min": null,
@@ -7934,9 +7395,9 @@
             },
             "yaxis": {
               "sid": "Fig_GU__f_absorption_pd__plot4_yaxis",
-              "name": "RTG [mM]",
-              "label": "RTG",
-              "unit": "mM",
+              "name": "glucose excretion\nurine [\u00b5mole/min]",
+              "label": "glucose excretion\nurine",
+              "unit": "\u00b5mole/min",
               "scale": "LINEAR",
               "min": null,
               "max": null,
@@ -7951,9 +7412,9 @@
             "curves": [
               {
                 "sid": "Fig_GU__f_absorption_pd__plot4_curve0",
-                "name": "0.10",
+                "name": null,
                 "x": "task_dap_GU__f_absorption_0.1__Cve_dap",
-                "y": "task_dap_GU__f_absorption_0.1__KI__RTG",
+                "y": "task_dap_GU__f_absorption_0.1__KI__GLCEX",
                 "xerr": null,
                 "yerr": null,
                 "yaxis_position": null,
@@ -7982,9 +7443,9 @@
               },
               {
                 "sid": "Fig_GU__f_absorption_pd__plot4_curve1",
-                "name": "0.17",
+                "name": null,
                 "x": "task_dap_GU__f_absorption_0.16681005372000587__Cve_dap",
-                "y": "task_dap_GU__f_absorption_0.16681005372000587__KI__RTG",
+                "y": "task_dap_GU__f_absorption_0.16681005372000587__KI__GLCEX",
                 "xerr": null,
                 "yerr": null,
                 "yaxis_position": null,
@@ -8013,9 +7474,9 @@
               },
               {
                 "sid": "Fig_GU__f_absorption_pd__plot4_curve2",
-                "name": "0.28",
+                "name": null,
                 "x": "task_dap_GU__f_absorption_0.2782559402207124__Cve_dap",
-                "y": "task_dap_GU__f_absorption_0.2782559402207124__KI__RTG",
+                "y": "task_dap_GU__f_absorption_0.2782559402207124__KI__GLCEX",
                 "xerr": null,
                 "yerr": null,
                 "yaxis_position": null,
@@ -8044,9 +7505,9 @@
               },
               {
                 "sid": "Fig_GU__f_absorption_pd__plot4_curve3",
-                "name": "0.46",
+                "name": null,
                 "x": "task_dap_GU__f_absorption_0.46415888336127786__Cve_dap",
-                "y": "task_dap_GU__f_absorption_0.46415888336127786__KI__RTG",
+                "y": "task_dap_GU__f_absorption_0.46415888336127786__KI__GLCEX",
                 "xerr": null,
                 "yerr": null,
                 "yaxis_position": null,
@@ -8075,9 +7536,9 @@
               },
               {
                 "sid": "Fig_GU__f_absorption_pd__plot4_curve4",
-                "name": "0.77",
+                "name": null,
                 "x": "task_dap_GU__f_absorption_0.774263682681127__Cve_dap",
-                "y": "task_dap_GU__f_absorption_0.774263682681127__KI__RTG",
+                "y": "task_dap_GU__f_absorption_0.774263682681127__KI__GLCEX",
                 "xerr": null,
                 "yerr": null,
                 "yaxis_position": null,
@@ -8106,9 +7567,9 @@
               },
               {
                 "sid": "Fig_GU__f_absorption_pd__plot4_curve5",
-                "name": "1.00",
+                "name": null,
                 "x": "task_dap_GU__f_absorption_1.0__Cve_dap",
-                "y": "task_dap_GU__f_absorption_1.0__KI__RTG",
+                "y": "task_dap_GU__f_absorption_1.0__KI__GLCEX",
                 "xerr": null,
                 "yerr": null,
                 "yaxis_position": null,
@@ -8137,9 +7598,9 @@
               },
               {
                 "sid": "Fig_GU__f_absorption_pd__plot4_curve6",
-                "name": "1.29",
+                "name": null,
                 "x": "task_dap_GU__f_absorption_1.291549665014884__Cve_dap",
-                "y": "task_dap_GU__f_absorption_1.291549665014884__KI__RTG",
+                "y": "task_dap_GU__f_absorption_1.291549665014884__KI__GLCEX",
                 "xerr": null,
                 "yerr": null,
                 "yaxis_position": null,
@@ -8168,9 +7629,9 @@
               },
               {
                 "sid": "Fig_GU__f_absorption_pd__plot4_curve7",
-                "name": "2.15",
+                "name": null,
                 "x": "task_dap_GU__f_absorption_2.1544346900318834__Cve_dap",
-                "y": "task_dap_GU__f_absorption_2.1544346900318834__KI__RTG",
+                "y": "task_dap_GU__f_absorption_2.1544346900318834__KI__GLCEX",
                 "xerr": null,
                 "yerr": null,
                 "yaxis_position": null,
@@ -8199,9 +7660,9 @@
               },
               {
                 "sid": "Fig_GU__f_absorption_pd__plot4_curve8",
-                "name": "3.59",
+                "name": null,
                 "x": "task_dap_GU__f_absorption_3.593813663804626__Cve_dap",
-                "y": "task_dap_GU__f_absorption_3.593813663804626__KI__RTG",
+                "y": "task_dap_GU__f_absorption_3.593813663804626__KI__GLCEX",
                 "xerr": null,
                 "yerr": null,
                 "yaxis_position": null,
@@ -8230,9 +7691,9 @@
               },
               {
                 "sid": "Fig_GU__f_absorption_pd__plot4_curve9",
-                "name": "5.99",
+                "name": null,
                 "x": "task_dap_GU__f_absorption_5.994842503189409__Cve_dap",
-                "y": "task_dap_GU__f_absorption_5.994842503189409__KI__RTG",
+                "y": "task_dap_GU__f_absorption_5.994842503189409__KI__GLCEX",
                 "xerr": null,
                 "yerr": null,
                 "yaxis_position": null,
@@ -8261,9 +7722,9 @@
               },
               {
                 "sid": "Fig_GU__f_absorption_pd__plot4_curve10",
-                "name": "10.00",
+                "name": null,
                 "x": "task_dap_GU__f_absorption_10.0__Cve_dap",
-                "y": "task_dap_GU__f_absorption_10.0__KI__RTG",
+                "y": "task_dap_GU__f_absorption_10.0__KI__GLCEX",
                 "xerr": null,
                 "yerr": null,
                 "yaxis_position": null,
@@ -8306,8 +7767,8 @@
             "name": null,
             "xaxis": {
               "sid": "Fig_GU__f_absorption_pd__plot5_xaxis",
-              "name": "dapagliflozin plasma [\u00b5M]",
-              "label": "dapagliflozin plasma",
+              "name": "dapagliflozin\nplasma [\u00b5M]",
+              "label": "dapagliflozin\nplasma",
               "unit": "\u00b5M",
               "scale": "LINEAR",
               "min": null,
@@ -8335,7 +7796,7 @@
             "curves": [
               {
                 "sid": "Fig_GU__f_absorption_pd__plot5_curve0",
-                "name": "0.10",
+                "name": null,
                 "x": "task_dap_GU__f_absorption_0.1__Cve_dap",
                 "y": "task_dap_GU__f_absorption_0.1__KI__UGE",
                 "xerr": null,
@@ -8366,7 +7827,7 @@
               },
               {
                 "sid": "Fig_GU__f_absorption_pd__plot5_curve1",
-                "name": "0.17",
+                "name": null,
                 "x": "task_dap_GU__f_absorption_0.16681005372000587__Cve_dap",
                 "y": "task_dap_GU__f_absorption_0.16681005372000587__KI__UGE",
                 "xerr": null,
@@ -8397,7 +7858,7 @@
               },
               {
                 "sid": "Fig_GU__f_absorption_pd__plot5_curve2",
-                "name": "0.28",
+                "name": null,
                 "x": "task_dap_GU__f_absorption_0.2782559402207124__Cve_dap",
                 "y": "task_dap_GU__f_absorption_0.2782559402207124__KI__UGE",
                 "xerr": null,
@@ -8428,7 +7889,7 @@
               },
               {
                 "sid": "Fig_GU__f_absorption_pd__plot5_curve3",
-                "name": "0.46",
+                "name": null,
                 "x": "task_dap_GU__f_absorption_0.46415888336127786__Cve_dap",
                 "y": "task_dap_GU__f_absorption_0.46415888336127786__KI__UGE",
                 "xerr": null,
@@ -8459,7 +7920,7 @@
               },
               {
                 "sid": "Fig_GU__f_absorption_pd__plot5_curve4",
-                "name": "0.77",
+                "name": null,
                 "x": "task_dap_GU__f_absorption_0.774263682681127__Cve_dap",
                 "y": "task_dap_GU__f_absorption_0.774263682681127__KI__UGE",
                 "xerr": null,
@@ -8490,7 +7951,7 @@
               },
               {
                 "sid": "Fig_GU__f_absorption_pd__plot5_curve5",
-                "name": "1.00",
+                "name": null,
                 "x": "task_dap_GU__f_absorption_1.0__Cve_dap",
                 "y": "task_dap_GU__f_absorption_1.0__KI__UGE",
                 "xerr": null,
@@ -8521,7 +7982,7 @@
               },
               {
                 "sid": "Fig_GU__f_absorption_pd__plot5_curve6",
-                "name": "1.29",
+                "name": null,
                 "x": "task_dap_GU__f_absorption_1.291549665014884__Cve_dap",
                 "y": "task_dap_GU__f_absorption_1.291549665014884__KI__UGE",
                 "xerr": null,
@@ -8552,7 +8013,7 @@
               },
               {
                 "sid": "Fig_GU__f_absorption_pd__plot5_curve7",
-                "name": "2.15",
+                "name": null,
                 "x": "task_dap_GU__f_absorption_2.1544346900318834__Cve_dap",
                 "y": "task_dap_GU__f_absorption_2.1544346900318834__KI__UGE",
                 "xerr": null,
@@ -8583,7 +8044,7 @@
               },
               {
                 "sid": "Fig_GU__f_absorption_pd__plot5_curve8",
-                "name": "3.59",
+                "name": null,
                 "x": "task_dap_GU__f_absorption_3.593813663804626__Cve_dap",
                 "y": "task_dap_GU__f_absorption_3.593813663804626__KI__UGE",
                 "xerr": null,
@@ -8614,7 +8075,7 @@
               },
               {
                 "sid": "Fig_GU__f_absorption_pd__plot5_curve9",
-                "name": "5.99",
+                "name": null,
                 "x": "task_dap_GU__f_absorption_5.994842503189409__Cve_dap",
                 "y": "task_dap_GU__f_absorption_5.994842503189409__KI__UGE",
                 "xerr": null,
@@ -8645,7 +8106,7 @@
               },
               {
                 "sid": "Fig_GU__f_absorption_pd__plot5_curve10",
-                "name": "10.00",
+                "name": null,
                 "x": "task_dap_GU__f_absorption_10.0__Cve_dap",
                 "y": "task_dap_GU__f_absorption_10.0__KI__UGE",
                 "xerr": null,

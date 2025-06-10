@@ -34,54 +34,6 @@
           "end": 1500,
           "steps": 500,
           "changes": {
-            "ftissue_dap": {
-              "_magnitude": 0.010000059900567992,
-              "_units": "l_per_min"
-            },
-            "Kp_dap": {
-              "_magnitude": 31.042533719411505,
-              "_units": "dimensionless"
-            },
-            "LI__DAPIM_Vmax": {
-              "_magnitude": 237.86295115687793,
-              "_units": "LI__mmole_per_min_l"
-            },
-            "LI__DAP2D3G_Vmax": {
-              "_magnitude": 0.001006430350333675,
-              "_units": "LI__mmole_per_min_l"
-            },
-            "LI__D3GEX_Vmax": {
-              "_magnitude": 0.001000000002413061,
-              "_units": "LI__mmole_per_min_l"
-            },
-            "KI__DAPIM_Vmax": {
-              "_magnitude": 1.1617732990568852,
-              "_units": "KI__mmole_per_min_l"
-            },
-            "KI__DAP2D3G_Vmax": {
-              "_magnitude": 0.27222357579082207,
-              "_units": "KI__mmole_per_min_l"
-            },
-            "KI__D3GIM_Vmax": {
-              "_magnitude": 19.793547404872445,
-              "_units": "KI__mmole_per_min_l"
-            },
-            "KI__DAPEX_k": {
-              "_magnitude": 0.01720563003558135,
-              "_units": "KI__per_min"
-            },
-            "KI__D3GEX_k": {
-              "_magnitude": 0.3390785144688731,
-              "_units": "KI__per_min"
-            },
-            "GU__Ka_dis_dap": {
-              "_magnitude": 1.0200604498935186,
-              "_units": "GU__per_hr"
-            },
-            "GU__DAPABS_k": {
-              "_magnitude": 0.04858558323976285,
-              "_units": "GU__per_min"
-            },
             "BW": {
               "_magnitude": [
                 67.3
@@ -324,9 +276,9 @@
       "function": null,
       "variables": null
     },
-    "task_po_dap10__LI__f_ugt1a9": {
+    "task_po_dap10__f_ugt1a9": {
       "type": "TASK",
-      "index": "LI__f_ugt1a9",
+      "index": "f_ugt1a9",
       "unit": null,
       "task": "task_po_dap10",
       "dataset": null,
@@ -363,8 +315,8 @@
             },
             "yaxis": {
               "sid": "Fig2__plot0_yaxis",
-              "name": "dapagliflozin plasma [\u00b5M]",
-              "label": "dapagliflozin plasma",
+              "name": "dapagliflozin\nplasma [\u00b5M]",
+              "label": "dapagliflozin\nplasma",
               "unit": "\u00b5M",
               "scale": "LINEAR",
               "min": null,

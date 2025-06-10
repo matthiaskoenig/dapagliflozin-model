@@ -16,27 +16,23 @@ dap: dapagliflozin
 d3g: 3-0-glucuronide (~66%) [Callegari2021]
 d2g: 2-0-glucuronide (~6%) [Callegari2021]
 dox: oxid (~10%) [Callegari2021]</p>
+        <p>The content of this model has been carefully created in a manual research effort.</p>
         <h2>Terms of use</h2>
-        <p>The content of this model has been carefully created in a manual research effort.
-This file has been created by <a href="https://livermetabolism.com">Matthias König</a>
-using <a href="https://github.com/matthiaskoenig/sbmlutils">sbmlutils</a>.
-For questions contact <a href="mailto:koenigmx@hu-berlin.de">koenigmx@hu-berlin.de</a>. Copyright © 2025 Matthias König.</p>
+        <p>Copyright © 2025 <a href="https://livermetabolism.com" title="Matthias König" target="_blank">Matthias König</a>.</p>
         <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">
           <img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by/4.0/88x31.png"/>
         </a>
         <br/>This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.
-<p>Redistribution and use of any part of this model, with or without modification,
-are permitted provided that the following conditions are met:</p>
-        <ol>
-          <li>Redistributions of this SBML file must retain the above copyright notice, this
-list of conditions and the following disclaimer.</li>
-          <li>Redistributions in a different form must reproduce the above copyright notice,
-this list of conditions and the following disclaimer in the documentation and/or
-other materials provided with the distribution.</li>
-        </ol>
-        <p>This model is distributed in the hope that it will be useful, but WITHOUT ANY
-WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
-FOR A PARTICULAR PURPOSE.</p></body>
+<p>Redistribution and use of any part of this model, with or without modification, are permitted provided
+that the following conditions are met:</p>
+        <ul>
+          <li>Redistributions of this SBML file must retain the above copyright notice, this list of conditions and the following disclaimer.</li>
+          <li>Redistributions in a different form must reproduce the above copyright notice, this list of conditions
+and the following disclaimer in the documentation and/or other materials provided
+with the distribution.</li>
+        </ul>
+        <p>This model is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the
+implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.</p></body>
       </notes>
     <annotation>
       <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:vCard="http://www.w3.org/2001/vcard-rdf/3.0#" xmlns:vCard4="http://www.w3.org/2006/vcard/ns#" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/" xmlns:bqmodel="http://biomodels.net/model-qualifiers/">
@@ -2056,6 +2052,57 @@ with FQgu=0.146, FQsp=0.017, FQpa=0.017</p>
           </rdf:RDF>
         </annotation>
       </parameter>
+      <parameter metaid="meta_DAP2D3G_Vmax" sboTerm="SBO:0000186" id="DAP2D3G_Vmax" name="Vmax dapagliflozin conversion" value="0.019920054768051" units="mmole_per_min_l" constant="true">
+        <annotation>
+          <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:vCard="http://www.w3.org/2001/vcard-rdf/3.0#" xmlns:vCard4="http://www.w3.org/2006/vcard/ns#" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/" xmlns:bqmodel="http://biomodels.net/model-qualifiers/">
+            <rdf:Description rdf:about="#meta_DAP2D3G_Vmax">
+              <bqbiol:is>
+                <rdf:Bag>
+                  <rdf:li rdf:resource="http://identifiers.org/SBO:0000186"/>
+                </rdf:Bag>
+              </bqbiol:is>
+            </rdf:Description>
+          </rdf:RDF>
+        </annotation>
+      </parameter>
+      <parameter metaid="meta_DAP2D3G_Km_dap" sboTerm="SBO:0000027" id="DAP2D3G_Km_dap" name="Km dapagliflozin UGT1A9" value="0.479" units="mM" constant="true">
+        <notes>
+          <body xmlns="http://www.w3.org/1999/xhtml">
+            <p>Km apparent in kidney microsomes for dapagliflozin; 479 µM [Kasichaynula2013]
+Ki for UGT1A9 with other substrates 12-15 µM [Obermeier2010a].</p>
+          </body>
+        </notes>
+        <annotation>
+          <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:vCard="http://www.w3.org/2001/vcard-rdf/3.0#" xmlns:vCard4="http://www.w3.org/2006/vcard/ns#" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/" xmlns:bqmodel="http://biomodels.net/model-qualifiers/">
+            <rdf:Description rdf:about="#meta_DAP2D3G_Km_dap">
+              <bqbiol:is>
+                <rdf:Bag>
+                  <rdf:li rdf:resource="http://identifiers.org/SBO:0000027"/>
+                </rdf:Bag>
+              </bqbiol:is>
+            </rdf:Description>
+          </rdf:RDF>
+        </annotation>
+      </parameter>
+      <parameter metaid="meta_f_ugt1a9" sboTerm="SBO:0000002" id="f_ugt1a9" name="scaling factor UGT1A9 activity" value="1" units="dimensionless" constant="true">
+        <notes>
+          <body xmlns="http://www.w3.org/1999/xhtml">
+            <p>Scaling factor to vary UGT1A9 activity.
+1.0: unchanged activity; &lt; 1.0 decreased activity; &gt;1.0 increased activity.</p>
+          </body>
+        </notes>
+        <annotation>
+          <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:vCard="http://www.w3.org/2001/vcard-rdf/3.0#" xmlns:vCard4="http://www.w3.org/2006/vcard/ns#" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/" xmlns:bqmodel="http://biomodels.net/model-qualifiers/">
+            <rdf:Description rdf:about="#meta_f_ugt1a9">
+              <bqbiol:is>
+                <rdf:Bag>
+                  <rdf:li rdf:resource="http://identifiers.org/SBO:0000002"/>
+                </rdf:Bag>
+              </bqbiol:is>
+            </rdf:Description>
+          </rdf:RDF>
+        </annotation>
+      </parameter>
       <parameter metaid="meta_PODOSE_dap" sboTerm="SBO:0000002" id="PODOSE_dap" name="oral dose dap [mg]" value="0" units="mg" constant="false">
         <annotation>
           <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:vCard="http://www.w3.org/2001/vcard-rdf/3.0#" xmlns:vCard4="http://www.w3.org/2006/vcard/ns#" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/" xmlns:bqmodel="http://biomodels.net/model-qualifiers/">
@@ -2082,7 +2129,7 @@ with FQgu=0.146, FQsp=0.017, FQpa=0.017</p>
           </rdf:RDF>
         </annotation>
       </parameter>
-      <parameter metaid="meta_ftissue_dap" sboTerm="SBO:0000002" id="ftissue_dap" name="tissue distribution dap" value="1" units="l_per_min" constant="true">
+      <parameter metaid="meta_ftissue_dap" sboTerm="SBO:0000002" id="ftissue_dap" name="tissue distribution dap" value="0.0100001227476663" units="l_per_min" constant="true">
         <annotation>
           <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:vCard="http://www.w3.org/2001/vcard-rdf/3.0#" xmlns:vCard4="http://www.w3.org/2006/vcard/ns#" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/" xmlns:bqmodel="http://biomodels.net/model-qualifiers/">
             <rdf:Description rdf:about="#meta_ftissue_dap">
@@ -2095,7 +2142,7 @@ with FQgu=0.146, FQsp=0.017, FQpa=0.017</p>
           </rdf:RDF>
         </annotation>
       </parameter>
-      <parameter metaid="meta_Kp_dap" sboTerm="SBO:0000002" id="Kp_dap" name="tissue/plasma partition coefficient dap" value="10" units="dimensionless" constant="true">
+      <parameter metaid="meta_Kp_dap" sboTerm="SBO:0000002" id="Kp_dap" name="tissue/plasma partition coefficient dap" value="25.517380513186" units="dimensionless" constant="true">
         <annotation>
           <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:vCard="http://www.w3.org/2001/vcard-rdf/3.0#" xmlns:vCard4="http://www.w3.org/2006/vcard/ns#" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/" xmlns:bqmodel="http://biomodels.net/model-qualifiers/">
             <rdf:Description rdf:about="#meta_Kp_dap">
@@ -2180,9 +2227,6 @@ with FQgu=0.146, FQsp=0.017, FQpa=0.017</p>
       <parameter id="Qlu" name="lung blood flow" value="NaN" units="l_per_min" constant="false"/>
       <parameter id="Qre" name="rest of body blood flow" value="NaN" units="l_per_min" constant="false"/>
       <parameter id="Qpo" name="portal blood flow" value="NaN" units="l_per_min" constant="false"/>
-      <parameter id="Xurine_dap" name="dapagliflozin amount (urine) [mg]" value="NaN" units="mg" constant="false"/>
-      <parameter id="Xfeces_dap" name="dapagliflozin amount (feces)" value="NaN" units="mg" constant="false"/>
-      <parameter id="Xurine_d3g" name="dapagliflozin-3-o-glucuronide amount (urine) [mg]" value="NaN" units="mg" constant="false"/>
       <parameter metaid="KI__meta_f_renal_function" sboTerm="SBO:0000009" id="KI__f_renal_function" name="parameter for renal function" value="1" units="dimensionless" constant="true">
         <notes>
           <body xmlns="http://www.w3.org/1999/xhtml">
@@ -2217,10 +2261,11 @@ with FQgu=0.146, FQsp=0.017, FQpa=0.017</p>
       </parameter>
       <parameter id="KI__cf_mg_per_g" name="Conversion factor mg per g" value="1000" units="KI__mg_per_g" constant="true"/>
       <parameter id="KI__cf_ml_per_l" name="Conversion factor ml per l" value="1000" units="KI__ml_per_l" constant="true"/>
-      <parameter metaid="KI__meta_RTG_E50" sboTerm="SBO:0000009" id="KI__RTG_E50" name="EC50 reduction in RTG" value="2.5e-06" units="KI__mM" constant="true">
+      <parameter metaid="KI__meta_RTG_E50" sboTerm="SBO:0000009" id="KI__RTG_E50" name="EC50 reduction in RTG" value="3.94143334248692e-06" units="KI__mM" constant="true">
         <notes>
           <body xmlns="http://www.w3.org/1999/xhtml">
-            <p>~10 ng/ml graphical estimate for low doses [Komoroski2009]</p>
+            <p>~10 ng/ml graphical estimate for low doses [Komoroski2009]
+Half-maximal pharmacodynamic effect of dapagliflozin.</p>
           </body>
         </notes>
         <annotation>
@@ -2236,6 +2281,11 @@ with FQgu=0.146, FQsp=0.017, FQpa=0.017</p>
         </annotation>
       </parameter>
       <parameter metaid="KI__meta_RTG_gamma" sboTerm="SBO:0000009" id="KI__RTG_gamma" name="hill coefficient reduction in RTG" value="1" units="dimensionless" constant="true">
+        <notes>
+          <body xmlns="http://www.w3.org/1999/xhtml">
+            <p>gamma effect of dapagliflozin pharmacodynamics.</p>
+          </body>
+        </notes>
         <annotation>
           <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:vCard="http://www.w3.org/2001/vcard-rdf/3.0#" xmlns:vCard4="http://www.w3.org/2006/vcard/ns#" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/" xmlns:bqmodel="http://biomodels.net/model-qualifiers/">
             <rdf:Description rdf:about="#KI__meta_RTG_gamma">
@@ -2248,22 +2298,37 @@ with FQgu=0.146, FQsp=0.017, FQpa=0.017</p>
           </rdf:RDF>
         </annotation>
       </parameter>
-      <parameter id="KI__RTG_base" name="Baseline RTG value" value="12.5" units="KI__mM" constant="true">
+      <parameter id="KI__RTG_base" name="Baseline RTG value" value="9.52769511932563" units="KI__mM" constant="true">
         <notes>
           <body xmlns="http://www.w3.org/1999/xhtml">
             <p>typical RTG value without SGLT2 inhibitors in healthy subjects</p>
           </body>
         </notes>
       </parameter>
-      <parameter id="KI__RTG_delta" name="RTG value" value="9" units="KI__mM" constant="true">
+      <parameter id="KI__RTG_delta" name="RTG value" value="7.00723104886094" units="KI__mM" constant="true">
         <notes>
           <body xmlns="http://www.w3.org/1999/xhtml">
             <p>ΔRTG, maximum reduction in RTG due to SGLT2 inhibition</p>
           </body>
         </notes>
       </parameter>
+      <parameter id="KI__RTG_m_fpg" name="FPG effect on RTG" value="0.574528530932429" units="dimensionless" constant="true">
+        <notes>
+          <body xmlns="http://www.w3.org/1999/xhtml">
+            <p>Effect of the FPG on the change in RTG_base.</p>
+          </body>
+        </notes>
+      </parameter>
+      <parameter id="KI__RTG_max_inhibition" name="RTG maximum inhibition" value="0.480598148785809" units="dimensionless" constant="true">
+        <notes>
+          <body xmlns="http://www.w3.org/1999/xhtml">
+            <p>maximum inhibition of RTG via SGLT2</p>
+          </body>
+        </notes>
+      </parameter>
+      <parameter id="KI__fpg_healthy" name="fasting plasma glucose (healthy)" value="5" units="KI__mM" constant="true"/>
       <parameter id="KI__GFR_healthy" name="Glomerular filtration rate (healthy)" value="100" units="KI__ml_per_min" constant="true"/>
-      <parameter metaid="KI__meta_DAPIM_Vmax" sboTerm="SBO:0000186" id="KI__DAPIM_Vmax" name="Vmax dapagliflozin import" value="1000" units="KI__mmole_per_min_l" constant="true">
+      <parameter metaid="KI__meta_DAPIM_Vmax" sboTerm="SBO:0000186" id="KI__DAPIM_Vmax" name="Vmax dapagliflozin import" value="10" units="KI__mmole_per_min_l" constant="true">
         <annotation>
           <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:vCard="http://www.w3.org/2001/vcard-rdf/3.0#" xmlns:vCard4="http://www.w3.org/2006/vcard/ns#" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/" xmlns:bqmodel="http://biomodels.net/model-qualifiers/">
             <rdf:Description rdf:about="#KI__meta_DAPIM_Vmax">
@@ -2294,7 +2359,7 @@ with FQgu=0.146, FQsp=0.017, FQpa=0.017</p>
           </rdf:RDF>
         </annotation>
       </parameter>
-      <parameter metaid="KI__meta_D3GIM_Vmax" sboTerm="SBO:0000186" id="KI__D3GIM_Vmax" name="Vmax dapagliflozin-3-O-glucuronide import" value="1000" units="KI__mmole_per_min_l" constant="true">
+      <parameter metaid="KI__meta_D3GIM_Vmax" sboTerm="SBO:0000186" id="KI__D3GIM_Vmax" name="Vmax dapagliflozin-3-O-glucuronide import" value="10" units="KI__mmole_per_min_l" constant="true">
         <annotation>
           <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:vCard="http://www.w3.org/2001/vcard-rdf/3.0#" xmlns:vCard4="http://www.w3.org/2006/vcard/ns#" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/" xmlns:bqmodel="http://biomodels.net/model-qualifiers/">
             <rdf:Description rdf:about="#KI__meta_D3GIM_Vmax">
@@ -2325,48 +2390,16 @@ with FQgu=0.146, FQsp=0.017, FQpa=0.017</p>
           </rdf:RDF>
         </annotation>
       </parameter>
-      <parameter metaid="KI__meta_DAP2D3G_Vmax" sboTerm="SBO:0000186" id="KI__DAP2D3G_Vmax" name="Vmax dapagliflozin conversion" value="0.04" units="KI__mmole_per_min_l" constant="true">
-        <annotation>
-          <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:vCard="http://www.w3.org/2001/vcard-rdf/3.0#" xmlns:vCard4="http://www.w3.org/2006/vcard/ns#" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/" xmlns:bqmodel="http://biomodels.net/model-qualifiers/">
-            <rdf:Description rdf:about="#KI__meta_DAP2D3G_Vmax">
-              <bqbiol:is>
-                <rdf:Bag>
-                  <rdf:li rdf:resource="http://identifiers.org/SBO:0000186"/>
-                </rdf:Bag>
-              </bqbiol:is>
-            </rdf:Description>
-          </rdf:RDF>
-        </annotation>
-      </parameter>
-      <parameter metaid="KI__meta_DAP2D3G_Km_dap" sboTerm="SBO:0000027" id="KI__DAP2D3G_Km_dap" name="Km dapagliflozin UGT1A9" value="0.479" units="KI__mM" constant="true">
+      <parameter metaid="KI__meta_f_DAP2D3G" sboTerm="SBO:0000002" id="KI__f_DAP2D3G" name="scaling factor relative to liver activity" value="9.99999045140128" units="dimensionless" constant="true">
         <notes>
           <body xmlns="http://www.w3.org/1999/xhtml">
-            <p>Km apparent in kidney microsomes for dapagliflozin; 479 µM [Kasichaynula2013]
-Ki for UGT1A9 with other substrates 12-15 µM [Obermeier2010a].</p>
+            <p>Scaling factor relative to liver activity.
+1.0: equal activity to liver; &lt; 1.0 decreased activity; &gt;1.0 increased activity.</p>
           </body>
         </notes>
         <annotation>
           <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:vCard="http://www.w3.org/2001/vcard-rdf/3.0#" xmlns:vCard4="http://www.w3.org/2006/vcard/ns#" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/" xmlns:bqmodel="http://biomodels.net/model-qualifiers/">
-            <rdf:Description rdf:about="#KI__meta_DAP2D3G_Km_dap">
-              <bqbiol:is>
-                <rdf:Bag>
-                  <rdf:li rdf:resource="http://identifiers.org/SBO:0000027"/>
-                </rdf:Bag>
-              </bqbiol:is>
-            </rdf:Description>
-          </rdf:RDF>
-        </annotation>
-      </parameter>
-      <parameter metaid="KI__meta_f_ugt1a9" sboTerm="SBO:0000002" id="KI__f_ugt1a9" name="scaling factor UGT1A9 activity" value="1" units="dimensionless" constant="true">
-        <notes>
-          <body xmlns="http://www.w3.org/1999/xhtml">
-            <p>Scaling factor to vary UGT1A9 activity.
-1.0: unchanged activity; &lt; 1.0 decreased activity; &gt;1.0 increased activity.</p>
-          </body>
-        </notes>
-        <annotation>
-          <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:vCard="http://www.w3.org/2001/vcard-rdf/3.0#" xmlns:vCard4="http://www.w3.org/2006/vcard/ns#" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/" xmlns:bqmodel="http://biomodels.net/model-qualifiers/">
-            <rdf:Description rdf:about="#KI__meta_f_ugt1a9">
+            <rdf:Description rdf:about="#KI__meta_f_DAP2D3G">
               <bqbiol:is>
                 <rdf:Bag>
                   <rdf:li rdf:resource="http://identifiers.org/SBO:0000002"/>
@@ -2376,7 +2409,7 @@ Ki for UGT1A9 with other substrates 12-15 µM [Obermeier2010a].</p>
           </rdf:RDF>
         </annotation>
       </parameter>
-      <parameter metaid="KI__meta_D3GEX_k" sboTerm="SBO:0000009" id="KI__D3GEX_k" name="rate urinary excretion of dapagliflozin-3-o-glucuronide" value="1" units="KI__per_min" constant="true">
+      <parameter metaid="KI__meta_D3GEX_k" sboTerm="SBO:0000009" id="KI__D3GEX_k" name="rate urinary excretion of dapagliflozin-3-o-glucuronide" value="0.450356180744184" units="KI__per_min" constant="true">
         <annotation>
           <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:vCard="http://www.w3.org/2001/vcard-rdf/3.0#" xmlns:vCard4="http://www.w3.org/2006/vcard/ns#" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/" xmlns:bqmodel="http://biomodels.net/model-qualifiers/">
             <rdf:Description rdf:about="#KI__meta_D3GEX_k">
@@ -2389,7 +2422,7 @@ Ki for UGT1A9 with other substrates 12-15 µM [Obermeier2010a].</p>
           </rdf:RDF>
         </annotation>
       </parameter>
-      <parameter metaid="KI__meta_DAPEX_k" sboTerm="SBO:0000009" id="KI__DAPEX_k" name="rate urinary excretion of dapagliflozin" value="1" units="KI__per_min" constant="true">
+      <parameter metaid="KI__meta_DAPEX_k" sboTerm="SBO:0000009" id="KI__DAPEX_k" name="rate urinary excretion of dapagliflozin" value="0.0181517912484487" units="KI__per_min" constant="true">
         <annotation>
           <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:vCard="http://www.w3.org/2001/vcard-rdf/3.0#" xmlns:vCard4="http://www.w3.org/2006/vcard/ns#" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/" xmlns:bqmodel="http://biomodels.net/model-qualifiers/">
             <rdf:Description rdf:about="#KI__meta_DAPEX_k">
@@ -2402,10 +2435,11 @@ Ki for UGT1A9 with other substrates 12-15 µM [Obermeier2010a].</p>
           </rdf:RDF>
         </annotation>
       </parameter>
+      <parameter id="KI__RTG_fpg" name="RTG value (FPG)" value="NaN" units="KI__mM" constant="false"/>
       <parameter id="KI__RTG" name="renal threshold glucose (RTG)" value="NaN" units="KI__mM" constant="false"/>
       <parameter id="KI__GFR" name="glomerular filtration rate" value="NaN" units="KI__ml_per_min" constant="false"/>
       <parameter id="KI__UGE" name="urinary glucose excretion (UGE)" value="NaN" units="gram" constant="false"/>
-      <parameter metaid="LI__meta_DAPIM_Vmax" sboTerm="SBO:0000186" id="LI__DAPIM_Vmax" name="Vmax dapagliflozin import" value="1000" units="LI__mmole_per_min_l" constant="true">
+      <parameter metaid="LI__meta_DAPIM_Vmax" sboTerm="SBO:0000186" id="LI__DAPIM_Vmax" name="Vmax dapagliflozin import" value="10" units="LI__mmole_per_min_l" constant="true">
         <annotation>
           <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:vCard="http://www.w3.org/2001/vcard-rdf/3.0#" xmlns:vCard4="http://www.w3.org/2006/vcard/ns#" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/" xmlns:bqmodel="http://biomodels.net/model-qualifiers/">
             <rdf:Description rdf:about="#LI__meta_DAPIM_Vmax">
@@ -2436,58 +2470,7 @@ Ki for UGT1A9 with other substrates 12-15 µM [Obermeier2010a].</p>
           </rdf:RDF>
         </annotation>
       </parameter>
-      <parameter metaid="LI__meta_DAP2D3G_Vmax" sboTerm="SBO:0000186" id="LI__DAP2D3G_Vmax" name="Vmax dapagliflozin conversion" value="0.04" units="LI__mmole_per_min_l" constant="true">
-        <annotation>
-          <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:vCard="http://www.w3.org/2001/vcard-rdf/3.0#" xmlns:vCard4="http://www.w3.org/2006/vcard/ns#" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/" xmlns:bqmodel="http://biomodels.net/model-qualifiers/">
-            <rdf:Description rdf:about="#LI__meta_DAP2D3G_Vmax">
-              <bqbiol:is>
-                <rdf:Bag>
-                  <rdf:li rdf:resource="http://identifiers.org/SBO:0000186"/>
-                </rdf:Bag>
-              </bqbiol:is>
-            </rdf:Description>
-          </rdf:RDF>
-        </annotation>
-      </parameter>
-      <parameter metaid="LI__meta_DAP2D3G_Km_dap" sboTerm="SBO:0000027" id="LI__DAP2D3G_Km_dap" name="Km dapagliflozin UGT1A9" value="0.479" units="LI__mM" constant="true">
-        <notes>
-          <body xmlns="http://www.w3.org/1999/xhtml">
-            <p>Km apparent in kidney microsomes for dapagliflozin; 479 µM [Kasichaynula2013]
-Ki for UGT1A9 with other substrates 12-15 µM [Obermeier2010a].</p>
-          </body>
-        </notes>
-        <annotation>
-          <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:vCard="http://www.w3.org/2001/vcard-rdf/3.0#" xmlns:vCard4="http://www.w3.org/2006/vcard/ns#" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/" xmlns:bqmodel="http://biomodels.net/model-qualifiers/">
-            <rdf:Description rdf:about="#LI__meta_DAP2D3G_Km_dap">
-              <bqbiol:is>
-                <rdf:Bag>
-                  <rdf:li rdf:resource="http://identifiers.org/SBO:0000027"/>
-                </rdf:Bag>
-              </bqbiol:is>
-            </rdf:Description>
-          </rdf:RDF>
-        </annotation>
-      </parameter>
-      <parameter metaid="LI__meta_f_ugt1a9" sboTerm="SBO:0000002" id="LI__f_ugt1a9" name="scaling factor UGT1A9 activity" value="1" units="dimensionless" constant="true">
-        <notes>
-          <body xmlns="http://www.w3.org/1999/xhtml">
-            <p>Scaling factor to vary UGT1A9 activity.
-1.0: unchanged activity; &lt; 1.0 decreased activity; &gt;1.0 increased activity.</p>
-          </body>
-        </notes>
-        <annotation>
-          <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:vCard="http://www.w3.org/2001/vcard-rdf/3.0#" xmlns:vCard4="http://www.w3.org/2006/vcard/ns#" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/" xmlns:bqmodel="http://biomodels.net/model-qualifiers/">
-            <rdf:Description rdf:about="#LI__meta_f_ugt1a9">
-              <bqbiol:is>
-                <rdf:Bag>
-                  <rdf:li rdf:resource="http://identifiers.org/SBO:0000002"/>
-                </rdf:Bag>
-              </bqbiol:is>
-            </rdf:Description>
-          </rdf:RDF>
-        </annotation>
-      </parameter>
-      <parameter metaid="LI__meta_D3GEX_Vmax" sboTerm="SBO:0000186" id="LI__D3GEX_Vmax" name="Vmax dapagliflozinat export" value="1000" units="LI__mmole_per_min_l" constant="true">
+      <parameter metaid="LI__meta_D3GEX_Vmax" sboTerm="SBO:0000186" id="LI__D3GEX_Vmax" name="Vmax dapagliflozinat export" value="10" units="LI__mmole_per_min_l" constant="true">
         <annotation>
           <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:vCard="http://www.w3.org/2001/vcard-rdf/3.0#" xmlns:vCard4="http://www.w3.org/2006/vcard/ns#" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/" xmlns:bqmodel="http://biomodels.net/model-qualifiers/">
             <rdf:Description rdf:about="#LI__meta_D3GEX_Vmax">
@@ -2540,7 +2523,7 @@ is absorbed. This parameter determines how much of the dapagliflozin is excreted
           </rdf:RDF>
         </annotation>
       </parameter>
-      <parameter metaid="GU__meta_DAPABS_k" sboTerm="SBO:0000009" id="GU__DAPABS_k" name="rate of dapagliflozin absorption" value="0.1" units="GU__per_min" constant="true">
+      <parameter metaid="GU__meta_DAPABS_k" sboTerm="SBO:0000009" id="GU__DAPABS_k" name="rate of dapagliflozin absorption" value="0.0594648244956005" units="GU__per_min" constant="true">
         <annotation>
           <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:vCard="http://www.w3.org/2001/vcard-rdf/3.0#" xmlns:vCard4="http://www.w3.org/2006/vcard/ns#" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/" xmlns:bqmodel="http://biomodels.net/model-qualifiers/">
             <rdf:Description rdf:about="#GU__meta_DAPABS_k">
@@ -2575,7 +2558,7 @@ is absorbed. This parameter determines how much of the dapagliflozin is excreted
           </rdf:RDF>
         </annotation>
       </parameter>
-      <parameter metaid="GU__meta_Ka_dis_dap" sboTerm="SBO:0000002" id="GU__Ka_dis_dap" name="Ka_dis [1/hr] dissolution dapagliflozin" value="2" units="GU__per_hr" constant="true">
+      <parameter metaid="GU__meta_Ka_dis_dap" sboTerm="SBO:0000002" id="GU__Ka_dis_dap" name="Ka_dis [1/hr] dissolution dapagliflozin" value="0.848420141441488" units="GU__per_hr" constant="true">
         <annotation>
           <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:vCard="http://www.w3.org/2001/vcard-rdf/3.0#" xmlns:vCard4="http://www.w3.org/2006/vcard/ns#" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/" xmlns:bqmodel="http://biomodels.net/model-qualifiers/">
             <rdf:Description rdf:about="#GU__meta_Ka_dis_dap">
@@ -3159,33 +3142,6 @@ injection rate.</p>
           </apply>
         </math>
       </assignmentRule>
-      <assignmentRule name="dapagliflozin amount (urine) [mg]" variable="Xurine_dap">
-        <math xmlns="http://www.w3.org/1998/Math/MathML">
-          <apply>
-            <times/>
-            <ci> Aurine_dap </ci>
-            <ci> Mr_dap </ci>
-          </apply>
-        </math>
-      </assignmentRule>
-      <assignmentRule name="dapagliflozin amount (feces)" variable="Xfeces_dap">
-        <math xmlns="http://www.w3.org/1998/Math/MathML">
-          <apply>
-            <times/>
-            <ci> Afeces_dap </ci>
-            <ci> Mr_dap </ci>
-          </apply>
-        </math>
-      </assignmentRule>
-      <assignmentRule name="dapagliflozin-3-o-glucuronide amount (urine) [mg]" variable="Xurine_d3g">
-        <math xmlns="http://www.w3.org/1998/Math/MathML">
-          <apply>
-            <times/>
-            <ci> Aurine_d3g </ci>
-            <ci> Mr_d3g </ci>
-          </apply>
-        </math>
-      </assignmentRule>
       <rateRule variable="IVDOSE_dap">
         <math xmlns="http://www.w3.org/1998/Math/MathML">
           <apply>
@@ -3202,6 +3158,28 @@ injection rate.</p>
           </apply>
         </math>
       </rateRule>
+      <assignmentRule name="RTG value (FPG)" variable="KI__RTG_fpg">
+        <notes>
+          <body xmlns="http://www.w3.org/1999/xhtml">
+            <p>FPG dependent base RTG value. SGLT2 is induced in T2DM [Rahmoune2005]</p>
+          </body>
+        </notes>
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+          <apply>
+            <plus/>
+            <ci> KI__RTG_base </ci>
+            <apply>
+              <times/>
+              <ci> KI__RTG_m_fpg </ci>
+              <apply>
+                <minus/>
+                <ci> KI__glc_ext </ci>
+                <ci> KI__fpg_healthy </ci>
+              </apply>
+            </apply>
+          </apply>
+        </math>
+      </assignmentRule>
       <assignmentRule name="renal threshold glucose (RTG)" variable="KI__RTG">
         <notes>
           <body xmlns="http://www.w3.org/1999/xhtml">
@@ -3215,7 +3193,7 @@ to the glucose concentration above this threshold.
         <math xmlns="http://www.w3.org/1998/Math/MathML">
           <apply>
             <minus/>
-            <ci> KI__RTG_base </ci>
+            <ci> KI__RTG_fpg </ci>
             <apply>
               <divide/>
               <apply>
@@ -4250,7 +4228,11 @@ to the glucose concentration above this threshold.
                 <times/>
                 <apply>
                   <divide/>
-                  <ci> KI__DAPIM_Vmax </ci>
+                  <apply>
+                    <times/>
+                    <ci> KI__f_renal_function </ci>
+                    <ci> KI__DAPIM_Vmax </ci>
+                  </apply>
                   <ci> KI__DAPIM_Km_dap </ci>
                 </apply>
                 <ci> Vki_tissue </ci>
@@ -4304,7 +4286,11 @@ to the glucose concentration above this threshold.
                 <times/>
                 <apply>
                   <divide/>
-                  <ci> KI__D3GIM_Vmax </ci>
+                  <apply>
+                    <times/>
+                    <ci> KI__f_renal_function </ci>
+                    <ci> KI__D3GIM_Vmax </ci>
+                  </apply>
                   <ci> KI__D3GIM_Km_d3g </ci>
                 </apply>
                 <ci> Vki_tissue </ci>
@@ -4356,15 +4342,17 @@ to the glucose concentration above this threshold.
               <divide/>
               <apply>
                 <times/>
-                <ci> KI__f_ugt1a9 </ci>
-                <ci> KI__DAP2D3G_Vmax </ci>
+                <ci> KI__f_renal_function </ci>
+                <ci> f_ugt1a9 </ci>
+                <ci> KI__f_DAP2D3G </ci>
+                <ci> DAP2D3G_Vmax </ci>
                 <ci> Vki_tissue </ci>
                 <ci> KI__dap </ci>
               </apply>
               <apply>
                 <plus/>
                 <ci> KI__dap </ci>
-                <ci> KI__DAP2D3G_Km_dap </ci>
+                <ci> DAP2D3G_Km_dap </ci>
               </apply>
             </apply>
           </math>
@@ -4564,15 +4552,15 @@ to the glucose concentration above this threshold.
               <divide/>
               <apply>
                 <times/>
-                <ci> LI__f_ugt1a9 </ci>
-                <ci> LI__DAP2D3G_Vmax </ci>
+                <ci> f_ugt1a9 </ci>
+                <ci> DAP2D3G_Vmax </ci>
                 <ci> Vli_tissue </ci>
                 <ci> LI__dap </ci>
               </apply>
               <apply>
                 <plus/>
                 <ci> LI__dap </ci>
-                <ci> LI__DAP2D3G_Km_dap </ci>
+                <ci> DAP2D3G_Km_dap </ci>
               </apply>
             </apply>
           </math>

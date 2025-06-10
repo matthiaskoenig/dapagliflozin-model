@@ -227,10 +227,10 @@ class FDAMB102002(DapagliflozinSimulationExperiment):
                         count="count",
                     ),
                     observable=FitData(
-                        self, task=f"task_po_MAD{dose}", xid="time", yid=f"[Cve_dap]",
+                        self, task=f"task_po_MAD{dose}", xid="time", yid=sid,
                     ),
                     metadata=DapagliflozinMappingMetaData(
-                        tissue=Tissue.PLASMA,
+                        tissue=Tissue.URINE if "UGE" in sid else Tissue.PLASMA,
                         route=Route.PO,
                         application_form=ApplicationForm.TABLET,
                         dosing=Dosing.MULTIPLE,

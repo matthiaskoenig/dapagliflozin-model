@@ -114,54 +114,6 @@
           "end": 1500,
           "steps": 500,
           "changes": {
-            "ftissue_dap": {
-              "_magnitude": 0.010000059900567992,
-              "_units": "l_per_min"
-            },
-            "Kp_dap": {
-              "_magnitude": 31.042533719411505,
-              "_units": "dimensionless"
-            },
-            "LI__DAPIM_Vmax": {
-              "_magnitude": 237.86295115687793,
-              "_units": "LI__mmole_per_min_l"
-            },
-            "LI__DAP2D3G_Vmax": {
-              "_magnitude": 0.001006430350333675,
-              "_units": "LI__mmole_per_min_l"
-            },
-            "LI__D3GEX_Vmax": {
-              "_magnitude": 0.001000000002413061,
-              "_units": "LI__mmole_per_min_l"
-            },
-            "KI__DAPIM_Vmax": {
-              "_magnitude": 1.1617732990568852,
-              "_units": "KI__mmole_per_min_l"
-            },
-            "KI__DAP2D3G_Vmax": {
-              "_magnitude": 0.27222357579082207,
-              "_units": "KI__mmole_per_min_l"
-            },
-            "KI__D3GIM_Vmax": {
-              "_magnitude": 19.793547404872445,
-              "_units": "KI__mmole_per_min_l"
-            },
-            "KI__DAPEX_k": {
-              "_magnitude": 0.01720563003558135,
-              "_units": "KI__per_min"
-            },
-            "KI__D3GEX_k": {
-              "_magnitude": 0.3390785144688731,
-              "_units": "KI__per_min"
-            },
-            "GU__Ka_dis_dap": {
-              "_magnitude": 1.0200604498935186,
-              "_units": "GU__per_hr"
-            },
-            "GU__DAPABS_k": {
-              "_magnitude": 0.04858558323976285,
-              "_units": "GU__per_min"
-            },
             "BW": {
               "_magnitude": 79.0,
               "_units": "kilogram"
@@ -204,54 +156,6 @@
           "end": 1500,
           "steps": 500,
           "changes": {
-            "ftissue_dap": {
-              "_magnitude": 0.010000059900567992,
-              "_units": "l_per_min"
-            },
-            "Kp_dap": {
-              "_magnitude": 31.042533719411505,
-              "_units": "dimensionless"
-            },
-            "LI__DAPIM_Vmax": {
-              "_magnitude": 237.86295115687793,
-              "_units": "LI__mmole_per_min_l"
-            },
-            "LI__DAP2D3G_Vmax": {
-              "_magnitude": 0.001006430350333675,
-              "_units": "LI__mmole_per_min_l"
-            },
-            "LI__D3GEX_Vmax": {
-              "_magnitude": 0.001000000002413061,
-              "_units": "LI__mmole_per_min_l"
-            },
-            "KI__DAPIM_Vmax": {
-              "_magnitude": 1.1617732990568852,
-              "_units": "KI__mmole_per_min_l"
-            },
-            "KI__DAP2D3G_Vmax": {
-              "_magnitude": 0.27222357579082207,
-              "_units": "KI__mmole_per_min_l"
-            },
-            "KI__D3GIM_Vmax": {
-              "_magnitude": 19.793547404872445,
-              "_units": "KI__mmole_per_min_l"
-            },
-            "KI__DAPEX_k": {
-              "_magnitude": 0.01720563003558135,
-              "_units": "KI__per_min"
-            },
-            "KI__D3GEX_k": {
-              "_magnitude": 0.3390785144688731,
-              "_units": "KI__per_min"
-            },
-            "GU__Ka_dis_dap": {
-              "_magnitude": 1.0200604498935186,
-              "_units": "GU__per_hr"
-            },
-            "GU__DAPABS_k": {
-              "_magnitude": 0.04858558323976285,
-              "_units": "GU__per_min"
-            },
             "BW": {
               "_magnitude": 79.0,
               "_units": "kilogram"
@@ -294,54 +198,6 @@
           "end": 7500,
           "steps": 1000,
           "changes": {
-            "ftissue_dap": {
-              "_magnitude": 0.010000059900567992,
-              "_units": "l_per_min"
-            },
-            "Kp_dap": {
-              "_magnitude": 31.042533719411505,
-              "_units": "dimensionless"
-            },
-            "LI__DAPIM_Vmax": {
-              "_magnitude": 237.86295115687793,
-              "_units": "LI__mmole_per_min_l"
-            },
-            "LI__DAP2D3G_Vmax": {
-              "_magnitude": 0.001006430350333675,
-              "_units": "LI__mmole_per_min_l"
-            },
-            "LI__D3GEX_Vmax": {
-              "_magnitude": 0.001000000002413061,
-              "_units": "LI__mmole_per_min_l"
-            },
-            "KI__DAPIM_Vmax": {
-              "_magnitude": 1.1617732990568852,
-              "_units": "KI__mmole_per_min_l"
-            },
-            "KI__DAP2D3G_Vmax": {
-              "_magnitude": 0.27222357579082207,
-              "_units": "KI__mmole_per_min_l"
-            },
-            "KI__D3GIM_Vmax": {
-              "_magnitude": 19.793547404872445,
-              "_units": "KI__mmole_per_min_l"
-            },
-            "KI__DAPEX_k": {
-              "_magnitude": 0.01720563003558135,
-              "_units": "KI__per_min"
-            },
-            "KI__D3GEX_k": {
-              "_magnitude": 0.3390785144688731,
-              "_units": "KI__per_min"
-            },
-            "GU__Ka_dis_dap": {
-              "_magnitude": 1.0200604498935186,
-              "_units": "GU__per_hr"
-            },
-            "GU__DAPABS_k": {
-              "_magnitude": 0.04858558323976285,
-              "_units": "GU__per_min"
-            },
             "BW": {
               "_magnitude": 79.0,
               "_units": "kilogram"
@@ -384,54 +240,6 @@
           "end": 7500,
           "steps": 1000,
           "changes": {
-            "ftissue_dap": {
-              "_magnitude": 0.010000059900567992,
-              "_units": "l_per_min"
-            },
-            "Kp_dap": {
-              "_magnitude": 31.042533719411505,
-              "_units": "dimensionless"
-            },
-            "LI__DAPIM_Vmax": {
-              "_magnitude": 237.86295115687793,
-              "_units": "LI__mmole_per_min_l"
-            },
-            "LI__DAP2D3G_Vmax": {
-              "_magnitude": 0.001006430350333675,
-              "_units": "LI__mmole_per_min_l"
-            },
-            "LI__D3GEX_Vmax": {
-              "_magnitude": 0.001000000002413061,
-              "_units": "LI__mmole_per_min_l"
-            },
-            "KI__DAPIM_Vmax": {
-              "_magnitude": 1.1617732990568852,
-              "_units": "KI__mmole_per_min_l"
-            },
-            "KI__DAP2D3G_Vmax": {
-              "_magnitude": 0.27222357579082207,
-              "_units": "KI__mmole_per_min_l"
-            },
-            "KI__D3GIM_Vmax": {
-              "_magnitude": 19.793547404872445,
-              "_units": "KI__mmole_per_min_l"
-            },
-            "KI__DAPEX_k": {
-              "_magnitude": 0.01720563003558135,
-              "_units": "KI__per_min"
-            },
-            "KI__D3GEX_k": {
-              "_magnitude": 0.3390785144688731,
-              "_units": "KI__per_min"
-            },
-            "GU__Ka_dis_dap": {
-              "_magnitude": 1.0200604498935186,
-              "_units": "GU__per_hr"
-            },
-            "GU__DAPABS_k": {
-              "_magnitude": 0.04858558323976285,
-              "_units": "GU__per_min"
-            },
             "BW": {
               "_magnitude": 79.0,
               "_units": "kilogram"
@@ -474,54 +282,6 @@
           "end": 7500,
           "steps": 1000,
           "changes": {
-            "ftissue_dap": {
-              "_magnitude": 0.010000059900567992,
-              "_units": "l_per_min"
-            },
-            "Kp_dap": {
-              "_magnitude": 31.042533719411505,
-              "_units": "dimensionless"
-            },
-            "LI__DAPIM_Vmax": {
-              "_magnitude": 237.86295115687793,
-              "_units": "LI__mmole_per_min_l"
-            },
-            "LI__DAP2D3G_Vmax": {
-              "_magnitude": 0.001006430350333675,
-              "_units": "LI__mmole_per_min_l"
-            },
-            "LI__D3GEX_Vmax": {
-              "_magnitude": 0.001000000002413061,
-              "_units": "LI__mmole_per_min_l"
-            },
-            "KI__DAPIM_Vmax": {
-              "_magnitude": 1.1617732990568852,
-              "_units": "KI__mmole_per_min_l"
-            },
-            "KI__DAP2D3G_Vmax": {
-              "_magnitude": 0.27222357579082207,
-              "_units": "KI__mmole_per_min_l"
-            },
-            "KI__D3GIM_Vmax": {
-              "_magnitude": 19.793547404872445,
-              "_units": "KI__mmole_per_min_l"
-            },
-            "KI__DAPEX_k": {
-              "_magnitude": 0.01720563003558135,
-              "_units": "KI__per_min"
-            },
-            "KI__D3GEX_k": {
-              "_magnitude": 0.3390785144688731,
-              "_units": "KI__per_min"
-            },
-            "GU__Ka_dis_dap": {
-              "_magnitude": 1.0200604498935186,
-              "_units": "GU__per_hr"
-            },
-            "GU__DAPABS_k": {
-              "_magnitude": 0.04858558323976285,
-              "_units": "GU__per_min"
-            },
             "BW": {
               "_magnitude": 79.0,
               "_units": "kilogram"
@@ -564,54 +324,6 @@
           "end": 7500,
           "steps": 1000,
           "changes": {
-            "ftissue_dap": {
-              "_magnitude": 0.010000059900567992,
-              "_units": "l_per_min"
-            },
-            "Kp_dap": {
-              "_magnitude": 31.042533719411505,
-              "_units": "dimensionless"
-            },
-            "LI__DAPIM_Vmax": {
-              "_magnitude": 237.86295115687793,
-              "_units": "LI__mmole_per_min_l"
-            },
-            "LI__DAP2D3G_Vmax": {
-              "_magnitude": 0.001006430350333675,
-              "_units": "LI__mmole_per_min_l"
-            },
-            "LI__D3GEX_Vmax": {
-              "_magnitude": 0.001000000002413061,
-              "_units": "LI__mmole_per_min_l"
-            },
-            "KI__DAPIM_Vmax": {
-              "_magnitude": 1.1617732990568852,
-              "_units": "KI__mmole_per_min_l"
-            },
-            "KI__DAP2D3G_Vmax": {
-              "_magnitude": 0.27222357579082207,
-              "_units": "KI__mmole_per_min_l"
-            },
-            "KI__D3GIM_Vmax": {
-              "_magnitude": 19.793547404872445,
-              "_units": "KI__mmole_per_min_l"
-            },
-            "KI__DAPEX_k": {
-              "_magnitude": 0.01720563003558135,
-              "_units": "KI__per_min"
-            },
-            "KI__D3GEX_k": {
-              "_magnitude": 0.3390785144688731,
-              "_units": "KI__per_min"
-            },
-            "GU__Ka_dis_dap": {
-              "_magnitude": 1.0200604498935186,
-              "_units": "GU__per_hr"
-            },
-            "GU__DAPABS_k": {
-              "_magnitude": 0.04858558323976285,
-              "_units": "GU__per_min"
-            },
             "BW": {
               "_magnitude": 79.0,
               "_units": "kilogram"
@@ -654,54 +366,6 @@
           "end": 7500,
           "steps": 1000,
           "changes": {
-            "ftissue_dap": {
-              "_magnitude": 0.010000059900567992,
-              "_units": "l_per_min"
-            },
-            "Kp_dap": {
-              "_magnitude": 31.042533719411505,
-              "_units": "dimensionless"
-            },
-            "LI__DAPIM_Vmax": {
-              "_magnitude": 237.86295115687793,
-              "_units": "LI__mmole_per_min_l"
-            },
-            "LI__DAP2D3G_Vmax": {
-              "_magnitude": 0.001006430350333675,
-              "_units": "LI__mmole_per_min_l"
-            },
-            "LI__D3GEX_Vmax": {
-              "_magnitude": 0.001000000002413061,
-              "_units": "LI__mmole_per_min_l"
-            },
-            "KI__DAPIM_Vmax": {
-              "_magnitude": 1.1617732990568852,
-              "_units": "KI__mmole_per_min_l"
-            },
-            "KI__DAP2D3G_Vmax": {
-              "_magnitude": 0.27222357579082207,
-              "_units": "KI__mmole_per_min_l"
-            },
-            "KI__D3GIM_Vmax": {
-              "_magnitude": 19.793547404872445,
-              "_units": "KI__mmole_per_min_l"
-            },
-            "KI__DAPEX_k": {
-              "_magnitude": 0.01720563003558135,
-              "_units": "KI__per_min"
-            },
-            "KI__D3GEX_k": {
-              "_magnitude": 0.3390785144688731,
-              "_units": "KI__per_min"
-            },
-            "GU__Ka_dis_dap": {
-              "_magnitude": 1.0200604498935186,
-              "_units": "GU__per_hr"
-            },
-            "GU__DAPABS_k": {
-              "_magnitude": 0.04858558323976285,
-              "_units": "GU__per_min"
-            },
             "BW": {
               "_magnitude": 79.0,
               "_units": "kilogram"
@@ -744,54 +408,6 @@
           "end": 7500,
           "steps": 1000,
           "changes": {
-            "ftissue_dap": {
-              "_magnitude": 0.010000059900567992,
-              "_units": "l_per_min"
-            },
-            "Kp_dap": {
-              "_magnitude": 31.042533719411505,
-              "_units": "dimensionless"
-            },
-            "LI__DAPIM_Vmax": {
-              "_magnitude": 237.86295115687793,
-              "_units": "LI__mmole_per_min_l"
-            },
-            "LI__DAP2D3G_Vmax": {
-              "_magnitude": 0.001006430350333675,
-              "_units": "LI__mmole_per_min_l"
-            },
-            "LI__D3GEX_Vmax": {
-              "_magnitude": 0.001000000002413061,
-              "_units": "LI__mmole_per_min_l"
-            },
-            "KI__DAPIM_Vmax": {
-              "_magnitude": 1.1617732990568852,
-              "_units": "KI__mmole_per_min_l"
-            },
-            "KI__DAP2D3G_Vmax": {
-              "_magnitude": 0.27222357579082207,
-              "_units": "KI__mmole_per_min_l"
-            },
-            "KI__D3GIM_Vmax": {
-              "_magnitude": 19.793547404872445,
-              "_units": "KI__mmole_per_min_l"
-            },
-            "KI__DAPEX_k": {
-              "_magnitude": 0.01720563003558135,
-              "_units": "KI__per_min"
-            },
-            "KI__D3GEX_k": {
-              "_magnitude": 0.3390785144688731,
-              "_units": "KI__per_min"
-            },
-            "GU__Ka_dis_dap": {
-              "_magnitude": 1.0200604498935186,
-              "_units": "GU__per_hr"
-            },
-            "GU__DAPABS_k": {
-              "_magnitude": 0.04858558323976285,
-              "_units": "GU__per_min"
-            },
             "BW": {
               "_magnitude": 79.0,
               "_units": "kilogram"
@@ -834,54 +450,6 @@
           "end": 7500,
           "steps": 1000,
           "changes": {
-            "ftissue_dap": {
-              "_magnitude": 0.010000059900567992,
-              "_units": "l_per_min"
-            },
-            "Kp_dap": {
-              "_magnitude": 31.042533719411505,
-              "_units": "dimensionless"
-            },
-            "LI__DAPIM_Vmax": {
-              "_magnitude": 237.86295115687793,
-              "_units": "LI__mmole_per_min_l"
-            },
-            "LI__DAP2D3G_Vmax": {
-              "_magnitude": 0.001006430350333675,
-              "_units": "LI__mmole_per_min_l"
-            },
-            "LI__D3GEX_Vmax": {
-              "_magnitude": 0.001000000002413061,
-              "_units": "LI__mmole_per_min_l"
-            },
-            "KI__DAPIM_Vmax": {
-              "_magnitude": 1.1617732990568852,
-              "_units": "KI__mmole_per_min_l"
-            },
-            "KI__DAP2D3G_Vmax": {
-              "_magnitude": 0.27222357579082207,
-              "_units": "KI__mmole_per_min_l"
-            },
-            "KI__D3GIM_Vmax": {
-              "_magnitude": 19.793547404872445,
-              "_units": "KI__mmole_per_min_l"
-            },
-            "KI__DAPEX_k": {
-              "_magnitude": 0.01720563003558135,
-              "_units": "KI__per_min"
-            },
-            "KI__D3GEX_k": {
-              "_magnitude": 0.3390785144688731,
-              "_units": "KI__per_min"
-            },
-            "GU__Ka_dis_dap": {
-              "_magnitude": 1.0200604498935186,
-              "_units": "GU__per_hr"
-            },
-            "GU__DAPABS_k": {
-              "_magnitude": 0.04858558323976285,
-              "_units": "GU__per_min"
-            },
             "BW": {
               "_magnitude": 79.0,
               "_units": "kilogram"
@@ -924,54 +492,6 @@
           "end": 7500,
           "steps": 1000,
           "changes": {
-            "ftissue_dap": {
-              "_magnitude": 0.010000059900567992,
-              "_units": "l_per_min"
-            },
-            "Kp_dap": {
-              "_magnitude": 31.042533719411505,
-              "_units": "dimensionless"
-            },
-            "LI__DAPIM_Vmax": {
-              "_magnitude": 237.86295115687793,
-              "_units": "LI__mmole_per_min_l"
-            },
-            "LI__DAP2D3G_Vmax": {
-              "_magnitude": 0.001006430350333675,
-              "_units": "LI__mmole_per_min_l"
-            },
-            "LI__D3GEX_Vmax": {
-              "_magnitude": 0.001000000002413061,
-              "_units": "LI__mmole_per_min_l"
-            },
-            "KI__DAPIM_Vmax": {
-              "_magnitude": 1.1617732990568852,
-              "_units": "KI__mmole_per_min_l"
-            },
-            "KI__DAP2D3G_Vmax": {
-              "_magnitude": 0.27222357579082207,
-              "_units": "KI__mmole_per_min_l"
-            },
-            "KI__D3GIM_Vmax": {
-              "_magnitude": 19.793547404872445,
-              "_units": "KI__mmole_per_min_l"
-            },
-            "KI__DAPEX_k": {
-              "_magnitude": 0.01720563003558135,
-              "_units": "KI__per_min"
-            },
-            "KI__D3GEX_k": {
-              "_magnitude": 0.3390785144688731,
-              "_units": "KI__per_min"
-            },
-            "GU__Ka_dis_dap": {
-              "_magnitude": 1.0200604498935186,
-              "_units": "GU__per_hr"
-            },
-            "GU__DAPABS_k": {
-              "_magnitude": 0.04858558323976285,
-              "_units": "GU__per_min"
-            },
             "BW": {
               "_magnitude": 79.0,
               "_units": "kilogram"
@@ -1014,54 +534,6 @@
           "end": 7500,
           "steps": 1000,
           "changes": {
-            "ftissue_dap": {
-              "_magnitude": 0.010000059900567992,
-              "_units": "l_per_min"
-            },
-            "Kp_dap": {
-              "_magnitude": 31.042533719411505,
-              "_units": "dimensionless"
-            },
-            "LI__DAPIM_Vmax": {
-              "_magnitude": 237.86295115687793,
-              "_units": "LI__mmole_per_min_l"
-            },
-            "LI__DAP2D3G_Vmax": {
-              "_magnitude": 0.001006430350333675,
-              "_units": "LI__mmole_per_min_l"
-            },
-            "LI__D3GEX_Vmax": {
-              "_magnitude": 0.001000000002413061,
-              "_units": "LI__mmole_per_min_l"
-            },
-            "KI__DAPIM_Vmax": {
-              "_magnitude": 1.1617732990568852,
-              "_units": "KI__mmole_per_min_l"
-            },
-            "KI__DAP2D3G_Vmax": {
-              "_magnitude": 0.27222357579082207,
-              "_units": "KI__mmole_per_min_l"
-            },
-            "KI__D3GIM_Vmax": {
-              "_magnitude": 19.793547404872445,
-              "_units": "KI__mmole_per_min_l"
-            },
-            "KI__DAPEX_k": {
-              "_magnitude": 0.01720563003558135,
-              "_units": "KI__per_min"
-            },
-            "KI__D3GEX_k": {
-              "_magnitude": 0.3390785144688731,
-              "_units": "KI__per_min"
-            },
-            "GU__Ka_dis_dap": {
-              "_magnitude": 1.0200604498935186,
-              "_units": "GU__per_hr"
-            },
-            "GU__DAPABS_k": {
-              "_magnitude": 0.04858558323976285,
-              "_units": "GU__per_min"
-            },
             "BW": {
               "_magnitude": 79.0,
               "_units": "kilogram"
@@ -1104,54 +576,6 @@
           "end": 1440,
           "steps": 500,
           "changes": {
-            "ftissue_dap": {
-              "_magnitude": 0.010000059900567992,
-              "_units": "l_per_min"
-            },
-            "Kp_dap": {
-              "_magnitude": 31.042533719411505,
-              "_units": "dimensionless"
-            },
-            "LI__DAPIM_Vmax": {
-              "_magnitude": 237.86295115687793,
-              "_units": "LI__mmole_per_min_l"
-            },
-            "LI__DAP2D3G_Vmax": {
-              "_magnitude": 0.001006430350333675,
-              "_units": "LI__mmole_per_min_l"
-            },
-            "LI__D3GEX_Vmax": {
-              "_magnitude": 0.001000000002413061,
-              "_units": "LI__mmole_per_min_l"
-            },
-            "KI__DAPIM_Vmax": {
-              "_magnitude": 1.1617732990568852,
-              "_units": "KI__mmole_per_min_l"
-            },
-            "KI__DAP2D3G_Vmax": {
-              "_magnitude": 0.27222357579082207,
-              "_units": "KI__mmole_per_min_l"
-            },
-            "KI__D3GIM_Vmax": {
-              "_magnitude": 19.793547404872445,
-              "_units": "KI__mmole_per_min_l"
-            },
-            "KI__DAPEX_k": {
-              "_magnitude": 0.01720563003558135,
-              "_units": "KI__per_min"
-            },
-            "KI__D3GEX_k": {
-              "_magnitude": 0.3390785144688731,
-              "_units": "KI__per_min"
-            },
-            "GU__Ka_dis_dap": {
-              "_magnitude": 1.0200604498935186,
-              "_units": "GU__per_hr"
-            },
-            "GU__DAPABS_k": {
-              "_magnitude": 0.04858558323976285,
-              "_units": "GU__per_min"
-            },
             "BW": {
               "_magnitude": 79.0,
               "_units": "kilogram"
@@ -1376,54 +800,6 @@
           "end": 1440,
           "steps": 500,
           "changes": {
-            "ftissue_dap": {
-              "_magnitude": 0.010000059900567992,
-              "_units": "l_per_min"
-            },
-            "Kp_dap": {
-              "_magnitude": 31.042533719411505,
-              "_units": "dimensionless"
-            },
-            "LI__DAPIM_Vmax": {
-              "_magnitude": 237.86295115687793,
-              "_units": "LI__mmole_per_min_l"
-            },
-            "LI__DAP2D3G_Vmax": {
-              "_magnitude": 0.001006430350333675,
-              "_units": "LI__mmole_per_min_l"
-            },
-            "LI__D3GEX_Vmax": {
-              "_magnitude": 0.001000000002413061,
-              "_units": "LI__mmole_per_min_l"
-            },
-            "KI__DAPIM_Vmax": {
-              "_magnitude": 1.1617732990568852,
-              "_units": "KI__mmole_per_min_l"
-            },
-            "KI__DAP2D3G_Vmax": {
-              "_magnitude": 0.27222357579082207,
-              "_units": "KI__mmole_per_min_l"
-            },
-            "KI__D3GIM_Vmax": {
-              "_magnitude": 19.793547404872445,
-              "_units": "KI__mmole_per_min_l"
-            },
-            "KI__DAPEX_k": {
-              "_magnitude": 0.01720563003558135,
-              "_units": "KI__per_min"
-            },
-            "KI__D3GEX_k": {
-              "_magnitude": 0.3390785144688731,
-              "_units": "KI__per_min"
-            },
-            "GU__Ka_dis_dap": {
-              "_magnitude": 1.0200604498935186,
-              "_units": "GU__per_hr"
-            },
-            "GU__DAPABS_k": {
-              "_magnitude": 0.04858558323976285,
-              "_units": "GU__per_min"
-            },
             "BW": {
               "_magnitude": 79.0,
               "_units": "kilogram"
@@ -1700,54 +1076,6 @@
           "end": 1440,
           "steps": 500,
           "changes": {
-            "ftissue_dap": {
-              "_magnitude": 0.010000059900567992,
-              "_units": "l_per_min"
-            },
-            "Kp_dap": {
-              "_magnitude": 31.042533719411505,
-              "_units": "dimensionless"
-            },
-            "LI__DAPIM_Vmax": {
-              "_magnitude": 237.86295115687793,
-              "_units": "LI__mmole_per_min_l"
-            },
-            "LI__DAP2D3G_Vmax": {
-              "_magnitude": 0.001006430350333675,
-              "_units": "LI__mmole_per_min_l"
-            },
-            "LI__D3GEX_Vmax": {
-              "_magnitude": 0.001000000002413061,
-              "_units": "LI__mmole_per_min_l"
-            },
-            "KI__DAPIM_Vmax": {
-              "_magnitude": 1.1617732990568852,
-              "_units": "KI__mmole_per_min_l"
-            },
-            "KI__DAP2D3G_Vmax": {
-              "_magnitude": 0.27222357579082207,
-              "_units": "KI__mmole_per_min_l"
-            },
-            "KI__D3GIM_Vmax": {
-              "_magnitude": 19.793547404872445,
-              "_units": "KI__mmole_per_min_l"
-            },
-            "KI__DAPEX_k": {
-              "_magnitude": 0.01720563003558135,
-              "_units": "KI__per_min"
-            },
-            "KI__D3GEX_k": {
-              "_magnitude": 0.3390785144688731,
-              "_units": "KI__per_min"
-            },
-            "GU__Ka_dis_dap": {
-              "_magnitude": 1.0200604498935186,
-              "_units": "GU__per_hr"
-            },
-            "GU__DAPABS_k": {
-              "_magnitude": 0.04858558323976285,
-              "_units": "GU__per_min"
-            },
             "BW": {
               "_magnitude": 79.0,
               "_units": "kilogram"
@@ -2024,54 +1352,6 @@
           "end": 1440,
           "steps": 500,
           "changes": {
-            "ftissue_dap": {
-              "_magnitude": 0.010000059900567992,
-              "_units": "l_per_min"
-            },
-            "Kp_dap": {
-              "_magnitude": 31.042533719411505,
-              "_units": "dimensionless"
-            },
-            "LI__DAPIM_Vmax": {
-              "_magnitude": 237.86295115687793,
-              "_units": "LI__mmole_per_min_l"
-            },
-            "LI__DAP2D3G_Vmax": {
-              "_magnitude": 0.001006430350333675,
-              "_units": "LI__mmole_per_min_l"
-            },
-            "LI__D3GEX_Vmax": {
-              "_magnitude": 0.001000000002413061,
-              "_units": "LI__mmole_per_min_l"
-            },
-            "KI__DAPIM_Vmax": {
-              "_magnitude": 1.1617732990568852,
-              "_units": "KI__mmole_per_min_l"
-            },
-            "KI__DAP2D3G_Vmax": {
-              "_magnitude": 0.27222357579082207,
-              "_units": "KI__mmole_per_min_l"
-            },
-            "KI__D3GIM_Vmax": {
-              "_magnitude": 19.793547404872445,
-              "_units": "KI__mmole_per_min_l"
-            },
-            "KI__DAPEX_k": {
-              "_magnitude": 0.01720563003558135,
-              "_units": "KI__per_min"
-            },
-            "KI__D3GEX_k": {
-              "_magnitude": 0.3390785144688731,
-              "_units": "KI__per_min"
-            },
-            "GU__Ka_dis_dap": {
-              "_magnitude": 1.0200604498935186,
-              "_units": "GU__per_hr"
-            },
-            "GU__DAPABS_k": {
-              "_magnitude": 0.04858558323976285,
-              "_units": "GU__per_min"
-            },
             "BW": {
               "_magnitude": 79.0,
               "_units": "kilogram"
@@ -2348,54 +1628,6 @@
           "end": 1440,
           "steps": 500,
           "changes": {
-            "ftissue_dap": {
-              "_magnitude": 0.010000059900567992,
-              "_units": "l_per_min"
-            },
-            "Kp_dap": {
-              "_magnitude": 31.042533719411505,
-              "_units": "dimensionless"
-            },
-            "LI__DAPIM_Vmax": {
-              "_magnitude": 237.86295115687793,
-              "_units": "LI__mmole_per_min_l"
-            },
-            "LI__DAP2D3G_Vmax": {
-              "_magnitude": 0.001006430350333675,
-              "_units": "LI__mmole_per_min_l"
-            },
-            "LI__D3GEX_Vmax": {
-              "_magnitude": 0.001000000002413061,
-              "_units": "LI__mmole_per_min_l"
-            },
-            "KI__DAPIM_Vmax": {
-              "_magnitude": 1.1617732990568852,
-              "_units": "KI__mmole_per_min_l"
-            },
-            "KI__DAP2D3G_Vmax": {
-              "_magnitude": 0.27222357579082207,
-              "_units": "KI__mmole_per_min_l"
-            },
-            "KI__D3GIM_Vmax": {
-              "_magnitude": 19.793547404872445,
-              "_units": "KI__mmole_per_min_l"
-            },
-            "KI__DAPEX_k": {
-              "_magnitude": 0.01720563003558135,
-              "_units": "KI__per_min"
-            },
-            "KI__D3GEX_k": {
-              "_magnitude": 0.3390785144688731,
-              "_units": "KI__per_min"
-            },
-            "GU__Ka_dis_dap": {
-              "_magnitude": 1.0200604498935186,
-              "_units": "GU__per_hr"
-            },
-            "GU__DAPABS_k": {
-              "_magnitude": 0.04858558323976285,
-              "_units": "GU__per_min"
-            },
             "BW": {
               "_magnitude": 79.0,
               "_units": "kilogram"
@@ -2672,54 +1904,6 @@
           "end": 1440,
           "steps": 500,
           "changes": {
-            "ftissue_dap": {
-              "_magnitude": 0.010000059900567992,
-              "_units": "l_per_min"
-            },
-            "Kp_dap": {
-              "_magnitude": 31.042533719411505,
-              "_units": "dimensionless"
-            },
-            "LI__DAPIM_Vmax": {
-              "_magnitude": 237.86295115687793,
-              "_units": "LI__mmole_per_min_l"
-            },
-            "LI__DAP2D3G_Vmax": {
-              "_magnitude": 0.001006430350333675,
-              "_units": "LI__mmole_per_min_l"
-            },
-            "LI__D3GEX_Vmax": {
-              "_magnitude": 0.001000000002413061,
-              "_units": "LI__mmole_per_min_l"
-            },
-            "KI__DAPIM_Vmax": {
-              "_magnitude": 1.1617732990568852,
-              "_units": "KI__mmole_per_min_l"
-            },
-            "KI__DAP2D3G_Vmax": {
-              "_magnitude": 0.27222357579082207,
-              "_units": "KI__mmole_per_min_l"
-            },
-            "KI__D3GIM_Vmax": {
-              "_magnitude": 19.793547404872445,
-              "_units": "KI__mmole_per_min_l"
-            },
-            "KI__DAPEX_k": {
-              "_magnitude": 0.01720563003558135,
-              "_units": "KI__per_min"
-            },
-            "KI__D3GEX_k": {
-              "_magnitude": 0.3390785144688731,
-              "_units": "KI__per_min"
-            },
-            "GU__Ka_dis_dap": {
-              "_magnitude": 1.0200604498935186,
-              "_units": "GU__per_hr"
-            },
-            "GU__DAPABS_k": {
-              "_magnitude": 0.04858558323976285,
-              "_units": "GU__per_min"
-            },
             "BW": {
               "_magnitude": 79.0,
               "_units": "kilogram"
@@ -2996,54 +2180,6 @@
           "end": 1440,
           "steps": 500,
           "changes": {
-            "ftissue_dap": {
-              "_magnitude": 0.010000059900567992,
-              "_units": "l_per_min"
-            },
-            "Kp_dap": {
-              "_magnitude": 31.042533719411505,
-              "_units": "dimensionless"
-            },
-            "LI__DAPIM_Vmax": {
-              "_magnitude": 237.86295115687793,
-              "_units": "LI__mmole_per_min_l"
-            },
-            "LI__DAP2D3G_Vmax": {
-              "_magnitude": 0.001006430350333675,
-              "_units": "LI__mmole_per_min_l"
-            },
-            "LI__D3GEX_Vmax": {
-              "_magnitude": 0.001000000002413061,
-              "_units": "LI__mmole_per_min_l"
-            },
-            "KI__DAPIM_Vmax": {
-              "_magnitude": 1.1617732990568852,
-              "_units": "KI__mmole_per_min_l"
-            },
-            "KI__DAP2D3G_Vmax": {
-              "_magnitude": 0.27222357579082207,
-              "_units": "KI__mmole_per_min_l"
-            },
-            "KI__D3GIM_Vmax": {
-              "_magnitude": 19.793547404872445,
-              "_units": "KI__mmole_per_min_l"
-            },
-            "KI__DAPEX_k": {
-              "_magnitude": 0.01720563003558135,
-              "_units": "KI__per_min"
-            },
-            "KI__D3GEX_k": {
-              "_magnitude": 0.3390785144688731,
-              "_units": "KI__per_min"
-            },
-            "GU__Ka_dis_dap": {
-              "_magnitude": 1.0200604498935186,
-              "_units": "GU__per_hr"
-            },
-            "GU__DAPABS_k": {
-              "_magnitude": 0.04858558323976285,
-              "_units": "GU__per_min"
-            },
             "BW": {
               "_magnitude": 79.0,
               "_units": "kilogram"
@@ -3268,54 +2404,6 @@
           "end": 1440,
           "steps": 500,
           "changes": {
-            "ftissue_dap": {
-              "_magnitude": 0.010000059900567992,
-              "_units": "l_per_min"
-            },
-            "Kp_dap": {
-              "_magnitude": 31.042533719411505,
-              "_units": "dimensionless"
-            },
-            "LI__DAPIM_Vmax": {
-              "_magnitude": 237.86295115687793,
-              "_units": "LI__mmole_per_min_l"
-            },
-            "LI__DAP2D3G_Vmax": {
-              "_magnitude": 0.001006430350333675,
-              "_units": "LI__mmole_per_min_l"
-            },
-            "LI__D3GEX_Vmax": {
-              "_magnitude": 0.001000000002413061,
-              "_units": "LI__mmole_per_min_l"
-            },
-            "KI__DAPIM_Vmax": {
-              "_magnitude": 1.1617732990568852,
-              "_units": "KI__mmole_per_min_l"
-            },
-            "KI__DAP2D3G_Vmax": {
-              "_magnitude": 0.27222357579082207,
-              "_units": "KI__mmole_per_min_l"
-            },
-            "KI__D3GIM_Vmax": {
-              "_magnitude": 19.793547404872445,
-              "_units": "KI__mmole_per_min_l"
-            },
-            "KI__DAPEX_k": {
-              "_magnitude": 0.01720563003558135,
-              "_units": "KI__per_min"
-            },
-            "KI__D3GEX_k": {
-              "_magnitude": 0.3390785144688731,
-              "_units": "KI__per_min"
-            },
-            "GU__Ka_dis_dap": {
-              "_magnitude": 1.0200604498935186,
-              "_units": "GU__per_hr"
-            },
-            "GU__DAPABS_k": {
-              "_magnitude": 0.04858558323976285,
-              "_units": "GU__per_min"
-            },
             "BW": {
               "_magnitude": 79.0,
               "_units": "kilogram"
@@ -3540,54 +2628,6 @@
           "end": 1440,
           "steps": 500,
           "changes": {
-            "ftissue_dap": {
-              "_magnitude": 0.010000059900567992,
-              "_units": "l_per_min"
-            },
-            "Kp_dap": {
-              "_magnitude": 31.042533719411505,
-              "_units": "dimensionless"
-            },
-            "LI__DAPIM_Vmax": {
-              "_magnitude": 237.86295115687793,
-              "_units": "LI__mmole_per_min_l"
-            },
-            "LI__DAP2D3G_Vmax": {
-              "_magnitude": 0.001006430350333675,
-              "_units": "LI__mmole_per_min_l"
-            },
-            "LI__D3GEX_Vmax": {
-              "_magnitude": 0.001000000002413061,
-              "_units": "LI__mmole_per_min_l"
-            },
-            "KI__DAPIM_Vmax": {
-              "_magnitude": 1.1617732990568852,
-              "_units": "KI__mmole_per_min_l"
-            },
-            "KI__DAP2D3G_Vmax": {
-              "_magnitude": 0.27222357579082207,
-              "_units": "KI__mmole_per_min_l"
-            },
-            "KI__D3GIM_Vmax": {
-              "_magnitude": 19.793547404872445,
-              "_units": "KI__mmole_per_min_l"
-            },
-            "KI__DAPEX_k": {
-              "_magnitude": 0.01720563003558135,
-              "_units": "KI__per_min"
-            },
-            "KI__D3GEX_k": {
-              "_magnitude": 0.3390785144688731,
-              "_units": "KI__per_min"
-            },
-            "GU__Ka_dis_dap": {
-              "_magnitude": 1.0200604498935186,
-              "_units": "GU__per_hr"
-            },
-            "GU__DAPABS_k": {
-              "_magnitude": 0.04858558323976285,
-              "_units": "GU__per_min"
-            },
             "BW": {
               "_magnitude": 79.0,
               "_units": "kilogram"
@@ -3812,54 +2852,6 @@
           "end": 1440,
           "steps": 500,
           "changes": {
-            "ftissue_dap": {
-              "_magnitude": 0.010000059900567992,
-              "_units": "l_per_min"
-            },
-            "Kp_dap": {
-              "_magnitude": 31.042533719411505,
-              "_units": "dimensionless"
-            },
-            "LI__DAPIM_Vmax": {
-              "_magnitude": 237.86295115687793,
-              "_units": "LI__mmole_per_min_l"
-            },
-            "LI__DAP2D3G_Vmax": {
-              "_magnitude": 0.001006430350333675,
-              "_units": "LI__mmole_per_min_l"
-            },
-            "LI__D3GEX_Vmax": {
-              "_magnitude": 0.001000000002413061,
-              "_units": "LI__mmole_per_min_l"
-            },
-            "KI__DAPIM_Vmax": {
-              "_magnitude": 1.1617732990568852,
-              "_units": "KI__mmole_per_min_l"
-            },
-            "KI__DAP2D3G_Vmax": {
-              "_magnitude": 0.27222357579082207,
-              "_units": "KI__mmole_per_min_l"
-            },
-            "KI__D3GIM_Vmax": {
-              "_magnitude": 19.793547404872445,
-              "_units": "KI__mmole_per_min_l"
-            },
-            "KI__DAPEX_k": {
-              "_magnitude": 0.01720563003558135,
-              "_units": "KI__per_min"
-            },
-            "KI__D3GEX_k": {
-              "_magnitude": 0.3390785144688731,
-              "_units": "KI__per_min"
-            },
-            "GU__Ka_dis_dap": {
-              "_magnitude": 1.0200604498935186,
-              "_units": "GU__per_hr"
-            },
-            "GU__DAPABS_k": {
-              "_magnitude": 0.04858558323976285,
-              "_units": "GU__per_min"
-            },
             "BW": {
               "_magnitude": 79.0,
               "_units": "kilogram"
@@ -4282,9 +3274,9 @@
       "function": null,
       "variables": null
     },
-    "task_po_dap_250_fasted__LI__f_ugt1a9": {
+    "task_po_dap_250_fasted__f_ugt1a9": {
       "type": "TASK",
-      "index": "LI__f_ugt1a9",
+      "index": "f_ugt1a9",
       "unit": null,
       "task": "task_po_dap_250_fasted",
       "dataset": null,
@@ -4498,9 +3490,9 @@
       "function": null,
       "variables": null
     },
-    "task_po_dap_250_fed__LI__f_ugt1a9": {
+    "task_po_dap_250_fed__f_ugt1a9": {
       "type": "TASK",
-      "index": "LI__f_ugt1a9",
+      "index": "f_ugt1a9",
       "unit": null,
       "task": "task_po_dap_250_fed",
       "dataset": null,
@@ -4714,9 +3706,9 @@
       "function": null,
       "variables": null
     },
-    "task_po_dap_0_single__LI__f_ugt1a9": {
+    "task_po_dap_0_single__f_ugt1a9": {
       "type": "TASK",
-      "index": "LI__f_ugt1a9",
+      "index": "f_ugt1a9",
       "unit": null,
       "task": "task_po_dap_0_single",
       "dataset": null,
@@ -4930,9 +3922,9 @@
       "function": null,
       "variables": null
     },
-    "task_po_dap_2.5_single__LI__f_ugt1a9": {
+    "task_po_dap_2.5_single__f_ugt1a9": {
       "type": "TASK",
-      "index": "LI__f_ugt1a9",
+      "index": "f_ugt1a9",
       "unit": null,
       "task": "task_po_dap_2.5_single",
       "dataset": null,
@@ -5146,9 +4138,9 @@
       "function": null,
       "variables": null
     },
-    "task_po_dap_5_single__LI__f_ugt1a9": {
+    "task_po_dap_5_single__f_ugt1a9": {
       "type": "TASK",
-      "index": "LI__f_ugt1a9",
+      "index": "f_ugt1a9",
       "unit": null,
       "task": "task_po_dap_5_single",
       "dataset": null,
@@ -5362,9 +4354,9 @@
       "function": null,
       "variables": null
     },
-    "task_po_dap_10_single__LI__f_ugt1a9": {
+    "task_po_dap_10_single__f_ugt1a9": {
       "type": "TASK",
-      "index": "LI__f_ugt1a9",
+      "index": "f_ugt1a9",
       "unit": null,
       "task": "task_po_dap_10_single",
       "dataset": null,
@@ -5578,9 +4570,9 @@
       "function": null,
       "variables": null
     },
-    "task_po_dap_20_single__LI__f_ugt1a9": {
+    "task_po_dap_20_single__f_ugt1a9": {
       "type": "TASK",
-      "index": "LI__f_ugt1a9",
+      "index": "f_ugt1a9",
       "unit": null,
       "task": "task_po_dap_20_single",
       "dataset": null,
@@ -5794,9 +4786,9 @@
       "function": null,
       "variables": null
     },
-    "task_po_dap_50_single__LI__f_ugt1a9": {
+    "task_po_dap_50_single__f_ugt1a9": {
       "type": "TASK",
-      "index": "LI__f_ugt1a9",
+      "index": "f_ugt1a9",
       "unit": null,
       "task": "task_po_dap_50_single",
       "dataset": null,
@@ -6010,9 +5002,9 @@
       "function": null,
       "variables": null
     },
-    "task_po_dap_100_single__LI__f_ugt1a9": {
+    "task_po_dap_100_single__f_ugt1a9": {
       "type": "TASK",
-      "index": "LI__f_ugt1a9",
+      "index": "f_ugt1a9",
       "unit": null,
       "task": "task_po_dap_100_single",
       "dataset": null,
@@ -6226,9 +5218,9 @@
       "function": null,
       "variables": null
     },
-    "task_po_dap_250_single__LI__f_ugt1a9": {
+    "task_po_dap_250_single__f_ugt1a9": {
       "type": "TASK",
-      "index": "LI__f_ugt1a9",
+      "index": "f_ugt1a9",
       "unit": null,
       "task": "task_po_dap_250_single",
       "dataset": null,
@@ -6442,9 +5434,9 @@
       "function": null,
       "variables": null
     },
-    "task_po_dap_500_single__LI__f_ugt1a9": {
+    "task_po_dap_500_single__f_ugt1a9": {
       "type": "TASK",
-      "index": "LI__f_ugt1a9",
+      "index": "f_ugt1a9",
       "unit": null,
       "task": "task_po_dap_500_single",
       "dataset": null,
@@ -6658,9 +5650,9 @@
       "function": null,
       "variables": null
     },
-    "task_po_dap_2.5_multi__LI__f_ugt1a9": {
+    "task_po_dap_2.5_multi__f_ugt1a9": {
       "type": "TASK",
-      "index": "LI__f_ugt1a9",
+      "index": "f_ugt1a9",
       "unit": null,
       "task": "task_po_dap_2.5_multi",
       "dataset": null,
@@ -6874,9 +5866,9 @@
       "function": null,
       "variables": null
     },
-    "task_po_dap_2.5_uge_multi__LI__f_ugt1a9": {
+    "task_po_dap_2.5_uge_multi__f_ugt1a9": {
       "type": "TASK",
-      "index": "LI__f_ugt1a9",
+      "index": "f_ugt1a9",
       "unit": null,
       "task": "task_po_dap_2.5_uge_multi",
       "dataset": null,
@@ -7090,9 +6082,9 @@
       "function": null,
       "variables": null
     },
-    "task_po_dap_10_uge_multi__LI__f_ugt1a9": {
+    "task_po_dap_10_uge_multi__f_ugt1a9": {
       "type": "TASK",
-      "index": "LI__f_ugt1a9",
+      "index": "f_ugt1a9",
       "unit": null,
       "task": "task_po_dap_10_uge_multi",
       "dataset": null,
@@ -7306,9 +6298,9 @@
       "function": null,
       "variables": null
     },
-    "task_po_dap_20_uge_multi__LI__f_ugt1a9": {
+    "task_po_dap_20_uge_multi__f_ugt1a9": {
       "type": "TASK",
-      "index": "LI__f_ugt1a9",
+      "index": "f_ugt1a9",
       "unit": null,
       "task": "task_po_dap_20_uge_multi",
       "dataset": null,
@@ -7522,9 +6514,9 @@
       "function": null,
       "variables": null
     },
-    "task_po_dap_50_uge_multi__LI__f_ugt1a9": {
+    "task_po_dap_50_uge_multi__f_ugt1a9": {
       "type": "TASK",
-      "index": "LI__f_ugt1a9",
+      "index": "f_ugt1a9",
       "unit": null,
       "task": "task_po_dap_50_uge_multi",
       "dataset": null,
@@ -7738,9 +6730,9 @@
       "function": null,
       "variables": null
     },
-    "task_po_dap_100_uge_multi__LI__f_ugt1a9": {
+    "task_po_dap_100_uge_multi__f_ugt1a9": {
       "type": "TASK",
-      "index": "LI__f_ugt1a9",
+      "index": "f_ugt1a9",
       "unit": null,
       "task": "task_po_dap_100_uge_multi",
       "dataset": null,
@@ -7954,9 +6946,9 @@
       "function": null,
       "variables": null
     },
-    "task_po_dap_10_multi__LI__f_ugt1a9": {
+    "task_po_dap_10_multi__f_ugt1a9": {
       "type": "TASK",
-      "index": "LI__f_ugt1a9",
+      "index": "f_ugt1a9",
       "unit": null,
       "task": "task_po_dap_10_multi",
       "dataset": null,
@@ -8170,9 +7162,9 @@
       "function": null,
       "variables": null
     },
-    "task_po_dap_20_multi__LI__f_ugt1a9": {
+    "task_po_dap_20_multi__f_ugt1a9": {
       "type": "TASK",
-      "index": "LI__f_ugt1a9",
+      "index": "f_ugt1a9",
       "unit": null,
       "task": "task_po_dap_20_multi",
       "dataset": null,
@@ -8386,9 +7378,9 @@
       "function": null,
       "variables": null
     },
-    "task_po_dap_50_multi__LI__f_ugt1a9": {
+    "task_po_dap_50_multi__f_ugt1a9": {
       "type": "TASK",
-      "index": "LI__f_ugt1a9",
+      "index": "f_ugt1a9",
       "unit": null,
       "task": "task_po_dap_50_multi",
       "dataset": null,
@@ -8602,9 +7594,9 @@
       "function": null,
       "variables": null
     },
-    "task_po_dap_100_multi__LI__f_ugt1a9": {
+    "task_po_dap_100_multi__f_ugt1a9": {
       "type": "TASK",
-      "index": "LI__f_ugt1a9",
+      "index": "f_ugt1a9",
       "unit": null,
       "task": "task_po_dap_100_multi",
       "dataset": null,
@@ -8616,10 +7608,10 @@
     "Fig_fasting": {
       "sid": "Fig_fasting",
       "name": "Komoroski2009",
-      "num_rows": 2,
-      "num_cols": 1,
-      "width": 7.0,
-      "height": 10.0,
+      "num_rows": 1,
+      "num_cols": 2,
+      "width": 14.0,
+      "height": 5.0,
       "subplots": [
         {
           "sid": null,
@@ -8641,8 +7633,8 @@
             },
             "yaxis": {
               "sid": "Fig_fasting__plot0_yaxis",
-              "name": "dapagliflozin plasma [\u00b5M]",
-              "label": "dapagliflozin plasma",
+              "name": "dapagliflozin\nplasma [\u00b5M]",
+              "label": "dapagliflozin\nplasma",
               "unit": "\u00b5M",
               "scale": "LINEAR",
               "min": null,
@@ -8808,8 +7800,8 @@
             },
             "yaxis": {
               "sid": "Fig_fasting__plot1_yaxis",
-              "name": "dapagliflozin plasma urine [\u00b5mole]",
-              "label": "dapagliflozin plasma urine",
+              "name": "dapagliflozin\nurine [\u00b5mole]",
+              "label": "dapagliflozin\nurine",
               "unit": "\u00b5mole",
               "scale": "LINEAR",
               "min": null,
@@ -8950,8 +7942,8 @@
             ],
             "areas": []
           },
-          "row": 2,
-          "col": 1,
+          "row": 1,
+          "col": 2,
           "row_span": 1,
           "col_span": 1
         }
@@ -9571,10 +8563,10 @@
     "Fig_multi": {
       "sid": "Fig_multi",
       "name": "Komoroski2009",
-      "num_rows": 2,
-      "num_cols": 1,
-      "width": 7.0,
-      "height": 10.0,
+      "num_rows": 1,
+      "num_cols": 2,
+      "width": 14.0,
+      "height": 5.0,
       "subplots": [
         {
           "sid": null,
@@ -9596,8 +8588,8 @@
             },
             "yaxis": {
               "sid": "Fig_multi__plot0_yaxis",
-              "name": "dapagliflozin plasma [\u00b5M]",
-              "label": "dapagliflozin plasma",
+              "name": "dapagliflozin\nplasma [\u00b5M]",
+              "label": "dapagliflozin\nplasma",
               "unit": "\u00b5M",
               "scale": "LINEAR",
               "min": null,
@@ -9949,8 +8941,8 @@
             },
             "yaxis": {
               "sid": "Fig_multi__plot1_yaxis",
-              "name": "dapagliflozin plasma [\u00b5M]",
-              "label": "dapagliflozin plasma",
+              "name": "dapagliflozin\nplasma [\u00b5M]",
+              "label": "dapagliflozin\nplasma",
               "unit": "\u00b5M",
               "scale": "LINEAR",
               "min": null,
@@ -10277,8 +9269,8 @@
             ],
             "areas": []
           },
-          "row": 2,
-          "col": 1,
+          "row": 1,
+          "col": 2,
           "row_span": 1,
           "col_span": 1
         }

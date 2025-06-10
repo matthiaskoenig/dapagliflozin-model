@@ -198,8 +198,8 @@ class Kim2023(DapagliflozinSimulationExperiment):
         fig = Figure(
             experiment=self,
             sid="Fig2_S2",
-            num_rows=2,
-            num_cols=1,
+            num_rows=1,
+            num_cols=2,
             name=f"{self.__class__.__name__}",
         )
         plots = fig.create_plots(xaxis=Axis(self.label_time, unit=self.unit_time), legend=True)

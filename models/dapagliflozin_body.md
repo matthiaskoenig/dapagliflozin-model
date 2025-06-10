@@ -14,6 +14,8 @@ length: [m]
 BW = 75.0  # [kg] body weight [kg]  
 COBW = 1.548  # [ml/s/kg] cardiac output per bodyweight [ml/s/kg]  
 COHRI = 150.0  # [ml] increase of cardiac output per heartbeat [ml/min*min]  
+DAP2D3G_Km_dap = 0.479  # [mmol/l] Km dapagliflozin UGT1A9  
+DAP2D3G_Vmax = 0.019920054768051  # [mmol/min/l] Vmax dapagliflozin conversion  
 FQgu = 0.18  # [-] gut fractional tissue blood flow  
 FQh = 0.215  # [-] hepatic (venous side) fractional tissue blood flow  
 FQki = 0.19  # [-] kidney fractional tissue blood flow  
@@ -31,7 +33,7 @@ HCT = 0.51  # [-] hematocrit
 HEIGHT = 170.0  # [cm] height [cm]  
 HR = 70.0  # [1/min] heart rate [1/min]  
 HRrest = 70.0  # [1/min] heart rate [1/min]  
-Kp_dap = 10.0  # [-] tissue/plasma partition coefficient dap  
+Kp_dap = 25.517380513186  # [-] tissue/plasma partition coefficient dap  
 MAP = 100.0  # [133.32239 N/m^2] mean arterial pressure [mmHg]  
 Mr_d3g = 585.0  # [g/mol] Molecular weight d3g [g/mole]  
 Mr_dap = 408.873  # [g/mol] Molecular weight dap [g/mole]  
@@ -43,7 +45,8 @@ Vurine = 1.0  # [l] urine
 conversion_min_per_day = 1440.0  # [min/day] Conversion factor min to hours  
 f_cardiac_function = 1.0  # [-] heart function  
 f_cirrhosis = 0.0  # [-] severity of cirrhosis [0, 0.95]  
-ftissue_dap = 1.0  # [l/min] tissue distribution dap  
+f_ugt1a9 = 1.0  # [-] scaling factor UGT1A9 activity  
+ftissue_dap = 0.0100001227476663  # [l/min] tissue distribution dap  
 ti_dap = 10.0  # [s] injection time dap [s]  
 ```
 
@@ -95,9 +98,6 @@ Vli = BW * FVli  # [l] liver
 Vlu = BW * FVlu  # [l] lung  
 Vpo = (1 - HCT) * (BW * FVpo - (FVpo / (FVar + FVve + FVpo + FVhv)) * BW * Fblood * (1 - (FVar + FVve + FVpo + FVhv)))  # [l] portal plasma  
 Vve = BW * FVve - (FVve / (FVar + FVve)) * BW * Fblood * (1 - FVve - FVar)  # [l] venous blood  
-Xfeces_dap = Afeces_dap * Mr_dap  # [mg] dapagliflozin amount (feces)  
-Xurine_d3g = Aurine_d3g * Mr_d3g  # [mg] dapagliflozin-3-o-glucuronide amount (urine) [mg]  
-Xurine_dap = Aurine_dap * Mr_dap  # [mg] dapagliflozin amount (urine) [mg]  
 f_shunts = f_cirrhosis  # [-] fraction of portal venous blood shunted by the liver  
 f_tissue_loss = f_cirrhosis  # [-] fraction of lost parenchymal liver volume  
 transport_lu_dap = ftissue_dap * (Clu_plasma_dap * Kp_dap - Clu_dap)  # [mmol/min] transport dapagliflozin  

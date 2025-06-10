@@ -180,9 +180,10 @@ class HepaticRenalImpairment(DapagliflozinSimulationExperiment):
                 sid=f"Fig_{parameter}_pk",
                 num_rows=3,
                 num_cols=3,
-                name=f"{impairment.title()} impairment",
+                # name=f"Pharmacokinetics: {impairment.title()} impairment",
             )
             plots = fig.create_plots(xaxis=Axis("time", unit="hr"), legend=True)
+            plots[7].xaxis = None
             sids = [
                 # plasma
                 "[Cve_dap]",
@@ -209,7 +210,7 @@ class HepaticRenalImpairment(DapagliflozinSimulationExperiment):
                         task=f"task_dap_{impairment}_{group}",
                         xid="time",
                         yid=sid,
-                        label=f"{group}",
+                        label=f"{group}" if ksid == 0 else None,
                         color=colors[group],
                     )
 
@@ -228,12 +229,13 @@ class HepaticRenalImpairment(DapagliflozinSimulationExperiment):
                 sid=f"Fig_{parameter}_pd",
                 num_rows=2,
                 num_cols=3,
+                # name=f"Pharmacodynamics: {impairment.title()} impairment",
             )
             plots = fig.create_plots(xaxis=Axis("time", unit="hr"), legend=True)
             sids = [
-                "KI__UGE",
-                "KI__RTG",
                 "[KI__glc_ext]",
+                "KI__RTG",
+                "KI__UGE",
             ]
             for ksid, sid in enumerate(sids):
                 plots[ksid].set_yaxis(label=self.labels[sid], unit=self.units[sid])
@@ -246,15 +248,15 @@ class HepaticRenalImpairment(DapagliflozinSimulationExperiment):
                         task=f"task_dap_{impairment}_{group}",
                         xid="time",
                         yid=sid,
-                        label=f"{group}",
+                        label=f"{group}" if ksid == 0 else None,
                         color=colors[group],
                     )
 
             for ksid in range(3, 6):
                 plots[ksid].set_xaxis(label=self.label_dap_plasma, unit=self.unit_dap)
 
-            plots[3].set_yaxis(label="Rate glucose excretion\n", unit="mmole/min")
-            plots[4].set_yaxis(label=self.label_rtg, unit=self.unit_rtg)
+            plots[3].set_yaxis(label=self.label_rtg, unit=self.unit_rtg)
+            plots[4].set_yaxis(label=self.labels["KI__GLCEX"], unit=self.units["KI__GLCEX"])
             plots[5].set_yaxis(label=self.label_uge, unit=self.unit_uge)
 
             for group, value in map.items():
@@ -262,22 +264,22 @@ class HepaticRenalImpairment(DapagliflozinSimulationExperiment):
                 plots[3].add_data(
                     task=f"task_dap_{impairment}_{group}",
                     xid="[Cve_dap]",
-                    yid="KI__GLCEX",
-                    label=f"{group}",
+                    yid="KI__RTG",
+                    label=None,
                     color=colors[group],
                 )
                 plots[4].add_data(
                     task=f"task_dap_{impairment}_{group}",
                     xid="[Cve_dap]",
-                    yid="KI__RTG",
-                    label=f"{group}",
+                    yid="KI__GLCEX",
+                    label=None,
                     color=colors[group],
                 )
                 plots[5].add_data(
                     task=f"task_dap_{impairment}_{group}",
                     xid="[Cve_dap]",
                     yid="KI__UGE",
-                    label=f"{group}",
+                    label=None,
                     color=colors[group],
                 )
 

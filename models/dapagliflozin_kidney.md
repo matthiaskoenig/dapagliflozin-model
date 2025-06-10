@@ -11,28 +11,32 @@ length: [m]
 
 ## Parameters `p`
 ```
-D3GEX_k = 1.0  # [1/min] rate urinary excretion of dapagliflozin-3-o-glucuronide  
+D3GEX_k = 0.450356180744184  # [1/min] rate urinary excretion of dapagliflozin-3-o-glucuronide  
 D3GIM_Km_d3g = 0.033  # [mmol/l] Km dapagliflozin-3-O-glucuronide import  
-D3GIM_Vmax = 1000.0  # [mmol/min/l] Vmax dapagliflozin-3-O-glucuronide import  
+D3GIM_Vmax = 10.0  # [mmol/min/l] Vmax dapagliflozin-3-O-glucuronide import  
 DAP2D3G_Km_dap = 0.479  # [mmol/l] Km dapagliflozin UGT1A9  
 DAP2D3G_Vmax = 0.04  # [mmol/min/l] Vmax dapagliflozin conversion  
-DAPEX_k = 1.0  # [1/min] rate urinary excretion of dapagliflozin  
+DAPEX_k = 0.0181517912484487  # [1/min] rate urinary excretion of dapagliflozin  
 DAPIM_Km_dap = 0.033  # [mmol/l] Km dapagliflozin import  
-DAPIM_Vmax = 1000.0  # [mmol/min/l] Vmax dapagliflozin import  
+DAPIM_Vmax = 10.0  # [mmol/min/l] Vmax dapagliflozin import  
 GFR_healthy = 100.0  # [ml/min] Glomerular filtration rate (healthy)  
 Mr_glc = 180.0  # [g/mol] Molecular weight glc [g/mole]  
-RTG_E50 = 2.5e-06  # [mmol/l] EC50 reduction in RTG  
-RTG_base = 12.5  # [mmol/l] Baseline RTG value  
-RTG_delta = 9.0  # [mmol/l] RTG value  
+RTG_E50 = 3.94143334248692e-06  # [mmol/l] EC50 reduction in RTG  
+RTG_base = 9.52769511932563  # [mmol/l] Baseline RTG value  
+RTG_delta = 7.00723104886094  # [mmol/l] RTG value  
 RTG_gamma = 1.0  # [-] hill coefficient reduction in RTG  
+RTG_m_fpg = 0.574528530932429  # [-] FPG effect on RTG  
+RTG_max_inhibition = 0.480598148785809  # [-] RTG maximum inhibition  
 Vext = 1.5  # [l] plasma  
 Vki = 0.3  # [l] kidney  
 Vmem = nan  # [m^2] plasma membrane  
 Vurine = 1.0  # [l] urine  
 cf_mg_per_g = 1000.0  # [mg/g] Conversion factor mg per g  
 cf_ml_per_l = 1000.0  # [ml/l] Conversion factor ml per l  
+f_DAP2D3G = 9.99999045140128  # [-] scaling factor relative to liver activity  
 f_renal_function = 1.0  # [-] parameter for renal function  
 f_ugt1a9 = 1.0  # [-] scaling factor UGT1A9 activity  
+fpg_healthy = 5.0  # [mmol/l] fasting plasma glucose (healthy)  
 ```
 
 ## Initial conditions `x0`
@@ -51,13 +55,14 @@ glc_urine = 0.0  # [mmol] glucose (urine) in Vurine
 ```
 # y
 D3GEX = f_renal_function * D3GEX_k * Vki * d3g_ext  # [mmol/min] D3GEX  
-D3GIM = (D3GIM_Vmax / D3GIM_Km_d3g) * Vki * (d3g_ext - d3g) / (1 + d3g_ext / D3GIM_Km_d3g + d3g / D3GIM_Km_d3g)  # [mmol/min] D3GIM  
-DAP2D3G = f_ugt1a9 * DAP2D3G_Vmax * Vki * dap / (dap + DAP2D3G_Km_dap)  # [mmol/min] UGT1A9 (dap -> d3g)  
+D3GIM = (f_renal_function * D3GIM_Vmax / D3GIM_Km_d3g) * Vki * (d3g_ext - d3g) / (1 + d3g_ext / D3GIM_Km_d3g + d3g / D3GIM_Km_d3g)  # [mmol/min] D3GIM  
+DAP2D3G = f_renal_function * f_ugt1a9 * f_DAP2D3G * DAP2D3G_Vmax * Vki * dap / (dap + DAP2D3G_Km_dap)  # [mmol/min] UGT1A9 (dap -> d3g)  
 DAPEX = f_renal_function * DAPEX_k * Vki * dap_ext  # [mmol/min] DAPEX  
-DAPIM = (DAPIM_Vmax / DAPIM_Km_dap) * Vki * (dap_ext - dap) / (1 + dap_ext / DAPIM_Km_dap + dap / DAPIM_Km_dap)  # [mmol/min] DAPIM  
+DAPIM = (f_renal_function * DAPIM_Vmax / DAPIM_Km_dap) * Vki * (dap_ext - dap) / (1 + dap_ext / DAPIM_Km_dap + dap / DAPIM_Km_dap)  # [mmol/min] DAPIM  
 GFR = f_renal_function * GFR_healthy  # [ml/min] glomerular filtration rate  
-RTG = RTG_base - RTG_delta * dap_ext**RTG_gamma / (RTG_E50**RTG_gamma + dap**RTG_gamma)  # [mmol/l] renal threshold glucose (RTG)  
+RTG_fpg = RTG_base + RTG_m_fpg * (glc_ext - fpg_healthy)  # [mmol/l] RTG value (FPG)  
 UGE = glc_urine * Mr_glc / cf_mg_per_g  # [gram] urinary glucose excretion (UGE)  
+RTG = RTG_fpg - RTG_delta * dap_ext**RTG_gamma / (RTG_E50**RTG_gamma + dap**RTG_gamma)  # [mmol/l] renal threshold glucose (RTG)  
 GLCEX = piecewise((GFR / cf_ml_per_l) * (glc_ext - RTG), glc_ext > RTG, 0)  # [mmol/min] glucose excretion (GLCEX)  
 
 # odes

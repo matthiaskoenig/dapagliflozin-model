@@ -225,8 +225,8 @@ class Watada2019(DapagliflozinSimulationExperiment):
         fig = Figure(
             experiment=self,
             sid="Fig1",
-            num_rows=3,
-            num_cols=1,
+            num_rows=1,
+            num_cols=3,
             name=f"{self.__class__.__name__} (T1DM)",
         )
         plots = fig.create_plots(xaxis=Axis(self.label_time, unit=self.unit_time), legend=True)

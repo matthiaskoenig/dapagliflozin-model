@@ -229,15 +229,16 @@ class FDAMB102003(DapagliflozinSimulationExperiment):
                         count="count",
                     ),
                     observable=FitData(
-                        self, task=f"task_po_DAP{dose}", xid="time", yid=f"[Cve_dap]",
+                        self, task=f"task_po_DAP{dose}", xid="time", yid=sid,
                     ),
                     metadata=DapagliflozinMappingMetaData(
-                        tissue=Tissue.PLASMA,
+                        tissue=Tissue.PLASMA if sid == "[Cve_dap]" else Tissue.URINE,
                         route=Route.PO,
                         application_form=ApplicationForm.TABLET,
                         dosing=Dosing.MULTIPLE,
                         health=Health.T2DM,
                         fasting=Fasting.FASTED,
+                        outlier=True if sid == "KI__UGE" else None  # FIXME: uncontrolled T2DM (probably much higher glc)
                     ),
                 )
 

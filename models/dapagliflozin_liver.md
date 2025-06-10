@@ -12,11 +12,11 @@ length: [m]
 ## Parameters `p`
 ```
 D3GEX_Km_d3g = 0.115  # [mmol/l] Vmax dapagliflozinat export  
-D3GEX_Vmax = 1000.0  # [mmol/min/l] Vmax dapagliflozinat export  
+D3GEX_Vmax = 10.0  # [mmol/min/l] Vmax dapagliflozinat export  
 DAP2D3G_Km_dap = 0.479  # [mmol/l] Km dapagliflozin UGT1A9  
 DAP2D3G_Vmax = 0.04  # [mmol/min/l] Vmax dapagliflozin conversion  
 DAPIM_Km_dap = 0.033  # [mmol/l] Vmax dapagliflozin import  
-DAPIM_Vmax = 1000.0  # [mmol/min/l] Vmax dapagliflozin import  
+DAPIM_Vmax = 10.0  # [mmol/min/l] Vmax dapagliflozin import  
 Vext = 1.5  # [l] plasma  
 Vli = 1.5  # [l] liver  
 Vmem = nan  # [m^2] plasma membrane  
