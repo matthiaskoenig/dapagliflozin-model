@@ -443,7 +443,7 @@ Ki for UGT1A9 with other substrates 12-15 µM [Obermeier2010a].</p>
       </parameter>
       <parameter id="cf_mg_per_g" name="Conversion factor mg per g" value="1000" units="mg_per_g" constant="true"/>
       <parameter id="cf_ml_per_l" name="Conversion factor ml per l" value="1000" units="ml_per_l" constant="true"/>
-      <parameter metaid="meta_RTG_E50" sboTerm="SBO:0000009" id="RTG_E50" name="EC50 reduction in RTG" value="3.94143334248692e-06" units="mM" constant="true">
+      <parameter metaid="meta_RTG_E50" sboTerm="SBO:0000009" id="RTG_E50" name="EC50 reduction in RTG" value="6.49377923807214e-06" units="mM" constant="true">
         <notes>
           <body xmlns="http://www.w3.org/1999/xhtml">
             <p>~10 ng/ml graphical estimate for low doses [Komoroski2009]
@@ -480,28 +480,21 @@ Half-maximal pharmacodynamic effect of dapagliflozin.</p>
           </rdf:RDF>
         </annotation>
       </parameter>
-      <parameter id="RTG_base" name="Baseline RTG value" value="9.52769511932563" units="mM" constant="true">
+      <parameter id="RTG_base" name="Baseline RTG value" value="8.00000843198733" units="mM" constant="true">
         <notes>
           <body xmlns="http://www.w3.org/1999/xhtml">
             <p>typical RTG value without SGLT2 inhibitors in healthy subjects</p>
           </body>
         </notes>
       </parameter>
-      <parameter id="RTG_delta" name="RTG value" value="7.00723104886094" units="mM" constant="true">
-        <notes>
-          <body xmlns="http://www.w3.org/1999/xhtml">
-            <p>ΔRTG, maximum reduction in RTG due to SGLT2 inhibition</p>
-          </body>
-        </notes>
-      </parameter>
-      <parameter id="RTG_m_fpg" name="FPG effect on RTG" value="0.574528530932429" units="dimensionless" constant="true">
+      <parameter id="RTG_m_fpg" name="FPG effect on RTG" value="1.25337150891578" units="dimensionless" constant="true">
         <notes>
           <body xmlns="http://www.w3.org/1999/xhtml">
             <p>Effect of the FPG on the change in RTG_base.</p>
           </body>
         </notes>
       </parameter>
-      <parameter id="RTG_max_inhibition" name="RTG maximum inhibition" value="0.480598148785809" units="dimensionless" constant="true">
+      <parameter id="RTG_max_inhibition" name="RTG maximum inhibition" value="0.706730840016354" units="dimensionless" constant="true">
         <notes>
           <body xmlns="http://www.w3.org/1999/xhtml">
             <p>maximum inhibition of RTG via SGLT2</p>
@@ -618,6 +611,7 @@ Half-maximal pharmacodynamic effect of dapagliflozin.</p>
         </annotation>
       </parameter>
       <parameter id="RTG_fpg" name="RTG value (FPG)" value="NaN" units="mM" constant="false"/>
+      <parameter id="RTG_delta" name="RTG value" value="NaN" units="mM" constant="false"/>
       <parameter id="RTG" name="renal threshold glucose (RTG)" value="NaN" units="mM" constant="false"/>
       <parameter id="GFR" name="glomerular filtration rate" value="NaN" units="ml_per_min" constant="false"/>
       <parameter id="UGE" name="urinary glucose excretion (UGE)" value="NaN" units="gram" constant="false"/>
@@ -642,6 +636,21 @@ Half-maximal pharmacodynamic effect of dapagliflozin.</p>
                 <ci> fpg_healthy </ci>
               </apply>
             </apply>
+          </apply>
+        </math>
+      </assignmentRule>
+      <assignmentRule name="RTG value" variable="RTG_delta">
+        <notes>
+          <body xmlns="http://www.w3.org/1999/xhtml">
+            <p>ΔRTG, maximum reduction in RTG due to SGLT2 inhibition.
+Normally around 7 - 10 mM.</p>
+          </body>
+        </notes>
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+          <apply>
+            <times/>
+            <ci> RTG_fpg </ci>
+            <ci> RTG_max_inhibition </ci>
           </apply>
         </math>
       </assignmentRule>
