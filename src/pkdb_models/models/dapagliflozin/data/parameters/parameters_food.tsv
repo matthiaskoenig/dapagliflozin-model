@@ -1,0 +1,36 @@
+study	class	condition	parameter	dose	dose_unit	substance	n	mean	sd	gmean	unit	comments	mean_dose_adjusted	sd_dose_adjusted	unit	mean_unit_conv	sd_unit_conv	unit_new
+Kasichayanula2011b	food	fasted	cmax	10	mg	dap	14	136.00	29.92		ng/ml		136.00	29.92	ng/ml	0.33		µmole/l
+Kasichayanula2011b	food	fasted	aucinf	10	mg	dap	14	497.00	94.43		ng/ml*hr		497.00	94.43	ng/ml*hr	1.22		µmole/l*hr
+Kasichayanula2011b	food	fasted	thalf	10	mg	dap	14	12.00	4.62		hr		12.00		hr	12.00		hr
+Kasichayanula2011b	food	fasted	cmax	10	mg	d3g	14	224.00			ng/ml		224.00		ng/ml	0.38		µmole/l
+Kasichayanula2011b	food	fasted	aucinf	10	mg	d3g	14	941.00			ng/ml*hr		941.00		ng/ml*hr	1.61		µmole/l*hr
+Kasichayanula2011b	food	fasted	thalf	10	mg	d3g	14	13.00	4.88		hr		13.00		hr	13.00		hr
+Kasichayanula2011b	food	fed	cmax	10	mg	dap	14	94.00	31.02		ng/ml		94.00	31.02	ng/ml	0.23		µmole/l
+Kasichayanula2011b	food	fed	aucinf	10	mg	dap	14	507.00	81.12		ng/ml*hr		507.00	81.12	ng/ml*hr	1.24		µmole/l*hr
+Kasichayanula2011b	food	fed	thalf	10	mg	dap	14	14.00	4.38		hr		14.00		hr	14.00		hr
+Kasichayanula2011b	food	fed	cmax	10	mg	d3g	14	128.00			ng/ml		128.00		ng/ml	0.22		µmole/l
+Kasichayanula2011b	food	fed	aucinf	10	mg	d3g	14	812.00			ng/ml*hr		812.00		ng/ml*hr	1.39		µmole/l*hr
+Kasichayanula2011b	food	fed	thalf	10	mg	d3g	14	12.60	3.36		ng/ml*hr		12.60		ng/ml*hr	12.60		hr
+#																		
+Komoroski2009	food	fasted	cmax	250	mg	dap	5	251	78	251	ng/ml		10.04	3.11	ng/ml	0.61		µmole/l
+Komoroski2009	food	fasted	aucinf	250	mg	dap	5	1334	373	1334	ng/ml*hr		53.35	14.94	ng/ml*hr	3.26		µmole/l*hr
+# Komoroski2009	food	fasted	thalf	250	mg	dap	5	17	20		hr				hr			hr
+Komoroski2009	food	fed	cmax	250	mg	dap	5	153	37	153	ng/ml		6.13	1.47	ng/ml	0.37		µmole/l
+Komoroski2009	food	fed	aucinf	250	mg	dap	5	1246	386	1246	ng/ml*hr		49.82	15.44	ng/ml*hr	3.05		µmole/l*hr
+# Komoroski2009	food	fed	thalf	250	mg	dap	5	18	16		hr				hr			hr
+#																		
+LaCreta2016	food	fasted	cmax	3	mg	dap	28	45.00	11.70		ng/ml		180.00	46.80	ng/ml	0.11		µmole/l
+LaCreta2016	food	fasted	aucinf	3	mg	dap	28	170.00	44.20		ng/ml*hr		680.00	176.80	ng/ml*hr	0.42		µmole/l*hr
+# LaCreta2016	food	fasted	thalf	3	mg	dap	28	10.50	2.50		hr				hr			hr
+LaCreta2016	food	fed	cmax	3	mg	dap	27	25.00	13.25		ng/ml		100.00	53.00	ng/ml	0.06		µmole/l
+LaCreta2016	food	fed	aucinf	3	mg	dap	27	154.00	35.42		ng/ml*hr		616.00	141.68	ng/ml*hr	0.38		µmole/l*hr
+# LaCreta2016	food	fed	thalf	3	mg	dap	27	10.00	2.20		hr				hr			hr
+#																		
+Shah2019a	food	fasted	cmax	5	mg	dap	24	74.56	13.40		ng/ml		149.12	26.80	ng/ml	0.18		µmole/l
+Shah2019a	food	fasted	aucinf	5	mg	dap	24	291.00	29.60		ng/ml*hr		582.00	59.20	ng/ml*hr	0.71		µmole/l*hr
+# Shah2019a	food	fasted	thalf	5	mg	dap	24	9.50	2.70		hr				hr			hr
+# Shah2019a	food	fasted	kel	5	mg	dap	24	0.01	0.00		1/hr				1/hr			
+Shah2019a	food	fed 	cmax	5	mg	dap	24	47.12	10.40		ng/ml		94.24	20.80	ng/ml	0.12		µmole/l
+Shah2019a	food	fed 	aucinf	5	mg	dap	24	269.00	28.40		ng/ml*hr		538.00	56.80	ng/ml*hr	0.66		µmole/l*hr
+Shah2019a	food	fed 	thalf	5	mg	dap	24	9.70	2.60		hr		19.40	5.20	hr	9.70		hr
+# Shah2019a	food	fed 	kel	5	mg	dap	24	0.07	0.00		1/hr				1/hr			1/hr

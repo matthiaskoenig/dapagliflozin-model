@@ -1,0 +1,29 @@
+study	group	count	intervention	measurement_type	substance	tissue	method	time	time_unit	mean	min	max	sd	se	cv	unit	comments
+Boulton2013	DAPA	7.0	DAP10	cmax	dapagliflozin	plasma	LC MS/MS	49.0	hr	143.0	NA	NA	NA	NA	29.0	ng/ml	geometric mean
+Boulton2013	DAPA	7.0	DAP10	tmax	dapagliflozin	plasma	LC MS/MS	49.0	hr	1.03	0.5	1.5	NA	NA	NA	hr	geometric mean
+Boulton2013	DAPA	7.0	DAP10	auc_inf	dapagliflozin	plasma	LC MS/MS	49.0	hr	628.0	NA	NA	NA	NA	17.0	ng/ml*hr	geometric mean
+Boulton2013	DAPA	7.0	DAP10	thalf	dapagliflozin	plasma	LC MS/MS	49.0	hr	13.7	NA	NA	3.44	NA	NA	hr	NA
+Boulton2013	DAPA	7.0	DAP10	vd	dapagliflozin	plasma	LC MS/MS	49.0	hr	NA	NA	NA	NA	NA	NA	l	vd: Vss
+Boulton2013	DAPA	7.0	DAP10	clearance	dapagliflozin	plasma	LC MS/MS	49.0	hr	NA	NA	NA	NA	NA	NA	ml/min	NA
+Boulton2013	DAPA	7.0	DAP10	bioavailability	dapagliflozin	plasma	LC MS/MS	49.0	hr	78.0	73.0	83.0	NA	NA	NA	percent	NA
+Boulton2013	DAPA	7.0	C14DAP008	cmax	dapagliflozin	plasma	MS	49.0	hr	10.2	NA	NA	NA	NA	49.0	ng/ml	MS: AMS; geometric mean
+Boulton2013	DAPA	7.0	C14DAP008	tmax	dapagliflozin	plasma	MS	49.0	hr	0.03	0.03	0.08	NA	NA	NA	hr	MS: AMS; geometric mean
+Boulton2013	DAPA	7.0	C14DAP008	auc_inf	dapagliflozin	plasma	MS	49.0	hr	6.8	NA	NA	NA	NA	20.0	ng/ml*hr	MS: AMS; geometric mean
+Boulton2013	DAPA	7.0	C14DAP008	thalf	dapagliflozin	plasma	MS	49.0	hr	12.2	NA	NA	5.25	NA	NA	hr	MS: AMS
+Boulton2013	DAPA	7.0	C14DAP008	vd	dapagliflozin	plasma	MS	49.0	hr	118.0	NA	NA	32.0	NA	NA	l	MS: AMS; vd: Vss
+Boulton2013	DAPA	7.0	C14DAP008	clearance	dapagliflozin	plasma	MS	49.0	hr	207.0	NA	NA	NA	NA	23.0	ml/min	MS: AMS; geometric mean
+Boulton2013	DAPA	7.0	C14DAP008	bioavailability	dapagliflozin	plasma	MS	49.0	hr	NA	NA	NA	NA	NA	NA	percent	MS: AMS
+Boulton2013	SAXA	8.0	SAX5	cmax	saxagliptin	plasma	LC MS/MS	24.0	hr	23.8	NA	NA	NA	NA	31.0	ng/ml	geometric mean
+Boulton2013	SAXA	8.0	SAX5	tmax	saxagliptin	plasma	LC MS/MS	24.0	hr	0.81	0.5	1.5	NA	NA	NA	hr	geometric mean
+Boulton2013	SAXA	8.0	SAX5	auc_inf	saxagliptin	plasma	LC MS/MS	24.0	hr	84.4	NA	NA	NA	NA	24.0	ng/ml*hr	geometric mean
+Boulton2013	SAXA	8.0	SAX5	thalf	saxagliptin	plasma	LC MS/MS	24.0	hr	5.7	NA	NA	0.43	NA	NA	hr	NA
+Boulton2013	SAXA	8.0	SAX5	vd	saxagliptin	plasma	LC MS/MS	24.0	hr	NA	NA	NA	NA	NA	NA	l	NA
+Boulton2013	SAXA	8.0	SAX5	clearance	saxagliptin	plasma	LC MS/MS	24.0	hr	NA	NA	NA	NA	NA	NA	ml/min	NA
+Boulton2013	SAXA	8.0	SAX5	bioavailability	saxagliptin	plasma	LC MS/MS	24.0	hr	50.0	48.0	53.0	NA	NA	NA	percent	NA
+Boulton2013	SAXA	8.0	C14SAX004	cmax	saxagliptin	plasma	MS	24.0	hr	1.2	NA	NA	NA	NA	29.0	ng/ml	MS: AMS; geometric mean
+Boulton2013	SAXA	8.0	C14SAX004	tmax	saxagliptin	plasma	MS	24.0	hr	0.26	0.25	0.33	NA	NA	NA	hr	MS: AMS; geometric mean
+Boulton2013	SAXA	8.0	C14SAX004	auc_inf	saxagliptin	plasma	MS	24.0	hr	1.3	NA	NA	NA	NA	19.0	ng/ml*hr	MS: AMS; geometric mean
+Boulton2013	SAXA	8.0	C14SAX004	thalf	saxagliptin	plasma	MS	24.0	hr	7.5	NA	NA	0.6	NA	NA	hr	MS: AMS
+Boulton2013	SAXA	8.0	C14SAX004	vd	saxagliptin	plasma	MS	24.0	hr	123.0	NA	NA	30.0	NA	NA	l	MS: AMS; vd: Vss
+Boulton2013	SAXA	8.0	C14SAX004	clearance	saxagliptin	plasma	MS	24.0	hr	495.0	NA	NA	NA	NA	19.0	ml/min	MS: AMS; geometric mean
+Boulton2013	SAXA	8.0	C14SAX004	bioavailability	saxagliptin	plasma	MS	24.0	hr	NA	NA	NA	NA	NA	NA	percent	MS: AMS

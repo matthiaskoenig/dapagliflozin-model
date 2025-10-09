@@ -1,0 +1,10 @@
+study	name	group_count	parent	measurement_type	count	substance	choice	mean	median	sd	se	min	max	unit	comments
+FDAMB102003	all	50.0	NA	species	50.0	NA	homo sapiens	NA	NA	NA	NA	NA	NA	NA	NA
+FDAMB102003	all	50.0	NA	sex	50.0	NA	NR	NA	NA	NA	NA	NA	NA	NA	NA
+FDAMB102003	all	50.0	NA	fasting	50.0	NA	NR	NA	NA	NA	NA	NA	NA	NA	NA
+FDAMB102003	all	50.0	NA	healthy	50.0	NA	N	NA	NA	NA	NA	NA	NA	NA	NA
+FDAMB102003	all	50.0	NA	disease	50.0	NA	t2dm	NA	NA	NA	NA	NA	NA	NA	NA
+FDAMB102003	MAD0	11.0	all	species	11.0	NA	homo sapiens	NA	NA	NA	NA	NA	NA	NA	number of subjects not given, assuming similar group size
+FDAMB102003	MAD5	11.0	all	species	11.0	NA	homo sapiens	NA	NA	NA	NA	NA	NA	NA	NA
+FDAMB102003	MAD25	12.0	all	species	12.0	NA	homo sapiens	NA	NA	NA	NA	NA	NA	NA	NA
+FDAMB102003	MAD100	16.0	all	species	16.0	NA	homo sapiens	NA	NA	NA	NA	NA	NA	NA	NA

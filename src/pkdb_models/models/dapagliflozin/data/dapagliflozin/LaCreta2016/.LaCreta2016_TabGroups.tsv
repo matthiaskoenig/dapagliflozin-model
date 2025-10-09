@@ -1,0 +1,30 @@
+study	name	group_count	parent	measurement_type	count	substance	choice	mean	median	sd	se	min	max	unit	comments
+LaCreta2016	all	57.0	NA	species	57.0	NA	homo sapiens	NA	NA	NA	NA	NA	NA	NA	NA
+LaCreta2016	all	57.0	NA	healthy	57.0	NA	Y	NA	NA	NA	NA	NA	NA	NA	NA
+LaCreta2016	all	57.0	NA	sex	57.0	NA	MF	NA	NA	NA	NA	NA	NA	NA	NA
+LaCreta2016	Study1	29.0	all	age	29.0	NA	NA	34.7	33.0	10.5	NA	19.0	54.0	yr	NA
+LaCreta2016	Study1	29.0	all	sex	13.0	NA	M	NA	NA	NA	NA	NA	NA	NA	NA
+LaCreta2016	Study1	29.0	all	sex	16.0	NA	F	NA	NA	NA	NA	NA	NA	NA	NA
+LaCreta2016	Study1	29.0	all	ethnicity	28.0	NA	caucasian	NA	NA	NA	NA	NA	NA	NA	NA
+LaCreta2016	Study1	29.0	all	ethnicity	1.0	NA	asian	NA	NA	NA	NA	NA	NA	NA	NA
+LaCreta2016	Study1	29.0	all	ethnicity	10.0	NA	hispanic	NA	NA	NA	NA	NA	NA	NA	hispanic or latino
+LaCreta2016	Study1	29.0	all	height 	29.0	NA	NA	170.8	173.0	10.9	NA	149.2	186.8	cm	NA
+LaCreta2016	Study1	29.0	all	weight	29.0	NA	NA	73.5	74.9	12.5	NA	50.0	95.6	kg	NA
+LaCreta2016	Study1	29.0	all	bmi	29.0	NA	NA	25.0	24.2	2.5	NA	22.0	31.2	kg/m^2	NA
+LaCreta2016	NH_fasted	29.0	Study1	overnight fast	29.0	NA	Y	NA	NA	NA	NA	NA	NA	NA	A
+LaCreta2016	HS_fasted	29.0	Study1	overnight fast	29.0	NA	Y	NA	NA	NA	NA	NA	NA	NA	B
+LaCreta2016	HS_fed	29.0	Study1	overnight fast	29.0	NA	N	NA	NA	NA	NA	NA	NA	NA	C
+LaCreta2016	Study2	28.0	all	age	28.0	NA	NA	32.3	31.0	9.2	NA	20.0	51.0	yr	NA
+LaCreta2016	Study2	28.0	all	sex	10.0	NA	M	NA	NA	NA	NA	NA	NA	NA	NA
+LaCreta2016	Study2	28.0	all	sex	18.0	NA	F	NA	NA	NA	NA	NA	NA	NA	NA
+LaCreta2016	Study2	29.0	all	ethnicity	23.0	NA	caucasian	NA	NA	NA	NA	NA	NA	NA	NA
+LaCreta2016	Study2	29.0	all	ethnicity	4.0	NA	african american	NA	NA	NA	NA	NA	NA	NA	black or african american
+LaCreta2016	Study2	29.0	all	ethnicity	1.0	NA	asian	NA	NA	NA	NA	NA	NA	NA	NA
+LaCreta2016	Study2	29.0	all	ethnicity	12.0	NA	hispanic	NA	NA	NA	NA	NA	NA	NA	hispanic or latino
+LaCreta2016	Study2	28.0	all	height 	28.0	NA	NA	163.3	163.9	9.9	NA	145.4	182.8	cm	NA
+LaCreta2016	Study2	28.0	all	weight	28.0	NA	NA	70.1	67.1	11.6	NA	53.1	92.9	kg	NA
+LaCreta2016	Study2	28.0	all	bmi	28.0	NA	NA	26.1	26.4	2.5	NA	21.5	32.0	kg/m^2	NA
+LaCreta2016	NH_fasted	28.0	Study2	overnight fast	28.0	NA	Y	NA	NA	NA	NA	NA	NA	NA	D
+LaCreta2016	HS_fasted	28.0	Study2	overnight fast	28.0	NA	Y	NA	NA	NA	NA	NA	NA	NA	E
+LaCreta2016	NH_fed	28.0	Study2	overnight fast	28.0	NA	N	NA	NA	NA	NA	NA	NA	NA	F
+LaCreta2016	HS_fed	28.0	Study2	overnight fast	28.0	NA	N	NA	NA	NA	NA	NA	NA	NA	G

@@ -1,0 +1,69 @@
+study	name	group_count	parent	measurement_type	count	substance	choice	mean	median	sd	se	min	max	unit	comments
+Kasichayanula2013	all	40.0	NA	species	40.0	NA	homo sapiens	NA	NA	NA	NA	NA	NA	NA	NA
+Kasichayanula2013	all	40.0	NA	sex	40.0	NA	MF	NA	NA	NA	NA	NA	NA	NA	NA
+Kasichayanula2013	all	40.0	NA	healthy	8.0	NA	Y	NA	NA	NA	NA	NA	NA	NA	NA
+Kasichayanula2013	all	40.0	NA	healthy	32.0	NA	N	NA	NA	NA	NA	NA	NA	NA	NA
+Kasichayanula2013	healthy	8.0	all	healthy	8.0	NA	Y	NA	NA	NA	NA	NA	NA	NA	NA
+Kasichayanula2013	healthy	8.0	healthy	sex	5.0	NA	M	NA	NA	NA	NA	NA	NA	NA	NA
+Kasichayanula2013	healthy	8.0	healthy	sex	3.0	NA	F	NA	NA	NA	NA	NA	NA	NA	NA
+Kasichayanula2013	healthy	8.0	healthy	age	8.0	NA	NA	43.0	NA	15.0	NA	25.0	63.0	yr	NA
+Kasichayanula2013	healthy	8.0	healthy	weight	8.0	NA	NA	77.9	NA	9.9	NA	62.2	96.0	kg	NA
+Kasichayanula2013	healthy	8.0	healthy	ethnicity	6.0	NA	caucasian	NA	NA	NA	NA	NA	NA	NA	NA
+Kasichayanula2013	healthy	8.0	healthy	ethnicity	2.0	NA	black	NA	NA	NA	NA	NA	NA	NA	NA
+Kasichayanula2013	healthy	8.0	healthy	bmi	8.0	NA	NA	27.8	NA	2.7	NA	22.7	31.2	kg/m^2	NA
+Kasichayanula2013	healthy	8.0	healthy	overnight fast	8.0	NA	Y	NA	NA	NA	NA	NA	NA	NA	NA
+Kasichayanula2013	healthy	8.0	healthy	hba1c	8.0	NA	NA	5.5	NA	0.3	NA	NA	NA	percent	baseline
+Kasichayanula2013	healthy	8.0	healthy	concentration	8.0	glucose	NA	4.94	NA	0.38	NA	NA	NA	mmole/l	baseline FPG
+Kasichayanula2013	healthy	8.0	healthy	clearance	8.0	creatinine	NA	118.5	NA	25.2	NA	NA	NA	ml/min	medication
+Kasichayanula2013	t2dm	32.0	all	healthy	32.0	NA	N	NA	NA	NA	NA	NA	NA	NA	NA
+Kasichayanula2013	t2dm	32.0	all	disease	32.0	NA	t2dm	NA	NA	NA	NA	NA	NA	NA	NA
+Kasichayanula2013	normal	12.0	t2dm	sex	8.0	NA	M	NA	NA	NA	NA	NA	NA	NA	NA
+Kasichayanula2013	normal	12.0	t2dm	sex	4.0	NA	F	NA	NA	NA	NA	NA	NA	NA	NA
+Kasichayanula2013	normal	12.0	t2dm	age	12.0	NA	NA	55.0	NA	9.0	NA	42.0	67.0	yr	NA
+Kasichayanula2013	normal	12.0	t2dm	weight	12.0	NA	NA	79.2	NA	18.4	NA	69.1	104.4	kg	NA
+Kasichayanula2013	normal	12.0	t2dm	ethnicity	10.0	NA	caucasian	NA	NA	NA	NA	NA	NA	NA	NA
+Kasichayanula2013	normal	12.0	t2dm	ethnicity	1.0	NA	black	NA	NA	NA	NA	NA	NA	NA	NA
+Kasichayanula2013	normal	12.0	t2dm	ethnicity	1.0	NA	Pacific Islander	NA	NA	NA	NA	NA	NA	NA	NA
+Kasichayanula2013	normal	12.0	t2dm	bmi	12.0	NA	NA	33.2	NA	5.1	NA	24.4	44.4	kg/m^2	NA
+Kasichayanula2013	normal	12.0	t2dm	overnight fast	12.0	NA	Y	NA	NA	NA	NA	NA	NA	NA	NA
+Kasichayanula2013	normal	12.0	t2dm	hba1c	12.0	NA	NA	8.6	NA	1.2	NA	NA	NA	percent	baseline
+Kasichayanula2013	normal	12.0	t2dm	concentration	12.0	glucose	NA	9.32	NA	2.96	NA	NA	NA	mmole/l	baseline FPG
+Kasichayanula2013	normal	12.0	t2dm	medication	10.0	metformin	Y	NA	NA	NA	NA	NA	NA	NA	medication
+Kasichayanula2013	normal	12.0	t2dm	medication	2.0	tolbutamide	Y	NA	NA	NA	NA	NA	NA	NA	medication: sulfonylurea
+Kasichayanula2013	normal	12.0	t2dm	clearance	12.0	creatinine	NA	133.2	NA	39.1	NA	NA	NA	ml/min	medication
+Kasichayanula2013	mild	8.0	t2dm	sex	3.0	NA	M	NA	NA	NA	NA	NA	NA	NA	NA
+Kasichayanula2013	mild	8.0	t2dm	sex	5.0	NA	F	NA	NA	NA	NA	NA	NA	NA	NA
+Kasichayanula2013	mild	8.0	t2dm	age	8.0	NA	NA	66.0	NA	7.0	NA	55.0	75.0	yr	NA
+Kasichayanula2013	mild	8.0	t2dm	weight	8.0	NA	NA	73.9	NA	12.1	NA	58.8	90.6	kg	NA
+Kasichayanula2013	mild	8.0	t2dm	ethnicity	8.0	NA	caucasian	NA	NA	NA	NA	NA	NA	NA	NA
+Kasichayanula2013	mild	8.0	t2dm	bmi	8.0	NA	NA	29.3	NA	4.0	NA	21.1	34.3	kg/m^2	NA
+Kasichayanula2013	mild	8.0	t2dm	overnight fast	8.0	NA	Y	NA	NA	NA	NA	NA	NA	NA	NA
+Kasichayanula2013	mild	8.0	t2dm	hba1c	8.0	NA	NA	8.5	NA	1.0	NA	NA	NA	percent	baseline
+Kasichayanula2013	mild	8.0	t2dm	concentration	8.0	glucose	NA	7.75	NA	1.5	NA	NA	NA	mmole/l	baseline FPG
+Kasichayanula2013	mild	8.0	t2dm	medication	7.0	metformin	Y	NA	NA	NA	NA	NA	NA	NA	medication
+Kasichayanula2013	mild	8.0	t2dm	medication	3.0	tolbutamide	Y	NA	NA	NA	NA	NA	NA	NA	medication: sulfonylurea
+Kasichayanula2013	mild	8.0	t2dm	clearance	8.0	creatinine	NA	69.6	NA	7.1	NA	NA	NA	ml/min	medication
+Kasichayanula2013	moderate	8.0	t2dm	sex	4.0	NA	M	NA	NA	NA	NA	NA	NA	NA	NA
+Kasichayanula2013	moderate	8.0	t2dm	sex	4.0	NA	F	NA	NA	NA	NA	NA	NA	NA	NA
+Kasichayanula2013	moderate	8.0	t2dm	age	8.0	NA	NA	72.0	NA	5.0	NA	62.0	76.0	yr	NA
+Kasichayanula2013	moderate	8.0	t2dm	weight	8.0	NA	NA	77.4	NA	17.7	NA	51.8	101.2	kg	NA
+Kasichayanula2013	moderate	8.0	t2dm	ethnicity	7.0	NA	caucasian	NA	NA	NA	NA	NA	NA	NA	NA
+Kasichayanula2013	moderate	8.0	t2dm	ethnicity	1.0	NA	black	NA	NA	NA	NA	NA	NA	NA	NA
+Kasichayanula2013	moderate	8.0	t2dm	bmi	8.0	NA	NA	27.9	NA	4.4	NA	20.2	32.7	kg/m^2	NA
+Kasichayanula2013	moderate	8.0	t2dm	overnight fast	8.0	NA	Y	NA	NA	NA	NA	NA	NA	NA	NA
+Kasichayanula2013	moderate	8.0	t2dm	hba1c	8.0	NA	NA	7.1	NA	1.1	NA	NA	NA	percent	baseline
+Kasichayanula2013	moderate	8.0	t2dm	concentration	8.0	glucose	NA	6.79	NA	1.53	NA	NA	NA	mmole/l	baseline FPG
+Kasichayanula2013	moderate	8.0	t2dm	medication	1.0	metformin	Y	NA	NA	NA	NA	NA	NA	NA	medication
+Kasichayanula2013	moderate	8.0	t2dm	medication	1.0	tolbutamide	Y	NA	NA	NA	NA	NA	NA	NA	medication: sulfonylurea
+Kasichayanula2013	moderate	8.0	t2dm	medication	4.0	insulin	Y	NA	NA	NA	NA	NA	NA	NA	medication
+Kasichayanula2013	moderate	8.0	t2dm	clearance	8.0	creatinine	NA	42.6	NA	8.0	NA	NA	NA	ml/min	medication
+Kasichayanula2013	severe	4.0	t2dm	sex	4.0	NA	M	NA	NA	NA	NA	NA	NA	NA	NA
+Kasichayanula2013	severe	4.0	t2dm	age	4.0	NA	NA	66.0	NA	6.0	NA	59.0	73.0	yr	NA
+Kasichayanula2013	severe	4.0	t2dm	weight	4.0	NA	NA	78.4	NA	4.1	NA	72.3	80.9	kg	NA
+Kasichayanula2013	severe	4.0	t2dm	ethnicity	4.0	NA	caucasian	NA	NA	NA	NA	NA	NA	NA	NA
+Kasichayanula2013	severe	4.0	t2dm	bmi	4.0	NA	NA	27.2	NA	1.1	NA	26.2	28.7	kg/m^2	NA
+Kasichayanula2013	severe	4.0	t2dm	overnight fast	4.0	NA	Y	NA	NA	NA	NA	NA	NA	NA	NA
+Kasichayanula2013	severe	4.0	t2dm	hba1c	4.0	NA	NA	7.1	NA	1.2	NA	NA	NA	percent	baseline
+Kasichayanula2013	severe	4.0	t2dm	concentration	4.0	glucose	NA	7.23	NA	2.73	NA	NA	NA	mmole/l	baseline FPG
+Kasichayanula2013	severe	4.0	t2dm	medication	3.0	insulin	Y	NA	NA	NA	NA	NA	NA	NA	medication
+Kasichayanula2013	severe	4.0	t2dm	clearance	4.0	creatinine	NA	24.3	NA	5.6	NA	NA	NA	ml/min	medication

@@ -1,0 +1,13 @@
+study	group	count	intervention	measurement_type	substance	tissue	method	time	time_unit	mean	min	max	sd	se	cv	unit	comments
+Komoroski2009	fasted	5.0	DAP250	cmax	dapagliflozin	plasma	LC/MS	120.0	hr	2510.0	NA	NA	NA	NA	31.0	ng/ml	geometric mean 
+Komoroski2009	fasted	5.0	DAP250	auc_inf	dapagliflozin	plasma	LC/MS	NA	hr	13337.0	NA	NA	NA	NA	28.0	ng/ml*hr	geometric mean 
+Komoroski2009	fasted	5.0	DAP250	tmax	dapagliflozin	plasma	LC/MS	NA	hr	1.5	1.0	2.0	NA	NA	NA	hr	median 
+Komoroski2009	fasted	5.0	DAP250	thalf	dapagliflozin	plasma	LC/MS	NA	hr	17.33	NA	NA	19.75	NA	NA	hr	NA
+Komoroski2009	fasted	5.0	DAP250	recovery	dapagliflozin	urine	LC/MS	120.0	hr	1.54	NA	NA	0.4	NA	NA	percent	NA
+Komoroski2009	fasted	5.0	DAP250	clearance_renal	dapagliflozin	plasma	LC/MS	NA	hr	4.99	NA	NA	0.91	NA	NA	ml/min	NA
+Komoroski2009	fed	5.0	DAP250	cmax	dapagliflozin	plasma	LC/MS	120.0	hr	1532.0	NA	NA	NA	NA	24.0	ng/ml	geometric mean 
+Komoroski2009	fed	5.0	DAP250	auc_inf	dapagliflozin	plasma	LC/MS	NA	hr	12455.0	NA	NA	NA	NA	31.0	ng/ml*hr	geometric mean 
+Komoroski2009	fed	5.0	DAP250	tmax	dapagliflozin	plasma	LC/MS	NA	hr	4.0	4.0	4.0	NA	NA	NA	hr	median 
+Komoroski2009	fed	5.0	DAP250	thalf	dapagliflozin	plasma	LC/MS	NA	hr	18.25	NA	NA	15.94	NA	NA	hr	NA
+Komoroski2009	fed	5.0	DAP250	recovery	dapagliflozin	urine	LC/MS	120.0	hr	1.9	NA	NA	0.6	NA	NA	percent	NA
+Komoroski2009	fed	5.0	DAP250	clearance_renal	dapagliflozin	plasma	LC/MS	NA	hr	6.33	NA	NA	1.19	NA	NA	ml/min	NA

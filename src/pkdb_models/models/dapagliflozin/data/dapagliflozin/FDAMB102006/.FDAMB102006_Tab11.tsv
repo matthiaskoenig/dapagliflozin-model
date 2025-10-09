@@ -1,0 +1,16 @@
+study	group	count	intervention	measurement_type	substance	tissue	method	time	time_unit	mean	min	max	sd	se	cv	unit	comments
+FDAMB102006	all	6.0	DAP50	cmax	total dapagliflozin	plasma	LC MS/MS	NA	NA	1761.0	NA	NA	NA	NA	16.0	ng/ml	NA
+FDAMB102006	all	6.0	DAP50	auc_inf	total dapagliflozin	plasma	LC MS/MS	NA	NA	6952.0	NA	NA	NA	NA	22.0	ng/ml*hr	NA
+FDAMB102006	all	6.0	DAP50	tmax	total dapagliflozin	plasma	LC MS/MS	NA	NA	1.0	0.75	1.0	NA	NA	NA	hr	NA
+FDAMB102006	all	6.0	DAP50	thalf	total dapagliflozin	plasma	LC MS/MS	NA	NA	5.39	NA	NA	2.89	NA	NA	hr	NA
+FDAMB102006	all	6.0	DAP50	clearance	total dapagliflozin	plasma	LC MS/MS	NA	NA	107.73	NA	NA	22.01	NA	NA	ml/min	NA
+FDAMB102006	all	6.0	DAP50	recovery	total dapagliflozin	urine	LC MS/MS	13.0	day	75.16	NA	NA	9.19	NA	NA	percent	NA
+FDAMB102006	all	6.0	DAP50	recovery	total dapagliflozin	feces	LC MS/MS	13.0	day	20.99	NA	NA	8.81	NA	NA	percent	NA
+FDAMB102006	all	6.0	DAP50	recovery	total dapagliflozin	feces_urine	LC MS/MS	13.0	day	96.16	NA	NA	1.69	NA	NA	percent	NA
+FDAMB102006	all	6.0	DAP50	cmax	total dapagliflozin	blood	LC MS/MS	NA	NA	1105.0	NA	NA	NA	NA	17.0	ng/ml	NA
+FDAMB102006	all	6.0	DAP50	auc_inf	total dapagliflozin	blood	LC MS/MS	NA	NA	4029.0	NA	NA	NA	NA	19.0	ng/ml*hr	NA
+FDAMB102006	all	6.0	DAP50	tmax	total dapagliflozin	blood	LC MS/MS	NA	NA	0.88	0.75	1.0	NA	NA	NA	hr	NA
+FDAMB102006	all	6.0	DAP50	thalf	total dapagliflozin	blood	LC MS/MS	NA	NA	3.95	NA	NA	1.66	NA	NA	hr	NA
+FDAMB102006	all	6.0	DAP50	recovery	dapagliflozin	urine	LC MS/MS	13.0	day	1.2	NA	NA	NA	NA	NA	percent	NA
+FDAMB102006	all	6.0	DAP50	recovery	dapagliflozin 3-o-glucuronide	urine	LC MS/MS	13.0	day	61.0	NA	NA	NA	NA	NA	percent	NA
+FDAMB102006	all	6.0	DAP50	recovery	dapagliflozin	feces	LC MS/MS	13.0	day	15.4	NA	NA	NA	NA	NA	percent	NA

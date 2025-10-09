@@ -1,0 +1,14 @@
+study	name	group_count	parent	measurement_type	count	substance	choice	mean	median	sd	se	min	max	unit	comments
+Shah2019a	all	24.0	NA	species	24.0	NA	homo sapiens	NA	NA	NA	NA	NA	NA	NA	NA
+Shah2019a	all	24.0	NA	ethnicity	24.0	NA	indian	NA	NA	NA	NA	NA	NA	NA	NA
+Shah2019a	all	24.0	NA	healthy	24.0	NA	Y	NA	NA	NA	NA	NA	NA	NA	NA
+Shah2019a	all	24.0	NA	sex	24.0	NA	M	NA	NA	NA	NA	NA	NA	NA	NA
+Shah2019a	all	25.0	NA	age	24.0	NA	NA	NA	NA	NA	NA	25.0	45.0	yr	NA
+Shah2019a	all	26.0	NA	height	24.0	NA	NA	NA	NA	NA	NA	160.6	181.8	cm	NA
+Shah2019a	all	27.0	NA	weight	24.0	NA	NA	NA	NA	NA	NA	54.6	82.2	kg	NA
+Shah2019a	all	24.0	NA	bmi	24.0	NA	NA	NA	NA	NA	NA	18.8	24.4	kg/m^2	NA
+Shah2019a	all	24.0	NA	overnight fast	24.0	NA	Y	NA	NA	NA	NA	NA	NA	NA	NA
+Shah2019a	fasted	24.0	all	fasting	24.0	NA	Y	NA	NA	NA	NA	NA	NA	NA	NA
+Shah2019a	fasted	25.0	all	kel	24.0	NA	NA	0.0073	NA	0.002	NA	NA	NA	1/hr	NA
+Shah2019a	fed	24.0	all	fasting	24.0	NA	N	NA	NA	NA	NA	NA	NA	NA	NA
+Shah2019a	fed	25.0	all	kel	24.0	NA	NA	0.071	NA	0.002	NA	NA	NA	1/hr	NA

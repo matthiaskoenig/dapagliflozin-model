@@ -1,0 +1,16 @@
+study	name	group_count	parent	measurement_type	count	substance	choice	mean	median	sd	se	min	max	unit	comments
+FDAMB102007	all	37.0	NA	species	37.0	NA	homo sapiens	NA	NA	NA	NA	NA	NA	NA	NA
+FDAMB102007	all	37.0	NA	sex	37.0	NA	NR	NA	NA	NA	NA	NA	NA	NA	NA
+FDAMB102007	all	37.0	NA	fasting	37.0	NA	NR	NA	NA	NA	NA	NA	NA	NA	NA
+FDAMB102007	all	37.0	NA	healthy	5.0	NA	Y	NA	NA	NA	NA	NA	NA	NA	NA
+FDAMB102007	all	37.0	NA	healthy	32.0	NA	N	NA	NA	NA	NA	NA	NA	NA	NA
+FDAMB102007	healthy	5.0	all	healthy	5.0	NA	Y	NA	NA	NA	NA	NA	NA	NA	NA
+FDAMB102007	t2dm	32.0	all	healthy	32.0	NA	N	NA	NA	NA	NA	NA	NA	NA	NA
+FDAMB102007	t2dm	32.0	all	disease	32.0	NA	t2dm	NA	NA	NA	NA	NA	NA	NA	NA
+FDAMB102007	normal	9.0	t2dm	disease	9.0	NA	t2dm	NA	NA	NA	NA	NA	NA	NA	NA
+FDAMB102007	mild	9.0	t2dm	disease	9.0	NA	t2dm	NA	NA	NA	NA	NA	NA	NA	NA
+FDAMB102007	mild	9.0	t2dm	disease	9.0	NA	renal disease (mild)	NA	NA	NA	NA	NA	NA	NA	NA
+FDAMB102007	moderate	8.0	t2dm	disease	8.0	NA	t2dm	NA	NA	NA	NA	NA	NA	NA	NA
+FDAMB102007	moderate	8.0	t2dm	disease	8.0	NA	renal disease (moderate)	NA	NA	NA	NA	NA	NA	NA	NA
+FDAMB102007	severe	6.0	t2dm	disease	6.0	NA	t2dm	NA	NA	NA	NA	NA	NA	NA	NA
+FDAMB102007	severe	6.0	t2dm	disease	6.0	NA	renal disease	NA	NA	NA	NA	NA	NA	NA	NA

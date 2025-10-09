@@ -1,0 +1,20 @@
+study	name	group_count	parent	measurement_type	count	substance	choice	mean	median	sd	se	min	max	unit	comments
+Gould2013	all	175.0	NA	healthy	175.0	NA	Y	NA	NA	NA	NA	NA	NA	NA	NA
+Gould2013	all	175.0	NA	species	175.0	NA	homo sapiens	NA	NA	NA	NA	NA	NA	NA	NA
+Gould2013	all	175.0	NA	sex	175.0	NA	MF	NA	NA	NA	NA	NA	NA	NA	NA
+Gould2013	Gould	36.0	all	sex	36.0	NA	MF	NA	NA	NA	NA	NA	NA	NA	NA
+Gould2013	other studies	139.0	all	sex	139.0	NA	MF	NA	NA	NA	NA	NA	NA	NA	NA
+Gould2013	DAP0.001	5.0	Gould	species	5.0	NA	homo sapiens	NA	NA	NA	NA	NA	NA	NA	NA
+Gould2013	DAP0.01	5.0	Gould	species	5.0	NA	homo sapiens	NA	NA	NA	NA	NA	NA	NA	NA
+Gould2013	DAP0.1	5.0	Gould	species	5.0	NA	homo sapiens	NA	NA	NA	NA	NA	NA	NA	NA
+Gould2013	DAP0.3	5.0	Gould	species	5.0	NA	homo sapiens	NA	NA	NA	NA	NA	NA	NA	NA
+Gould2013	DAP1	6.0	Gould	species	6.0	NA	homo sapiens	NA	NA	NA	NA	NA	NA	NA	NA
+Gould2013	DAP2.5	6.0	Gould	species	6.0	NA	homo sapiens	NA	NA	NA	NA	NA	NA	NA	NA
+Gould2013	DAP0	22.0	other studies	species	22.0	NA	homo sapiens	NA	NA	NA	NA	NA	NA	NA	NA
+Gould2013	DAP5	6.0	other studies	species	6.0	NA	homo sapiens	NA	NA	NA	NA	NA	NA	NA	if Komoroski than healthy Human ; if Han than diabetic rats
+Gould2013	DAP10	6.0	other studies	species	6.0	NA	homo sapiens	NA	NA	NA	NA	NA	NA	NA	NA
+Gould2013	DAP20	6.0	other studies	species	6.0	NA	homo sapiens	NA	NA	NA	NA	NA	NA	NA	NA
+Gould2013	DAP50	6.0	other studies	species	6.0	NA	homo sapiens	NA	NA	NA	NA	NA	NA	NA	NA
+Gould2013	DAP100	6.0	other studies	species	6.0	NA	homo sapiens	NA	NA	NA	NA	NA	NA	NA	NA
+Gould2013	DAP250	6.0	other studies	species	6.0	NA	homo sapiens	NA	NA	NA	NA	NA	NA	NA	NA
+Gould2013	DAP500	6.0	other studies	species	6.0	NA	homo sapiens	NA	NA	NA	NA	NA	NA	NA	NA

@@ -1,0 +1,15 @@
+study	parameter	intervention	dose	dose_unit	application	n_fasted	mean_fasted	sd_fasted	gmean_fasted	unit_fasted	n_fed	mean_fed	sd_fed	gmean_fed	unit_fed	ratio
+Kasichayanula2011b	cmax	DAP10	10	mg	single dose	14	136	29.92		ng/ml	14	94	31.02		ng/ml	0.69
+Kasichayanula2011b	auc_end	DAP10	10	mg	single dose	14	470	94		ng/ml*hr	14	478	76.48		ng/ml*hr	1.02
+Kasichayanula2011b	auc_inf	DAP10	10	mg	single dose	14	497	94.43		ng/ml*hr	14	507	81.12		ng/ml*hr	1.02
+#																
+Komoroski2009	cmax	DAP250	250	mg	single dose	5	2510	778.1	2510	ng/ml	5	1532	367.68	1532	ng/ml	0.61
+Komoroski2009	auc_inf	DAP250	250	mg	single dose	5	13337	3734.36	13337	ng/ml*hr	5	12455	3861.05	12455	ng/ml*hr	0.93
+#																
+LaCreta2016	cmax	DAP2.5	2.5	mg	single dose	28	45	11.7		ng/ml	27	25	13.25		ng/ml	0.56
+LaCreta2016	auc_end	DAP2.5	2.5	mg	single dose	28	151	37.75		ng/ml*hr	27	137	35.62		ng/ml*hr	0.91
+LaCreta2016	auc_inf	DAP2.5	2.5	mg	single dose	28	170	44.2		ng/ml*hr	27	154	35.42		ng/ml*hr	0.91
+#
+Shah2019a	cmax	DAP5, MET500	5	mg	single dose	24	74.6	13.4		ng/ml	24	47.1	10.4		ng/ml	0.63
+Shah2019a	auc_end	DAP5, MET500	5	mg	single dose	24	263.0	43.5		ng/ml*hr	24	245.0	37.8		ng/ml*hr	0.93
+Shah2019a	auc_inf	DAP5, MET500	5	mg	single dose	24	291.0	29.6		ng/ml*hr	24	269.0	28.4		ng/ml*hr	0.92

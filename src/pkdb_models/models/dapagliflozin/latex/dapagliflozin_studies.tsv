@@ -1,0 +1,56 @@
+Study identifier	PK-DB identifier	PubMed	GitHub Issue	Pharmacokinetics	Pharmacodynamics	substance	dose route	dosing	dose [mg]	combination	healthy	renal impairment	hepatic impairment	diabetes mellitus 1	diabetes mellitus 2	plasma/serum dapagliflozin	urine data	feces data	plasma/serum dapa3oglu	urine data	renal glucose clearance	fasted/fed	fasted/fed	urinary glucose Exkretion	Fasting plasma Glucose	Heart Rate (HR)	RTG	Curation status	Priority	Information in Google Docs	Available via repository	upload	simulation	Parameter fitting	upload_issues	Comments
+study	pkdb	pmid	github	pk	pd	substance	route	dosing	dose	combination	healthy	renal impairment	hepatic impairment	t1dm	t2dm	dap plasma	dap urine	dap feces	d3g plasma	d3g urine	renal glucose clearance	fed	fasted	UGE	FPG	HbA1c	RTG	status	priority	docs	repo	upload	simulation	fitting	issues	comments
+Boulton2013	PKDB00838	22823746	#1673	TRUE	FALSE	dap, [14C]dap	oral, iv	single	10, 0.080		TRUE	-	-	-	-	TRUE	-	-	-	-	-	-	-	-	-	-	-	checked	high	TRUE	TRUE	TRUE	TRUE	TRUE		single (1h later 80 mg dose of [14C]-dapagliflozin solution)
+Cho2021	PKDB00839	33430328	#1672	TRUE	FALSE	dap	oral	single	10		TRUE	-	-	-	-	TRUE	-	-	-	-	-	-	-	-	-	-	-	checked	high	TRUE	TRUE	TRUE	TRUE	TRUE		
+FDAMB102002	PKDB00959	202293102002	#1833	TRUE	TRUE	dap	oral	multi	2.5, 10, 20, 50, 100		TRUE	-	-	-	-	TRUE	-	-	-	-	-	-	-	TRUE	-	-	-	checked	high	TRUE	TRUE	TRUE	TRUE	TRUE		
+FDAMB102003	PKDB00960	202293102003	#1834	TRUE	TRUE	dap	oral	single, multi	5, 25, 100		-	-	-	-	TRUE	TRUE	-	-	-	-	-	-	-	TRUE	-	-	-	checked	high	TRUE	TRUE	TRUE	TRUE	TRUE		
+FDAMB102006	PKDB00970	202293102006	#1835	TRUE	FALSE	[14C]dap	oral	single	50		TRUE	-	-	-	-	TRUE	TRUE	TRUE	-	TRUE	TRUE	-	-	-	-	-	-	checked	high	TRUE	TRUE	TRUE	TRUE	TRUE		
+FDAMB102007	PKDB00971	202293102007	#1836	TRUE	FALSE	dap	oral	single, multi	20, 50		TRUE	TRUE	-	-	TRUE	TRUE	TRUE	-	-	-	-	-	-	-	-	-	-	checked	high	TRUE	TRUE	TRUE	TRUE	TRUE		
+Hwang2022a	PKDB00923	36632075	#1773	TRUE	FALSE	dap	oral	single	10		TRUE	-	-	-	-	TRUE	-	-	TRUE	-	TRUE	-	-	-	-	-	-	checked	high	TRUE	TRUE	TRUE	TRUE	TRUE		
+Imamura2013	PKDB00893	23307267	#1763	TRUE	FALSE	dap	oral	single	10	dapagliflozin, dapagliflozin+voglibose	-	-	-	-	TRUE	TRUE	-	-	-	-	-	-	-	-	-	-	-	checked	high	TRUE	TRUE	TRUE	TRUE	TRUE		
+Jang2020	PKDB00913	31992459	#1764	TRUE	FALSE	dap	oral	multi	10	dapagliflozin, dapagliflozin+lobeglitazone	TRUE	-	-	-	-	TRUE	-	-	-	-	-	-	-	-	-	-	-	checked	high	TRUE	TRUE	TRUE	TRUE	TRUE		
+Kasichayanula2011	PKDB00841	22030444	#1684	FALSE	FALSE	dap	oral	single	10		TRUE	-	TRUE	-	-	TRUE	-	-	TRUE	-	-	-	-	-	-	-	-	checked	high	TRUE	TRUE	FALSE	TRUE	TRUE	negative werte 	
+Kasichayanula2011a	PKDB00842	21226818	#1705	TRUE	TRUE	dap	oral	single, multi	2.5, 10, 20, 50		TRUE	-	-	-	TRUE	TRUE	-	-	TRUE	TRUE	-	-	-	TRUE	-	-	-	checked	high	TRUE	TRUE	TRUE	TRUE	TRUE		
+Kasichayanula2011b	PKDB00843	21435141	#1676	TRUE	FALSE	dap	oral	single	10		TRUE	-	-	-	-	TRUE	-	-	TRUE	-	-	TRUE	TRUE	-	-	-	-	checked	high	TRUE	TRUE	TRUE	TRUE	TRUE		
+Kasichayanula2011c	PKDB00924	21114603	#1783	TRUE	FALSE	dap	oral	single	20, 50	dapagliflozin, dapagliflozin + pioglitazone, dapagliflozin + metformin, dapagliflozin + glimeperide, dapagliflozin + sitagliptin	TRUE	-	-	-	-	TRUE	-	-	-	-	-	-	-	-	-	-	-	checked	high	TRUE	TRUE	TRUE	TRUE	TRUE		
+Kasichayanula2012	PKDB00925	22271159	#1756	TRUE	FALSE	dap	oral	single	20	dapagliflozin, dapagliflozin + simvastatin, dapagliflozin + valsartan	TRUE	-	-	-	-	TRUE	-	-	-	-	-	-	-	-	-	-	-	checked	high	TRUE	TRUE	TRUE	TRUE	TRUE		
+Kasichayanula2013	PKDB00844	23210765	#1678	TRUE	FALSE	dap	oral	single, multi	20, 50		TRUE	TRUE	-	-	TRUE	TRUE	TRUE	-	TRUE	TRUE	TRUE	-	TRUE	-	TRUE	TRUE	-	checked	high	TRUE	TRUE	TRUE	TRUE	TRUE		
+Kasichayanula2013a	PKDB00845	23061428	#1698	TRUE	FALSE	dap	oral	single	10	dapagliflozin, dapagliflozin+rifampin, dapagliflozin+mefenamic	TRUE	-	-	-	-	TRUE	TRUE	-	TRUE	-	-	-	TRUE	TRUE	-	-	-	checked	high	TRUE	TRUE	TRUE	TRUE	TRUE		
+Khomitskaya2018	PKDB00926	29548719	#1755	TRUE	FALSE	dap	oral	single	10	dapagliflozin, dapagliflozin+metformin	TRUE	-	-	-	-	TRUE	-	-	-	-	-	-	-	-	-	-	-	checked	high	TRUE	TRUE	TRUE	TRUE	TRUE		
+Kim2023	PKDB00927	37282359	#1786	TRUE	TRUE	dap	oral	multi	10	dapagliflozin, dapagliflozin + evogliptin	TRUE	-	-	-	-	TRUE	-	-	-	-	-	-	-	-	-	-	-	checked	high	TRUE	TRUE	TRUE	TRUE	TRUE		
+Kim2023a	PKDB00928	37034122	#1801	TRUE	FALSE	dap	oral	single	10		TRUE	-	-	-	-	TRUE	-	-	-	-	-	-	-	-	TRUE	-	-	checked	high	TRUE	TRUE	TRUE	TRUE	TRUE		
+Komoroski2009	PKDB00846	19129748	#1700	TRUE	TRUE	dap	oral	single, multi	2.5, 10, 20, 50, 100, 250, 500		TRUE	-	-	-	-	TRUE	TRUE	-	-	TRUE	TRUE	TRUE	TRUE	TRUE	-	-	-	checked	high	TRUE	TRUE	TRUE	TRUE	TRUE		
+LaCreta2016	PKDB00847	27418571	#1718	TRUE	FALSE	dap	oral	single	2.5, 10		TRUE	-	-	-	-	TRUE	-	-	-	-	-	TRUE	TRUE	-	-	-	-	checked	high	TRUE	TRUE	TRUE	TRUE	TRUE		
+Obermeier2010	PKDB00848	19996149	#1688	TRUE	FALSE	dap, [14C]dap	oral	single	50		TRUE	-	-	-	-	TRUE	-	-	-	-	-	-	-	-	-	-	-	checked	high	TRUE	TRUE	FALSE	TRUE	TRUE	negative werte 	
+Sha2015	PKDB00891	25421015	#1772	TRUE	TRUE	dap	oral	single	10	#	TRUE	-	-	-	-	TRUE	-	-	-	-	-	-	TRUE	TRUE	-	-	TRUE	checked	high	TRUE	TRUE	TRUE	TRUE	TRUE	canagliflozin studies	
+Shah2019a	PKDB00849	30517974	#1719	TRUE	FALSE	dap	oral	single	5	dapagliflozin+metformin	TRUE	-	-	-	-	TRUE	-	-	-	-	-	TRUE	TRUE	-	-	-	-	checked	high	TRUE	TRUE	TRUE	TRUE	TRUE		
+vanderAartvanderBeek2020	PKDB00929	32663790	#1802	TRUE	FALSE	dap	oral	multi	10		-	TRUE	-	-	-	TRUE	-	-	-	-	-	-	-	-	-	-	-	checked	high	TRUE	TRUE	TRUE	TRUE	TRUE	macroalbuminuria, Importfehler (Schreibweise?)	
+Watada2019	PKDB00850	30499157	#1703	TRUE	TRUE	dap	oral	multi	5, 10	dapagliflozin+insulin	-	-	-	TRUE	-	TRUE	-	-	TRUE	-	-	-	-	TRUE	TRUE	TRUE	-	checked	high	TRUE	TRUE	TRUE	TRUE	TRUE		
+Yang2013	PKDB00851	23910664	#1704	TRUE	TRUE	dap	oral	single, multi	5, 10		TRUE	-	-	-	-	TRUE	TRUE	-	TRUE	TRUE	-	-	TRUE	TRUE	-	-	-	checked	high	TRUE	TRUE	TRUE	TRUE	TRUE		
+																																				
+Gould2013	PKDB00840	23851069	#1711	FALSE	TRUE	dap	oral	single	0.001, 0,01, 0.1, 0.3, 1, 2.5, 5, 10, 20, 50, 100, 250, 500		TRUE	-	-	-	-	-	-	-	-	-	-	-	-	TRUE	-	-	-	finished	high	TRUE	TRUE	TRUE	TRUE	FALSE	review, data integration	
+																																				
+Bailey2012	FALSE			FALSE	TRUE	dap	oral	single	1, 2.5, 5		FALSE	-	-	-	TRUE	-	-	-	-	-	-	-	-	-	TRUE	TRUE	-		medium	TRUE	FALSE	FALSE	FALSE	FALSE		
+Biester2017	FALSE			TRUE	TRUE	dap	oral	single	10		FALSE			TRUE		- 	-	-	-	-	-	-	TRUE	TRUE	-	TRUE	TRUE		medium	TRUE	FALSE	FALSE	FALSE	FALSE	single dap curve	
+Boulton2016	FALSE			TRUE	FALSE	dap	oral	single	5, 10	dapagliflozin+metformin	TRUE	-	-	-	-	TRUE	-	-	-	-	-	TRUE	TRUE	-	-	-	-		medium	TRUE	FALSE	FALSE	FALSE	FALSE	only combination therapy	
+Chang2015	FALSE			TRUE	FALSE	dap	oral	single, multi	5, 10	dapagliflozin+metformin	TRUE	-	-	-	-	TRUE	-	-	-	-	-	TRUE	TRUE	-	-	-	-		medium	TRUE	TRUE	FALSE	FALSE	FALSE	only combination therapy	
+Chun2021	FALSE			TRUE	FALSE	dap L-proline	oral	single		metformin	TRUE	-	-	-	-	TRUE	-	-	-	-	-	-	-	-	-	-	-		medium	TRUE	FALSE	FALSE	FALSE	FALSE		
+Dandona2017	FALSE			FALSE	TRUE	dap	oral	multi	5, 10		TRUE	-	-	TRUE	-	-	-	-	-	-	-	-	-	-	-	TRUE	-		medium	TRUE	FALSE	FALSE	FALSE	FALSE		
+deBruin2016	FALSE			TRUE	FALSE	dap	oral	single	2.5, 5	dapagliflozin+metformin	TRUE	-	-	-	-	TRUE	-	-	-	-	-	TRUE	TRUE	-	-	-	-		medium	TRUE	FALSE	FALSE	FALSE	FALSE	only combination therapy	
+Dias2019	FALSE			TRUE	FALSE	dap	oral	single	10	dapagliflozin+metformin	TRUE	-	-	-	-	TRUE	-	-	-	-	-	-	-	-	-	-	-		medium	TRUE	FALSE	FALSE	FALSE	FALSE	only combination therapy	
+Gould2013	FALSE			TRUE	TRUE	dap	oral	single	0.1, 0.3, 1, 2,5, 5, 10, 20, 50, 100, 250, 500		TRUE	-	-	-	-	-	TRUE	-	-	TRUE				TRUE	-	-	-		unclear	FALSE	FALSE	FALSE	FALSE	FALSE		
+Hwang2022	FALSE			FALSE	TRUE	dap	oral	single	10		TRUE	-	-	-	-	-	-	-	-	-	-	-	-	TRUE	-	-	-		medium	TRUE	FALSE	FALSE	FALSE	FALSE		
+Kaku2014	FALSE			FALSE	TRUE	dap	oral	multi	5, 10		FALSE	-	-	-	TRUE	-	-	-	-	-	-	-	-	-	TRUE	TRUE	-		medium	TRUE	FALSE	FALSE	FALSE	FALSE		
+Kasichayanula2014	FALSE			TRUE	TRUE	dap	oral	single			TRUE	-	-	-	TRUE	-	-	-	-	TRUE				TRUE	-	-	-		no	TRUE	FALSE	FALSE	FALSE	FALSE	review	
+Kroonen2020	FALSE			TRUE	FALSE	dap	oral	multi 	10		FALSE	-	-	-	TRUE	-	-	-	-	TRUE				TRUE	-	-	-		no	TRUE	FALSE	FALSE	FALSE	FALSE	no data	
+Lee2023	FALSE			TRUE	FALSE	dap	oral	single	10	dapagliflozin+metformin	TRUE	-	-	-	-	TRUE	-	-	-	-	-	TRUE	TRUE	-	-	-	-		medium	TRUE	FALSE	FALSE	FALSE	FALSE		
+Li2020	FALSE			TRUE	TRUE	dap	oral	single, once daily	10		FALSE	-	-	-	TRUE	TRUE	TRUE	-	-	TRUE				-	TRUE	-	-		no	TRUE	FALSE	FALSE	FALSE	FALSE	no pharmacokinetic timecourses	
+List2011	FALSE	21358698		FALSE	TRUE	dap	oral	multi	2.5, 5, 10, 20, 50, 100		TRUE	-	-	-	TRUE	-	-	-	-	-	-	-	-	TRUE	TRUE	TRUE	TRUE		no	TRUE	FALSE	FALSE	FALSE	FALSE	review	
+Park2022	FALSE			TRUE	FALSE	dap	oral	single	10	dapagliflozin/linagliptin	TRUE	-	-	-	-	TRUE	-	-	-	-	-	-	-	-	-	-	-		medium	TRUE	FALSE	FALSE	FALSE	FALSE		
+Scheen2014	FALSE			TRUE	FALSE	dap	oral	single, multi	2.5, 5, 10, 20, 50, 250		TRUE	TRUE	TRUE	-	TRUE	-	-	-	-	-				-	-	-	-		no	TRUE	FALSE	FALSE	FALSE	FALSE	review	
+Scheen2015	FALSE			TRUE	FALSE	dap	oral	single	20, 50 		FALSE	TRUE	-	-	TRUE	-	-	-	-	-				TRUE	-	-	-		no	TRUE	FALSE	FALSE	FALSE	FALSE	review	
+Tang2015	FALSE			TRUE	FALSE	dap	oral	once daily, twice daily	5, 10		TRUE	-	-	-	-	TRUE	-	-	-	TRUE				-	-	-	-		no	TRUE	FALSE	FALSE	FALSE	FALSE	no data	
+Tang2016	FALSE			TRUE	TRUE	dap	oral	multi	1,2.5, 5, 10, 20, 25, 100		FALSE	-	-	TRUE	TRUE	-	-	-	-	-	-	-	-	TRUE	-	-	-		medium	TRUE	FALSE	FALSE	FALSE	FALSE	mainly pharmacodynamics	
+Tang2019	FALSE			TRUE	FALSE	dap	oral	single	5, 10	dapagliflozin/saxagliptin and dapagliflozin/metformin	TRUE	-	-	-	-	TRUE	-	-	-	-	-	TRUE	TRUE	-	-	-	-		medium	TRUE	FALSE	FALSE	FALSE	FALSE		
+Tirucherai2016	FALSE			TRUE	FALSE	dap					FALSE					FALSE		-						TRUE					no	TRUE	FALSE	FALSE	FALSE	FALSE	children	
+Vakkalagadda2015	FALSE			TRUE	FALSE	dap	oral	single	10	dapagliflozin/saxagliptin	TRUE	-	-	-	-	TRUE	-	-	-	-	-	TRUE	TRUE	-	-	-	-		medium	TRUE	FALSE	FALSE	FALSE	FALSE		

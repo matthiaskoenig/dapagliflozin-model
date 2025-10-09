@@ -1,0 +1,57 @@
+study	group	count	intervention	measurement_type	substance	tissue	method	time	time_unit	mean	min	max	sd	se	cv	unit	comments
+Yang2013	DAP5	14.0	SD_DAP5	cmax	dapagliflozin	plasma	LC MS/MS	NA	NA	93.6	NA	NA	NA	NA	29.0	ng/ml	geometric mean
+Yang2013	DAP5	14.0	SD_DAP5	auc_end	dapagliflozin	plasma	LC MS/MS	24.0	hr	315.0	NA	NA	NA	NA	18.0	ng/ml*hr	geometric mean
+Yang2013	DAP5	14.0	SD_DAP5	auc_inf	dapagliflozin	plasma	LC MS/MS	NA	NA	324.3	NA	NA	NA	NA	18.0	ng/ml*hr	geometric mean
+Yang2013	DAP5	14.0	SD_DAP5	thalf	dapagliflozin	plasma	LC MS/MS	NA	NA	12.2	NA	NA	6.3	NA	NA	hr	NA
+Yang2013	DAP5	14.0	SD_DAP5	tmax	dapagliflozin	plasma	LC MS/MS	NA	NA	0.5	0.5	1.5	NA	NA	NA	hr	median
+Yang2013	DAP5	14.0	SD_DAP5	clearance	dapagliflozin	plasma	LC MS/MS	NA	NA	3.5	NA	NA	NA	NA	19.0	ml/min	geometric mean
+Yang2013	DAP5	14.0	SD_DAP5	recovery	dapagliflozin	urine	LC MS/MS	96.0	hr	1.3	NA	NA	0.3	NA	NA	percent	24 or 96 hr unclear
+Yang2013	DAP5	14.0	MD_DAP5	cmax	dapagliflozin	plasma	LC MS/MS	NA	NA	96.4	NA	NA	NA	NA	19.0	ng/ml	geometric mean
+Yang2013	DAP5	14.0	MD_DAP5	auc_end	dapagliflozin	plasma	LC MS/MS	24.0	hr	NA	NA	NA	NA	NA	NA	ng/ml*hr	geometric mean
+Yang2013	DAP5	14.0	MD_DAP5	auc_inf	dapagliflozin	plasma	LC MS/MS	NA	NA	NA	NA	NA	NA	NA	NA	ng/ml*hr	geometric mean
+Yang2013	DAP5	14.0	MD_DAP5	thalf	dapagliflozin	plasma	LC MS/MS	NA	NA	12.3	NA	NA	4.9	NA	NA	hr	NA
+Yang2013	DAP5	14.0	MD_DAP5	tmax	dapagliflozin	plasma	LC MS/MS	NA	NA	1.0	0.5	1.5	NA	NA	NA	hr	median
+Yang2013	DAP5	14.0	MD_DAP5	clearance	dapagliflozin	plasma	LC MS/MS	NA	NA	4.5	NA	NA	NA	NA	18.0	ml/min	geometric mean
+Yang2013	DAP5	14.0	MD_DAP5	recovery	dapagliflozin	urine	LC MS/MS	96.0	hr	1.8	NA	NA	0.3	NA	NA	percent	24 or 96 hr unclear
+Yang2013	DAP5	14.0	SD_DAP5	cmax	dapagliflozin 3-o-glucuronide	plasma	LC MS/MS	NA	NA	89.6	NA	NA	NA	NA	25.0	ng/ml	geometric mean
+Yang2013	DAP5	14.0	SD_DAP5	auc_end	dapagliflozin 3-o-glucuronide	plasma	LC MS/MS	24.0	hr	385.4	NA	NA	NA	NA	29.0	ng/ml*hr	geometric mean
+Yang2013	DAP5	14.0	SD_DAP5	auc_inf	dapagliflozin 3-o-glucuronide	plasma	LC MS/MS	NA	NA	395.1	NA	NA	NA	NA	29.0	ng/ml*hr	geometric mean
+Yang2013	DAP5	14.0	SD_DAP5	thalf	dapagliflozin 3-o-glucuronide	plasma	LC MS/MS	NA	NA	11.3	NA	NA	5.2	NA	NA	hr	NA
+Yang2013	DAP5	14.0	SD_DAP5	tmax	dapagliflozin 3-o-glucuronide	plasma	LC MS/MS	NA	NA	1.5	1.0	2.0	NA	NA	NA	hr	median
+Yang2013	DAP5	14.0	SD_DAP5	clearance	dapagliflozin 3-o-glucuronide	plasma	LC MS/MS	NA	NA	204.2	NA	NA	NA	NA	26.0	ml/min	geometric mean
+Yang2013	DAP5	14.0	SD_DAP5	recovery	dapagliflozin 3-o-glucuronide	urine	LC MS/MS	96.0	hr	61.5	NA	NA	7.7	NA	NA	percent	24 or 96 hr unclear
+Yang2013	DAP5	14.0	MD_DAP5	cmax	dapagliflozin 3-o-glucuronide	plasma	LC MS/MS	NA	NA	93.9	NA	NA	NA	NA	24.0	ng/ml	geometric mean
+Yang2013	DAP5	14.0	MD_DAP5	auc_end	dapagliflozin 3-o-glucuronide	plasma	LC MS/MS	24.0	hr	NA	NA	NA	NA	NA	NA	ng/ml*hr	geometric mean
+Yang2013	DAP5	14.0	MD_DAP5	auc_inf	dapagliflozin 3-o-glucuronide	plasma	LC MS/MS	NA	NA	NA	NA	NA	NA	NA	NA	ng/ml*hr	geometric mean
+Yang2013	DAP5	14.0	MD_DAP5	thalf	dapagliflozin 3-o-glucuronide	plasma	LC MS/MS	NA	NA	12.1	NA	NA	5.3	NA	NA	hr	NA
+Yang2013	DAP5	14.0	MD_DAP5	tmax	dapagliflozin 3-o-glucuronide	plasma	LC MS/MS	NA	NA	1.5	1.0	2.0	NA	NA	NA	hr	median
+Yang2013	DAP5	14.0	MD_DAP5	clearance	dapagliflozin 3-o-glucuronide	plasma	LC MS/MS	NA	NA	204.4	NA	NA	NA	NA	25.0	ml/min	geometric mean
+Yang2013	DAP5	14.0	MD_DAP5	recovery	dapagliflozin 3-o-glucuronide	urine	LC MS/MS	96.0	hr	69.7	NA	NA	6.8	NA	NA	percent	24 or 96 hr unclear
+Yang2013	DAP10	14.0	SD_DAP10	cmax	dapagliflozin	plasma	LC MS/MS	NA	NA	173.1	NA	NA	NA	NA	28.0	ng/ml	geometric mean
+Yang2013	DAP10	14.0	SD_DAP10	auc_end	dapagliflozin	plasma	LC MS/MS	24.0	hr	590.0	NA	NA	NA	NA	16.0	ng/ml*hr	geometric mean
+Yang2013	DAP10	14.0	SD_DAP10	auc_inf	dapagliflozin	plasma	LC MS/MS	NA	NA	604.9	NA	NA	NA	NA	15.0	ng/ml*hr	geometric mean
+Yang2013	DAP10	14.0	SD_DAP10	thalf	dapagliflozin	plasma	LC MS/MS	NA	NA	12.3	NA	NA	6.0	NA	NA	hr	NA
+Yang2013	DAP10	14.0	SD_DAP10	tmax	dapagliflozin	plasma	LC MS/MS	NA	NA	1.5	0.5	2.0	NA	NA	NA	hr	median
+Yang2013	DAP10	14.0	SD_DAP10	clearance	dapagliflozin	plasma	LC MS/MS	NA	NA	3.6	NA	NA	NA	NA	16.0	ml/min	geometric mean
+Yang2013	DAP10	14.0	SD_DAP10	recovery	dapagliflozin	urine	LC MS/MS	96.0	hr	1.2	NA	NA	0.2	NA	NA	percent	24 or 96 hr unclear
+Yang2013	DAP10	13.0	MD_DAP10	cmax	dapagliflozin	plasma	LC MS/MS	NA	NA	199.8	NA	NA	NA	NA	20.0	ng/ml	geometric mean
+Yang2013	DAP10	13.0	MD_DAP10	auc_end	dapagliflozin	plasma	LC MS/MS	24.0	hr	NA	NA	NA	NA	NA	NA	ng/ml*hr	geometric mean
+Yang2013	DAP10	13.0	MD_DAP10	auc_inf	dapagliflozin	plasma	LC MS/MS	NA	NA	NA	NA	NA	NA	NA	NA	ng/ml*hr	geometric mean
+Yang2013	DAP10	13.0	MD_DAP10	thalf	dapagliflozin	plasma	LC MS/MS	NA	NA	10.3	NA	NA	3.5	NA	NA	hr	NA
+Yang2013	DAP10	13.0	MD_DAP10	tmax	dapagliflozin	plasma	LC MS/MS	NA	NA	1.0	0.5	1.5	NA	NA	NA	hr	median
+Yang2013	DAP10	13.0	MD_DAP10	clearance	dapagliflozin	plasma	LC MS/MS	NA	NA	5.1	NA	NA	NA	NA	18.0	ml/min	geometric mean
+Yang2013	DAP10	13.0	MD_DAP10	recovery	dapagliflozin	urine	LC MS/MS	96.0	hr	1.9	NA	NA	0.4	NA	NA	percent	24 or 96 hr unclear
+Yang2013	DAP10	14.0	SD_DAP10	cmax	dapagliflozin 3-o-glucuronide	plasma	LC MS/MS	NA	NA	215.9	NA	NA	NA	NA	25.0	ng/ml	geometric mean
+Yang2013	DAP10	14.0	SD_DAP10	auc_end	dapagliflozin 3-o-glucuronide	plasma	LC MS/MS	24.0	hr	918.6	NA	NA	NA	NA	26.0	ng/ml*hr	geometric mean
+Yang2013	DAP10	14.0	SD_DAP10	auc_inf	dapagliflozin 3-o-glucuronide	plasma	LC MS/MS	NA	NA	931.3	NA	NA	NA	NA	26.0	ng/ml*hr	geometric mean
+Yang2013	DAP10	14.0	SD_DAP10	thalf	dapagliflozin 3-o-glucuronide	plasma	LC MS/MS	NA	NA	11.9	NA	NA	6.1	NA	NA	hr	NA
+Yang2013	DAP10	14.0	SD_DAP10	tmax	dapagliflozin 3-o-glucuronide	plasma	LC MS/MS	NA	NA	2.0	1.0	2.0	NA	NA	NA	hr	median
+Yang2013	DAP10	14.0	SD_DAP10	clearance	dapagliflozin 3-o-glucuronide	plasma	LC MS/MS	NA	NA	169.1	NA	NA	NA	NA	27.0	ml/min	geometric mean
+Yang2013	DAP10	14.0	SD_DAP10	recovery	dapagliflozin 3-o-glucuronide	urine	LC MS/MS	96.0	hr	59.6	NA	NA	5.6	NA	NA	percent	24 or 96 hr unclear
+Yang2013	DAP10	13.0	MD_DAP10	cmax	dapagliflozin 3-o-glucuronide	plasma	LC MS/MS	NA	NA	211.3	NA	NA	NA	NA	25.0	ng/ml	geometric mean
+Yang2013	DAP10	13.0	MD_DAP10	auc_end	dapagliflozin 3-o-glucuronide	plasma	LC MS/MS	24.0	hr	NA	NA	NA	NA	NA	NA	ng/ml*hr	geometric mean
+Yang2013	DAP10	13.0	MD_DAP10	auc_inf	dapagliflozin 3-o-glucuronide	plasma	LC MS/MS	NA	NA	NA	NA	NA	NA	NA	NA	ng/ml*hr	geometric mean
+Yang2013	DAP10	13.0	MD_DAP10	thalf	dapagliflozin 3-o-glucuronide	plasma	LC MS/MS	NA	NA	10.7	NA	NA	3.8	NA	NA	hr	NA
+Yang2013	DAP10	13.0	MD_DAP10	tmax	dapagliflozin 3-o-glucuronide	plasma	LC MS/MS	NA	NA	1.0	1.0	2.0	NA	NA	NA	hr	median
+Yang2013	DAP10	13.0	MD_DAP10	clearance	dapagliflozin 3-o-glucuronide	plasma	LC MS/MS	NA	NA	191.9	NA	NA	NA	NA	23.0	ml/min	geometric mean
+Yang2013	DAP10	13.0	MD_DAP10	recovery	dapagliflozin 3-o-glucuronide	urine	LC MS/MS	96.0	hr	67.5	NA	NA	7.7	NA	NA	percent	24 or 96 hr unclear
