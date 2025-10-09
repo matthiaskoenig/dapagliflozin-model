@@ -3,7 +3,7 @@
 ## Build image
 To build the latest image use:
 ```bash
-docker build -f Dockerfile -t matthiaskoenig/dapagliflozin:0.9.6 -t matthiaskoenig/glimepiride:latest .
+docker build -f Dockerfile -t matthiaskoenig/dapagliflozin:0.9.6 -t matthiaskoenig/dapagliflozin:latest .
 ```
 
 ## Push images
