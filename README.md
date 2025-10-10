@@ -1,4 +1,6 @@
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.13987865.svg)](https://doi.org/10.5281/zenodo.13987865)
+[![GitHub Action](https://github.com/matthiaskoenig/dapagliflozin-model/actions/workflows/python.yml/badge.svg)](https://github.com/matthiaskoenig/dapagliflozin-model/actions/workflows/python.yml)
+[![GitHub Action](https://github.com/matthiaskoenig/dapagliflozin-model/actions/workflows/docker.yml/badge.svg)](https://github.com/matthiaskoenig/dapagliflozin-model/actions/workflows/docker.yml)
 
 # dapagliflozin model
 This repository provides the dapagliflozin physiologically based pharmacokinetics (PBPK) model.
