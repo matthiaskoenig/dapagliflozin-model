@@ -51,6 +51,14 @@ implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.</p></bo
               </rdf:li>
               <rdf:li rdf:parseType="Resource">
                 <vCard4:hasName rdf:parseType="Resource">
+                  <vCard4:family-name>Elias</vCard4:family-name>
+                  <vCard4:given-name>Michelle</vCard4:given-name>
+                </vCard4:hasName>
+                <vCard4:hasEmail>michelleelias66@gmail.com</vCard4:hasEmail>
+                <vCard4:organization-name>Humboldt-University Berlin, Institute for Biology</vCard4:organization-name>
+              </rdf:li>
+              <rdf:li rdf:parseType="Resource">
+                <vCard4:hasName rdf:parseType="Resource">
                   <vCard4:family-name>König</vCard4:family-name>
                   <vCard4:given-name>Matthias</vCard4:given-name>
                 </vCard4:hasName>
@@ -65,6 +73,38 @@ implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.</p></bo
           <dcterms:modified rdf:parseType="Resource">
             <dcterms:W3CDTF>1900-01-01T00:00:00Z</dcterms:W3CDTF>
           </dcterms:modified>
+          <bqbiol:occursIn>
+            <rdf:Bag>
+              <rdf:li rdf:resource="http://identifiers.org/FMA:45615"/>
+              <rdf:li rdf:resource="http://identifiers.org/BTO:0000545"/>
+              <rdf:li rdf:resource="http://identifiers.org/ncit/C12736"/>
+              <rdf:li rdf:resource="http://identifiers.org/FMA:7199"/>
+              <rdf:li rdf:resource="http://identifiers.org/BTO:0000648"/>
+            </rdf:Bag>
+          </bqbiol:occursIn>
+          <bqbiol:hasProperty>
+            <rdf:Bag>
+              <rdf:li rdf:resource="http://identifiers.org/ncit/C79369"/>
+              <rdf:li rdf:resource="http://identifiers.org/ncit/C79372"/>
+              <rdf:li rdf:resource="http://identifiers.org/mamo/MAMO_0000046"/>
+              <rdf:li rdf:resource="http://identifiers.org/ncit/C78126"/>
+              <rdf:li rdf:resource="http://identifiers.org/ncit/C98083"/>
+              <rdf:li rdf:resource="http://identifiers.org/ncit/C15299"/>
+              <rdf:li rdf:resource="http://identifiers.org/ncit/C2985"/>
+              <rdf:li rdf:resource="http://identifiers.org/ncit/C99532"/>
+            </rdf:Bag>
+          </bqbiol:hasProperty>
+          <bqbiol:hasTaxon>
+            <rdf:Bag>
+              <rdf:li rdf:resource="http://identifiers.org/taxonomy/9606"/>
+              <rdf:li rdf:resource="http://identifiers.org/snomedct/337915000"/>
+            </rdf:Bag>
+          </bqbiol:hasTaxon>
+          <bqbiol:isDescribedBy>
+            <rdf:Bag>
+              <rdf:li rdf:resource="http://identifiers.org/doi/10.5281/zenodo.13987865"/>
+            </rdf:Bag>
+          </bqbiol:isDescribedBy>
         </rdf:Description>
       </rdf:RDF>
     </annotation>

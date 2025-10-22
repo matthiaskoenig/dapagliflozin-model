@@ -59,6 +59,14 @@ implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.</p></bo
               </rdf:li>
               <rdf:li rdf:parseType="Resource">
                 <vCard4:hasName rdf:parseType="Resource">
+                  <vCard4:family-name>Elias</vCard4:family-name>
+                  <vCard4:given-name>Michelle</vCard4:given-name>
+                </vCard4:hasName>
+                <vCard4:hasEmail>michelleelias66@gmail.com</vCard4:hasEmail>
+                <vCard4:organization-name>Humboldt-University Berlin, Institute for Biology</vCard4:organization-name>
+              </rdf:li>
+              <rdf:li rdf:parseType="Resource">
+                <vCard4:hasName rdf:parseType="Resource">
                   <vCard4:family-name>König</vCard4:family-name>
                   <vCard4:given-name>Matthias</vCard4:given-name>
                 </vCard4:hasName>
@@ -73,6 +81,35 @@ implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.</p></bo
           <dcterms:modified rdf:parseType="Resource">
             <dcterms:W3CDTF>1900-01-01T00:00:00Z</dcterms:W3CDTF>
           </dcterms:modified>
+          <bqbiol:occursIn>
+            <rdf:Bag>
+              <rdf:li rdf:resource="http://identifiers.org/FMA:7203"/>
+              <rdf:li rdf:resource="http://identifiers.org/BTO:0000671"/>
+              <rdf:li rdf:resource="http://identifiers.org/ncit/C12415"/>
+            </rdf:Bag>
+          </bqbiol:occursIn>
+          <bqbiol:hasProperty>
+            <rdf:Bag>
+              <rdf:li rdf:resource="http://identifiers.org/ncit/C79372"/>
+              <rdf:li rdf:resource="http://identifiers.org/mamo/MAMO_0000046"/>
+              <rdf:li rdf:resource="http://identifiers.org/ncit/C78126"/>
+              <rdf:li rdf:resource="http://identifiers.org/ncit/C98083"/>
+              <rdf:li rdf:resource="http://identifiers.org/ncit/C15299"/>
+              <rdf:li rdf:resource="http://identifiers.org/ncit/C2985"/>
+              <rdf:li rdf:resource="http://identifiers.org/ncit/C99532"/>
+            </rdf:Bag>
+          </bqbiol:hasProperty>
+          <bqbiol:hasTaxon>
+            <rdf:Bag>
+              <rdf:li rdf:resource="http://identifiers.org/taxonomy/9606"/>
+              <rdf:li rdf:resource="http://identifiers.org/snomedct/337915000"/>
+            </rdf:Bag>
+          </bqbiol:hasTaxon>
+          <bqbiol:isDescribedBy>
+            <rdf:Bag>
+              <rdf:li rdf:resource="http://identifiers.org/doi/10.5281/zenodo.13987865"/>
+            </rdf:Bag>
+          </bqbiol:isDescribedBy>
         </rdf:Description>
       </rdf:RDF>
     </annotation>
@@ -327,6 +364,17 @@ implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.</p></bo
         </annotation>
       </species>
       <species metaid="meta_glc_ext" sboTerm="SBO:0000247" id="glc_ext" name="glucose (plasma)" compartment="Vext" initialConcentration="5" substanceUnits="mmole" hasOnlySubstanceUnits="false" boundaryCondition="true" constant="false">
+        <notes>
+          <body xmlns="http://www.w3.org/1999/xhtml">
+            <p>Fasting plasma glucose;
+Necessary to calculate the average fasting plasma glucose; probably via time profile.
+2.7677+0.8694x-0.01275x 2
+Hyun-Young Kim, Soo-Youn Lee, Sunghwan Suh, Jae Hyeon Kim, Moon Kyu Lee and
+Hyung-Doo Park*
+The relationship between estimated average
+glucose and fasting plasma glucose</p>
+          </body>
+        </notes>
         <annotation>
           <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:vCard="http://www.w3.org/2001/vcard-rdf/3.0#" xmlns:vCard4="http://www.w3.org/2006/vcard/ns#" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/" xmlns:bqmodel="http://biomodels.net/model-qualifiers/">
             <rdf:Description rdf:about="#meta_glc_ext">
@@ -848,6 +896,7 @@ to the glucose concentration above this threshold.
               <bqbiol:is>
                 <rdf:Bag>
                   <rdf:li rdf:resource="http://identifiers.org/SBO:0000176"/>
+                  <rdf:li rdf:resource="http://identifiers.org/uniprot/O60656"/>
                 </rdf:Bag>
               </bqbiol:is>
             </rdf:Description>

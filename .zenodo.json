@@ -1,11 +1,16 @@
 {
   "upload_type": "software",
-  "title": "Physiologically based pharmacokinetic (PBPK) model of dapagliflozin",
+  "title": "Physiologically based pharmacokinetic/ pharmacodynamic (PBPK/PD) model of dapagliflozin",
   "creators": [
     {
       "orcid": "0009-0006-4892-3279",
       "affiliation": "Humboldt-University Berlin, Institute for Theoretical Biology, Berlin",
       "name": "Nemitz, Nike"
+    },
+    {
+      "orcid": "0009-0005-7959-3164",
+      "affiliation": "Humboldt-University Berlin, Institute for Theoretical Biology, Berlin",
+      "name": "Elias, Michelle"
     },
     {
       "orcid": "0000-0003-1725-179X",
@@ -20,8 +25,9 @@
     "model",
     "dapagliflozin",
     "pharmacokinetics",
-    "PBPK",
-    "physiologically based pharamacokinetic model",
+    "pharmacodynamics",
+    "PBPK/PD",
+    "physiologically based pharamacokinetic/ pharmacodynamic model",
     "SBML"
   ],
   "contributors": [],
