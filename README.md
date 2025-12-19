@@ -53,7 +53,6 @@ cd dapagliflozin-model
 #### uv
 Setup environment with uv (https://docs.astral.sh/uv/getting-started/installation/)
 ```bash
-uv venv
 uv sync
 ```
 Run the complete analysis:
