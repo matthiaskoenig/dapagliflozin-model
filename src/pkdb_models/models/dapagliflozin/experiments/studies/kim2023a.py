@@ -17,7 +17,7 @@ class Kim2023a(DapagliflozinSimulationExperiment):
 
     interventions = ["DAP10", "DAP-FOR10"]
     bodyweight = 71.49  # [kg]
-    fpg = (95.48/18 + 94.63/18)/2  # fasting plasma glucose [mM]
+    fpg = 5.28 # (95.48/18 + 94.63/18)/2  # fasting plasma glucose [mM]
 
     def datasets(self) -> Dict[str, DataSet]:
         dsets = {}
@@ -88,7 +88,7 @@ class Kim2023a(DapagliflozinSimulationExperiment):
         fig = Figure(
             experiment=self,
             sid="Fig2",
-            name=f"{self.__class__.__name__}",
+            name=f"{self.__class__.__name__} (Healthy)",
         )
         plots = fig.create_plots(xaxis=Axis(self.label_time, unit=self.unit_time), legend=True)
         plots[0].set_yaxis(self.label_dap_plasma, unit=self.unit_dap)

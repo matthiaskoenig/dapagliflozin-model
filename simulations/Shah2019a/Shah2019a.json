@@ -1,7 +1,7 @@
 {
   "experiment_id": "Shah2019a",
   "base_path": "/home/mkoenig/git/pkdb_models/pkdb_models/models/dapagliflozin",
-  "data_path": "[PosixPath('/home/mkoenig/git/pkdb_data/studies/dapagliflozin'), PosixPath('/home/mkoenig/git/pkdb_data/studies/canagliflozin')]",
+  "data_path": "[PosixPath('/home/mkoenig/git/pkdb_models/pkdb_models/models/dapagliflozin/data/dapagliflozin'), PosixPath('/home/mkoenig/git/pkdb_models/pkdb_models/models/dapagliflozin/data/canagliflozin')]",
   "models": {
     "model": {
       "sid": null,
@@ -43,7 +43,7 @@
               "_units": "kilogram"
             },
             "[KI__glc_ext]": {
-              "_magnitude": 5.000000000000001,
+              "_magnitude": 5.0,
               "_units": "KI__mmole / liter"
             },
             "GU__f_absorption": {
@@ -85,7 +85,7 @@
               "_units": "kilogram"
             },
             "[KI__glc_ext]": {
-              "_magnitude": 5.000000000000001,
+              "_magnitude": 5.0,
               "_units": "KI__mmole / liter"
             },
             "GU__f_absorption": {
@@ -549,7 +549,7 @@
   "figures": {
     "Fig1": {
       "sid": "Fig1",
-      "name": "Shah2019a",
+      "name": "Shah2019a (Healthy)",
       "num_rows": 1,
       "num_cols": 1,
       "width": 7.0,
@@ -592,7 +592,7 @@
             "curves": [
               {
                 "sid": "Fig1__plot0_curve0",
-                "name": "dap (fasted)",
+                "name": "fasted - 5 mg PO",
                 "x": "task_po_dap5_fasted__time",
                 "y": "task_po_dap5_fasted__Cve_dap",
                 "xerr": null,
@@ -623,7 +623,7 @@
               },
               {
                 "sid": "Fig1__plot0_curve1",
-                "name": "fasted_DAP5, MET500\u00b1SD (n=24)",
+                "name": "fasted - 5 mg PO + MET500\u00b1SD (n=24)",
                 "x": "dapagliflozin_DAP5, MET500_fasted__time",
                 "y": "dapagliflozin_DAP5, MET500_fasted__mean",
                 "xerr": null,
@@ -654,7 +654,7 @@
               },
               {
                 "sid": "Fig1__plot0_curve2",
-                "name": "dap (fed)",
+                "name": "fed - 5 mg PO",
                 "x": "task_po_dap5_fed__time",
                 "y": "task_po_dap5_fed__Cve_dap",
                 "xerr": null,
@@ -685,7 +685,7 @@
               },
               {
                 "sid": "Fig1__plot0_curve3",
-                "name": "fed_DAP5, MET500\u00b1SD (n=24)",
+                "name": "fed - 5 mg PO + MET500\u00b1SD (n=24)",
                 "x": "dapagliflozin_DAP5, MET500_fed__time",
                 "y": "dapagliflozin_DAP5, MET500_fed__mean",
                 "xerr": null,

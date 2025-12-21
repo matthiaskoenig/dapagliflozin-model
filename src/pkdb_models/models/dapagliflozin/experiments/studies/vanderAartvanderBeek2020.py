@@ -13,10 +13,7 @@ import pkdb_models.models.dapagliflozin as dapagliflozin
 
 
 class vanderAartvanderBeek2020(DapagliflozinSimulationExperiment):
-    """
-    Simulation experiment of vanderAartvanderBeek2020.
-    Renal disease & macroalbunimurea.
-    """
+    """Simulation experiment of vanderAartvanderBeek2020."""
 
     subjects_markers = {
         "S1": "o",  # circle
@@ -54,7 +51,7 @@ class vanderAartvanderBeek2020(DapagliflozinSimulationExperiment):
                 "[KI__glc_ext]": Q_(self.fpg_healthy, "mM"),
                 "GU__f_absorption": Q_(self.fasting_map["not reported"], "dimensionless"),
                 "f_cirrhosis": Q_(self.cirrhosis_map["Control"], "dimensionless"),
-                "KI__f_renal_function": Q_(self.renal_map["Mild renal impairment"], "dimensionless"),
+                "KI__f_renal_function": Q_(self.renal_map["Normal renal function"], "dimensionless"),
                 # dose (IVDOSE, PODOSE)
                 "PODOSE_dap": Q_(10, "mg"),
             },
@@ -87,14 +84,17 @@ class vanderAartvanderBeek2020(DapagliflozinSimulationExperiment):
                     count="count",
                 ),
                 observable=FitData(
-                    self, task=f"task_po_dap10", xid="time", yid=f"[Cve_dap]",
+                    self,
+                    task=f"task_po_dap10",
+                    xid="time",
+                    yid=f"[Cve_dap]",
                 ),
                 metadata=DapagliflozinMappingMetaData(
                     tissue=Tissue.PLASMA,
                     route=Route.PO,
                     application_form=ApplicationForm.TABLET,
                     dosing=Dosing.MULTIPLE,
-                    health=Health.RENAL_IMPAIRMENT,
+                    health=Health.HEALTHY,
                     fasting=Fasting.NR,
                 ),
             )
@@ -104,9 +104,10 @@ class vanderAartvanderBeek2020(DapagliflozinSimulationExperiment):
         fig = Figure(
             experiment=self,
             sid="Fig3",
-            name=f"{self.__class__.__name__}",
+            name=f"{self.__class__.__name__} (Healthy)",
         )
         plots = fig.create_plots(xaxis=Axis(self.label_time, unit=self.unit_time), legend=True)
+        Figure.fig_titlesize = 20
         plots[0].set_yaxis(self.label_dap_plasma, unit=self.unit_dap)
         plots[0].xaxis.min = -3
         plots[0].xaxis.max = 24
@@ -118,7 +119,7 @@ class vanderAartvanderBeek2020(DapagliflozinSimulationExperiment):
             label="10 mg PO",
             color="black",
         )
-        # data: individual subjects
+        # data
         for subject, marker in self.subjects_markers.items():
             plots[0].add_data(
                 dataset=f"dapagliflozin_DAP_{subject}",
@@ -126,7 +127,7 @@ class vanderAartvanderBeek2020(DapagliflozinSimulationExperiment):
                 yid="value",
                 yid_sd=None,
                 count="count",
-                color="#2ca25f",
+                color="black",
                 label=f"10 mg PO ({subject})",
                 marker=marker,
             )
@@ -134,7 +135,6 @@ class vanderAartvanderBeek2020(DapagliflozinSimulationExperiment):
 
 
 if __name__ == "__main__":
-    # run_experiments(vanderAartvanderBeek2020, output_dir=vanderAartvanderBeek2020.__name__)
     out = dapagliflozin.RESULTS_PATH_SIMULATION / vanderAartvanderBeek2020.__name__
     out.mkdir(parents=True, exist_ok=True)
     run_experiments(vanderAartvanderBeek2020, output_dir=out)

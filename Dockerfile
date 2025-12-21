@@ -1,7 +1,7 @@
 FROM python:3.13-slim
 
 # install uv
-COPY --from=ghcr.io/astral-sh/uv:0.9.4 /uv /bin/uv
+COPY --from=ghcr.io/astral-sh/uv:0.9.18 /uv /bin/uv
 ENV UV_SYSTEM_PYTHON=1
 
 # install git
@@ -15,6 +15,7 @@ COPY .python-version /code/python-version.py
 COPY pyproject.toml /code/pyproject.toml
 COPY README.md /code/README.md
 COPY src /code/src
+COPY uv.lock /code/uv.lock
 
 # install package
 RUN uv pip install -e .

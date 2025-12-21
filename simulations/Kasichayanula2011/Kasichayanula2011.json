@@ -1,7 +1,7 @@
 {
   "experiment_id": "Kasichayanula2011",
   "base_path": "/home/mkoenig/git/pkdb_models/pkdb_models/models/dapagliflozin",
-  "data_path": "[PosixPath('/home/mkoenig/git/pkdb_data/studies/dapagliflozin'), PosixPath('/home/mkoenig/git/pkdb_data/studies/canagliflozin')]",
+  "data_path": "[PosixPath('/home/mkoenig/git/pkdb_models/pkdb_models/models/dapagliflozin/data/dapagliflozin'), PosixPath('/home/mkoenig/git/pkdb_models/pkdb_models/models/dapagliflozin/data/canagliflozin')]",
   "models": {
     "model": {
       "sid": null,
@@ -51,7 +51,7 @@
               "_units": "kilogram"
             },
             "[KI__glc_ext]": {
-              "_magnitude": 5.000000000000001,
+              "_magnitude": 5.0,
               "_units": "KI__mmole / liter"
             },
             "GU__f_absorption": {
@@ -93,7 +93,7 @@
               "_units": "kilogram"
             },
             "[KI__glc_ext]": {
-              "_magnitude": 5.000000000000001,
+              "_magnitude": 5.0,
               "_units": "KI__mmole / liter"
             },
             "GU__f_absorption": {
@@ -135,7 +135,7 @@
               "_units": "kilogram"
             },
             "[KI__glc_ext]": {
-              "_magnitude": 5.000000000000001,
+              "_magnitude": 5.0,
               "_units": "KI__mmole / liter"
             },
             "GU__f_absorption": {
@@ -177,7 +177,7 @@
               "_units": "kilogram"
             },
             "[KI__glc_ext]": {
-              "_magnitude": 5.000000000000001,
+              "_magnitude": 5.0,
               "_units": "KI__mmole / liter"
             },
             "GU__f_absorption": {
@@ -1073,7 +1073,7 @@
   "figures": {
     "Fig1": {
       "sid": "Fig1",
-      "name": "Kasichayanula2011",
+      "name": "Kasichayanula2011 (Hepatic)",
       "num_rows": 1,
       "num_cols": 2,
       "width": 14.0,
@@ -1116,7 +1116,7 @@
             "curves": [
               {
                 "sid": "Fig1__plot0_curve0",
-                "name": "Sim healthy",
+                "name": "healthy - 10 mg PO",
                 "x": "task_po_dap10_healthy__time",
                 "y": "task_po_dap10_healthy__Cve_dap",
                 "xerr": null,
@@ -1147,7 +1147,7 @@
               },
               {
                 "sid": "Fig1__plot0_curve1",
-                "name": "healthy\u00b1SD (n=6)",
+                "name": "healthy - 10 mg PO\u00b1SD (n=6)",
                 "x": "dapagliflozin_DAP10_healthy__time",
                 "y": "dapagliflozin_DAP10_healthy__mean",
                 "xerr": null,
@@ -1178,7 +1178,7 @@
               },
               {
                 "sid": "Fig1__plot0_curve2",
-                "name": "Sim mild",
+                "name": "mild - 10 mg PO",
                 "x": "task_po_dap10_mild__time",
                 "y": "task_po_dap10_mild__Cve_dap",
                 "xerr": null,
@@ -1190,18 +1190,18 @@
                   "base_style": null,
                   "line": {
                     "type": "SOLID",
-                    "color": "#74a9cfff",
+                    "color": "#C4DFF2ff",
                     "thickness": 2.0
                   },
                   "marker": {
                     "size": null,
                     "type": "NONE",
-                    "fill": "#74a9cfff",
+                    "fill": "#C4DFF2ff",
                     "line_color": "#000000ff",
                     "line_thickness": null
                   },
                   "fill": {
-                    "color": "#74a9cfff",
+                    "color": "#C4DFF2ff",
                     "second_color": null
                   }
                 },
@@ -1209,7 +1209,7 @@
               },
               {
                 "sid": "Fig1__plot0_curve3",
-                "name": "mild\u00b1SD (n=6)",
+                "name": "mild - 10 mg PO\u00b1SD (n=6)",
                 "x": "dapagliflozin_DAP10_mild__time",
                 "y": "dapagliflozin_DAP10_mild__mean",
                 "xerr": null,
@@ -1221,18 +1221,18 @@
                   "base_style": null,
                   "line": {
                     "type": "DASH",
-                    "color": "#74a9cfff",
+                    "color": "#C4DFF2ff",
                     "thickness": 1.0
                   },
                   "marker": {
                     "size": null,
                     "type": "SQUARE",
-                    "fill": "#74a9cfff",
+                    "fill": "#C4DFF2ff",
                     "line_color": "#000000ff",
                     "line_thickness": null
                   },
                   "fill": {
-                    "color": "#74a9cfff",
+                    "color": "#C4DFF2ff",
                     "second_color": null
                   }
                 },
@@ -1240,7 +1240,7 @@
               },
               {
                 "sid": "Fig1__plot0_curve4",
-                "name": "Sim moderate",
+                "name": "moderate - 10 mg PO",
                 "x": "task_po_dap10_moderate__time",
                 "y": "task_po_dap10_moderate__Cve_dap",
                 "xerr": null,
@@ -1271,7 +1271,7 @@
               },
               {
                 "sid": "Fig1__plot0_curve5",
-                "name": "moderate\u00b1SD (n=6)",
+                "name": "moderate - 10 mg PO\u00b1SD (n=6)",
                 "x": "dapagliflozin_DAP10_moderate__time",
                 "y": "dapagliflozin_DAP10_moderate__mean",
                 "xerr": null,
@@ -1302,7 +1302,7 @@
               },
               {
                 "sid": "Fig1__plot0_curve6",
-                "name": "Sim severe",
+                "name": "severe - 10 mg PO",
                 "x": "task_po_dap10_severe__time",
                 "y": "task_po_dap10_severe__Cve_dap",
                 "xerr": null,
@@ -1314,18 +1314,18 @@
                   "base_style": null,
                   "line": {
                     "type": "SOLID",
-                    "color": "#045a8dff",
+                    "color": "#00446Eff",
                     "thickness": 2.0
                   },
                   "marker": {
                     "size": null,
                     "type": "NONE",
-                    "fill": "#045a8dff",
+                    "fill": "#00446Eff",
                     "line_color": "#000000ff",
                     "line_thickness": null
                   },
                   "fill": {
-                    "color": "#045a8dff",
+                    "color": "#00446Eff",
                     "second_color": null
                   }
                 },
@@ -1333,7 +1333,7 @@
               },
               {
                 "sid": "Fig1__plot0_curve7",
-                "name": "severe\u00b1SD (n=6)",
+                "name": "severe - 10 mg PO\u00b1SD (n=6)",
                 "x": "dapagliflozin_DAP10_severe__time",
                 "y": "dapagliflozin_DAP10_severe__mean",
                 "xerr": null,
@@ -1345,18 +1345,18 @@
                   "base_style": null,
                   "line": {
                     "type": "DASH",
-                    "color": "#045a8dff",
+                    "color": "#00446Eff",
                     "thickness": 1.0
                   },
                   "marker": {
                     "size": null,
                     "type": "SQUARE",
-                    "fill": "#045a8dff",
+                    "fill": "#00446Eff",
                     "line_color": "#000000ff",
                     "line_thickness": null
                   },
                   "fill": {
-                    "color": "#045a8dff",
+                    "color": "#00446Eff",
                     "second_color": null
                   }
                 },
@@ -1407,7 +1407,7 @@
             "curves": [
               {
                 "sid": "Fig1__plot1_curve0",
-                "name": "Sim healthy",
+                "name": "healthy - 10 mg PO",
                 "x": "task_po_dap10_healthy__time",
                 "y": "task_po_dap10_healthy__Cve_d3g",
                 "xerr": null,
@@ -1438,7 +1438,7 @@
               },
               {
                 "sid": "Fig1__plot1_curve1",
-                "name": "healthy\u00b1SD (n=6)",
+                "name": "healthy - 10 mg PO\u00b1SD (n=6)",
                 "x": "dapagliflozin 3-o-glucuronide_DAP10_healthy__time",
                 "y": "dapagliflozin 3-o-glucuronide_DAP10_healthy__mean",
                 "xerr": null,
@@ -1469,7 +1469,7 @@
               },
               {
                 "sid": "Fig1__plot1_curve2",
-                "name": "Sim mild",
+                "name": "mild - 10 mg PO",
                 "x": "task_po_dap10_mild__time",
                 "y": "task_po_dap10_mild__Cve_d3g",
                 "xerr": null,
@@ -1481,18 +1481,18 @@
                   "base_style": null,
                   "line": {
                     "type": "SOLID",
-                    "color": "#74a9cfff",
+                    "color": "#C4DFF2ff",
                     "thickness": 2.0
                   },
                   "marker": {
                     "size": null,
                     "type": "NONE",
-                    "fill": "#74a9cfff",
+                    "fill": "#C4DFF2ff",
                     "line_color": "#000000ff",
                     "line_thickness": null
                   },
                   "fill": {
-                    "color": "#74a9cfff",
+                    "color": "#C4DFF2ff",
                     "second_color": null
                   }
                 },
@@ -1500,7 +1500,7 @@
               },
               {
                 "sid": "Fig1__plot1_curve3",
-                "name": "mild\u00b1SD (n=6)",
+                "name": "mild - 10 mg PO\u00b1SD (n=6)",
                 "x": "dapagliflozin 3-o-glucuronide_DAP10_mild__time",
                 "y": "dapagliflozin 3-o-glucuronide_DAP10_mild__mean",
                 "xerr": null,
@@ -1512,18 +1512,18 @@
                   "base_style": null,
                   "line": {
                     "type": "DASH",
-                    "color": "#74a9cfff",
+                    "color": "#C4DFF2ff",
                     "thickness": 1.0
                   },
                   "marker": {
                     "size": null,
                     "type": "SQUARE",
-                    "fill": "#74a9cfff",
+                    "fill": "#C4DFF2ff",
                     "line_color": "#000000ff",
                     "line_thickness": null
                   },
                   "fill": {
-                    "color": "#74a9cfff",
+                    "color": "#C4DFF2ff",
                     "second_color": null
                   }
                 },
@@ -1531,7 +1531,7 @@
               },
               {
                 "sid": "Fig1__plot1_curve4",
-                "name": "Sim moderate",
+                "name": "moderate - 10 mg PO",
                 "x": "task_po_dap10_moderate__time",
                 "y": "task_po_dap10_moderate__Cve_d3g",
                 "xerr": null,
@@ -1562,7 +1562,7 @@
               },
               {
                 "sid": "Fig1__plot1_curve5",
-                "name": "moderate\u00b1SD (n=6)",
+                "name": "moderate - 10 mg PO\u00b1SD (n=6)",
                 "x": "dapagliflozin 3-o-glucuronide_DAP10_moderate__time",
                 "y": "dapagliflozin 3-o-glucuronide_DAP10_moderate__mean",
                 "xerr": null,
@@ -1593,7 +1593,7 @@
               },
               {
                 "sid": "Fig1__plot1_curve6",
-                "name": "Sim severe",
+                "name": "severe - 10 mg PO",
                 "x": "task_po_dap10_severe__time",
                 "y": "task_po_dap10_severe__Cve_d3g",
                 "xerr": null,
@@ -1605,18 +1605,18 @@
                   "base_style": null,
                   "line": {
                     "type": "SOLID",
-                    "color": "#045a8dff",
+                    "color": "#00446Eff",
                     "thickness": 2.0
                   },
                   "marker": {
                     "size": null,
                     "type": "NONE",
-                    "fill": "#045a8dff",
+                    "fill": "#00446Eff",
                     "line_color": "#000000ff",
                     "line_thickness": null
                   },
                   "fill": {
-                    "color": "#045a8dff",
+                    "color": "#00446Eff",
                     "second_color": null
                   }
                 },
@@ -1624,7 +1624,7 @@
               },
               {
                 "sid": "Fig1__plot1_curve7",
-                "name": "severe\u00b1SD (n=6)",
+                "name": "severe - 10 mg PO\u00b1SD (n=6)",
                 "x": "dapagliflozin 3-o-glucuronide_DAP10_severe__time",
                 "y": "dapagliflozin 3-o-glucuronide_DAP10_severe__mean",
                 "xerr": null,
@@ -1636,18 +1636,18 @@
                   "base_style": null,
                   "line": {
                     "type": "DASH",
-                    "color": "#045a8dff",
+                    "color": "#00446Eff",
                     "thickness": 1.0
                   },
                   "marker": {
                     "size": null,
                     "type": "SQUARE",
-                    "fill": "#045a8dff",
+                    "fill": "#00446Eff",
                     "line_color": "#000000ff",
                     "line_thickness": null
                   },
                   "fill": {
-                    "color": "#045a8dff",
+                    "color": "#00446Eff",
                     "second_color": null
                   }
                 },

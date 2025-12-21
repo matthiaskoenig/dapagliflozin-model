@@ -1,7 +1,7 @@
 {
   "experiment_id": "LaCreta2016",
   "base_path": "/home/mkoenig/git/pkdb_models/pkdb_models/models/dapagliflozin",
-  "data_path": "[PosixPath('/home/mkoenig/git/pkdb_data/studies/dapagliflozin'), PosixPath('/home/mkoenig/git/pkdb_data/studies/canagliflozin')]",
+  "data_path": "[PosixPath('/home/mkoenig/git/pkdb_models/pkdb_models/models/dapagliflozin/data/dapagliflozin'), PosixPath('/home/mkoenig/git/pkdb_models/pkdb_models/models/dapagliflozin/data/canagliflozin')]",
   "models": {
     "model": {
       "sid": null,
@@ -51,7 +51,7 @@
               "_units": "kilogram"
             },
             "[KI__glc_ext]": {
-              "_magnitude": 5.000000000000001,
+              "_magnitude": 5.0,
               "_units": "KI__mmole / liter"
             },
             "GU__f_absorption": {
@@ -93,7 +93,7 @@
               "_units": "kilogram"
             },
             "[KI__glc_ext]": {
-              "_magnitude": 5.000000000000001,
+              "_magnitude": 5.0,
               "_units": "KI__mmole / liter"
             },
             "GU__f_absorption": {
@@ -135,7 +135,7 @@
               "_units": "kilogram"
             },
             "[KI__glc_ext]": {
-              "_magnitude": 5.000000000000001,
+              "_magnitude": 5.0,
               "_units": "KI__mmole / liter"
             },
             "GU__f_absorption": {
@@ -177,7 +177,7 @@
               "_units": "kilogram"
             },
             "[KI__glc_ext]": {
-              "_magnitude": 5.000000000000001,
+              "_magnitude": 5.0,
               "_units": "KI__mmole / liter"
             },
             "GU__f_absorption": {
@@ -1073,7 +1073,7 @@
   "figures": {
     "Fig1": {
       "sid": "Fig1",
-      "name": "LaCreta2016",
+      "name": "LaCreta2016 (Healthy)",
       "num_rows": 1,
       "num_cols": 2,
       "width": 14.0,
@@ -1116,7 +1116,7 @@
             "curves": [
               {
                 "sid": "Fig1__plot0_curve0",
-                "name": "dap (2.5_fasted)",
+                "name": "fasted - 2.5 mg PO",
                 "x": "task_po_dap2.5_fasted__time",
                 "y": "task_po_dap2.5_fasted__Cve_dap",
                 "xerr": null,
@@ -1147,7 +1147,7 @@
               },
               {
                 "sid": "Fig1__plot0_curve1",
-                "name": "fasted_DAP2.5_NH\u00b1SD (n=28)",
+                "name": "fasted, NH - 2.5 mg PO\u00b1SD (n=28)",
                 "x": "dapagliflozin_DAP2.5_NH_fasted__time",
                 "y": "dapagliflozin_DAP2.5_NH_fasted__mean",
                 "xerr": null,
@@ -1178,7 +1178,7 @@
               },
               {
                 "sid": "Fig1__plot0_curve2",
-                "name": "dap (2.5_fasted)",
+                "name": "fasted - 2.5 mg PO",
                 "x": "task_po_dap2.5_fasted__time",
                 "y": "task_po_dap2.5_fasted__Cve_dap",
                 "xerr": null,
@@ -1209,7 +1209,7 @@
               },
               {
                 "sid": "Fig1__plot0_curve3",
-                "name": "fasted_DAP2.5_HS\u00b1SD (n=26)",
+                "name": "fasted, HS - 2.5 mg PO\u00b1SD (n=26)",
                 "x": "dapagliflozin_DAP2.5_HS_fasted__time",
                 "y": "dapagliflozin_DAP2.5_HS_fasted__mean",
                 "xerr": null,
@@ -1226,7 +1226,7 @@
                   },
                   "marker": {
                     "size": null,
-                    "type": "CIRCLE",
+                    "type": "DIAMOND",
                     "fill": "#000000ff",
                     "line_color": "#000000ff",
                     "line_thickness": null
@@ -1240,7 +1240,7 @@
               },
               {
                 "sid": "Fig1__plot0_curve4",
-                "name": "dap (2.5_fed)",
+                "name": "fed - 2.5 mg PO",
                 "x": "task_po_dap2.5_fed__time",
                 "y": "task_po_dap2.5_fed__Cve_dap",
                 "xerr": null,
@@ -1271,7 +1271,7 @@
               },
               {
                 "sid": "Fig1__plot0_curve5",
-                "name": "fed_DAP2.5_NH\u00b1SD (n=27)",
+                "name": "fed, NH - 2.5 mg PO\u00b1SD (n=27)",
                 "x": "dapagliflozin_DAP2.5_NH_fed__time",
                 "y": "dapagliflozin_DAP2.5_NH_fed__mean",
                 "xerr": null,
@@ -1302,7 +1302,7 @@
               },
               {
                 "sid": "Fig1__plot0_curve6",
-                "name": "dap (2.5_fed)",
+                "name": "fed - 2.5 mg PO",
                 "x": "task_po_dap2.5_fed__time",
                 "y": "task_po_dap2.5_fed__Cve_dap",
                 "xerr": null,
@@ -1333,7 +1333,7 @@
               },
               {
                 "sid": "Fig1__plot0_curve7",
-                "name": "fed_DAP2.5_HS\u00b1SD (n=28)",
+                "name": "fed, HS - 2.5 mg PO\u00b1SD (n=28)",
                 "x": "dapagliflozin_DAP2.5_HS_fed__time",
                 "y": "dapagliflozin_DAP2.5_HS_fed__mean",
                 "xerr": null,
@@ -1350,7 +1350,7 @@
                   },
                   "marker": {
                     "size": null,
-                    "type": "CIRCLE",
+                    "type": "DIAMOND",
                     "fill": "#d62728ff",
                     "line_color": "#000000ff",
                     "line_thickness": null
@@ -1407,7 +1407,7 @@
             "curves": [
               {
                 "sid": "Fig1__plot1_curve0",
-                "name": "dap (10_fasted)",
+                "name": "fasted - 10 mg PO",
                 "x": "task_po_dap10_fasted__time",
                 "y": "task_po_dap10_fasted__Cve_dap",
                 "xerr": null,
@@ -1438,7 +1438,7 @@
               },
               {
                 "sid": "Fig1__plot1_curve1",
-                "name": "fasted_DAP10_NH\u00b1SD (n=28)",
+                "name": "fasted, NH - 10 mg PO\u00b1SD (n=28)",
                 "x": "dapagliflozin_DAP10_NH_fasted__time",
                 "y": "dapagliflozin_DAP10_NH_fasted__mean",
                 "xerr": null,
@@ -1469,7 +1469,7 @@
               },
               {
                 "sid": "Fig1__plot1_curve2",
-                "name": "dap (10_fasted)",
+                "name": "fasted - 10 mg PO",
                 "x": "task_po_dap10_fasted__time",
                 "y": "task_po_dap10_fasted__Cve_dap",
                 "xerr": null,
@@ -1500,7 +1500,7 @@
               },
               {
                 "sid": "Fig1__plot1_curve3",
-                "name": "fasted_DAP10_HS\u00b1SD (n=29)",
+                "name": "fasted, HS - 10 mg PO\u00b1SD (n=29)",
                 "x": "dapagliflozin_DAP10_HS_fasted__time",
                 "y": "dapagliflozin_DAP10_HS_fasted__mean",
                 "xerr": null,
@@ -1517,7 +1517,7 @@
                   },
                   "marker": {
                     "size": null,
-                    "type": "CIRCLE",
+                    "type": "DIAMOND",
                     "fill": "#000000ff",
                     "line_color": "#000000ff",
                     "line_thickness": null
@@ -1531,7 +1531,7 @@
               },
               {
                 "sid": "Fig1__plot1_curve4",
-                "name": "dap (10_fed)",
+                "name": "fed - 10 mg PO",
                 "x": "task_po_dap10_fed__time",
                 "y": "task_po_dap10_fed__Cve_dap",
                 "xerr": null,
@@ -1562,7 +1562,7 @@
               },
               {
                 "sid": "Fig1__plot1_curve5",
-                "name": "fed_DAP10_HS\u00b1SD (n=29)",
+                "name": "fed, HS - 10 mg PO\u00b1SD (n=29)",
                 "x": "dapagliflozin_DAP10_HS_fed__time",
                 "y": "dapagliflozin_DAP10_HS_fed__mean",
                 "xerr": null,
@@ -1579,7 +1579,7 @@
                   },
                   "marker": {
                     "size": null,
-                    "type": "CIRCLE",
+                    "type": "DIAMOND",
                     "fill": "#d62728ff",
                     "line_color": "#000000ff",
                     "line_thickness": null

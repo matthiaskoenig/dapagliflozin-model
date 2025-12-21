@@ -112,7 +112,6 @@ class FDAMB102003(DapagliflozinSimulationExperiment):
                         dosing=Dosing.MULTIPLE,
                         health=Health.T2DM,
                         fasting=Fasting.FASTED,
-                        outlier=True if sid == "KI__UGE" else None  # FIXME: uncontrolled T2DM (probably much higher glc)
                     ),
                 )
         return mappings
@@ -126,7 +125,7 @@ class FDAMB102003(DapagliflozinSimulationExperiment):
                 sid=f"Fig1_{subplot}",
                 num_rows=1,
                 num_cols=3,
-                name=f"{self.__class__.__name__} ({subplot})"
+                name=f"{self.__class__.__name__} (T2DM)"
             )
             plots = fig.create_plots(xaxis=Axis(self.label_time, unit=self.unit_time), legend=True)
             plots[0].set_yaxis(self.label_dap_plasma, unit=self.unit_dap)
@@ -172,7 +171,6 @@ class FDAMB102003(DapagliflozinSimulationExperiment):
 
 
 if __name__ == "__main__":
-    # run_experiments(FDAMB102003, output_dir=FDAMB102003.__name__)
     out = dapagliflozin.RESULTS_PATH_SIMULATION / FDAMB102003.__name__
     out.mkdir(parents=True, exist_ok=True)
     run_experiments(FDAMB102003, output_dir=out)

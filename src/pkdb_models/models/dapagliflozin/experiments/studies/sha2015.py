@@ -85,18 +85,15 @@ class Sha2015(DapagliflozinSimulationExperiment):
 
     def figures(self) -> Dict[str, Figure]:
         figs: Dict[str, Figure] = {}
-
         # Figure plasma
         fig_plasma = Figure(
             experiment=self,
             sid="Sha2015_plasma",
             num_rows=1,
             num_cols=1,
-            name=f"{self.__class__.__name__}",
+            name=f"{self.__class__.__name__} (Healthy)",
         )
-        p_plasma = fig_plasma.create_plots(
-            xaxis=Axis(self.label_time, unit=self.unit_time), legend=True
-        )[0]
+        p_plasma = fig_plasma.create_plots(xaxis=Axis(self.label_time, unit=self.unit_time), legend=True)[0]
         p_plasma.set_yaxis(self.label_dap_plasma, unit=self.unit_dap)
         # simulation
         p_plasma.add_data(
@@ -124,11 +121,9 @@ class Sha2015(DapagliflozinSimulationExperiment):
             sid="Sha2015_uge",
             num_rows=1,
             num_cols=1,
-            name=f"{self.__class__.__name__}",
+            name=f"{self.__class__.__name__} (Healthy)",
         )
-        p_uge = fig_uge.create_plots(
-            xaxis=Axis(self.label_time, unit=self.unit_time), legend=True
-        )[0]
+        p_uge = fig_uge.create_plots(xaxis=Axis(self.label_time, unit=self.unit_time), legend=True)[0]
         p_uge.set_yaxis(self.label_uge, unit=self.unit_uge)
         # simulation
         p_uge.add_data(
@@ -149,18 +144,15 @@ class Sha2015(DapagliflozinSimulationExperiment):
             color=self.colors[10],
         )
         figs[fig_uge.sid] = fig_uge
-
         # Figure RTG
         fig_rtg = Figure(
             experiment=self,
             sid="Sha2015_rtg",
             num_rows=1,
             num_cols=1,
-            name=f"{self.__class__.__name__}",
+            name=f"{self.__class__.__name__} (Healthy)",
         )
-        p_rtg = fig_rtg.create_plots(
-            xaxis=Axis(self.label_time, unit=self.unit_time), legend=True
-        )[0]
+        p_rtg = fig_rtg.create_plots(xaxis=Axis(self.label_time, unit=self.unit_time), legend=True)[0]
         p_rtg.set_yaxis(self.label_rtg, unit=self.unit_rtg)
         # simulation
         p_rtg.add_data(
@@ -181,12 +173,10 @@ class Sha2015(DapagliflozinSimulationExperiment):
             color=self.colors[10],
         )
         figs[fig_rtg.sid] = fig_rtg
-
         return figs
 
 
 if __name__ == "__main__":
-    # run_experiments(Sha2015, output_dir=Sha2015.__name__)
     out = dapagliflozin.RESULTS_PATH_SIMULATION / Sha2015.__name__
     out.mkdir(parents=True, exist_ok=True)
     run_experiments(Sha2015, output_dir=out)

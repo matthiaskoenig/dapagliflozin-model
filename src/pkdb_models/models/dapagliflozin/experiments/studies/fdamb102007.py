@@ -60,10 +60,15 @@ class FDAMB102007(DapagliflozinSimulationExperiment):
         Q_ = self.Q_
         tcsims = {}
         for group in self.groups:
+            if group == "healthy":
+                fpg = self.fpg_healthy
+            else:
+                fpg = self.fpg_t2dm
+
             changes = {
                 # physiological changes
                 "BW": Q_(self.bodyweight_default, "kg"),
-                "[KI__glc_ext]": Q_(self.fpg_t2dm, "mM"),  # healthy not reported ???
+                "[KI__glc_ext]": Q_(fpg, "mM"),  # Now uses correct glucose level
                 "GU__f_absorption": Q_(self.fasting_map["not reported"], "dimensionless"),
                 "f_cirrhosis": Q_(self.cirrhosis_map["Control"], "dimensionless"),
                 "KI__f_renal_function": Q_(self.renal_functions[group], "dimensionless"),
@@ -189,7 +194,7 @@ class FDAMB102007(DapagliflozinSimulationExperiment):
         fig = Figure(
             experiment=self,
             sid="Fig3",
-            name=f"{self.__class__.__name__}"
+            name=f"{self.__class__.__name__} (T2DM)"
         )
         Figure.legend_fontsize = 10
         plots = fig.create_plots(xaxis=Axis(self.label_time, unit=self.unit_time), legend=True)
@@ -227,7 +232,7 @@ class FDAMB102007(DapagliflozinSimulationExperiment):
             sid="Tab13_14",
             num_rows=1,
             num_cols=2,
-            name=f"{self.__class__.__name__}"
+            name=f"{self.__class__.__name__} (T2DM)"
         )
         plots = fig.create_plots(xaxis=Axis(self.label_time, unit=self.unit_time), legend=True)
         plots[0].set_yaxis(self.label_dap_urine, unit=self.unit_dap_urine)
@@ -273,12 +278,9 @@ class FDAMB102007(DapagliflozinSimulationExperiment):
                 color=self.colors[group],
             )
 
-        return {
-            fig.sid: fig,
-        }
+        return {fig.sid: fig}
 
 if __name__ == "__main__":
-    # run_experiments(FDAMB102007, output_dir=FDAMB102007.__name__)
     out = dapagliflozin.RESULTS_PATH_SIMULATION / FDAMB102007.__name__
     out.mkdir(parents=True, exist_ok=True)
     run_experiments(FDAMB102007, output_dir=out)

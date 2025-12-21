@@ -1,7 +1,7 @@
 {
   "experiment_id": "Hwang2022a",
   "base_path": "/home/mkoenig/git/pkdb_models/pkdb_models/models/dapagliflozin",
-  "data_path": "[PosixPath('/home/mkoenig/git/pkdb_data/studies/dapagliflozin'), PosixPath('/home/mkoenig/git/pkdb_data/studies/canagliflozin')]",
+  "data_path": "[PosixPath('/home/mkoenig/git/pkdb_models/pkdb_models/models/dapagliflozin/data/dapagliflozin'), PosixPath('/home/mkoenig/git/pkdb_models/pkdb_models/models/dapagliflozin/data/canagliflozin')]",
   "models": {
     "model": {
       "sid": null,
@@ -83,7 +83,7 @@
               "_units": "kilogram"
             },
             "[KI__glc_ext]": {
-              "_magnitude": 5.000000000000001,
+              "_magnitude": 5.0,
               "_units": "KI__mmole / liter"
             },
             "GU__f_absorption": {
@@ -125,7 +125,7 @@
               "_units": "kilogram"
             },
             "[KI__glc_ext]": {
-              "_magnitude": 5.000000000000001,
+              "_magnitude": 5.0,
               "_units": "KI__mmole / liter"
             },
             "GU__f_absorption": {
@@ -167,7 +167,7 @@
               "_units": "kilogram"
             },
             "[KI__glc_ext]": {
-              "_magnitude": 5.000000000000001,
+              "_magnitude": 5.0,
               "_units": "KI__mmole / liter"
             },
             "GU__f_absorption": {
@@ -209,7 +209,7 @@
               "_units": "kilogram"
             },
             "[KI__glc_ext]": {
-              "_magnitude": 5.000000000000001,
+              "_magnitude": 5.0,
               "_units": "KI__mmole / liter"
             },
             "GU__f_absorption": {
@@ -251,7 +251,7 @@
               "_units": "kilogram"
             },
             "[KI__glc_ext]": {
-              "_magnitude": 5.000000000000001,
+              "_magnitude": 5.0,
               "_units": "KI__mmole / liter"
             },
             "GU__f_absorption": {
@@ -293,7 +293,7 @@
               "_units": "kilogram"
             },
             "[KI__glc_ext]": {
-              "_magnitude": 5.000000000000001,
+              "_magnitude": 5.0,
               "_units": "KI__mmole / liter"
             },
             "GU__f_absorption": {
@@ -335,7 +335,7 @@
               "_units": "kilogram"
             },
             "[KI__glc_ext]": {
-              "_magnitude": 5.000000000000001,
+              "_magnitude": 5.0,
               "_units": "KI__mmole / liter"
             },
             "GU__f_absorption": {
@@ -377,7 +377,7 @@
               "_units": "kilogram"
             },
             "[KI__glc_ext]": {
-              "_magnitude": 5.000000000000001,
+              "_magnitude": 5.0,
               "_units": "KI__mmole / liter"
             },
             "GU__f_absorption": {
@@ -419,7 +419,7 @@
               "_units": "kilogram"
             },
             "[KI__glc_ext]": {
-              "_magnitude": 5.000000000000001,
+              "_magnitude": 5.0,
               "_units": "KI__mmole / liter"
             },
             "GU__f_absorption": {
@@ -461,7 +461,7 @@
               "_units": "kilogram"
             },
             "[KI__glc_ext]": {
-              "_magnitude": 5.000000000000001,
+              "_magnitude": 5.0,
               "_units": "KI__mmole / liter"
             },
             "GU__f_absorption": {
@@ -503,7 +503,7 @@
               "_units": "kilogram"
             },
             "[KI__glc_ext]": {
-              "_magnitude": 5.000000000000001,
+              "_magnitude": 5.0,
               "_units": "KI__mmole / liter"
             },
             "GU__f_absorption": {
@@ -545,7 +545,7 @@
               "_units": "kilogram"
             },
             "[KI__glc_ext]": {
-              "_magnitude": 5.000000000000001,
+              "_magnitude": 5.0,
               "_units": "KI__mmole / liter"
             },
             "GU__f_absorption": {
@@ -3169,7 +3169,7 @@
   "figures": {
     "Fig2": {
       "sid": "Fig2",
-      "name": "Hwang2022a",
+      "name": "Hwang2022a (Healthy)",
       "num_rows": 1,
       "num_cols": 1,
       "width": 7.0,
@@ -3255,18 +3255,18 @@
                   "base_style": null,
                   "line": {
                     "type": "DASH",
-                    "color": "#000000ff",
+                    "color": "#1f77b4ff",
                     "thickness": 1.0
                   },
                   "marker": {
-                    "size": null,
-                    "type": "SQUARE",
-                    "fill": "#000000ff",
+                    "size": 9,
+                    "type": "CIRCLE",
+                    "fill": "#1f77b4ff",
                     "line_color": "#000000ff",
-                    "line_thickness": null
+                    "line_thickness": 0.5
                   },
                   "fill": {
-                    "color": "#000000ff",
+                    "color": "#1f77b4ff",
                     "second_color": null
                   }
                 },
@@ -3286,18 +3286,18 @@
                   "base_style": null,
                   "line": {
                     "type": "SOLID",
-                    "color": "#1f77b4ff",
+                    "color": "#000000ff",
                     "thickness": 2.0
                   },
                   "marker": {
                     "size": null,
                     "type": "NONE",
-                    "fill": "#1f77b4ff",
+                    "fill": "#000000ff",
                     "line_color": "#000000ff",
                     "line_thickness": null
                   },
                   "fill": {
-                    "color": "#1f77b4ff",
+                    "color": "#000000ff",
                     "second_color": null
                   }
                 },
@@ -3321,11 +3321,11 @@
                     "thickness": 1.0
                   },
                   "marker": {
-                    "size": null,
+                    "size": 9,
                     "type": "SQUARE",
                     "fill": "#1f77b4ff",
                     "line_color": "#000000ff",
-                    "line_thickness": null
+                    "line_thickness": 0.5
                   },
                   "fill": {
                     "color": "#1f77b4ff",
@@ -3348,18 +3348,18 @@
                   "base_style": null,
                   "line": {
                     "type": "SOLID",
-                    "color": "#ff7f0eff",
+                    "color": "#000000ff",
                     "thickness": 2.0
                   },
                   "marker": {
                     "size": null,
                     "type": "NONE",
-                    "fill": "#ff7f0eff",
+                    "fill": "#000000ff",
                     "line_color": "#000000ff",
                     "line_thickness": null
                   },
                   "fill": {
-                    "color": "#ff7f0eff",
+                    "color": "#000000ff",
                     "second_color": null
                   }
                 },
@@ -3379,18 +3379,18 @@
                   "base_style": null,
                   "line": {
                     "type": "DASH",
-                    "color": "#ff7f0eff",
+                    "color": "#1f77b4ff",
                     "thickness": 1.0
                   },
                   "marker": {
-                    "size": null,
-                    "type": "SQUARE",
-                    "fill": "#ff7f0eff",
+                    "size": 9,
+                    "type": "DIAMOND",
+                    "fill": "#1f77b4ff",
                     "line_color": "#000000ff",
-                    "line_thickness": null
+                    "line_thickness": 0.5
                   },
                   "fill": {
-                    "color": "#ff7f0eff",
+                    "color": "#1f77b4ff",
                     "second_color": null
                   }
                 },
@@ -3410,18 +3410,18 @@
                   "base_style": null,
                   "line": {
                     "type": "SOLID",
-                    "color": "#d62728ff",
+                    "color": "#000000ff",
                     "thickness": 2.0
                   },
                   "marker": {
                     "size": null,
                     "type": "NONE",
-                    "fill": "#d62728ff",
+                    "fill": "#000000ff",
                     "line_color": "#000000ff",
                     "line_thickness": null
                   },
                   "fill": {
-                    "color": "#d62728ff",
+                    "color": "#000000ff",
                     "second_color": null
                   }
                 },
@@ -3441,18 +3441,18 @@
                   "base_style": null,
                   "line": {
                     "type": "DASH",
-                    "color": "#d62728ff",
+                    "color": "#1f77b4ff",
                     "thickness": 1.0
                   },
                   "marker": {
-                    "size": null,
-                    "type": "SQUARE",
-                    "fill": "#d62728ff",
+                    "size": 9,
+                    "type": "TRIANGLEUP",
+                    "fill": "#1f77b4ff",
                     "line_color": "#000000ff",
-                    "line_thickness": null
+                    "line_thickness": 0.5
                   },
                   "fill": {
-                    "color": "#d62728ff",
+                    "color": "#1f77b4ff",
                     "second_color": null
                   }
                 },
@@ -3472,18 +3472,18 @@
                   "base_style": null,
                   "line": {
                     "type": "SOLID",
-                    "color": "#2ca02cff",
+                    "color": "#000000ff",
                     "thickness": 2.0
                   },
                   "marker": {
                     "size": null,
                     "type": "NONE",
-                    "fill": "#2ca02cff",
+                    "fill": "#000000ff",
                     "line_color": "#000000ff",
                     "line_thickness": null
                   },
                   "fill": {
-                    "color": "#2ca02cff",
+                    "color": "#000000ff",
                     "second_color": null
                   }
                 },
@@ -3503,18 +3503,18 @@
                   "base_style": null,
                   "line": {
                     "type": "DASH",
-                    "color": "#2ca02cff",
+                    "color": "#1f77b4ff",
                     "thickness": 1.0
                   },
                   "marker": {
-                    "size": null,
-                    "type": "SQUARE",
-                    "fill": "#2ca02cff",
+                    "size": 9,
+                    "type": "TRIANGLEDOWN",
+                    "fill": "#1f77b4ff",
                     "line_color": "#000000ff",
-                    "line_thickness": null
+                    "line_thickness": 0.5
                   },
                   "fill": {
-                    "color": "#2ca02cff",
+                    "color": "#1f77b4ff",
                     "second_color": null
                   }
                 },
@@ -3534,18 +3534,18 @@
                   "base_style": null,
                   "line": {
                     "type": "SOLID",
-                    "color": "#8c564bff",
+                    "color": "#000000ff",
                     "thickness": 2.0
                   },
                   "marker": {
                     "size": null,
                     "type": "NONE",
-                    "fill": "#8c564bff",
+                    "fill": "#000000ff",
                     "line_color": "#000000ff",
                     "line_thickness": null
                   },
                   "fill": {
-                    "color": "#8c564bff",
+                    "color": "#000000ff",
                     "second_color": null
                   }
                 },
@@ -3565,18 +3565,18 @@
                   "base_style": null,
                   "line": {
                     "type": "DASH",
-                    "color": "#8c564bff",
+                    "color": "#1f77b4ff",
                     "thickness": 1.0
                   },
                   "marker": {
-                    "size": null,
-                    "type": "SQUARE",
-                    "fill": "#8c564bff",
+                    "size": 9,
+                    "type": "TRIANGLELEFT",
+                    "fill": "#1f77b4ff",
                     "line_color": "#000000ff",
-                    "line_thickness": null
+                    "line_thickness": 0.5
                   },
                   "fill": {
-                    "color": "#8c564bff",
+                    "color": "#1f77b4ff",
                     "second_color": null
                   }
                 },
@@ -3596,18 +3596,18 @@
                   "base_style": null,
                   "line": {
                     "type": "SOLID",
-                    "color": "#0000ffff",
+                    "color": "#000000ff",
                     "thickness": 2.0
                   },
                   "marker": {
                     "size": null,
                     "type": "NONE",
-                    "fill": "#0000ffff",
+                    "fill": "#000000ff",
                     "line_color": "#000000ff",
                     "line_thickness": null
                   },
                   "fill": {
-                    "color": "#0000ffff",
+                    "color": "#000000ff",
                     "second_color": null
                   }
                 },
@@ -3627,18 +3627,18 @@
                   "base_style": null,
                   "line": {
                     "type": "DASH",
-                    "color": "#0000ffff",
+                    "color": "#1f77b4ff",
                     "thickness": 1.0
                   },
                   "marker": {
-                    "size": null,
-                    "type": "SQUARE",
-                    "fill": "#0000ffff",
+                    "size": 9,
+                    "type": "TRIANGLERIGHT",
+                    "fill": "#1f77b4ff",
                     "line_color": "#000000ff",
-                    "line_thickness": null
+                    "line_thickness": 0.5
                   },
                   "fill": {
-                    "color": "#0000ffff",
+                    "color": "#1f77b4ff",
                     "second_color": null
                   }
                 },
@@ -3658,18 +3658,18 @@
                   "base_style": null,
                   "line": {
                     "type": "SOLID",
-                    "color": "#ffa500ff",
+                    "color": "#000000ff",
                     "thickness": 2.0
                   },
                   "marker": {
                     "size": null,
                     "type": "NONE",
-                    "fill": "#ffa500ff",
+                    "fill": "#000000ff",
                     "line_color": "#000000ff",
                     "line_thickness": null
                   },
                   "fill": {
-                    "color": "#ffa500ff",
+                    "color": "#000000ff",
                     "second_color": null
                   }
                 },
@@ -3689,18 +3689,18 @@
                   "base_style": null,
                   "line": {
                     "type": "DASH",
-                    "color": "#ffa500ff",
+                    "color": "#1f77b4ff",
                     "thickness": 1.0
                   },
                   "marker": {
-                    "size": null,
-                    "type": "SQUARE",
-                    "fill": "#ffa500ff",
+                    "size": 9,
+                    "type": "PLUS",
+                    "fill": "#1f77b4ff",
                     "line_color": "#000000ff",
-                    "line_thickness": null
+                    "line_thickness": 0.5
                   },
                   "fill": {
-                    "color": "#ffa500ff",
+                    "color": "#1f77b4ff",
                     "second_color": null
                   }
                 },
@@ -3720,18 +3720,18 @@
                   "base_style": null,
                   "line": {
                     "type": "SOLID",
-                    "color": "#ff0000ff",
+                    "color": "#000000ff",
                     "thickness": 2.0
                   },
                   "marker": {
                     "size": null,
                     "type": "NONE",
-                    "fill": "#ff0000ff",
+                    "fill": "#000000ff",
                     "line_color": "#000000ff",
                     "line_thickness": null
                   },
                   "fill": {
-                    "color": "#ff0000ff",
+                    "color": "#000000ff",
                     "second_color": null
                   }
                 },
@@ -3751,18 +3751,18 @@
                   "base_style": null,
                   "line": {
                     "type": "DASH",
-                    "color": "#ff0000ff",
+                    "color": "#1f77b4ff",
                     "thickness": 1.0
                   },
                   "marker": {
-                    "size": null,
-                    "type": "SQUARE",
-                    "fill": "#ff0000ff",
+                    "size": 9,
+                    "type": "XCROSS",
+                    "fill": "#1f77b4ff",
                     "line_color": "#000000ff",
-                    "line_thickness": null
+                    "line_thickness": 0.5
                   },
                   "fill": {
-                    "color": "#ff0000ff",
+                    "color": "#1f77b4ff",
                     "second_color": null
                   }
                 },
@@ -3782,18 +3782,18 @@
                   "base_style": null,
                   "line": {
                     "type": "SOLID",
-                    "color": "#008000ff",
+                    "color": "#000000ff",
                     "thickness": 2.0
                   },
                   "marker": {
                     "size": null,
                     "type": "NONE",
-                    "fill": "#008000ff",
+                    "fill": "#000000ff",
                     "line_color": "#000000ff",
                     "line_thickness": null
                   },
                   "fill": {
-                    "color": "#008000ff",
+                    "color": "#000000ff",
                     "second_color": null
                   }
                 },
@@ -3813,18 +3813,18 @@
                   "base_style": null,
                   "line": {
                     "type": "DASH",
-                    "color": "#008000ff",
+                    "color": "#1f77b4ff",
                     "thickness": 1.0
                   },
                   "marker": {
-                    "size": null,
-                    "type": "SQUARE",
-                    "fill": "#008000ff",
+                    "size": 9,
+                    "type": "STAR",
+                    "fill": "#1f77b4ff",
                     "line_color": "#000000ff",
-                    "line_thickness": null
+                    "line_thickness": 0.5
                   },
                   "fill": {
-                    "color": "#008000ff",
+                    "color": "#1f77b4ff",
                     "second_color": null
                   }
                 },
@@ -3844,18 +3844,18 @@
                   "base_style": null,
                   "line": {
                     "type": "SOLID",
-                    "color": "#a52a2aff",
+                    "color": "#000000ff",
                     "thickness": 2.0
                   },
                   "marker": {
                     "size": null,
                     "type": "NONE",
-                    "fill": "#a52a2aff",
+                    "fill": "#000000ff",
                     "line_color": "#000000ff",
                     "line_thickness": null
                   },
                   "fill": {
-                    "color": "#a52a2aff",
+                    "color": "#000000ff",
                     "second_color": null
                   }
                 },
@@ -3875,18 +3875,18 @@
                   "base_style": null,
                   "line": {
                     "type": "DASH",
-                    "color": "#a52a2aff",
+                    "color": "#1f77b4ff",
                     "thickness": 1.0
                   },
                   "marker": {
-                    "size": null,
-                    "type": "SQUARE",
-                    "fill": "#a52a2aff",
+                    "size": 9,
+                    "type": "VDASH",
+                    "fill": "#1f77b4ff",
                     "line_color": "#000000ff",
-                    "line_thickness": null
+                    "line_thickness": 0.5
                   },
                   "fill": {
-                    "color": "#a52a2aff",
+                    "color": "#1f77b4ff",
                     "second_color": null
                   }
                 },
@@ -3906,18 +3906,18 @@
                   "base_style": null,
                   "line": {
                     "type": "SOLID",
-                    "color": "#808080ff",
+                    "color": "#000000ff",
                     "thickness": 2.0
                   },
                   "marker": {
                     "size": null,
                     "type": "NONE",
-                    "fill": "#808080ff",
+                    "fill": "#000000ff",
                     "line_color": "#000000ff",
                     "line_thickness": null
                   },
                   "fill": {
-                    "color": "#808080ff",
+                    "color": "#000000ff",
                     "second_color": null
                   }
                 },
@@ -3937,18 +3937,18 @@
                   "base_style": null,
                   "line": {
                     "type": "DASH",
-                    "color": "#808080ff",
+                    "color": "#1f77b4ff",
                     "thickness": 1.0
                   },
                   "marker": {
-                    "size": null,
-                    "type": "SQUARE",
-                    "fill": "#808080ff",
+                    "size": 9,
+                    "type": "HDASH",
+                    "fill": "#1f77b4ff",
                     "line_color": "#000000ff",
-                    "line_thickness": null
+                    "line_thickness": 0.5
                   },
                   "fill": {
-                    "color": "#808080ff",
+                    "color": "#1f77b4ff",
                     "second_color": null
                   }
                 },

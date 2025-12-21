@@ -45,6 +45,13 @@ parameters_dap_iv = [
         upper_bound=100,
         unit="mmole/min/l",
     ),
+    # FitParameter(
+    #     pid="DAP2D3G_Km_dap",
+    #     lower_bound=0.001,
+    #     start_value=0.479,
+    #     upper_bound=0.5,
+    #     unit="mM",
+    # ),
 
     # kidney transport
     # FitParameter(
@@ -126,7 +133,7 @@ parameters_pd = [
     ),
     FitParameter(
         pid="KI__RTG_base",
-        lower_bound=8,
+        lower_bound=7,
         start_value=12.5,
         upper_bound=14,
         unit="mM",
@@ -152,11 +159,12 @@ parameters_pd = [
         upper_bound=1.0,
         unit="dimensionless",
     ),
+    # induction of RTG via SGLT1
     FitParameter(
         pid="KI__RTG_m_fpg",
-        lower_bound=0.2,
-        start_value=1,
-        upper_bound=3,
+        lower_bound=0.05,
+        start_value=0.5,
+        upper_bound=2.0,
         unit="dimensionless",
     ),
 ]

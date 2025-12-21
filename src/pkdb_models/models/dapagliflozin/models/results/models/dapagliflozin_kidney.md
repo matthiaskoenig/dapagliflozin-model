@@ -11,21 +11,21 @@ length: [m]
 
 ## Parameters `p`
 ```
-D3GEX_k = 0.450356180744184  # [1/min] rate urinary excretion of dapagliflozin-3-o-glucuronide  
+D3GEX_k = 0.450356180744184  # [1/min] urinary excretion rate d3g  
 D3GIM_Km_d3g = 0.033  # [mmol/l] Km dapagliflozin-3-O-glucuronide import  
 D3GIM_Vmax = 10.0  # [mmol/min/l] Vmax dapagliflozin-3-O-glucuronide import  
 DAP2D3G_Km_dap = 0.479  # [mmol/l] Km dapagliflozin UGT1A9  
 DAP2D3G_Vmax = 0.04  # [mmol/min/l] Vmax dapagliflozin conversion  
-DAPEX_k = 0.0181517912484487  # [1/min] rate urinary excretion of dapagliflozin  
+DAPEX_k = 0.0181517912484487  # [1/min] urinary excretion rate dap  
 DAPIM_Km_dap = 0.033  # [mmol/l] Km dapagliflozin import  
 DAPIM_Vmax = 10.0  # [mmol/min/l] Vmax dapagliflozin import  
-GFR_healthy = 100.0  # [ml/min] Glomerular filtration rate (healthy)  
+GFR_healthy = 100.0  # [ml/min] glomerular filtration rate (healthy)  
 Mr_glc = 180.0  # [g/mol] Molecular weight glc [g/mole]  
-RTG_E50 = 6.49377923807214e-06  # [mmol/l] EC50 reduction in RTG  
-RTG_base = 8.00000843198733  # [mmol/l] Baseline RTG value  
-RTG_gamma = 1.0  # [-] hill coefficient reduction in RTG  
-RTG_m_fpg = 1.25337150891578  # [-] FPG effect on RTG  
-RTG_max_inhibition = 0.706730840016354  # [-] RTG maximum inhibition  
+RTG_E50 = 9.38382179621963e-06  # [mmol/l] EC50 reduction in RTG  
+RTG_base = 7.00190957938498  # [mmol/l] baseline RTG value  
+RTG_gamma = 1.03598899790151  # [-] hill coefficient reduction in RTG  
+RTG_m_fpg = 1.6532116030699  # [-] FPG effect on RTG  
+RTG_max_inhibition = 0.712546965755432  # [-] RTG maximum inhibition  
 Vext = 1.5  # [l] plasma  
 Vki = 0.3  # [l] kidney  
 Vmem = nan  # [m^2] plasma membrane  
@@ -33,7 +33,7 @@ Vurine = 1.0  # [l] urine
 cf_mg_per_g = 1000.0  # [mg/g] Conversion factor mg per g  
 cf_ml_per_l = 1000.0  # [ml/l] Conversion factor ml per l  
 f_DAP2D3G = 9.99999045140128  # [-] scaling factor relative to liver activity  
-f_renal_function = 1.0  # [-] parameter for renal function  
+f_renal_function = 1.0  # [-] scaling factor renal function  
 f_ugt1a9 = 1.0  # [-] scaling factor UGT1A9 activity  
 fpg_healthy = 5.0  # [mmol/l] fasting plasma glucose (healthy)  
 ```
@@ -46,7 +46,7 @@ d3g_urine = 0.0  # [mmol] dapagliflozin-3-o-glucuronide (urine) in Vurine
 dap = 0.0  # [mmol/l] dapagliflozin (kidney) in Vki  
 dap_ext = 0.0  # [mmol/l] dapagliflozin (plasma) in Vext  
 dap_urine = 0.0  # [mmol] dapagliflozin (urine) in Vurine  
-glc_ext = 5.0  # [mmol/l] glucose (plasma) in Vext  
+glc_ext = 5.0  # [mmol/l] glucose kidney (plasma) in Vext  
 glc_urine = 0.0  # [mmol] glucose (urine) in Vurine  
 ```
 
@@ -72,6 +72,6 @@ d d3g_urine/dt = D3GEX  # [mmol/min] dapagliflozin-3-o-glucuronide (urine)
 d dap/dt = DAPIM / Vki - DAP2D3G / Vki  # [mmol/l/min] dapagliflozin (kidney)  
 d dap_ext/dt = -DAPIM / Vext - DAPEX / Vext  # [mmol/l/min] dapagliflozin (plasma)  
 d dap_urine/dt = DAPEX  # [mmol/min] dapagliflozin (urine)  
-d glc_ext/dt = 0  # [mmol/l/min] glucose (plasma)  
+d glc_ext/dt = 0  # [mmol/l/min] glucose kidney (plasma)  
 d glc_urine/dt = GLCEX  # [mmol/min] glucose (urine)  
 ```

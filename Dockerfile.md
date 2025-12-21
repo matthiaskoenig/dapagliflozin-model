@@ -3,7 +3,7 @@
 ## Build image
 To build the latest image use:
 ```bash
-docker build -f Dockerfile -t matthiaskoenig/dapagliflozin:0.9.6 -t matthiaskoenig/dapagliflozin:latest .
+docker build -f Dockerfile -t matthiaskoenig/dapagliflozin:0.9.8 -t matthiaskoenig/dapagliflozin:latest .
 ```
 
 ## Push images
@@ -23,7 +23,7 @@ docker run -v "${PWD}/results:/results" -it matthiaskoenig/dapagliflozin:latest 
 
 To use a specific container version provide the version tag:
 ```bash
-docker run -v "${PWD}/results:/results" -it matthiaskoenig/dapagliflozin:0.9.6 /bin/bash
+docker run -v "${PWD}/results:/results" -it matthiaskoenig/dapagliflozin:0.9.8 /bin/bash
 ```
 
 ## Run simulations

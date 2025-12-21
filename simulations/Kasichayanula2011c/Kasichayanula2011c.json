@@ -1,7 +1,7 @@
 {
   "experiment_id": "Kasichayanula2011c",
   "base_path": "/home/mkoenig/git/pkdb_models/pkdb_models/models/dapagliflozin",
-  "data_path": "[PosixPath('/home/mkoenig/git/pkdb_data/studies/dapagliflozin'), PosixPath('/home/mkoenig/git/pkdb_data/studies/canagliflozin')]",
+  "data_path": "[PosixPath('/home/mkoenig/git/pkdb_models/pkdb_models/models/dapagliflozin/data/dapagliflozin'), PosixPath('/home/mkoenig/git/pkdb_models/pkdb_models/models/dapagliflozin/data/canagliflozin')]",
   "models": {
     "model": {
       "sid": null,
@@ -43,7 +43,7 @@
               "_units": "kilogram"
             },
             "[KI__glc_ext]": {
-              "_magnitude": 5.000000000000001,
+              "_magnitude": 5.0,
               "_units": "KI__mmole / liter"
             },
             "GU__f_absorption": {
@@ -85,7 +85,7 @@
               "_units": "kilogram"
             },
             "[KI__glc_ext]": {
-              "_magnitude": 5.000000000000001,
+              "_magnitude": 5.0,
               "_units": "KI__mmole / liter"
             },
             "GU__f_absorption": {
@@ -547,22 +547,22 @@
     }
   },
   "figures": {
-    "Fig3_S1": {
-      "sid": "Fig3_S1",
-      "name": "Kasichayanula2011c",
+    "Fig3": {
+      "sid": "Fig3",
+      "name": "Kasichayanula2011c (Healthy)",
       "num_rows": 1,
-      "num_cols": 1,
-      "width": 7.0,
+      "num_cols": 3,
+      "width": 21.0,
       "height": 5.0,
       "subplots": [
         {
           "sid": null,
           "name": null,
           "plot": {
-            "sid": "Fig3_S1__plot0",
+            "sid": "Fig3__plot0",
             "name": null,
             "xaxis": {
-              "sid": "Fig3_S1__plot0_xaxis",
+              "sid": "Fig3__plot0_xaxis",
               "name": "time [hr]",
               "label": "time",
               "unit": "hr",
@@ -574,7 +574,7 @@
               "ticks_visible": true
             },
             "yaxis": {
-              "sid": "Fig3_S1__plot0_yaxis",
+              "sid": "Fig3__plot0_yaxis",
               "name": "dapagliflozin\nplasma [\u00b5M]",
               "label": "dapagliflozin\nplasma",
               "unit": "\u00b5M",
@@ -591,8 +591,8 @@
             "title_visible": true,
             "curves": [
               {
-                "sid": "Fig3_S1__plot0_curve0",
-                "name": "S1 (DAP50)",
+                "sid": "Fig3__plot0_curve0",
+                "name": "50 mg PO",
                 "x": "task_po_dap50__time",
                 "y": "task_po_dap50__Cve_dap",
                 "xerr": null,
@@ -622,8 +622,8 @@
                 "order": 0
               },
               {
-                "sid": "Fig3_S1__plot0_curve1",
-                "name": "S1 (DAP50)\u00b1SD (n=24)",
+                "sid": "Fig3__plot0_curve1",
+                "name": "50 mg PO\u00b1SD (n=24)",
                 "x": "dapagliflozin_DAP50_S1__time",
                 "y": "dapagliflozin_DAP50_S1__mean",
                 "xerr": null,
@@ -653,8 +653,8 @@
                 "order": 1
               },
               {
-                "sid": "Fig3_S1__plot0_curve2",
-                "name": "S1 (DAP50, PIO45)\u00b1SD (n=24)",
+                "sid": "Fig3__plot0_curve2",
+                "name": "50 mg PO + PIO45\u00b1SD (n=24)",
                 "x": "dapagliflozin_DAP50, PIO45_S1__time",
                 "y": "dapagliflozin_DAP50, PIO45_S1__mean",
                 "xerr": null,
@@ -690,25 +690,15 @@
           "col": 1,
           "row_span": 1,
           "col_span": 1
-        }
-      ]
-    },
-    "Fig3_S2": {
-      "sid": "Fig3_S2",
-      "name": "Kasichayanula2011c",
-      "num_rows": 1,
-      "num_cols": 1,
-      "width": 7.0,
-      "height": 5.0,
-      "subplots": [
+        },
         {
           "sid": null,
           "name": null,
           "plot": {
-            "sid": "Fig3_S2__plot0",
+            "sid": "Fig3__plot1",
             "name": null,
             "xaxis": {
-              "sid": "Fig3_S2__plot0_xaxis",
+              "sid": "Fig3__plot1_xaxis",
               "name": "time [hr]",
               "label": "time",
               "unit": "hr",
@@ -720,7 +710,7 @@
               "ticks_visible": true
             },
             "yaxis": {
-              "sid": "Fig3_S2__plot0_yaxis",
+              "sid": "Fig3__plot1_yaxis",
               "name": "dapagliflozin\nplasma [\u00b5M]",
               "label": "dapagliflozin\nplasma",
               "unit": "\u00b5M",
@@ -737,8 +727,8 @@
             "title_visible": true,
             "curves": [
               {
-                "sid": "Fig3_S2__plot0_curve0",
-                "name": "S2 (DAP20)",
+                "sid": "Fig3__plot1_curve0",
+                "name": "20 mg PO",
                 "x": "task_po_dap20__time",
                 "y": "task_po_dap20__Cve_dap",
                 "xerr": null,
@@ -768,8 +758,8 @@
                 "order": 0
               },
               {
-                "sid": "Fig3_S2__plot0_curve1",
-                "name": "S2 (DAP20)\u00b1SD (n=18)",
+                "sid": "Fig3__plot1_curve1",
+                "name": "20 mg PO\u00b1SD (n=18)",
                 "x": "dapagliflozin_DAP20_S2__time",
                 "y": "dapagliflozin_DAP20_S2__mean",
                 "xerr": null,
@@ -799,8 +789,8 @@
                 "order": 1
               },
               {
-                "sid": "Fig3_S2__plot0_curve2",
-                "name": "S2 (DAP20, MET1000)\u00b1SD (n=18)",
+                "sid": "Fig3__plot1_curve2",
+                "name": "20 mg PO + MET1000\u00b1SD (n=18)",
                 "x": "dapagliflozin_DAP20, MET1000_S2__time",
                 "y": "dapagliflozin_DAP20, MET1000_S2__mean",
                 "xerr": null,
@@ -812,18 +802,18 @@
                   "base_style": null,
                   "line": {
                     "type": "DASH",
-                    "color": "#d62728ff",
+                    "color": "#1f77b4ff",
                     "thickness": 1.0
                   },
                   "marker": {
                     "size": null,
                     "type": "SQUARE",
-                    "fill": "#d62728ff",
+                    "fill": "#1f77b4ff",
                     "line_color": "#000000ff",
                     "line_thickness": null
                   },
                   "fill": {
-                    "color": "#d62728ff",
+                    "color": "#1f77b4ff",
                     "second_color": null
                   }
                 },
@@ -833,28 +823,18 @@
             "areas": []
           },
           "row": 1,
-          "col": 1,
+          "col": 2,
           "row_span": 1,
           "col_span": 1
-        }
-      ]
-    },
-    "Fig3_S3": {
-      "sid": "Fig3_S3",
-      "name": "Kasichayanula2011c",
-      "num_rows": 1,
-      "num_cols": 1,
-      "width": 7.0,
-      "height": 5.0,
-      "subplots": [
+        },
         {
           "sid": null,
           "name": null,
           "plot": {
-            "sid": "Fig3_S3__plot0",
+            "sid": "Fig3__plot2",
             "name": null,
             "xaxis": {
-              "sid": "Fig3_S3__plot0_xaxis",
+              "sid": "Fig3__plot2_xaxis",
               "name": "time [hr]",
               "label": "time",
               "unit": "hr",
@@ -866,7 +846,7 @@
               "ticks_visible": true
             },
             "yaxis": {
-              "sid": "Fig3_S3__plot0_yaxis",
+              "sid": "Fig3__plot2_yaxis",
               "name": "dapagliflozin\nplasma [\u00b5M]",
               "label": "dapagliflozin\nplasma",
               "unit": "\u00b5M",
@@ -883,8 +863,8 @@
             "title_visible": true,
             "curves": [
               {
-                "sid": "Fig3_S3__plot0_curve0",
-                "name": "S3 (DAP20)",
+                "sid": "Fig3__plot2_curve0",
+                "name": "20 mg PO",
                 "x": "task_po_dap20__time",
                 "y": "task_po_dap20__Cve_dap",
                 "xerr": null,
@@ -914,8 +894,8 @@
                 "order": 0
               },
               {
-                "sid": "Fig3_S3__plot0_curve1",
-                "name": "S3 (DAP20)\u00b1SD (n=18)",
+                "sid": "Fig3__plot2_curve1",
+                "name": "20 mg PO\u00b1SD (n=18)",
                 "x": "dapagliflozin_DAP20_S3__time",
                 "y": "dapagliflozin_DAP20_S3__mean",
                 "xerr": null,
@@ -945,8 +925,8 @@
                 "order": 1
               },
               {
-                "sid": "Fig3_S3__plot0_curve2",
-                "name": "S3 (DAP20, GLI4)\u00b1SD (n=18)",
+                "sid": "Fig3__plot2_curve2",
+                "name": "20 mg PO + GLI4\u00b1SD (n=18)",
                 "x": "dapagliflozin_DAP20, GLI4_S3__time",
                 "y": "dapagliflozin_DAP20, GLI4_S3__mean",
                 "xerr": null,
@@ -958,26 +938,26 @@
                   "base_style": null,
                   "line": {
                     "type": "DASH",
-                    "color": "#2ca02cff",
+                    "color": "#1f77b4ff",
                     "thickness": 1.0
                   },
                   "marker": {
                     "size": null,
                     "type": "SQUARE",
-                    "fill": "#2ca02cff",
+                    "fill": "#1f77b4ff",
                     "line_color": "#000000ff",
                     "line_thickness": null
                   },
                   "fill": {
-                    "color": "#2ca02cff",
+                    "color": "#1f77b4ff",
                     "second_color": null
                   }
                 },
                 "order": 2
               },
               {
-                "sid": "Fig3_S3__plot0_curve3",
-                "name": "S3 (DAP20, SIT100)\u00b1SD (n=18)",
+                "sid": "Fig3__plot2_curve3",
+                "name": "20 mg PO + SIT100\u00b1SD (n=18)",
                 "x": "dapagliflozin_DAP20, SIT100_S3__time",
                 "y": "dapagliflozin_DAP20, SIT100_S3__mean",
                 "xerr": null,
@@ -989,18 +969,18 @@
                   "base_style": null,
                   "line": {
                     "type": "DASH",
-                    "color": "#9467bdff",
+                    "color": "#ff7f0eff",
                     "thickness": 1.0
                   },
                   "marker": {
                     "size": null,
                     "type": "SQUARE",
-                    "fill": "#9467bdff",
+                    "fill": "#ff7f0eff",
                     "line_color": "#000000ff",
                     "line_thickness": null
                   },
                   "fill": {
-                    "color": "#9467bdff",
+                    "color": "#ff7f0eff",
                     "second_color": null
                   }
                 },
@@ -1010,7 +990,7 @@
             "areas": []
           },
           "row": 1,
-          "col": 1,
+          "col": 3,
           "row_span": 1,
           "col_span": 1
         }

@@ -15,7 +15,7 @@ class Jang2020(DapagliflozinSimulationExperiment):
     """Simulation experiment of Jang2020."""
 
     interventions = ["DAP10", "DAP10, LOB05"]
-    bodyweight = 71.45,  # [kg]
+    bodyweight = 71.45  # [kg]
 
     def datasets(self) -> Dict[str, DataSet]:
         dsets = {}
@@ -107,7 +107,7 @@ class Jang2020(DapagliflozinSimulationExperiment):
             sid="Fig2",
             num_rows=1,
             num_cols=1,
-            name=f"{self.__class__.__name__}",
+            name=f"{self.__class__.__name__} (Healthy)",
         )
         plots = fig.create_plots(xaxis=Axis(self.label_time, unit=self.unit_time), legend=True)
         plots[0].set_yaxis(self.label_dap_plasma, unit=self.unit_dap)
@@ -148,7 +148,6 @@ class Jang2020(DapagliflozinSimulationExperiment):
 
 
 if __name__ == "__main__":
-    # run_experiments(Jang2020, output_dir=Jang2020.__name__)
     out = dapagliflozin.RESULTS_PATH_SIMULATION / Jang2020.__name__
     out.mkdir(parents=True, exist_ok=True)
     run_experiments(Jang2020, output_dir=out)

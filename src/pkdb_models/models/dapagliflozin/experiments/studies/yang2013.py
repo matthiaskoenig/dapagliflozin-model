@@ -51,7 +51,7 @@ class Yang2013(DapagliflozinSimulationExperiment):
             tcsims[f"po_dap{dose}_single"] = TimecourseSim(
                 [Timecourse(
                     start=0,
-                    end=125 * 60,  # [min]
+                    end=100 * 60,  # [min]
                     steps=1000,
                     changes={
                         **self.default_changes(),
@@ -61,7 +61,7 @@ class Yang2013(DapagliflozinSimulationExperiment):
                         "GU__f_absorption": Q_(self.fasting_map["fasted"], "dimensionless"),
                         "f_cirrhosis": Q_(self.cirrhosis_map["Control"], "dimensionless"),
                         "KI__f_renal_function": Q_(self.renal_map["Normal renal function"], "dimensionless"),
-                        # dose (IVDOSE, PODOSE)
+                        # dose
                         "PODOSE_dap": Q_(dose, "mg"),
                     },
                 )]
@@ -70,17 +70,23 @@ class Yang2013(DapagliflozinSimulationExperiment):
         for dose in self.doses_multi:
             tc0 = Timecourse(
                 start=0,
-                end=25 * 60,  # [min]
-                steps=500,
+                end=24 * 60,  # [min]
+                steps=50,
                 changes={
                     **self.default_changes(),
+                    ## physiological changes
+                    "[KI__glc_ext]": Q_(self.fpg_healthy, "mM"),
+                    "GU__f_absorption": Q_(self.fasting_map["fasted"], "dimensionless"),
+                    "f_cirrhosis": Q_(self.cirrhosis_map["Control"], "dimensionless"),
+                    "KI__f_renal_function": Q_(self.renal_map["Normal renal function"], "dimensionless"),
+                    # dose
                     "PODOSE_dap": Q_(dose, "mg"),
                 },
             )
             tc1 = Timecourse(
                 start=0,
                 end=24 * 60,  # [min]
-                steps=500,
+                steps=50,
                 changes={
                     "KI__glc_urine": Q_(0, "mmole"),  # reset UGE
                     "PODOSE_dap": Q_(dose, "mg"),
@@ -88,8 +94,8 @@ class Yang2013(DapagliflozinSimulationExperiment):
             )
             tc2 = Timecourse(
                 start=0,
-                end=125 * 60,  # [min]
-                steps=500,
+                end=100 * 60,  # [min]
+                steps=2000,
                 changes={
                     "KI__glc_urine": Q_(0, "mmole"),  # reset UGE
                     "PODOSE_dap": Q_(dose, "mg"),
@@ -108,7 +114,7 @@ class Yang2013(DapagliflozinSimulationExperiment):
             sid, prefix = data[0], data[1]
             for dose in self.doses_single:
                 tissue = Tissue.URINE if "cumulative" in prefix else Tissue.PLASMA
-                mappings[f"task_po_dap{dose}_{sid}"] = FitMapping(
+                mappings[f"task_po_dap{dose}_{sid}_single"] = FitMapping(
                     self,
                     reference=FitData(
                         self,
@@ -135,7 +141,7 @@ class Yang2013(DapagliflozinSimulationExperiment):
             sid, prefix = data[0], data[1]
             for dose in self.doses_multi:
                 tissue = Tissue.URINE if "cumulative" in prefix else Tissue.PLASMA
-                mappings[f"task_po_dap{dose}_{sid}"] = FitMapping(
+                mappings[f"task_po_dap{dose}_{sid}_multi"] = FitMapping(
                     self,
                     reference=FitData(
                         self,
@@ -175,7 +181,7 @@ class Yang2013(DapagliflozinSimulationExperiment):
             sid="Fig1_plasma",
             num_rows=1,
             num_cols=1,
-            name=f"{self.__class__.__name__}",
+            name=f"{self.__class__.__name__} (Healthy)",
         )
         p = fig1_plasma.create_plots(xaxis=Axis(self.label_time, unit=self.unit_time), legend=True)[0]
         p.set_yaxis(self.label_dap_plasma, unit=self.unit_dap)
@@ -206,7 +212,7 @@ class Yang2013(DapagliflozinSimulationExperiment):
             sid="Fig1_d3g",
             num_rows=1,
             num_cols=1,
-            name=f"{self.__class__.__name__}",
+            name=f"{self.__class__.__name__} (Healthy)",
         )
         p = fig1_d3g.create_plots(xaxis=Axis(self.label_time, unit=self.unit_time), legend=True)[0]
         p.set_yaxis(self.label_d3g_plasma, unit=self.unit_d3g)
@@ -237,7 +243,7 @@ class Yang2013(DapagliflozinSimulationExperiment):
             sid="Fig1_uge",
             num_rows=1,
             num_cols=1,
-            name=f"{self.__class__.__name__}",
+            name=f"{self.__class__.__name__} (Healthy)",
         )
         p = fig1_uge.create_plots(xaxis=Axis(self.label_time, unit=self.unit_time), legend=True)[0]
         p.set_yaxis(self.label_uge, unit=self.unit_uge)
@@ -271,7 +277,7 @@ class Yang2013(DapagliflozinSimulationExperiment):
             sid="Fig2_plasma",
             num_rows=1,
             num_cols=1,
-            name=f"{self.__class__.__name__}",
+            name=f"{self.__class__.__name__} (Healthy)",
         )
         p = fig2_plasma.create_plots(xaxis=Axis(self.label_time, unit=self.unit_time), legend=True)[0]
         p.set_yaxis(self.label_dap_plasma, unit=self.unit_dap)
@@ -302,7 +308,7 @@ class Yang2013(DapagliflozinSimulationExperiment):
             sid="Fig2_d3g",
             num_rows=1,
             num_cols=1,
-            name=f"{self.__class__.__name__}",
+            name=f"{self.__class__.__name__} (Healthy)",
         )
         p = fig2_d3g.create_plots(xaxis=Axis(self.label_time, unit=self.unit_time), legend=True)[0]
         p.set_yaxis(self.label_d3g_plasma, unit=self.unit_d3g)
@@ -333,7 +339,7 @@ class Yang2013(DapagliflozinSimulationExperiment):
             sid="Fig2_uge",
             num_rows=1,
             num_cols=1,
-            name=f"{self.__class__.__name__}",
+            name=f"{self.__class__.__name__} (Healthy)",
         )
         p = fig2_uge.create_plots(xaxis=Axis(self.label_time, unit=self.unit_time), legend=True)[0]
         p.set_yaxis(self.label_uge, unit=self.unit_uge)
@@ -360,7 +366,6 @@ class Yang2013(DapagliflozinSimulationExperiment):
 
 
 if __name__ == "__main__":
-    # run_experiments(Yang2013, output_dir=Yang2013.__name__)
     out = dapagliflozin.RESULTS_PATH_SIMULATION / Yang2013.__name__
     out.mkdir(parents=True, exist_ok=True)
     run_experiments(Yang2013, output_dir=out)

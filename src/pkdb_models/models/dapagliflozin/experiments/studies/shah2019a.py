@@ -23,12 +23,10 @@ class Shah2019a(DapagliflozinSimulationExperiment):
             df = load_pkdb_dataframe(f"{self.sid}_{fig_id}", data_path=self.data_path)
             for label, df_label in df.groupby("label"):
                 dset = DataSet.from_df(df_label, self.ureg)
-
                 # unit conversion to mole/l
                 if label.startswith("dapagliflozin_"):
                     dset.unit_conversion("mean", 1 / self.Mr.dap)
                 dsets[f"{label}"] = dset
-
         # console.print(dsets)
         # console.print(dsets.keys())
         return dsets
@@ -44,17 +42,14 @@ class Shah2019a(DapagliflozinSimulationExperiment):
                     steps=500,
                     changes={
                         **self.default_changes(),
-
                         # physiological changes
                         "BW": Q_(self.bodyweight, "kg"),
                         "[KI__glc_ext]": Q_(self.fpg_healthy, "mM"),
                         "GU__f_absorption": Q_(self.fasting_map[condition], "dimensionless"),
                         "f_cirrhosis": Q_(self.cirrhosis_map["Control"], "dimensionless"),
                         "KI__f_renal_function": Q_(self.renal_map["Normal renal function"], "dimensionless"),
-
                         # dose (IVDOSE, PODOSE)
                         "PODOSE_dap": Q_(5, "mg"),
-
                     },
                 )]
             )
@@ -74,7 +69,10 @@ class Shah2019a(DapagliflozinSimulationExperiment):
                         count="count",
                     ),
                     observable=FitData(
-                        self, task=f"task_po_dap5_{condition}", xid="time", yid=f"[Cve_dap]",
+                        self,
+                        task=f"task_po_dap5_{condition}",
+                        xid="time",
+                        yid=f"[Cve_dap]",
                     ),
                     metadata=DapagliflozinMappingMetaData(
                         tissue=Tissue.PLASMA,
@@ -94,12 +92,11 @@ class Shah2019a(DapagliflozinSimulationExperiment):
             sid="Fig1",
             num_rows=1,
             num_cols=1,
-            name=f"{self.__class__.__name__}",
+            name=f"{self.__class__.__name__} (Healthy)",
         )
         Figure.legend_fontsize = 11
         plots = fig.create_plots(xaxis=Axis(self.label_time, unit=self.unit_time), legend=True)
         plots[0].set_yaxis(self.label_dap_plasma, unit=self.unit_dap)
-
         for condition in self.conditions:
             # simulation
             plots[0].add_data(
@@ -119,12 +116,10 @@ class Shah2019a(DapagliflozinSimulationExperiment):
                 label=f"{condition} - 5 mg PO + MET500",
                 color=self.fasting_colors[condition],
             )
-
         return {fig.sid: fig}
 
 
 if __name__ == "__main__":
-    # run_experiments(Shah2019a, output_dir=Shah2019a.__name__)
     out = dapagliflozin.RESULTS_PATH_SIMULATION / Shah2019a.__name__
     out.mkdir(parents=True, exist_ok=True)
     run_experiments(Shah2019a, output_dir=out)

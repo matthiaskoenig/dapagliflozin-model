@@ -67,25 +67,24 @@
                 <a href="../../../../experiments/studies/watada2019.py">../../../../experiments/studies/watada2019.py</a>
             <pre>
 <code class="python">from typing import Dict
-
 from sbmlsim.data import DataSet, load_pkdb_dataframe
 from sbmlsim.fit import FitMapping, FitData
 from sbmlutils.console import console
 
-from pkdb_models.models.dapagliflozin.experiments.base_experiment import (
-    DapagliflozinSimulationExperiment,
-)
+import pkdb_models
+from pkdb_models.models import dapagliflozin
+from pkdb_models.models.dapagliflozin.experiments.base_experiment import DapagliflozinSimulationExperiment
 from pkdb_models.models.dapagliflozin.experiments.metadata import Tissue, Route, Dosing, ApplicationForm, Health, \
     Fasting, DapagliflozinMappingMetaData, Coadministration
-
 from sbmlsim.plot import Axis, Figure
 from sbmlsim.simulation import Timecourse, TimecourseSim
-
 from pkdb_models.models.dapagliflozin.helpers import run_experiments
-
+from pathlib import Path
+import pkdb_models.models.dapagliflozin as dapagliflozin
 
 class Watada2019(DapagliflozinSimulationExperiment):
     """Simulation experiment of Watada2019."""
+
     info = [
         ("[Cve_dap]", "dapagliflozin"),
         ("[Cve_d3g]", "dapagliflozin 3-o-glucuronide"),
@@ -97,21 +96,22 @@ class Watada2019(DapagliflozinSimulationExperiment):
         "DAP5": 5,
         "DAP10": 10,
     }
-    colors = {
-        "DAP0": "black",
-        "DAP5": "tab:blue",
-        "DAP10": "tab:orange"
-    }
     bodyweights = {
         "DAP0": 57.2,
         "DAP5": 61.6,
         "DAP10": 59.8,
     }  # [kg]
 
+    # T1DM
     fpgs = {  # fasting plasma glucose
-        "DAP0": 134/18,  # [mM]
-        "DAP5": 142.9/18,  # [mM]
-        "DAP10": 133.4/18,  # [mM]
+        "DAP0": 7.45,  # 134/18,  # [mM]
+        "DAP5": 7.94,  # 142.9/18,  # [mM]
+        "DAP10": 7.41,  # 133.4/18,  # [mM]
+    }
+    hba1cs = {  # fasting plasma glucose
+        "DAP0": 8.1,  # [%]
+        "DAP5": 7.9,  # [mM]
+        "DAP10": 7.9,  # [mM]
     }
     gfrs = {  # fasting plasma glucose
         "DAP0": 95.4/100,  # [ml/min/(1.73*m^2)]
@@ -125,14 +125,12 @@ class Watada2019(DapagliflozinSimulationExperiment):
             df = load_pkdb_dataframe(f"{self.sid}_{fig_id}", data_path=self.data_path)
             for label, df_label in df.groupby("label"):
                 dset = DataSet.from_df(df_label, self.ureg)
-
                 # unit conversion to mole/l
                 if label.startswith("dapagliflozin_"):
                     dset.unit_conversion("mean", 1 / self.Mr.dap)
                 elif label.startswith("dapagliflozin 3-o-glucuronide"):
                     dset.unit_conversion("mean", 1 / self.Mr.d3g)
                 dsets[f"{label}"] = dset
-
         # console.print(dsets)
         # console.print(dsets.keys())
         return dsets
@@ -148,14 +146,12 @@ class Watada2019(DapagliflozinSimulationExperiment):
                 steps=500,
                 changes={
                     **self.default_changes(),
-
                     # physiological changes
                     "BW": Q_(self.bodyweights[intervention], "kg"),
                     "[KI__glc_ext]": Q_(self.fpgs[intervention], "mM"),
                     "KI__f_renal_function": Q_(self.gfrs[intervention], "dimensionless"),
                     "GU__f_absorption": Q_(self.fasting_map["fasted"], "dimensionless"),
                     "f_cirrhosis": Q_(self.cirrhosis_map["Control"], "dimensionless"),
-
                     # dose (IVDOSE, PODOSE)
                     "PODOSE_dap": Q_(0, "mg"),
                 },
@@ -178,24 +174,19 @@ class Watada2019(DapagliflozinSimulationExperiment):
                     "PODOSE_dap": Q_(dose, "mg"),
                 },
             )
-
             tcsims[f"po_{intervention}"] = TimecourseSim(
                 [tc0] + [tc1 for _ in range(6)] + [tc2],
                 time_offset=-7 * 24 * 60,
             )
-
         return tcsims
 
     def fit_mappings(self) -> Dict[str, FitMapping]:
-
         mappings = {}
         for intervention, dose in self.doses.items():
             for k, (sid, name) in enumerate(self.info):
                 if dose == 0 and name != "uge":
                     continue
-
                 tissue = Tissue.URINE if name == "uge" else Tissue.PLASMA
-
                 mappings[f"fm_po_{intervention}_{name}"] = FitMapping(
                     self,
                     reference=FitData(
@@ -241,35 +232,36 @@ class Watada2019(DapagliflozinSimulationExperiment):
         for intervention, dose in self.doses.items():
             for k, (sid, name) in enumerate(self.info):
                 # simulation
-                plots[k].add_data(
-                    task=f"task_po_{intervention}",
-                    xid="time",
-                    yid=sid,
-                    label=f"Sim {dose} mg",
-                    color=self.colors[intervention],
-                )
+                if dose == 0 and k in [0, 1]:
+                    pass
+                else:
+                    plots[k].add_data(
+                        task=f"task_po_{intervention}",
+                        xid="time",
+                        yid=sid,
+                        label=f"{dose} mg",
+                        color=self.dose_colors[dose],
+                    )
                 # data
                 if dose == 0 and name != "uge":
                     continue
-                else:
-                    plots[k].add_data(
-                        dataset=f"{name}_{intervention}",
-                        xid="time",
-                        yid="mean",
-                        yid_sd="mean_sd",
-                        count="count",
-                        label=f"dap {dose} mg",
-                        linestyle="" if name == "uge" else "--",
-                        color=self.colors[intervention],
-                    )
-        return {
-            fig.sid: fig,
-        }
+                plots[k].add_data(
+                    dataset=f"{name}_{intervention}",
+                    xid="time",
+                    yid="mean",
+                    yid_sd="mean_sd",
+                    count="count",
+                    label=f"{dose} mg",
+                    linestyle="" if name == "uge" else "--",
+                    color=self.dose_colors[dose],
+                )
+        return {fig.sid: fig,}
 
 
 if __name__ == "__main__":
-    run_experiments(Watada2019, output_dir=Watada2019.__name__)
-</code>
+    out = dapagliflozin.RESULTS_PATH_SIMULATION / Watada2019.__name__
+    out.mkdir(parents=True, exist_ok=True)
+    run_experiments(Watada2019, output_dir=out)</code>
         </pre>
             </p>
 

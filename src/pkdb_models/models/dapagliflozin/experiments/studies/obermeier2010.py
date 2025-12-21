@@ -93,7 +93,7 @@ class Obermeier2010(DapagliflozinSimulationExperiment):
             sid="Fig6",
             num_rows=1,
             num_cols=1,
-            name=f"{self.__class__.__name__}",
+            name=f"{self.__class__.__name__} (Healthy)",
         )
         Figure.legend_fontsize = 11
         plots = fig.create_plots(xaxis=Axis(self.label_time, unit=self.unit_time), legend=True)
@@ -113,7 +113,7 @@ class Obermeier2010(DapagliflozinSimulationExperiment):
             )
         # data
         for _, label_analyte, color in substance:
-            dataset_name = "dapagliflozin" if label_analyte == "DAP" \
+            dataset_name = "dapagliflozin" if label_analyte == "dap" \
                 else "total dapagliflozin"
             plots[0].add_data(
                 dataset=f"{dataset_name}_DAP50",
@@ -128,7 +128,6 @@ class Obermeier2010(DapagliflozinSimulationExperiment):
 
 
 if __name__ == "__main__":
-    # run_experiments(Obermeier2010, output_dir=Obermeier2010.__name__)
     out = dapagliflozin.RESULTS_PATH_SIMULATION / Obermeier2010.__name__
     out.mkdir(parents=True, exist_ok=True)
     run_experiments(Obermeier2010, output_dir=out)

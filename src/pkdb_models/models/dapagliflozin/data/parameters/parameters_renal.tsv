@@ -1,69 +1,91 @@
-study	class	condition	parameter	dose	dose_unit	substance	n	mean	sd	unit	comments	mean_unit_conv	sd_unit_conv	unit_new
-FDAMB102007	renal function	healthy	cmax	50	mg	dap	5	745	216.05	ng/ml		1.54	0.45	µmole/l
-FDAMB102007	renal function	healthy	auc_inf	50	mg	dap	5	2888	779.76	ng/ml*hr		5.96	1.61	µmole/l*hr
-FDAMB102007	renal function	healthy	thalf	50	mg	dap	5	3	7.1	hr		3	7.1	hr
-FDAMB102007	renal function	normal	cmax	50	mg	dap	9	674	343.74	ng/ml	also T2DM	1.39	0.71	µmole/l
-FDAMB102007	renal function	normal	auc_inf	50	mg	dap	9	2632	894.88	ng/ml*hr	also T2DM	5.43	1.85	µmole/l*hr
-FDAMB102007	renal function	normal	thalf	50	mg	dap	9	12.6	5.5	hr	also T2DM	12.6	5.5	hr
-FDAMB102007	renal function	mild	cmax	50	mg	dap	9	788	267.92	ng/ml	also T2DM	1.63	0.55	µmole/l
-FDAMB102007	renal function	mild	auc_inf	50	mg	dap	9	3433	1098.56	ng/ml*hr	also T2DM	7.08	2.27	µmole/l*hr
-FDAMB102007	renal function	mild	thalf	50	mg	dap	9	15.6	7.2	hr	also T2DM	15.6	7.2	hr
-FDAMB102007	renal function	moderate	cmax	50	mg	dap	8	814	268.62	ng/ml	also T2DM	1.68	0.55	µmole/l
-FDAMB102007	renal function	moderate	auc_inf	50	mg	dap	8	4215	885.15	ng/ml*hr	also T2DM	8.69	1.83	µmole/l*hr
-FDAMB102007	renal function	moderate	thalf	50	mg	dap	8	17.6	7.1	hr	also T2DM	17.6	7.1	hr
-FDAMB102007	renal function	severe	cmax	50	mg	dap	6	901	351.39	ng/ml	also T2DM	1.86	0.72	µmole/l
-FDAMB102007	renal function	severe	auc_inf	50	mg	dap	6	6082	1763.78	ng/ml*hr	also T2DM	12.54	3.64	µmole/l*hr
-FDAMB102007	renal function	severe	thalf	50	mg	dap	6	35.5	46.5	hr	also T2DM	35.5	46.5	hr
-#														
-FDAMB102007	renal function	healthy	cmax	50	mg	d3g	5	904	253.12	ng/ml		1.55	0.43	µmole/l
-FDAMB102007	renal function	healthy	auc_inf	50	mg	d3g	5	4133	578.62	ng/ml*hr		7.06	0.99	µmole/l*hr
-FDAMB102007	renal function	healthy	thalf	50	mg	d3g	5	13.3	6.6	hr		13.3	6.6	hr
-FDAMB102007	renal function	normal	cmax	50	mg	d3g	9	1381	248.58	ng/ml	also T2DM	2.36	0.42	µmole/l
-FDAMB102007	renal function	normal	auc_inf	50	mg	d3g	9	6530	1436.6	ng/ml*hr	also T2DM	11.16	2.46	µmole/l*hr
-FDAMB102007	renal function	normal	thalf	50	mg	d3g	9	11.9	4.1	hr	also T2DM	11.9	4.1	hr
-FDAMB102007	renal function	mild	cmax	50	mg	d3g	9	1708	631.96	ng/ml	also T2DM	2.92	1.08	µmole/l
-FDAMB102007	renal function	mild	auc_inf	50	mg	d3g	9	9285	3528.3	ng/ml*hr	also T2DM	15.87	6.03	µmole/l*hr
-FDAMB102007	renal function	mild	thalf	50	mg	d3g	9	14.5	6.7	hr	also T2DM	14.5	6.7	hr
-FDAMB102007	renal function	moderate	cmax	50	mg	d3g	8	1815	580.8	ng/ml	also T2DM	3.10	0.99	µmole/l
-FDAMB102007	renal function	moderate	auc_inf	50	mg	d3g	8	12959	5183.6	ng/ml*hr	also T2DM	22.15	8.86	µmole/l*hr
-FDAMB102007	renal function	moderate	thalf	50	mg	d3g	8	15.7	6.4	hr	also T2DM	15.7	6.4	hr
-FDAMB102007	renal function	severe	cmax	50	mg	d3g	6	1905	476.25	ng/ml	also T2DM	3.26	0.81	µmole/l
-FDAMB102007	renal function	severe	auc_inf	50	mg	d3g	6	21007	14705	ng/ml*hr	also T2DM	35.91	25.14	µmole/l*hr
-FDAMB102007	renal function	severe	thalf	50	mg	d3g	6	19.9	12.7	hr	also T2DM	19.9	12.7	hr
-#														
-FDAMB102007	renal function	normal	UGE	20	mg	glucose	9	91.5		g		91.5		g
-FDAMB102007	renal function	mild	UGE	20	mg	glucose	9	70.2		g	also T2DM	70.2		g
-FDAMB102007	renal function	moderate	UGE	20	mg	glucose	8	20		g	also T2DM	20		g
-FDAMB102007	renal function	severe	UGE	20	mg	glucose	6	6.9		g	also T2DM	6.9		g
-#														
-Kasichayanula2013	renal function	healthy	cmax	50	mg	dap	8	710	220.1	ng/ml		1.46	0.45	µmole/l
-Kasichayanula2013	renal function	healthy	auc_inf	50	mg	dap	8	2880	777.6	ng/ml*hr		5.94	1.60	µmole/l*hr
-Kasichayanula2013	renal function	healthy	thalf	50	mg	dap	8	12.7	7	hr		12.7	7	hr
-Kasichayanula2013	renal function	normal	cmax	50	mg	dap	12	647	239.39	ng/ml	also T2DM	1.33	0.49	µmole/l
-Kasichayanula2013	renal function	normal	auc_inf	50	mg	dap	12	2504	751.2	ng/ml*hr	also T2DM	5.16	1.55	µmole/l*hr
-Kasichayanula2013	renal function	normal	thalf	50	mg	dap	12	11.9	5.7	hr	also T2DM	11.9	5.7	hr
-Kasichayanula2013	renal function	mild	cmax	50	mg	dap	8	902	315.7	ng/ml	also T2DM	1.86	0.65	µmole/l
-Kasichayanula2013	renal function	mild	auc_inf	50	mg	dap	8	4018	1044.7	ng/ml*hr	also T2DM	8.29	2.15	µmole/l*hr
-Kasichayanula2013	renal function	mild	thalf	50	mg	dap	8	18.4	8.2	hr	also T2DM	18.4	8.2	hr
-Kasichayanula2013	renal function	moderate	cmax	50	mg	dap	8	897	367.77	ng/ml	also T2DM	1.85	0.76	µmole/l
-Kasichayanula2013	renal function	moderate	auc_inf	50	mg	dap	8	5182	1451	ng/ml*hr	also T2DM	10.69	2.99	µmole/l*hr
-Kasichayanula2013	renal function	moderate	thalf	50	mg	dap	8	17.9	3.4	hr	also T2DM	17.9	3.4	hr
-Kasichayanula2013	renal function	severe	cmax	50	mg	dap	4	772	84.92	ng/ml	also T2DM	1.59	0.18	µmole/l
-Kasichayanula2013	renal function	severe	auc_inf	50	mg	dap	4	4884	488.4	ng/ml*hr	also T2DM	10.07	1.01	µmole/l*hr
-Kasichayanula2013	renal function	severe	thalf	50	mg	dap	4	15	4.2	hr	also T2DM	15	4.2	hr
-#														
-Kasichayanula2013	renal function	healthy	cmax	50	mg	d3g	8	960	316.8	ng/ml		1.64	0.54	µmole/l
-Kasichayanula2013	renal function	healthy	auc_inf	50	mg	d3g	8	4634	1390.2	ng/ml*hr		7.92	2.38	µmole/l*hr
-Kasichayanula2013	renal function	healthy	thalf	50	mg	d3g	8	12.1	6	hr		12.1	6	hr
-Kasichayanula2013	renal function	normal	cmax	50	mg	d3g	12	1391	403.4	ng/ml	also T2DM	2.38	0.69	µmole/l
-Kasichayanula2013	renal function	normal	auc_inf	50	mg	d3g	12	6616	2117	ng/ml*hr	also T2DM	11.31	3.62	µmole/l*hr
-Kasichayanula2013	renal function	normal	thalf	50	mg	d3g	12	11.2	3.7	hr	also T2DM	11.2	3.7	hr
-Kasichayanula2013	renal function	mild	cmax	50	mg	d3g	8	1641	426.7	ng/ml	also T2DM	2.81	0.73	µmole/l
-Kasichayanula2013	renal function	mild	auc_inf	50	mg	d3g	8	9830	2359	ng/ml*hr	also T2DM	16.80	4.03	µmole/l*hr
-Kasichayanula2013	renal function	mild	thalf	50	mg	d3g	8	17.5	8.2	hr	also T2DM	17.5	8.2	hr
-Kasichayanula2013	renal function	moderate	cmax	50	mg	d3g	8	2037	631.5	ng/ml	also T2DM	3.48	1.08	µmole/l
-Kasichayanula2013	renal function	moderate	auc_inf	50	mg	d3g	8	16831	6059	ng/ml*hr	also T2DM	28.77	10.36	µmole/l*hr
-Kasichayanula2013	renal function	moderate	thalf	50	mg	d3g	8	16	2.7	hr	also T2DM	16	2.7	hr
-Kasichayanula2013	renal function	severe	cmax	50	mg	d3g	4	1986	436.9	ng/ml	also T2DM	3.39	0.75	µmole/l
-Kasichayanula2013	renal function	severe	auc_inf	50	mg	d3g	4	22409	6947	ng/ml*hr	also T2DM	38.31	11.88	µmole/l*hr
-Kasichayanula2013	renal function	severe	thalf	50	mg	d3g	4	12.9	2.4	hr	also T2DM	12.9	2.4	hr
+study	class	condition	parameter	dose	dose_unit	substance	n	mean	sd	unit	comments	mean_unit_conv	sd_unit_conv	unit_new	diabetes	hba1c	fpg	median	Q1	Q3	Min	Max	day
+FDAMB102007	renal function	healthy	cmax	50.0	mg	dap	5	745.00	216.05	ng/ml		1.54	0.45	µmole/l	N	NR	NR						Day1
+FDAMB102007	renal function	healthy	aucinf	50.0	mg	dap	5	2888.00	779.76	ng/ml*hr		5.96	1.61	µmole/l*hr	N	NR	NR						Day1
+FDAMB102007	renal function	healthy	thalf	50.0	mg	dap	5	3.00	7.10	hr		3.00	7.10	hr	N	NR	NR						Day1
+FDAMB102007	renal function	normal	cmax	50.0	mg	dap	9	674.00	343.74	ng/ml		1.39	0.71	µmole/l	D2	NR	NR						Day1
+FDAMB102007	renal function	normal	aucinf	50.0	mg	dap	9	2632.00	894.88	ng/ml*hr		5.43	1.85	µmole/l*hr	D2	NR	NR						Day1
+FDAMB102007	renal function	normal	thalf	50.0	mg	dap	9	12.60	5.50	hr		12.60	5.50	hr	D2	NR	NR						Day1
+FDAMB102007	renal function	mild	cmax	50.0	mg	dap	9	788.00	267.92	ng/ml		1.63	0.55	µmole/l	D2	NR	NR						Day1
+FDAMB102007	renal function	mild	aucinf	50.0	mg	dap	9	3433.00	1098.56	ng/ml*hr		7.08	2.27	µmole/l*hr	D2	NR	NR						Day1
+FDAMB102007	renal function	mild	thalf	50.0	mg	dap	9	15.60	7.20	hr		15.60	7.20	hr	D2	NR	NR						Day1
+FDAMB102007	renal function	moderate	cmax	50.0	mg	dap	8	814.00	268.62	ng/ml		1.68	0.55	µmole/l	D2	NR	NR						Day1
+FDAMB102007	renal function	moderate	aucinf	50.0	mg	dap	8	4215.00	885.15	ng/ml*hr		8.69	1.83	µmole/l*hr	D2	NR	NR						Day1
+FDAMB102007	renal function	moderate	thalf	50.0	mg	dap	8	17.60	7.10	hr		17.60	7.10	hr	D2	NR	NR						Day1
+FDAMB102007	renal function	severe	cmax	50.0	mg	dap	6	901.00	351.39	ng/ml		1.86	0.72	µmole/l	D2	NR	NR						Day1
+FDAMB102007	renal function	severe	aucinf	50.0	mg	dap	6	6082.00	1763.78	ng/ml*hr		12.54	3.64	µmole/l*hr	D2	NR	NR						Day1
+FDAMB102007	renal function	severe	thalf	50.0	mg	dap	6	35.50	16.50	hr		35.50	16.50	hr	D2	NR	NR						Day1
+#																							
+FDAMB102007	renal function	healthy	cmax	50.0	mg	d3g	5	904.00	253.12	ng/ml		1.55	0.43	µmole/l	N	NR	NR						Day1
+FDAMB102007	renal function	healthy	aucinf	50.0	mg	d3g	5	4133.00	578.62	ng/ml*hr		7.06	0.99	µmole/l*hr	N	NR	NR						Day1
+FDAMB102007	renal function	healthy	thalf	50.0	mg	d3g	5	13.30	6.60	hr		13.30	6.60	hr	N	NR	NR						Day1
+FDAMB102007	renal function	normal	cmax	50.0	mg	d3g	9	1381.00	248.58	ng/ml		2.36	0.42	µmole/l	D2	NR	NR						Day1
+FDAMB102007	renal function	normal	aucinf	50.0	mg	d3g	9	6530.00	1436.60	ng/ml*hr		11.16	2.46	µmole/l*hr	D2	NR	NR						Day1
+FDAMB102007	renal function	normal	thalf	50.0	mg	d3g	9	11.90	4.10	hr		11.90	4.10	hr	D2	NR	NR						Day1
+FDAMB102007	renal function	mild	cmax	50.0	mg	d3g	9	1708.00	631.96	ng/ml		2.92	1.08	µmole/l	D2	NR	NR						Day1
+FDAMB102007	renal function	mild	aucinf	50.0	mg	d3g	9	9285.00	3528.30	ng/ml*hr		15.87	6.03	µmole/l*hr	D2	NR	NR						Day1
+FDAMB102007	renal function	mild	thalf	50.0	mg	d3g	9	14.50	6.70	hr		14.50	6.70	hr	D2	NR	NR						Day1
+FDAMB102007	renal function	moderate	cmax	50.0	mg	d3g	8	1815.00	580.80	ng/ml		3.10	0.99	µmole/l	D2	NR	NR						Day1
+FDAMB102007	renal function	moderate	aucinf	50.0	mg	d3g	8	12959.00	5183.60	ng/ml*hr		22.15	8.86	µmole/l*hr	D2	NR	NR						Day1
+FDAMB102007	renal function	moderate	thalf	50.0	mg	d3g	8	15.70	6.40	hr		15.70	6.40	hr	D2	NR	NR						Day1
+FDAMB102007	renal function	severe	cmax	50.0	mg	d3g	6	1905.00	476.25	ng/ml		3.26	0.81	µmole/l	D2	NR	NR						Day1
+FDAMB102007	renal function	severe	aucinf	50.0	mg	d3g	6	21007.00	14705.00	ng/ml*hr		35.91	25.14	µmole/l*hr	D2	NR	NR						Day1
+FDAMB102007	renal function	severe	thalf	50.0	mg	d3g	6	19.90	12.70	hr		19.90	12.70	hr	D2	NR	NR						Day1
+#																							
+FDAMB102007	renal function	normal	UGE	20.0	mg	glucose	3			g				g	D2	NR	NR	93.94	90.50	131.39	90.50	131.39	Day1
+FDAMB102007	renal function	mild	UGE	20.0	mg	glucose	3			g				g	D2	NR	NR	74.75	37.29	99.50	37.29	99.50	Day1
+FDAMB102007	renal function	moderate	UGE	20.0	mg	glucose	6			g				g	D2	NR	NR	29.19	26.13	41.04	21.16	46.00	Day1
+FDAMB102007	renal function	severe	UGE	20.0	mg	glucose	5			g				g	D2	NR	NR	18.79	17.65	23.38	16.88	27.20	Day1
+#																							
+FDAMB102007	renal function	normal	aucinf	20.0	mg	dap	3			g				µmole/l*hr	D2	NR	NR	1.67	1.66	1.91	1.63	1.93	Day1
+FDAMB102007	renal function	mild	aucinf	20.0	mg	dap	3			g				µmole/l*hr	D2	NR	NR	0.60	1.80	3.42	1.75	3.45	Day1
+FDAMB102007	renal function	moderate	aucinf	20.0	mg	dap	6			g				µmole/l*hr	D2	NR	NR	3.65	3.13	4.12	2.34	5.18	Day1
+FDAMB102007	renal function	severe	aucinf	20.0	mg	dap	5			g				µmole/l*hr	D2	NR	NR	5.13	3.96	6.17	3.91	8.73	Day1
+#																							
+Kasichayanula2013	renal function	healthy	cmax	50.0	mg	dap	8	710.00	220.10	ng/ml		1.46	0.45	µmole/l	N	5.5	4.94						Day1
+Kasichayanula2013	renal function	healthy	aucinf	50.0	mg	dap	8	2880.00	777.60	ng/ml*hr		5.94	1.60	µmole/l*hr	N	5.5	4.94						Day1
+Kasichayanula2013	renal function	healthy	thalf	50.0	mg	dap	8	12.70	7.00	hr		12.70	7.00	hr	N	5.5	4.94						Day1
+Kasichayanula2013	renal function	normal	cmax	50.0	mg	dap	12	647.00	239.39	ng/ml		1.33	0.49	µmole/l	D2	8.6	9.32						Day1
+Kasichayanula2013	renal function	normal	aucinf	50.0	mg	dap	12	2504.00	751.20	ng/ml*hr		5.16	1.55	µmole/l*hr	D2	8.6	9.32						Day1
+Kasichayanula2013	renal function	normal	thalf	50.0	mg	dap	12	11.90	5.70	hr		11.90	5.70	hr	D2	8.6	9.32						Day1
+Kasichayanula2013	renal function	mild	cmax	50.0	mg	dap	8	902.00	315.70	ng/ml		1.86	0.65	µmole/l	D2	8.5	7.7						Day1
+Kasichayanula2013	renal function	mild	aucinf	50.0	mg	dap	8	4018.00	1044.70	ng/ml*hr		8.29	2.15	µmole/l*hr	D2	8.5	7.7						Day1
+Kasichayanula2013	renal function	mild	thalf	50.0	mg	dap	8	18.40	8.20	hr		18.40	8.20	hr	D2	8.5	7.7						Day1
+Kasichayanula2013	renal function	moderate	cmax	50.0	mg	dap	8	897.00	367.77	ng/ml		1.85	0.76	µmole/l	D2	7.1	6.79						Day1
+Kasichayanula2013	renal function	moderate	aucinf	50.0	mg	dap	8	5182.00	1451.00	ng/ml*hr		10.69	2.99	µmole/l*hr	D2	7.1	6.79						Day1
+Kasichayanula2013	renal function	moderate	thalf	50.0	mg	dap	8	17.90	3.40	hr		17.90	3.40	hr	D2	7.1	6.79						Day1
+Kasichayanula2013	renal function	severe	cmax	50.0	mg	dap	4	772.00	84.92	ng/ml		1.59	0.18	µmole/l	D2	7.1	7.23						Day1
+Kasichayanula2013	renal function	severe	aucinf	50.0	mg	dap	4	4884.00	488.40	ng/ml*hr		10.07	1.01	µmole/l*hr	D2	7.1	7.23						Day1
+Kasichayanula2013	renal function	severe	thalf	50.0	mg	dap	4	15.00	4.20	hr		15.00	4.20	hr	D2	7.1	7.23						Day1
+#																							
+Kasichayanula2013	renal function	healthy	cmax	50.0	mg	d3g	8	960.00	316.80	ng/ml		1.64	0.54	µmole/l	N	5.5	4.94						Day1
+Kasichayanula2013	renal function	healthy	aucinf	50.0	mg	d3g	8	4634.00	1390.20	ng/ml*hr		7.92	2.38	µmole/l*hr	N	5.5	4.94						Day1
+Kasichayanula2013	renal function	healthy	thalf	50.0	mg	d3g	8	12.10	6.00	hr		12.10	6.00	hr	N	5.5	4.94						Day1
+Kasichayanula2013	renal function	normal	cmax	50.0	mg	d3g	12	1391.00	403.40	ng/ml		2.38	0.69	µmole/l	D2	8.6	9.32						Day1
+Kasichayanula2013	renal function	normal	aucinf	50.0	mg	d3g	12	6616.00	2117.00	ng/ml*hr		11.31	3.62	µmole/l*hr	D2	8.6	9.32						Day1
+Kasichayanula2013	renal function	normal	thalf	50.0	mg	d3g	12	11.20	3.70	hr		11.20	3.70	hr	D2	8.6	9.32						Day1
+Kasichayanula2013	renal function	mild	cmax	50.0	mg	d3g	8	1641.00	426.70	ng/ml		2.81	0.73	µmole/l	D2	8.5	7.7						Day1
+Kasichayanula2013	renal function	mild	aucinf	50.0	mg	d3g	8	9830.00	2359.00	ng/ml*hr		16.80	4.03	µmole/l*hr	D2	8.5	7.7						Day1
+Kasichayanula2013	renal function	mild	thalf	50.0	mg	d3g	8	17.50	8.20	hr		17.50	8.20	hr	D2	8.5	7.7						Day1
+Kasichayanula2013	renal function	moderate	cmax	50.0	mg	d3g	8	2037.00	631.50	ng/ml		3.48	1.08	µmole/l	D2	7.1	6.79						Day1
+Kasichayanula2013	renal function	moderate	aucinf	50.0	mg	d3g	8	16831.00	6059.00	ng/ml*hr		28.77	10.36	µmole/l*hr	D2	7.1	6.79						Day1
+Kasichayanula2013	renal function	moderate	thalf	50.0	mg	d3g	8	16.00	2.70	hr		16.00	2.70	hr	D2	7.1	6.79						Day1
+Kasichayanula2013	renal function	severe	cmax	50.0	mg	d3g	4	1986.00	436.90	ng/ml		3.39	0.75	µmole/l	D2	7.1	7.23						Day1
+Kasichayanula2013	renal function	severe	aucinf	50.0	mg	d3g	4	22409.00	6947.00	ng/ml*hr		38.31	11.88	µmole/l*hr	D2	7.1	7.23						Day1
+Kasichayanula2013	renal function	severe	thalf	50.0	mg	d3g	4	12.90	2.40	hr		12.90	2.40	hr	D2	7.1	7.23						Day1
+#																							
+Kasichayanula2013	renal function	normal	cmax	20.0	mg	dap	4	249.00	52.29	ng/ml		1.28	0.27	µmole/l	D2	8.6	9.32						Day4
+Kasichayanula2013	renal function	normal	cmax	20.0	mg	dap	4	310.00	68.20	ng/ml		1.60	0.35	µmole/l	D2	8.6	9.32						Day10
+Kasichayanula2013	renal function	mild	cmax	20.0	mg	dap	4	410.00	94.30	ng/ml		2.11	0.49	µmole/l	D2	8.5	7.7						Day4
+Kasichayanula2013	renal function	mild	cmax	20.0	mg	dap	4	358.00	89.50	ng/ml		1.85	0.46	µmole/l	D2	8.5	7.7						Day10
+Kasichayanula2013	renal function	moderate	cmax	20.0	mg	dap	6	466.00	97.86	ng/ml		2.40	0.50	µmole/l	D2	7.1	6.79						Day4
+Kasichayanula2013	renal function	moderate	cmax	20.0	mg	dap	6	512.00	117.80	ng/ml		2.64	0.61	µmole/l	D2	7.1	6.79						Day10
+Kasichayanula2013	renal function	severe	cmax	20.0	mg	dap	3	330.00	19.80	ng/ml		1.70	0.10	µmole/l	D2	7.1	7.23						Day4
+Kasichayanula2013	renal function	severe	cmax	20.0	mg	dap	3	338.00	54.08	ng/ml		1.74	0.28	µmole/l	D2	7.1	7.23						Day10
+Kasichayanula2013	renal function	normal	cmax	20.0	mg	d3g	4	644.00	135.20	ng/ml		2.75	0.58	µmole/l	D2	8.6	9.32						Day4
+Kasichayanula2013	renal function	normal	cmax	20.0	mg	d3g	4	637.00	165.60	ng/ml		2.72	0.71	µmole/l	D2	8.6	9.32						Day10
+Kasichayanula2013	renal function	mild	cmax	20.0	mg	d3g	4	791.00	245.20	ng/ml		3.38	1.05	µmole/l	D2	8.5	7.7						Day4
+Kasichayanula2013	renal function	mild	cmax	20.0	mg	d3g	4	843.00	151.70	ng/ml		3.60	0.65	µmole/l	D2	8.5	7.7						Day10
+Kasichayanula2013	renal function	moderate	cmax	20.0	mg	d3g	6	911.00	346.20	ng/ml		3.89	1.48	µmole/l	D2	7.1	6.79						Day4
+Kasichayanula2013	renal function	moderate	cmax	20.0	mg	d3g	6	1088.00	261.10	ng/ml		4.65	1.12	µmole/l	D2	7.1	6.79						Day10
+Kasichayanula2013	renal function	severe	cmax	20.0	mg	d3g	3	770.00	161.70	ng/ml		3.29	0.69	µmole/l	D2	7.1	7.23						Day4
+Kasichayanula2013	renal function	severe	cmax	20.0	mg	d3g	3	965.00	73.70	ng/ml		4.12	0.31	µmole/l	D2	7.1	7.23						Day10

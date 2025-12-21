@@ -11,19 +11,17 @@ length: [m]
 
 ## Parameters `p`
 ```
-DAPABS_k = 0.0594648244956005  # [1/min] rate of dapagliflozin absorption  
-F_dap_abs = 0.84  # [-] fraction absorbed dapagliflozin  
-Ka_dis_dap = 0.848420141441488  # [1/hr] Ka_dis [1/hr] dissolution dapagliflozin  
+DAPABS_k = 0.0594648244956005  # [1/min] absorption rate dap  
+F_dap_abs = 0.84  # [-] fraction absorbed dap  
+Ka_dis_dap = 0.848420141441488  # [1/hr] dissolution rate dap  
 Mr_dap = 408.873  # [g/mol] Molecular weight dapagliflozin [g/mole]  
 Vapical = nan  # [m^2] apical membrane (intestinal membrane enterocytes)  
-Vbaso = nan  # [m^2] basolateral membrane (intestinal membrane enterocytes)  
-Ventero = 1.0  # [l] intestinal lining (enterocytes)  
 Vext = 1.0  # [l] plasma  
 Vfeces = 1.0  # [l] feces  
 Vgu = 1.2825  # [l] intestine  
 Vlumen = 1.15425  # [l] intestinal lumen (inner part of intestine)  
 Vstomach = 1.0  # [l] stomach  
-f_absorption = 1.0  # [-] scaling factor for absorption rate  
+f_absorption = 1.0  # [-] scaling factor absorption rate dap  
 ```
 
 ## Initial conditions `x0`

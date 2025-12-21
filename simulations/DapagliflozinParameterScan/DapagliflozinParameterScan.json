@@ -1,7 +1,7 @@
 {
   "experiment_id": "DapagliflozinParameterScan",
   "base_path": "/home/mkoenig/git/pkdb_models/pkdb_models/models/dapagliflozin",
-  "data_path": "[PosixPath('/home/mkoenig/git/pkdb_data/studies/dapagliflozin'), PosixPath('/home/mkoenig/git/pkdb_data/studies/canagliflozin')]",
+  "data_path": "[PosixPath('/home/mkoenig/git/pkdb_models/pkdb_models/models/dapagliflozin/data/dapagliflozin'), PosixPath('/home/mkoenig/git/pkdb_models/pkdb_models/models/dapagliflozin/data/canagliflozin')]",
   "models": {
     "model": {
       "sid": null,
@@ -17,675 +17,6696 @@
     }
   },
   "tasks": {
-    "task_scan_po_hepatic_scan": {
+    "task_scan_po_dose_scan__glc5": {
       "model": "model",
-      "simulation": "scan_po_hepatic_scan"
+      "simulation": "scan_po_dose_scan__glc5"
     },
-    "task_scan_po_renal_scan": {
+    "task_scan_po_dose_scan__glc7": {
       "model": "model",
-      "simulation": "scan_po_renal_scan"
+      "simulation": "scan_po_dose_scan__glc7"
     },
-    "task_scan_po_food_scan": {
+    "task_scan_po_dose_scan__glc9": {
       "model": "model",
-      "simulation": "scan_po_food_scan"
+      "simulation": "scan_po_dose_scan__glc9"
+    },
+    "task_scan_po_dose_scan__glc11": {
+      "model": "model",
+      "simulation": "scan_po_dose_scan__glc11"
+    },
+    "task_scan_po_dose_scan__glc13": {
+      "model": "model",
+      "simulation": "scan_po_dose_scan__glc13"
+    },
+    "task_scan_po_dose_scan__glc15": {
+      "model": "model",
+      "simulation": "scan_po_dose_scan__glc15"
+    },
+    "task_scan_po_food_scan__glc5": {
+      "model": "model",
+      "simulation": "scan_po_food_scan__glc5"
+    },
+    "task_scan_po_food_scan__glc7": {
+      "model": "model",
+      "simulation": "scan_po_food_scan__glc7"
+    },
+    "task_scan_po_food_scan__glc9": {
+      "model": "model",
+      "simulation": "scan_po_food_scan__glc9"
+    },
+    "task_scan_po_food_scan__glc11": {
+      "model": "model",
+      "simulation": "scan_po_food_scan__glc11"
+    },
+    "task_scan_po_food_scan__glc13": {
+      "model": "model",
+      "simulation": "scan_po_food_scan__glc13"
+    },
+    "task_scan_po_food_scan__glc15": {
+      "model": "model",
+      "simulation": "scan_po_food_scan__glc15"
+    },
+    "task_scan_po_hepatic_scan__glc5": {
+      "model": "model",
+      "simulation": "scan_po_hepatic_scan__glc5"
+    },
+    "task_scan_po_hepatic_scan__glc7": {
+      "model": "model",
+      "simulation": "scan_po_hepatic_scan__glc7"
+    },
+    "task_scan_po_hepatic_scan__glc9": {
+      "model": "model",
+      "simulation": "scan_po_hepatic_scan__glc9"
+    },
+    "task_scan_po_hepatic_scan__glc11": {
+      "model": "model",
+      "simulation": "scan_po_hepatic_scan__glc11"
+    },
+    "task_scan_po_hepatic_scan__glc13": {
+      "model": "model",
+      "simulation": "scan_po_hepatic_scan__glc13"
+    },
+    "task_scan_po_hepatic_scan__glc15": {
+      "model": "model",
+      "simulation": "scan_po_hepatic_scan__glc15"
+    },
+    "task_scan_po_renal_scan_50__glc5": {
+      "model": "model",
+      "simulation": "scan_po_renal_scan_50__glc5"
+    },
+    "task_scan_po_renal_scan_50__glc7": {
+      "model": "model",
+      "simulation": "scan_po_renal_scan_50__glc7"
+    },
+    "task_scan_po_renal_scan_50__glc9": {
+      "model": "model",
+      "simulation": "scan_po_renal_scan_50__glc9"
+    },
+    "task_scan_po_renal_scan_50__glc11": {
+      "model": "model",
+      "simulation": "scan_po_renal_scan_50__glc11"
+    },
+    "task_scan_po_renal_scan_50__glc13": {
+      "model": "model",
+      "simulation": "scan_po_renal_scan_50__glc13"
+    },
+    "task_scan_po_renal_scan_50__glc15": {
+      "model": "model",
+      "simulation": "scan_po_renal_scan_50__glc15"
+    },
+    "task_scan_po_renal_scan_20__glc5": {
+      "model": "model",
+      "simulation": "scan_po_renal_scan_20__glc5"
+    },
+    "task_scan_po_renal_scan_20__glc7": {
+      "model": "model",
+      "simulation": "scan_po_renal_scan_20__glc7"
+    },
+    "task_scan_po_renal_scan_20__glc9": {
+      "model": "model",
+      "simulation": "scan_po_renal_scan_20__glc9"
+    },
+    "task_scan_po_renal_scan_20__glc11": {
+      "model": "model",
+      "simulation": "scan_po_renal_scan_20__glc11"
+    },
+    "task_scan_po_renal_scan_20__glc13": {
+      "model": "model",
+      "simulation": "scan_po_renal_scan_20__glc13"
+    },
+    "task_scan_po_renal_scan_20__glc15": {
+      "model": "model",
+      "simulation": "scan_po_renal_scan_20__glc15"
     }
   },
   "simulations": {
-    "scan_po_hepatic_scan": {
+    "scan_po_dose_scan__glc5": {
       "type": "ScanSim"
     },
-    "scan_po_renal_scan": {
+    "scan_po_dose_scan__glc7": {
       "type": "ScanSim"
     },
-    "scan_po_food_scan": {
+    "scan_po_dose_scan__glc9": {
+      "type": "ScanSim"
+    },
+    "scan_po_dose_scan__glc11": {
+      "type": "ScanSim"
+    },
+    "scan_po_dose_scan__glc13": {
+      "type": "ScanSim"
+    },
+    "scan_po_dose_scan__glc15": {
+      "type": "ScanSim"
+    },
+    "scan_po_food_scan__glc5": {
+      "type": "ScanSim"
+    },
+    "scan_po_food_scan__glc7": {
+      "type": "ScanSim"
+    },
+    "scan_po_food_scan__glc9": {
+      "type": "ScanSim"
+    },
+    "scan_po_food_scan__glc11": {
+      "type": "ScanSim"
+    },
+    "scan_po_food_scan__glc13": {
+      "type": "ScanSim"
+    },
+    "scan_po_food_scan__glc15": {
+      "type": "ScanSim"
+    },
+    "scan_po_hepatic_scan__glc5": {
+      "type": "ScanSim"
+    },
+    "scan_po_hepatic_scan__glc7": {
+      "type": "ScanSim"
+    },
+    "scan_po_hepatic_scan__glc9": {
+      "type": "ScanSim"
+    },
+    "scan_po_hepatic_scan__glc11": {
+      "type": "ScanSim"
+    },
+    "scan_po_hepatic_scan__glc13": {
+      "type": "ScanSim"
+    },
+    "scan_po_hepatic_scan__glc15": {
+      "type": "ScanSim"
+    },
+    "scan_po_renal_scan_50__glc5": {
+      "type": "ScanSim"
+    },
+    "scan_po_renal_scan_50__glc7": {
+      "type": "ScanSim"
+    },
+    "scan_po_renal_scan_50__glc9": {
+      "type": "ScanSim"
+    },
+    "scan_po_renal_scan_50__glc11": {
+      "type": "ScanSim"
+    },
+    "scan_po_renal_scan_50__glc13": {
+      "type": "ScanSim"
+    },
+    "scan_po_renal_scan_50__glc15": {
+      "type": "ScanSim"
+    },
+    "scan_po_renal_scan_20__glc5": {
+      "type": "ScanSim"
+    },
+    "scan_po_renal_scan_20__glc7": {
+      "type": "ScanSim"
+    },
+    "scan_po_renal_scan_20__glc9": {
+      "type": "ScanSim"
+    },
+    "scan_po_renal_scan_20__glc11": {
+      "type": "ScanSim"
+    },
+    "scan_po_renal_scan_20__glc13": {
+      "type": "ScanSim"
+    },
+    "scan_po_renal_scan_20__glc15": {
       "type": "ScanSim"
     }
   },
   "data": {
-    "task_scan_po_hepatic_scan__time": {
+    "task_scan_po_dose_scan__glc5__time": {
       "type": "TASK",
       "index": "time",
       "unit": null,
-      "task": "task_scan_po_hepatic_scan",
+      "task": "task_scan_po_dose_scan__glc5",
       "dataset": null,
       "function": null,
       "variables": null
     },
-    "task_scan_po_hepatic_scan__IVDOSE_dap": {
+    "task_scan_po_dose_scan__glc5__IVDOSE_dap": {
       "type": "TASK",
       "index": "IVDOSE_dap",
       "unit": null,
-      "task": "task_scan_po_hepatic_scan",
+      "task": "task_scan_po_dose_scan__glc5",
       "dataset": null,
       "function": null,
       "variables": null
     },
-    "task_scan_po_hepatic_scan__PODOSE_dap": {
+    "task_scan_po_dose_scan__glc5__PODOSE_dap": {
       "type": "TASK",
       "index": "PODOSE_dap",
       "unit": null,
-      "task": "task_scan_po_hepatic_scan",
+      "task": "task_scan_po_dose_scan__glc5",
       "dataset": null,
       "function": null,
       "variables": null
     },
-    "task_scan_po_hepatic_scan__Cve_daptot": {
+    "task_scan_po_dose_scan__glc5__Cve_daptot": {
       "type": "TASK",
       "index": "Cve_daptot",
       "unit": null,
-      "task": "task_scan_po_hepatic_scan",
+      "task": "task_scan_po_dose_scan__glc5",
       "dataset": null,
       "function": null,
       "variables": null
     },
-    "task_scan_po_hepatic_scan__Cve_dap": {
+    "task_scan_po_dose_scan__glc5__Cve_dap": {
       "type": "TASK",
       "index": "Cve_dap",
       "unit": null,
-      "task": "task_scan_po_hepatic_scan",
+      "task": "task_scan_po_dose_scan__glc5",
       "dataset": null,
       "function": null,
       "variables": null
     },
-    "task_scan_po_hepatic_scan__Cve_d3g": {
+    "task_scan_po_dose_scan__glc5__Cve_d3g": {
       "type": "TASK",
       "index": "Cve_d3g",
       "unit": null,
-      "task": "task_scan_po_hepatic_scan",
+      "task": "task_scan_po_dose_scan__glc5",
       "dataset": null,
       "function": null,
       "variables": null
     },
-    "task_scan_po_hepatic_scan__KI__glc_ext": {
+    "task_scan_po_dose_scan__glc5__KI__glc_ext": {
       "type": "TASK",
       "index": "KI__glc_ext",
       "unit": null,
-      "task": "task_scan_po_hepatic_scan",
+      "task": "task_scan_po_dose_scan__glc5",
       "dataset": null,
       "function": null,
       "variables": null
     },
-    "task_scan_po_hepatic_scan__LI__dap": {
+    "task_scan_po_dose_scan__glc5__LI__dap": {
       "type": "TASK",
       "index": "LI__dap",
       "unit": null,
-      "task": "task_scan_po_hepatic_scan",
+      "task": "task_scan_po_dose_scan__glc5",
       "dataset": null,
       "function": null,
       "variables": null
     },
-    "task_scan_po_hepatic_scan__LI__d3g": {
+    "task_scan_po_dose_scan__glc5__LI__d3g": {
       "type": "TASK",
       "index": "LI__d3g",
       "unit": null,
-      "task": "task_scan_po_hepatic_scan",
+      "task": "task_scan_po_dose_scan__glc5",
       "dataset": null,
       "function": null,
       "variables": null
     },
-    "task_scan_po_hepatic_scan__Aurine_daptot": {
+    "task_scan_po_dose_scan__glc5__Aurine_daptot": {
       "type": "TASK",
       "index": "Aurine_daptot",
       "unit": null,
-      "task": "task_scan_po_hepatic_scan",
+      "task": "task_scan_po_dose_scan__glc5",
       "dataset": null,
       "function": null,
       "variables": null
     },
-    "task_scan_po_hepatic_scan__Aurine_dap": {
+    "task_scan_po_dose_scan__glc5__Aurine_dap": {
       "type": "TASK",
       "index": "Aurine_dap",
       "unit": null,
-      "task": "task_scan_po_hepatic_scan",
+      "task": "task_scan_po_dose_scan__glc5",
       "dataset": null,
       "function": null,
       "variables": null
     },
-    "task_scan_po_hepatic_scan__Aurine_d3g": {
+    "task_scan_po_dose_scan__glc5__Aurine_d3g": {
       "type": "TASK",
       "index": "Aurine_d3g",
       "unit": null,
-      "task": "task_scan_po_hepatic_scan",
+      "task": "task_scan_po_dose_scan__glc5",
       "dataset": null,
       "function": null,
       "variables": null
     },
-    "task_scan_po_hepatic_scan__KI__glc_urine": {
+    "task_scan_po_dose_scan__glc5__KI__glc_urine": {
       "type": "TASK",
       "index": "KI__glc_urine",
       "unit": null,
-      "task": "task_scan_po_hepatic_scan",
+      "task": "task_scan_po_dose_scan__glc5",
       "dataset": null,
       "function": null,
       "variables": null
     },
-    "task_scan_po_hepatic_scan__KI__UGE": {
+    "task_scan_po_dose_scan__glc5__KI__UGE": {
       "type": "TASK",
       "index": "KI__UGE",
       "unit": null,
-      "task": "task_scan_po_hepatic_scan",
+      "task": "task_scan_po_dose_scan__glc5",
       "dataset": null,
       "function": null,
       "variables": null
     },
-    "task_scan_po_hepatic_scan__KI__RTG": {
+    "task_scan_po_dose_scan__glc5__KI__RTG": {
       "type": "TASK",
       "index": "KI__RTG",
       "unit": null,
-      "task": "task_scan_po_hepatic_scan",
+      "task": "task_scan_po_dose_scan__glc5",
       "dataset": null,
       "function": null,
       "variables": null
     },
-    "task_scan_po_hepatic_scan__Afeces_dap": {
+    "task_scan_po_dose_scan__glc5__Afeces_dap": {
       "type": "TASK",
       "index": "Afeces_dap",
       "unit": null,
-      "task": "task_scan_po_hepatic_scan",
+      "task": "task_scan_po_dose_scan__glc5",
       "dataset": null,
       "function": null,
       "variables": null
     },
-    "task_scan_po_hepatic_scan__Afeces_daptot": {
+    "task_scan_po_dose_scan__glc5__Afeces_daptot": {
       "type": "TASK",
       "index": "Afeces_daptot",
       "unit": null,
-      "task": "task_scan_po_hepatic_scan",
+      "task": "task_scan_po_dose_scan__glc5",
       "dataset": null,
       "function": null,
       "variables": null
     },
-    "task_scan_po_hepatic_scan__KI__D3GEX": {
+    "task_scan_po_dose_scan__glc5__KI__D3GEX": {
       "type": "TASK",
       "index": "KI__D3GEX",
       "unit": null,
-      "task": "task_scan_po_hepatic_scan",
+      "task": "task_scan_po_dose_scan__glc5",
       "dataset": null,
       "function": null,
       "variables": null
     },
-    "task_scan_po_hepatic_scan__KI__DAPEX": {
+    "task_scan_po_dose_scan__glc5__KI__DAPEX": {
       "type": "TASK",
       "index": "KI__DAPEX",
       "unit": null,
-      "task": "task_scan_po_hepatic_scan",
+      "task": "task_scan_po_dose_scan__glc5",
       "dataset": null,
       "function": null,
       "variables": null
     },
-    "task_scan_po_hepatic_scan__KI__GLCEX": {
+    "task_scan_po_dose_scan__glc5__KI__GLCEX": {
       "type": "TASK",
       "index": "KI__GLCEX",
       "unit": null,
-      "task": "task_scan_po_hepatic_scan",
+      "task": "task_scan_po_dose_scan__glc5",
       "dataset": null,
       "function": null,
       "variables": null
     },
-    "task_scan_po_hepatic_scan__KI__f_renal_function": {
+    "task_scan_po_dose_scan__glc5__KI__f_renal_function": {
       "type": "TASK",
       "index": "KI__f_renal_function",
       "unit": null,
-      "task": "task_scan_po_hepatic_scan",
+      "task": "task_scan_po_dose_scan__glc5",
       "dataset": null,
       "function": null,
       "variables": null
     },
-    "task_scan_po_hepatic_scan__f_cirrhosis": {
+    "task_scan_po_dose_scan__glc5__f_cirrhosis": {
       "type": "TASK",
       "index": "f_cirrhosis",
       "unit": null,
-      "task": "task_scan_po_hepatic_scan",
+      "task": "task_scan_po_dose_scan__glc5",
       "dataset": null,
       "function": null,
       "variables": null
     },
-    "task_scan_po_hepatic_scan__GU__f_absorption": {
+    "task_scan_po_dose_scan__glc5__GU__f_absorption": {
       "type": "TASK",
       "index": "GU__f_absorption",
       "unit": null,
-      "task": "task_scan_po_hepatic_scan",
+      "task": "task_scan_po_dose_scan__glc5",
       "dataset": null,
       "function": null,
       "variables": null
     },
-    "task_scan_po_hepatic_scan__f_ugt1a9": {
+    "task_scan_po_dose_scan__glc5__f_ugt1a9": {
       "type": "TASK",
       "index": "f_ugt1a9",
       "unit": null,
-      "task": "task_scan_po_hepatic_scan",
+      "task": "task_scan_po_dose_scan__glc5",
       "dataset": null,
       "function": null,
       "variables": null
     },
-    "task_scan_po_renal_scan__time": {
+    "task_scan_po_dose_scan__glc7__time": {
       "type": "TASK",
       "index": "time",
       "unit": null,
-      "task": "task_scan_po_renal_scan",
+      "task": "task_scan_po_dose_scan__glc7",
       "dataset": null,
       "function": null,
       "variables": null
     },
-    "task_scan_po_renal_scan__IVDOSE_dap": {
+    "task_scan_po_dose_scan__glc7__IVDOSE_dap": {
       "type": "TASK",
       "index": "IVDOSE_dap",
       "unit": null,
-      "task": "task_scan_po_renal_scan",
+      "task": "task_scan_po_dose_scan__glc7",
       "dataset": null,
       "function": null,
       "variables": null
     },
-    "task_scan_po_renal_scan__PODOSE_dap": {
+    "task_scan_po_dose_scan__glc7__PODOSE_dap": {
       "type": "TASK",
       "index": "PODOSE_dap",
       "unit": null,
-      "task": "task_scan_po_renal_scan",
+      "task": "task_scan_po_dose_scan__glc7",
       "dataset": null,
       "function": null,
       "variables": null
     },
-    "task_scan_po_renal_scan__Cve_daptot": {
+    "task_scan_po_dose_scan__glc7__Cve_daptot": {
       "type": "TASK",
       "index": "Cve_daptot",
       "unit": null,
-      "task": "task_scan_po_renal_scan",
+      "task": "task_scan_po_dose_scan__glc7",
       "dataset": null,
       "function": null,
       "variables": null
     },
-    "task_scan_po_renal_scan__Cve_dap": {
+    "task_scan_po_dose_scan__glc7__Cve_dap": {
       "type": "TASK",
       "index": "Cve_dap",
       "unit": null,
-      "task": "task_scan_po_renal_scan",
+      "task": "task_scan_po_dose_scan__glc7",
       "dataset": null,
       "function": null,
       "variables": null
     },
-    "task_scan_po_renal_scan__Cve_d3g": {
+    "task_scan_po_dose_scan__glc7__Cve_d3g": {
       "type": "TASK",
       "index": "Cve_d3g",
       "unit": null,
-      "task": "task_scan_po_renal_scan",
+      "task": "task_scan_po_dose_scan__glc7",
       "dataset": null,
       "function": null,
       "variables": null
     },
-    "task_scan_po_renal_scan__KI__glc_ext": {
+    "task_scan_po_dose_scan__glc7__KI__glc_ext": {
       "type": "TASK",
       "index": "KI__glc_ext",
       "unit": null,
-      "task": "task_scan_po_renal_scan",
+      "task": "task_scan_po_dose_scan__glc7",
       "dataset": null,
       "function": null,
       "variables": null
     },
-    "task_scan_po_renal_scan__LI__dap": {
+    "task_scan_po_dose_scan__glc7__LI__dap": {
       "type": "TASK",
       "index": "LI__dap",
       "unit": null,
-      "task": "task_scan_po_renal_scan",
+      "task": "task_scan_po_dose_scan__glc7",
       "dataset": null,
       "function": null,
       "variables": null
     },
-    "task_scan_po_renal_scan__LI__d3g": {
+    "task_scan_po_dose_scan__glc7__LI__d3g": {
       "type": "TASK",
       "index": "LI__d3g",
       "unit": null,
-      "task": "task_scan_po_renal_scan",
+      "task": "task_scan_po_dose_scan__glc7",
       "dataset": null,
       "function": null,
       "variables": null
     },
-    "task_scan_po_renal_scan__Aurine_daptot": {
+    "task_scan_po_dose_scan__glc7__Aurine_daptot": {
       "type": "TASK",
       "index": "Aurine_daptot",
       "unit": null,
-      "task": "task_scan_po_renal_scan",
+      "task": "task_scan_po_dose_scan__glc7",
       "dataset": null,
       "function": null,
       "variables": null
     },
-    "task_scan_po_renal_scan__Aurine_dap": {
+    "task_scan_po_dose_scan__glc7__Aurine_dap": {
       "type": "TASK",
       "index": "Aurine_dap",
       "unit": null,
-      "task": "task_scan_po_renal_scan",
+      "task": "task_scan_po_dose_scan__glc7",
       "dataset": null,
       "function": null,
       "variables": null
     },
-    "task_scan_po_renal_scan__Aurine_d3g": {
+    "task_scan_po_dose_scan__glc7__Aurine_d3g": {
       "type": "TASK",
       "index": "Aurine_d3g",
       "unit": null,
-      "task": "task_scan_po_renal_scan",
+      "task": "task_scan_po_dose_scan__glc7",
       "dataset": null,
       "function": null,
       "variables": null
     },
-    "task_scan_po_renal_scan__KI__glc_urine": {
+    "task_scan_po_dose_scan__glc7__KI__glc_urine": {
       "type": "TASK",
       "index": "KI__glc_urine",
       "unit": null,
-      "task": "task_scan_po_renal_scan",
+      "task": "task_scan_po_dose_scan__glc7",
       "dataset": null,
       "function": null,
       "variables": null
     },
-    "task_scan_po_renal_scan__KI__UGE": {
+    "task_scan_po_dose_scan__glc7__KI__UGE": {
       "type": "TASK",
       "index": "KI__UGE",
       "unit": null,
-      "task": "task_scan_po_renal_scan",
+      "task": "task_scan_po_dose_scan__glc7",
       "dataset": null,
       "function": null,
       "variables": null
     },
-    "task_scan_po_renal_scan__KI__RTG": {
+    "task_scan_po_dose_scan__glc7__KI__RTG": {
       "type": "TASK",
       "index": "KI__RTG",
       "unit": null,
-      "task": "task_scan_po_renal_scan",
+      "task": "task_scan_po_dose_scan__glc7",
       "dataset": null,
       "function": null,
       "variables": null
     },
-    "task_scan_po_renal_scan__Afeces_dap": {
+    "task_scan_po_dose_scan__glc7__Afeces_dap": {
       "type": "TASK",
       "index": "Afeces_dap",
       "unit": null,
-      "task": "task_scan_po_renal_scan",
+      "task": "task_scan_po_dose_scan__glc7",
       "dataset": null,
       "function": null,
       "variables": null
     },
-    "task_scan_po_renal_scan__Afeces_daptot": {
+    "task_scan_po_dose_scan__glc7__Afeces_daptot": {
       "type": "TASK",
       "index": "Afeces_daptot",
       "unit": null,
-      "task": "task_scan_po_renal_scan",
+      "task": "task_scan_po_dose_scan__glc7",
       "dataset": null,
       "function": null,
       "variables": null
     },
-    "task_scan_po_renal_scan__KI__D3GEX": {
+    "task_scan_po_dose_scan__glc7__KI__D3GEX": {
       "type": "TASK",
       "index": "KI__D3GEX",
       "unit": null,
-      "task": "task_scan_po_renal_scan",
+      "task": "task_scan_po_dose_scan__glc7",
       "dataset": null,
       "function": null,
       "variables": null
     },
-    "task_scan_po_renal_scan__KI__DAPEX": {
+    "task_scan_po_dose_scan__glc7__KI__DAPEX": {
       "type": "TASK",
       "index": "KI__DAPEX",
       "unit": null,
-      "task": "task_scan_po_renal_scan",
+      "task": "task_scan_po_dose_scan__glc7",
       "dataset": null,
       "function": null,
       "variables": null
     },
-    "task_scan_po_renal_scan__KI__GLCEX": {
+    "task_scan_po_dose_scan__glc7__KI__GLCEX": {
       "type": "TASK",
       "index": "KI__GLCEX",
       "unit": null,
-      "task": "task_scan_po_renal_scan",
+      "task": "task_scan_po_dose_scan__glc7",
       "dataset": null,
       "function": null,
       "variables": null
     },
-    "task_scan_po_renal_scan__KI__f_renal_function": {
+    "task_scan_po_dose_scan__glc7__KI__f_renal_function": {
       "type": "TASK",
       "index": "KI__f_renal_function",
       "unit": null,
-      "task": "task_scan_po_renal_scan",
+      "task": "task_scan_po_dose_scan__glc7",
       "dataset": null,
       "function": null,
       "variables": null
     },
-    "task_scan_po_renal_scan__f_cirrhosis": {
+    "task_scan_po_dose_scan__glc7__f_cirrhosis": {
       "type": "TASK",
       "index": "f_cirrhosis",
       "unit": null,
-      "task": "task_scan_po_renal_scan",
+      "task": "task_scan_po_dose_scan__glc7",
       "dataset": null,
       "function": null,
       "variables": null
     },
-    "task_scan_po_renal_scan__GU__f_absorption": {
+    "task_scan_po_dose_scan__glc7__GU__f_absorption": {
       "type": "TASK",
       "index": "GU__f_absorption",
       "unit": null,
-      "task": "task_scan_po_renal_scan",
+      "task": "task_scan_po_dose_scan__glc7",
       "dataset": null,
       "function": null,
       "variables": null
     },
-    "task_scan_po_renal_scan__f_ugt1a9": {
+    "task_scan_po_dose_scan__glc7__f_ugt1a9": {
       "type": "TASK",
       "index": "f_ugt1a9",
       "unit": null,
-      "task": "task_scan_po_renal_scan",
+      "task": "task_scan_po_dose_scan__glc7",
       "dataset": null,
       "function": null,
       "variables": null
     },
-    "task_scan_po_food_scan__time": {
+    "task_scan_po_dose_scan__glc9__time": {
       "type": "TASK",
       "index": "time",
       "unit": null,
-      "task": "task_scan_po_food_scan",
+      "task": "task_scan_po_dose_scan__glc9",
       "dataset": null,
       "function": null,
       "variables": null
     },
-    "task_scan_po_food_scan__IVDOSE_dap": {
+    "task_scan_po_dose_scan__glc9__IVDOSE_dap": {
       "type": "TASK",
       "index": "IVDOSE_dap",
       "unit": null,
-      "task": "task_scan_po_food_scan",
+      "task": "task_scan_po_dose_scan__glc9",
       "dataset": null,
       "function": null,
       "variables": null
     },
-    "task_scan_po_food_scan__PODOSE_dap": {
+    "task_scan_po_dose_scan__glc9__PODOSE_dap": {
       "type": "TASK",
       "index": "PODOSE_dap",
       "unit": null,
-      "task": "task_scan_po_food_scan",
+      "task": "task_scan_po_dose_scan__glc9",
       "dataset": null,
       "function": null,
       "variables": null
     },
-    "task_scan_po_food_scan__Cve_daptot": {
+    "task_scan_po_dose_scan__glc9__Cve_daptot": {
       "type": "TASK",
       "index": "Cve_daptot",
       "unit": null,
-      "task": "task_scan_po_food_scan",
+      "task": "task_scan_po_dose_scan__glc9",
       "dataset": null,
       "function": null,
       "variables": null
     },
-    "task_scan_po_food_scan__Cve_dap": {
+    "task_scan_po_dose_scan__glc9__Cve_dap": {
       "type": "TASK",
       "index": "Cve_dap",
       "unit": null,
-      "task": "task_scan_po_food_scan",
+      "task": "task_scan_po_dose_scan__glc9",
       "dataset": null,
       "function": null,
       "variables": null
     },
-    "task_scan_po_food_scan__Cve_d3g": {
+    "task_scan_po_dose_scan__glc9__Cve_d3g": {
       "type": "TASK",
       "index": "Cve_d3g",
       "unit": null,
-      "task": "task_scan_po_food_scan",
+      "task": "task_scan_po_dose_scan__glc9",
       "dataset": null,
       "function": null,
       "variables": null
     },
-    "task_scan_po_food_scan__KI__glc_ext": {
+    "task_scan_po_dose_scan__glc9__KI__glc_ext": {
       "type": "TASK",
       "index": "KI__glc_ext",
       "unit": null,
-      "task": "task_scan_po_food_scan",
+      "task": "task_scan_po_dose_scan__glc9",
       "dataset": null,
       "function": null,
       "variables": null
     },
-    "task_scan_po_food_scan__LI__dap": {
+    "task_scan_po_dose_scan__glc9__LI__dap": {
       "type": "TASK",
       "index": "LI__dap",
       "unit": null,
-      "task": "task_scan_po_food_scan",
+      "task": "task_scan_po_dose_scan__glc9",
       "dataset": null,
       "function": null,
       "variables": null
     },
-    "task_scan_po_food_scan__LI__d3g": {
+    "task_scan_po_dose_scan__glc9__LI__d3g": {
       "type": "TASK",
       "index": "LI__d3g",
       "unit": null,
-      "task": "task_scan_po_food_scan",
+      "task": "task_scan_po_dose_scan__glc9",
       "dataset": null,
       "function": null,
       "variables": null
     },
-    "task_scan_po_food_scan__Aurine_daptot": {
+    "task_scan_po_dose_scan__glc9__Aurine_daptot": {
       "type": "TASK",
       "index": "Aurine_daptot",
       "unit": null,
-      "task": "task_scan_po_food_scan",
+      "task": "task_scan_po_dose_scan__glc9",
       "dataset": null,
       "function": null,
       "variables": null
     },
-    "task_scan_po_food_scan__Aurine_dap": {
+    "task_scan_po_dose_scan__glc9__Aurine_dap": {
       "type": "TASK",
       "index": "Aurine_dap",
       "unit": null,
-      "task": "task_scan_po_food_scan",
+      "task": "task_scan_po_dose_scan__glc9",
       "dataset": null,
       "function": null,
       "variables": null
     },
-    "task_scan_po_food_scan__Aurine_d3g": {
+    "task_scan_po_dose_scan__glc9__Aurine_d3g": {
       "type": "TASK",
       "index": "Aurine_d3g",
       "unit": null,
-      "task": "task_scan_po_food_scan",
+      "task": "task_scan_po_dose_scan__glc9",
       "dataset": null,
       "function": null,
       "variables": null
     },
-    "task_scan_po_food_scan__KI__glc_urine": {
+    "task_scan_po_dose_scan__glc9__KI__glc_urine": {
       "type": "TASK",
       "index": "KI__glc_urine",
       "unit": null,
-      "task": "task_scan_po_food_scan",
+      "task": "task_scan_po_dose_scan__glc9",
       "dataset": null,
       "function": null,
       "variables": null
     },
-    "task_scan_po_food_scan__KI__UGE": {
+    "task_scan_po_dose_scan__glc9__KI__UGE": {
       "type": "TASK",
       "index": "KI__UGE",
       "unit": null,
-      "task": "task_scan_po_food_scan",
+      "task": "task_scan_po_dose_scan__glc9",
       "dataset": null,
       "function": null,
       "variables": null
     },
-    "task_scan_po_food_scan__KI__RTG": {
+    "task_scan_po_dose_scan__glc9__KI__RTG": {
       "type": "TASK",
       "index": "KI__RTG",
       "unit": null,
-      "task": "task_scan_po_food_scan",
+      "task": "task_scan_po_dose_scan__glc9",
       "dataset": null,
       "function": null,
       "variables": null
     },
-    "task_scan_po_food_scan__Afeces_dap": {
+    "task_scan_po_dose_scan__glc9__Afeces_dap": {
       "type": "TASK",
       "index": "Afeces_dap",
       "unit": null,
-      "task": "task_scan_po_food_scan",
+      "task": "task_scan_po_dose_scan__glc9",
       "dataset": null,
       "function": null,
       "variables": null
     },
-    "task_scan_po_food_scan__Afeces_daptot": {
+    "task_scan_po_dose_scan__glc9__Afeces_daptot": {
       "type": "TASK",
       "index": "Afeces_daptot",
       "unit": null,
-      "task": "task_scan_po_food_scan",
+      "task": "task_scan_po_dose_scan__glc9",
       "dataset": null,
       "function": null,
       "variables": null
     },
-    "task_scan_po_food_scan__KI__D3GEX": {
+    "task_scan_po_dose_scan__glc9__KI__D3GEX": {
       "type": "TASK",
       "index": "KI__D3GEX",
       "unit": null,
-      "task": "task_scan_po_food_scan",
+      "task": "task_scan_po_dose_scan__glc9",
       "dataset": null,
       "function": null,
       "variables": null
     },
-    "task_scan_po_food_scan__KI__DAPEX": {
+    "task_scan_po_dose_scan__glc9__KI__DAPEX": {
       "type": "TASK",
       "index": "KI__DAPEX",
       "unit": null,
-      "task": "task_scan_po_food_scan",
+      "task": "task_scan_po_dose_scan__glc9",
       "dataset": null,
       "function": null,
       "variables": null
     },
-    "task_scan_po_food_scan__KI__GLCEX": {
+    "task_scan_po_dose_scan__glc9__KI__GLCEX": {
       "type": "TASK",
       "index": "KI__GLCEX",
       "unit": null,
-      "task": "task_scan_po_food_scan",
+      "task": "task_scan_po_dose_scan__glc9",
       "dataset": null,
       "function": null,
       "variables": null
     },
-    "task_scan_po_food_scan__KI__f_renal_function": {
+    "task_scan_po_dose_scan__glc9__KI__f_renal_function": {
       "type": "TASK",
       "index": "KI__f_renal_function",
       "unit": null,
-      "task": "task_scan_po_food_scan",
+      "task": "task_scan_po_dose_scan__glc9",
       "dataset": null,
       "function": null,
       "variables": null
     },
-    "task_scan_po_food_scan__f_cirrhosis": {
+    "task_scan_po_dose_scan__glc9__f_cirrhosis": {
       "type": "TASK",
       "index": "f_cirrhosis",
       "unit": null,
-      "task": "task_scan_po_food_scan",
+      "task": "task_scan_po_dose_scan__glc9",
       "dataset": null,
       "function": null,
       "variables": null
     },
-    "task_scan_po_food_scan__GU__f_absorption": {
+    "task_scan_po_dose_scan__glc9__GU__f_absorption": {
       "type": "TASK",
       "index": "GU__f_absorption",
       "unit": null,
-      "task": "task_scan_po_food_scan",
+      "task": "task_scan_po_dose_scan__glc9",
       "dataset": null,
       "function": null,
       "variables": null
     },
-    "task_scan_po_food_scan__f_ugt1a9": {
+    "task_scan_po_dose_scan__glc9__f_ugt1a9": {
       "type": "TASK",
       "index": "f_ugt1a9",
       "unit": null,
-      "task": "task_scan_po_food_scan",
+      "task": "task_scan_po_dose_scan__glc9",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_dose_scan__glc11__time": {
+      "type": "TASK",
+      "index": "time",
+      "unit": null,
+      "task": "task_scan_po_dose_scan__glc11",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_dose_scan__glc11__IVDOSE_dap": {
+      "type": "TASK",
+      "index": "IVDOSE_dap",
+      "unit": null,
+      "task": "task_scan_po_dose_scan__glc11",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_dose_scan__glc11__PODOSE_dap": {
+      "type": "TASK",
+      "index": "PODOSE_dap",
+      "unit": null,
+      "task": "task_scan_po_dose_scan__glc11",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_dose_scan__glc11__Cve_daptot": {
+      "type": "TASK",
+      "index": "Cve_daptot",
+      "unit": null,
+      "task": "task_scan_po_dose_scan__glc11",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_dose_scan__glc11__Cve_dap": {
+      "type": "TASK",
+      "index": "Cve_dap",
+      "unit": null,
+      "task": "task_scan_po_dose_scan__glc11",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_dose_scan__glc11__Cve_d3g": {
+      "type": "TASK",
+      "index": "Cve_d3g",
+      "unit": null,
+      "task": "task_scan_po_dose_scan__glc11",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_dose_scan__glc11__KI__glc_ext": {
+      "type": "TASK",
+      "index": "KI__glc_ext",
+      "unit": null,
+      "task": "task_scan_po_dose_scan__glc11",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_dose_scan__glc11__LI__dap": {
+      "type": "TASK",
+      "index": "LI__dap",
+      "unit": null,
+      "task": "task_scan_po_dose_scan__glc11",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_dose_scan__glc11__LI__d3g": {
+      "type": "TASK",
+      "index": "LI__d3g",
+      "unit": null,
+      "task": "task_scan_po_dose_scan__glc11",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_dose_scan__glc11__Aurine_daptot": {
+      "type": "TASK",
+      "index": "Aurine_daptot",
+      "unit": null,
+      "task": "task_scan_po_dose_scan__glc11",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_dose_scan__glc11__Aurine_dap": {
+      "type": "TASK",
+      "index": "Aurine_dap",
+      "unit": null,
+      "task": "task_scan_po_dose_scan__glc11",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_dose_scan__glc11__Aurine_d3g": {
+      "type": "TASK",
+      "index": "Aurine_d3g",
+      "unit": null,
+      "task": "task_scan_po_dose_scan__glc11",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_dose_scan__glc11__KI__glc_urine": {
+      "type": "TASK",
+      "index": "KI__glc_urine",
+      "unit": null,
+      "task": "task_scan_po_dose_scan__glc11",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_dose_scan__glc11__KI__UGE": {
+      "type": "TASK",
+      "index": "KI__UGE",
+      "unit": null,
+      "task": "task_scan_po_dose_scan__glc11",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_dose_scan__glc11__KI__RTG": {
+      "type": "TASK",
+      "index": "KI__RTG",
+      "unit": null,
+      "task": "task_scan_po_dose_scan__glc11",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_dose_scan__glc11__Afeces_dap": {
+      "type": "TASK",
+      "index": "Afeces_dap",
+      "unit": null,
+      "task": "task_scan_po_dose_scan__glc11",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_dose_scan__glc11__Afeces_daptot": {
+      "type": "TASK",
+      "index": "Afeces_daptot",
+      "unit": null,
+      "task": "task_scan_po_dose_scan__glc11",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_dose_scan__glc11__KI__D3GEX": {
+      "type": "TASK",
+      "index": "KI__D3GEX",
+      "unit": null,
+      "task": "task_scan_po_dose_scan__glc11",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_dose_scan__glc11__KI__DAPEX": {
+      "type": "TASK",
+      "index": "KI__DAPEX",
+      "unit": null,
+      "task": "task_scan_po_dose_scan__glc11",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_dose_scan__glc11__KI__GLCEX": {
+      "type": "TASK",
+      "index": "KI__GLCEX",
+      "unit": null,
+      "task": "task_scan_po_dose_scan__glc11",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_dose_scan__glc11__KI__f_renal_function": {
+      "type": "TASK",
+      "index": "KI__f_renal_function",
+      "unit": null,
+      "task": "task_scan_po_dose_scan__glc11",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_dose_scan__glc11__f_cirrhosis": {
+      "type": "TASK",
+      "index": "f_cirrhosis",
+      "unit": null,
+      "task": "task_scan_po_dose_scan__glc11",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_dose_scan__glc11__GU__f_absorption": {
+      "type": "TASK",
+      "index": "GU__f_absorption",
+      "unit": null,
+      "task": "task_scan_po_dose_scan__glc11",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_dose_scan__glc11__f_ugt1a9": {
+      "type": "TASK",
+      "index": "f_ugt1a9",
+      "unit": null,
+      "task": "task_scan_po_dose_scan__glc11",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_dose_scan__glc13__time": {
+      "type": "TASK",
+      "index": "time",
+      "unit": null,
+      "task": "task_scan_po_dose_scan__glc13",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_dose_scan__glc13__IVDOSE_dap": {
+      "type": "TASK",
+      "index": "IVDOSE_dap",
+      "unit": null,
+      "task": "task_scan_po_dose_scan__glc13",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_dose_scan__glc13__PODOSE_dap": {
+      "type": "TASK",
+      "index": "PODOSE_dap",
+      "unit": null,
+      "task": "task_scan_po_dose_scan__glc13",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_dose_scan__glc13__Cve_daptot": {
+      "type": "TASK",
+      "index": "Cve_daptot",
+      "unit": null,
+      "task": "task_scan_po_dose_scan__glc13",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_dose_scan__glc13__Cve_dap": {
+      "type": "TASK",
+      "index": "Cve_dap",
+      "unit": null,
+      "task": "task_scan_po_dose_scan__glc13",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_dose_scan__glc13__Cve_d3g": {
+      "type": "TASK",
+      "index": "Cve_d3g",
+      "unit": null,
+      "task": "task_scan_po_dose_scan__glc13",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_dose_scan__glc13__KI__glc_ext": {
+      "type": "TASK",
+      "index": "KI__glc_ext",
+      "unit": null,
+      "task": "task_scan_po_dose_scan__glc13",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_dose_scan__glc13__LI__dap": {
+      "type": "TASK",
+      "index": "LI__dap",
+      "unit": null,
+      "task": "task_scan_po_dose_scan__glc13",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_dose_scan__glc13__LI__d3g": {
+      "type": "TASK",
+      "index": "LI__d3g",
+      "unit": null,
+      "task": "task_scan_po_dose_scan__glc13",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_dose_scan__glc13__Aurine_daptot": {
+      "type": "TASK",
+      "index": "Aurine_daptot",
+      "unit": null,
+      "task": "task_scan_po_dose_scan__glc13",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_dose_scan__glc13__Aurine_dap": {
+      "type": "TASK",
+      "index": "Aurine_dap",
+      "unit": null,
+      "task": "task_scan_po_dose_scan__glc13",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_dose_scan__glc13__Aurine_d3g": {
+      "type": "TASK",
+      "index": "Aurine_d3g",
+      "unit": null,
+      "task": "task_scan_po_dose_scan__glc13",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_dose_scan__glc13__KI__glc_urine": {
+      "type": "TASK",
+      "index": "KI__glc_urine",
+      "unit": null,
+      "task": "task_scan_po_dose_scan__glc13",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_dose_scan__glc13__KI__UGE": {
+      "type": "TASK",
+      "index": "KI__UGE",
+      "unit": null,
+      "task": "task_scan_po_dose_scan__glc13",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_dose_scan__glc13__KI__RTG": {
+      "type": "TASK",
+      "index": "KI__RTG",
+      "unit": null,
+      "task": "task_scan_po_dose_scan__glc13",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_dose_scan__glc13__Afeces_dap": {
+      "type": "TASK",
+      "index": "Afeces_dap",
+      "unit": null,
+      "task": "task_scan_po_dose_scan__glc13",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_dose_scan__glc13__Afeces_daptot": {
+      "type": "TASK",
+      "index": "Afeces_daptot",
+      "unit": null,
+      "task": "task_scan_po_dose_scan__glc13",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_dose_scan__glc13__KI__D3GEX": {
+      "type": "TASK",
+      "index": "KI__D3GEX",
+      "unit": null,
+      "task": "task_scan_po_dose_scan__glc13",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_dose_scan__glc13__KI__DAPEX": {
+      "type": "TASK",
+      "index": "KI__DAPEX",
+      "unit": null,
+      "task": "task_scan_po_dose_scan__glc13",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_dose_scan__glc13__KI__GLCEX": {
+      "type": "TASK",
+      "index": "KI__GLCEX",
+      "unit": null,
+      "task": "task_scan_po_dose_scan__glc13",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_dose_scan__glc13__KI__f_renal_function": {
+      "type": "TASK",
+      "index": "KI__f_renal_function",
+      "unit": null,
+      "task": "task_scan_po_dose_scan__glc13",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_dose_scan__glc13__f_cirrhosis": {
+      "type": "TASK",
+      "index": "f_cirrhosis",
+      "unit": null,
+      "task": "task_scan_po_dose_scan__glc13",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_dose_scan__glc13__GU__f_absorption": {
+      "type": "TASK",
+      "index": "GU__f_absorption",
+      "unit": null,
+      "task": "task_scan_po_dose_scan__glc13",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_dose_scan__glc13__f_ugt1a9": {
+      "type": "TASK",
+      "index": "f_ugt1a9",
+      "unit": null,
+      "task": "task_scan_po_dose_scan__glc13",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_dose_scan__glc15__time": {
+      "type": "TASK",
+      "index": "time",
+      "unit": null,
+      "task": "task_scan_po_dose_scan__glc15",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_dose_scan__glc15__IVDOSE_dap": {
+      "type": "TASK",
+      "index": "IVDOSE_dap",
+      "unit": null,
+      "task": "task_scan_po_dose_scan__glc15",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_dose_scan__glc15__PODOSE_dap": {
+      "type": "TASK",
+      "index": "PODOSE_dap",
+      "unit": null,
+      "task": "task_scan_po_dose_scan__glc15",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_dose_scan__glc15__Cve_daptot": {
+      "type": "TASK",
+      "index": "Cve_daptot",
+      "unit": null,
+      "task": "task_scan_po_dose_scan__glc15",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_dose_scan__glc15__Cve_dap": {
+      "type": "TASK",
+      "index": "Cve_dap",
+      "unit": null,
+      "task": "task_scan_po_dose_scan__glc15",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_dose_scan__glc15__Cve_d3g": {
+      "type": "TASK",
+      "index": "Cve_d3g",
+      "unit": null,
+      "task": "task_scan_po_dose_scan__glc15",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_dose_scan__glc15__KI__glc_ext": {
+      "type": "TASK",
+      "index": "KI__glc_ext",
+      "unit": null,
+      "task": "task_scan_po_dose_scan__glc15",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_dose_scan__glc15__LI__dap": {
+      "type": "TASK",
+      "index": "LI__dap",
+      "unit": null,
+      "task": "task_scan_po_dose_scan__glc15",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_dose_scan__glc15__LI__d3g": {
+      "type": "TASK",
+      "index": "LI__d3g",
+      "unit": null,
+      "task": "task_scan_po_dose_scan__glc15",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_dose_scan__glc15__Aurine_daptot": {
+      "type": "TASK",
+      "index": "Aurine_daptot",
+      "unit": null,
+      "task": "task_scan_po_dose_scan__glc15",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_dose_scan__glc15__Aurine_dap": {
+      "type": "TASK",
+      "index": "Aurine_dap",
+      "unit": null,
+      "task": "task_scan_po_dose_scan__glc15",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_dose_scan__glc15__Aurine_d3g": {
+      "type": "TASK",
+      "index": "Aurine_d3g",
+      "unit": null,
+      "task": "task_scan_po_dose_scan__glc15",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_dose_scan__glc15__KI__glc_urine": {
+      "type": "TASK",
+      "index": "KI__glc_urine",
+      "unit": null,
+      "task": "task_scan_po_dose_scan__glc15",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_dose_scan__glc15__KI__UGE": {
+      "type": "TASK",
+      "index": "KI__UGE",
+      "unit": null,
+      "task": "task_scan_po_dose_scan__glc15",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_dose_scan__glc15__KI__RTG": {
+      "type": "TASK",
+      "index": "KI__RTG",
+      "unit": null,
+      "task": "task_scan_po_dose_scan__glc15",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_dose_scan__glc15__Afeces_dap": {
+      "type": "TASK",
+      "index": "Afeces_dap",
+      "unit": null,
+      "task": "task_scan_po_dose_scan__glc15",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_dose_scan__glc15__Afeces_daptot": {
+      "type": "TASK",
+      "index": "Afeces_daptot",
+      "unit": null,
+      "task": "task_scan_po_dose_scan__glc15",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_dose_scan__glc15__KI__D3GEX": {
+      "type": "TASK",
+      "index": "KI__D3GEX",
+      "unit": null,
+      "task": "task_scan_po_dose_scan__glc15",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_dose_scan__glc15__KI__DAPEX": {
+      "type": "TASK",
+      "index": "KI__DAPEX",
+      "unit": null,
+      "task": "task_scan_po_dose_scan__glc15",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_dose_scan__glc15__KI__GLCEX": {
+      "type": "TASK",
+      "index": "KI__GLCEX",
+      "unit": null,
+      "task": "task_scan_po_dose_scan__glc15",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_dose_scan__glc15__KI__f_renal_function": {
+      "type": "TASK",
+      "index": "KI__f_renal_function",
+      "unit": null,
+      "task": "task_scan_po_dose_scan__glc15",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_dose_scan__glc15__f_cirrhosis": {
+      "type": "TASK",
+      "index": "f_cirrhosis",
+      "unit": null,
+      "task": "task_scan_po_dose_scan__glc15",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_dose_scan__glc15__GU__f_absorption": {
+      "type": "TASK",
+      "index": "GU__f_absorption",
+      "unit": null,
+      "task": "task_scan_po_dose_scan__glc15",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_dose_scan__glc15__f_ugt1a9": {
+      "type": "TASK",
+      "index": "f_ugt1a9",
+      "unit": null,
+      "task": "task_scan_po_dose_scan__glc15",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_food_scan__glc5__time": {
+      "type": "TASK",
+      "index": "time",
+      "unit": null,
+      "task": "task_scan_po_food_scan__glc5",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_food_scan__glc5__IVDOSE_dap": {
+      "type": "TASK",
+      "index": "IVDOSE_dap",
+      "unit": null,
+      "task": "task_scan_po_food_scan__glc5",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_food_scan__glc5__PODOSE_dap": {
+      "type": "TASK",
+      "index": "PODOSE_dap",
+      "unit": null,
+      "task": "task_scan_po_food_scan__glc5",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_food_scan__glc5__Cve_daptot": {
+      "type": "TASK",
+      "index": "Cve_daptot",
+      "unit": null,
+      "task": "task_scan_po_food_scan__glc5",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_food_scan__glc5__Cve_dap": {
+      "type": "TASK",
+      "index": "Cve_dap",
+      "unit": null,
+      "task": "task_scan_po_food_scan__glc5",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_food_scan__glc5__Cve_d3g": {
+      "type": "TASK",
+      "index": "Cve_d3g",
+      "unit": null,
+      "task": "task_scan_po_food_scan__glc5",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_food_scan__glc5__KI__glc_ext": {
+      "type": "TASK",
+      "index": "KI__glc_ext",
+      "unit": null,
+      "task": "task_scan_po_food_scan__glc5",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_food_scan__glc5__LI__dap": {
+      "type": "TASK",
+      "index": "LI__dap",
+      "unit": null,
+      "task": "task_scan_po_food_scan__glc5",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_food_scan__glc5__LI__d3g": {
+      "type": "TASK",
+      "index": "LI__d3g",
+      "unit": null,
+      "task": "task_scan_po_food_scan__glc5",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_food_scan__glc5__Aurine_daptot": {
+      "type": "TASK",
+      "index": "Aurine_daptot",
+      "unit": null,
+      "task": "task_scan_po_food_scan__glc5",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_food_scan__glc5__Aurine_dap": {
+      "type": "TASK",
+      "index": "Aurine_dap",
+      "unit": null,
+      "task": "task_scan_po_food_scan__glc5",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_food_scan__glc5__Aurine_d3g": {
+      "type": "TASK",
+      "index": "Aurine_d3g",
+      "unit": null,
+      "task": "task_scan_po_food_scan__glc5",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_food_scan__glc5__KI__glc_urine": {
+      "type": "TASK",
+      "index": "KI__glc_urine",
+      "unit": null,
+      "task": "task_scan_po_food_scan__glc5",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_food_scan__glc5__KI__UGE": {
+      "type": "TASK",
+      "index": "KI__UGE",
+      "unit": null,
+      "task": "task_scan_po_food_scan__glc5",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_food_scan__glc5__KI__RTG": {
+      "type": "TASK",
+      "index": "KI__RTG",
+      "unit": null,
+      "task": "task_scan_po_food_scan__glc5",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_food_scan__glc5__Afeces_dap": {
+      "type": "TASK",
+      "index": "Afeces_dap",
+      "unit": null,
+      "task": "task_scan_po_food_scan__glc5",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_food_scan__glc5__Afeces_daptot": {
+      "type": "TASK",
+      "index": "Afeces_daptot",
+      "unit": null,
+      "task": "task_scan_po_food_scan__glc5",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_food_scan__glc5__KI__D3GEX": {
+      "type": "TASK",
+      "index": "KI__D3GEX",
+      "unit": null,
+      "task": "task_scan_po_food_scan__glc5",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_food_scan__glc5__KI__DAPEX": {
+      "type": "TASK",
+      "index": "KI__DAPEX",
+      "unit": null,
+      "task": "task_scan_po_food_scan__glc5",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_food_scan__glc5__KI__GLCEX": {
+      "type": "TASK",
+      "index": "KI__GLCEX",
+      "unit": null,
+      "task": "task_scan_po_food_scan__glc5",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_food_scan__glc5__KI__f_renal_function": {
+      "type": "TASK",
+      "index": "KI__f_renal_function",
+      "unit": null,
+      "task": "task_scan_po_food_scan__glc5",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_food_scan__glc5__f_cirrhosis": {
+      "type": "TASK",
+      "index": "f_cirrhosis",
+      "unit": null,
+      "task": "task_scan_po_food_scan__glc5",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_food_scan__glc5__GU__f_absorption": {
+      "type": "TASK",
+      "index": "GU__f_absorption",
+      "unit": null,
+      "task": "task_scan_po_food_scan__glc5",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_food_scan__glc5__f_ugt1a9": {
+      "type": "TASK",
+      "index": "f_ugt1a9",
+      "unit": null,
+      "task": "task_scan_po_food_scan__glc5",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_food_scan__glc7__time": {
+      "type": "TASK",
+      "index": "time",
+      "unit": null,
+      "task": "task_scan_po_food_scan__glc7",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_food_scan__glc7__IVDOSE_dap": {
+      "type": "TASK",
+      "index": "IVDOSE_dap",
+      "unit": null,
+      "task": "task_scan_po_food_scan__glc7",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_food_scan__glc7__PODOSE_dap": {
+      "type": "TASK",
+      "index": "PODOSE_dap",
+      "unit": null,
+      "task": "task_scan_po_food_scan__glc7",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_food_scan__glc7__Cve_daptot": {
+      "type": "TASK",
+      "index": "Cve_daptot",
+      "unit": null,
+      "task": "task_scan_po_food_scan__glc7",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_food_scan__glc7__Cve_dap": {
+      "type": "TASK",
+      "index": "Cve_dap",
+      "unit": null,
+      "task": "task_scan_po_food_scan__glc7",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_food_scan__glc7__Cve_d3g": {
+      "type": "TASK",
+      "index": "Cve_d3g",
+      "unit": null,
+      "task": "task_scan_po_food_scan__glc7",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_food_scan__glc7__KI__glc_ext": {
+      "type": "TASK",
+      "index": "KI__glc_ext",
+      "unit": null,
+      "task": "task_scan_po_food_scan__glc7",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_food_scan__glc7__LI__dap": {
+      "type": "TASK",
+      "index": "LI__dap",
+      "unit": null,
+      "task": "task_scan_po_food_scan__glc7",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_food_scan__glc7__LI__d3g": {
+      "type": "TASK",
+      "index": "LI__d3g",
+      "unit": null,
+      "task": "task_scan_po_food_scan__glc7",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_food_scan__glc7__Aurine_daptot": {
+      "type": "TASK",
+      "index": "Aurine_daptot",
+      "unit": null,
+      "task": "task_scan_po_food_scan__glc7",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_food_scan__glc7__Aurine_dap": {
+      "type": "TASK",
+      "index": "Aurine_dap",
+      "unit": null,
+      "task": "task_scan_po_food_scan__glc7",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_food_scan__glc7__Aurine_d3g": {
+      "type": "TASK",
+      "index": "Aurine_d3g",
+      "unit": null,
+      "task": "task_scan_po_food_scan__glc7",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_food_scan__glc7__KI__glc_urine": {
+      "type": "TASK",
+      "index": "KI__glc_urine",
+      "unit": null,
+      "task": "task_scan_po_food_scan__glc7",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_food_scan__glc7__KI__UGE": {
+      "type": "TASK",
+      "index": "KI__UGE",
+      "unit": null,
+      "task": "task_scan_po_food_scan__glc7",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_food_scan__glc7__KI__RTG": {
+      "type": "TASK",
+      "index": "KI__RTG",
+      "unit": null,
+      "task": "task_scan_po_food_scan__glc7",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_food_scan__glc7__Afeces_dap": {
+      "type": "TASK",
+      "index": "Afeces_dap",
+      "unit": null,
+      "task": "task_scan_po_food_scan__glc7",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_food_scan__glc7__Afeces_daptot": {
+      "type": "TASK",
+      "index": "Afeces_daptot",
+      "unit": null,
+      "task": "task_scan_po_food_scan__glc7",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_food_scan__glc7__KI__D3GEX": {
+      "type": "TASK",
+      "index": "KI__D3GEX",
+      "unit": null,
+      "task": "task_scan_po_food_scan__glc7",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_food_scan__glc7__KI__DAPEX": {
+      "type": "TASK",
+      "index": "KI__DAPEX",
+      "unit": null,
+      "task": "task_scan_po_food_scan__glc7",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_food_scan__glc7__KI__GLCEX": {
+      "type": "TASK",
+      "index": "KI__GLCEX",
+      "unit": null,
+      "task": "task_scan_po_food_scan__glc7",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_food_scan__glc7__KI__f_renal_function": {
+      "type": "TASK",
+      "index": "KI__f_renal_function",
+      "unit": null,
+      "task": "task_scan_po_food_scan__glc7",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_food_scan__glc7__f_cirrhosis": {
+      "type": "TASK",
+      "index": "f_cirrhosis",
+      "unit": null,
+      "task": "task_scan_po_food_scan__glc7",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_food_scan__glc7__GU__f_absorption": {
+      "type": "TASK",
+      "index": "GU__f_absorption",
+      "unit": null,
+      "task": "task_scan_po_food_scan__glc7",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_food_scan__glc7__f_ugt1a9": {
+      "type": "TASK",
+      "index": "f_ugt1a9",
+      "unit": null,
+      "task": "task_scan_po_food_scan__glc7",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_food_scan__glc9__time": {
+      "type": "TASK",
+      "index": "time",
+      "unit": null,
+      "task": "task_scan_po_food_scan__glc9",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_food_scan__glc9__IVDOSE_dap": {
+      "type": "TASK",
+      "index": "IVDOSE_dap",
+      "unit": null,
+      "task": "task_scan_po_food_scan__glc9",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_food_scan__glc9__PODOSE_dap": {
+      "type": "TASK",
+      "index": "PODOSE_dap",
+      "unit": null,
+      "task": "task_scan_po_food_scan__glc9",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_food_scan__glc9__Cve_daptot": {
+      "type": "TASK",
+      "index": "Cve_daptot",
+      "unit": null,
+      "task": "task_scan_po_food_scan__glc9",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_food_scan__glc9__Cve_dap": {
+      "type": "TASK",
+      "index": "Cve_dap",
+      "unit": null,
+      "task": "task_scan_po_food_scan__glc9",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_food_scan__glc9__Cve_d3g": {
+      "type": "TASK",
+      "index": "Cve_d3g",
+      "unit": null,
+      "task": "task_scan_po_food_scan__glc9",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_food_scan__glc9__KI__glc_ext": {
+      "type": "TASK",
+      "index": "KI__glc_ext",
+      "unit": null,
+      "task": "task_scan_po_food_scan__glc9",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_food_scan__glc9__LI__dap": {
+      "type": "TASK",
+      "index": "LI__dap",
+      "unit": null,
+      "task": "task_scan_po_food_scan__glc9",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_food_scan__glc9__LI__d3g": {
+      "type": "TASK",
+      "index": "LI__d3g",
+      "unit": null,
+      "task": "task_scan_po_food_scan__glc9",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_food_scan__glc9__Aurine_daptot": {
+      "type": "TASK",
+      "index": "Aurine_daptot",
+      "unit": null,
+      "task": "task_scan_po_food_scan__glc9",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_food_scan__glc9__Aurine_dap": {
+      "type": "TASK",
+      "index": "Aurine_dap",
+      "unit": null,
+      "task": "task_scan_po_food_scan__glc9",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_food_scan__glc9__Aurine_d3g": {
+      "type": "TASK",
+      "index": "Aurine_d3g",
+      "unit": null,
+      "task": "task_scan_po_food_scan__glc9",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_food_scan__glc9__KI__glc_urine": {
+      "type": "TASK",
+      "index": "KI__glc_urine",
+      "unit": null,
+      "task": "task_scan_po_food_scan__glc9",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_food_scan__glc9__KI__UGE": {
+      "type": "TASK",
+      "index": "KI__UGE",
+      "unit": null,
+      "task": "task_scan_po_food_scan__glc9",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_food_scan__glc9__KI__RTG": {
+      "type": "TASK",
+      "index": "KI__RTG",
+      "unit": null,
+      "task": "task_scan_po_food_scan__glc9",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_food_scan__glc9__Afeces_dap": {
+      "type": "TASK",
+      "index": "Afeces_dap",
+      "unit": null,
+      "task": "task_scan_po_food_scan__glc9",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_food_scan__glc9__Afeces_daptot": {
+      "type": "TASK",
+      "index": "Afeces_daptot",
+      "unit": null,
+      "task": "task_scan_po_food_scan__glc9",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_food_scan__glc9__KI__D3GEX": {
+      "type": "TASK",
+      "index": "KI__D3GEX",
+      "unit": null,
+      "task": "task_scan_po_food_scan__glc9",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_food_scan__glc9__KI__DAPEX": {
+      "type": "TASK",
+      "index": "KI__DAPEX",
+      "unit": null,
+      "task": "task_scan_po_food_scan__glc9",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_food_scan__glc9__KI__GLCEX": {
+      "type": "TASK",
+      "index": "KI__GLCEX",
+      "unit": null,
+      "task": "task_scan_po_food_scan__glc9",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_food_scan__glc9__KI__f_renal_function": {
+      "type": "TASK",
+      "index": "KI__f_renal_function",
+      "unit": null,
+      "task": "task_scan_po_food_scan__glc9",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_food_scan__glc9__f_cirrhosis": {
+      "type": "TASK",
+      "index": "f_cirrhosis",
+      "unit": null,
+      "task": "task_scan_po_food_scan__glc9",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_food_scan__glc9__GU__f_absorption": {
+      "type": "TASK",
+      "index": "GU__f_absorption",
+      "unit": null,
+      "task": "task_scan_po_food_scan__glc9",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_food_scan__glc9__f_ugt1a9": {
+      "type": "TASK",
+      "index": "f_ugt1a9",
+      "unit": null,
+      "task": "task_scan_po_food_scan__glc9",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_food_scan__glc11__time": {
+      "type": "TASK",
+      "index": "time",
+      "unit": null,
+      "task": "task_scan_po_food_scan__glc11",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_food_scan__glc11__IVDOSE_dap": {
+      "type": "TASK",
+      "index": "IVDOSE_dap",
+      "unit": null,
+      "task": "task_scan_po_food_scan__glc11",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_food_scan__glc11__PODOSE_dap": {
+      "type": "TASK",
+      "index": "PODOSE_dap",
+      "unit": null,
+      "task": "task_scan_po_food_scan__glc11",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_food_scan__glc11__Cve_daptot": {
+      "type": "TASK",
+      "index": "Cve_daptot",
+      "unit": null,
+      "task": "task_scan_po_food_scan__glc11",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_food_scan__glc11__Cve_dap": {
+      "type": "TASK",
+      "index": "Cve_dap",
+      "unit": null,
+      "task": "task_scan_po_food_scan__glc11",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_food_scan__glc11__Cve_d3g": {
+      "type": "TASK",
+      "index": "Cve_d3g",
+      "unit": null,
+      "task": "task_scan_po_food_scan__glc11",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_food_scan__glc11__KI__glc_ext": {
+      "type": "TASK",
+      "index": "KI__glc_ext",
+      "unit": null,
+      "task": "task_scan_po_food_scan__glc11",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_food_scan__glc11__LI__dap": {
+      "type": "TASK",
+      "index": "LI__dap",
+      "unit": null,
+      "task": "task_scan_po_food_scan__glc11",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_food_scan__glc11__LI__d3g": {
+      "type": "TASK",
+      "index": "LI__d3g",
+      "unit": null,
+      "task": "task_scan_po_food_scan__glc11",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_food_scan__glc11__Aurine_daptot": {
+      "type": "TASK",
+      "index": "Aurine_daptot",
+      "unit": null,
+      "task": "task_scan_po_food_scan__glc11",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_food_scan__glc11__Aurine_dap": {
+      "type": "TASK",
+      "index": "Aurine_dap",
+      "unit": null,
+      "task": "task_scan_po_food_scan__glc11",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_food_scan__glc11__Aurine_d3g": {
+      "type": "TASK",
+      "index": "Aurine_d3g",
+      "unit": null,
+      "task": "task_scan_po_food_scan__glc11",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_food_scan__glc11__KI__glc_urine": {
+      "type": "TASK",
+      "index": "KI__glc_urine",
+      "unit": null,
+      "task": "task_scan_po_food_scan__glc11",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_food_scan__glc11__KI__UGE": {
+      "type": "TASK",
+      "index": "KI__UGE",
+      "unit": null,
+      "task": "task_scan_po_food_scan__glc11",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_food_scan__glc11__KI__RTG": {
+      "type": "TASK",
+      "index": "KI__RTG",
+      "unit": null,
+      "task": "task_scan_po_food_scan__glc11",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_food_scan__glc11__Afeces_dap": {
+      "type": "TASK",
+      "index": "Afeces_dap",
+      "unit": null,
+      "task": "task_scan_po_food_scan__glc11",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_food_scan__glc11__Afeces_daptot": {
+      "type": "TASK",
+      "index": "Afeces_daptot",
+      "unit": null,
+      "task": "task_scan_po_food_scan__glc11",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_food_scan__glc11__KI__D3GEX": {
+      "type": "TASK",
+      "index": "KI__D3GEX",
+      "unit": null,
+      "task": "task_scan_po_food_scan__glc11",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_food_scan__glc11__KI__DAPEX": {
+      "type": "TASK",
+      "index": "KI__DAPEX",
+      "unit": null,
+      "task": "task_scan_po_food_scan__glc11",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_food_scan__glc11__KI__GLCEX": {
+      "type": "TASK",
+      "index": "KI__GLCEX",
+      "unit": null,
+      "task": "task_scan_po_food_scan__glc11",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_food_scan__glc11__KI__f_renal_function": {
+      "type": "TASK",
+      "index": "KI__f_renal_function",
+      "unit": null,
+      "task": "task_scan_po_food_scan__glc11",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_food_scan__glc11__f_cirrhosis": {
+      "type": "TASK",
+      "index": "f_cirrhosis",
+      "unit": null,
+      "task": "task_scan_po_food_scan__glc11",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_food_scan__glc11__GU__f_absorption": {
+      "type": "TASK",
+      "index": "GU__f_absorption",
+      "unit": null,
+      "task": "task_scan_po_food_scan__glc11",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_food_scan__glc11__f_ugt1a9": {
+      "type": "TASK",
+      "index": "f_ugt1a9",
+      "unit": null,
+      "task": "task_scan_po_food_scan__glc11",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_food_scan__glc13__time": {
+      "type": "TASK",
+      "index": "time",
+      "unit": null,
+      "task": "task_scan_po_food_scan__glc13",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_food_scan__glc13__IVDOSE_dap": {
+      "type": "TASK",
+      "index": "IVDOSE_dap",
+      "unit": null,
+      "task": "task_scan_po_food_scan__glc13",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_food_scan__glc13__PODOSE_dap": {
+      "type": "TASK",
+      "index": "PODOSE_dap",
+      "unit": null,
+      "task": "task_scan_po_food_scan__glc13",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_food_scan__glc13__Cve_daptot": {
+      "type": "TASK",
+      "index": "Cve_daptot",
+      "unit": null,
+      "task": "task_scan_po_food_scan__glc13",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_food_scan__glc13__Cve_dap": {
+      "type": "TASK",
+      "index": "Cve_dap",
+      "unit": null,
+      "task": "task_scan_po_food_scan__glc13",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_food_scan__glc13__Cve_d3g": {
+      "type": "TASK",
+      "index": "Cve_d3g",
+      "unit": null,
+      "task": "task_scan_po_food_scan__glc13",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_food_scan__glc13__KI__glc_ext": {
+      "type": "TASK",
+      "index": "KI__glc_ext",
+      "unit": null,
+      "task": "task_scan_po_food_scan__glc13",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_food_scan__glc13__LI__dap": {
+      "type": "TASK",
+      "index": "LI__dap",
+      "unit": null,
+      "task": "task_scan_po_food_scan__glc13",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_food_scan__glc13__LI__d3g": {
+      "type": "TASK",
+      "index": "LI__d3g",
+      "unit": null,
+      "task": "task_scan_po_food_scan__glc13",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_food_scan__glc13__Aurine_daptot": {
+      "type": "TASK",
+      "index": "Aurine_daptot",
+      "unit": null,
+      "task": "task_scan_po_food_scan__glc13",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_food_scan__glc13__Aurine_dap": {
+      "type": "TASK",
+      "index": "Aurine_dap",
+      "unit": null,
+      "task": "task_scan_po_food_scan__glc13",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_food_scan__glc13__Aurine_d3g": {
+      "type": "TASK",
+      "index": "Aurine_d3g",
+      "unit": null,
+      "task": "task_scan_po_food_scan__glc13",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_food_scan__glc13__KI__glc_urine": {
+      "type": "TASK",
+      "index": "KI__glc_urine",
+      "unit": null,
+      "task": "task_scan_po_food_scan__glc13",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_food_scan__glc13__KI__UGE": {
+      "type": "TASK",
+      "index": "KI__UGE",
+      "unit": null,
+      "task": "task_scan_po_food_scan__glc13",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_food_scan__glc13__KI__RTG": {
+      "type": "TASK",
+      "index": "KI__RTG",
+      "unit": null,
+      "task": "task_scan_po_food_scan__glc13",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_food_scan__glc13__Afeces_dap": {
+      "type": "TASK",
+      "index": "Afeces_dap",
+      "unit": null,
+      "task": "task_scan_po_food_scan__glc13",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_food_scan__glc13__Afeces_daptot": {
+      "type": "TASK",
+      "index": "Afeces_daptot",
+      "unit": null,
+      "task": "task_scan_po_food_scan__glc13",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_food_scan__glc13__KI__D3GEX": {
+      "type": "TASK",
+      "index": "KI__D3GEX",
+      "unit": null,
+      "task": "task_scan_po_food_scan__glc13",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_food_scan__glc13__KI__DAPEX": {
+      "type": "TASK",
+      "index": "KI__DAPEX",
+      "unit": null,
+      "task": "task_scan_po_food_scan__glc13",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_food_scan__glc13__KI__GLCEX": {
+      "type": "TASK",
+      "index": "KI__GLCEX",
+      "unit": null,
+      "task": "task_scan_po_food_scan__glc13",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_food_scan__glc13__KI__f_renal_function": {
+      "type": "TASK",
+      "index": "KI__f_renal_function",
+      "unit": null,
+      "task": "task_scan_po_food_scan__glc13",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_food_scan__glc13__f_cirrhosis": {
+      "type": "TASK",
+      "index": "f_cirrhosis",
+      "unit": null,
+      "task": "task_scan_po_food_scan__glc13",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_food_scan__glc13__GU__f_absorption": {
+      "type": "TASK",
+      "index": "GU__f_absorption",
+      "unit": null,
+      "task": "task_scan_po_food_scan__glc13",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_food_scan__glc13__f_ugt1a9": {
+      "type": "TASK",
+      "index": "f_ugt1a9",
+      "unit": null,
+      "task": "task_scan_po_food_scan__glc13",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_food_scan__glc15__time": {
+      "type": "TASK",
+      "index": "time",
+      "unit": null,
+      "task": "task_scan_po_food_scan__glc15",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_food_scan__glc15__IVDOSE_dap": {
+      "type": "TASK",
+      "index": "IVDOSE_dap",
+      "unit": null,
+      "task": "task_scan_po_food_scan__glc15",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_food_scan__glc15__PODOSE_dap": {
+      "type": "TASK",
+      "index": "PODOSE_dap",
+      "unit": null,
+      "task": "task_scan_po_food_scan__glc15",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_food_scan__glc15__Cve_daptot": {
+      "type": "TASK",
+      "index": "Cve_daptot",
+      "unit": null,
+      "task": "task_scan_po_food_scan__glc15",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_food_scan__glc15__Cve_dap": {
+      "type": "TASK",
+      "index": "Cve_dap",
+      "unit": null,
+      "task": "task_scan_po_food_scan__glc15",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_food_scan__glc15__Cve_d3g": {
+      "type": "TASK",
+      "index": "Cve_d3g",
+      "unit": null,
+      "task": "task_scan_po_food_scan__glc15",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_food_scan__glc15__KI__glc_ext": {
+      "type": "TASK",
+      "index": "KI__glc_ext",
+      "unit": null,
+      "task": "task_scan_po_food_scan__glc15",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_food_scan__glc15__LI__dap": {
+      "type": "TASK",
+      "index": "LI__dap",
+      "unit": null,
+      "task": "task_scan_po_food_scan__glc15",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_food_scan__glc15__LI__d3g": {
+      "type": "TASK",
+      "index": "LI__d3g",
+      "unit": null,
+      "task": "task_scan_po_food_scan__glc15",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_food_scan__glc15__Aurine_daptot": {
+      "type": "TASK",
+      "index": "Aurine_daptot",
+      "unit": null,
+      "task": "task_scan_po_food_scan__glc15",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_food_scan__glc15__Aurine_dap": {
+      "type": "TASK",
+      "index": "Aurine_dap",
+      "unit": null,
+      "task": "task_scan_po_food_scan__glc15",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_food_scan__glc15__Aurine_d3g": {
+      "type": "TASK",
+      "index": "Aurine_d3g",
+      "unit": null,
+      "task": "task_scan_po_food_scan__glc15",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_food_scan__glc15__KI__glc_urine": {
+      "type": "TASK",
+      "index": "KI__glc_urine",
+      "unit": null,
+      "task": "task_scan_po_food_scan__glc15",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_food_scan__glc15__KI__UGE": {
+      "type": "TASK",
+      "index": "KI__UGE",
+      "unit": null,
+      "task": "task_scan_po_food_scan__glc15",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_food_scan__glc15__KI__RTG": {
+      "type": "TASK",
+      "index": "KI__RTG",
+      "unit": null,
+      "task": "task_scan_po_food_scan__glc15",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_food_scan__glc15__Afeces_dap": {
+      "type": "TASK",
+      "index": "Afeces_dap",
+      "unit": null,
+      "task": "task_scan_po_food_scan__glc15",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_food_scan__glc15__Afeces_daptot": {
+      "type": "TASK",
+      "index": "Afeces_daptot",
+      "unit": null,
+      "task": "task_scan_po_food_scan__glc15",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_food_scan__glc15__KI__D3GEX": {
+      "type": "TASK",
+      "index": "KI__D3GEX",
+      "unit": null,
+      "task": "task_scan_po_food_scan__glc15",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_food_scan__glc15__KI__DAPEX": {
+      "type": "TASK",
+      "index": "KI__DAPEX",
+      "unit": null,
+      "task": "task_scan_po_food_scan__glc15",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_food_scan__glc15__KI__GLCEX": {
+      "type": "TASK",
+      "index": "KI__GLCEX",
+      "unit": null,
+      "task": "task_scan_po_food_scan__glc15",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_food_scan__glc15__KI__f_renal_function": {
+      "type": "TASK",
+      "index": "KI__f_renal_function",
+      "unit": null,
+      "task": "task_scan_po_food_scan__glc15",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_food_scan__glc15__f_cirrhosis": {
+      "type": "TASK",
+      "index": "f_cirrhosis",
+      "unit": null,
+      "task": "task_scan_po_food_scan__glc15",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_food_scan__glc15__GU__f_absorption": {
+      "type": "TASK",
+      "index": "GU__f_absorption",
+      "unit": null,
+      "task": "task_scan_po_food_scan__glc15",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_food_scan__glc15__f_ugt1a9": {
+      "type": "TASK",
+      "index": "f_ugt1a9",
+      "unit": null,
+      "task": "task_scan_po_food_scan__glc15",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_hepatic_scan__glc5__time": {
+      "type": "TASK",
+      "index": "time",
+      "unit": null,
+      "task": "task_scan_po_hepatic_scan__glc5",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_hepatic_scan__glc5__IVDOSE_dap": {
+      "type": "TASK",
+      "index": "IVDOSE_dap",
+      "unit": null,
+      "task": "task_scan_po_hepatic_scan__glc5",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_hepatic_scan__glc5__PODOSE_dap": {
+      "type": "TASK",
+      "index": "PODOSE_dap",
+      "unit": null,
+      "task": "task_scan_po_hepatic_scan__glc5",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_hepatic_scan__glc5__Cve_daptot": {
+      "type": "TASK",
+      "index": "Cve_daptot",
+      "unit": null,
+      "task": "task_scan_po_hepatic_scan__glc5",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_hepatic_scan__glc5__Cve_dap": {
+      "type": "TASK",
+      "index": "Cve_dap",
+      "unit": null,
+      "task": "task_scan_po_hepatic_scan__glc5",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_hepatic_scan__glc5__Cve_d3g": {
+      "type": "TASK",
+      "index": "Cve_d3g",
+      "unit": null,
+      "task": "task_scan_po_hepatic_scan__glc5",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_hepatic_scan__glc5__KI__glc_ext": {
+      "type": "TASK",
+      "index": "KI__glc_ext",
+      "unit": null,
+      "task": "task_scan_po_hepatic_scan__glc5",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_hepatic_scan__glc5__LI__dap": {
+      "type": "TASK",
+      "index": "LI__dap",
+      "unit": null,
+      "task": "task_scan_po_hepatic_scan__glc5",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_hepatic_scan__glc5__LI__d3g": {
+      "type": "TASK",
+      "index": "LI__d3g",
+      "unit": null,
+      "task": "task_scan_po_hepatic_scan__glc5",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_hepatic_scan__glc5__Aurine_daptot": {
+      "type": "TASK",
+      "index": "Aurine_daptot",
+      "unit": null,
+      "task": "task_scan_po_hepatic_scan__glc5",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_hepatic_scan__glc5__Aurine_dap": {
+      "type": "TASK",
+      "index": "Aurine_dap",
+      "unit": null,
+      "task": "task_scan_po_hepatic_scan__glc5",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_hepatic_scan__glc5__Aurine_d3g": {
+      "type": "TASK",
+      "index": "Aurine_d3g",
+      "unit": null,
+      "task": "task_scan_po_hepatic_scan__glc5",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_hepatic_scan__glc5__KI__glc_urine": {
+      "type": "TASK",
+      "index": "KI__glc_urine",
+      "unit": null,
+      "task": "task_scan_po_hepatic_scan__glc5",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_hepatic_scan__glc5__KI__UGE": {
+      "type": "TASK",
+      "index": "KI__UGE",
+      "unit": null,
+      "task": "task_scan_po_hepatic_scan__glc5",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_hepatic_scan__glc5__KI__RTG": {
+      "type": "TASK",
+      "index": "KI__RTG",
+      "unit": null,
+      "task": "task_scan_po_hepatic_scan__glc5",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_hepatic_scan__glc5__Afeces_dap": {
+      "type": "TASK",
+      "index": "Afeces_dap",
+      "unit": null,
+      "task": "task_scan_po_hepatic_scan__glc5",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_hepatic_scan__glc5__Afeces_daptot": {
+      "type": "TASK",
+      "index": "Afeces_daptot",
+      "unit": null,
+      "task": "task_scan_po_hepatic_scan__glc5",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_hepatic_scan__glc5__KI__D3GEX": {
+      "type": "TASK",
+      "index": "KI__D3GEX",
+      "unit": null,
+      "task": "task_scan_po_hepatic_scan__glc5",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_hepatic_scan__glc5__KI__DAPEX": {
+      "type": "TASK",
+      "index": "KI__DAPEX",
+      "unit": null,
+      "task": "task_scan_po_hepatic_scan__glc5",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_hepatic_scan__glc5__KI__GLCEX": {
+      "type": "TASK",
+      "index": "KI__GLCEX",
+      "unit": null,
+      "task": "task_scan_po_hepatic_scan__glc5",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_hepatic_scan__glc5__KI__f_renal_function": {
+      "type": "TASK",
+      "index": "KI__f_renal_function",
+      "unit": null,
+      "task": "task_scan_po_hepatic_scan__glc5",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_hepatic_scan__glc5__f_cirrhosis": {
+      "type": "TASK",
+      "index": "f_cirrhosis",
+      "unit": null,
+      "task": "task_scan_po_hepatic_scan__glc5",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_hepatic_scan__glc5__GU__f_absorption": {
+      "type": "TASK",
+      "index": "GU__f_absorption",
+      "unit": null,
+      "task": "task_scan_po_hepatic_scan__glc5",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_hepatic_scan__glc5__f_ugt1a9": {
+      "type": "TASK",
+      "index": "f_ugt1a9",
+      "unit": null,
+      "task": "task_scan_po_hepatic_scan__glc5",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_hepatic_scan__glc7__time": {
+      "type": "TASK",
+      "index": "time",
+      "unit": null,
+      "task": "task_scan_po_hepatic_scan__glc7",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_hepatic_scan__glc7__IVDOSE_dap": {
+      "type": "TASK",
+      "index": "IVDOSE_dap",
+      "unit": null,
+      "task": "task_scan_po_hepatic_scan__glc7",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_hepatic_scan__glc7__PODOSE_dap": {
+      "type": "TASK",
+      "index": "PODOSE_dap",
+      "unit": null,
+      "task": "task_scan_po_hepatic_scan__glc7",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_hepatic_scan__glc7__Cve_daptot": {
+      "type": "TASK",
+      "index": "Cve_daptot",
+      "unit": null,
+      "task": "task_scan_po_hepatic_scan__glc7",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_hepatic_scan__glc7__Cve_dap": {
+      "type": "TASK",
+      "index": "Cve_dap",
+      "unit": null,
+      "task": "task_scan_po_hepatic_scan__glc7",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_hepatic_scan__glc7__Cve_d3g": {
+      "type": "TASK",
+      "index": "Cve_d3g",
+      "unit": null,
+      "task": "task_scan_po_hepatic_scan__glc7",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_hepatic_scan__glc7__KI__glc_ext": {
+      "type": "TASK",
+      "index": "KI__glc_ext",
+      "unit": null,
+      "task": "task_scan_po_hepatic_scan__glc7",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_hepatic_scan__glc7__LI__dap": {
+      "type": "TASK",
+      "index": "LI__dap",
+      "unit": null,
+      "task": "task_scan_po_hepatic_scan__glc7",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_hepatic_scan__glc7__LI__d3g": {
+      "type": "TASK",
+      "index": "LI__d3g",
+      "unit": null,
+      "task": "task_scan_po_hepatic_scan__glc7",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_hepatic_scan__glc7__Aurine_daptot": {
+      "type": "TASK",
+      "index": "Aurine_daptot",
+      "unit": null,
+      "task": "task_scan_po_hepatic_scan__glc7",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_hepatic_scan__glc7__Aurine_dap": {
+      "type": "TASK",
+      "index": "Aurine_dap",
+      "unit": null,
+      "task": "task_scan_po_hepatic_scan__glc7",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_hepatic_scan__glc7__Aurine_d3g": {
+      "type": "TASK",
+      "index": "Aurine_d3g",
+      "unit": null,
+      "task": "task_scan_po_hepatic_scan__glc7",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_hepatic_scan__glc7__KI__glc_urine": {
+      "type": "TASK",
+      "index": "KI__glc_urine",
+      "unit": null,
+      "task": "task_scan_po_hepatic_scan__glc7",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_hepatic_scan__glc7__KI__UGE": {
+      "type": "TASK",
+      "index": "KI__UGE",
+      "unit": null,
+      "task": "task_scan_po_hepatic_scan__glc7",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_hepatic_scan__glc7__KI__RTG": {
+      "type": "TASK",
+      "index": "KI__RTG",
+      "unit": null,
+      "task": "task_scan_po_hepatic_scan__glc7",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_hepatic_scan__glc7__Afeces_dap": {
+      "type": "TASK",
+      "index": "Afeces_dap",
+      "unit": null,
+      "task": "task_scan_po_hepatic_scan__glc7",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_hepatic_scan__glc7__Afeces_daptot": {
+      "type": "TASK",
+      "index": "Afeces_daptot",
+      "unit": null,
+      "task": "task_scan_po_hepatic_scan__glc7",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_hepatic_scan__glc7__KI__D3GEX": {
+      "type": "TASK",
+      "index": "KI__D3GEX",
+      "unit": null,
+      "task": "task_scan_po_hepatic_scan__glc7",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_hepatic_scan__glc7__KI__DAPEX": {
+      "type": "TASK",
+      "index": "KI__DAPEX",
+      "unit": null,
+      "task": "task_scan_po_hepatic_scan__glc7",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_hepatic_scan__glc7__KI__GLCEX": {
+      "type": "TASK",
+      "index": "KI__GLCEX",
+      "unit": null,
+      "task": "task_scan_po_hepatic_scan__glc7",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_hepatic_scan__glc7__KI__f_renal_function": {
+      "type": "TASK",
+      "index": "KI__f_renal_function",
+      "unit": null,
+      "task": "task_scan_po_hepatic_scan__glc7",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_hepatic_scan__glc7__f_cirrhosis": {
+      "type": "TASK",
+      "index": "f_cirrhosis",
+      "unit": null,
+      "task": "task_scan_po_hepatic_scan__glc7",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_hepatic_scan__glc7__GU__f_absorption": {
+      "type": "TASK",
+      "index": "GU__f_absorption",
+      "unit": null,
+      "task": "task_scan_po_hepatic_scan__glc7",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_hepatic_scan__glc7__f_ugt1a9": {
+      "type": "TASK",
+      "index": "f_ugt1a9",
+      "unit": null,
+      "task": "task_scan_po_hepatic_scan__glc7",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_hepatic_scan__glc9__time": {
+      "type": "TASK",
+      "index": "time",
+      "unit": null,
+      "task": "task_scan_po_hepatic_scan__glc9",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_hepatic_scan__glc9__IVDOSE_dap": {
+      "type": "TASK",
+      "index": "IVDOSE_dap",
+      "unit": null,
+      "task": "task_scan_po_hepatic_scan__glc9",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_hepatic_scan__glc9__PODOSE_dap": {
+      "type": "TASK",
+      "index": "PODOSE_dap",
+      "unit": null,
+      "task": "task_scan_po_hepatic_scan__glc9",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_hepatic_scan__glc9__Cve_daptot": {
+      "type": "TASK",
+      "index": "Cve_daptot",
+      "unit": null,
+      "task": "task_scan_po_hepatic_scan__glc9",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_hepatic_scan__glc9__Cve_dap": {
+      "type": "TASK",
+      "index": "Cve_dap",
+      "unit": null,
+      "task": "task_scan_po_hepatic_scan__glc9",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_hepatic_scan__glc9__Cve_d3g": {
+      "type": "TASK",
+      "index": "Cve_d3g",
+      "unit": null,
+      "task": "task_scan_po_hepatic_scan__glc9",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_hepatic_scan__glc9__KI__glc_ext": {
+      "type": "TASK",
+      "index": "KI__glc_ext",
+      "unit": null,
+      "task": "task_scan_po_hepatic_scan__glc9",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_hepatic_scan__glc9__LI__dap": {
+      "type": "TASK",
+      "index": "LI__dap",
+      "unit": null,
+      "task": "task_scan_po_hepatic_scan__glc9",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_hepatic_scan__glc9__LI__d3g": {
+      "type": "TASK",
+      "index": "LI__d3g",
+      "unit": null,
+      "task": "task_scan_po_hepatic_scan__glc9",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_hepatic_scan__glc9__Aurine_daptot": {
+      "type": "TASK",
+      "index": "Aurine_daptot",
+      "unit": null,
+      "task": "task_scan_po_hepatic_scan__glc9",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_hepatic_scan__glc9__Aurine_dap": {
+      "type": "TASK",
+      "index": "Aurine_dap",
+      "unit": null,
+      "task": "task_scan_po_hepatic_scan__glc9",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_hepatic_scan__glc9__Aurine_d3g": {
+      "type": "TASK",
+      "index": "Aurine_d3g",
+      "unit": null,
+      "task": "task_scan_po_hepatic_scan__glc9",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_hepatic_scan__glc9__KI__glc_urine": {
+      "type": "TASK",
+      "index": "KI__glc_urine",
+      "unit": null,
+      "task": "task_scan_po_hepatic_scan__glc9",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_hepatic_scan__glc9__KI__UGE": {
+      "type": "TASK",
+      "index": "KI__UGE",
+      "unit": null,
+      "task": "task_scan_po_hepatic_scan__glc9",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_hepatic_scan__glc9__KI__RTG": {
+      "type": "TASK",
+      "index": "KI__RTG",
+      "unit": null,
+      "task": "task_scan_po_hepatic_scan__glc9",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_hepatic_scan__glc9__Afeces_dap": {
+      "type": "TASK",
+      "index": "Afeces_dap",
+      "unit": null,
+      "task": "task_scan_po_hepatic_scan__glc9",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_hepatic_scan__glc9__Afeces_daptot": {
+      "type": "TASK",
+      "index": "Afeces_daptot",
+      "unit": null,
+      "task": "task_scan_po_hepatic_scan__glc9",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_hepatic_scan__glc9__KI__D3GEX": {
+      "type": "TASK",
+      "index": "KI__D3GEX",
+      "unit": null,
+      "task": "task_scan_po_hepatic_scan__glc9",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_hepatic_scan__glc9__KI__DAPEX": {
+      "type": "TASK",
+      "index": "KI__DAPEX",
+      "unit": null,
+      "task": "task_scan_po_hepatic_scan__glc9",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_hepatic_scan__glc9__KI__GLCEX": {
+      "type": "TASK",
+      "index": "KI__GLCEX",
+      "unit": null,
+      "task": "task_scan_po_hepatic_scan__glc9",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_hepatic_scan__glc9__KI__f_renal_function": {
+      "type": "TASK",
+      "index": "KI__f_renal_function",
+      "unit": null,
+      "task": "task_scan_po_hepatic_scan__glc9",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_hepatic_scan__glc9__f_cirrhosis": {
+      "type": "TASK",
+      "index": "f_cirrhosis",
+      "unit": null,
+      "task": "task_scan_po_hepatic_scan__glc9",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_hepatic_scan__glc9__GU__f_absorption": {
+      "type": "TASK",
+      "index": "GU__f_absorption",
+      "unit": null,
+      "task": "task_scan_po_hepatic_scan__glc9",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_hepatic_scan__glc9__f_ugt1a9": {
+      "type": "TASK",
+      "index": "f_ugt1a9",
+      "unit": null,
+      "task": "task_scan_po_hepatic_scan__glc9",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_hepatic_scan__glc11__time": {
+      "type": "TASK",
+      "index": "time",
+      "unit": null,
+      "task": "task_scan_po_hepatic_scan__glc11",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_hepatic_scan__glc11__IVDOSE_dap": {
+      "type": "TASK",
+      "index": "IVDOSE_dap",
+      "unit": null,
+      "task": "task_scan_po_hepatic_scan__glc11",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_hepatic_scan__glc11__PODOSE_dap": {
+      "type": "TASK",
+      "index": "PODOSE_dap",
+      "unit": null,
+      "task": "task_scan_po_hepatic_scan__glc11",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_hepatic_scan__glc11__Cve_daptot": {
+      "type": "TASK",
+      "index": "Cve_daptot",
+      "unit": null,
+      "task": "task_scan_po_hepatic_scan__glc11",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_hepatic_scan__glc11__Cve_dap": {
+      "type": "TASK",
+      "index": "Cve_dap",
+      "unit": null,
+      "task": "task_scan_po_hepatic_scan__glc11",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_hepatic_scan__glc11__Cve_d3g": {
+      "type": "TASK",
+      "index": "Cve_d3g",
+      "unit": null,
+      "task": "task_scan_po_hepatic_scan__glc11",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_hepatic_scan__glc11__KI__glc_ext": {
+      "type": "TASK",
+      "index": "KI__glc_ext",
+      "unit": null,
+      "task": "task_scan_po_hepatic_scan__glc11",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_hepatic_scan__glc11__LI__dap": {
+      "type": "TASK",
+      "index": "LI__dap",
+      "unit": null,
+      "task": "task_scan_po_hepatic_scan__glc11",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_hepatic_scan__glc11__LI__d3g": {
+      "type": "TASK",
+      "index": "LI__d3g",
+      "unit": null,
+      "task": "task_scan_po_hepatic_scan__glc11",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_hepatic_scan__glc11__Aurine_daptot": {
+      "type": "TASK",
+      "index": "Aurine_daptot",
+      "unit": null,
+      "task": "task_scan_po_hepatic_scan__glc11",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_hepatic_scan__glc11__Aurine_dap": {
+      "type": "TASK",
+      "index": "Aurine_dap",
+      "unit": null,
+      "task": "task_scan_po_hepatic_scan__glc11",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_hepatic_scan__glc11__Aurine_d3g": {
+      "type": "TASK",
+      "index": "Aurine_d3g",
+      "unit": null,
+      "task": "task_scan_po_hepatic_scan__glc11",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_hepatic_scan__glc11__KI__glc_urine": {
+      "type": "TASK",
+      "index": "KI__glc_urine",
+      "unit": null,
+      "task": "task_scan_po_hepatic_scan__glc11",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_hepatic_scan__glc11__KI__UGE": {
+      "type": "TASK",
+      "index": "KI__UGE",
+      "unit": null,
+      "task": "task_scan_po_hepatic_scan__glc11",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_hepatic_scan__glc11__KI__RTG": {
+      "type": "TASK",
+      "index": "KI__RTG",
+      "unit": null,
+      "task": "task_scan_po_hepatic_scan__glc11",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_hepatic_scan__glc11__Afeces_dap": {
+      "type": "TASK",
+      "index": "Afeces_dap",
+      "unit": null,
+      "task": "task_scan_po_hepatic_scan__glc11",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_hepatic_scan__glc11__Afeces_daptot": {
+      "type": "TASK",
+      "index": "Afeces_daptot",
+      "unit": null,
+      "task": "task_scan_po_hepatic_scan__glc11",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_hepatic_scan__glc11__KI__D3GEX": {
+      "type": "TASK",
+      "index": "KI__D3GEX",
+      "unit": null,
+      "task": "task_scan_po_hepatic_scan__glc11",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_hepatic_scan__glc11__KI__DAPEX": {
+      "type": "TASK",
+      "index": "KI__DAPEX",
+      "unit": null,
+      "task": "task_scan_po_hepatic_scan__glc11",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_hepatic_scan__glc11__KI__GLCEX": {
+      "type": "TASK",
+      "index": "KI__GLCEX",
+      "unit": null,
+      "task": "task_scan_po_hepatic_scan__glc11",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_hepatic_scan__glc11__KI__f_renal_function": {
+      "type": "TASK",
+      "index": "KI__f_renal_function",
+      "unit": null,
+      "task": "task_scan_po_hepatic_scan__glc11",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_hepatic_scan__glc11__f_cirrhosis": {
+      "type": "TASK",
+      "index": "f_cirrhosis",
+      "unit": null,
+      "task": "task_scan_po_hepatic_scan__glc11",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_hepatic_scan__glc11__GU__f_absorption": {
+      "type": "TASK",
+      "index": "GU__f_absorption",
+      "unit": null,
+      "task": "task_scan_po_hepatic_scan__glc11",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_hepatic_scan__glc11__f_ugt1a9": {
+      "type": "TASK",
+      "index": "f_ugt1a9",
+      "unit": null,
+      "task": "task_scan_po_hepatic_scan__glc11",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_hepatic_scan__glc13__time": {
+      "type": "TASK",
+      "index": "time",
+      "unit": null,
+      "task": "task_scan_po_hepatic_scan__glc13",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_hepatic_scan__glc13__IVDOSE_dap": {
+      "type": "TASK",
+      "index": "IVDOSE_dap",
+      "unit": null,
+      "task": "task_scan_po_hepatic_scan__glc13",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_hepatic_scan__glc13__PODOSE_dap": {
+      "type": "TASK",
+      "index": "PODOSE_dap",
+      "unit": null,
+      "task": "task_scan_po_hepatic_scan__glc13",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_hepatic_scan__glc13__Cve_daptot": {
+      "type": "TASK",
+      "index": "Cve_daptot",
+      "unit": null,
+      "task": "task_scan_po_hepatic_scan__glc13",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_hepatic_scan__glc13__Cve_dap": {
+      "type": "TASK",
+      "index": "Cve_dap",
+      "unit": null,
+      "task": "task_scan_po_hepatic_scan__glc13",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_hepatic_scan__glc13__Cve_d3g": {
+      "type": "TASK",
+      "index": "Cve_d3g",
+      "unit": null,
+      "task": "task_scan_po_hepatic_scan__glc13",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_hepatic_scan__glc13__KI__glc_ext": {
+      "type": "TASK",
+      "index": "KI__glc_ext",
+      "unit": null,
+      "task": "task_scan_po_hepatic_scan__glc13",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_hepatic_scan__glc13__LI__dap": {
+      "type": "TASK",
+      "index": "LI__dap",
+      "unit": null,
+      "task": "task_scan_po_hepatic_scan__glc13",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_hepatic_scan__glc13__LI__d3g": {
+      "type": "TASK",
+      "index": "LI__d3g",
+      "unit": null,
+      "task": "task_scan_po_hepatic_scan__glc13",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_hepatic_scan__glc13__Aurine_daptot": {
+      "type": "TASK",
+      "index": "Aurine_daptot",
+      "unit": null,
+      "task": "task_scan_po_hepatic_scan__glc13",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_hepatic_scan__glc13__Aurine_dap": {
+      "type": "TASK",
+      "index": "Aurine_dap",
+      "unit": null,
+      "task": "task_scan_po_hepatic_scan__glc13",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_hepatic_scan__glc13__Aurine_d3g": {
+      "type": "TASK",
+      "index": "Aurine_d3g",
+      "unit": null,
+      "task": "task_scan_po_hepatic_scan__glc13",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_hepatic_scan__glc13__KI__glc_urine": {
+      "type": "TASK",
+      "index": "KI__glc_urine",
+      "unit": null,
+      "task": "task_scan_po_hepatic_scan__glc13",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_hepatic_scan__glc13__KI__UGE": {
+      "type": "TASK",
+      "index": "KI__UGE",
+      "unit": null,
+      "task": "task_scan_po_hepatic_scan__glc13",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_hepatic_scan__glc13__KI__RTG": {
+      "type": "TASK",
+      "index": "KI__RTG",
+      "unit": null,
+      "task": "task_scan_po_hepatic_scan__glc13",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_hepatic_scan__glc13__Afeces_dap": {
+      "type": "TASK",
+      "index": "Afeces_dap",
+      "unit": null,
+      "task": "task_scan_po_hepatic_scan__glc13",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_hepatic_scan__glc13__Afeces_daptot": {
+      "type": "TASK",
+      "index": "Afeces_daptot",
+      "unit": null,
+      "task": "task_scan_po_hepatic_scan__glc13",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_hepatic_scan__glc13__KI__D3GEX": {
+      "type": "TASK",
+      "index": "KI__D3GEX",
+      "unit": null,
+      "task": "task_scan_po_hepatic_scan__glc13",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_hepatic_scan__glc13__KI__DAPEX": {
+      "type": "TASK",
+      "index": "KI__DAPEX",
+      "unit": null,
+      "task": "task_scan_po_hepatic_scan__glc13",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_hepatic_scan__glc13__KI__GLCEX": {
+      "type": "TASK",
+      "index": "KI__GLCEX",
+      "unit": null,
+      "task": "task_scan_po_hepatic_scan__glc13",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_hepatic_scan__glc13__KI__f_renal_function": {
+      "type": "TASK",
+      "index": "KI__f_renal_function",
+      "unit": null,
+      "task": "task_scan_po_hepatic_scan__glc13",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_hepatic_scan__glc13__f_cirrhosis": {
+      "type": "TASK",
+      "index": "f_cirrhosis",
+      "unit": null,
+      "task": "task_scan_po_hepatic_scan__glc13",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_hepatic_scan__glc13__GU__f_absorption": {
+      "type": "TASK",
+      "index": "GU__f_absorption",
+      "unit": null,
+      "task": "task_scan_po_hepatic_scan__glc13",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_hepatic_scan__glc13__f_ugt1a9": {
+      "type": "TASK",
+      "index": "f_ugt1a9",
+      "unit": null,
+      "task": "task_scan_po_hepatic_scan__glc13",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_hepatic_scan__glc15__time": {
+      "type": "TASK",
+      "index": "time",
+      "unit": null,
+      "task": "task_scan_po_hepatic_scan__glc15",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_hepatic_scan__glc15__IVDOSE_dap": {
+      "type": "TASK",
+      "index": "IVDOSE_dap",
+      "unit": null,
+      "task": "task_scan_po_hepatic_scan__glc15",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_hepatic_scan__glc15__PODOSE_dap": {
+      "type": "TASK",
+      "index": "PODOSE_dap",
+      "unit": null,
+      "task": "task_scan_po_hepatic_scan__glc15",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_hepatic_scan__glc15__Cve_daptot": {
+      "type": "TASK",
+      "index": "Cve_daptot",
+      "unit": null,
+      "task": "task_scan_po_hepatic_scan__glc15",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_hepatic_scan__glc15__Cve_dap": {
+      "type": "TASK",
+      "index": "Cve_dap",
+      "unit": null,
+      "task": "task_scan_po_hepatic_scan__glc15",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_hepatic_scan__glc15__Cve_d3g": {
+      "type": "TASK",
+      "index": "Cve_d3g",
+      "unit": null,
+      "task": "task_scan_po_hepatic_scan__glc15",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_hepatic_scan__glc15__KI__glc_ext": {
+      "type": "TASK",
+      "index": "KI__glc_ext",
+      "unit": null,
+      "task": "task_scan_po_hepatic_scan__glc15",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_hepatic_scan__glc15__LI__dap": {
+      "type": "TASK",
+      "index": "LI__dap",
+      "unit": null,
+      "task": "task_scan_po_hepatic_scan__glc15",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_hepatic_scan__glc15__LI__d3g": {
+      "type": "TASK",
+      "index": "LI__d3g",
+      "unit": null,
+      "task": "task_scan_po_hepatic_scan__glc15",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_hepatic_scan__glc15__Aurine_daptot": {
+      "type": "TASK",
+      "index": "Aurine_daptot",
+      "unit": null,
+      "task": "task_scan_po_hepatic_scan__glc15",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_hepatic_scan__glc15__Aurine_dap": {
+      "type": "TASK",
+      "index": "Aurine_dap",
+      "unit": null,
+      "task": "task_scan_po_hepatic_scan__glc15",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_hepatic_scan__glc15__Aurine_d3g": {
+      "type": "TASK",
+      "index": "Aurine_d3g",
+      "unit": null,
+      "task": "task_scan_po_hepatic_scan__glc15",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_hepatic_scan__glc15__KI__glc_urine": {
+      "type": "TASK",
+      "index": "KI__glc_urine",
+      "unit": null,
+      "task": "task_scan_po_hepatic_scan__glc15",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_hepatic_scan__glc15__KI__UGE": {
+      "type": "TASK",
+      "index": "KI__UGE",
+      "unit": null,
+      "task": "task_scan_po_hepatic_scan__glc15",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_hepatic_scan__glc15__KI__RTG": {
+      "type": "TASK",
+      "index": "KI__RTG",
+      "unit": null,
+      "task": "task_scan_po_hepatic_scan__glc15",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_hepatic_scan__glc15__Afeces_dap": {
+      "type": "TASK",
+      "index": "Afeces_dap",
+      "unit": null,
+      "task": "task_scan_po_hepatic_scan__glc15",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_hepatic_scan__glc15__Afeces_daptot": {
+      "type": "TASK",
+      "index": "Afeces_daptot",
+      "unit": null,
+      "task": "task_scan_po_hepatic_scan__glc15",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_hepatic_scan__glc15__KI__D3GEX": {
+      "type": "TASK",
+      "index": "KI__D3GEX",
+      "unit": null,
+      "task": "task_scan_po_hepatic_scan__glc15",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_hepatic_scan__glc15__KI__DAPEX": {
+      "type": "TASK",
+      "index": "KI__DAPEX",
+      "unit": null,
+      "task": "task_scan_po_hepatic_scan__glc15",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_hepatic_scan__glc15__KI__GLCEX": {
+      "type": "TASK",
+      "index": "KI__GLCEX",
+      "unit": null,
+      "task": "task_scan_po_hepatic_scan__glc15",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_hepatic_scan__glc15__KI__f_renal_function": {
+      "type": "TASK",
+      "index": "KI__f_renal_function",
+      "unit": null,
+      "task": "task_scan_po_hepatic_scan__glc15",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_hepatic_scan__glc15__f_cirrhosis": {
+      "type": "TASK",
+      "index": "f_cirrhosis",
+      "unit": null,
+      "task": "task_scan_po_hepatic_scan__glc15",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_hepatic_scan__glc15__GU__f_absorption": {
+      "type": "TASK",
+      "index": "GU__f_absorption",
+      "unit": null,
+      "task": "task_scan_po_hepatic_scan__glc15",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_hepatic_scan__glc15__f_ugt1a9": {
+      "type": "TASK",
+      "index": "f_ugt1a9",
+      "unit": null,
+      "task": "task_scan_po_hepatic_scan__glc15",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_renal_scan_50__glc5__time": {
+      "type": "TASK",
+      "index": "time",
+      "unit": null,
+      "task": "task_scan_po_renal_scan_50__glc5",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_renal_scan_50__glc5__IVDOSE_dap": {
+      "type": "TASK",
+      "index": "IVDOSE_dap",
+      "unit": null,
+      "task": "task_scan_po_renal_scan_50__glc5",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_renal_scan_50__glc5__PODOSE_dap": {
+      "type": "TASK",
+      "index": "PODOSE_dap",
+      "unit": null,
+      "task": "task_scan_po_renal_scan_50__glc5",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_renal_scan_50__glc5__Cve_daptot": {
+      "type": "TASK",
+      "index": "Cve_daptot",
+      "unit": null,
+      "task": "task_scan_po_renal_scan_50__glc5",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_renal_scan_50__glc5__Cve_dap": {
+      "type": "TASK",
+      "index": "Cve_dap",
+      "unit": null,
+      "task": "task_scan_po_renal_scan_50__glc5",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_renal_scan_50__glc5__Cve_d3g": {
+      "type": "TASK",
+      "index": "Cve_d3g",
+      "unit": null,
+      "task": "task_scan_po_renal_scan_50__glc5",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_renal_scan_50__glc5__KI__glc_ext": {
+      "type": "TASK",
+      "index": "KI__glc_ext",
+      "unit": null,
+      "task": "task_scan_po_renal_scan_50__glc5",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_renal_scan_50__glc5__LI__dap": {
+      "type": "TASK",
+      "index": "LI__dap",
+      "unit": null,
+      "task": "task_scan_po_renal_scan_50__glc5",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_renal_scan_50__glc5__LI__d3g": {
+      "type": "TASK",
+      "index": "LI__d3g",
+      "unit": null,
+      "task": "task_scan_po_renal_scan_50__glc5",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_renal_scan_50__glc5__Aurine_daptot": {
+      "type": "TASK",
+      "index": "Aurine_daptot",
+      "unit": null,
+      "task": "task_scan_po_renal_scan_50__glc5",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_renal_scan_50__glc5__Aurine_dap": {
+      "type": "TASK",
+      "index": "Aurine_dap",
+      "unit": null,
+      "task": "task_scan_po_renal_scan_50__glc5",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_renal_scan_50__glc5__Aurine_d3g": {
+      "type": "TASK",
+      "index": "Aurine_d3g",
+      "unit": null,
+      "task": "task_scan_po_renal_scan_50__glc5",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_renal_scan_50__glc5__KI__glc_urine": {
+      "type": "TASK",
+      "index": "KI__glc_urine",
+      "unit": null,
+      "task": "task_scan_po_renal_scan_50__glc5",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_renal_scan_50__glc5__KI__UGE": {
+      "type": "TASK",
+      "index": "KI__UGE",
+      "unit": null,
+      "task": "task_scan_po_renal_scan_50__glc5",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_renal_scan_50__glc5__KI__RTG": {
+      "type": "TASK",
+      "index": "KI__RTG",
+      "unit": null,
+      "task": "task_scan_po_renal_scan_50__glc5",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_renal_scan_50__glc5__Afeces_dap": {
+      "type": "TASK",
+      "index": "Afeces_dap",
+      "unit": null,
+      "task": "task_scan_po_renal_scan_50__glc5",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_renal_scan_50__glc5__Afeces_daptot": {
+      "type": "TASK",
+      "index": "Afeces_daptot",
+      "unit": null,
+      "task": "task_scan_po_renal_scan_50__glc5",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_renal_scan_50__glc5__KI__D3GEX": {
+      "type": "TASK",
+      "index": "KI__D3GEX",
+      "unit": null,
+      "task": "task_scan_po_renal_scan_50__glc5",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_renal_scan_50__glc5__KI__DAPEX": {
+      "type": "TASK",
+      "index": "KI__DAPEX",
+      "unit": null,
+      "task": "task_scan_po_renal_scan_50__glc5",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_renal_scan_50__glc5__KI__GLCEX": {
+      "type": "TASK",
+      "index": "KI__GLCEX",
+      "unit": null,
+      "task": "task_scan_po_renal_scan_50__glc5",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_renal_scan_50__glc5__KI__f_renal_function": {
+      "type": "TASK",
+      "index": "KI__f_renal_function",
+      "unit": null,
+      "task": "task_scan_po_renal_scan_50__glc5",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_renal_scan_50__glc5__f_cirrhosis": {
+      "type": "TASK",
+      "index": "f_cirrhosis",
+      "unit": null,
+      "task": "task_scan_po_renal_scan_50__glc5",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_renal_scan_50__glc5__GU__f_absorption": {
+      "type": "TASK",
+      "index": "GU__f_absorption",
+      "unit": null,
+      "task": "task_scan_po_renal_scan_50__glc5",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_renal_scan_50__glc5__f_ugt1a9": {
+      "type": "TASK",
+      "index": "f_ugt1a9",
+      "unit": null,
+      "task": "task_scan_po_renal_scan_50__glc5",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_renal_scan_50__glc7__time": {
+      "type": "TASK",
+      "index": "time",
+      "unit": null,
+      "task": "task_scan_po_renal_scan_50__glc7",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_renal_scan_50__glc7__IVDOSE_dap": {
+      "type": "TASK",
+      "index": "IVDOSE_dap",
+      "unit": null,
+      "task": "task_scan_po_renal_scan_50__glc7",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_renal_scan_50__glc7__PODOSE_dap": {
+      "type": "TASK",
+      "index": "PODOSE_dap",
+      "unit": null,
+      "task": "task_scan_po_renal_scan_50__glc7",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_renal_scan_50__glc7__Cve_daptot": {
+      "type": "TASK",
+      "index": "Cve_daptot",
+      "unit": null,
+      "task": "task_scan_po_renal_scan_50__glc7",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_renal_scan_50__glc7__Cve_dap": {
+      "type": "TASK",
+      "index": "Cve_dap",
+      "unit": null,
+      "task": "task_scan_po_renal_scan_50__glc7",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_renal_scan_50__glc7__Cve_d3g": {
+      "type": "TASK",
+      "index": "Cve_d3g",
+      "unit": null,
+      "task": "task_scan_po_renal_scan_50__glc7",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_renal_scan_50__glc7__KI__glc_ext": {
+      "type": "TASK",
+      "index": "KI__glc_ext",
+      "unit": null,
+      "task": "task_scan_po_renal_scan_50__glc7",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_renal_scan_50__glc7__LI__dap": {
+      "type": "TASK",
+      "index": "LI__dap",
+      "unit": null,
+      "task": "task_scan_po_renal_scan_50__glc7",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_renal_scan_50__glc7__LI__d3g": {
+      "type": "TASK",
+      "index": "LI__d3g",
+      "unit": null,
+      "task": "task_scan_po_renal_scan_50__glc7",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_renal_scan_50__glc7__Aurine_daptot": {
+      "type": "TASK",
+      "index": "Aurine_daptot",
+      "unit": null,
+      "task": "task_scan_po_renal_scan_50__glc7",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_renal_scan_50__glc7__Aurine_dap": {
+      "type": "TASK",
+      "index": "Aurine_dap",
+      "unit": null,
+      "task": "task_scan_po_renal_scan_50__glc7",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_renal_scan_50__glc7__Aurine_d3g": {
+      "type": "TASK",
+      "index": "Aurine_d3g",
+      "unit": null,
+      "task": "task_scan_po_renal_scan_50__glc7",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_renal_scan_50__glc7__KI__glc_urine": {
+      "type": "TASK",
+      "index": "KI__glc_urine",
+      "unit": null,
+      "task": "task_scan_po_renal_scan_50__glc7",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_renal_scan_50__glc7__KI__UGE": {
+      "type": "TASK",
+      "index": "KI__UGE",
+      "unit": null,
+      "task": "task_scan_po_renal_scan_50__glc7",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_renal_scan_50__glc7__KI__RTG": {
+      "type": "TASK",
+      "index": "KI__RTG",
+      "unit": null,
+      "task": "task_scan_po_renal_scan_50__glc7",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_renal_scan_50__glc7__Afeces_dap": {
+      "type": "TASK",
+      "index": "Afeces_dap",
+      "unit": null,
+      "task": "task_scan_po_renal_scan_50__glc7",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_renal_scan_50__glc7__Afeces_daptot": {
+      "type": "TASK",
+      "index": "Afeces_daptot",
+      "unit": null,
+      "task": "task_scan_po_renal_scan_50__glc7",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_renal_scan_50__glc7__KI__D3GEX": {
+      "type": "TASK",
+      "index": "KI__D3GEX",
+      "unit": null,
+      "task": "task_scan_po_renal_scan_50__glc7",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_renal_scan_50__glc7__KI__DAPEX": {
+      "type": "TASK",
+      "index": "KI__DAPEX",
+      "unit": null,
+      "task": "task_scan_po_renal_scan_50__glc7",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_renal_scan_50__glc7__KI__GLCEX": {
+      "type": "TASK",
+      "index": "KI__GLCEX",
+      "unit": null,
+      "task": "task_scan_po_renal_scan_50__glc7",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_renal_scan_50__glc7__KI__f_renal_function": {
+      "type": "TASK",
+      "index": "KI__f_renal_function",
+      "unit": null,
+      "task": "task_scan_po_renal_scan_50__glc7",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_renal_scan_50__glc7__f_cirrhosis": {
+      "type": "TASK",
+      "index": "f_cirrhosis",
+      "unit": null,
+      "task": "task_scan_po_renal_scan_50__glc7",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_renal_scan_50__glc7__GU__f_absorption": {
+      "type": "TASK",
+      "index": "GU__f_absorption",
+      "unit": null,
+      "task": "task_scan_po_renal_scan_50__glc7",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_renal_scan_50__glc7__f_ugt1a9": {
+      "type": "TASK",
+      "index": "f_ugt1a9",
+      "unit": null,
+      "task": "task_scan_po_renal_scan_50__glc7",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_renal_scan_50__glc9__time": {
+      "type": "TASK",
+      "index": "time",
+      "unit": null,
+      "task": "task_scan_po_renal_scan_50__glc9",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_renal_scan_50__glc9__IVDOSE_dap": {
+      "type": "TASK",
+      "index": "IVDOSE_dap",
+      "unit": null,
+      "task": "task_scan_po_renal_scan_50__glc9",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_renal_scan_50__glc9__PODOSE_dap": {
+      "type": "TASK",
+      "index": "PODOSE_dap",
+      "unit": null,
+      "task": "task_scan_po_renal_scan_50__glc9",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_renal_scan_50__glc9__Cve_daptot": {
+      "type": "TASK",
+      "index": "Cve_daptot",
+      "unit": null,
+      "task": "task_scan_po_renal_scan_50__glc9",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_renal_scan_50__glc9__Cve_dap": {
+      "type": "TASK",
+      "index": "Cve_dap",
+      "unit": null,
+      "task": "task_scan_po_renal_scan_50__glc9",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_renal_scan_50__glc9__Cve_d3g": {
+      "type": "TASK",
+      "index": "Cve_d3g",
+      "unit": null,
+      "task": "task_scan_po_renal_scan_50__glc9",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_renal_scan_50__glc9__KI__glc_ext": {
+      "type": "TASK",
+      "index": "KI__glc_ext",
+      "unit": null,
+      "task": "task_scan_po_renal_scan_50__glc9",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_renal_scan_50__glc9__LI__dap": {
+      "type": "TASK",
+      "index": "LI__dap",
+      "unit": null,
+      "task": "task_scan_po_renal_scan_50__glc9",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_renal_scan_50__glc9__LI__d3g": {
+      "type": "TASK",
+      "index": "LI__d3g",
+      "unit": null,
+      "task": "task_scan_po_renal_scan_50__glc9",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_renal_scan_50__glc9__Aurine_daptot": {
+      "type": "TASK",
+      "index": "Aurine_daptot",
+      "unit": null,
+      "task": "task_scan_po_renal_scan_50__glc9",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_renal_scan_50__glc9__Aurine_dap": {
+      "type": "TASK",
+      "index": "Aurine_dap",
+      "unit": null,
+      "task": "task_scan_po_renal_scan_50__glc9",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_renal_scan_50__glc9__Aurine_d3g": {
+      "type": "TASK",
+      "index": "Aurine_d3g",
+      "unit": null,
+      "task": "task_scan_po_renal_scan_50__glc9",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_renal_scan_50__glc9__KI__glc_urine": {
+      "type": "TASK",
+      "index": "KI__glc_urine",
+      "unit": null,
+      "task": "task_scan_po_renal_scan_50__glc9",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_renal_scan_50__glc9__KI__UGE": {
+      "type": "TASK",
+      "index": "KI__UGE",
+      "unit": null,
+      "task": "task_scan_po_renal_scan_50__glc9",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_renal_scan_50__glc9__KI__RTG": {
+      "type": "TASK",
+      "index": "KI__RTG",
+      "unit": null,
+      "task": "task_scan_po_renal_scan_50__glc9",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_renal_scan_50__glc9__Afeces_dap": {
+      "type": "TASK",
+      "index": "Afeces_dap",
+      "unit": null,
+      "task": "task_scan_po_renal_scan_50__glc9",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_renal_scan_50__glc9__Afeces_daptot": {
+      "type": "TASK",
+      "index": "Afeces_daptot",
+      "unit": null,
+      "task": "task_scan_po_renal_scan_50__glc9",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_renal_scan_50__glc9__KI__D3GEX": {
+      "type": "TASK",
+      "index": "KI__D3GEX",
+      "unit": null,
+      "task": "task_scan_po_renal_scan_50__glc9",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_renal_scan_50__glc9__KI__DAPEX": {
+      "type": "TASK",
+      "index": "KI__DAPEX",
+      "unit": null,
+      "task": "task_scan_po_renal_scan_50__glc9",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_renal_scan_50__glc9__KI__GLCEX": {
+      "type": "TASK",
+      "index": "KI__GLCEX",
+      "unit": null,
+      "task": "task_scan_po_renal_scan_50__glc9",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_renal_scan_50__glc9__KI__f_renal_function": {
+      "type": "TASK",
+      "index": "KI__f_renal_function",
+      "unit": null,
+      "task": "task_scan_po_renal_scan_50__glc9",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_renal_scan_50__glc9__f_cirrhosis": {
+      "type": "TASK",
+      "index": "f_cirrhosis",
+      "unit": null,
+      "task": "task_scan_po_renal_scan_50__glc9",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_renal_scan_50__glc9__GU__f_absorption": {
+      "type": "TASK",
+      "index": "GU__f_absorption",
+      "unit": null,
+      "task": "task_scan_po_renal_scan_50__glc9",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_renal_scan_50__glc9__f_ugt1a9": {
+      "type": "TASK",
+      "index": "f_ugt1a9",
+      "unit": null,
+      "task": "task_scan_po_renal_scan_50__glc9",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_renal_scan_50__glc11__time": {
+      "type": "TASK",
+      "index": "time",
+      "unit": null,
+      "task": "task_scan_po_renal_scan_50__glc11",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_renal_scan_50__glc11__IVDOSE_dap": {
+      "type": "TASK",
+      "index": "IVDOSE_dap",
+      "unit": null,
+      "task": "task_scan_po_renal_scan_50__glc11",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_renal_scan_50__glc11__PODOSE_dap": {
+      "type": "TASK",
+      "index": "PODOSE_dap",
+      "unit": null,
+      "task": "task_scan_po_renal_scan_50__glc11",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_renal_scan_50__glc11__Cve_daptot": {
+      "type": "TASK",
+      "index": "Cve_daptot",
+      "unit": null,
+      "task": "task_scan_po_renal_scan_50__glc11",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_renal_scan_50__glc11__Cve_dap": {
+      "type": "TASK",
+      "index": "Cve_dap",
+      "unit": null,
+      "task": "task_scan_po_renal_scan_50__glc11",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_renal_scan_50__glc11__Cve_d3g": {
+      "type": "TASK",
+      "index": "Cve_d3g",
+      "unit": null,
+      "task": "task_scan_po_renal_scan_50__glc11",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_renal_scan_50__glc11__KI__glc_ext": {
+      "type": "TASK",
+      "index": "KI__glc_ext",
+      "unit": null,
+      "task": "task_scan_po_renal_scan_50__glc11",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_renal_scan_50__glc11__LI__dap": {
+      "type": "TASK",
+      "index": "LI__dap",
+      "unit": null,
+      "task": "task_scan_po_renal_scan_50__glc11",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_renal_scan_50__glc11__LI__d3g": {
+      "type": "TASK",
+      "index": "LI__d3g",
+      "unit": null,
+      "task": "task_scan_po_renal_scan_50__glc11",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_renal_scan_50__glc11__Aurine_daptot": {
+      "type": "TASK",
+      "index": "Aurine_daptot",
+      "unit": null,
+      "task": "task_scan_po_renal_scan_50__glc11",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_renal_scan_50__glc11__Aurine_dap": {
+      "type": "TASK",
+      "index": "Aurine_dap",
+      "unit": null,
+      "task": "task_scan_po_renal_scan_50__glc11",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_renal_scan_50__glc11__Aurine_d3g": {
+      "type": "TASK",
+      "index": "Aurine_d3g",
+      "unit": null,
+      "task": "task_scan_po_renal_scan_50__glc11",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_renal_scan_50__glc11__KI__glc_urine": {
+      "type": "TASK",
+      "index": "KI__glc_urine",
+      "unit": null,
+      "task": "task_scan_po_renal_scan_50__glc11",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_renal_scan_50__glc11__KI__UGE": {
+      "type": "TASK",
+      "index": "KI__UGE",
+      "unit": null,
+      "task": "task_scan_po_renal_scan_50__glc11",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_renal_scan_50__glc11__KI__RTG": {
+      "type": "TASK",
+      "index": "KI__RTG",
+      "unit": null,
+      "task": "task_scan_po_renal_scan_50__glc11",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_renal_scan_50__glc11__Afeces_dap": {
+      "type": "TASK",
+      "index": "Afeces_dap",
+      "unit": null,
+      "task": "task_scan_po_renal_scan_50__glc11",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_renal_scan_50__glc11__Afeces_daptot": {
+      "type": "TASK",
+      "index": "Afeces_daptot",
+      "unit": null,
+      "task": "task_scan_po_renal_scan_50__glc11",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_renal_scan_50__glc11__KI__D3GEX": {
+      "type": "TASK",
+      "index": "KI__D3GEX",
+      "unit": null,
+      "task": "task_scan_po_renal_scan_50__glc11",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_renal_scan_50__glc11__KI__DAPEX": {
+      "type": "TASK",
+      "index": "KI__DAPEX",
+      "unit": null,
+      "task": "task_scan_po_renal_scan_50__glc11",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_renal_scan_50__glc11__KI__GLCEX": {
+      "type": "TASK",
+      "index": "KI__GLCEX",
+      "unit": null,
+      "task": "task_scan_po_renal_scan_50__glc11",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_renal_scan_50__glc11__KI__f_renal_function": {
+      "type": "TASK",
+      "index": "KI__f_renal_function",
+      "unit": null,
+      "task": "task_scan_po_renal_scan_50__glc11",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_renal_scan_50__glc11__f_cirrhosis": {
+      "type": "TASK",
+      "index": "f_cirrhosis",
+      "unit": null,
+      "task": "task_scan_po_renal_scan_50__glc11",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_renal_scan_50__glc11__GU__f_absorption": {
+      "type": "TASK",
+      "index": "GU__f_absorption",
+      "unit": null,
+      "task": "task_scan_po_renal_scan_50__glc11",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_renal_scan_50__glc11__f_ugt1a9": {
+      "type": "TASK",
+      "index": "f_ugt1a9",
+      "unit": null,
+      "task": "task_scan_po_renal_scan_50__glc11",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_renal_scan_50__glc13__time": {
+      "type": "TASK",
+      "index": "time",
+      "unit": null,
+      "task": "task_scan_po_renal_scan_50__glc13",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_renal_scan_50__glc13__IVDOSE_dap": {
+      "type": "TASK",
+      "index": "IVDOSE_dap",
+      "unit": null,
+      "task": "task_scan_po_renal_scan_50__glc13",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_renal_scan_50__glc13__PODOSE_dap": {
+      "type": "TASK",
+      "index": "PODOSE_dap",
+      "unit": null,
+      "task": "task_scan_po_renal_scan_50__glc13",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_renal_scan_50__glc13__Cve_daptot": {
+      "type": "TASK",
+      "index": "Cve_daptot",
+      "unit": null,
+      "task": "task_scan_po_renal_scan_50__glc13",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_renal_scan_50__glc13__Cve_dap": {
+      "type": "TASK",
+      "index": "Cve_dap",
+      "unit": null,
+      "task": "task_scan_po_renal_scan_50__glc13",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_renal_scan_50__glc13__Cve_d3g": {
+      "type": "TASK",
+      "index": "Cve_d3g",
+      "unit": null,
+      "task": "task_scan_po_renal_scan_50__glc13",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_renal_scan_50__glc13__KI__glc_ext": {
+      "type": "TASK",
+      "index": "KI__glc_ext",
+      "unit": null,
+      "task": "task_scan_po_renal_scan_50__glc13",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_renal_scan_50__glc13__LI__dap": {
+      "type": "TASK",
+      "index": "LI__dap",
+      "unit": null,
+      "task": "task_scan_po_renal_scan_50__glc13",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_renal_scan_50__glc13__LI__d3g": {
+      "type": "TASK",
+      "index": "LI__d3g",
+      "unit": null,
+      "task": "task_scan_po_renal_scan_50__glc13",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_renal_scan_50__glc13__Aurine_daptot": {
+      "type": "TASK",
+      "index": "Aurine_daptot",
+      "unit": null,
+      "task": "task_scan_po_renal_scan_50__glc13",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_renal_scan_50__glc13__Aurine_dap": {
+      "type": "TASK",
+      "index": "Aurine_dap",
+      "unit": null,
+      "task": "task_scan_po_renal_scan_50__glc13",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_renal_scan_50__glc13__Aurine_d3g": {
+      "type": "TASK",
+      "index": "Aurine_d3g",
+      "unit": null,
+      "task": "task_scan_po_renal_scan_50__glc13",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_renal_scan_50__glc13__KI__glc_urine": {
+      "type": "TASK",
+      "index": "KI__glc_urine",
+      "unit": null,
+      "task": "task_scan_po_renal_scan_50__glc13",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_renal_scan_50__glc13__KI__UGE": {
+      "type": "TASK",
+      "index": "KI__UGE",
+      "unit": null,
+      "task": "task_scan_po_renal_scan_50__glc13",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_renal_scan_50__glc13__KI__RTG": {
+      "type": "TASK",
+      "index": "KI__RTG",
+      "unit": null,
+      "task": "task_scan_po_renal_scan_50__glc13",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_renal_scan_50__glc13__Afeces_dap": {
+      "type": "TASK",
+      "index": "Afeces_dap",
+      "unit": null,
+      "task": "task_scan_po_renal_scan_50__glc13",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_renal_scan_50__glc13__Afeces_daptot": {
+      "type": "TASK",
+      "index": "Afeces_daptot",
+      "unit": null,
+      "task": "task_scan_po_renal_scan_50__glc13",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_renal_scan_50__glc13__KI__D3GEX": {
+      "type": "TASK",
+      "index": "KI__D3GEX",
+      "unit": null,
+      "task": "task_scan_po_renal_scan_50__glc13",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_renal_scan_50__glc13__KI__DAPEX": {
+      "type": "TASK",
+      "index": "KI__DAPEX",
+      "unit": null,
+      "task": "task_scan_po_renal_scan_50__glc13",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_renal_scan_50__glc13__KI__GLCEX": {
+      "type": "TASK",
+      "index": "KI__GLCEX",
+      "unit": null,
+      "task": "task_scan_po_renal_scan_50__glc13",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_renal_scan_50__glc13__KI__f_renal_function": {
+      "type": "TASK",
+      "index": "KI__f_renal_function",
+      "unit": null,
+      "task": "task_scan_po_renal_scan_50__glc13",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_renal_scan_50__glc13__f_cirrhosis": {
+      "type": "TASK",
+      "index": "f_cirrhosis",
+      "unit": null,
+      "task": "task_scan_po_renal_scan_50__glc13",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_renal_scan_50__glc13__GU__f_absorption": {
+      "type": "TASK",
+      "index": "GU__f_absorption",
+      "unit": null,
+      "task": "task_scan_po_renal_scan_50__glc13",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_renal_scan_50__glc13__f_ugt1a9": {
+      "type": "TASK",
+      "index": "f_ugt1a9",
+      "unit": null,
+      "task": "task_scan_po_renal_scan_50__glc13",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_renal_scan_50__glc15__time": {
+      "type": "TASK",
+      "index": "time",
+      "unit": null,
+      "task": "task_scan_po_renal_scan_50__glc15",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_renal_scan_50__glc15__IVDOSE_dap": {
+      "type": "TASK",
+      "index": "IVDOSE_dap",
+      "unit": null,
+      "task": "task_scan_po_renal_scan_50__glc15",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_renal_scan_50__glc15__PODOSE_dap": {
+      "type": "TASK",
+      "index": "PODOSE_dap",
+      "unit": null,
+      "task": "task_scan_po_renal_scan_50__glc15",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_renal_scan_50__glc15__Cve_daptot": {
+      "type": "TASK",
+      "index": "Cve_daptot",
+      "unit": null,
+      "task": "task_scan_po_renal_scan_50__glc15",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_renal_scan_50__glc15__Cve_dap": {
+      "type": "TASK",
+      "index": "Cve_dap",
+      "unit": null,
+      "task": "task_scan_po_renal_scan_50__glc15",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_renal_scan_50__glc15__Cve_d3g": {
+      "type": "TASK",
+      "index": "Cve_d3g",
+      "unit": null,
+      "task": "task_scan_po_renal_scan_50__glc15",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_renal_scan_50__glc15__KI__glc_ext": {
+      "type": "TASK",
+      "index": "KI__glc_ext",
+      "unit": null,
+      "task": "task_scan_po_renal_scan_50__glc15",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_renal_scan_50__glc15__LI__dap": {
+      "type": "TASK",
+      "index": "LI__dap",
+      "unit": null,
+      "task": "task_scan_po_renal_scan_50__glc15",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_renal_scan_50__glc15__LI__d3g": {
+      "type": "TASK",
+      "index": "LI__d3g",
+      "unit": null,
+      "task": "task_scan_po_renal_scan_50__glc15",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_renal_scan_50__glc15__Aurine_daptot": {
+      "type": "TASK",
+      "index": "Aurine_daptot",
+      "unit": null,
+      "task": "task_scan_po_renal_scan_50__glc15",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_renal_scan_50__glc15__Aurine_dap": {
+      "type": "TASK",
+      "index": "Aurine_dap",
+      "unit": null,
+      "task": "task_scan_po_renal_scan_50__glc15",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_renal_scan_50__glc15__Aurine_d3g": {
+      "type": "TASK",
+      "index": "Aurine_d3g",
+      "unit": null,
+      "task": "task_scan_po_renal_scan_50__glc15",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_renal_scan_50__glc15__KI__glc_urine": {
+      "type": "TASK",
+      "index": "KI__glc_urine",
+      "unit": null,
+      "task": "task_scan_po_renal_scan_50__glc15",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_renal_scan_50__glc15__KI__UGE": {
+      "type": "TASK",
+      "index": "KI__UGE",
+      "unit": null,
+      "task": "task_scan_po_renal_scan_50__glc15",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_renal_scan_50__glc15__KI__RTG": {
+      "type": "TASK",
+      "index": "KI__RTG",
+      "unit": null,
+      "task": "task_scan_po_renal_scan_50__glc15",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_renal_scan_50__glc15__Afeces_dap": {
+      "type": "TASK",
+      "index": "Afeces_dap",
+      "unit": null,
+      "task": "task_scan_po_renal_scan_50__glc15",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_renal_scan_50__glc15__Afeces_daptot": {
+      "type": "TASK",
+      "index": "Afeces_daptot",
+      "unit": null,
+      "task": "task_scan_po_renal_scan_50__glc15",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_renal_scan_50__glc15__KI__D3GEX": {
+      "type": "TASK",
+      "index": "KI__D3GEX",
+      "unit": null,
+      "task": "task_scan_po_renal_scan_50__glc15",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_renal_scan_50__glc15__KI__DAPEX": {
+      "type": "TASK",
+      "index": "KI__DAPEX",
+      "unit": null,
+      "task": "task_scan_po_renal_scan_50__glc15",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_renal_scan_50__glc15__KI__GLCEX": {
+      "type": "TASK",
+      "index": "KI__GLCEX",
+      "unit": null,
+      "task": "task_scan_po_renal_scan_50__glc15",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_renal_scan_50__glc15__KI__f_renal_function": {
+      "type": "TASK",
+      "index": "KI__f_renal_function",
+      "unit": null,
+      "task": "task_scan_po_renal_scan_50__glc15",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_renal_scan_50__glc15__f_cirrhosis": {
+      "type": "TASK",
+      "index": "f_cirrhosis",
+      "unit": null,
+      "task": "task_scan_po_renal_scan_50__glc15",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_renal_scan_50__glc15__GU__f_absorption": {
+      "type": "TASK",
+      "index": "GU__f_absorption",
+      "unit": null,
+      "task": "task_scan_po_renal_scan_50__glc15",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_renal_scan_50__glc15__f_ugt1a9": {
+      "type": "TASK",
+      "index": "f_ugt1a9",
+      "unit": null,
+      "task": "task_scan_po_renal_scan_50__glc15",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_renal_scan_20__glc5__time": {
+      "type": "TASK",
+      "index": "time",
+      "unit": null,
+      "task": "task_scan_po_renal_scan_20__glc5",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_renal_scan_20__glc5__IVDOSE_dap": {
+      "type": "TASK",
+      "index": "IVDOSE_dap",
+      "unit": null,
+      "task": "task_scan_po_renal_scan_20__glc5",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_renal_scan_20__glc5__PODOSE_dap": {
+      "type": "TASK",
+      "index": "PODOSE_dap",
+      "unit": null,
+      "task": "task_scan_po_renal_scan_20__glc5",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_renal_scan_20__glc5__Cve_daptot": {
+      "type": "TASK",
+      "index": "Cve_daptot",
+      "unit": null,
+      "task": "task_scan_po_renal_scan_20__glc5",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_renal_scan_20__glc5__Cve_dap": {
+      "type": "TASK",
+      "index": "Cve_dap",
+      "unit": null,
+      "task": "task_scan_po_renal_scan_20__glc5",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_renal_scan_20__glc5__Cve_d3g": {
+      "type": "TASK",
+      "index": "Cve_d3g",
+      "unit": null,
+      "task": "task_scan_po_renal_scan_20__glc5",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_renal_scan_20__glc5__KI__glc_ext": {
+      "type": "TASK",
+      "index": "KI__glc_ext",
+      "unit": null,
+      "task": "task_scan_po_renal_scan_20__glc5",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_renal_scan_20__glc5__LI__dap": {
+      "type": "TASK",
+      "index": "LI__dap",
+      "unit": null,
+      "task": "task_scan_po_renal_scan_20__glc5",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_renal_scan_20__glc5__LI__d3g": {
+      "type": "TASK",
+      "index": "LI__d3g",
+      "unit": null,
+      "task": "task_scan_po_renal_scan_20__glc5",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_renal_scan_20__glc5__Aurine_daptot": {
+      "type": "TASK",
+      "index": "Aurine_daptot",
+      "unit": null,
+      "task": "task_scan_po_renal_scan_20__glc5",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_renal_scan_20__glc5__Aurine_dap": {
+      "type": "TASK",
+      "index": "Aurine_dap",
+      "unit": null,
+      "task": "task_scan_po_renal_scan_20__glc5",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_renal_scan_20__glc5__Aurine_d3g": {
+      "type": "TASK",
+      "index": "Aurine_d3g",
+      "unit": null,
+      "task": "task_scan_po_renal_scan_20__glc5",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_renal_scan_20__glc5__KI__glc_urine": {
+      "type": "TASK",
+      "index": "KI__glc_urine",
+      "unit": null,
+      "task": "task_scan_po_renal_scan_20__glc5",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_renal_scan_20__glc5__KI__UGE": {
+      "type": "TASK",
+      "index": "KI__UGE",
+      "unit": null,
+      "task": "task_scan_po_renal_scan_20__glc5",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_renal_scan_20__glc5__KI__RTG": {
+      "type": "TASK",
+      "index": "KI__RTG",
+      "unit": null,
+      "task": "task_scan_po_renal_scan_20__glc5",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_renal_scan_20__glc5__Afeces_dap": {
+      "type": "TASK",
+      "index": "Afeces_dap",
+      "unit": null,
+      "task": "task_scan_po_renal_scan_20__glc5",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_renal_scan_20__glc5__Afeces_daptot": {
+      "type": "TASK",
+      "index": "Afeces_daptot",
+      "unit": null,
+      "task": "task_scan_po_renal_scan_20__glc5",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_renal_scan_20__glc5__KI__D3GEX": {
+      "type": "TASK",
+      "index": "KI__D3GEX",
+      "unit": null,
+      "task": "task_scan_po_renal_scan_20__glc5",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_renal_scan_20__glc5__KI__DAPEX": {
+      "type": "TASK",
+      "index": "KI__DAPEX",
+      "unit": null,
+      "task": "task_scan_po_renal_scan_20__glc5",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_renal_scan_20__glc5__KI__GLCEX": {
+      "type": "TASK",
+      "index": "KI__GLCEX",
+      "unit": null,
+      "task": "task_scan_po_renal_scan_20__glc5",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_renal_scan_20__glc5__KI__f_renal_function": {
+      "type": "TASK",
+      "index": "KI__f_renal_function",
+      "unit": null,
+      "task": "task_scan_po_renal_scan_20__glc5",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_renal_scan_20__glc5__f_cirrhosis": {
+      "type": "TASK",
+      "index": "f_cirrhosis",
+      "unit": null,
+      "task": "task_scan_po_renal_scan_20__glc5",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_renal_scan_20__glc5__GU__f_absorption": {
+      "type": "TASK",
+      "index": "GU__f_absorption",
+      "unit": null,
+      "task": "task_scan_po_renal_scan_20__glc5",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_renal_scan_20__glc5__f_ugt1a9": {
+      "type": "TASK",
+      "index": "f_ugt1a9",
+      "unit": null,
+      "task": "task_scan_po_renal_scan_20__glc5",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_renal_scan_20__glc7__time": {
+      "type": "TASK",
+      "index": "time",
+      "unit": null,
+      "task": "task_scan_po_renal_scan_20__glc7",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_renal_scan_20__glc7__IVDOSE_dap": {
+      "type": "TASK",
+      "index": "IVDOSE_dap",
+      "unit": null,
+      "task": "task_scan_po_renal_scan_20__glc7",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_renal_scan_20__glc7__PODOSE_dap": {
+      "type": "TASK",
+      "index": "PODOSE_dap",
+      "unit": null,
+      "task": "task_scan_po_renal_scan_20__glc7",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_renal_scan_20__glc7__Cve_daptot": {
+      "type": "TASK",
+      "index": "Cve_daptot",
+      "unit": null,
+      "task": "task_scan_po_renal_scan_20__glc7",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_renal_scan_20__glc7__Cve_dap": {
+      "type": "TASK",
+      "index": "Cve_dap",
+      "unit": null,
+      "task": "task_scan_po_renal_scan_20__glc7",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_renal_scan_20__glc7__Cve_d3g": {
+      "type": "TASK",
+      "index": "Cve_d3g",
+      "unit": null,
+      "task": "task_scan_po_renal_scan_20__glc7",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_renal_scan_20__glc7__KI__glc_ext": {
+      "type": "TASK",
+      "index": "KI__glc_ext",
+      "unit": null,
+      "task": "task_scan_po_renal_scan_20__glc7",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_renal_scan_20__glc7__LI__dap": {
+      "type": "TASK",
+      "index": "LI__dap",
+      "unit": null,
+      "task": "task_scan_po_renal_scan_20__glc7",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_renal_scan_20__glc7__LI__d3g": {
+      "type": "TASK",
+      "index": "LI__d3g",
+      "unit": null,
+      "task": "task_scan_po_renal_scan_20__glc7",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_renal_scan_20__glc7__Aurine_daptot": {
+      "type": "TASK",
+      "index": "Aurine_daptot",
+      "unit": null,
+      "task": "task_scan_po_renal_scan_20__glc7",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_renal_scan_20__glc7__Aurine_dap": {
+      "type": "TASK",
+      "index": "Aurine_dap",
+      "unit": null,
+      "task": "task_scan_po_renal_scan_20__glc7",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_renal_scan_20__glc7__Aurine_d3g": {
+      "type": "TASK",
+      "index": "Aurine_d3g",
+      "unit": null,
+      "task": "task_scan_po_renal_scan_20__glc7",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_renal_scan_20__glc7__KI__glc_urine": {
+      "type": "TASK",
+      "index": "KI__glc_urine",
+      "unit": null,
+      "task": "task_scan_po_renal_scan_20__glc7",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_renal_scan_20__glc7__KI__UGE": {
+      "type": "TASK",
+      "index": "KI__UGE",
+      "unit": null,
+      "task": "task_scan_po_renal_scan_20__glc7",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_renal_scan_20__glc7__KI__RTG": {
+      "type": "TASK",
+      "index": "KI__RTG",
+      "unit": null,
+      "task": "task_scan_po_renal_scan_20__glc7",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_renal_scan_20__glc7__Afeces_dap": {
+      "type": "TASK",
+      "index": "Afeces_dap",
+      "unit": null,
+      "task": "task_scan_po_renal_scan_20__glc7",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_renal_scan_20__glc7__Afeces_daptot": {
+      "type": "TASK",
+      "index": "Afeces_daptot",
+      "unit": null,
+      "task": "task_scan_po_renal_scan_20__glc7",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_renal_scan_20__glc7__KI__D3GEX": {
+      "type": "TASK",
+      "index": "KI__D3GEX",
+      "unit": null,
+      "task": "task_scan_po_renal_scan_20__glc7",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_renal_scan_20__glc7__KI__DAPEX": {
+      "type": "TASK",
+      "index": "KI__DAPEX",
+      "unit": null,
+      "task": "task_scan_po_renal_scan_20__glc7",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_renal_scan_20__glc7__KI__GLCEX": {
+      "type": "TASK",
+      "index": "KI__GLCEX",
+      "unit": null,
+      "task": "task_scan_po_renal_scan_20__glc7",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_renal_scan_20__glc7__KI__f_renal_function": {
+      "type": "TASK",
+      "index": "KI__f_renal_function",
+      "unit": null,
+      "task": "task_scan_po_renal_scan_20__glc7",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_renal_scan_20__glc7__f_cirrhosis": {
+      "type": "TASK",
+      "index": "f_cirrhosis",
+      "unit": null,
+      "task": "task_scan_po_renal_scan_20__glc7",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_renal_scan_20__glc7__GU__f_absorption": {
+      "type": "TASK",
+      "index": "GU__f_absorption",
+      "unit": null,
+      "task": "task_scan_po_renal_scan_20__glc7",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_renal_scan_20__glc7__f_ugt1a9": {
+      "type": "TASK",
+      "index": "f_ugt1a9",
+      "unit": null,
+      "task": "task_scan_po_renal_scan_20__glc7",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_renal_scan_20__glc9__time": {
+      "type": "TASK",
+      "index": "time",
+      "unit": null,
+      "task": "task_scan_po_renal_scan_20__glc9",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_renal_scan_20__glc9__IVDOSE_dap": {
+      "type": "TASK",
+      "index": "IVDOSE_dap",
+      "unit": null,
+      "task": "task_scan_po_renal_scan_20__glc9",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_renal_scan_20__glc9__PODOSE_dap": {
+      "type": "TASK",
+      "index": "PODOSE_dap",
+      "unit": null,
+      "task": "task_scan_po_renal_scan_20__glc9",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_renal_scan_20__glc9__Cve_daptot": {
+      "type": "TASK",
+      "index": "Cve_daptot",
+      "unit": null,
+      "task": "task_scan_po_renal_scan_20__glc9",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_renal_scan_20__glc9__Cve_dap": {
+      "type": "TASK",
+      "index": "Cve_dap",
+      "unit": null,
+      "task": "task_scan_po_renal_scan_20__glc9",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_renal_scan_20__glc9__Cve_d3g": {
+      "type": "TASK",
+      "index": "Cve_d3g",
+      "unit": null,
+      "task": "task_scan_po_renal_scan_20__glc9",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_renal_scan_20__glc9__KI__glc_ext": {
+      "type": "TASK",
+      "index": "KI__glc_ext",
+      "unit": null,
+      "task": "task_scan_po_renal_scan_20__glc9",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_renal_scan_20__glc9__LI__dap": {
+      "type": "TASK",
+      "index": "LI__dap",
+      "unit": null,
+      "task": "task_scan_po_renal_scan_20__glc9",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_renal_scan_20__glc9__LI__d3g": {
+      "type": "TASK",
+      "index": "LI__d3g",
+      "unit": null,
+      "task": "task_scan_po_renal_scan_20__glc9",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_renal_scan_20__glc9__Aurine_daptot": {
+      "type": "TASK",
+      "index": "Aurine_daptot",
+      "unit": null,
+      "task": "task_scan_po_renal_scan_20__glc9",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_renal_scan_20__glc9__Aurine_dap": {
+      "type": "TASK",
+      "index": "Aurine_dap",
+      "unit": null,
+      "task": "task_scan_po_renal_scan_20__glc9",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_renal_scan_20__glc9__Aurine_d3g": {
+      "type": "TASK",
+      "index": "Aurine_d3g",
+      "unit": null,
+      "task": "task_scan_po_renal_scan_20__glc9",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_renal_scan_20__glc9__KI__glc_urine": {
+      "type": "TASK",
+      "index": "KI__glc_urine",
+      "unit": null,
+      "task": "task_scan_po_renal_scan_20__glc9",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_renal_scan_20__glc9__KI__UGE": {
+      "type": "TASK",
+      "index": "KI__UGE",
+      "unit": null,
+      "task": "task_scan_po_renal_scan_20__glc9",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_renal_scan_20__glc9__KI__RTG": {
+      "type": "TASK",
+      "index": "KI__RTG",
+      "unit": null,
+      "task": "task_scan_po_renal_scan_20__glc9",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_renal_scan_20__glc9__Afeces_dap": {
+      "type": "TASK",
+      "index": "Afeces_dap",
+      "unit": null,
+      "task": "task_scan_po_renal_scan_20__glc9",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_renal_scan_20__glc9__Afeces_daptot": {
+      "type": "TASK",
+      "index": "Afeces_daptot",
+      "unit": null,
+      "task": "task_scan_po_renal_scan_20__glc9",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_renal_scan_20__glc9__KI__D3GEX": {
+      "type": "TASK",
+      "index": "KI__D3GEX",
+      "unit": null,
+      "task": "task_scan_po_renal_scan_20__glc9",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_renal_scan_20__glc9__KI__DAPEX": {
+      "type": "TASK",
+      "index": "KI__DAPEX",
+      "unit": null,
+      "task": "task_scan_po_renal_scan_20__glc9",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_renal_scan_20__glc9__KI__GLCEX": {
+      "type": "TASK",
+      "index": "KI__GLCEX",
+      "unit": null,
+      "task": "task_scan_po_renal_scan_20__glc9",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_renal_scan_20__glc9__KI__f_renal_function": {
+      "type": "TASK",
+      "index": "KI__f_renal_function",
+      "unit": null,
+      "task": "task_scan_po_renal_scan_20__glc9",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_renal_scan_20__glc9__f_cirrhosis": {
+      "type": "TASK",
+      "index": "f_cirrhosis",
+      "unit": null,
+      "task": "task_scan_po_renal_scan_20__glc9",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_renal_scan_20__glc9__GU__f_absorption": {
+      "type": "TASK",
+      "index": "GU__f_absorption",
+      "unit": null,
+      "task": "task_scan_po_renal_scan_20__glc9",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_renal_scan_20__glc9__f_ugt1a9": {
+      "type": "TASK",
+      "index": "f_ugt1a9",
+      "unit": null,
+      "task": "task_scan_po_renal_scan_20__glc9",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_renal_scan_20__glc11__time": {
+      "type": "TASK",
+      "index": "time",
+      "unit": null,
+      "task": "task_scan_po_renal_scan_20__glc11",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_renal_scan_20__glc11__IVDOSE_dap": {
+      "type": "TASK",
+      "index": "IVDOSE_dap",
+      "unit": null,
+      "task": "task_scan_po_renal_scan_20__glc11",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_renal_scan_20__glc11__PODOSE_dap": {
+      "type": "TASK",
+      "index": "PODOSE_dap",
+      "unit": null,
+      "task": "task_scan_po_renal_scan_20__glc11",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_renal_scan_20__glc11__Cve_daptot": {
+      "type": "TASK",
+      "index": "Cve_daptot",
+      "unit": null,
+      "task": "task_scan_po_renal_scan_20__glc11",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_renal_scan_20__glc11__Cve_dap": {
+      "type": "TASK",
+      "index": "Cve_dap",
+      "unit": null,
+      "task": "task_scan_po_renal_scan_20__glc11",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_renal_scan_20__glc11__Cve_d3g": {
+      "type": "TASK",
+      "index": "Cve_d3g",
+      "unit": null,
+      "task": "task_scan_po_renal_scan_20__glc11",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_renal_scan_20__glc11__KI__glc_ext": {
+      "type": "TASK",
+      "index": "KI__glc_ext",
+      "unit": null,
+      "task": "task_scan_po_renal_scan_20__glc11",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_renal_scan_20__glc11__LI__dap": {
+      "type": "TASK",
+      "index": "LI__dap",
+      "unit": null,
+      "task": "task_scan_po_renal_scan_20__glc11",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_renal_scan_20__glc11__LI__d3g": {
+      "type": "TASK",
+      "index": "LI__d3g",
+      "unit": null,
+      "task": "task_scan_po_renal_scan_20__glc11",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_renal_scan_20__glc11__Aurine_daptot": {
+      "type": "TASK",
+      "index": "Aurine_daptot",
+      "unit": null,
+      "task": "task_scan_po_renal_scan_20__glc11",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_renal_scan_20__glc11__Aurine_dap": {
+      "type": "TASK",
+      "index": "Aurine_dap",
+      "unit": null,
+      "task": "task_scan_po_renal_scan_20__glc11",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_renal_scan_20__glc11__Aurine_d3g": {
+      "type": "TASK",
+      "index": "Aurine_d3g",
+      "unit": null,
+      "task": "task_scan_po_renal_scan_20__glc11",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_renal_scan_20__glc11__KI__glc_urine": {
+      "type": "TASK",
+      "index": "KI__glc_urine",
+      "unit": null,
+      "task": "task_scan_po_renal_scan_20__glc11",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_renal_scan_20__glc11__KI__UGE": {
+      "type": "TASK",
+      "index": "KI__UGE",
+      "unit": null,
+      "task": "task_scan_po_renal_scan_20__glc11",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_renal_scan_20__glc11__KI__RTG": {
+      "type": "TASK",
+      "index": "KI__RTG",
+      "unit": null,
+      "task": "task_scan_po_renal_scan_20__glc11",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_renal_scan_20__glc11__Afeces_dap": {
+      "type": "TASK",
+      "index": "Afeces_dap",
+      "unit": null,
+      "task": "task_scan_po_renal_scan_20__glc11",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_renal_scan_20__glc11__Afeces_daptot": {
+      "type": "TASK",
+      "index": "Afeces_daptot",
+      "unit": null,
+      "task": "task_scan_po_renal_scan_20__glc11",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_renal_scan_20__glc11__KI__D3GEX": {
+      "type": "TASK",
+      "index": "KI__D3GEX",
+      "unit": null,
+      "task": "task_scan_po_renal_scan_20__glc11",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_renal_scan_20__glc11__KI__DAPEX": {
+      "type": "TASK",
+      "index": "KI__DAPEX",
+      "unit": null,
+      "task": "task_scan_po_renal_scan_20__glc11",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_renal_scan_20__glc11__KI__GLCEX": {
+      "type": "TASK",
+      "index": "KI__GLCEX",
+      "unit": null,
+      "task": "task_scan_po_renal_scan_20__glc11",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_renal_scan_20__glc11__KI__f_renal_function": {
+      "type": "TASK",
+      "index": "KI__f_renal_function",
+      "unit": null,
+      "task": "task_scan_po_renal_scan_20__glc11",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_renal_scan_20__glc11__f_cirrhosis": {
+      "type": "TASK",
+      "index": "f_cirrhosis",
+      "unit": null,
+      "task": "task_scan_po_renal_scan_20__glc11",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_renal_scan_20__glc11__GU__f_absorption": {
+      "type": "TASK",
+      "index": "GU__f_absorption",
+      "unit": null,
+      "task": "task_scan_po_renal_scan_20__glc11",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_renal_scan_20__glc11__f_ugt1a9": {
+      "type": "TASK",
+      "index": "f_ugt1a9",
+      "unit": null,
+      "task": "task_scan_po_renal_scan_20__glc11",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_renal_scan_20__glc13__time": {
+      "type": "TASK",
+      "index": "time",
+      "unit": null,
+      "task": "task_scan_po_renal_scan_20__glc13",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_renal_scan_20__glc13__IVDOSE_dap": {
+      "type": "TASK",
+      "index": "IVDOSE_dap",
+      "unit": null,
+      "task": "task_scan_po_renal_scan_20__glc13",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_renal_scan_20__glc13__PODOSE_dap": {
+      "type": "TASK",
+      "index": "PODOSE_dap",
+      "unit": null,
+      "task": "task_scan_po_renal_scan_20__glc13",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_renal_scan_20__glc13__Cve_daptot": {
+      "type": "TASK",
+      "index": "Cve_daptot",
+      "unit": null,
+      "task": "task_scan_po_renal_scan_20__glc13",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_renal_scan_20__glc13__Cve_dap": {
+      "type": "TASK",
+      "index": "Cve_dap",
+      "unit": null,
+      "task": "task_scan_po_renal_scan_20__glc13",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_renal_scan_20__glc13__Cve_d3g": {
+      "type": "TASK",
+      "index": "Cve_d3g",
+      "unit": null,
+      "task": "task_scan_po_renal_scan_20__glc13",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_renal_scan_20__glc13__KI__glc_ext": {
+      "type": "TASK",
+      "index": "KI__glc_ext",
+      "unit": null,
+      "task": "task_scan_po_renal_scan_20__glc13",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_renal_scan_20__glc13__LI__dap": {
+      "type": "TASK",
+      "index": "LI__dap",
+      "unit": null,
+      "task": "task_scan_po_renal_scan_20__glc13",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_renal_scan_20__glc13__LI__d3g": {
+      "type": "TASK",
+      "index": "LI__d3g",
+      "unit": null,
+      "task": "task_scan_po_renal_scan_20__glc13",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_renal_scan_20__glc13__Aurine_daptot": {
+      "type": "TASK",
+      "index": "Aurine_daptot",
+      "unit": null,
+      "task": "task_scan_po_renal_scan_20__glc13",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_renal_scan_20__glc13__Aurine_dap": {
+      "type": "TASK",
+      "index": "Aurine_dap",
+      "unit": null,
+      "task": "task_scan_po_renal_scan_20__glc13",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_renal_scan_20__glc13__Aurine_d3g": {
+      "type": "TASK",
+      "index": "Aurine_d3g",
+      "unit": null,
+      "task": "task_scan_po_renal_scan_20__glc13",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_renal_scan_20__glc13__KI__glc_urine": {
+      "type": "TASK",
+      "index": "KI__glc_urine",
+      "unit": null,
+      "task": "task_scan_po_renal_scan_20__glc13",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_renal_scan_20__glc13__KI__UGE": {
+      "type": "TASK",
+      "index": "KI__UGE",
+      "unit": null,
+      "task": "task_scan_po_renal_scan_20__glc13",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_renal_scan_20__glc13__KI__RTG": {
+      "type": "TASK",
+      "index": "KI__RTG",
+      "unit": null,
+      "task": "task_scan_po_renal_scan_20__glc13",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_renal_scan_20__glc13__Afeces_dap": {
+      "type": "TASK",
+      "index": "Afeces_dap",
+      "unit": null,
+      "task": "task_scan_po_renal_scan_20__glc13",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_renal_scan_20__glc13__Afeces_daptot": {
+      "type": "TASK",
+      "index": "Afeces_daptot",
+      "unit": null,
+      "task": "task_scan_po_renal_scan_20__glc13",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_renal_scan_20__glc13__KI__D3GEX": {
+      "type": "TASK",
+      "index": "KI__D3GEX",
+      "unit": null,
+      "task": "task_scan_po_renal_scan_20__glc13",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_renal_scan_20__glc13__KI__DAPEX": {
+      "type": "TASK",
+      "index": "KI__DAPEX",
+      "unit": null,
+      "task": "task_scan_po_renal_scan_20__glc13",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_renal_scan_20__glc13__KI__GLCEX": {
+      "type": "TASK",
+      "index": "KI__GLCEX",
+      "unit": null,
+      "task": "task_scan_po_renal_scan_20__glc13",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_renal_scan_20__glc13__KI__f_renal_function": {
+      "type": "TASK",
+      "index": "KI__f_renal_function",
+      "unit": null,
+      "task": "task_scan_po_renal_scan_20__glc13",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_renal_scan_20__glc13__f_cirrhosis": {
+      "type": "TASK",
+      "index": "f_cirrhosis",
+      "unit": null,
+      "task": "task_scan_po_renal_scan_20__glc13",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_renal_scan_20__glc13__GU__f_absorption": {
+      "type": "TASK",
+      "index": "GU__f_absorption",
+      "unit": null,
+      "task": "task_scan_po_renal_scan_20__glc13",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_renal_scan_20__glc13__f_ugt1a9": {
+      "type": "TASK",
+      "index": "f_ugt1a9",
+      "unit": null,
+      "task": "task_scan_po_renal_scan_20__glc13",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_renal_scan_20__glc15__time": {
+      "type": "TASK",
+      "index": "time",
+      "unit": null,
+      "task": "task_scan_po_renal_scan_20__glc15",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_renal_scan_20__glc15__IVDOSE_dap": {
+      "type": "TASK",
+      "index": "IVDOSE_dap",
+      "unit": null,
+      "task": "task_scan_po_renal_scan_20__glc15",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_renal_scan_20__glc15__PODOSE_dap": {
+      "type": "TASK",
+      "index": "PODOSE_dap",
+      "unit": null,
+      "task": "task_scan_po_renal_scan_20__glc15",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_renal_scan_20__glc15__Cve_daptot": {
+      "type": "TASK",
+      "index": "Cve_daptot",
+      "unit": null,
+      "task": "task_scan_po_renal_scan_20__glc15",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_renal_scan_20__glc15__Cve_dap": {
+      "type": "TASK",
+      "index": "Cve_dap",
+      "unit": null,
+      "task": "task_scan_po_renal_scan_20__glc15",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_renal_scan_20__glc15__Cve_d3g": {
+      "type": "TASK",
+      "index": "Cve_d3g",
+      "unit": null,
+      "task": "task_scan_po_renal_scan_20__glc15",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_renal_scan_20__glc15__KI__glc_ext": {
+      "type": "TASK",
+      "index": "KI__glc_ext",
+      "unit": null,
+      "task": "task_scan_po_renal_scan_20__glc15",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_renal_scan_20__glc15__LI__dap": {
+      "type": "TASK",
+      "index": "LI__dap",
+      "unit": null,
+      "task": "task_scan_po_renal_scan_20__glc15",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_renal_scan_20__glc15__LI__d3g": {
+      "type": "TASK",
+      "index": "LI__d3g",
+      "unit": null,
+      "task": "task_scan_po_renal_scan_20__glc15",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_renal_scan_20__glc15__Aurine_daptot": {
+      "type": "TASK",
+      "index": "Aurine_daptot",
+      "unit": null,
+      "task": "task_scan_po_renal_scan_20__glc15",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_renal_scan_20__glc15__Aurine_dap": {
+      "type": "TASK",
+      "index": "Aurine_dap",
+      "unit": null,
+      "task": "task_scan_po_renal_scan_20__glc15",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_renal_scan_20__glc15__Aurine_d3g": {
+      "type": "TASK",
+      "index": "Aurine_d3g",
+      "unit": null,
+      "task": "task_scan_po_renal_scan_20__glc15",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_renal_scan_20__glc15__KI__glc_urine": {
+      "type": "TASK",
+      "index": "KI__glc_urine",
+      "unit": null,
+      "task": "task_scan_po_renal_scan_20__glc15",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_renal_scan_20__glc15__KI__UGE": {
+      "type": "TASK",
+      "index": "KI__UGE",
+      "unit": null,
+      "task": "task_scan_po_renal_scan_20__glc15",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_renal_scan_20__glc15__KI__RTG": {
+      "type": "TASK",
+      "index": "KI__RTG",
+      "unit": null,
+      "task": "task_scan_po_renal_scan_20__glc15",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_renal_scan_20__glc15__Afeces_dap": {
+      "type": "TASK",
+      "index": "Afeces_dap",
+      "unit": null,
+      "task": "task_scan_po_renal_scan_20__glc15",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_renal_scan_20__glc15__Afeces_daptot": {
+      "type": "TASK",
+      "index": "Afeces_daptot",
+      "unit": null,
+      "task": "task_scan_po_renal_scan_20__glc15",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_renal_scan_20__glc15__KI__D3GEX": {
+      "type": "TASK",
+      "index": "KI__D3GEX",
+      "unit": null,
+      "task": "task_scan_po_renal_scan_20__glc15",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_renal_scan_20__glc15__KI__DAPEX": {
+      "type": "TASK",
+      "index": "KI__DAPEX",
+      "unit": null,
+      "task": "task_scan_po_renal_scan_20__glc15",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_renal_scan_20__glc15__KI__GLCEX": {
+      "type": "TASK",
+      "index": "KI__GLCEX",
+      "unit": null,
+      "task": "task_scan_po_renal_scan_20__glc15",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_renal_scan_20__glc15__KI__f_renal_function": {
+      "type": "TASK",
+      "index": "KI__f_renal_function",
+      "unit": null,
+      "task": "task_scan_po_renal_scan_20__glc15",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_renal_scan_20__glc15__f_cirrhosis": {
+      "type": "TASK",
+      "index": "f_cirrhosis",
+      "unit": null,
+      "task": "task_scan_po_renal_scan_20__glc15",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_renal_scan_20__glc15__GU__f_absorption": {
+      "type": "TASK",
+      "index": "GU__f_absorption",
+      "unit": null,
+      "task": "task_scan_po_renal_scan_20__glc15",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_renal_scan_20__glc15__f_ugt1a9": {
+      "type": "TASK",
+      "index": "f_ugt1a9",
+      "unit": null,
+      "task": "task_scan_po_renal_scan_20__glc15",
       "dataset": null,
       "function": null,
       "variables": null

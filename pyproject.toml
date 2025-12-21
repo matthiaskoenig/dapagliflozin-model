@@ -36,8 +36,8 @@ keywords = [
 dependencies = [
     "pkdb_analysis>=0.2.2",
     "statsmodels",
-    "sbmlutils>=0.9.3",
-    "sbmlsim @ git+https://github.com/matthiaskoenig/sbmlsim.git@6cde25e8e43090df6b091d6618b089b43f50255a"
+    "sbmlutils>=0.9.4",
+    "sbmlsim @ git+https://github.com/matthiaskoenig/sbmlsim.git@b42df60231ec25c2c886931ca9c98cb33c1303ef"
 ]
 [project.scripts]
 create_nodes = "pkdb_data.management.commands:create_info_nodes_command"

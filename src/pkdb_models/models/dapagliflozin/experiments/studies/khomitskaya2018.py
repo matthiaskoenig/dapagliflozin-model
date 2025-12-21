@@ -88,7 +88,7 @@ class Khomitskaya2018(DapagliflozinSimulationExperiment):
         fig = Figure(
             experiment=self,
             sid="Fig2",
-            name=f"{self.__class__.__name__}",
+            name=f"{self.__class__.__name__} (Healthy)",
         )
         plots = fig.create_plots(xaxis=Axis(self.label_time, unit=self.unit_time), legend=True)
         plots[0].set_yaxis(self.label_dap_plasma, unit=self.unit_dap)
@@ -116,13 +116,10 @@ class Khomitskaya2018(DapagliflozinSimulationExperiment):
                 color="tab:blue" if "MET" in intervention else "black",
             )
 
-        return {
-            fig.sid: fig,
-        }
+        return {fig.sid: fig,}
 
 
 if __name__ == "__main__":
-    # run_experiments(Khomitskaya2018, output_dir=Khomitskaya2018.__name__)
     out = dapagliflozin.RESULTS_PATH_SIMULATION / Khomitskaya2018.__name__
     out.mkdir(parents=True, exist_ok=True)
     run_experiments(Khomitskaya2018, output_dir=out)

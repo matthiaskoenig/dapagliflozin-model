@@ -32,6 +32,17 @@ _m = Model(
     creators=templates.creators,
     units=U,
     model_units=templates.model_units,
+    annotations=[
+        # tissue
+        (BQB.OCCURS_IN, "fma/FMA:45615"),  # gut
+        (BQB.OCCURS_IN, "bto/BTO:0000545"),  # gut
+        (BQB.OCCURS_IN, "ncit/C12736"),  # intestine
+        (BQB.OCCURS_IN, "fma/FMA:7199"),  # intestine
+        (BQB.OCCURS_IN, "bto/BTO:0000648"),  # intestine
+
+        (BQB.HAS_PROPERTY, "ncit/C79369"),  # Pharmacokinetics: Absorption
+        (BQB.HAS_PROPERTY, "ncit/C79372"),  # Pharmacokinetics: Excretion
+    ] + templates.model_annotations
 )
 
 _m.compartments = [
@@ -72,13 +83,13 @@ _m.compartments = [
         port=True,
         annotations=annotations.compartments["feces"],
     ),
-    Compartment(
-        "Ventero",
-        1.0,
-        name="intestinal lining (enterocytes)",
-        sboTerm=SBO.PHYSICAL_COMPARTMENT,
-        unit=U.liter,
-    ),
+    # Compartment(
+    #     "Ventero",
+    #     1.0,
+    #     name="intestinal lining (enterocytes)",
+    #     sboTerm=SBO.PHYSICAL_COMPARTMENT,
+    #     unit=U.liter,
+    # ),
     Compartment(
         "Vapical",
         np.nan,
@@ -88,15 +99,15 @@ _m.compartments = [
         spatialDimensions=2,
         annotations=annotations.compartments["apical"],
     ),
-    Compartment(
-        "Vbaso",
-        np.nan,
-        name="basolateral membrane (intestinal membrane enterocytes)",
-        sboTerm=SBO.PHYSICAL_COMPARTMENT,
-        unit=U.m2,
-        spatialDimensions=2,
-        annotations=annotations.compartments["basolateral"],
-    ),
+    # Compartment(
+    #     "Vbaso",
+    #     np.nan,
+    #     name="basolateral membrane (intestinal membrane enterocytes)",
+    #     sboTerm=SBO.PHYSICAL_COMPARTMENT,
+    #     unit=U.m2,
+    #     spatialDimensions=2,
+    #     annotations=annotations.compartments["basolateral"],
+    # ),
     Compartment(
         "Vstomach",
         metaId="meta_Vstomach",
@@ -166,7 +177,7 @@ _m.parameters = [
         U.dimensionless,
         constant=True,
         sboTerm=SBO.QUANTITATIVE_SYSTEMS_DESCRIPTION_PARAMETER,
-        name=f"fraction absorbed dapagliflozin",
+        name=f"fraction absorbed dap",
         notes="""
         Fraction absorbed, i.e., only a fraction of the dapagliflozin in the intestinal lumen
         is absorbed. This parameter determines how much of the dapagliflozin is excreted.
@@ -180,14 +191,14 @@ _m.parameters = [
         "DAPABS_k",
         0.059464824495600456,
         unit=U.per_min,
-        name="rate of dapagliflozin absorption",
+        name="absorption rate dap",
         sboTerm=SBO.KINETIC_CONSTANT,
     ),
     Parameter(
         "f_absorption",
         1,
         unit=U.dimensionless,
-        name="scaling factor for absorption rate",
+        name="scaling factor absorption rate dap",
         sboTerm=SBO.KINETIC_CONSTANT,
         notes="""1.0: normal absorption corresponding to tablet under fasting conditions.
         
@@ -245,7 +256,7 @@ _m.parameters.extend([
         U.per_hr,
         constant=True,
         sboTerm=SBO.QUANTITATIVE_SYSTEMS_DESCRIPTION_PARAMETER,
-        name=f"Ka_dis [1/hr] dissolution dapagliflozin",
+        name=f"dissolution rate dap",
         port=True
     ),
     Parameter(

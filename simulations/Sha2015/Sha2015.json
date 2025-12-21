@@ -1,7 +1,7 @@
 {
   "experiment_id": "Sha2015",
   "base_path": "/home/mkoenig/git/pkdb_models/pkdb_models/models/dapagliflozin",
-  "data_path": "[PosixPath('/home/mkoenig/git/pkdb_data/studies/dapagliflozin'), PosixPath('/home/mkoenig/git/pkdb_data/studies/canagliflozin')]",
+  "data_path": "[PosixPath('/home/mkoenig/git/pkdb_models/pkdb_models/models/dapagliflozin/data/dapagliflozin'), PosixPath('/home/mkoenig/git/pkdb_models/pkdb_models/models/dapagliflozin/data/canagliflozin')]",
   "models": {
     "model": {
       "sid": null,
@@ -39,7 +39,7 @@
               "_units": "kilogram"
             },
             "[KI__glc_ext]": {
-              "_magnitude": 5.000000000000001,
+              "_magnitude": 5.0,
               "_units": "KI__mmole / liter"
             },
             "KI__f_renal_function": {
@@ -285,9 +285,9 @@
     }
   },
   "figures": {
-    "dapagliflozin plasma": {
-      "sid": "dapagliflozin plasma",
-      "name": "Sha2015",
+    "Sha2015_plasma": {
+      "sid": "Sha2015_plasma",
+      "name": "Sha2015 (Healthy)",
       "num_rows": 1,
       "num_cols": 1,
       "width": 7.0,
@@ -297,10 +297,10 @@
           "sid": null,
           "name": null,
           "plot": {
-            "sid": "dapagliflozin plasma__plot0",
+            "sid": "Sha2015_plasma__plot0",
             "name": null,
             "xaxis": {
-              "sid": "dapagliflozin plasma__plot0_xaxis",
+              "sid": "Sha2015_plasma__plot0_xaxis",
               "name": "time [hr]",
               "label": "time",
               "unit": "hr",
@@ -312,7 +312,7 @@
               "ticks_visible": true
             },
             "yaxis": {
-              "sid": "dapagliflozin plasma__plot0_yaxis",
+              "sid": "Sha2015_plasma__plot0_yaxis",
               "name": "dapagliflozin\nplasma [\u00b5M]",
               "label": "dapagliflozin\nplasma",
               "unit": "\u00b5M",
@@ -329,8 +329,8 @@
             "title_visible": true,
             "curves": [
               {
-                "sid": "dapagliflozin plasma__plot0_curve0",
-                "name": "sim dap 10 mg",
+                "sid": "Sha2015_plasma__plot0_curve0",
+                "name": "10 mg PO",
                 "x": "task_po_dap10__time",
                 "y": "task_po_dap10__Cve_dap",
                 "xerr": null,
@@ -360,8 +360,8 @@
                 "order": 0
               },
               {
-                "sid": "dapagliflozin plasma__plot0_curve1",
-                "name": "dap 10 mg\u00b1SD (n=54)",
+                "sid": "Sha2015_plasma__plot0_curve1",
+                "name": "10 mg PO\u00b1SD (n=54)",
                 "x": "dapagliflozin_DAP10__time",
                 "y": "dapagliflozin_DAP10__mean",
                 "xerr": null,
@@ -400,9 +400,9 @@
         }
       ]
     },
-    "Fig_uge": {
-      "sid": "Fig_uge",
-      "name": "Sha2015",
+    "Sha2015_uge": {
+      "sid": "Sha2015_uge",
+      "name": "Sha2015 (Healthy)",
       "num_rows": 1,
       "num_cols": 1,
       "width": 7.0,
@@ -412,10 +412,10 @@
           "sid": null,
           "name": null,
           "plot": {
-            "sid": "Fig_uge__plot0",
+            "sid": "Sha2015_uge__plot0",
             "name": null,
             "xaxis": {
-              "sid": "Fig_uge__plot0_xaxis",
+              "sid": "Sha2015_uge__plot0_xaxis",
               "name": "time [hr]",
               "label": "time",
               "unit": "hr",
@@ -427,7 +427,7 @@
               "ticks_visible": true
             },
             "yaxis": {
-              "sid": "Fig_uge__plot0_yaxis",
+              "sid": "Sha2015_uge__plot0_yaxis",
               "name": "UGE [g]",
               "label": "UGE",
               "unit": "g",
@@ -444,8 +444,8 @@
             "title_visible": true,
             "curves": [
               {
-                "sid": "Fig_uge__plot0_curve0",
-                "name": "Sim 10 mg",
+                "sid": "Sha2015_uge__plot0_curve0",
+                "name": "10 mg PO",
                 "x": "task_po_dap10__time",
                 "y": "task_po_dap10__KI__UGE",
                 "xerr": null,
@@ -475,8 +475,8 @@
                 "order": 0
               },
               {
-                "sid": "Fig_uge__plot0_curve1",
-                "name": "UGE 10 mg\u00b1SD (n=54)",
+                "sid": "Sha2015_uge__plot0_curve1",
+                "name": "10 mg PO\u00b1SD (n=54)",
                 "x": "glucose_cumulative_amount_DAP10__time",
                 "y": "glucose_cumulative_amount_DAP10__mean",
                 "xerr": null,
@@ -515,9 +515,9 @@
         }
       ]
     },
-    "Fig_rtg": {
-      "sid": "Fig_rtg",
-      "name": "Sha2015",
+    "Sha2015_rtg": {
+      "sid": "Sha2015_rtg",
+      "name": "Sha2015 (Healthy)",
       "num_rows": 1,
       "num_cols": 1,
       "width": 7.0,
@@ -527,10 +527,10 @@
           "sid": null,
           "name": null,
           "plot": {
-            "sid": "Fig_rtg__plot0",
+            "sid": "Sha2015_rtg__plot0",
             "name": null,
             "xaxis": {
-              "sid": "Fig_rtg__plot0_xaxis",
+              "sid": "Sha2015_rtg__plot0_xaxis",
               "name": "time [hr]",
               "label": "time",
               "unit": "hr",
@@ -542,7 +542,7 @@
               "ticks_visible": true
             },
             "yaxis": {
-              "sid": "Fig_rtg__plot0_yaxis",
+              "sid": "Sha2015_rtg__plot0_yaxis",
               "name": "RTG [mM]",
               "label": "RTG",
               "unit": "mM",
@@ -559,8 +559,8 @@
             "title_visible": true,
             "curves": [
               {
-                "sid": "Fig_rtg__plot0_curve0",
-                "name": "Sim 10 mg",
+                "sid": "Sha2015_rtg__plot0_curve0",
+                "name": "10 mg PO",
                 "x": "task_po_dap10__time",
                 "y": "task_po_dap10__KI__RTG",
                 "xerr": null,
@@ -590,8 +590,8 @@
                 "order": 0
               },
               {
-                "sid": "Fig_rtg__plot0_curve1",
-                "name": "RTG 10 mg\u00b1SD (n=54)",
+                "sid": "Sha2015_rtg__plot0_curve1",
+                "name": "10 mg PO\u00b1SD (n=54)",
                 "x": "renal_threshold_DAP10__time",
                 "y": "renal_threshold_DAP10__mean",
                 "xerr": null,

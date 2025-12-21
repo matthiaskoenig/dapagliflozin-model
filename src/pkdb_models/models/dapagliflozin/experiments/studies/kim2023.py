@@ -120,7 +120,7 @@ class Kim2023(DapagliflozinSimulationExperiment):
             sid="Fig2_S2",
             num_rows=1,
             num_cols=2,
-            name=f"{self.__class__.__name__}",
+            name=f"{self.__class__.__name__} (Healthy)",
         )
         plots = fig.create_plots(xaxis=Axis(self.label_time, unit=self.unit_time), legend=True)
         plots[0].set_yaxis(self.label_dap_plasma, unit=self.unit_dap)
@@ -156,13 +156,10 @@ class Kim2023(DapagliflozinSimulationExperiment):
                     linestyle=linestyle,
                 )
 
-        return {
-            fig.sid: fig,
-        }
+        return {fig.sid: fig,}
 
 
 if __name__ == "__main__":
-    # run_experiments(Kim2023, output_dir=Kim2023.__name__)
     out = dapagliflozin.RESULTS_PATH_SIMULATION / Kim2023.__name__
     out.mkdir(parents=True, exist_ok=True)
     run_experiments(Kim2023, output_dir=out)

@@ -47,18 +47,22 @@
             <h2>Figures</h2>
             <p>
             <ul>
-                <li><strong>Fig1</strong>: <a href="Yang2013_Fig1.svg">Yang2013_Fig1.svg</a></li>
-                <li><strong>Fig2</strong>: <a href="Yang2013_Fig2.svg">Yang2013_Fig2.svg</a></li>
+                <li><strong>Fig1_plasma</strong>: <a href="Yang2013_Fig1_plasma.svg">Yang2013_Fig1_plasma.svg</a></li>
+                <li><strong>Fig1_d3g</strong>: <a href="Yang2013_Fig1_d3g.svg">Yang2013_Fig1_d3g.svg</a></li>
+                <li><strong>Fig1_uge</strong>: <a href="Yang2013_Fig1_uge.svg">Yang2013_Fig1_uge.svg</a></li>
+                <li><strong>Fig2_plasma</strong>: <a href="Yang2013_Fig2_plasma.svg">Yang2013_Fig2_plasma.svg</a></li>
+                <li><strong>Fig2_d3g</strong>: <a href="Yang2013_Fig2_d3g.svg">Yang2013_Fig2_d3g.svg</a></li>
+                <li><strong>Fig2_uge</strong>: <a href="Yang2013_Fig2_uge.svg">Yang2013_Fig2_uge.svg</a></li>
             </ul>
             </p>
 
-            <h3>Fig1</h3>
+            <h3>Fig1_plasma</h3>
             <p>
             <table>
                 <tr>
                     <td>
-                        <!--<v-img src="Yang2013_Fig1.svg" max-width="600" width="600"></v-img>-->
-                        <img src="Yang2013_Fig1.svg" width="600">
+                        <!--<v-img src="Yang2013_Fig1_plasma.svg" max-width="600" width="600"></v-img>-->
+                        <img src="Yang2013_Fig1_plasma.svg" width="600">
                     </td>
                     <!--
                     <td>
@@ -67,13 +71,73 @@
                 </tr>
             </table>
             </p>
-            <h3>Fig2</h3>
+            <h3>Fig1_d3g</h3>
             <p>
             <table>
                 <tr>
                     <td>
-                        <!--<v-img src="Yang2013_Fig2.svg" max-width="600" width="600"></v-img>-->
-                        <img src="Yang2013_Fig2.svg" width="600">
+                        <!--<v-img src="Yang2013_Fig1_d3g.svg" max-width="600" width="600"></v-img>-->
+                        <img src="Yang2013_Fig1_d3g.svg" width="600">
+                    </td>
+                    <!--
+                    <td>
+                    </td>
+                    -->
+                </tr>
+            </table>
+            </p>
+            <h3>Fig1_uge</h3>
+            <p>
+            <table>
+                <tr>
+                    <td>
+                        <!--<v-img src="Yang2013_Fig1_uge.svg" max-width="600" width="600"></v-img>-->
+                        <img src="Yang2013_Fig1_uge.svg" width="600">
+                    </td>
+                    <!--
+                    <td>
+                    </td>
+                    -->
+                </tr>
+            </table>
+            </p>
+            <h3>Fig2_plasma</h3>
+            <p>
+            <table>
+                <tr>
+                    <td>
+                        <!--<v-img src="Yang2013_Fig2_plasma.svg" max-width="600" width="600"></v-img>-->
+                        <img src="Yang2013_Fig2_plasma.svg" width="600">
+                    </td>
+                    <!--
+                    <td>
+                    </td>
+                    -->
+                </tr>
+            </table>
+            </p>
+            <h3>Fig2_d3g</h3>
+            <p>
+            <table>
+                <tr>
+                    <td>
+                        <!--<v-img src="Yang2013_Fig2_d3g.svg" max-width="600" width="600"></v-img>-->
+                        <img src="Yang2013_Fig2_d3g.svg" width="600">
+                    </td>
+                    <!--
+                    <td>
+                    </td>
+                    -->
+                </tr>
+            </table>
+            </p>
+            <h3>Fig2_uge</h3>
+            <p>
+            <table>
+                <tr>
+                    <td>
+                        <!--<v-img src="Yang2013_Fig2_uge.svg" max-width="600" width="600"></v-img>-->
+                        <img src="Yang2013_Fig2_uge.svg" width="600">
                     </td>
                     <!--
                     <td>
@@ -88,21 +152,17 @@
                 <a href="../../../../experiments/studies/yang2013.py">../../../../experiments/studies/yang2013.py</a>
             <pre>
 <code class="python">from typing import Dict
-
 from sbmlsim.data import DataSet, load_pkdb_dataframe
 from sbmlsim.fit import FitMapping, FitData
 from sbmlutils.console import console
-
-from pkdb_models.models.dapagliflozin.experiments.base_experiment import (
-    DapagliflozinSimulationExperiment,
-)
+from pkdb_models.models.dapagliflozin.experiments.base_experiment import DapagliflozinSimulationExperiment
 from pkdb_models.models.dapagliflozin.experiments.metadata import Tissue, Route, Dosing, ApplicationForm, Health, \
     Fasting, DapagliflozinMappingMetaData
-
 from sbmlsim.plot import Axis, Figure
 from sbmlsim.simulation import Timecourse, TimecourseSim
-
 from pkdb_models.models.dapagliflozin.helpers import run_experiments
+from pathlib import Path
+import pkdb_models.models.dapagliflozin as dapagliflozin
 
 
 class Yang2013(DapagliflozinSimulationExperiment):
@@ -110,11 +170,6 @@ class Yang2013(DapagliflozinSimulationExperiment):
 
     doses_single = [5, 10]
     doses_multi = [5, 10]
-    colors = {
-        5: "tab:blue",
-        10: "tab:orange",
-    }
-
     info = [
         ("[Cve_dap]", "dapagliflozin"),
         ("[Cve_d3g]", "dapagliflozin 3-o-glucuronide"),
@@ -131,14 +186,12 @@ class Yang2013(DapagliflozinSimulationExperiment):
             df = load_pkdb_dataframe(f"{self.sid}_{fig_id}", data_path=self.data_path)
             for label, df_label in df.groupby("label"):
                 dset = DataSet.from_df(df_label, self.ureg)
-
                 # unit conversion to mole/l
                 if label.startswith("dapagliflozin_"):
                     dset.unit_conversion("mean", 1 / self.Mr.dap)
                 elif label.startswith("dapagliflozin 3-o-glucuronide"):
                     dset.unit_conversion("mean", 1 / self.Mr.d3g)
                 dsets[f"{label}"] = dset
-
         # console.print(dsets)
         # console.print(dsets.keys())
         return dsets
@@ -151,19 +204,17 @@ class Yang2013(DapagliflozinSimulationExperiment):
             tcsims[f"po_dap{dose}_single"] = TimecourseSim(
                 [Timecourse(
                     start=0,
-                    end=125 * 60,  # [min]
+                    end=100 * 60,  # [min]
                     steps=1000,
                     changes={
                         **self.default_changes(),
-
                         # physiological changes
                         "BW": Q_(self.bodyweights[dose], "kg"),
                         "[KI__glc_ext]": Q_(self.fpg_healthy, "mM"),
                         "GU__f_absorption": Q_(self.fasting_map["fasted"], "dimensionless"),
                         "f_cirrhosis": Q_(self.cirrhosis_map["Control"], "dimensionless"),
                         "KI__f_renal_function": Q_(self.renal_map["Normal renal function"], "dimensionless"),
-
-                        # dose (IVDOSE, PODOSE)
+                        # dose
                         "PODOSE_dap": Q_(dose, "mg"),
                     },
                 )]
@@ -172,17 +223,23 @@ class Yang2013(DapagliflozinSimulationExperiment):
         for dose in self.doses_multi:
             tc0 = Timecourse(
                 start=0,
-                end=25 * 60,  # [min]
-                steps=500,
+                end=24 * 60,  # [min]
+                steps=50,
                 changes={
                     **self.default_changes(),
+                    ## physiological changes
+                    "[KI__glc_ext]": Q_(self.fpg_healthy, "mM"),
+                    "GU__f_absorption": Q_(self.fasting_map["fasted"], "dimensionless"),
+                    "f_cirrhosis": Q_(self.cirrhosis_map["Control"], "dimensionless"),
+                    "KI__f_renal_function": Q_(self.renal_map["Normal renal function"], "dimensionless"),
+                    # dose
                     "PODOSE_dap": Q_(dose, "mg"),
                 },
             )
             tc1 = Timecourse(
                 start=0,
                 end=24 * 60,  # [min]
-                steps=500,
+                steps=50,
                 changes={
                     "KI__glc_urine": Q_(0, "mmole"),  # reset UGE
                     "PODOSE_dap": Q_(dose, "mg"),
@@ -190,14 +247,13 @@ class Yang2013(DapagliflozinSimulationExperiment):
             )
             tc2 = Timecourse(
                 start=0,
-                end=125 * 60,  # [min]
-                steps=500,
+                end=100 * 60,  # [min]
+                steps=2000,
                 changes={
                     "KI__glc_urine": Q_(0, "mmole"),  # reset UGE
                     "PODOSE_dap": Q_(dose, "mg"),
                 },
             )
-
             tcsims[f"po_dap{dose}_multi"] = TimecourseSim(
                 [tc0] + [tc1 for _ in range(8)] + [tc2],
                 time_offset=-9 * 24 * 60,
@@ -205,14 +261,13 @@ class Yang2013(DapagliflozinSimulationExperiment):
         return tcsims
 
     def fit_mappings(self) -> Dict[str, FitMapping]:
-
         mappings = {}
         # Fig1
         for kp, data in enumerate(self.info):
             sid, prefix = data[0], data[1]
             for dose in self.doses_single:
                 tissue = Tissue.URINE if "cumulative" in prefix else Tissue.PLASMA
-                mappings[f"task_po_dap{dose}_{sid}"] = FitMapping(
+                mappings[f"task_po_dap{dose}_{sid}_single"] = FitMapping(
                     self,
                     reference=FitData(
                         self,
@@ -239,7 +294,7 @@ class Yang2013(DapagliflozinSimulationExperiment):
             sid, prefix = data[0], data[1]
             for dose in self.doses_multi:
                 tissue = Tissue.URINE if "cumulative" in prefix else Tissue.PLASMA
-                mappings[f"task_po_dap{dose}_{sid}"] = FitMapping(
+                mappings[f"task_po_dap{dose}_{sid}_multi"] = FitMapping(
                     self,
                     reference=FitData(
                         self,
@@ -271,97 +326,202 @@ class Yang2013(DapagliflozinSimulationExperiment):
         }
 
     def figure_single(self) -> Dict[str, Figure]:
+        figs: Dict[str, Figure] = {}
 
-        fig = Figure(
+        # Fig1 — DAP plasma
+        fig1_plasma = Figure(
             experiment=self,
-            sid="Fig1",
+            sid="Fig1_plasma",
             num_rows=1,
-            num_cols=3,
-            name=f"{self.__class__.__name__}",
+            num_cols=1,
+            name=f"{self.__class__.__name__} (Healthy)",
         )
-        plots = fig.create_plots(xaxis=Axis(self.label_time, unit=self.unit_time), legend=True)
-        plots[0].set_yaxis(self.label_dap_plasma, unit=self.unit_dap)
-        plots[1].set_yaxis(self.label_d3g_plasma, unit=self.unit_d3g)
-        plots[2].set_yaxis(self.label_uge, unit=self.unit_uge)
-        plots[0].xaxis.min = -2
-        plots[0].xaxis.max = 30
-        plots[1].xaxis.min = -2
-        plots[1].xaxis.max = 30
+        p = fig1_plasma.create_plots(xaxis=Axis(self.label_time, unit=self.unit_time), legend=True)[0]
+        p.set_yaxis(self.label_dap_plasma, unit=self.unit_dap)
+        p.xaxis.min = -2
+        p.xaxis.max = 30
+        for dose in self.doses_single:
+            p.add_data(
+                task=f"task_po_dap{dose}_single",
+                xid="time",
+                yid="[Cve_dap]",
+                label=f"{dose} mg PO",
+                color=self.dose_colors[dose],
+            )
+            p.add_data(
+                dataset=f"dapagliflozin_SD_DAP{dose}",
+                xid="time",
+                yid="mean",
+                yid_sd="mean_sd",
+                count="count",
+                label=f"{dose} mg PO",
+                color=self.dose_colors[dose],
+            )
+        figs[fig1_plasma.sid] = fig1_plasma
 
-        for kp, data in enumerate(self.info):
-            sid, prefix = data[0], data[1]
-            for dose in self.doses_single:
-                # simulation
-                plots[kp].add_data(
-                    task=f"task_po_dap{dose}_single",
-                    xid="time",
-                    yid=sid,
-                    label=f"Sim ({dose} mg)",
-                    color=self.colors[dose],
-                )
-                # data
-                plots[kp].add_data(
-                    dataset=f"{prefix}_SD_DAP{dose}",
-                    xid="time",
-                    yid="mean",
-                    yid_sd="mean_sd",
-                    count="count",
-                    label=f"dap_single {dose} mg",
-                    color=self.colors[dose]
-                )
+        # Fig1 — D3G plasma
+        fig1_d3g = Figure(
+            experiment=self,
+            sid="Fig1_d3g",
+            num_rows=1,
+            num_cols=1,
+            name=f"{self.__class__.__name__} (Healthy)",
+        )
+        p = fig1_d3g.create_plots(xaxis=Axis(self.label_time, unit=self.unit_time), legend=True)[0]
+        p.set_yaxis(self.label_d3g_plasma, unit=self.unit_d3g)
+        p.xaxis.min = -2
+        p.xaxis.max = 30
+        for dose in self.doses_single:
+            p.add_data(
+                task=f"task_po_dap{dose}_single",
+                xid="time",
+                yid="[Cve_d3g]",
+                label=f"{dose} mg PO",
+                color=self.dose_colors[dose],
+            )
+            p.add_data(
+                dataset=f"dapagliflozin 3-o-glucuronide_SD_DAP{dose}",
+                xid="time",
+                yid="mean",
+                yid_sd="mean_sd",
+                count="count",
+                label=f"{dose} mg PO",
+                color=self.dose_colors[dose],
+            )
+        figs[fig1_d3g.sid] = fig1_d3g
 
-        return {
-            fig.sid: fig,
-        }
+        # Fig1 — UGE
+        fig1_uge = Figure(
+            experiment=self,
+            sid="Fig1_uge",
+            num_rows=1,
+            num_cols=1,
+            name=f"{self.__class__.__name__} (Healthy)",
+        )
+        p = fig1_uge.create_plots(xaxis=Axis(self.label_time, unit=self.unit_time), legend=True)[0]
+        p.set_yaxis(self.label_uge, unit=self.unit_uge)
+        for dose in self.doses_single:
+            p.add_data(
+                task=f"task_po_dap{dose}_single",
+                xid="time",
+                yid="KI__UGE",
+                label=f"{dose} mg PO",
+                color=self.dose_colors[dose],
+            )
+            p.add_data(
+                dataset=f"glucose_cumulative amount_SD_DAP{dose}",
+                xid="time",
+                yid="mean",
+                yid_sd="mean_sd",
+                count="count",
+                label=f"{dose} mg PO",
+                color=self.dose_colors[dose],
+            )
+        figs[fig1_uge.sid] = fig1_uge
+
+        return figs
 
     def figure_multi(self) -> Dict[str, Figure]:
+        figs: Dict[str, Figure] = {}
 
-        fig = Figure(
+        # Fig2 — DAP plasma
+        fig2_plasma = Figure(
             experiment=self,
-            sid="Fig2",
+            sid="Fig2_plasma",
             num_rows=1,
-            num_cols=3,
-            name=f"{self.__class__.__name__}",
+            num_cols=1,
+            name=f"{self.__class__.__name__} (Healthy)",
         )
-        plots = fig.create_plots(xaxis=Axis(self.label_time, unit=self.unit_time), legend=True)
-        plots[0].set_yaxis(self.label_dap_plasma, unit=self.unit_dap)
-        plots[1].set_yaxis(self.label_d3g_plasma, unit=self.unit_d3g)
-        plots[2].set_yaxis(self.label_uge, unit=self.unit_uge)
-        plots[0].xaxis.min = -24
-        plots[0].xaxis.max = 30
-        plots[1].xaxis.min = -24
-        plots[1].xaxis.max = 30
+        p = fig2_plasma.create_plots(xaxis=Axis(self.label_time, unit=self.unit_time), legend=True)[0]
+        p.set_yaxis(self.label_dap_plasma, unit=self.unit_dap)
+        p.xaxis.min = -24
+        p.xaxis.max = 30
+        for dose in self.doses_multi:
+            p.add_data(
+                task=f"task_po_dap{dose}_multi",
+                xid="time",
+                yid="[Cve_dap]",
+                label=f"{dose} mg PO",
+                color=self.dose_colors[dose],
+            )
+            p.add_data(
+                dataset=f"dapagliflozin_MD_DAP{dose}",
+                xid="time",
+                yid="mean",
+                yid_sd="mean_sd",
+                count="count",
+                label=f"{dose} mg PO",
+                color=self.dose_colors[dose],
+            )
+        figs[fig2_plasma.sid] = fig2_plasma
 
-        for kp, data in enumerate(self.info):
-            sid, prefix = data[0], data[1]
-            for dose in self.doses_multi:
-                # simulation
-                plots[kp].add_data(
-                    task=f"task_po_dap{dose}_multi",
-                    xid="time",
-                    yid=sid,
-                    label=f"Sim ({dose} mg)",
-                    color=self.colors[dose]
-                )
-                # data
-                plots[kp].add_data(
-                    dataset=f"{prefix}_MD_DAP{dose}",
-                    xid="time",
-                    yid="mean",
-                    yid_sd="mean_sd",
-                    count="count",
-                    label=f"dap_multi {dose} mg",
-                    color=self.colors[dose]
-                )
+        # Fig2 — D3G plasma
+        fig2_d3g = Figure(
+            experiment=self,
+            sid="Fig2_d3g",
+            num_rows=1,
+            num_cols=1,
+            name=f"{self.__class__.__name__} (Healthy)",
+        )
+        p = fig2_d3g.create_plots(xaxis=Axis(self.label_time, unit=self.unit_time), legend=True)[0]
+        p.set_yaxis(self.label_d3g_plasma, unit=self.unit_d3g)
+        p.xaxis.min = -24
+        p.xaxis.max = 30
+        for dose in self.doses_multi:
+            p.add_data(
+                task=f"task_po_dap{dose}_multi",
+                xid="time",
+                yid="[Cve_d3g]",
+                label=f"{dose} mg PO",
+                color=self.dose_colors[dose],
+            )
+            p.add_data(
+                dataset=f"dapagliflozin 3-o-glucuronide_MD_DAP{dose}",
+                xid="time",
+                yid="mean",
+                yid_sd="mean_sd",
+                count="count",
+                label=f"{dose} mg PO",
+                color=self.dose_colors[dose],
+            )
+        figs[fig2_d3g.sid] = fig2_d3g
 
-        return {
-            fig.sid: fig,
-        }
+        # Fig2 — UGE
+        fig2_uge = Figure(
+            experiment=self,
+            sid="Fig2_uge",
+            num_rows=1,
+            num_cols=1,
+            name=f"{self.__class__.__name__} (Healthy)",
+        )
+        p = fig2_uge.create_plots(xaxis=Axis(self.label_time, unit=self.unit_time), legend=True)[0]
+        p.set_yaxis(self.label_uge, unit=self.unit_uge)
+        for dose in self.doses_multi:
+            p.add_data(
+                task=f"task_po_dap{dose}_multi",
+                xid="time",
+                yid="KI__UGE",
+                label=f"{dose} mg PO",
+                color=self.dose_colors[dose],
+            )
+            p.add_data(
+                dataset=f"glucose_cumulative amount_MD_DAP{dose}",
+                xid="time",
+                yid="mean",
+                yid_sd="mean_sd",
+                count="count",
+                label=f"{dose} mg PO",
+                color=self.dose_colors[dose],
+            )
+        figs[fig2_uge.sid] = fig2_uge
+
+        return figs
 
 
 if __name__ == "__main__":
-    run_experiments(Yang2013, output_dir=Yang2013.__name__)
-</code>
+    out = dapagliflozin.RESULTS_PATH_SIMULATION / Yang2013.__name__
+    out.mkdir(parents=True, exist_ok=True)
+    run_experiments(Yang2013, output_dir=out)</code>
         </pre>
             </p>
 

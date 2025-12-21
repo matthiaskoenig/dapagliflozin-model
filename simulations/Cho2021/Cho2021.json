@@ -1,7 +1,7 @@
 {
   "experiment_id": "Cho2021",
   "base_path": "/home/mkoenig/git/pkdb_models/pkdb_models/models/dapagliflozin",
-  "data_path": "[PosixPath('/home/mkoenig/git/pkdb_data/studies/dapagliflozin'), PosixPath('/home/mkoenig/git/pkdb_data/studies/canagliflozin')]",
+  "data_path": "[PosixPath('/home/mkoenig/git/pkdb_models/pkdb_models/models/dapagliflozin/data/dapagliflozin'), PosixPath('/home/mkoenig/git/pkdb_models/pkdb_models/models/dapagliflozin/data/canagliflozin')]",
   "models": {
     "model": {
       "sid": null,
@@ -39,7 +39,7 @@
               "_units": "kilogram"
             },
             "[KI__glc_ext]": {
-              "_magnitude": 5.000000000000001,
+              "_magnitude": 5.0,
               "_units": "KI__mmole / liter"
             },
             "GU__f_absorption": {
@@ -287,7 +287,7 @@
   "figures": {
     "Fig6": {
       "sid": "Fig6",
-      "name": "Cho2021",
+      "name": "Cho2021 (Healthy)",
       "num_rows": 1,
       "num_cols": 1,
       "width": 7.0,
@@ -330,7 +330,7 @@
             "curves": [
               {
                 "sid": "Fig6__plot0_curve0",
-                "name": "dap",
+                "name": "10 mg PO",
                 "x": "task_po_dap10__time",
                 "y": "task_po_dap10__Cve_dap",
                 "xerr": null,
@@ -361,7 +361,7 @@
               },
               {
                 "sid": "Fig6__plot0_curve1",
-                "name": "DAP10\u00b1SD (n=37)",
+                "name": "Ref 10 mg PO\u00b1SD (n=37)",
                 "x": "dapagliflozin_DAP10__time",
                 "y": "dapagliflozin_DAP10__mean",
                 "xerr": null,
@@ -373,18 +373,18 @@
                   "base_style": null,
                   "line": {
                     "type": "DASH",
-                    "color": null,
+                    "color": "#000000ff",
                     "thickness": 1.0
                   },
                   "marker": {
                     "size": null,
                     "type": "SQUARE",
-                    "fill": null,
+                    "fill": "#000000ff",
                     "line_color": "#000000ff",
                     "line_thickness": null
                   },
                   "fill": {
-                    "color": null,
+                    "color": "#000000ff",
                     "second_color": null
                   }
                 },
@@ -392,7 +392,7 @@
               },
               {
                 "sid": "Fig6__plot0_curve2",
-                "name": "RC10\u00b1SD (n=37)",
+                "name": "Test 10 mg PO\u00b1SD (n=37)",
                 "x": "dapagliflozin_RC10__time",
                 "y": "dapagliflozin_RC10__mean",
                 "xerr": null,
@@ -404,18 +404,18 @@
                   "base_style": null,
                   "line": {
                     "type": "DASH",
-                    "color": null,
+                    "color": "#1f77b4ff",
                     "thickness": 1.0
                   },
                   "marker": {
                     "size": null,
                     "type": "SQUARE",
-                    "fill": null,
+                    "fill": "#1f77b4ff",
                     "line_color": "#000000ff",
                     "line_thickness": null
                   },
                   "fill": {
-                    "color": null,
+                    "color": "#1f77b4ff",
                     "second_color": null
                   }
                 },

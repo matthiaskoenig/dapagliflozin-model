@@ -1,4 +1,5 @@
 """Template definition."""
+from pymetadata.identifiers.miriam import BQM, BQB
 from sbmlutils.factory import *
 from datetime import datetime
 
@@ -38,6 +39,12 @@ creators = [
         organization="Humboldt-University Berlin, Institute for Theoretical Biology",
     ),
     Creator(
+        familyName="Elias",
+        givenName="Michelle",
+        email="michelleelias66@gmail.com",
+        organization="Humboldt-University Berlin, Institute for Biology",
+    ),
+    Creator(
        familyName="König",
        givenName="Matthias",
        email="koenigmx@hu-berlin.de",
@@ -46,6 +53,34 @@ creators = [
     ),
 ]
 
+
+model_annotations = [
+    # model
+    # (BQM.IS, "biomodels.db/MODEL2510140001"),
+
+    # taxonomy
+    (BQB.HAS_TAXON, "taxonomy/9606"),  # human
+    # (BQB.HAS_TAXON, "VTO:0011993"),  # human
+    (BQB.HAS_TAXON, "snomedct/337915000"),  # human
+
+    # modelling approach
+    (BQB.HAS_PROPERTY, "mamo/MAMO_0000046"),  # ordinary differential equation model
+
+    # biological process explained by model (GO/NCIT)
+    (BQB.HAS_PROPERTY, "ncit/C78126"),  # dapagliflozin
+    (BQB.HAS_PROPERTY, "ncit/C98083"),  # SGLT2 inhibitor
+
+    (BQB.HAS_PROPERTY, "ncit/C15299"),  # pharmacokinetics
+
+    # model relevance to a particular area
+    (BQB.HAS_PROPERTY, "ncit/C2985"),  # Diabetes Mellitus
+    (BQB.HAS_PROPERTY, "ncit/C99532"),  # Diabetes Therapy
+
+    # model reference
+    # (BQB.IS_DESCRIBED_BY, "doi/10.3389/fphar.2025.1686415"),
+    # (BQB.IS_DESCRIBED_BY, "doi/10.5281/physiome.28379193"),
+    (BQB.IS_DESCRIBED_BY, "doi/10.5281/zenodo.13987865"),
+]
 
 terms_of_use = """
     The content of this model has been carefully created in a manual research effort.

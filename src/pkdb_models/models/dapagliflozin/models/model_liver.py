@@ -33,6 +33,15 @@ _m = Model(
     creators=templates.creators,
     units=U,
     model_units=templates.model_units,
+    annotations=[
+        # tissue
+        (BQB.OCCURS_IN, "fma/FMA:7197"),
+        (BQB.OCCURS_IN, "bto/BTO:0000759"),
+        (BQB.OCCURS_IN, "ncit/C12392"),
+
+        (BQB.HAS_PROPERTY, "ncit/C79371"),  # Pharmacokinetics: Metabolism
+        (BQB.HAS_PROPERTY, "ncit/C79372"),  # Pharmacokinetics: Excretion
+    ] + templates.model_annotations
 )
 
 _m.compartments = [
@@ -186,6 +195,10 @@ _m.reactions = [
         formula=(
             "f_ugt1a9 * DAP2D3G_Vmax * Vli * dap/(dap + DAP2D3G_Km_dap)"
         ),
+        annotations=[
+            (BQB.IS, "uniprot/O60656"),
+        ]
+
     ),
     Reaction(
         sid="D3GEX",

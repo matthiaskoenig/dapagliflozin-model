@@ -1,7 +1,7 @@
 {
   "experiment_id": "FDAMB102006",
   "base_path": "/home/mkoenig/git/pkdb_models/pkdb_models/models/dapagliflozin",
-  "data_path": "[PosixPath('/home/mkoenig/git/pkdb_data/studies/dapagliflozin'), PosixPath('/home/mkoenig/git/pkdb_data/studies/canagliflozin')]",
+  "data_path": "[PosixPath('/home/mkoenig/git/pkdb_models/pkdb_models/models/dapagliflozin/data/dapagliflozin'), PosixPath('/home/mkoenig/git/pkdb_models/pkdb_models/models/dapagliflozin/data/canagliflozin')]",
   "models": {
     "model": {
       "sid": null,
@@ -39,7 +39,7 @@
               "_units": "kilogram"
             },
             "[KI__glc_ext]": {
-              "_magnitude": 5.000000000000001,
+              "_magnitude": 5.0,
               "_units": "KI__mmole / liter"
             },
             "GU__f_absorption": {
@@ -287,7 +287,7 @@
   "figures": {
     "Tab11": {
       "sid": "Tab11",
-      "name": "FDAMB102006 (healthy)",
+      "name": "FDAMB102006 (Healthy)",
       "num_rows": 1,
       "num_cols": 2,
       "width": 14.0,
@@ -313,8 +313,8 @@
             },
             "yaxis": {
               "sid": "Tab11__plot0_yaxis",
-              "name": "DAP + D3G\nurine [\u00b5mole]",
-              "label": "DAP + D3G\nurine",
+              "name": "Excretion urine [\u00b5mole]",
+              "label": "Excretion urine",
               "unit": "\u00b5mole",
               "scale": "LINEAR",
               "min": null,
@@ -330,7 +330,7 @@
             "curves": [
               {
                 "sid": "Tab11__plot0_curve0",
-                "name": "Sim total dapagliflozin_urine",
+                "name": "total, 50 mg PO ",
                 "x": "task_po_DAP50__time",
                 "y": "task_po_DAP50__Aurine_daptot",
                 "xerr": null,
@@ -361,7 +361,7 @@
               },
               {
                 "sid": "Tab11__plot0_curve1",
-                "name": "total dapagliflozin_urine\u00b1SD",
+                "name": "total, 50 mg PO \u00b1SD",
                 "x": "total dapagliflozin_urine__time",
                 "y": "total dapagliflozin_urine__mean",
                 "xerr": null,
@@ -392,7 +392,7 @@
               },
               {
                 "sid": "Tab11__plot0_curve2",
-                "name": "Sim dapagliflozin_urine",
+                "name": "dap, 50 mg PO ",
                 "x": "task_po_DAP50__time",
                 "y": "task_po_DAP50__Aurine_dap",
                 "xerr": null,
@@ -423,7 +423,7 @@
               },
               {
                 "sid": "Tab11__plot0_curve3",
-                "name": "dapagliflozin_urine\u00b1SD",
+                "name": "dap, 50 mg PO \u00b1SD",
                 "x": "dapagliflozin_urine__time",
                 "y": "dapagliflozin_urine__mean",
                 "xerr": null,
@@ -454,7 +454,7 @@
               },
               {
                 "sid": "Tab11__plot0_curve4",
-                "name": "Sim dapagliflozin 3-o-glucuronide_urine",
+                "name": "d3g, 50 mg PO ",
                 "x": "task_po_DAP50__time",
                 "y": "task_po_DAP50__Aurine_d3g",
                 "xerr": null,
@@ -485,7 +485,7 @@
               },
               {
                 "sid": "Tab11__plot0_curve5",
-                "name": "dapagliflozin 3-o-glucuronide_urine\u00b1SD",
+                "name": "d3g, 50 mg PO \u00b1SD",
                 "x": "dapagliflozin 3-o-glucuronide_urine__time",
                 "y": "dapagliflozin 3-o-glucuronide_urine__mean",
                 "xerr": null,
@@ -542,8 +542,8 @@
             },
             "yaxis": {
               "sid": "Tab11__plot1_yaxis",
-              "name": "DAP + D3G\nfeces [\u00b5mole]",
-              "label": "DAP + D3G\nfeces",
+              "name": "Excretion feces [\u00b5mole]",
+              "label": "Excretion feces",
               "unit": "\u00b5mole",
               "scale": "LINEAR",
               "min": null,
@@ -559,7 +559,7 @@
             "curves": [
               {
                 "sid": "Tab11__plot1_curve0",
-                "name": "Sim total dapagliflozin_feces",
+                "name": "total, 50 mg PO ",
                 "x": "task_po_DAP50__time",
                 "y": "task_po_DAP50__Afeces_daptot",
                 "xerr": null,
@@ -590,7 +590,7 @@
               },
               {
                 "sid": "Tab11__plot1_curve1",
-                "name": "total dapagliflozin_feces\u00b1SD",
+                "name": "total, 50 mg PO \u00b1SD",
                 "x": "total dapagliflozin_feces__time",
                 "y": "total dapagliflozin_feces__mean",
                 "xerr": null,
@@ -621,7 +621,7 @@
               },
               {
                 "sid": "Tab11__plot1_curve2",
-                "name": "Sim dapagliflozin_feces",
+                "name": "dap, 50 mg PO ",
                 "x": "task_po_DAP50__time",
                 "y": "task_po_DAP50__Afeces_dap",
                 "xerr": null,
@@ -652,7 +652,7 @@
               },
               {
                 "sid": "Tab11__plot1_curve3",
-                "name": "dapagliflozin_feces\u00b1SD",
+                "name": "dap, 50 mg PO \u00b1SD",
                 "x": "dapagliflozin_feces__time",
                 "y": "dapagliflozin_feces__mean",
                 "xerr": null,

@@ -105,7 +105,7 @@ class Kasichayanula2013a(DapagliflozinSimulationExperiment):
             sid="Fig1",
             num_rows=2,
             num_cols=2,
-            name=f"{self.__class__.__name__}",
+            name=f"{self.__class__.__name__} (Healthy)",
         )
         plots = fig.create_plots(xaxis=Axis(self.label_time, unit=self.unit_time), legend=True)
         plots[0].set_yaxis(self.label_dap_plasma, unit=self.unit_dap)
@@ -140,7 +140,6 @@ class Kasichayanula2013a(DapagliflozinSimulationExperiment):
 
 
 if __name__ == "__main__":
-    # run_experiments(Kasichayanula2013a, output_dir=Kasichayanula2013a.__name__)
     out = dapagliflozin.RESULTS_PATH_SIMULATION / Kasichayanula2013a.__name__
     out.mkdir(parents=True, exist_ok=True)
     run_experiments(Kasichayanula2013a, output_dir=out)

@@ -1,7 +1,7 @@
 {
   "experiment_id": "Boulton2013",
   "base_path": "/home/mkoenig/git/pkdb_models/pkdb_models/models/dapagliflozin",
-  "data_path": "[PosixPath('/home/mkoenig/git/pkdb_data/studies/dapagliflozin'), PosixPath('/home/mkoenig/git/pkdb_data/studies/canagliflozin')]",
+  "data_path": "[PosixPath('/home/mkoenig/git/pkdb_models/pkdb_models/models/dapagliflozin/data/dapagliflozin'), PosixPath('/home/mkoenig/git/pkdb_models/pkdb_models/models/dapagliflozin/data/canagliflozin')]",
   "models": {
     "model": {
       "sid": null,
@@ -43,7 +43,7 @@
               "_units": "kilogram"
             },
             "[KI__glc_ext]": {
-              "_magnitude": 5.000000000000001,
+              "_magnitude": 5.0,
               "_units": "KI__mmole / liter"
             },
             "GU__f_absorption": {
@@ -99,7 +99,7 @@
               "_units": "kilogram"
             },
             "[KI__glc_ext]": {
-              "_magnitude": 5.000000000000001,
+              "_magnitude": 5.0,
               "_units": "KI__mmole / liter"
             },
             "GU__f_absorption": {
@@ -573,7 +573,7 @@
   "figures": {
     "Fig1": {
       "sid": "Fig1",
-      "name": "Boulton2013",
+      "name": "Boulton2013 (Healthy)",
       "num_rows": 1,
       "num_cols": 2,
       "width": 14.0,
@@ -616,7 +616,7 @@
             "curves": [
               {
                 "sid": "Fig1__plot0_curve0",
-                "name": "dap",
+                "name": "10 mg PO",
                 "x": "task_po_iv_dap10__time",
                 "y": "task_po_iv_dap10__Cve_dap",
                 "xerr": null,
@@ -628,18 +628,18 @@
                   "base_style": null,
                   "line": {
                     "type": "SOLID",
-                    "color": "#d62728ff",
+                    "color": "#000000ff",
                     "thickness": 2.0
                   },
                   "marker": {
                     "size": null,
                     "type": "NONE",
-                    "fill": "#d62728ff",
+                    "fill": "#000000ff",
                     "line_color": "#000000ff",
                     "line_thickness": null
                   },
                   "fill": {
-                    "color": "#d62728ff",
+                    "color": "#000000ff",
                     "second_color": null
                   }
                 },
@@ -647,7 +647,7 @@
               },
               {
                 "sid": "Fig1__plot0_curve1",
-                "name": "DAP10\u00b1SD (n=7)",
+                "name": "10 mg PO\u00b1SD (n=7)",
                 "x": "dapagliflozin_DAP10__time",
                 "y": "dapagliflozin_DAP10__mean",
                 "xerr": null,
@@ -659,18 +659,18 @@
                   "base_style": null,
                   "line": {
                     "type": "DASH",
-                    "color": "#d62728ff",
+                    "color": "#000000ff",
                     "thickness": 1.0
                   },
                   "marker": {
                     "size": null,
                     "type": "SQUARE",
-                    "fill": "#d62728ff",
+                    "fill": "#000000ff",
                     "line_color": "#000000ff",
                     "line_thickness": null
                   },
                   "fill": {
-                    "color": "#d62728ff",
+                    "color": "#000000ff",
                     "second_color": null
                   }
                 },
@@ -721,7 +721,7 @@
             "curves": [
               {
                 "sid": "Fig1__plot1_curve0",
-                "name": "dap",
+                "name": "80 \u00b5g IV",
                 "x": "task_iv_dap008__time",
                 "y": "task_iv_dap008__Cve_dap",
                 "xerr": null,
@@ -733,18 +733,18 @@
                   "base_style": null,
                   "line": {
                     "type": "SOLID",
-                    "color": "#2ca02cff",
+                    "color": "#1f77b4ff",
                     "thickness": 2.0
                   },
                   "marker": {
                     "size": null,
                     "type": "NONE",
-                    "fill": "#2ca02cff",
+                    "fill": "#1f77b4ff",
                     "line_color": "#000000ff",
                     "line_thickness": null
                   },
                   "fill": {
-                    "color": "#2ca02cff",
+                    "color": "#1f77b4ff",
                     "second_color": null
                   }
                 },
@@ -752,7 +752,7 @@
               },
               {
                 "sid": "Fig1__plot1_curve1",
-                "name": "C14DAP008\u00b1SD (n=7)",
+                "name": "80 \u00b5g IV\u00b1SD (n=7)",
                 "x": "dapagliflozin_C14DAP008__time",
                 "y": "dapagliflozin_C14DAP008__mean",
                 "xerr": null,
@@ -764,18 +764,18 @@
                   "base_style": null,
                   "line": {
                     "type": "DASH",
-                    "color": "#2ca02cff",
+                    "color": "#1f77b4ff",
                     "thickness": 1.0
                   },
                   "marker": {
                     "size": null,
                     "type": "SQUARE",
-                    "fill": "#2ca02cff",
+                    "fill": "#1f77b4ff",
                     "line_color": "#000000ff",
                     "line_thickness": null
                   },
                   "fill": {
-                    "color": "#2ca02cff",
+                    "color": "#1f77b4ff",
                     "second_color": null
                   }
                 },

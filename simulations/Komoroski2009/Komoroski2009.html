@@ -138,27 +138,21 @@
                 <a href="../../../../experiments/studies/komoroski2009.py">../../../../experiments/studies/komoroski2009.py</a>
             <pre>
 <code class="python">from typing import Dict
-
 from sbmlsim.data import DataSet, load_pkdb_dataframe
 from sbmlsim.fit import FitMapping, FitData
 from sbmlutils.console import console
-
-from pkdb_models.models.dapagliflozin.experiments.base_experiment import (
-    DapagliflozinSimulationExperiment,
-)
+from pkdb_models.models.dapagliflozin.experiments.base_experiment import DapagliflozinSimulationExperiment
 from pkdb_models.models.dapagliflozin.experiments.metadata import Tissue, Route, Dosing, ApplicationForm, Health, \
     Fasting, DapagliflozinMappingMetaData
-
 from sbmlsim.plot import Axis, Figure
 from sbmlsim.simulation import Timecourse, TimecourseSim
-
 from pkdb_models.models.dapagliflozin.helpers import run_experiments
+from pathlib import  Path
+import pkdb_models.models.dapagliflozin as dapagliflozin
 
 
 class Komoroski2009(DapagliflozinSimulationExperiment):
     """Simulation experiment of Komoroski2009."""
-
-    #FIXME: Fig6
 
     conditions = ["fasted", "fed"]
     doses_multi = [2.5, 10, 20, 50, 100]
@@ -186,9 +180,7 @@ class Komoroski2009(DapagliflozinSimulationExperiment):
                 # unit conversion to mole/l
                 if label.startswith("dapagliflozin_"):
                     dset.unit_conversion("mean", 1 / self.Mr.dap)
-
                 dsets[f"{label}"] = dset
-
         # console.print(dsets)
         # console.print(dsets.keys())
         return dsets
@@ -205,20 +197,17 @@ class Komoroski2009(DapagliflozinSimulationExperiment):
                     steps=500,
                     changes={
                         **self.default_changes(),
-
                         # physiological changes
                         "BW": Q_(self.bodyweight, "kg"),
                         "GU__f_absorption": Q_(self.fasting_map[condition], "dimensionless"),
                         "[KI__glc_ext]": Q_(self.fpg_healthy, "mM"),
                         "f_cirrhosis": Q_(self.cirrhosis_map["Control"], "dimensionless"),
                         "KI__f_renal_function": Q_(self.renal_map["Normal renal function"], "dimensionless"),
-
                         # dose (IVDOSE, PODOSE)
                         "PODOSE_dap": Q_(250, "mg"),
                     },
                 )]
             )
-
         # single dose simulation
         for dose in self.doses_uge_single:
             tcsims[f"po_dap_{dose}_single"] = TimecourseSim(
@@ -237,7 +226,6 @@ class Komoroski2009(DapagliflozinSimulationExperiment):
                     },
                 )]
             )
-
         # multi dose simulation
         for dose in self.doses_multi:
             tc0 = Timecourse(
@@ -274,7 +262,6 @@ class Komoroski2009(DapagliflozinSimulationExperiment):
                 [tc0] + [tc1 for _ in range(12)] + [tc2],
                 time_offset=-24*60*13
             )
-
             # multi dose simulation
             for dose in self.doses_uge_multi:
                 tc0 = Timecourse(
@@ -317,7 +304,6 @@ class Komoroski2009(DapagliflozinSimulationExperiment):
         return tcsims
 
     def fit_mappings(self) -> Dict[str, FitMapping]:
-
         mappings = {}
         # fasting
         for condition in self.conditions:
@@ -343,7 +329,6 @@ class Komoroski2009(DapagliflozinSimulationExperiment):
                     fasting=Fasting.FASTED if condition == "fasted" else Fasting.FED,
                 ),
             )
-
         for condition in self.conditions:
                 mappings[f"fm_po_dap250_{condition}"] = FitMapping(
                     self,
@@ -461,10 +446,8 @@ class Komoroski2009(DapagliflozinSimulationExperiment):
                     fasting=Fasting.FASTED,
                 ),
             )
-
         # console.print(mappings)
         return mappings
-
 
     def figures(self) -> Dict[str, Figure]:
         return {
@@ -475,32 +458,31 @@ class Komoroski2009(DapagliflozinSimulationExperiment):
         }
 
     def figure_fasting(self) -> Dict[str, Figure]:
-
         fig = Figure(
             experiment=self,
             sid="Fig_fasting",
             num_rows=1,
             num_cols=2,
-            name=f"{self.__class__.__name__}",
+            name=f"{self.__class__.__name__} (Healthy)",
         )
+        Figure.legend_fontsize = 11
         plots = fig.create_plots(xaxis=Axis(self.label_time, unit=self.unit_time), legend=True)
         plots[0].set_yaxis(self.label_dap_plasma, unit=self.unit_dap)
         plots[1].set_yaxis(self.label_dap_urine, unit=self.unit_dap_urine)
-
         for condition in self.conditions:
             # simulation
             plots[0].add_data(
                 task=f"task_po_dap_250_{condition}",
                 xid="time",
                 yid=f"[Cve_dap]",
-                label=f"Sim dap {condition}",
+                label=f"{condition} - 250 mg PO",
                 color=self.fasting_colors[condition],
             )
             plots[1].add_data(
                 task=f"task_po_dap_250_{condition}",
                 xid="time",
                 yid=f"Aurine_dap",
-                label=f"Sim dap {condition}",
+                label=f"{condition} - 250 mg PO",
                 color=self.fasting_colors[condition],
             )
             # data
@@ -510,7 +492,7 @@ class Komoroski2009(DapagliflozinSimulationExperiment):
                 yid="mean",
                 yid_sd="mean_sd",
                 count="count",
-                label=f"dap {condition}",
+                label=f"{condition} - 250 mg PO",
                 color=self.fasting_colors[condition],
             )
             plots[1].add_data(
@@ -519,33 +501,29 @@ class Komoroski2009(DapagliflozinSimulationExperiment):
                 yid="mean",
                 yid_sd="mean_sd",
                 count="count",
-                label=f"dap {condition}",
+                label=f"{condition} - 250 mg PO",
                 color=self.fasting_colors[condition],
+                linestyle="",
             )
-
-        return {
-            fig.sid: fig,
-        }
+        return {fig.sid: fig}
 
     def figure_uge_single(self) -> Dict[str, Figure]:
         fig = Figure(
             experiment=self,
             sid="Fig_uge_single",
-            name=f"{self.__class__.__name__}",
+            name=f"{self.__class__.__name__} (Healthy)",
         )
-        plots = fig.create_plots(xaxis=Axis(self.label_time, unit=self.unit_time), legend=False)
+        Figure.legend_fontsize = 7
+        plots = fig.create_plots(xaxis=Axis(self.label_time, unit=self.unit_time), legend=True)
         plots[0].set_yaxis(self.label_uge, unit=self.unit_uge)
-
         for dose in self.doses_uge_single:
-            # simulation
             plots[0].add_data(
                 task=f"task_po_dap_{dose}_single",
                 xid="time",
                 yid=f"KI__UGE",
-                label=f"Sim {dose} mg",
-                color=self.colors[dose],
+                label=f"{dose} mg PO",
+                color=self.dose_colors[dose],
             )
-        # data
         for dose in self.doses_uge_single:
             plots[0].add_data(
                 dataset=f"glucose_cumulative amount_DAP{dose}",
@@ -553,13 +531,10 @@ class Komoroski2009(DapagliflozinSimulationExperiment):
                 yid="mean",
                 yid_sd=None,
                 count="count",
-                label=f"UGE {dose} mg",
-                color=self.colors[dose],
+                label=f"{dose} mg PO",
+                color=self.dose_colors[dose],
             )
-
-        return {
-            fig.sid: fig,
-        }
+        return {fig.sid: fig}
 
     def figure_multi(self) -> Dict[str, Figure]:
         fig = Figure(
@@ -567,14 +542,15 @@ class Komoroski2009(DapagliflozinSimulationExperiment):
             sid="Fig_multi",
             num_rows=1,
             num_cols=2,
-            name=f"{self.__class__.__name__}",
+            name=f"{self.__class__.__name__} (Healthy)",
         )
-        plots = fig.create_plots(xaxis=Axis(self.label_time, unit=self.unit_time), legend=False)
+        Figure.legend_fontsize = 9
+        plots = fig.create_plots(xaxis=Axis(self.label_time, unit=self.unit_time), legend=True)
         plots[0].set_yaxis(self.label_dap_plasma, unit=self.unit_dap)
         plots[1].set_yaxis(self.label_dap_plasma, unit=self.unit_dap)
-        plots[0].xaxis.min = -3
+        plots[0].xaxis.min = -3;
         plots[0].xaxis.max = 30
-        plots[1].xaxis.min = -24
+        plots[1].xaxis.min = -24;
         plots[1].xaxis.max = 30
 
         for dose in self.doses_multi:
@@ -583,15 +559,15 @@ class Komoroski2009(DapagliflozinSimulationExperiment):
                 task=f"task_po_dap_{dose}_single",
                 xid="time",
                 yid=f"[Cve_dap]",
-                label=f"Sim {dose} mg",
-                color=self.colors[dose],
+                label=f"{dose} mg PO",
+                color=self.dose_colors[dose],
             )
             plots[1].add_data(
                 task=f"task_po_dap_{dose}_multi",
                 xid="time",
                 yid=f"[Cve_dap]",
-                label=f"Sim {dose} mg",
-                color=self.colors[dose],
+                label=f"{dose} mg PO",
+                color=self.dose_colors[dose],
             )
             # data
             plots[0].add_data(
@@ -600,8 +576,8 @@ class Komoroski2009(DapagliflozinSimulationExperiment):
                 yid="mean",
                 yid_sd="mean_sd",
                 count="count",
-                label=f"dap {dose} mg",
-                color=self.colors[dose],
+                label=f"{dose} mg PO",
+                color=self.dose_colors[dose],
             )
             plots[1].add_data(
                 dataset=f"dapagliflozin_DAPM{dose}",
@@ -609,34 +585,28 @@ class Komoroski2009(DapagliflozinSimulationExperiment):
                 yid="mean",
                 yid_sd="mean_sd",
                 count="count",
-                label=f"dap {dose} mg",
-                color=self.colors[dose],
+                label=f"{dose} mg PO",
+                color=self.dose_colors[dose],
             )
-
-        return {
-            fig.sid: fig,
-        }
+        return {fig.sid: fig}
 
     def figure_uge_multi(self) -> Dict[str, Figure]:
-        # Fig6
         fig = Figure(
             experiment=self,
             sid="Fig_uge_multi",
-            name=f"{self.__class__.__name__}",
+            name=f"{self.__class__.__name__} (Healthy)",
         )
-        plots = fig.create_plots(xaxis=Axis(self.label_time, unit=self.unit_time), legend=False)
+        Figure.legend_fontsize = 9
+        plots = fig.create_plots(xaxis=Axis(self.label_time, unit=self.unit_time), legend=True)
         plots[0].set_yaxis(self.label_uge, unit=self.unit_uge)
-
         for dose in self.doses_uge_multi:
-            # simulation
             plots[0].add_data(
                 task=f"task_po_dap_{dose}_uge_multi",
                 xid="time",
                 yid=f"KI__UGE",
-                label=f"Sim {dose} mg",
-                color=self.colors[dose],
+                label=f"{dose} mg PO",
+                color=self.dose_colors[dose],
             )
-        # data
         for dose in self.doses_uge_multi:
             plots[0].add_data(
                 dataset=f"glucose_cumulative amount_DAPM{dose}",
@@ -644,18 +614,17 @@ class Komoroski2009(DapagliflozinSimulationExperiment):
                 yid="mean",
                 yid_sd=None,
                 count="count",
-                label=f"UGE {dose} mg",
-                color=self.colors[dose],
+                label=f"{dose} mg PO",
+                color=self.dose_colors[dose],
                 linestyle="",
             )
+        return {fig.sid: fig}
 
-        return {
-            fig.sid: fig,
-        }
 
 if __name__ == "__main__":
-    run_experiments(Komoroski2009, output_dir=Komoroski2009.__name__)
-</code>
+    out = dapagliflozin.RESULTS_PATH_SIMULATION / Komoroski2009.__name__
+    out.mkdir(parents=True, exist_ok=True)
+    run_experiments(Komoroski2009, output_dir=out)</code>
         </pre>
             </p>
 

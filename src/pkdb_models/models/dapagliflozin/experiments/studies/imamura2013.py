@@ -30,7 +30,7 @@ class Imamura2013(DapagliflozinSimulationExperiment):
     fpgs = {  # fasting plasma glucose
         "DAP10": 10,  # [mM] -> <=180 mg/dl -> 180 [mg/dl] / 18 =  10 [mmol/l]
     }
-    bodyweight = 67.3, # [kg]
+    bodyweight = 67.3 # [kg]
 
     def datasets(self) -> Dict[str, DataSet]:
         dsets = {}
@@ -58,7 +58,7 @@ class Imamura2013(DapagliflozinSimulationExperiment):
                     **self.default_changes(),
                     # physiological changes
                     "BW": Q_(self.bodyweight, "kg"),
-                    "[KI__glc_ext]": Q_(9, "mM"),  # T2DM with FPG < 180 [mg/dl]
+                    "[KI__glc_ext]": Q_(10, "mM"),  # T2DM with FPG < 180 [mg/dl]
                     "GU__f_absorption": Q_(self.fasting_map["not reported"], "dimensionless"),
                     "f_cirrhosis": Q_(self.cirrhosis_map["Control"], "dimensionless"),
                     "KI__f_renal_function": Q_(self.renal_map["Normal renal function"], "dimensionless"),
@@ -104,7 +104,7 @@ class Imamura2013(DapagliflozinSimulationExperiment):
             sid="Fig2",
             num_rows=1,
             num_cols=1,
-            name=f"{self.__class__.__name__}",
+            name=f"{self.__class__.__name__} (T2DM)",
         )
         plots = fig.create_plots(xaxis=Axis(self.label_time, unit=self.unit_time), legend=True)
         plots[0].set_yaxis(self.label_dap_plasma, unit=self.unit_dap)
@@ -140,7 +140,6 @@ class Imamura2013(DapagliflozinSimulationExperiment):
 
 
 if __name__ == "__main__":
-    # run_experiments(Imamura2013, output_dir=Imamura2013.__name__)
     out = dapagliflozin.RESULTS_PATH_SIMULATION / Imamura2013.__name__
     out.mkdir(parents=True, exist_ok=True)
     run_experiments(Imamura2013, output_dir=out)

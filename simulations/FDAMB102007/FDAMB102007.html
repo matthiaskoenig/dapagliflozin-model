@@ -100,28 +100,20 @@
                 <a href="../../../../experiments/studies/fdamb102007.py">../../../../experiments/studies/fdamb102007.py</a>
             <pre>
 <code class="python">from typing import Dict
-
 from sbmlsim.data import DataSet, load_pkdb_dataframe
 from sbmlsim.fit import FitMapping, FitData
 from sbmlutils.console import console
-
-from pkdb_models.models.dapagliflozin.experiments.base_experiment import (
-    DapagliflozinSimulationExperiment,
-)
+from pkdb_models.models.dapagliflozin.experiments.base_experiment import DapagliflozinSimulationExperiment
 from pkdb_models.models.dapagliflozin.experiments.metadata import Tissue, Route, Dosing, ApplicationForm, Health, \
     Fasting, DapagliflozinMappingMetaData
-
 from sbmlsim.plot import Axis, Figure
 from sbmlsim.simulation import Timecourse, TimecourseSim
-
 from pkdb_models.models.dapagliflozin.helpers import run_experiments
-
+from pathlib import Path
+import pkdb_models.models.dapagliflozin as dapagliflozin
 
 class FDAMB102007(DapagliflozinSimulationExperiment):
-    """Simulation experiment of FDAMB102007.
-
-    Renal impairment and t2dm.
-    """
+    """Simulation experiment of FDAMB102007. Renal impairment and T2DMM."""
     groups = [
         "healthy",
         "normal",
@@ -143,7 +135,6 @@ class FDAMB102007(DapagliflozinSimulationExperiment):
         "moderate": DapagliflozinSimulationExperiment.renal_map["Moderate renal impairment"],
         "severe": DapagliflozinSimulationExperiment.renal_map["Severe renal impairment"],
     }
-
     info = [
         ("Aurine_dap", "dapagliflozin_cumulative amount"),
         ("Aurine_d3g", "dapagliflozin 3-o-glucuronide_cumulative amount"),
@@ -156,14 +147,12 @@ class FDAMB102007(DapagliflozinSimulationExperiment):
             df = load_pkdb_dataframe(f"{self.sid}_{fig_id}", data_path=self.data_path)
             for label, df_label in df.groupby("label"):
                 dset = DataSet.from_df(df_label, self.ureg)
-
                 # unit conversion to mole/l
                 if label.startswith("dapagliflozin_"):
                     dset.unit_conversion("mean", 1 / self.Mr.dap)
                 elif label.startswith("dapagliflozin 3-o-glucuronide"):
                     dset.unit_conversion("mean", 1 / self.Mr.d3g)
                 dsets[f"{label}"] = dset
-
         # console.print(dsets)
         # console.print(dsets.keys())
         return dsets
@@ -172,15 +161,19 @@ class FDAMB102007(DapagliflozinSimulationExperiment):
         Q_ = self.Q_
         tcsims = {}
         for group in self.groups:
+            if group == "healthy":
+                fpg = self.fpg_healthy
+            else:
+                fpg = self.fpg_t2dm
+
             changes = {
                 # physiological changes
                 "BW": Q_(self.bodyweight_default, "kg"),
-                "[KI__glc_ext]": Q_(self.fpg_t2dm, "mM"),  # healthy not reported ???
+                "[KI__glc_ext]": Q_(fpg, "mM"),  # Now uses correct glucose level
                 "GU__f_absorption": Q_(self.fasting_map["not reported"], "dimensionless"),
                 "f_cirrhosis": Q_(self.cirrhosis_map["Control"], "dimensionless"),
                 "KI__f_renal_function": Q_(self.renal_functions[group], "dimensionless"),
             }
-
             # single dose simulation DAP50
             tcsims[f"po_dap50_{group}"] = TimecourseSim(
                 Timecourse(
@@ -195,7 +188,6 @@ class FDAMB102007(DapagliflozinSimulationExperiment):
                     },
                 )
             )
-
             # multi dose simulation DAP20
             tc0 = Timecourse(
                 start=0,
@@ -226,7 +218,6 @@ class FDAMB102007(DapagliflozinSimulationExperiment):
                     "PODOSE_dap": Q_(20, "mg"),
                 },
             )
-
             tcsims[f"po_dap20_{group}"] = TimecourseSim(
                 [tc0] + [tc1 for _ in range(5)] + [tc2],
                 time_offset=-6*24*60,
@@ -235,12 +226,10 @@ class FDAMB102007(DapagliflozinSimulationExperiment):
 
     def fit_mappings(self) -> Dict[str, FitMapping]:
         mappings = {}
-
         # Fig3
         for group in self.groups:
             if group == "healthy":
                 continue
-
             health = Health.T2DM if group == "normal" else Health.RENAL_IMPAIRMENT_T2DM
             mappings[f"fm_dap20_{group}"] = FitMapping(
                 self,
@@ -264,7 +253,6 @@ class FDAMB102007(DapagliflozinSimulationExperiment):
                     fasting=Fasting.NR,
                 ),
             )
-
         # Tab13A, Tab14A
         for group in self.groups:
             health = Health.HEALTHY if group == "healthy" else Health.T2DM if group == "normal" else Health.RENAL_IMPAIRMENT_T2DM
@@ -307,20 +295,21 @@ class FDAMB102007(DapagliflozinSimulationExperiment):
         fig = Figure(
             experiment=self,
             sid="Fig3",
-            name=f"{self.__class__.__name__}",
+            name=f"{self.__class__.__name__} (T2DM)"
         )
+        Figure.legend_fontsize = 10
         plots = fig.create_plots(xaxis=Axis(self.label_time, unit=self.unit_time), legend=True)
         plots[0].set_yaxis(self.label_uge, unit=self.unit_uge)
-
         for group in self.groups:
             if group == "healthy":
                 continue
+            dose_label = f"{group} - 20 mg PO"
             # simulation
             plots[0].add_data(
                 task=f"task_po_dap20_{group}",
                 xid="time",
                 yid="KI__UGE",
-                label=group,
+                label=f"{dose_label}",
                 color=self.colors[group],
             )
             # data
@@ -330,7 +319,7 @@ class FDAMB102007(DapagliflozinSimulationExperiment):
                 yid="mean",
                 yid_sd=None,
                 count="count",
-                label=group,
+                label=f"{dose_label}",
                 color=self.colors[group],
             )
 
@@ -344,43 +333,58 @@ class FDAMB102007(DapagliflozinSimulationExperiment):
             sid="Tab13_14",
             num_rows=1,
             num_cols=2,
-            name=f"{self.__class__.__name__}",
+            name=f"{self.__class__.__name__} (T2DM)"
         )
-        plots = fig.create_plots(xaxis=Axis(self.label_time, unit=self.unit_time), legend=False)
+        plots = fig.create_plots(xaxis=Axis(self.label_time, unit=self.unit_time), legend=True)
         plots[0].set_yaxis(self.label_dap_urine, unit=self.unit_dap_urine)
         plots[1].set_yaxis(self.label_d3g_urine, unit=self.unit_d3g_urine)
 
         for group in self.groups:
+            dose_label_dap = f"{group} - 50 mg PO"
+            dose_label_d3g = f"{group} - 50 mg PO"
             # simulation
-            for kp, sid in enumerate(["Aurine_dap", "Aurine_d3g"]):
-                plots[kp].add_data(
-                    task=f"task_po_dap50_{group}",
-                    xid="time",
-                    yid=sid,
-                    label=f"Sim {group} 50 mg",
-                    color=self.colors[group],
-                )
-
+            plots[0].add_data(
+                task=f"task_po_dap50_{group}",
+                xid="time",
+                yid="Aurine_dap",
+                label=f"{dose_label_dap}",
+                color=self.colors[group],
+            )
+            plots[1].add_data(
+                task=f"task_po_dap50_{group}",
+                xid="time",
+                yid="Aurine_d3g",
+                label=f"{dose_label_d3g}",
+                color=self.colors[group],
+            )
             # data
-            for kp, substance in enumerate(["dapagliflozin", "dapagliflozin 3-o-glucuronide"]):
-                plots[kp].add_data(
-                    dataset=f"{substance}_cumulative amount_DAP50_{group}",
-                    xid="time",
-                    yid="mean",
-                    yid_sd="mean_sd",
-                    count="count",
-                    label=group,
-                    linestyle="",
-                    color=self.colors[group],
-                )
+            plots[0].add_data(
+                dataset=f"dapagliflozin_cumulative amount_DAP50_{group}",
+                xid="time",
+                yid="mean",
+                yid_sd="mean_sd",
+                count="count",
+                label=f"{dose_label_dap}",
+                linestyle="",
+                color=self.colors[group],
+            )
+            plots[1].add_data(
+                dataset=f"dapagliflozin 3-o-glucuronide_cumulative amount_DAP50_{group}",
+                xid="time",
+                yid="mean",
+                yid_sd="mean_sd",
+                count="count",
+                label=f"{dose_label_d3g}",
+                linestyle="",
+                color=self.colors[group],
+            )
 
-        return {
-            fig.sid: fig,
-        }
+        return {fig.sid: fig}
 
 if __name__ == "__main__":
-    run_experiments(FDAMB102007, output_dir=FDAMB102007.__name__)
-</code>
+    out = dapagliflozin.RESULTS_PATH_SIMULATION / FDAMB102007.__name__
+    out.mkdir(parents=True, exist_ok=True)
+    run_experiments(FDAMB102007, output_dir=out)</code>
         </pre>
             </p>
 

@@ -1,7 +1,7 @@
 {
   "experiment_id": "FDAMB102007",
   "base_path": "/home/mkoenig/git/pkdb_models/pkdb_models/models/dapagliflozin",
-  "data_path": "[PosixPath('/home/mkoenig/git/pkdb_data/studies/dapagliflozin'), PosixPath('/home/mkoenig/git/pkdb_data/studies/canagliflozin')]",
+  "data_path": "[PosixPath('/home/mkoenig/git/pkdb_models/pkdb_models/models/dapagliflozin/data/dapagliflozin'), PosixPath('/home/mkoenig/git/pkdb_models/pkdb_models/models/dapagliflozin/data/canagliflozin')]",
   "models": {
     "model": {
       "sid": null,
@@ -75,7 +75,7 @@
               "_units": "kilogram"
             },
             "[KI__glc_ext]": {
-              "_magnitude": 7.500000000000002,
+              "_magnitude": 5.0,
               "_units": "KI__mmole / liter"
             },
             "GU__f_absorption": {
@@ -117,7 +117,7 @@
               "_units": "kilogram"
             },
             "[KI__glc_ext]": {
-              "_magnitude": 7.500000000000002,
+              "_magnitude": 5.0,
               "_units": "KI__mmole / liter"
             },
             "GU__f_absorption": {
@@ -147,7 +147,7 @@
           "steps": 500,
           "changes": {
             "KI__glc_urine": {
-              "_magnitude": 0.0,
+              "_magnitude": 0,
               "_units": "KI__mmole"
             },
             "PODOSE_dap": {
@@ -165,7 +165,7 @@
           "steps": 500,
           "changes": {
             "KI__glc_urine": {
-              "_magnitude": 0.0,
+              "_magnitude": 0,
               "_units": "KI__mmole"
             },
             "PODOSE_dap": {
@@ -183,7 +183,7 @@
           "steps": 500,
           "changes": {
             "KI__glc_urine": {
-              "_magnitude": 0.0,
+              "_magnitude": 0,
               "_units": "KI__mmole"
             },
             "PODOSE_dap": {
@@ -201,7 +201,7 @@
           "steps": 500,
           "changes": {
             "KI__glc_urine": {
-              "_magnitude": 0.0,
+              "_magnitude": 0,
               "_units": "KI__mmole"
             },
             "PODOSE_dap": {
@@ -219,7 +219,7 @@
           "steps": 500,
           "changes": {
             "KI__glc_urine": {
-              "_magnitude": 0.0,
+              "_magnitude": 0,
               "_units": "KI__mmole"
             },
             "PODOSE_dap": {
@@ -237,7 +237,7 @@
           "steps": 500,
           "changes": {
             "KI__glc_urine": {
-              "_magnitude": 0.0,
+              "_magnitude": 0,
               "_units": "KI__mmole"
             },
             "PODOSE_dap": {
@@ -267,7 +267,7 @@
               "_units": "kilogram"
             },
             "[KI__glc_ext]": {
-              "_magnitude": 7.500000000000002,
+              "_magnitude": 7.5,
               "_units": "KI__mmole / liter"
             },
             "GU__f_absorption": {
@@ -309,7 +309,7 @@
               "_units": "kilogram"
             },
             "[KI__glc_ext]": {
-              "_magnitude": 7.500000000000002,
+              "_magnitude": 7.5,
               "_units": "KI__mmole / liter"
             },
             "GU__f_absorption": {
@@ -339,7 +339,7 @@
           "steps": 500,
           "changes": {
             "KI__glc_urine": {
-              "_magnitude": 0.0,
+              "_magnitude": 0,
               "_units": "KI__mmole"
             },
             "PODOSE_dap": {
@@ -357,7 +357,7 @@
           "steps": 500,
           "changes": {
             "KI__glc_urine": {
-              "_magnitude": 0.0,
+              "_magnitude": 0,
               "_units": "KI__mmole"
             },
             "PODOSE_dap": {
@@ -375,7 +375,7 @@
           "steps": 500,
           "changes": {
             "KI__glc_urine": {
-              "_magnitude": 0.0,
+              "_magnitude": 0,
               "_units": "KI__mmole"
             },
             "PODOSE_dap": {
@@ -393,7 +393,7 @@
           "steps": 500,
           "changes": {
             "KI__glc_urine": {
-              "_magnitude": 0.0,
+              "_magnitude": 0,
               "_units": "KI__mmole"
             },
             "PODOSE_dap": {
@@ -411,7 +411,7 @@
           "steps": 500,
           "changes": {
             "KI__glc_urine": {
-              "_magnitude": 0.0,
+              "_magnitude": 0,
               "_units": "KI__mmole"
             },
             "PODOSE_dap": {
@@ -429,7 +429,7 @@
           "steps": 500,
           "changes": {
             "KI__glc_urine": {
-              "_magnitude": 0.0,
+              "_magnitude": 0,
               "_units": "KI__mmole"
             },
             "PODOSE_dap": {
@@ -459,7 +459,7 @@
               "_units": "kilogram"
             },
             "[KI__glc_ext]": {
-              "_magnitude": 7.500000000000002,
+              "_magnitude": 7.5,
               "_units": "KI__mmole / liter"
             },
             "GU__f_absorption": {
@@ -501,7 +501,7 @@
               "_units": "kilogram"
             },
             "[KI__glc_ext]": {
-              "_magnitude": 7.500000000000002,
+              "_magnitude": 7.5,
               "_units": "KI__mmole / liter"
             },
             "GU__f_absorption": {
@@ -531,7 +531,7 @@
           "steps": 500,
           "changes": {
             "KI__glc_urine": {
-              "_magnitude": 0.0,
+              "_magnitude": 0,
               "_units": "KI__mmole"
             },
             "PODOSE_dap": {
@@ -549,7 +549,7 @@
           "steps": 500,
           "changes": {
             "KI__glc_urine": {
-              "_magnitude": 0.0,
+              "_magnitude": 0,
               "_units": "KI__mmole"
             },
             "PODOSE_dap": {
@@ -567,7 +567,7 @@
           "steps": 500,
           "changes": {
             "KI__glc_urine": {
-              "_magnitude": 0.0,
+              "_magnitude": 0,
               "_units": "KI__mmole"
             },
             "PODOSE_dap": {
@@ -585,7 +585,7 @@
           "steps": 500,
           "changes": {
             "KI__glc_urine": {
-              "_magnitude": 0.0,
+              "_magnitude": 0,
               "_units": "KI__mmole"
             },
             "PODOSE_dap": {
@@ -603,7 +603,7 @@
           "steps": 500,
           "changes": {
             "KI__glc_urine": {
-              "_magnitude": 0.0,
+              "_magnitude": 0,
               "_units": "KI__mmole"
             },
             "PODOSE_dap": {
@@ -621,7 +621,7 @@
           "steps": 500,
           "changes": {
             "KI__glc_urine": {
-              "_magnitude": 0.0,
+              "_magnitude": 0,
               "_units": "KI__mmole"
             },
             "PODOSE_dap": {
@@ -651,7 +651,7 @@
               "_units": "kilogram"
             },
             "[KI__glc_ext]": {
-              "_magnitude": 7.500000000000002,
+              "_magnitude": 7.5,
               "_units": "KI__mmole / liter"
             },
             "GU__f_absorption": {
@@ -693,7 +693,7 @@
               "_units": "kilogram"
             },
             "[KI__glc_ext]": {
-              "_magnitude": 7.500000000000002,
+              "_magnitude": 7.5,
               "_units": "KI__mmole / liter"
             },
             "GU__f_absorption": {
@@ -723,7 +723,7 @@
           "steps": 500,
           "changes": {
             "KI__glc_urine": {
-              "_magnitude": 0.0,
+              "_magnitude": 0,
               "_units": "KI__mmole"
             },
             "PODOSE_dap": {
@@ -741,7 +741,7 @@
           "steps": 500,
           "changes": {
             "KI__glc_urine": {
-              "_magnitude": 0.0,
+              "_magnitude": 0,
               "_units": "KI__mmole"
             },
             "PODOSE_dap": {
@@ -759,7 +759,7 @@
           "steps": 500,
           "changes": {
             "KI__glc_urine": {
-              "_magnitude": 0.0,
+              "_magnitude": 0,
               "_units": "KI__mmole"
             },
             "PODOSE_dap": {
@@ -777,7 +777,7 @@
           "steps": 500,
           "changes": {
             "KI__glc_urine": {
-              "_magnitude": 0.0,
+              "_magnitude": 0,
               "_units": "KI__mmole"
             },
             "PODOSE_dap": {
@@ -795,7 +795,7 @@
           "steps": 500,
           "changes": {
             "KI__glc_urine": {
-              "_magnitude": 0.0,
+              "_magnitude": 0,
               "_units": "KI__mmole"
             },
             "PODOSE_dap": {
@@ -813,7 +813,7 @@
           "steps": 500,
           "changes": {
             "KI__glc_urine": {
-              "_magnitude": 0.0,
+              "_magnitude": 0,
               "_units": "KI__mmole"
             },
             "PODOSE_dap": {
@@ -843,7 +843,7 @@
               "_units": "kilogram"
             },
             "[KI__glc_ext]": {
-              "_magnitude": 7.500000000000002,
+              "_magnitude": 7.5,
               "_units": "KI__mmole / liter"
             },
             "GU__f_absorption": {
@@ -885,7 +885,7 @@
               "_units": "kilogram"
             },
             "[KI__glc_ext]": {
-              "_magnitude": 7.500000000000002,
+              "_magnitude": 7.5,
               "_units": "KI__mmole / liter"
             },
             "GU__f_absorption": {
@@ -915,7 +915,7 @@
           "steps": 500,
           "changes": {
             "KI__glc_urine": {
-              "_magnitude": 0.0,
+              "_magnitude": 0,
               "_units": "KI__mmole"
             },
             "PODOSE_dap": {
@@ -933,7 +933,7 @@
           "steps": 500,
           "changes": {
             "KI__glc_urine": {
-              "_magnitude": 0.0,
+              "_magnitude": 0,
               "_units": "KI__mmole"
             },
             "PODOSE_dap": {
@@ -951,7 +951,7 @@
           "steps": 500,
           "changes": {
             "KI__glc_urine": {
-              "_magnitude": 0.0,
+              "_magnitude": 0,
               "_units": "KI__mmole"
             },
             "PODOSE_dap": {
@@ -969,7 +969,7 @@
           "steps": 500,
           "changes": {
             "KI__glc_urine": {
-              "_magnitude": 0.0,
+              "_magnitude": 0,
               "_units": "KI__mmole"
             },
             "PODOSE_dap": {
@@ -987,7 +987,7 @@
           "steps": 500,
           "changes": {
             "KI__glc_urine": {
-              "_magnitude": 0.0,
+              "_magnitude": 0,
               "_units": "KI__mmole"
             },
             "PODOSE_dap": {
@@ -1005,7 +1005,7 @@
           "steps": 500,
           "changes": {
             "KI__glc_urine": {
-              "_magnitude": 0.0,
+              "_magnitude": 0,
               "_units": "KI__mmole"
             },
             "PODOSE_dap": {
@@ -3185,7 +3185,7 @@
   "figures": {
     "Fig3": {
       "sid": "Fig3",
-      "name": "FDAMB102007",
+      "name": "FDAMB102007 (T2DM)",
       "num_rows": 1,
       "num_cols": 1,
       "width": 7.0,
@@ -3228,7 +3228,7 @@
             "curves": [
               {
                 "sid": "Fig3__plot0_curve0",
-                "name": "normal",
+                "name": "normal - 20 mg PO",
                 "x": "task_po_dap20_normal__time",
                 "y": "task_po_dap20_normal__KI__UGE",
                 "xerr": null,
@@ -3259,7 +3259,7 @@
               },
               {
                 "sid": "Fig3__plot0_curve1",
-                "name": "normal (n=3)",
+                "name": "normal - 20 mg PO (n=3)",
                 "x": "uge_DAP20_normal__time",
                 "y": "uge_DAP20_normal__mean",
                 "xerr": null,
@@ -3290,7 +3290,7 @@
               },
               {
                 "sid": "Fig3__plot0_curve2",
-                "name": "mild",
+                "name": "mild - 20 mg PO",
                 "x": "task_po_dap20_mild__time",
                 "y": "task_po_dap20_mild__KI__UGE",
                 "xerr": null,
@@ -3321,7 +3321,7 @@
               },
               {
                 "sid": "Fig3__plot0_curve3",
-                "name": "mild (n=3)",
+                "name": "mild - 20 mg PO (n=3)",
                 "x": "uge_DAP20_mild__time",
                 "y": "uge_DAP20_mild__mean",
                 "xerr": null,
@@ -3352,7 +3352,7 @@
               },
               {
                 "sid": "Fig3__plot0_curve4",
-                "name": "moderate",
+                "name": "moderate - 20 mg PO",
                 "x": "task_po_dap20_moderate__time",
                 "y": "task_po_dap20_moderate__KI__UGE",
                 "xerr": null,
@@ -3383,7 +3383,7 @@
               },
               {
                 "sid": "Fig3__plot0_curve5",
-                "name": "moderate (n=6)",
+                "name": "moderate - 20 mg PO (n=6)",
                 "x": "uge_DAP20_moderate__time",
                 "y": "uge_DAP20_moderate__mean",
                 "xerr": null,
@@ -3414,7 +3414,7 @@
               },
               {
                 "sid": "Fig3__plot0_curve6",
-                "name": "severe",
+                "name": "severe - 20 mg PO",
                 "x": "task_po_dap20_severe__time",
                 "y": "task_po_dap20_severe__KI__UGE",
                 "xerr": null,
@@ -3445,7 +3445,7 @@
               },
               {
                 "sid": "Fig3__plot0_curve7",
-                "name": "severe (n=5)",
+                "name": "severe - 20 mg PO (n=5)",
                 "x": "uge_DAP20_severe__time",
                 "y": "uge_DAP20_severe__mean",
                 "xerr": null,
@@ -3486,7 +3486,7 @@
     },
     "Tab13_14": {
       "sid": "Tab13_14",
-      "name": "FDAMB102007",
+      "name": "FDAMB102007 (T2DM)",
       "num_rows": 1,
       "num_cols": 2,
       "width": 14.0,
@@ -3523,13 +3523,13 @@
               "ticks_visible": true
             },
             "yaxis_right": null,
-            "legend": false,
+            "legend": true,
             "facecolor": "#ffffffff",
             "title_visible": true,
             "curves": [
               {
                 "sid": "Tab13_14__plot0_curve0",
-                "name": "Sim healthy 50 mg",
+                "name": "healthy - 50 mg PO",
                 "x": "task_po_dap50_healthy__time",
                 "y": "task_po_dap50_healthy__Aurine_dap",
                 "xerr": null,
@@ -3560,7 +3560,7 @@
               },
               {
                 "sid": "Tab13_14__plot0_curve1",
-                "name": "healthy\u00b1SD (n=5)",
+                "name": "healthy - 50 mg PO\u00b1SD (n=5)",
                 "x": "dapagliflozin_cumulative amount_DAP50_healthy__time",
                 "y": "dapagliflozin_cumulative amount_DAP50_healthy__mean",
                 "xerr": null,
@@ -3591,7 +3591,7 @@
               },
               {
                 "sid": "Tab13_14__plot0_curve2",
-                "name": "Sim normal 50 mg",
+                "name": "normal - 50 mg PO",
                 "x": "task_po_dap50_normal__time",
                 "y": "task_po_dap50_normal__Aurine_dap",
                 "xerr": null,
@@ -3622,7 +3622,7 @@
               },
               {
                 "sid": "Tab13_14__plot0_curve3",
-                "name": "normal\u00b1SD (n=9)",
+                "name": "normal - 50 mg PO\u00b1SD (n=9)",
                 "x": "dapagliflozin_cumulative amount_DAP50_normal__time",
                 "y": "dapagliflozin_cumulative amount_DAP50_normal__mean",
                 "xerr": null,
@@ -3653,7 +3653,7 @@
               },
               {
                 "sid": "Tab13_14__plot0_curve4",
-                "name": "Sim mild 50 mg",
+                "name": "mild - 50 mg PO",
                 "x": "task_po_dap50_mild__time",
                 "y": "task_po_dap50_mild__Aurine_dap",
                 "xerr": null,
@@ -3684,7 +3684,7 @@
               },
               {
                 "sid": "Tab13_14__plot0_curve5",
-                "name": "mild\u00b1SD (n=9)",
+                "name": "mild - 50 mg PO\u00b1SD (n=9)",
                 "x": "dapagliflozin_cumulative amount_DAP50_mild__time",
                 "y": "dapagliflozin_cumulative amount_DAP50_mild__mean",
                 "xerr": null,
@@ -3715,7 +3715,7 @@
               },
               {
                 "sid": "Tab13_14__plot0_curve6",
-                "name": "Sim moderate 50 mg",
+                "name": "moderate - 50 mg PO",
                 "x": "task_po_dap50_moderate__time",
                 "y": "task_po_dap50_moderate__Aurine_dap",
                 "xerr": null,
@@ -3746,7 +3746,7 @@
               },
               {
                 "sid": "Tab13_14__plot0_curve7",
-                "name": "moderate\u00b1SD (n=8)",
+                "name": "moderate - 50 mg PO\u00b1SD (n=8)",
                 "x": "dapagliflozin_cumulative amount_DAP50_moderate__time",
                 "y": "dapagliflozin_cumulative amount_DAP50_moderate__mean",
                 "xerr": null,
@@ -3777,7 +3777,7 @@
               },
               {
                 "sid": "Tab13_14__plot0_curve8",
-                "name": "Sim severe 50 mg",
+                "name": "severe - 50 mg PO",
                 "x": "task_po_dap50_severe__time",
                 "y": "task_po_dap50_severe__Aurine_dap",
                 "xerr": null,
@@ -3808,7 +3808,7 @@
               },
               {
                 "sid": "Tab13_14__plot0_curve9",
-                "name": "severe\u00b1SD (n=6)",
+                "name": "severe - 50 mg PO\u00b1SD (n=6)",
                 "x": "dapagliflozin_cumulative amount_DAP50_severe__time",
                 "y": "dapagliflozin_cumulative amount_DAP50_severe__mean",
                 "xerr": null,
@@ -3876,13 +3876,13 @@
               "ticks_visible": true
             },
             "yaxis_right": null,
-            "legend": false,
+            "legend": true,
             "facecolor": "#ffffffff",
             "title_visible": true,
             "curves": [
               {
                 "sid": "Tab13_14__plot1_curve0",
-                "name": "Sim healthy 50 mg",
+                "name": "healthy - 50 mg PO",
                 "x": "task_po_dap50_healthy__time",
                 "y": "task_po_dap50_healthy__Aurine_d3g",
                 "xerr": null,
@@ -3913,7 +3913,7 @@
               },
               {
                 "sid": "Tab13_14__plot1_curve1",
-                "name": "healthy\u00b1SD (n=5)",
+                "name": "healthy - 50 mg PO\u00b1SD (n=5)",
                 "x": "dapagliflozin 3-o-glucuronide_cumulative amount_DAP50_healthy__time",
                 "y": "dapagliflozin 3-o-glucuronide_cumulative amount_DAP50_healthy__mean",
                 "xerr": null,
@@ -3944,7 +3944,7 @@
               },
               {
                 "sid": "Tab13_14__plot1_curve2",
-                "name": "Sim normal 50 mg",
+                "name": "normal - 50 mg PO",
                 "x": "task_po_dap50_normal__time",
                 "y": "task_po_dap50_normal__Aurine_d3g",
                 "xerr": null,
@@ -3975,7 +3975,7 @@
               },
               {
                 "sid": "Tab13_14__plot1_curve3",
-                "name": "normal\u00b1SD (n=9)",
+                "name": "normal - 50 mg PO\u00b1SD (n=9)",
                 "x": "dapagliflozin 3-o-glucuronide_cumulative amount_DAP50_normal__time",
                 "y": "dapagliflozin 3-o-glucuronide_cumulative amount_DAP50_normal__mean",
                 "xerr": null,
@@ -4006,7 +4006,7 @@
               },
               {
                 "sid": "Tab13_14__plot1_curve4",
-                "name": "Sim mild 50 mg",
+                "name": "mild - 50 mg PO",
                 "x": "task_po_dap50_mild__time",
                 "y": "task_po_dap50_mild__Aurine_d3g",
                 "xerr": null,
@@ -4037,7 +4037,7 @@
               },
               {
                 "sid": "Tab13_14__plot1_curve5",
-                "name": "mild\u00b1SD (n=9)",
+                "name": "mild - 50 mg PO\u00b1SD (n=9)",
                 "x": "dapagliflozin 3-o-glucuronide_cumulative amount_DAP50_mild__time",
                 "y": "dapagliflozin 3-o-glucuronide_cumulative amount_DAP50_mild__mean",
                 "xerr": null,
@@ -4068,7 +4068,7 @@
               },
               {
                 "sid": "Tab13_14__plot1_curve6",
-                "name": "Sim moderate 50 mg",
+                "name": "moderate - 50 mg PO",
                 "x": "task_po_dap50_moderate__time",
                 "y": "task_po_dap50_moderate__Aurine_d3g",
                 "xerr": null,
@@ -4099,7 +4099,7 @@
               },
               {
                 "sid": "Tab13_14__plot1_curve7",
-                "name": "moderate\u00b1SD (n=8)",
+                "name": "moderate - 50 mg PO\u00b1SD (n=8)",
                 "x": "dapagliflozin 3-o-glucuronide_cumulative amount_DAP50_moderate__time",
                 "y": "dapagliflozin 3-o-glucuronide_cumulative amount_DAP50_moderate__mean",
                 "xerr": null,
@@ -4130,7 +4130,7 @@
               },
               {
                 "sid": "Tab13_14__plot1_curve8",
-                "name": "Sim severe 50 mg",
+                "name": "severe - 50 mg PO",
                 "x": "task_po_dap50_severe__time",
                 "y": "task_po_dap50_severe__Aurine_d3g",
                 "xerr": null,
@@ -4161,7 +4161,7 @@
               },
               {
                 "sid": "Tab13_14__plot1_curve9",
-                "name": "severe\u00b1SD (n=6)",
+                "name": "severe - 50 mg PO\u00b1SD (n=6)",
                 "x": "dapagliflozin 3-o-glucuronide_cumulative amount_DAP50_severe__time",
                 "y": "dapagliflozin 3-o-glucuronide_cumulative amount_DAP50_severe__mean",
                 "xerr": null,

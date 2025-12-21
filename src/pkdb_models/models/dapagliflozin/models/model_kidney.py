@@ -46,6 +46,14 @@ _m = Model(
     creators=templates.creators,
     units=U,
     model_units=templates.model_units,
+    annotations=[
+        # tissue
+        (BQB.OCCURS_IN, "fma/FMA:7203"),  # kidney
+        (BQB.OCCURS_IN, "bto/BTO:0000671"),
+        (BQB.OCCURS_IN, "ncit/C12415"),
+
+        (BQB.HAS_PROPERTY, "ncit/C79372"),  # Pharmacokinetics: Excretion
+    ] + templates.model_annotations
 )
 
 _m.compartments = [
@@ -162,7 +170,7 @@ _m.species = [
 _m.parameters.extend([
     Parameter(
         "f_renal_function",
-        name="parameter for renal function",
+        name="scaling factor renal function",
         value=1.0,
         unit=U.dimensionless,
         sboTerm=SBO.KINETIC_CONSTANT,
@@ -187,7 +195,7 @@ _m.parameters.extend([
         port=True,
         notes="""
         Km apparent in kidney microsomes for dapagliflozin; 479 µM [Kasichaynula2013]
-        Ki for UGT1A9 with other substrates 12-15 µM [Obermeier2010a]."""
+        Ki for UGT1A9 with other substrates 12-15 µM [Obermeier2010a, Pattanawongsa2015]."""
     ),
     Parameter(
         "f_ugt1a9",
@@ -278,6 +286,9 @@ _m.reactions = [
         formula=(
             "f_renal_function * f_ugt1a9 * f_DAP2D3G * DAP2D3G_Vmax * Vki * dap/(dap + DAP2D3G_Km_dap)"
         ),
+        annotations=[
+            (BQB.IS, "uniprot/O60656"),
+        ]
     ),
     Reaction(
         sid="D3GEX",
@@ -290,7 +301,7 @@ _m.reactions = [
                 "D3GEX_k",
                 0.45035618074418376,
                 U.per_min,
-                name="rate urinary excretion of dapagliflozin-3-o-glucuronide",
+                name="urinary excretion rate d3g",
                 sboTerm=SBO.KINETIC_CONSTANT,
             ),
         ],
@@ -309,7 +320,7 @@ _m.reactions = [
                 "DAPEX_k",
                 0.01815179124844871,
                 U.per_min,
-                name="rate urinary excretion of dapagliflozin",
+                name="urinary excretion rate dap",
                 sboTerm=SBO.KINETIC_CONSTANT,
             ),
         ],
@@ -325,7 +336,7 @@ _m.reactions = [
 _m.species.extend([
     Species(
         "glc_ext",
-        name="glucose (plasma)",
+        name="glucose kidney (plasma)",
         initialConcentration=5.0,
         compartment="Vext",
         substanceUnit=U.mmole,
@@ -333,6 +344,15 @@ _m.species.extend([
         boundaryCondition=True,
         sboTerm=SBO.SIMPLE_CHEMICAL,
         annotations=annotations.species["glc"],
+        notes="""
+        Fasting plasma glucose; 
+        Necessary to calculate the average fasting plasma glucose; probably via time profile.
+        2.7677+0.8694x-0.01275x 2
+        Hyun-Young Kim, Soo-Youn Lee, Sunghwan Suh, Jae Hyeon Kim, Moon Kyu Lee and
+        Hyung-Doo Park*
+        The relationship between estimated average
+        glucose and fasting plasma glucose
+        """
     ),
     Species(
         "glc_urine",
@@ -368,7 +388,7 @@ _m.parameters.extend([
     ),
     Parameter(
         "RTG_E50",
-        6.493779238072141e-06,  # ~1 µmole/l [mmole/l]
+        9.383821796219633e-06,  # ~1 µmole/l [mmole/l]
         U.mM,
         name="EC50 reduction in RTG",
         sboTerm=SBO.KINETIC_CONSTANT,
@@ -379,7 +399,7 @@ _m.parameters.extend([
     ),
     Parameter(
         "RTG_gamma",
-        1,  # [1 - 4] for optimization
+        1.035988997901507,  # [1 - 4] for optimization
         U.dimensionless,
         name="hill coefficient reduction in RTG",
         sboTerm=SBO.KINETIC_CONSTANT,
@@ -387,9 +407,9 @@ _m.parameters.extend([
     ),
     Parameter(
         "RTG_base",
-        8.000008431987332,  # [10.5 - 14] for optimization
+        7.001909579384977,  # [10.5 - 14] for optimization
         U.mM,
-        name=f"Baseline RTG value",
+        name=f"baseline RTG value",
         notes="typical RTG value without SGLT2 inhibitors in healthy subjects"
     ),
     # Parameter(
@@ -401,14 +421,14 @@ _m.parameters.extend([
     # ),
     Parameter(
         "RTG_m_fpg",
-        1.2533715089157764,  # [0.2 - 1] for optimization
+        1.6532116030699031,  # [0.2 - 1] for optimization
         U.dimensionless,
         name=f"FPG effect on RTG",
         notes="""Effect of the FPG on the change in RTG_base."""
     ),
     Parameter(
         "RTG_max_inhibition",
-        0.7067308400163536,  # [0 - 1] for optimization
+        0.7125469657554321,  # [0 - 1] for optimization
         U.dimensionless,
         name=f"RTG maximum inhibition",
         notes="maximum inhibition of RTG via SGLT2"
@@ -424,7 +444,7 @@ _m.parameters.extend([
         "GFR_healthy",
         100,
         U.ml_per_min,
-        name=f"Glomerular filtration rate (healthy)",
+        name=f"glomerular filtration rate (healthy)",
     ),
 ])
 

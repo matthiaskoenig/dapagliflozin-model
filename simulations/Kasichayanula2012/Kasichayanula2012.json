@@ -1,7 +1,7 @@
 {
   "experiment_id": "Kasichayanula2012",
   "base_path": "/home/mkoenig/git/pkdb_models/pkdb_models/models/dapagliflozin",
-  "data_path": "[PosixPath('/home/mkoenig/git/pkdb_data/studies/dapagliflozin'), PosixPath('/home/mkoenig/git/pkdb_data/studies/canagliflozin')]",
+  "data_path": "[PosixPath('/home/mkoenig/git/pkdb_models/pkdb_models/models/dapagliflozin/data/dapagliflozin'), PosixPath('/home/mkoenig/git/pkdb_models/pkdb_models/models/dapagliflozin/data/canagliflozin')]",
   "models": {
     "model": {
       "sid": null,
@@ -39,7 +39,7 @@
               "_units": "kilogram"
             },
             "[KI__glc_ext]": {
-              "_magnitude": 5.000000000000001,
+              "_magnitude": 5.0,
               "_units": "KI__mmole / liter"
             },
             "GU__f_absorption": {
@@ -287,7 +287,7 @@
   "figures": {
     "Fig2": {
       "sid": "Fig2",
-      "name": "Kasichayanula2012",
+      "name": "Kasichayanula2012 (Healthy)",
       "num_rows": 1,
       "num_cols": 1,
       "width": 7.0,
@@ -330,7 +330,7 @@
             "curves": [
               {
                 "sid": "Fig2__plot0_curve0",
-                "name": "dap",
+                "name": "20 mg PO",
                 "x": "task_po_dap20__time",
                 "y": "task_po_dap20__Cve_dap",
                 "xerr": null,
@@ -361,7 +361,7 @@
               },
               {
                 "sid": "Fig2__plot0_curve1",
-                "name": "DAP20\u00b1SD (n=23)",
+                "name": "20 mg PO\u00b1SD (n=23)",
                 "x": "dapagliflozin_DAP20__time",
                 "y": "dapagliflozin_DAP20__mean",
                 "xerr": null,
@@ -392,7 +392,7 @@
               },
               {
                 "sid": "Fig2__plot0_curve2",
-                "name": "DAP20, SIM40\u00b1SD (n=24)",
+                "name": "20 mg PO + SIM40\u00b1SD (n=24)",
                 "x": "dapagliflozin_DAP20, SIM40__time",
                 "y": "dapagliflozin_DAP20, SIM40__mean",
                 "xerr": null,
@@ -423,7 +423,7 @@
               },
               {
                 "sid": "Fig2__plot0_curve3",
-                "name": "DAP20, VAL320\u00b1SD (n=24)",
+                "name": "20 mg PO + VAL320\u00b1SD (n=24)",
                 "x": "dapagliflozin_DAP20, VAL320__time",
                 "y": "dapagliflozin_DAP20, VAL320__mean",
                 "xerr": null,
@@ -435,18 +435,18 @@
                   "base_style": null,
                   "line": {
                     "type": "DASH",
-                    "color": "#2ca02cff",
+                    "color": "#ff7f0eff",
                     "thickness": 1.0
                   },
                   "marker": {
                     "size": null,
                     "type": "SQUARE",
-                    "fill": "#2ca02cff",
+                    "fill": "#ff7f0eff",
                     "line_color": "#000000ff",
                     "line_thickness": null
                   },
                   "fill": {
-                    "color": "#2ca02cff",
+                    "color": "#ff7f0eff",
                     "second_color": null
                   }
                 },

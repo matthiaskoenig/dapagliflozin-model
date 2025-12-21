@@ -1,7 +1,7 @@
 {
   "experiment_id": "Komoroski2009",
   "base_path": "/home/mkoenig/git/pkdb_models/pkdb_models/models/dapagliflozin",
-  "data_path": "[PosixPath('/home/mkoenig/git/pkdb_data/studies/dapagliflozin'), PosixPath('/home/mkoenig/git/pkdb_data/studies/canagliflozin')]",
+  "data_path": "[PosixPath('/home/mkoenig/git/pkdb_models/pkdb_models/models/dapagliflozin/data/dapagliflozin'), PosixPath('/home/mkoenig/git/pkdb_models/pkdb_models/models/dapagliflozin/data/canagliflozin')]",
   "models": {
     "model": {
       "sid": null,
@@ -123,7 +123,7 @@
               "_units": "dimensionless"
             },
             "[KI__glc_ext]": {
-              "_magnitude": 5.000000000000001,
+              "_magnitude": 5.0,
               "_units": "KI__mmole / liter"
             },
             "f_cirrhosis": {
@@ -165,7 +165,7 @@
               "_units": "dimensionless"
             },
             "[KI__glc_ext]": {
-              "_magnitude": 5.000000000000001,
+              "_magnitude": 5.0,
               "_units": "KI__mmole / liter"
             },
             "f_cirrhosis": {
@@ -207,7 +207,7 @@
               "_units": "dimensionless"
             },
             "[KI__glc_ext]": {
-              "_magnitude": 5.000000000000001,
+              "_magnitude": 5.0,
               "_units": "KI__mmole / liter"
             },
             "f_cirrhosis": {
@@ -249,7 +249,7 @@
               "_units": "dimensionless"
             },
             "[KI__glc_ext]": {
-              "_magnitude": 5.000000000000001,
+              "_magnitude": 5.0,
               "_units": "KI__mmole / liter"
             },
             "f_cirrhosis": {
@@ -291,7 +291,7 @@
               "_units": "dimensionless"
             },
             "[KI__glc_ext]": {
-              "_magnitude": 5.000000000000001,
+              "_magnitude": 5.0,
               "_units": "KI__mmole / liter"
             },
             "f_cirrhosis": {
@@ -333,7 +333,7 @@
               "_units": "dimensionless"
             },
             "[KI__glc_ext]": {
-              "_magnitude": 5.000000000000001,
+              "_magnitude": 5.0,
               "_units": "KI__mmole / liter"
             },
             "f_cirrhosis": {
@@ -375,7 +375,7 @@
               "_units": "dimensionless"
             },
             "[KI__glc_ext]": {
-              "_magnitude": 5.000000000000001,
+              "_magnitude": 5.0,
               "_units": "KI__mmole / liter"
             },
             "f_cirrhosis": {
@@ -417,7 +417,7 @@
               "_units": "dimensionless"
             },
             "[KI__glc_ext]": {
-              "_magnitude": 5.000000000000001,
+              "_magnitude": 5.0,
               "_units": "KI__mmole / liter"
             },
             "f_cirrhosis": {
@@ -459,7 +459,7 @@
               "_units": "dimensionless"
             },
             "[KI__glc_ext]": {
-              "_magnitude": 5.000000000000001,
+              "_magnitude": 5.0,
               "_units": "KI__mmole / liter"
             },
             "f_cirrhosis": {
@@ -501,7 +501,7 @@
               "_units": "dimensionless"
             },
             "[KI__glc_ext]": {
-              "_magnitude": 5.000000000000001,
+              "_magnitude": 5.0,
               "_units": "KI__mmole / liter"
             },
             "f_cirrhosis": {
@@ -543,7 +543,7 @@
               "_units": "dimensionless"
             },
             "[KI__glc_ext]": {
-              "_magnitude": 5.000000000000001,
+              "_magnitude": 5.0,
               "_units": "KI__mmole / liter"
             },
             "f_cirrhosis": {
@@ -585,7 +585,7 @@
               "_units": "dimensionless"
             },
             "[KI__glc_ext]": {
-              "_magnitude": 5.000000000000001,
+              "_magnitude": 5.0,
               "_units": "KI__mmole / liter"
             },
             "f_cirrhosis": {
@@ -809,7 +809,7 @@
               "_units": "dimensionless"
             },
             "[KI__glc_ext]": {
-              "_magnitude": 5.000000000000001,
+              "_magnitude": 5.0,
               "_units": "KI__mmole / liter"
             },
             "f_cirrhosis": {
@@ -835,7 +835,7 @@
           "steps": 500,
           "changes": {
             "KI__glc_urine": {
-              "_magnitude": 0.0,
+              "_magnitude": 0,
               "_units": "KI__mmole"
             },
             "PODOSE_dap": {
@@ -853,7 +853,7 @@
           "steps": 500,
           "changes": {
             "KI__glc_urine": {
-              "_magnitude": 0.0,
+              "_magnitude": 0,
               "_units": "KI__mmole"
             },
             "PODOSE_dap": {
@@ -871,7 +871,7 @@
           "steps": 500,
           "changes": {
             "KI__glc_urine": {
-              "_magnitude": 0.0,
+              "_magnitude": 0,
               "_units": "KI__mmole"
             },
             "PODOSE_dap": {
@@ -889,7 +889,7 @@
           "steps": 500,
           "changes": {
             "KI__glc_urine": {
-              "_magnitude": 0.0,
+              "_magnitude": 0,
               "_units": "KI__mmole"
             },
             "PODOSE_dap": {
@@ -907,7 +907,7 @@
           "steps": 500,
           "changes": {
             "KI__glc_urine": {
-              "_magnitude": 0.0,
+              "_magnitude": 0,
               "_units": "KI__mmole"
             },
             "PODOSE_dap": {
@@ -925,7 +925,7 @@
           "steps": 500,
           "changes": {
             "KI__glc_urine": {
-              "_magnitude": 0.0,
+              "_magnitude": 0,
               "_units": "KI__mmole"
             },
             "PODOSE_dap": {
@@ -943,7 +943,7 @@
           "steps": 500,
           "changes": {
             "KI__glc_urine": {
-              "_magnitude": 0.0,
+              "_magnitude": 0,
               "_units": "KI__mmole"
             },
             "PODOSE_dap": {
@@ -961,7 +961,7 @@
           "steps": 500,
           "changes": {
             "KI__glc_urine": {
-              "_magnitude": 0.0,
+              "_magnitude": 0,
               "_units": "KI__mmole"
             },
             "PODOSE_dap": {
@@ -979,7 +979,7 @@
           "steps": 500,
           "changes": {
             "KI__glc_urine": {
-              "_magnitude": 0.0,
+              "_magnitude": 0,
               "_units": "KI__mmole"
             },
             "PODOSE_dap": {
@@ -997,7 +997,7 @@
           "steps": 500,
           "changes": {
             "KI__glc_urine": {
-              "_magnitude": 0.0,
+              "_magnitude": 0,
               "_units": "KI__mmole"
             },
             "PODOSE_dap": {
@@ -1015,7 +1015,7 @@
           "steps": 500,
           "changes": {
             "KI__glc_urine": {
-              "_magnitude": 0.0,
+              "_magnitude": 0,
               "_units": "KI__mmole"
             },
             "PODOSE_dap": {
@@ -1033,7 +1033,7 @@
           "steps": 500,
           "changes": {
             "KI__glc_urine": {
-              "_magnitude": 0.0,
+              "_magnitude": 0,
               "_units": "KI__mmole"
             },
             "PODOSE_dap": {
@@ -1051,7 +1051,7 @@
           "steps": 500,
           "changes": {
             "KI__glc_urine": {
-              "_magnitude": 0.0,
+              "_magnitude": 0,
               "_units": "KI__mmole"
             },
             "PODOSE_dap": {
@@ -1085,7 +1085,7 @@
               "_units": "dimensionless"
             },
             "[KI__glc_ext]": {
-              "_magnitude": 5.000000000000001,
+              "_magnitude": 5.0,
               "_units": "KI__mmole / liter"
             },
             "f_cirrhosis": {
@@ -1111,7 +1111,7 @@
           "steps": 500,
           "changes": {
             "KI__glc_urine": {
-              "_magnitude": 0.0,
+              "_magnitude": 0,
               "_units": "KI__mmole"
             },
             "PODOSE_dap": {
@@ -1129,7 +1129,7 @@
           "steps": 500,
           "changes": {
             "KI__glc_urine": {
-              "_magnitude": 0.0,
+              "_magnitude": 0,
               "_units": "KI__mmole"
             },
             "PODOSE_dap": {
@@ -1147,7 +1147,7 @@
           "steps": 500,
           "changes": {
             "KI__glc_urine": {
-              "_magnitude": 0.0,
+              "_magnitude": 0,
               "_units": "KI__mmole"
             },
             "PODOSE_dap": {
@@ -1165,7 +1165,7 @@
           "steps": 500,
           "changes": {
             "KI__glc_urine": {
-              "_magnitude": 0.0,
+              "_magnitude": 0,
               "_units": "KI__mmole"
             },
             "PODOSE_dap": {
@@ -1183,7 +1183,7 @@
           "steps": 500,
           "changes": {
             "KI__glc_urine": {
-              "_magnitude": 0.0,
+              "_magnitude": 0,
               "_units": "KI__mmole"
             },
             "PODOSE_dap": {
@@ -1201,7 +1201,7 @@
           "steps": 500,
           "changes": {
             "KI__glc_urine": {
-              "_magnitude": 0.0,
+              "_magnitude": 0,
               "_units": "KI__mmole"
             },
             "PODOSE_dap": {
@@ -1219,7 +1219,7 @@
           "steps": 500,
           "changes": {
             "KI__glc_urine": {
-              "_magnitude": 0.0,
+              "_magnitude": 0,
               "_units": "KI__mmole"
             },
             "PODOSE_dap": {
@@ -1237,7 +1237,7 @@
           "steps": 500,
           "changes": {
             "KI__glc_urine": {
-              "_magnitude": 0.0,
+              "_magnitude": 0,
               "_units": "KI__mmole"
             },
             "PODOSE_dap": {
@@ -1255,7 +1255,7 @@
           "steps": 500,
           "changes": {
             "KI__glc_urine": {
-              "_magnitude": 0.0,
+              "_magnitude": 0,
               "_units": "KI__mmole"
             },
             "PODOSE_dap": {
@@ -1273,7 +1273,7 @@
           "steps": 500,
           "changes": {
             "KI__glc_urine": {
-              "_magnitude": 0.0,
+              "_magnitude": 0,
               "_units": "KI__mmole"
             },
             "PODOSE_dap": {
@@ -1291,7 +1291,7 @@
           "steps": 500,
           "changes": {
             "KI__glc_urine": {
-              "_magnitude": 0.0,
+              "_magnitude": 0,
               "_units": "KI__mmole"
             },
             "PODOSE_dap": {
@@ -1309,7 +1309,7 @@
           "steps": 500,
           "changes": {
             "KI__glc_urine": {
-              "_magnitude": 0.0,
+              "_magnitude": 0,
               "_units": "KI__mmole"
             },
             "PODOSE_dap": {
@@ -1327,7 +1327,7 @@
           "steps": 500,
           "changes": {
             "KI__glc_urine": {
-              "_magnitude": 0.0,
+              "_magnitude": 0,
               "_units": "KI__mmole"
             },
             "PODOSE_dap": {
@@ -1361,7 +1361,7 @@
               "_units": "dimensionless"
             },
             "[KI__glc_ext]": {
-              "_magnitude": 5.000000000000001,
+              "_magnitude": 5.0,
               "_units": "KI__mmole / liter"
             },
             "f_cirrhosis": {
@@ -1387,7 +1387,7 @@
           "steps": 500,
           "changes": {
             "KI__glc_urine": {
-              "_magnitude": 0.0,
+              "_magnitude": 0,
               "_units": "KI__mmole"
             },
             "PODOSE_dap": {
@@ -1405,7 +1405,7 @@
           "steps": 500,
           "changes": {
             "KI__glc_urine": {
-              "_magnitude": 0.0,
+              "_magnitude": 0,
               "_units": "KI__mmole"
             },
             "PODOSE_dap": {
@@ -1423,7 +1423,7 @@
           "steps": 500,
           "changes": {
             "KI__glc_urine": {
-              "_magnitude": 0.0,
+              "_magnitude": 0,
               "_units": "KI__mmole"
             },
             "PODOSE_dap": {
@@ -1441,7 +1441,7 @@
           "steps": 500,
           "changes": {
             "KI__glc_urine": {
-              "_magnitude": 0.0,
+              "_magnitude": 0,
               "_units": "KI__mmole"
             },
             "PODOSE_dap": {
@@ -1459,7 +1459,7 @@
           "steps": 500,
           "changes": {
             "KI__glc_urine": {
-              "_magnitude": 0.0,
+              "_magnitude": 0,
               "_units": "KI__mmole"
             },
             "PODOSE_dap": {
@@ -1477,7 +1477,7 @@
           "steps": 500,
           "changes": {
             "KI__glc_urine": {
-              "_magnitude": 0.0,
+              "_magnitude": 0,
               "_units": "KI__mmole"
             },
             "PODOSE_dap": {
@@ -1495,7 +1495,7 @@
           "steps": 500,
           "changes": {
             "KI__glc_urine": {
-              "_magnitude": 0.0,
+              "_magnitude": 0,
               "_units": "KI__mmole"
             },
             "PODOSE_dap": {
@@ -1513,7 +1513,7 @@
           "steps": 500,
           "changes": {
             "KI__glc_urine": {
-              "_magnitude": 0.0,
+              "_magnitude": 0,
               "_units": "KI__mmole"
             },
             "PODOSE_dap": {
@@ -1531,7 +1531,7 @@
           "steps": 500,
           "changes": {
             "KI__glc_urine": {
-              "_magnitude": 0.0,
+              "_magnitude": 0,
               "_units": "KI__mmole"
             },
             "PODOSE_dap": {
@@ -1549,7 +1549,7 @@
           "steps": 500,
           "changes": {
             "KI__glc_urine": {
-              "_magnitude": 0.0,
+              "_magnitude": 0,
               "_units": "KI__mmole"
             },
             "PODOSE_dap": {
@@ -1567,7 +1567,7 @@
           "steps": 500,
           "changes": {
             "KI__glc_urine": {
-              "_magnitude": 0.0,
+              "_magnitude": 0,
               "_units": "KI__mmole"
             },
             "PODOSE_dap": {
@@ -1585,7 +1585,7 @@
           "steps": 500,
           "changes": {
             "KI__glc_urine": {
-              "_magnitude": 0.0,
+              "_magnitude": 0,
               "_units": "KI__mmole"
             },
             "PODOSE_dap": {
@@ -1603,7 +1603,7 @@
           "steps": 500,
           "changes": {
             "KI__glc_urine": {
-              "_magnitude": 0.0,
+              "_magnitude": 0,
               "_units": "KI__mmole"
             },
             "PODOSE_dap": {
@@ -1637,7 +1637,7 @@
               "_units": "dimensionless"
             },
             "[KI__glc_ext]": {
-              "_magnitude": 5.000000000000001,
+              "_magnitude": 5.0,
               "_units": "KI__mmole / liter"
             },
             "f_cirrhosis": {
@@ -1663,7 +1663,7 @@
           "steps": 500,
           "changes": {
             "KI__glc_urine": {
-              "_magnitude": 0.0,
+              "_magnitude": 0,
               "_units": "KI__mmole"
             },
             "PODOSE_dap": {
@@ -1681,7 +1681,7 @@
           "steps": 500,
           "changes": {
             "KI__glc_urine": {
-              "_magnitude": 0.0,
+              "_magnitude": 0,
               "_units": "KI__mmole"
             },
             "PODOSE_dap": {
@@ -1699,7 +1699,7 @@
           "steps": 500,
           "changes": {
             "KI__glc_urine": {
-              "_magnitude": 0.0,
+              "_magnitude": 0,
               "_units": "KI__mmole"
             },
             "PODOSE_dap": {
@@ -1717,7 +1717,7 @@
           "steps": 500,
           "changes": {
             "KI__glc_urine": {
-              "_magnitude": 0.0,
+              "_magnitude": 0,
               "_units": "KI__mmole"
             },
             "PODOSE_dap": {
@@ -1735,7 +1735,7 @@
           "steps": 500,
           "changes": {
             "KI__glc_urine": {
-              "_magnitude": 0.0,
+              "_magnitude": 0,
               "_units": "KI__mmole"
             },
             "PODOSE_dap": {
@@ -1753,7 +1753,7 @@
           "steps": 500,
           "changes": {
             "KI__glc_urine": {
-              "_magnitude": 0.0,
+              "_magnitude": 0,
               "_units": "KI__mmole"
             },
             "PODOSE_dap": {
@@ -1771,7 +1771,7 @@
           "steps": 500,
           "changes": {
             "KI__glc_urine": {
-              "_magnitude": 0.0,
+              "_magnitude": 0,
               "_units": "KI__mmole"
             },
             "PODOSE_dap": {
@@ -1789,7 +1789,7 @@
           "steps": 500,
           "changes": {
             "KI__glc_urine": {
-              "_magnitude": 0.0,
+              "_magnitude": 0,
               "_units": "KI__mmole"
             },
             "PODOSE_dap": {
@@ -1807,7 +1807,7 @@
           "steps": 500,
           "changes": {
             "KI__glc_urine": {
-              "_magnitude": 0.0,
+              "_magnitude": 0,
               "_units": "KI__mmole"
             },
             "PODOSE_dap": {
@@ -1825,7 +1825,7 @@
           "steps": 500,
           "changes": {
             "KI__glc_urine": {
-              "_magnitude": 0.0,
+              "_magnitude": 0,
               "_units": "KI__mmole"
             },
             "PODOSE_dap": {
@@ -1843,7 +1843,7 @@
           "steps": 500,
           "changes": {
             "KI__glc_urine": {
-              "_magnitude": 0.0,
+              "_magnitude": 0,
               "_units": "KI__mmole"
             },
             "PODOSE_dap": {
@@ -1861,7 +1861,7 @@
           "steps": 500,
           "changes": {
             "KI__glc_urine": {
-              "_magnitude": 0.0,
+              "_magnitude": 0,
               "_units": "KI__mmole"
             },
             "PODOSE_dap": {
@@ -1879,7 +1879,7 @@
           "steps": 500,
           "changes": {
             "KI__glc_urine": {
-              "_magnitude": 0.0,
+              "_magnitude": 0,
               "_units": "KI__mmole"
             },
             "PODOSE_dap": {
@@ -1913,7 +1913,7 @@
               "_units": "dimensionless"
             },
             "[KI__glc_ext]": {
-              "_magnitude": 5.000000000000001,
+              "_magnitude": 5.0,
               "_units": "KI__mmole / liter"
             },
             "f_cirrhosis": {
@@ -1939,7 +1939,7 @@
           "steps": 500,
           "changes": {
             "KI__glc_urine": {
-              "_magnitude": 0.0,
+              "_magnitude": 0,
               "_units": "KI__mmole"
             },
             "PODOSE_dap": {
@@ -1957,7 +1957,7 @@
           "steps": 500,
           "changes": {
             "KI__glc_urine": {
-              "_magnitude": 0.0,
+              "_magnitude": 0,
               "_units": "KI__mmole"
             },
             "PODOSE_dap": {
@@ -1975,7 +1975,7 @@
           "steps": 500,
           "changes": {
             "KI__glc_urine": {
-              "_magnitude": 0.0,
+              "_magnitude": 0,
               "_units": "KI__mmole"
             },
             "PODOSE_dap": {
@@ -1993,7 +1993,7 @@
           "steps": 500,
           "changes": {
             "KI__glc_urine": {
-              "_magnitude": 0.0,
+              "_magnitude": 0,
               "_units": "KI__mmole"
             },
             "PODOSE_dap": {
@@ -2011,7 +2011,7 @@
           "steps": 500,
           "changes": {
             "KI__glc_urine": {
-              "_magnitude": 0.0,
+              "_magnitude": 0,
               "_units": "KI__mmole"
             },
             "PODOSE_dap": {
@@ -2029,7 +2029,7 @@
           "steps": 500,
           "changes": {
             "KI__glc_urine": {
-              "_magnitude": 0.0,
+              "_magnitude": 0,
               "_units": "KI__mmole"
             },
             "PODOSE_dap": {
@@ -2047,7 +2047,7 @@
           "steps": 500,
           "changes": {
             "KI__glc_urine": {
-              "_magnitude": 0.0,
+              "_magnitude": 0,
               "_units": "KI__mmole"
             },
             "PODOSE_dap": {
@@ -2065,7 +2065,7 @@
           "steps": 500,
           "changes": {
             "KI__glc_urine": {
-              "_magnitude": 0.0,
+              "_magnitude": 0,
               "_units": "KI__mmole"
             },
             "PODOSE_dap": {
@@ -2083,7 +2083,7 @@
           "steps": 500,
           "changes": {
             "KI__glc_urine": {
-              "_magnitude": 0.0,
+              "_magnitude": 0,
               "_units": "KI__mmole"
             },
             "PODOSE_dap": {
@@ -2101,7 +2101,7 @@
           "steps": 500,
           "changes": {
             "KI__glc_urine": {
-              "_magnitude": 0.0,
+              "_magnitude": 0,
               "_units": "KI__mmole"
             },
             "PODOSE_dap": {
@@ -2119,7 +2119,7 @@
           "steps": 500,
           "changes": {
             "KI__glc_urine": {
-              "_magnitude": 0.0,
+              "_magnitude": 0,
               "_units": "KI__mmole"
             },
             "PODOSE_dap": {
@@ -2137,7 +2137,7 @@
           "steps": 500,
           "changes": {
             "KI__glc_urine": {
-              "_magnitude": 0.0,
+              "_magnitude": 0,
               "_units": "KI__mmole"
             },
             "PODOSE_dap": {
@@ -2155,7 +2155,7 @@
           "steps": 500,
           "changes": {
             "KI__glc_urine": {
-              "_magnitude": 0.0,
+              "_magnitude": 0,
               "_units": "KI__mmole"
             },
             "PODOSE_dap": {
@@ -2189,7 +2189,7 @@
               "_units": "dimensionless"
             },
             "[KI__glc_ext]": {
-              "_magnitude": 5.000000000000001,
+              "_magnitude": 5.0,
               "_units": "KI__mmole / liter"
             },
             "f_cirrhosis": {
@@ -2413,7 +2413,7 @@
               "_units": "dimensionless"
             },
             "[KI__glc_ext]": {
-              "_magnitude": 5.000000000000001,
+              "_magnitude": 5.0,
               "_units": "KI__mmole / liter"
             },
             "f_cirrhosis": {
@@ -2637,7 +2637,7 @@
               "_units": "dimensionless"
             },
             "[KI__glc_ext]": {
-              "_magnitude": 5.000000000000001,
+              "_magnitude": 5.0,
               "_units": "KI__mmole / liter"
             },
             "f_cirrhosis": {
@@ -2861,7 +2861,7 @@
               "_units": "dimensionless"
             },
             "[KI__glc_ext]": {
-              "_magnitude": 5.000000000000001,
+              "_magnitude": 5.0,
               "_units": "KI__mmole / liter"
             },
             "f_cirrhosis": {
@@ -7607,7 +7607,7 @@
   "figures": {
     "Fig_fasting": {
       "sid": "Fig_fasting",
-      "name": "Komoroski2009",
+      "name": "Komoroski2009 (Healthy)",
       "num_rows": 1,
       "num_cols": 2,
       "width": 14.0,
@@ -7650,7 +7650,7 @@
             "curves": [
               {
                 "sid": "Fig_fasting__plot0_curve0",
-                "name": "Sim dap fasted",
+                "name": "fasted - 250 mg PO",
                 "x": "task_po_dap_250_fasted__time",
                 "y": "task_po_dap_250_fasted__Cve_dap",
                 "xerr": null,
@@ -7681,7 +7681,7 @@
               },
               {
                 "sid": "Fig_fasting__plot0_curve1",
-                "name": "dap fasted\u00b1SD (n=5)",
+                "name": "fasted - 250 mg PO\u00b1SD (n=5)",
                 "x": "dapagliflozin_DAP250_fasted__time",
                 "y": "dapagliflozin_DAP250_fasted__mean",
                 "xerr": null,
@@ -7712,7 +7712,7 @@
               },
               {
                 "sid": "Fig_fasting__plot0_curve2",
-                "name": "Sim dap fed",
+                "name": "fed - 250 mg PO",
                 "x": "task_po_dap_250_fed__time",
                 "y": "task_po_dap_250_fed__Cve_dap",
                 "xerr": null,
@@ -7743,7 +7743,7 @@
               },
               {
                 "sid": "Fig_fasting__plot0_curve3",
-                "name": "dap fed\u00b1SD (n=5)",
+                "name": "fed - 250 mg PO\u00b1SD (n=5)",
                 "x": "dapagliflozin_DAP250_fed__time",
                 "y": "dapagliflozin_DAP250_fed__mean",
                 "xerr": null,
@@ -7817,7 +7817,7 @@
             "curves": [
               {
                 "sid": "Fig_fasting__plot1_curve0",
-                "name": "Sim dap fasted",
+                "name": "fasted - 250 mg PO",
                 "x": "task_po_dap_250_fasted__time",
                 "y": "task_po_dap_250_fasted__Aurine_dap",
                 "xerr": null,
@@ -7848,7 +7848,7 @@
               },
               {
                 "sid": "Fig_fasting__plot1_curve1",
-                "name": "dap fasted\u00b1SD (n=5)",
+                "name": "fasted - 250 mg PO\u00b1SD (n=5)",
                 "x": "dapagliflozin_cumulative amount_fasted__time",
                 "y": "dapagliflozin_cumulative amount_fasted__mean",
                 "xerr": null,
@@ -7859,7 +7859,7 @@
                   "name": null,
                   "base_style": null,
                   "line": {
-                    "type": "DASH",
+                    "type": "NONE",
                     "color": "#000000ff",
                     "thickness": 1.0
                   },
@@ -7879,7 +7879,7 @@
               },
               {
                 "sid": "Fig_fasting__plot1_curve2",
-                "name": "Sim dap fed",
+                "name": "fed - 250 mg PO",
                 "x": "task_po_dap_250_fed__time",
                 "y": "task_po_dap_250_fed__Aurine_dap",
                 "xerr": null,
@@ -7910,7 +7910,7 @@
               },
               {
                 "sid": "Fig_fasting__plot1_curve3",
-                "name": "dap fed\u00b1SD (n=5)",
+                "name": "fed - 250 mg PO\u00b1SD (n=5)",
                 "x": "dapagliflozin_cumulative amount_fed__time",
                 "y": "dapagliflozin_cumulative amount_fed__mean",
                 "xerr": null,
@@ -7921,7 +7921,7 @@
                   "name": null,
                   "base_style": null,
                   "line": {
-                    "type": "DASH",
+                    "type": "NONE",
                     "color": "#d62728ff",
                     "thickness": 1.0
                   },
@@ -7951,7 +7951,7 @@
     },
     "Fig_uge_single": {
       "sid": "Fig_uge_single",
-      "name": "Komoroski2009",
+      "name": "Komoroski2009 (Healthy)",
       "num_rows": 1,
       "num_cols": 1,
       "width": 7.0,
@@ -7988,13 +7988,13 @@
               "ticks_visible": true
             },
             "yaxis_right": null,
-            "legend": false,
+            "legend": true,
             "facecolor": "#ffffffff",
             "title_visible": true,
             "curves": [
               {
                 "sid": "Fig_uge_single__plot0_curve0",
-                "name": "Sim 0 mg",
+                "name": "0 mg PO",
                 "x": "task_po_dap_0_single__time",
                 "y": "task_po_dap_0_single__KI__UGE",
                 "xerr": null,
@@ -8025,7 +8025,7 @@
               },
               {
                 "sid": "Fig_uge_single__plot0_curve1",
-                "name": "Sim 2.5 mg",
+                "name": "2.5 mg PO",
                 "x": "task_po_dap_2.5_single__time",
                 "y": "task_po_dap_2.5_single__KI__UGE",
                 "xerr": null,
@@ -8037,18 +8037,18 @@
                   "base_style": null,
                   "line": {
                     "type": "SOLID",
-                    "color": "#1f77b4ff",
+                    "color": "#fb8c00ff",
                     "thickness": 2.0
                   },
                   "marker": {
                     "size": null,
                     "type": "NONE",
-                    "fill": "#1f77b4ff",
+                    "fill": "#fb8c00ff",
                     "line_color": "#000000ff",
                     "line_thickness": null
                   },
                   "fill": {
-                    "color": "#1f77b4ff",
+                    "color": "#fb8c00ff",
                     "second_color": null
                   }
                 },
@@ -8056,7 +8056,7 @@
               },
               {
                 "sid": "Fig_uge_single__plot0_curve2",
-                "name": "Sim 5 mg",
+                "name": "5 mg PO",
                 "x": "task_po_dap_5_single__time",
                 "y": "task_po_dap_5_single__KI__UGE",
                 "xerr": null,
@@ -8068,18 +8068,18 @@
                   "base_style": null,
                   "line": {
                     "type": "SOLID",
-                    "color": "#ff7f0eff",
+                    "color": "#f57c00ff",
                     "thickness": 2.0
                   },
                   "marker": {
                     "size": null,
                     "type": "NONE",
-                    "fill": "#ff7f0eff",
+                    "fill": "#f57c00ff",
                     "line_color": "#000000ff",
                     "line_thickness": null
                   },
                   "fill": {
-                    "color": "#ff7f0eff",
+                    "color": "#f57c00ff",
                     "second_color": null
                   }
                 },
@@ -8087,7 +8087,7 @@
               },
               {
                 "sid": "Fig_uge_single__plot0_curve3",
-                "name": "Sim 10 mg",
+                "name": "10 mg PO",
                 "x": "task_po_dap_10_single__time",
                 "y": "task_po_dap_10_single__KI__UGE",
                 "xerr": null,
@@ -8099,18 +8099,18 @@
                   "base_style": null,
                   "line": {
                     "type": "SOLID",
-                    "color": "#2ca02cff",
+                    "color": "#ef6c00ff",
                     "thickness": 2.0
                   },
                   "marker": {
                     "size": null,
                     "type": "NONE",
-                    "fill": "#2ca02cff",
+                    "fill": "#ef6c00ff",
                     "line_color": "#000000ff",
                     "line_thickness": null
                   },
                   "fill": {
-                    "color": "#2ca02cff",
+                    "color": "#ef6c00ff",
                     "second_color": null
                   }
                 },
@@ -8118,7 +8118,7 @@
               },
               {
                 "sid": "Fig_uge_single__plot0_curve4",
-                "name": "Sim 20 mg",
+                "name": "20 mg PO",
                 "x": "task_po_dap_20_single__time",
                 "y": "task_po_dap_20_single__KI__UGE",
                 "xerr": null,
@@ -8130,18 +8130,18 @@
                   "base_style": null,
                   "line": {
                     "type": "SOLID",
-                    "color": "#d62728ff",
+                    "color": "#e65100ff",
                     "thickness": 2.0
                   },
                   "marker": {
                     "size": null,
                     "type": "NONE",
-                    "fill": "#d62728ff",
+                    "fill": "#e65100ff",
                     "line_color": "#000000ff",
                     "line_thickness": null
                   },
                   "fill": {
-                    "color": "#d62728ff",
+                    "color": "#e65100ff",
                     "second_color": null
                   }
                 },
@@ -8149,7 +8149,7 @@
               },
               {
                 "sid": "Fig_uge_single__plot0_curve5",
-                "name": "Sim 50 mg",
+                "name": "50 mg PO",
                 "x": "task_po_dap_50_single__time",
                 "y": "task_po_dap_50_single__KI__UGE",
                 "xerr": null,
@@ -8161,18 +8161,18 @@
                   "base_style": null,
                   "line": {
                     "type": "SOLID",
-                    "color": "#9467bdff",
+                    "color": "#bf360cff",
                     "thickness": 2.0
                   },
                   "marker": {
                     "size": null,
                     "type": "NONE",
-                    "fill": "#9467bdff",
+                    "fill": "#bf360cff",
                     "line_color": "#000000ff",
                     "line_thickness": null
                   },
                   "fill": {
-                    "color": "#9467bdff",
+                    "color": "#bf360cff",
                     "second_color": null
                   }
                 },
@@ -8180,7 +8180,7 @@
               },
               {
                 "sid": "Fig_uge_single__plot0_curve6",
-                "name": "Sim 100 mg",
+                "name": "100 mg PO",
                 "x": "task_po_dap_100_single__time",
                 "y": "task_po_dap_100_single__KI__UGE",
                 "xerr": null,
@@ -8192,18 +8192,18 @@
                   "base_style": null,
                   "line": {
                     "type": "SOLID",
-                    "color": "#8c564bff",
+                    "color": "#a52a00ff",
                     "thickness": 2.0
                   },
                   "marker": {
                     "size": null,
                     "type": "NONE",
-                    "fill": "#8c564bff",
+                    "fill": "#a52a00ff",
                     "line_color": "#000000ff",
                     "line_thickness": null
                   },
                   "fill": {
-                    "color": "#8c564bff",
+                    "color": "#a52a00ff",
                     "second_color": null
                   }
                 },
@@ -8211,7 +8211,7 @@
               },
               {
                 "sid": "Fig_uge_single__plot0_curve7",
-                "name": "Sim 250 mg",
+                "name": "250 mg PO",
                 "x": "task_po_dap_250_single__time",
                 "y": "task_po_dap_250_single__KI__UGE",
                 "xerr": null,
@@ -8223,18 +8223,18 @@
                   "base_style": null,
                   "line": {
                     "type": "SOLID",
-                    "color": "#e377c2ff",
+                    "color": "#872200ff",
                     "thickness": 2.0
                   },
                   "marker": {
                     "size": null,
                     "type": "NONE",
-                    "fill": "#e377c2ff",
+                    "fill": "#872200ff",
                     "line_color": "#000000ff",
                     "line_thickness": null
                   },
                   "fill": {
-                    "color": "#e377c2ff",
+                    "color": "#872200ff",
                     "second_color": null
                   }
                 },
@@ -8242,7 +8242,7 @@
               },
               {
                 "sid": "Fig_uge_single__plot0_curve8",
-                "name": "Sim 500 mg",
+                "name": "500 mg PO",
                 "x": "task_po_dap_500_single__time",
                 "y": "task_po_dap_500_single__KI__UGE",
                 "xerr": null,
@@ -8254,18 +8254,18 @@
                   "base_style": null,
                   "line": {
                     "type": "SOLID",
-                    "color": "#7f7f7fff",
+                    "color": "#5e1800ff",
                     "thickness": 2.0
                   },
                   "marker": {
                     "size": null,
                     "type": "NONE",
-                    "fill": "#7f7f7fff",
+                    "fill": "#5e1800ff",
                     "line_color": "#000000ff",
                     "line_thickness": null
                   },
                   "fill": {
-                    "color": "#7f7f7fff",
+                    "color": "#5e1800ff",
                     "second_color": null
                   }
                 },
@@ -8273,7 +8273,7 @@
               },
               {
                 "sid": "Fig_uge_single__plot0_curve9",
-                "name": "UGE 0 mg (n=5)",
+                "name": "0 mg PO (n=5)",
                 "x": "glucose_cumulative amount_DAP0__time",
                 "y": "glucose_cumulative amount_DAP0__mean",
                 "xerr": null,
@@ -8304,7 +8304,7 @@
               },
               {
                 "sid": "Fig_uge_single__plot0_curve10",
-                "name": "UGE 2.5 mg (n=5)",
+                "name": "2.5 mg PO (n=5)",
                 "x": "glucose_cumulative amount_DAP2.5__time",
                 "y": "glucose_cumulative amount_DAP2.5__mean",
                 "xerr": null,
@@ -8316,18 +8316,18 @@
                   "base_style": null,
                   "line": {
                     "type": "DASH",
-                    "color": "#1f77b4ff",
+                    "color": "#fb8c00ff",
                     "thickness": 1.0
                   },
                   "marker": {
                     "size": null,
                     "type": "SQUARE",
-                    "fill": "#1f77b4ff",
+                    "fill": "#fb8c00ff",
                     "line_color": "#000000ff",
                     "line_thickness": null
                   },
                   "fill": {
-                    "color": "#1f77b4ff",
+                    "color": "#fb8c00ff",
                     "second_color": null
                   }
                 },
@@ -8335,7 +8335,7 @@
               },
               {
                 "sid": "Fig_uge_single__plot0_curve11",
-                "name": "UGE 5 mg (n=5)",
+                "name": "5 mg PO (n=5)",
                 "x": "glucose_cumulative amount_DAP5__time",
                 "y": "glucose_cumulative amount_DAP5__mean",
                 "xerr": null,
@@ -8347,18 +8347,18 @@
                   "base_style": null,
                   "line": {
                     "type": "DASH",
-                    "color": "#ff7f0eff",
+                    "color": "#f57c00ff",
                     "thickness": 1.0
                   },
                   "marker": {
                     "size": null,
                     "type": "SQUARE",
-                    "fill": "#ff7f0eff",
+                    "fill": "#f57c00ff",
                     "line_color": "#000000ff",
                     "line_thickness": null
                   },
                   "fill": {
-                    "color": "#ff7f0eff",
+                    "color": "#f57c00ff",
                     "second_color": null
                   }
                 },
@@ -8366,7 +8366,7 @@
               },
               {
                 "sid": "Fig_uge_single__plot0_curve12",
-                "name": "UGE 10 mg (n=5)",
+                "name": "10 mg PO (n=5)",
                 "x": "glucose_cumulative amount_DAP10__time",
                 "y": "glucose_cumulative amount_DAP10__mean",
                 "xerr": null,
@@ -8378,18 +8378,18 @@
                   "base_style": null,
                   "line": {
                     "type": "DASH",
-                    "color": "#2ca02cff",
+                    "color": "#ef6c00ff",
                     "thickness": 1.0
                   },
                   "marker": {
                     "size": null,
                     "type": "SQUARE",
-                    "fill": "#2ca02cff",
+                    "fill": "#ef6c00ff",
                     "line_color": "#000000ff",
                     "line_thickness": null
                   },
                   "fill": {
-                    "color": "#2ca02cff",
+                    "color": "#ef6c00ff",
                     "second_color": null
                   }
                 },
@@ -8397,7 +8397,7 @@
               },
               {
                 "sid": "Fig_uge_single__plot0_curve13",
-                "name": "UGE 20 mg (n=5)",
+                "name": "20 mg PO (n=5)",
                 "x": "glucose_cumulative amount_DAP20__time",
                 "y": "glucose_cumulative amount_DAP20__mean",
                 "xerr": null,
@@ -8409,18 +8409,18 @@
                   "base_style": null,
                   "line": {
                     "type": "DASH",
-                    "color": "#d62728ff",
+                    "color": "#e65100ff",
                     "thickness": 1.0
                   },
                   "marker": {
                     "size": null,
                     "type": "SQUARE",
-                    "fill": "#d62728ff",
+                    "fill": "#e65100ff",
                     "line_color": "#000000ff",
                     "line_thickness": null
                   },
                   "fill": {
-                    "color": "#d62728ff",
+                    "color": "#e65100ff",
                     "second_color": null
                   }
                 },
@@ -8428,7 +8428,7 @@
               },
               {
                 "sid": "Fig_uge_single__plot0_curve14",
-                "name": "UGE 50 mg (n=5)",
+                "name": "50 mg PO (n=5)",
                 "x": "glucose_cumulative amount_DAP50__time",
                 "y": "glucose_cumulative amount_DAP50__mean",
                 "xerr": null,
@@ -8440,18 +8440,18 @@
                   "base_style": null,
                   "line": {
                     "type": "DASH",
-                    "color": "#9467bdff",
+                    "color": "#bf360cff",
                     "thickness": 1.0
                   },
                   "marker": {
                     "size": null,
                     "type": "SQUARE",
-                    "fill": "#9467bdff",
+                    "fill": "#bf360cff",
                     "line_color": "#000000ff",
                     "line_thickness": null
                   },
                   "fill": {
-                    "color": "#9467bdff",
+                    "color": "#bf360cff",
                     "second_color": null
                   }
                 },
@@ -8459,7 +8459,7 @@
               },
               {
                 "sid": "Fig_uge_single__plot0_curve15",
-                "name": "UGE 100 mg (n=5)",
+                "name": "100 mg PO (n=5)",
                 "x": "glucose_cumulative amount_DAP100__time",
                 "y": "glucose_cumulative amount_DAP100__mean",
                 "xerr": null,
@@ -8471,18 +8471,18 @@
                   "base_style": null,
                   "line": {
                     "type": "DASH",
-                    "color": "#8c564bff",
+                    "color": "#a52a00ff",
                     "thickness": 1.0
                   },
                   "marker": {
                     "size": null,
                     "type": "SQUARE",
-                    "fill": "#8c564bff",
+                    "fill": "#a52a00ff",
                     "line_color": "#000000ff",
                     "line_thickness": null
                   },
                   "fill": {
-                    "color": "#8c564bff",
+                    "color": "#a52a00ff",
                     "second_color": null
                   }
                 },
@@ -8490,7 +8490,7 @@
               },
               {
                 "sid": "Fig_uge_single__plot0_curve16",
-                "name": "UGE 250 mg (n=5)",
+                "name": "250 mg PO (n=5)",
                 "x": "glucose_cumulative amount_DAP250__time",
                 "y": "glucose_cumulative amount_DAP250__mean",
                 "xerr": null,
@@ -8502,18 +8502,18 @@
                   "base_style": null,
                   "line": {
                     "type": "DASH",
-                    "color": "#e377c2ff",
+                    "color": "#872200ff",
                     "thickness": 1.0
                   },
                   "marker": {
                     "size": null,
                     "type": "SQUARE",
-                    "fill": "#e377c2ff",
+                    "fill": "#872200ff",
                     "line_color": "#000000ff",
                     "line_thickness": null
                   },
                   "fill": {
-                    "color": "#e377c2ff",
+                    "color": "#872200ff",
                     "second_color": null
                   }
                 },
@@ -8521,7 +8521,7 @@
               },
               {
                 "sid": "Fig_uge_single__plot0_curve17",
-                "name": "UGE 500 mg (n=5)",
+                "name": "500 mg PO (n=5)",
                 "x": "glucose_cumulative amount_DAP500__time",
                 "y": "glucose_cumulative amount_DAP500__mean",
                 "xerr": null,
@@ -8533,18 +8533,18 @@
                   "base_style": null,
                   "line": {
                     "type": "DASH",
-                    "color": "#7f7f7fff",
+                    "color": "#5e1800ff",
                     "thickness": 1.0
                   },
                   "marker": {
                     "size": null,
                     "type": "SQUARE",
-                    "fill": "#7f7f7fff",
+                    "fill": "#5e1800ff",
                     "line_color": "#000000ff",
                     "line_thickness": null
                   },
                   "fill": {
-                    "color": "#7f7f7fff",
+                    "color": "#5e1800ff",
                     "second_color": null
                   }
                 },
@@ -8562,7 +8562,7 @@
     },
     "Fig_multi": {
       "sid": "Fig_multi",
-      "name": "Komoroski2009",
+      "name": "Komoroski2009 (Healthy)",
       "num_rows": 1,
       "num_cols": 2,
       "width": 14.0,
@@ -8599,13 +8599,13 @@
               "ticks_visible": true
             },
             "yaxis_right": null,
-            "legend": false,
+            "legend": true,
             "facecolor": "#ffffffff",
             "title_visible": true,
             "curves": [
               {
                 "sid": "Fig_multi__plot0_curve0",
-                "name": "Sim 2.5 mg",
+                "name": "2.5 mg PO",
                 "x": "task_po_dap_2.5_single__time",
                 "y": "task_po_dap_2.5_single__Cve_dap",
                 "xerr": null,
@@ -8617,18 +8617,18 @@
                   "base_style": null,
                   "line": {
                     "type": "SOLID",
-                    "color": "#1f77b4ff",
+                    "color": "#fb8c00ff",
                     "thickness": 2.0
                   },
                   "marker": {
                     "size": null,
                     "type": "NONE",
-                    "fill": "#1f77b4ff",
+                    "fill": "#fb8c00ff",
                     "line_color": "#000000ff",
                     "line_thickness": null
                   },
                   "fill": {
-                    "color": "#1f77b4ff",
+                    "color": "#fb8c00ff",
                     "second_color": null
                   }
                 },
@@ -8636,7 +8636,7 @@
               },
               {
                 "sid": "Fig_multi__plot0_curve1",
-                "name": "dap 2.5 mg\u00b1SD (n=6)",
+                "name": "2.5 mg PO\u00b1SD (n=6)",
                 "x": "dapagliflozin_DAP2.5__time",
                 "y": "dapagliflozin_DAP2.5__mean",
                 "xerr": null,
@@ -8648,18 +8648,18 @@
                   "base_style": null,
                   "line": {
                     "type": "DASH",
-                    "color": "#1f77b4ff",
+                    "color": "#fb8c00ff",
                     "thickness": 1.0
                   },
                   "marker": {
                     "size": null,
                     "type": "SQUARE",
-                    "fill": "#1f77b4ff",
+                    "fill": "#fb8c00ff",
                     "line_color": "#000000ff",
                     "line_thickness": null
                   },
                   "fill": {
-                    "color": "#1f77b4ff",
+                    "color": "#fb8c00ff",
                     "second_color": null
                   }
                 },
@@ -8667,7 +8667,7 @@
               },
               {
                 "sid": "Fig_multi__plot0_curve2",
-                "name": "Sim 10 mg",
+                "name": "10 mg PO",
                 "x": "task_po_dap_10_single__time",
                 "y": "task_po_dap_10_single__Cve_dap",
                 "xerr": null,
@@ -8679,18 +8679,18 @@
                   "base_style": null,
                   "line": {
                     "type": "SOLID",
-                    "color": "#2ca02cff",
+                    "color": "#ef6c00ff",
                     "thickness": 2.0
                   },
                   "marker": {
                     "size": null,
                     "type": "NONE",
-                    "fill": "#2ca02cff",
+                    "fill": "#ef6c00ff",
                     "line_color": "#000000ff",
                     "line_thickness": null
                   },
                   "fill": {
-                    "color": "#2ca02cff",
+                    "color": "#ef6c00ff",
                     "second_color": null
                   }
                 },
@@ -8698,7 +8698,7 @@
               },
               {
                 "sid": "Fig_multi__plot0_curve3",
-                "name": "dap 10 mg\u00b1SD (n=6)",
+                "name": "10 mg PO\u00b1SD (n=6)",
                 "x": "dapagliflozin_DAP10__time",
                 "y": "dapagliflozin_DAP10__mean",
                 "xerr": null,
@@ -8710,18 +8710,18 @@
                   "base_style": null,
                   "line": {
                     "type": "DASH",
-                    "color": "#2ca02cff",
+                    "color": "#ef6c00ff",
                     "thickness": 1.0
                   },
                   "marker": {
                     "size": null,
                     "type": "SQUARE",
-                    "fill": "#2ca02cff",
+                    "fill": "#ef6c00ff",
                     "line_color": "#000000ff",
                     "line_thickness": null
                   },
                   "fill": {
-                    "color": "#2ca02cff",
+                    "color": "#ef6c00ff",
                     "second_color": null
                   }
                 },
@@ -8729,7 +8729,7 @@
               },
               {
                 "sid": "Fig_multi__plot0_curve4",
-                "name": "Sim 20 mg",
+                "name": "20 mg PO",
                 "x": "task_po_dap_20_single__time",
                 "y": "task_po_dap_20_single__Cve_dap",
                 "xerr": null,
@@ -8741,18 +8741,18 @@
                   "base_style": null,
                   "line": {
                     "type": "SOLID",
-                    "color": "#d62728ff",
+                    "color": "#e65100ff",
                     "thickness": 2.0
                   },
                   "marker": {
                     "size": null,
                     "type": "NONE",
-                    "fill": "#d62728ff",
+                    "fill": "#e65100ff",
                     "line_color": "#000000ff",
                     "line_thickness": null
                   },
                   "fill": {
-                    "color": "#d62728ff",
+                    "color": "#e65100ff",
                     "second_color": null
                   }
                 },
@@ -8760,7 +8760,7 @@
               },
               {
                 "sid": "Fig_multi__plot0_curve5",
-                "name": "dap 20 mg\u00b1SD (n=6)",
+                "name": "20 mg PO\u00b1SD (n=6)",
                 "x": "dapagliflozin_DAP20__time",
                 "y": "dapagliflozin_DAP20__mean",
                 "xerr": null,
@@ -8772,18 +8772,18 @@
                   "base_style": null,
                   "line": {
                     "type": "DASH",
-                    "color": "#d62728ff",
+                    "color": "#e65100ff",
                     "thickness": 1.0
                   },
                   "marker": {
                     "size": null,
                     "type": "SQUARE",
-                    "fill": "#d62728ff",
+                    "fill": "#e65100ff",
                     "line_color": "#000000ff",
                     "line_thickness": null
                   },
                   "fill": {
-                    "color": "#d62728ff",
+                    "color": "#e65100ff",
                     "second_color": null
                   }
                 },
@@ -8791,7 +8791,7 @@
               },
               {
                 "sid": "Fig_multi__plot0_curve6",
-                "name": "Sim 50 mg",
+                "name": "50 mg PO",
                 "x": "task_po_dap_50_single__time",
                 "y": "task_po_dap_50_single__Cve_dap",
                 "xerr": null,
@@ -8803,18 +8803,18 @@
                   "base_style": null,
                   "line": {
                     "type": "SOLID",
-                    "color": "#9467bdff",
+                    "color": "#bf360cff",
                     "thickness": 2.0
                   },
                   "marker": {
                     "size": null,
                     "type": "NONE",
-                    "fill": "#9467bdff",
+                    "fill": "#bf360cff",
                     "line_color": "#000000ff",
                     "line_thickness": null
                   },
                   "fill": {
-                    "color": "#9467bdff",
+                    "color": "#bf360cff",
                     "second_color": null
                   }
                 },
@@ -8822,7 +8822,7 @@
               },
               {
                 "sid": "Fig_multi__plot0_curve7",
-                "name": "dap 50 mg\u00b1SD (n=6)",
+                "name": "50 mg PO\u00b1SD (n=6)",
                 "x": "dapagliflozin_DAP50__time",
                 "y": "dapagliflozin_DAP50__mean",
                 "xerr": null,
@@ -8834,18 +8834,18 @@
                   "base_style": null,
                   "line": {
                     "type": "DASH",
-                    "color": "#9467bdff",
+                    "color": "#bf360cff",
                     "thickness": 1.0
                   },
                   "marker": {
                     "size": null,
                     "type": "SQUARE",
-                    "fill": "#9467bdff",
+                    "fill": "#bf360cff",
                     "line_color": "#000000ff",
                     "line_thickness": null
                   },
                   "fill": {
-                    "color": "#9467bdff",
+                    "color": "#bf360cff",
                     "second_color": null
                   }
                 },
@@ -8853,7 +8853,7 @@
               },
               {
                 "sid": "Fig_multi__plot0_curve8",
-                "name": "Sim 100 mg",
+                "name": "100 mg PO",
                 "x": "task_po_dap_100_single__time",
                 "y": "task_po_dap_100_single__Cve_dap",
                 "xerr": null,
@@ -8865,18 +8865,18 @@
                   "base_style": null,
                   "line": {
                     "type": "SOLID",
-                    "color": "#8c564bff",
+                    "color": "#a52a00ff",
                     "thickness": 2.0
                   },
                   "marker": {
                     "size": null,
                     "type": "NONE",
-                    "fill": "#8c564bff",
+                    "fill": "#a52a00ff",
                     "line_color": "#000000ff",
                     "line_thickness": null
                   },
                   "fill": {
-                    "color": "#8c564bff",
+                    "color": "#a52a00ff",
                     "second_color": null
                   }
                 },
@@ -8884,7 +8884,7 @@
               },
               {
                 "sid": "Fig_multi__plot0_curve9",
-                "name": "dap 100 mg\u00b1SD (n=6)",
+                "name": "100 mg PO\u00b1SD (n=6)",
                 "x": "dapagliflozin_DAP100__time",
                 "y": "dapagliflozin_DAP100__mean",
                 "xerr": null,
@@ -8896,18 +8896,18 @@
                   "base_style": null,
                   "line": {
                     "type": "DASH",
-                    "color": "#8c564bff",
+                    "color": "#a52a00ff",
                     "thickness": 1.0
                   },
                   "marker": {
                     "size": null,
                     "type": "SQUARE",
-                    "fill": "#8c564bff",
+                    "fill": "#a52a00ff",
                     "line_color": "#000000ff",
                     "line_thickness": null
                   },
                   "fill": {
-                    "color": "#8c564bff",
+                    "color": "#a52a00ff",
                     "second_color": null
                   }
                 },
@@ -8952,13 +8952,13 @@
               "ticks_visible": true
             },
             "yaxis_right": null,
-            "legend": false,
+            "legend": true,
             "facecolor": "#ffffffff",
             "title_visible": true,
             "curves": [
               {
                 "sid": "Fig_multi__plot1_curve0",
-                "name": "Sim 2.5 mg",
+                "name": "2.5 mg PO",
                 "x": "task_po_dap_2.5_multi__time",
                 "y": "task_po_dap_2.5_multi__Cve_dap",
                 "xerr": null,
@@ -8970,18 +8970,18 @@
                   "base_style": null,
                   "line": {
                     "type": "SOLID",
-                    "color": "#1f77b4ff",
+                    "color": "#fb8c00ff",
                     "thickness": 2.0
                   },
                   "marker": {
                     "size": null,
                     "type": "NONE",
-                    "fill": "#1f77b4ff",
+                    "fill": "#fb8c00ff",
                     "line_color": "#000000ff",
                     "line_thickness": null
                   },
                   "fill": {
-                    "color": "#1f77b4ff",
+                    "color": "#fb8c00ff",
                     "second_color": null
                   }
                 },
@@ -8989,7 +8989,7 @@
               },
               {
                 "sid": "Fig_multi__plot1_curve1",
-                "name": "dap 2.5 mg\u00b1SD (n=6)",
+                "name": "2.5 mg PO\u00b1SD (n=6)",
                 "x": "dapagliflozin_DAPM2.5__time",
                 "y": "dapagliflozin_DAPM2.5__mean",
                 "xerr": null,
@@ -9001,18 +9001,18 @@
                   "base_style": null,
                   "line": {
                     "type": "DASH",
-                    "color": "#1f77b4ff",
+                    "color": "#fb8c00ff",
                     "thickness": 1.0
                   },
                   "marker": {
                     "size": null,
                     "type": "SQUARE",
-                    "fill": "#1f77b4ff",
+                    "fill": "#fb8c00ff",
                     "line_color": "#000000ff",
                     "line_thickness": null
                   },
                   "fill": {
-                    "color": "#1f77b4ff",
+                    "color": "#fb8c00ff",
                     "second_color": null
                   }
                 },
@@ -9020,7 +9020,7 @@
               },
               {
                 "sid": "Fig_multi__plot1_curve2",
-                "name": "Sim 10 mg",
+                "name": "10 mg PO",
                 "x": "task_po_dap_10_multi__time",
                 "y": "task_po_dap_10_multi__Cve_dap",
                 "xerr": null,
@@ -9032,18 +9032,18 @@
                   "base_style": null,
                   "line": {
                     "type": "SOLID",
-                    "color": "#2ca02cff",
+                    "color": "#ef6c00ff",
                     "thickness": 2.0
                   },
                   "marker": {
                     "size": null,
                     "type": "NONE",
-                    "fill": "#2ca02cff",
+                    "fill": "#ef6c00ff",
                     "line_color": "#000000ff",
                     "line_thickness": null
                   },
                   "fill": {
-                    "color": "#2ca02cff",
+                    "color": "#ef6c00ff",
                     "second_color": null
                   }
                 },
@@ -9051,7 +9051,7 @@
               },
               {
                 "sid": "Fig_multi__plot1_curve3",
-                "name": "dap 10 mg\u00b1SD (n=6)",
+                "name": "10 mg PO\u00b1SD (n=6)",
                 "x": "dapagliflozin_DAPM10__time",
                 "y": "dapagliflozin_DAPM10__mean",
                 "xerr": null,
@@ -9063,18 +9063,18 @@
                   "base_style": null,
                   "line": {
                     "type": "DASH",
-                    "color": "#2ca02cff",
+                    "color": "#ef6c00ff",
                     "thickness": 1.0
                   },
                   "marker": {
                     "size": null,
                     "type": "SQUARE",
-                    "fill": "#2ca02cff",
+                    "fill": "#ef6c00ff",
                     "line_color": "#000000ff",
                     "line_thickness": null
                   },
                   "fill": {
-                    "color": "#2ca02cff",
+                    "color": "#ef6c00ff",
                     "second_color": null
                   }
                 },
@@ -9082,7 +9082,7 @@
               },
               {
                 "sid": "Fig_multi__plot1_curve4",
-                "name": "Sim 20 mg",
+                "name": "20 mg PO",
                 "x": "task_po_dap_20_multi__time",
                 "y": "task_po_dap_20_multi__Cve_dap",
                 "xerr": null,
@@ -9094,18 +9094,18 @@
                   "base_style": null,
                   "line": {
                     "type": "SOLID",
-                    "color": "#d62728ff",
+                    "color": "#e65100ff",
                     "thickness": 2.0
                   },
                   "marker": {
                     "size": null,
                     "type": "NONE",
-                    "fill": "#d62728ff",
+                    "fill": "#e65100ff",
                     "line_color": "#000000ff",
                     "line_thickness": null
                   },
                   "fill": {
-                    "color": "#d62728ff",
+                    "color": "#e65100ff",
                     "second_color": null
                   }
                 },
@@ -9113,7 +9113,7 @@
               },
               {
                 "sid": "Fig_multi__plot1_curve5",
-                "name": "dap 20 mg\u00b1SD (n=6)",
+                "name": "20 mg PO\u00b1SD (n=6)",
                 "x": "dapagliflozin_DAPM20__time",
                 "y": "dapagliflozin_DAPM20__mean",
                 "xerr": null,
@@ -9125,18 +9125,18 @@
                   "base_style": null,
                   "line": {
                     "type": "DASH",
-                    "color": "#d62728ff",
+                    "color": "#e65100ff",
                     "thickness": 1.0
                   },
                   "marker": {
                     "size": null,
                     "type": "SQUARE",
-                    "fill": "#d62728ff",
+                    "fill": "#e65100ff",
                     "line_color": "#000000ff",
                     "line_thickness": null
                   },
                   "fill": {
-                    "color": "#d62728ff",
+                    "color": "#e65100ff",
                     "second_color": null
                   }
                 },
@@ -9144,7 +9144,7 @@
               },
               {
                 "sid": "Fig_multi__plot1_curve6",
-                "name": "Sim 50 mg",
+                "name": "50 mg PO",
                 "x": "task_po_dap_50_multi__time",
                 "y": "task_po_dap_50_multi__Cve_dap",
                 "xerr": null,
@@ -9156,18 +9156,18 @@
                   "base_style": null,
                   "line": {
                     "type": "SOLID",
-                    "color": "#9467bdff",
+                    "color": "#bf360cff",
                     "thickness": 2.0
                   },
                   "marker": {
                     "size": null,
                     "type": "NONE",
-                    "fill": "#9467bdff",
+                    "fill": "#bf360cff",
                     "line_color": "#000000ff",
                     "line_thickness": null
                   },
                   "fill": {
-                    "color": "#9467bdff",
+                    "color": "#bf360cff",
                     "second_color": null
                   }
                 },
@@ -9175,7 +9175,7 @@
               },
               {
                 "sid": "Fig_multi__plot1_curve7",
-                "name": "dap 50 mg\u00b1SD (n=6)",
+                "name": "50 mg PO\u00b1SD (n=6)",
                 "x": "dapagliflozin_DAPM50__time",
                 "y": "dapagliflozin_DAPM50__mean",
                 "xerr": null,
@@ -9187,18 +9187,18 @@
                   "base_style": null,
                   "line": {
                     "type": "DASH",
-                    "color": "#9467bdff",
+                    "color": "#bf360cff",
                     "thickness": 1.0
                   },
                   "marker": {
                     "size": null,
                     "type": "SQUARE",
-                    "fill": "#9467bdff",
+                    "fill": "#bf360cff",
                     "line_color": "#000000ff",
                     "line_thickness": null
                   },
                   "fill": {
-                    "color": "#9467bdff",
+                    "color": "#bf360cff",
                     "second_color": null
                   }
                 },
@@ -9206,7 +9206,7 @@
               },
               {
                 "sid": "Fig_multi__plot1_curve8",
-                "name": "Sim 100 mg",
+                "name": "100 mg PO",
                 "x": "task_po_dap_100_multi__time",
                 "y": "task_po_dap_100_multi__Cve_dap",
                 "xerr": null,
@@ -9218,18 +9218,18 @@
                   "base_style": null,
                   "line": {
                     "type": "SOLID",
-                    "color": "#8c564bff",
+                    "color": "#a52a00ff",
                     "thickness": 2.0
                   },
                   "marker": {
                     "size": null,
                     "type": "NONE",
-                    "fill": "#8c564bff",
+                    "fill": "#a52a00ff",
                     "line_color": "#000000ff",
                     "line_thickness": null
                   },
                   "fill": {
-                    "color": "#8c564bff",
+                    "color": "#a52a00ff",
                     "second_color": null
                   }
                 },
@@ -9237,7 +9237,7 @@
               },
               {
                 "sid": "Fig_multi__plot1_curve9",
-                "name": "dap 100 mg\u00b1SD (n=6)",
+                "name": "100 mg PO\u00b1SD (n=6)",
                 "x": "dapagliflozin_DAPM100__time",
                 "y": "dapagliflozin_DAPM100__mean",
                 "xerr": null,
@@ -9249,18 +9249,18 @@
                   "base_style": null,
                   "line": {
                     "type": "DASH",
-                    "color": "#8c564bff",
+                    "color": "#a52a00ff",
                     "thickness": 1.0
                   },
                   "marker": {
                     "size": null,
                     "type": "SQUARE",
-                    "fill": "#8c564bff",
+                    "fill": "#a52a00ff",
                     "line_color": "#000000ff",
                     "line_thickness": null
                   },
                   "fill": {
-                    "color": "#8c564bff",
+                    "color": "#a52a00ff",
                     "second_color": null
                   }
                 },
@@ -9278,7 +9278,7 @@
     },
     "Fig_uge_multi": {
       "sid": "Fig_uge_multi",
-      "name": "Komoroski2009",
+      "name": "Komoroski2009 (Healthy)",
       "num_rows": 1,
       "num_cols": 1,
       "width": 7.0,
@@ -9315,13 +9315,13 @@
               "ticks_visible": true
             },
             "yaxis_right": null,
-            "legend": false,
+            "legend": true,
             "facecolor": "#ffffffff",
             "title_visible": true,
             "curves": [
               {
                 "sid": "Fig_uge_multi__plot0_curve0",
-                "name": "Sim 2.5 mg",
+                "name": "2.5 mg PO",
                 "x": "task_po_dap_2.5_uge_multi__time",
                 "y": "task_po_dap_2.5_uge_multi__KI__UGE",
                 "xerr": null,
@@ -9333,18 +9333,18 @@
                   "base_style": null,
                   "line": {
                     "type": "SOLID",
-                    "color": "#1f77b4ff",
+                    "color": "#fb8c00ff",
                     "thickness": 2.0
                   },
                   "marker": {
                     "size": null,
                     "type": "NONE",
-                    "fill": "#1f77b4ff",
+                    "fill": "#fb8c00ff",
                     "line_color": "#000000ff",
                     "line_thickness": null
                   },
                   "fill": {
-                    "color": "#1f77b4ff",
+                    "color": "#fb8c00ff",
                     "second_color": null
                   }
                 },
@@ -9352,7 +9352,7 @@
               },
               {
                 "sid": "Fig_uge_multi__plot0_curve1",
-                "name": "Sim 10 mg",
+                "name": "10 mg PO",
                 "x": "task_po_dap_10_uge_multi__time",
                 "y": "task_po_dap_10_uge_multi__KI__UGE",
                 "xerr": null,
@@ -9364,18 +9364,18 @@
                   "base_style": null,
                   "line": {
                     "type": "SOLID",
-                    "color": "#2ca02cff",
+                    "color": "#ef6c00ff",
                     "thickness": 2.0
                   },
                   "marker": {
                     "size": null,
                     "type": "NONE",
-                    "fill": "#2ca02cff",
+                    "fill": "#ef6c00ff",
                     "line_color": "#000000ff",
                     "line_thickness": null
                   },
                   "fill": {
-                    "color": "#2ca02cff",
+                    "color": "#ef6c00ff",
                     "second_color": null
                   }
                 },
@@ -9383,7 +9383,7 @@
               },
               {
                 "sid": "Fig_uge_multi__plot0_curve2",
-                "name": "Sim 20 mg",
+                "name": "20 mg PO",
                 "x": "task_po_dap_20_uge_multi__time",
                 "y": "task_po_dap_20_uge_multi__KI__UGE",
                 "xerr": null,
@@ -9395,18 +9395,18 @@
                   "base_style": null,
                   "line": {
                     "type": "SOLID",
-                    "color": "#d62728ff",
+                    "color": "#e65100ff",
                     "thickness": 2.0
                   },
                   "marker": {
                     "size": null,
                     "type": "NONE",
-                    "fill": "#d62728ff",
+                    "fill": "#e65100ff",
                     "line_color": "#000000ff",
                     "line_thickness": null
                   },
                   "fill": {
-                    "color": "#d62728ff",
+                    "color": "#e65100ff",
                     "second_color": null
                   }
                 },
@@ -9414,7 +9414,7 @@
               },
               {
                 "sid": "Fig_uge_multi__plot0_curve3",
-                "name": "Sim 50 mg",
+                "name": "50 mg PO",
                 "x": "task_po_dap_50_uge_multi__time",
                 "y": "task_po_dap_50_uge_multi__KI__UGE",
                 "xerr": null,
@@ -9426,18 +9426,18 @@
                   "base_style": null,
                   "line": {
                     "type": "SOLID",
-                    "color": "#9467bdff",
+                    "color": "#bf360cff",
                     "thickness": 2.0
                   },
                   "marker": {
                     "size": null,
                     "type": "NONE",
-                    "fill": "#9467bdff",
+                    "fill": "#bf360cff",
                     "line_color": "#000000ff",
                     "line_thickness": null
                   },
                   "fill": {
-                    "color": "#9467bdff",
+                    "color": "#bf360cff",
                     "second_color": null
                   }
                 },
@@ -9445,7 +9445,7 @@
               },
               {
                 "sid": "Fig_uge_multi__plot0_curve4",
-                "name": "Sim 100 mg",
+                "name": "100 mg PO",
                 "x": "task_po_dap_100_uge_multi__time",
                 "y": "task_po_dap_100_uge_multi__KI__UGE",
                 "xerr": null,
@@ -9457,18 +9457,18 @@
                   "base_style": null,
                   "line": {
                     "type": "SOLID",
-                    "color": "#8c564bff",
+                    "color": "#a52a00ff",
                     "thickness": 2.0
                   },
                   "marker": {
                     "size": null,
                     "type": "NONE",
-                    "fill": "#8c564bff",
+                    "fill": "#a52a00ff",
                     "line_color": "#000000ff",
                     "line_thickness": null
                   },
                   "fill": {
-                    "color": "#8c564bff",
+                    "color": "#a52a00ff",
                     "second_color": null
                   }
                 },
@@ -9476,7 +9476,7 @@
               },
               {
                 "sid": "Fig_uge_multi__plot0_curve5",
-                "name": "UGE 2.5 mg (n=6)",
+                "name": "2.5 mg PO (n=6)",
                 "x": "glucose_cumulative amount_DAPM2.5__time",
                 "y": "glucose_cumulative amount_DAPM2.5__mean",
                 "xerr": null,
@@ -9488,18 +9488,18 @@
                   "base_style": null,
                   "line": {
                     "type": "NONE",
-                    "color": "#1f77b4ff",
+                    "color": "#fb8c00ff",
                     "thickness": 1.0
                   },
                   "marker": {
                     "size": null,
                     "type": "SQUARE",
-                    "fill": "#1f77b4ff",
+                    "fill": "#fb8c00ff",
                     "line_color": "#000000ff",
                     "line_thickness": null
                   },
                   "fill": {
-                    "color": "#1f77b4ff",
+                    "color": "#fb8c00ff",
                     "second_color": null
                   }
                 },
@@ -9507,7 +9507,7 @@
               },
               {
                 "sid": "Fig_uge_multi__plot0_curve6",
-                "name": "UGE 10 mg (n=6)",
+                "name": "10 mg PO (n=6)",
                 "x": "glucose_cumulative amount_DAPM10__time",
                 "y": "glucose_cumulative amount_DAPM10__mean",
                 "xerr": null,
@@ -9519,18 +9519,18 @@
                   "base_style": null,
                   "line": {
                     "type": "NONE",
-                    "color": "#2ca02cff",
+                    "color": "#ef6c00ff",
                     "thickness": 1.0
                   },
                   "marker": {
                     "size": null,
                     "type": "SQUARE",
-                    "fill": "#2ca02cff",
+                    "fill": "#ef6c00ff",
                     "line_color": "#000000ff",
                     "line_thickness": null
                   },
                   "fill": {
-                    "color": "#2ca02cff",
+                    "color": "#ef6c00ff",
                     "second_color": null
                   }
                 },
@@ -9538,7 +9538,7 @@
               },
               {
                 "sid": "Fig_uge_multi__plot0_curve7",
-                "name": "UGE 20 mg (n=6)",
+                "name": "20 mg PO (n=6)",
                 "x": "glucose_cumulative amount_DAPM20__time",
                 "y": "glucose_cumulative amount_DAPM20__mean",
                 "xerr": null,
@@ -9550,18 +9550,18 @@
                   "base_style": null,
                   "line": {
                     "type": "NONE",
-                    "color": "#d62728ff",
+                    "color": "#e65100ff",
                     "thickness": 1.0
                   },
                   "marker": {
                     "size": null,
                     "type": "SQUARE",
-                    "fill": "#d62728ff",
+                    "fill": "#e65100ff",
                     "line_color": "#000000ff",
                     "line_thickness": null
                   },
                   "fill": {
-                    "color": "#d62728ff",
+                    "color": "#e65100ff",
                     "second_color": null
                   }
                 },
@@ -9569,7 +9569,7 @@
               },
               {
                 "sid": "Fig_uge_multi__plot0_curve8",
-                "name": "UGE 50 mg (n=6)",
+                "name": "50 mg PO (n=6)",
                 "x": "glucose_cumulative amount_DAPM50__time",
                 "y": "glucose_cumulative amount_DAPM50__mean",
                 "xerr": null,
@@ -9581,18 +9581,18 @@
                   "base_style": null,
                   "line": {
                     "type": "NONE",
-                    "color": "#9467bdff",
+                    "color": "#bf360cff",
                     "thickness": 1.0
                   },
                   "marker": {
                     "size": null,
                     "type": "SQUARE",
-                    "fill": "#9467bdff",
+                    "fill": "#bf360cff",
                     "line_color": "#000000ff",
                     "line_thickness": null
                   },
                   "fill": {
-                    "color": "#9467bdff",
+                    "color": "#bf360cff",
                     "second_color": null
                   }
                 },
@@ -9600,7 +9600,7 @@
               },
               {
                 "sid": "Fig_uge_multi__plot0_curve9",
-                "name": "UGE 100 mg (n=6)",
+                "name": "100 mg PO (n=6)",
                 "x": "glucose_cumulative amount_DAPM100__time",
                 "y": "glucose_cumulative amount_DAPM100__mean",
                 "xerr": null,
@@ -9612,18 +9612,18 @@
                   "base_style": null,
                   "line": {
                     "type": "NONE",
-                    "color": "#8c564bff",
+                    "color": "#a52a00ff",
                     "thickness": 1.0
                   },
                   "marker": {
                     "size": null,
                     "type": "SQUARE",
-                    "fill": "#8c564bff",
+                    "fill": "#a52a00ff",
                     "line_color": "#000000ff",
                     "line_thickness": null
                   },
                   "fill": {
-                    "color": "#8c564bff",
+                    "color": "#a52a00ff",
                     "second_color": null
                   }
                 },

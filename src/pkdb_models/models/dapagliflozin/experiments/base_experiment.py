@@ -158,15 +158,20 @@ class DapagliflozinSimulationExperiment(SimulationExperiment):
 
     dose_colors = {
         0: "black",
-        2.5: "#fee6ce",
-        5: "#fdd0a2",
-        10: "#fdae6b",
-        20: "#fd8d3c",
-        25: "#fc7f1f",
-        50: "#f16913",
-        100: "#d94801",
-        250: "#a63603",
-        500: "#7f2704",
+        0.001: "#ffeb3b",
+        0.01: "#ffd54f",
+        0.1: "#ffb74d",
+        0.3: "#ffa726",
+        1: "#ff9800",
+        2.5: "#fb8c00",
+        5: "#f57c00",
+        10: "#ef6c00",
+        20: "#e65100",
+        25: "#d84315",
+        50: "#bf360c",
+        100: "#a52a00",
+        250: "#872200",
+        500: "#5e1800",
     }
 
     def models(self) -> Dict[str, AbstractModel]:
@@ -184,26 +189,6 @@ class DapagliflozinSimulationExperiment(SimulationExperiment):
         """Default changes to simulations."""
 
         changes = {
-            # PK parameters (20250522_232217__18858)
-            # >>> !Optimal parameter 'ftissue_dap' within 5% of lower bound! <<<
-            # >>> !Optimal parameter 'KI__f_DAP2D3G' within 5% of upper bound! <<<
-            # 'ftissue_dap': Q_(0.010000122747666328, 'l/min'),  # [0.01 - 100]
-            # 'Kp_dap': Q_(25.517380513186023, 'dimensionless'),  # [1 - 50]
-            # 'DAP2D3G_Vmax': Q_(0.01992005476805105, 'mmole/min/l'),  # [0.001 - 100]
-            # 'KI__f_DAP2D3G': Q_(9.999990451401281, 'dimensionless'),  # [0.1 - 10]
-            # 'KI__DAPEX_k': Q_(0.01815179124844871, '1/min'),  # [0.0001 - 10]
-            # 'KI__D3GEX_k': Q_(0.45035618074418376, '1/min'),  # [0.1 - 10]
-            # 'GU__Ka_dis_dap': Q_(0.8484201414414877, '1/hr'),  # [0.001 - 100]
-            # 'GU__DAPABS_k': Q_(0.059464824495600456, '1/min'),  # [1e-05 - 10]
-
-            # PD parameters (20250610_180650__525e8)
-            # >>> !Optimal parameter 'KI__RTG_base' within 5% of lower bound! <<<
-            # >>> !Optimal parameter 'KI__RTG_gamma' within 5% of lower bound! <<<
-            # 'KI__RTG_E50': Q_(6.493779238072141e-06, 'mM'),  # [1e-06 - 0.1]
-            # 'KI__RTG_base': Q_(8.000008431987332, 'mM'),  # [8 - 14]
-            # 'KI__RTG_gamma': Q_(1.0003872992430092, 'dimensionless'),  # [1 - 5]
-            # 'KI__RTG_max_inhibition': Q_(0.7067308400163536, 'dimensionless'),  # [0.2 - 1.0]
-            # 'KI__RTG_m_fpg': Q_(1.2533715089157764, 'dimensionless'),  # [0.2 - 3]
         }
 
         return changes

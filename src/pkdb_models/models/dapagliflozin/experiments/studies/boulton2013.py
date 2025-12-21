@@ -116,7 +116,6 @@ class Boulton2013(DapagliflozinSimulationExperiment):
                     dosing=Dosing.SINGLE,
                     health=Health.HEALTHY,
                     fasting=Fasting.FASTED,
-                    outlier=False
                 ),
             )
         # console.print(mappings)
@@ -128,7 +127,7 @@ class Boulton2013(DapagliflozinSimulationExperiment):
             sid="Fig1",
             num_rows=1,
             num_cols=2,
-            name=f"{self.__class__.__name__}",
+            name=f"{self.__class__.__name__} (Healthy)",
         )
         plots = fig.create_plots(xaxis=Axis(self.label_time, unit=self.unit_time), legend=True)
         plots[0].set_yaxis(self.label_dap_plasma, unit=self.unit_dap)
@@ -159,7 +158,6 @@ class Boulton2013(DapagliflozinSimulationExperiment):
 
 
 if __name__ == "__main__":
-    # run_experiments(Boulton2013, output_dir=Boulton2013.__name__)
     out = dapagliflozin.RESULTS_PATH_SIMULATION / Boulton2013.__name__
     out.mkdir(parents=True, exist_ok=True)
     run_experiments(Boulton2013, output_dir=out)

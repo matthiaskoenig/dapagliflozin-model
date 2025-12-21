@@ -98,7 +98,7 @@ class FDAMB102006(DapagliflozinSimulationExperiment):
             sid=f"Tab11",
             num_rows=1,
             num_cols=2,
-            name=f"{self.__class__.__name__}",
+            name=f"{self.__class__.__name__} (Healthy)",
         )
         Figure.legend_fontsize = 10
         plots = fig.create_plots(xaxis=Axis(self.label_time, unit="day"), legend=True)
@@ -147,7 +147,6 @@ class FDAMB102006(DapagliflozinSimulationExperiment):
 
 
 if __name__ == "__main__":
-    # run_experiments(FDAMB102006, output_dir=FDAMB102006.__name__)
     out = dapagliflozin.RESULTS_PATH_SIMULATION / FDAMB102006.__name__
     out.mkdir(parents=True, exist_ok=True)
     run_experiments(FDAMB102006, output_dir=out)

@@ -14,7 +14,7 @@ class FoodEffect(DapagliflozinSimulationExperiment):
     ddi_parameters = ['GU__f_absorption']
     ddi_names = {'GU__f_absorption': 'Absorption rate'}
     parameter_values = sorted(np.logspace(start=-1, stop=1, num=10).tolist() + [1.0])  # [0.01, 100]
-    dpi = 600
+    dpi = 300
     legend_font_size = 10
 
     def simulations(self) -> Dict[str, TimecourseSim]:

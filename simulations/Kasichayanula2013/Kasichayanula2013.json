@@ -1,7 +1,7 @@
 {
   "experiment_id": "Kasichayanula2013",
   "base_path": "/home/mkoenig/git/pkdb_models/pkdb_models/models/dapagliflozin",
-  "data_path": "[PosixPath('/home/mkoenig/git/pkdb_data/studies/dapagliflozin'), PosixPath('/home/mkoenig/git/pkdb_data/studies/canagliflozin')]",
+  "data_path": "[PosixPath('/home/mkoenig/git/pkdb_models/pkdb_models/models/dapagliflozin/data/dapagliflozin'), PosixPath('/home/mkoenig/git/pkdb_models/pkdb_models/models/dapagliflozin/data/canagliflozin')]",
   "models": {
     "model": {
       "sid": null,
@@ -95,7 +95,7 @@
               "_units": "kilogram"
             },
             "[KI__glc_ext]": {
-              "_magnitude": 4.940000000000001,
+              "_magnitude": 4.94,
               "_units": "KI__mmole / liter"
             },
             "KI__f_renal_function": {
@@ -137,7 +137,7 @@
               "_units": "kilogram"
             },
             "[KI__glc_ext]": {
-              "_magnitude": 4.940000000000001,
+              "_magnitude": 4.94,
               "_units": "KI__mmole / liter"
             },
             "KI__f_renal_function": {
@@ -179,7 +179,7 @@
               "_units": "kilogram"
             },
             "[KI__glc_ext]": {
-              "_magnitude": 4.940000000000001,
+              "_magnitude": 4.94,
               "_units": "KI__mmole / liter"
             },
             "KI__f_renal_function": {
@@ -353,7 +353,7 @@
               "_units": "kilogram"
             },
             "[KI__glc_ext]": {
-              "_magnitude": 9.320000000000002,
+              "_magnitude": 9.32,
               "_units": "KI__mmole / liter"
             },
             "KI__f_renal_function": {
@@ -395,7 +395,7 @@
               "_units": "kilogram"
             },
             "[KI__glc_ext]": {
-              "_magnitude": 9.320000000000002,
+              "_magnitude": 9.32,
               "_units": "KI__mmole / liter"
             },
             "KI__f_renal_function": {
@@ -437,7 +437,7 @@
               "_units": "kilogram"
             },
             "[KI__glc_ext]": {
-              "_magnitude": 9.320000000000002,
+              "_magnitude": 9.32,
               "_units": "KI__mmole / liter"
             },
             "KI__f_renal_function": {
@@ -611,7 +611,7 @@
               "_units": "kilogram"
             },
             "[KI__glc_ext]": {
-              "_magnitude": 7.750000000000002,
+              "_magnitude": 7.75,
               "_units": "KI__mmole / liter"
             },
             "KI__f_renal_function": {
@@ -653,7 +653,7 @@
               "_units": "kilogram"
             },
             "[KI__glc_ext]": {
-              "_magnitude": 7.750000000000002,
+              "_magnitude": 7.75,
               "_units": "KI__mmole / liter"
             },
             "KI__f_renal_function": {
@@ -695,7 +695,7 @@
               "_units": "kilogram"
             },
             "[KI__glc_ext]": {
-              "_magnitude": 7.750000000000002,
+              "_magnitude": 7.75,
               "_units": "KI__mmole / liter"
             },
             "KI__f_renal_function": {
@@ -869,7 +869,7 @@
               "_units": "kilogram"
             },
             "[KI__glc_ext]": {
-              "_magnitude": 6.790000000000002,
+              "_magnitude": 6.79,
               "_units": "KI__mmole / liter"
             },
             "KI__f_renal_function": {
@@ -911,7 +911,7 @@
               "_units": "kilogram"
             },
             "[KI__glc_ext]": {
-              "_magnitude": 6.790000000000002,
+              "_magnitude": 6.79,
               "_units": "KI__mmole / liter"
             },
             "KI__f_renal_function": {
@@ -953,7 +953,7 @@
               "_units": "kilogram"
             },
             "[KI__glc_ext]": {
-              "_magnitude": 6.790000000000002,
+              "_magnitude": 6.79,
               "_units": "KI__mmole / liter"
             },
             "KI__f_renal_function": {
@@ -1127,7 +1127,7 @@
               "_units": "kilogram"
             },
             "[KI__glc_ext]": {
-              "_magnitude": 7.230000000000002,
+              "_magnitude": 7.23,
               "_units": "KI__mmole / liter"
             },
             "KI__f_renal_function": {
@@ -1169,7 +1169,7 @@
               "_units": "kilogram"
             },
             "[KI__glc_ext]": {
-              "_magnitude": 7.230000000000002,
+              "_magnitude": 7.23,
               "_units": "KI__mmole / liter"
             },
             "KI__f_renal_function": {
@@ -1211,7 +1211,7 @@
               "_units": "kilogram"
             },
             "[KI__glc_ext]": {
-              "_magnitude": 7.230000000000002,
+              "_magnitude": 7.23,
               "_units": "KI__mmole / liter"
             },
             "KI__f_renal_function": {
@@ -4615,11 +4615,11 @@
   "figures": {
     "Fig1": {
       "sid": "Fig1",
-      "name": "Kasichayanula2013",
-      "num_rows": 1,
-      "num_cols": 4,
-      "width": 28.0,
-      "height": 5.0,
+      "name": "Kasichayanula2013 (T2DM, Renal)",
+      "num_rows": 2,
+      "num_cols": 2,
+      "width": 14.0,
+      "height": 10.0,
       "subplots": [
         {
           "sid": null,
@@ -4652,13 +4652,13 @@
               "ticks_visible": true
             },
             "yaxis_right": null,
-            "legend": false,
+            "legend": true,
             "facecolor": "#ffffffff",
             "title_visible": true,
             "curves": [
               {
                 "sid": "Fig1__plot0_curve0",
-                "name": "Sim normal",
+                "name": "normal - 20 mg PO",
                 "x": "task_po_dap20_normal_multi__time",
                 "y": "task_po_dap20_normal_multi__Cve_dap",
                 "xerr": null,
@@ -4689,7 +4689,7 @@
               },
               {
                 "sid": "Fig1__plot0_curve1",
-                "name": "normal\u00b1SD (n=4)",
+                "name": "normal - 20 mg PO\u00b1SD (n=4)",
                 "x": "dapagliflozin_DAP20_d10_normal__time",
                 "y": "dapagliflozin_DAP20_d10_normal__mean",
                 "xerr": null,
@@ -4720,7 +4720,7 @@
               },
               {
                 "sid": "Fig1__plot0_curve2",
-                "name": "Sim mild",
+                "name": "mild - 20 mg PO",
                 "x": "task_po_dap20_mild_multi__time",
                 "y": "task_po_dap20_mild_multi__Cve_dap",
                 "xerr": null,
@@ -4751,7 +4751,7 @@
               },
               {
                 "sid": "Fig1__plot0_curve3",
-                "name": "mild\u00b1SD (n=4)",
+                "name": "mild - 20 mg PO\u00b1SD (n=4)",
                 "x": "dapagliflozin_DAP20_d10_mild__time",
                 "y": "dapagliflozin_DAP20_d10_mild__mean",
                 "xerr": null,
@@ -4782,7 +4782,7 @@
               },
               {
                 "sid": "Fig1__plot0_curve4",
-                "name": "Sim moderate",
+                "name": "moderate - 20 mg PO",
                 "x": "task_po_dap20_moderate_multi__time",
                 "y": "task_po_dap20_moderate_multi__Cve_dap",
                 "xerr": null,
@@ -4813,7 +4813,7 @@
               },
               {
                 "sid": "Fig1__plot0_curve5",
-                "name": "moderate\u00b1SD (n=6)",
+                "name": "moderate - 20 mg PO\u00b1SD (n=6)",
                 "x": "dapagliflozin_DAP20_d10_moderate__time",
                 "y": "dapagliflozin_DAP20_d10_moderate__mean",
                 "xerr": null,
@@ -4844,7 +4844,7 @@
               },
               {
                 "sid": "Fig1__plot0_curve6",
-                "name": "Sim severe",
+                "name": "severe - 20 mg PO",
                 "x": "task_po_dap20_severe_multi__time",
                 "y": "task_po_dap20_severe_multi__Cve_dap",
                 "xerr": null,
@@ -4875,7 +4875,7 @@
               },
               {
                 "sid": "Fig1__plot0_curve7",
-                "name": "severe\u00b1SD (n=3)",
+                "name": "severe - 20 mg PO\u00b1SD (n=3)",
                 "x": "dapagliflozin_DAP20_d10_severe__time",
                 "y": "dapagliflozin_DAP20_d10_severe__mean",
                 "xerr": null,
@@ -4943,13 +4943,13 @@
               "ticks_visible": true
             },
             "yaxis_right": null,
-            "legend": false,
+            "legend": true,
             "facecolor": "#ffffffff",
             "title_visible": true,
             "curves": [
               {
                 "sid": "Fig1__plot1_curve0",
-                "name": "Sim normal",
+                "name": "normal - 20 mg PO",
                 "x": "task_po_dap20_normal_multi__time",
                 "y": "task_po_dap20_normal_multi__Aurine_dap",
                 "xerr": null,
@@ -4980,7 +4980,7 @@
               },
               {
                 "sid": "Fig1__plot1_curve1",
-                "name": "normal\u00b1SD (n=4)",
+                "name": "normal - 20 mg PO\u00b1SD (n=4)",
                 "x": "dapagliflozin_cumulative amount_DAP20_d10_normal__time",
                 "y": "dapagliflozin_cumulative amount_DAP20_d10_normal__mean",
                 "xerr": null,
@@ -4991,7 +4991,7 @@
                   "name": null,
                   "base_style": null,
                   "line": {
-                    "type": "DASH",
+                    "type": "NONE",
                     "color": "#000000ff",
                     "thickness": 1.0
                   },
@@ -5011,7 +5011,7 @@
               },
               {
                 "sid": "Fig1__plot1_curve2",
-                "name": "Sim mild",
+                "name": "mild - 20 mg PO",
                 "x": "task_po_dap20_mild_multi__time",
                 "y": "task_po_dap20_mild_multi__Aurine_dap",
                 "xerr": null,
@@ -5042,7 +5042,7 @@
               },
               {
                 "sid": "Fig1__plot1_curve3",
-                "name": "mild\u00b1SD (n=4)",
+                "name": "mild - 20 mg PO\u00b1SD (n=4)",
                 "x": "dapagliflozin_cumulative amount_DAP20_d10_mild__time",
                 "y": "dapagliflozin_cumulative amount_DAP20_d10_mild__mean",
                 "xerr": null,
@@ -5053,7 +5053,7 @@
                   "name": null,
                   "base_style": null,
                   "line": {
-                    "type": "DASH",
+                    "type": "NONE",
                     "color": "#66c2a4ff",
                     "thickness": 1.0
                   },
@@ -5073,7 +5073,7 @@
               },
               {
                 "sid": "Fig1__plot1_curve4",
-                "name": "Sim moderate",
+                "name": "moderate - 20 mg PO",
                 "x": "task_po_dap20_moderate_multi__time",
                 "y": "task_po_dap20_moderate_multi__Aurine_dap",
                 "xerr": null,
@@ -5104,7 +5104,7 @@
               },
               {
                 "sid": "Fig1__plot1_curve5",
-                "name": "moderate\u00b1SD (n=6)",
+                "name": "moderate - 20 mg PO\u00b1SD (n=6)",
                 "x": "dapagliflozin_cumulative amount_DAP20_d10_moderate__time",
                 "y": "dapagliflozin_cumulative amount_DAP20_d10_moderate__mean",
                 "xerr": null,
@@ -5115,7 +5115,7 @@
                   "name": null,
                   "base_style": null,
                   "line": {
-                    "type": "DASH",
+                    "type": "NONE",
                     "color": "#2ca25fff",
                     "thickness": 1.0
                   },
@@ -5135,7 +5135,7 @@
               },
               {
                 "sid": "Fig1__plot1_curve6",
-                "name": "Sim severe",
+                "name": "severe - 20 mg PO",
                 "x": "task_po_dap20_severe_multi__time",
                 "y": "task_po_dap20_severe_multi__Aurine_dap",
                 "xerr": null,
@@ -5166,7 +5166,7 @@
               },
               {
                 "sid": "Fig1__plot1_curve7",
-                "name": "severe\u00b1SD (n=3)",
+                "name": "severe - 20 mg PO\u00b1SD (n=3)",
                 "x": "dapagliflozin_cumulative amount_DAP20_d10_severe__time",
                 "y": "dapagliflozin_cumulative amount_DAP20_d10_severe__mean",
                 "xerr": null,
@@ -5177,7 +5177,7 @@
                   "name": null,
                   "base_style": null,
                   "line": {
-                    "type": "DASH",
+                    "type": "NONE",
                     "color": "#006d2cff",
                     "thickness": 1.0
                   },
@@ -5234,13 +5234,13 @@
               "ticks_visible": true
             },
             "yaxis_right": null,
-            "legend": false,
+            "legend": true,
             "facecolor": "#ffffffff",
             "title_visible": true,
             "curves": [
               {
                 "sid": "Fig1__plot2_curve0",
-                "name": "Sim normal",
+                "name": "normal - 20 mg PO",
                 "x": "task_po_dap20_normal_multi__time",
                 "y": "task_po_dap20_normal_multi__Cve_d3g",
                 "xerr": null,
@@ -5271,7 +5271,7 @@
               },
               {
                 "sid": "Fig1__plot2_curve1",
-                "name": "normal\u00b1SD (n=4)",
+                "name": "normal - 20 mg PO\u00b1SD (n=4)",
                 "x": "dapagliflozin 3-o-glucuronide_DAP20_d10_normal__time",
                 "y": "dapagliflozin 3-o-glucuronide_DAP20_d10_normal__mean",
                 "xerr": null,
@@ -5302,7 +5302,7 @@
               },
               {
                 "sid": "Fig1__plot2_curve2",
-                "name": "Sim mild",
+                "name": "mild - 20 mg PO",
                 "x": "task_po_dap20_mild_multi__time",
                 "y": "task_po_dap20_mild_multi__Cve_d3g",
                 "xerr": null,
@@ -5333,7 +5333,7 @@
               },
               {
                 "sid": "Fig1__plot2_curve3",
-                "name": "mild\u00b1SD (n=4)",
+                "name": "mild - 20 mg PO\u00b1SD (n=4)",
                 "x": "dapagliflozin 3-o-glucuronide_DAP20_d10_mild__time",
                 "y": "dapagliflozin 3-o-glucuronide_DAP20_d10_mild__mean",
                 "xerr": null,
@@ -5364,7 +5364,7 @@
               },
               {
                 "sid": "Fig1__plot2_curve4",
-                "name": "Sim moderate",
+                "name": "moderate - 20 mg PO",
                 "x": "task_po_dap20_moderate_multi__time",
                 "y": "task_po_dap20_moderate_multi__Cve_d3g",
                 "xerr": null,
@@ -5395,7 +5395,7 @@
               },
               {
                 "sid": "Fig1__plot2_curve5",
-                "name": "moderate\u00b1SD (n=6)",
+                "name": "moderate - 20 mg PO\u00b1SD (n=6)",
                 "x": "dapagliflozin 3-o-glucuronide_DAP20_d10_moderate__time",
                 "y": "dapagliflozin 3-o-glucuronide_DAP20_d10_moderate__mean",
                 "xerr": null,
@@ -5426,7 +5426,7 @@
               },
               {
                 "sid": "Fig1__plot2_curve6",
-                "name": "Sim severe",
+                "name": "severe - 20 mg PO",
                 "x": "task_po_dap20_severe_multi__time",
                 "y": "task_po_dap20_severe_multi__Cve_d3g",
                 "xerr": null,
@@ -5457,7 +5457,7 @@
               },
               {
                 "sid": "Fig1__plot2_curve7",
-                "name": "severe\u00b1SD (n=3)",
+                "name": "severe - 20 mg PO\u00b1SD (n=3)",
                 "x": "dapagliflozin 3-o-glucuronide_DAP20_d10_severe__time",
                 "y": "dapagliflozin 3-o-glucuronide_DAP20_d10_severe__mean",
                 "xerr": null,
@@ -5489,8 +5489,8 @@
             ],
             "areas": []
           },
-          "row": 1,
-          "col": 3,
+          "row": 2,
+          "col": 1,
           "row_span": 1,
           "col_span": 1
         },
@@ -5525,13 +5525,13 @@
               "ticks_visible": true
             },
             "yaxis_right": null,
-            "legend": false,
+            "legend": true,
             "facecolor": "#ffffffff",
             "title_visible": true,
             "curves": [
               {
                 "sid": "Fig1__plot3_curve0",
-                "name": "Sim normal",
+                "name": "normal - 20 mg PO",
                 "x": "task_po_dap20_normal_multi__time",
                 "y": "task_po_dap20_normal_multi__Aurine_d3g",
                 "xerr": null,
@@ -5562,7 +5562,7 @@
               },
               {
                 "sid": "Fig1__plot3_curve1",
-                "name": "normal\u00b1SD (n=4)",
+                "name": "normal - 20 mg PO\u00b1SD (n=4)",
                 "x": "dapagliflozin 3-o-glucuronide_cumulative amount_DAP20_d10_normal__time",
                 "y": "dapagliflozin 3-o-glucuronide_cumulative amount_DAP20_d10_normal__mean",
                 "xerr": null,
@@ -5573,7 +5573,7 @@
                   "name": null,
                   "base_style": null,
                   "line": {
-                    "type": "DASH",
+                    "type": "NONE",
                     "color": "#000000ff",
                     "thickness": 1.0
                   },
@@ -5593,7 +5593,7 @@
               },
               {
                 "sid": "Fig1__plot3_curve2",
-                "name": "Sim mild",
+                "name": "mild - 20 mg PO",
                 "x": "task_po_dap20_mild_multi__time",
                 "y": "task_po_dap20_mild_multi__Aurine_d3g",
                 "xerr": null,
@@ -5624,7 +5624,7 @@
               },
               {
                 "sid": "Fig1__plot3_curve3",
-                "name": "mild\u00b1SD (n=4)",
+                "name": "mild - 20 mg PO\u00b1SD (n=4)",
                 "x": "dapagliflozin 3-o-glucuronide_cumulative amount_DAP20_d10_mild__time",
                 "y": "dapagliflozin 3-o-glucuronide_cumulative amount_DAP20_d10_mild__mean",
                 "xerr": null,
@@ -5635,7 +5635,7 @@
                   "name": null,
                   "base_style": null,
                   "line": {
-                    "type": "DASH",
+                    "type": "NONE",
                     "color": "#66c2a4ff",
                     "thickness": 1.0
                   },
@@ -5655,7 +5655,7 @@
               },
               {
                 "sid": "Fig1__plot3_curve4",
-                "name": "Sim moderate",
+                "name": "moderate - 20 mg PO",
                 "x": "task_po_dap20_moderate_multi__time",
                 "y": "task_po_dap20_moderate_multi__Aurine_d3g",
                 "xerr": null,
@@ -5686,7 +5686,7 @@
               },
               {
                 "sid": "Fig1__plot3_curve5",
-                "name": "moderate\u00b1SD (n=6)",
+                "name": "moderate - 20 mg PO\u00b1SD (n=6)",
                 "x": "dapagliflozin 3-o-glucuronide_cumulative amount_DAP20_d10_moderate__time",
                 "y": "dapagliflozin 3-o-glucuronide_cumulative amount_DAP20_d10_moderate__mean",
                 "xerr": null,
@@ -5697,7 +5697,7 @@
                   "name": null,
                   "base_style": null,
                   "line": {
-                    "type": "DASH",
+                    "type": "NONE",
                     "color": "#2ca25fff",
                     "thickness": 1.0
                   },
@@ -5717,7 +5717,7 @@
               },
               {
                 "sid": "Fig1__plot3_curve6",
-                "name": "Sim severe",
+                "name": "severe - 20 mg PO",
                 "x": "task_po_dap20_severe_multi__time",
                 "y": "task_po_dap20_severe_multi__Aurine_d3g",
                 "xerr": null,
@@ -5748,7 +5748,7 @@
               },
               {
                 "sid": "Fig1__plot3_curve7",
-                "name": "severe\u00b1SD (n=3)",
+                "name": "severe - 20 mg PO\u00b1SD (n=3)",
                 "x": "dapagliflozin 3-o-glucuronide_cumulative amount_DAP20_d10_severe__time",
                 "y": "dapagliflozin 3-o-glucuronide_cumulative amount_DAP20_d10_severe__mean",
                 "xerr": null,
@@ -5759,7 +5759,7 @@
                   "name": null,
                   "base_style": null,
                   "line": {
-                    "type": "DASH",
+                    "type": "NONE",
                     "color": "#006d2cff",
                     "thickness": 1.0
                   },
@@ -5780,8 +5780,8 @@
             ],
             "areas": []
           },
-          "row": 1,
-          "col": 4,
+          "row": 2,
+          "col": 2,
           "row_span": 1,
           "col_span": 1
         }
@@ -5789,7 +5789,7 @@
     },
     "Tab2_4": {
       "sid": "Tab2_4",
-      "name": "Kasichayanula2013",
+      "name": "Kasichayanula2013 (T2DM, Renal)",
       "num_rows": 2,
       "num_cols": 2,
       "width": 14.0,
@@ -5826,13 +5826,13 @@
               "ticks_visible": true
             },
             "yaxis_right": null,
-            "legend": false,
+            "legend": true,
             "facecolor": "#ffffffff",
             "title_visible": true,
             "curves": [
               {
                 "sid": "Tab2_4__plot0_curve0",
-                "name": "Sim normal 20 mg",
+                "name": "normal - 20 mg PO",
                 "x": "task_po_dap20_normal_single__time",
                 "y": "task_po_dap20_normal_single__Aurine_dap",
                 "xerr": null,
@@ -5863,7 +5863,7 @@
               },
               {
                 "sid": "Tab2_4__plot0_curve1",
-                "name": "normal\u00b1SD (n=4)",
+                "name": "normal - 20 mg PO\u00b1SD (n=4)",
                 "x": "dapagliflozin_cumulative amount_DAP20_d4_normal__time",
                 "y": "dapagliflozin_cumulative amount_DAP20_d4_normal__mean",
                 "xerr": null,
@@ -5874,7 +5874,7 @@
                   "name": null,
                   "base_style": null,
                   "line": {
-                    "type": "DASH",
+                    "type": "NONE",
                     "color": "#000000ff",
                     "thickness": 1.0
                   },
@@ -5894,7 +5894,7 @@
               },
               {
                 "sid": "Tab2_4__plot0_curve2",
-                "name": "Sim mild 20 mg",
+                "name": "mild - 20 mg PO",
                 "x": "task_po_dap20_mild_single__time",
                 "y": "task_po_dap20_mild_single__Aurine_dap",
                 "xerr": null,
@@ -5925,7 +5925,7 @@
               },
               {
                 "sid": "Tab2_4__plot0_curve3",
-                "name": "mild\u00b1SD (n=4)",
+                "name": "mild - 20 mg PO\u00b1SD (n=4)",
                 "x": "dapagliflozin_cumulative amount_DAP20_d4_mild__time",
                 "y": "dapagliflozin_cumulative amount_DAP20_d4_mild__mean",
                 "xerr": null,
@@ -5936,7 +5936,7 @@
                   "name": null,
                   "base_style": null,
                   "line": {
-                    "type": "DASH",
+                    "type": "NONE",
                     "color": "#66c2a4ff",
                     "thickness": 1.0
                   },
@@ -5956,7 +5956,7 @@
               },
               {
                 "sid": "Tab2_4__plot0_curve4",
-                "name": "Sim moderate 20 mg",
+                "name": "moderate - 20 mg PO",
                 "x": "task_po_dap20_moderate_single__time",
                 "y": "task_po_dap20_moderate_single__Aurine_dap",
                 "xerr": null,
@@ -5987,7 +5987,7 @@
               },
               {
                 "sid": "Tab2_4__plot0_curve5",
-                "name": "moderate\u00b1SD (n=6)",
+                "name": "moderate - 20 mg PO\u00b1SD (n=6)",
                 "x": "dapagliflozin_cumulative amount_DAP20_d4_moderate__time",
                 "y": "dapagliflozin_cumulative amount_DAP20_d4_moderate__mean",
                 "xerr": null,
@@ -5998,7 +5998,7 @@
                   "name": null,
                   "base_style": null,
                   "line": {
-                    "type": "DASH",
+                    "type": "NONE",
                     "color": "#2ca25fff",
                     "thickness": 1.0
                   },
@@ -6018,7 +6018,7 @@
               },
               {
                 "sid": "Tab2_4__plot0_curve6",
-                "name": "Sim severe 20 mg",
+                "name": "severe - 20 mg PO",
                 "x": "task_po_dap20_severe_single__time",
                 "y": "task_po_dap20_severe_single__Aurine_dap",
                 "xerr": null,
@@ -6049,7 +6049,7 @@
               },
               {
                 "sid": "Tab2_4__plot0_curve7",
-                "name": "severe\u00b1SD (n=3)",
+                "name": "severe - 20 mg PO\u00b1SD (n=3)",
                 "x": "dapagliflozin_cumulative amount_DAP20_d4_severe__time",
                 "y": "dapagliflozin_cumulative amount_DAP20_d4_severe__mean",
                 "xerr": null,
@@ -6060,7 +6060,7 @@
                   "name": null,
                   "base_style": null,
                   "line": {
-                    "type": "DASH",
+                    "type": "NONE",
                     "color": "#006d2cff",
                     "thickness": 1.0
                   },
@@ -6117,13 +6117,13 @@
               "ticks_visible": true
             },
             "yaxis_right": null,
-            "legend": false,
+            "legend": true,
             "facecolor": "#ffffffff",
             "title_visible": true,
             "curves": [
               {
                 "sid": "Tab2_4__plot1_curve0",
-                "name": "Sim healthy 50 mg",
+                "name": "healthy - 50 mg PO",
                 "x": "task_po_dap50_healthy_single__time",
                 "y": "task_po_dap50_healthy_single__Aurine_dap",
                 "xerr": null,
@@ -6154,7 +6154,7 @@
               },
               {
                 "sid": "Tab2_4__plot1_curve1",
-                "name": "healthy\u00b1SD (n=8)",
+                "name": "healthy - 50 mg DAP PO\u00b1SD (n=8)",
                 "x": "dapagliflozin_cumulative amount_DAP50_healthy__time",
                 "y": "dapagliflozin_cumulative amount_DAP50_healthy__mean",
                 "xerr": null,
@@ -6165,7 +6165,7 @@
                   "name": null,
                   "base_style": null,
                   "line": {
-                    "type": "DASH",
+                    "type": "NONE",
                     "color": "#000000ff",
                     "thickness": 1.0
                   },
@@ -6185,7 +6185,7 @@
               },
               {
                 "sid": "Tab2_4__plot1_curve2",
-                "name": "Sim normal 50 mg",
+                "name": "normal - 50 mg PO",
                 "x": "task_po_dap50_normal_single__time",
                 "y": "task_po_dap50_normal_single__Aurine_dap",
                 "xerr": null,
@@ -6216,7 +6216,7 @@
               },
               {
                 "sid": "Tab2_4__plot1_curve3",
-                "name": "normal\u00b1SD (n=12)",
+                "name": "normal - 50 mg DAP PO\u00b1SD (n=12)",
                 "x": "dapagliflozin_cumulative amount_DAP50_normal__time",
                 "y": "dapagliflozin_cumulative amount_DAP50_normal__mean",
                 "xerr": null,
@@ -6227,7 +6227,7 @@
                   "name": null,
                   "base_style": null,
                   "line": {
-                    "type": "DASH",
+                    "type": "NONE",
                     "color": "#000000ff",
                     "thickness": 1.0
                   },
@@ -6247,7 +6247,7 @@
               },
               {
                 "sid": "Tab2_4__plot1_curve4",
-                "name": "Sim mild 50 mg",
+                "name": "mild - 50 mg PO",
                 "x": "task_po_dap50_mild_single__time",
                 "y": "task_po_dap50_mild_single__Aurine_dap",
                 "xerr": null,
@@ -6278,7 +6278,7 @@
               },
               {
                 "sid": "Tab2_4__plot1_curve5",
-                "name": "mild\u00b1SD (n=8)",
+                "name": "mild - 50 mg DAP PO\u00b1SD (n=8)",
                 "x": "dapagliflozin_cumulative amount_DAP50_mild__time",
                 "y": "dapagliflozin_cumulative amount_DAP50_mild__mean",
                 "xerr": null,
@@ -6289,7 +6289,7 @@
                   "name": null,
                   "base_style": null,
                   "line": {
-                    "type": "DASH",
+                    "type": "NONE",
                     "color": "#66c2a4ff",
                     "thickness": 1.0
                   },
@@ -6309,7 +6309,7 @@
               },
               {
                 "sid": "Tab2_4__plot1_curve6",
-                "name": "Sim moderate 50 mg",
+                "name": "moderate - 50 mg PO",
                 "x": "task_po_dap50_moderate_single__time",
                 "y": "task_po_dap50_moderate_single__Aurine_dap",
                 "xerr": null,
@@ -6340,7 +6340,7 @@
               },
               {
                 "sid": "Tab2_4__plot1_curve7",
-                "name": "moderate\u00b1SD (n=8)",
+                "name": "moderate - 50 mg DAP PO\u00b1SD (n=8)",
                 "x": "dapagliflozin_cumulative amount_DAP50_moderate__time",
                 "y": "dapagliflozin_cumulative amount_DAP50_moderate__mean",
                 "xerr": null,
@@ -6351,7 +6351,7 @@
                   "name": null,
                   "base_style": null,
                   "line": {
-                    "type": "DASH",
+                    "type": "NONE",
                     "color": "#2ca25fff",
                     "thickness": 1.0
                   },
@@ -6371,7 +6371,7 @@
               },
               {
                 "sid": "Tab2_4__plot1_curve8",
-                "name": "Sim severe 50 mg",
+                "name": "severe - 50 mg PO",
                 "x": "task_po_dap50_severe_single__time",
                 "y": "task_po_dap50_severe_single__Aurine_dap",
                 "xerr": null,
@@ -6402,7 +6402,7 @@
               },
               {
                 "sid": "Tab2_4__plot1_curve9",
-                "name": "severe\u00b1SD (n=4)",
+                "name": "severe - 50 mg DAP PO\u00b1SD (n=4)",
                 "x": "dapagliflozin_cumulative amount_DAP50_severe__time",
                 "y": "dapagliflozin_cumulative amount_DAP50_severe__mean",
                 "xerr": null,
@@ -6413,7 +6413,7 @@
                   "name": null,
                   "base_style": null,
                   "line": {
-                    "type": "DASH",
+                    "type": "NONE",
                     "color": "#006d2cff",
                     "thickness": 1.0
                   },
@@ -6470,13 +6470,13 @@
               "ticks_visible": true
             },
             "yaxis_right": null,
-            "legend": false,
+            "legend": true,
             "facecolor": "#ffffffff",
             "title_visible": true,
             "curves": [
               {
                 "sid": "Tab2_4__plot2_curve0",
-                "name": "Sim normal 20 mg",
+                "name": "normal - 20 mg PO",
                 "x": "task_po_dap20_normal_single__time",
                 "y": "task_po_dap20_normal_single__Aurine_d3g",
                 "xerr": null,
@@ -6507,7 +6507,7 @@
               },
               {
                 "sid": "Tab2_4__plot2_curve1",
-                "name": "normal\u00b1SD (n=4)",
+                "name": "normal - 20 mg PO\u00b1SD (n=4)",
                 "x": "dapagliflozin 3-o-glucuronide_cumulative amount_DAP20_d4_normal__time",
                 "y": "dapagliflozin 3-o-glucuronide_cumulative amount_DAP20_d4_normal__mean",
                 "xerr": null,
@@ -6518,7 +6518,7 @@
                   "name": null,
                   "base_style": null,
                   "line": {
-                    "type": "DASH",
+                    "type": "NONE",
                     "color": "#000000ff",
                     "thickness": 1.0
                   },
@@ -6538,7 +6538,7 @@
               },
               {
                 "sid": "Tab2_4__plot2_curve2",
-                "name": "Sim mild 20 mg",
+                "name": "mild - 20 mg PO",
                 "x": "task_po_dap20_mild_single__time",
                 "y": "task_po_dap20_mild_single__Aurine_d3g",
                 "xerr": null,
@@ -6569,7 +6569,7 @@
               },
               {
                 "sid": "Tab2_4__plot2_curve3",
-                "name": "mild\u00b1SD (n=4)",
+                "name": "mild - 20 mg PO\u00b1SD (n=4)",
                 "x": "dapagliflozin 3-o-glucuronide_cumulative amount_DAP20_d4_mild__time",
                 "y": "dapagliflozin 3-o-glucuronide_cumulative amount_DAP20_d4_mild__mean",
                 "xerr": null,
@@ -6580,7 +6580,7 @@
                   "name": null,
                   "base_style": null,
                   "line": {
-                    "type": "DASH",
+                    "type": "NONE",
                     "color": "#66c2a4ff",
                     "thickness": 1.0
                   },
@@ -6600,7 +6600,7 @@
               },
               {
                 "sid": "Tab2_4__plot2_curve4",
-                "name": "Sim moderate 20 mg",
+                "name": "moderate - 20 mg PO",
                 "x": "task_po_dap20_moderate_single__time",
                 "y": "task_po_dap20_moderate_single__Aurine_d3g",
                 "xerr": null,
@@ -6631,7 +6631,7 @@
               },
               {
                 "sid": "Tab2_4__plot2_curve5",
-                "name": "moderate\u00b1SD (n=6)",
+                "name": "moderate - 20 mg PO\u00b1SD (n=6)",
                 "x": "dapagliflozin 3-o-glucuronide_cumulative amount_DAP20_d4_moderate__time",
                 "y": "dapagliflozin 3-o-glucuronide_cumulative amount_DAP20_d4_moderate__mean",
                 "xerr": null,
@@ -6642,7 +6642,7 @@
                   "name": null,
                   "base_style": null,
                   "line": {
-                    "type": "DASH",
+                    "type": "NONE",
                     "color": "#2ca25fff",
                     "thickness": 1.0
                   },
@@ -6662,7 +6662,7 @@
               },
               {
                 "sid": "Tab2_4__plot2_curve6",
-                "name": "Sim severe 20 mg",
+                "name": "severe - 20 mg PO",
                 "x": "task_po_dap20_severe_single__time",
                 "y": "task_po_dap20_severe_single__Aurine_d3g",
                 "xerr": null,
@@ -6693,7 +6693,7 @@
               },
               {
                 "sid": "Tab2_4__plot2_curve7",
-                "name": "severe\u00b1SD (n=3)",
+                "name": "severe - 20 mg PO\u00b1SD (n=3)",
                 "x": "dapagliflozin 3-o-glucuronide_cumulative amount_DAP20_d4_severe__time",
                 "y": "dapagliflozin 3-o-glucuronide_cumulative amount_DAP20_d4_severe__mean",
                 "xerr": null,
@@ -6704,7 +6704,7 @@
                   "name": null,
                   "base_style": null,
                   "line": {
-                    "type": "DASH",
+                    "type": "NONE",
                     "color": "#006d2cff",
                     "thickness": 1.0
                   },
@@ -6761,13 +6761,13 @@
               "ticks_visible": true
             },
             "yaxis_right": null,
-            "legend": false,
+            "legend": true,
             "facecolor": "#ffffffff",
             "title_visible": true,
             "curves": [
               {
                 "sid": "Tab2_4__plot3_curve0",
-                "name": "Sim healthy 50 mg",
+                "name": "healthy - 50 mg PO",
                 "x": "task_po_dap50_healthy_single__time",
                 "y": "task_po_dap50_healthy_single__Aurine_d3g",
                 "xerr": null,
@@ -6798,7 +6798,7 @@
               },
               {
                 "sid": "Tab2_4__plot3_curve1",
-                "name": "healthy\u00b1SD (n=8)",
+                "name": "healthy - 50 mg DAP PO\u00b1SD (n=8)",
                 "x": "dapagliflozin 3-o-glucuronide_cumulative amount_DAP50_healthy__time",
                 "y": "dapagliflozin 3-o-glucuronide_cumulative amount_DAP50_healthy__mean",
                 "xerr": null,
@@ -6809,7 +6809,7 @@
                   "name": null,
                   "base_style": null,
                   "line": {
-                    "type": "DASH",
+                    "type": "NONE",
                     "color": "#000000ff",
                     "thickness": 1.0
                   },
@@ -6829,7 +6829,7 @@
               },
               {
                 "sid": "Tab2_4__plot3_curve2",
-                "name": "Sim normal 50 mg",
+                "name": "normal - 50 mg PO",
                 "x": "task_po_dap50_normal_single__time",
                 "y": "task_po_dap50_normal_single__Aurine_d3g",
                 "xerr": null,
@@ -6860,7 +6860,7 @@
               },
               {
                 "sid": "Tab2_4__plot3_curve3",
-                "name": "normal\u00b1SD (n=12)",
+                "name": "normal - 50 mg DAP PO\u00b1SD (n=12)",
                 "x": "dapagliflozin 3-o-glucuronide_cumulative amount_DAP50_normal__time",
                 "y": "dapagliflozin 3-o-glucuronide_cumulative amount_DAP50_normal__mean",
                 "xerr": null,
@@ -6871,7 +6871,7 @@
                   "name": null,
                   "base_style": null,
                   "line": {
-                    "type": "DASH",
+                    "type": "NONE",
                     "color": "#000000ff",
                     "thickness": 1.0
                   },
@@ -6891,7 +6891,7 @@
               },
               {
                 "sid": "Tab2_4__plot3_curve4",
-                "name": "Sim mild 50 mg",
+                "name": "mild - 50 mg PO",
                 "x": "task_po_dap50_mild_single__time",
                 "y": "task_po_dap50_mild_single__Aurine_d3g",
                 "xerr": null,
@@ -6922,7 +6922,7 @@
               },
               {
                 "sid": "Tab2_4__plot3_curve5",
-                "name": "mild\u00b1SD (n=8)",
+                "name": "mild - 50 mg DAP PO\u00b1SD (n=8)",
                 "x": "dapagliflozin 3-o-glucuronide_cumulative amount_DAP50_mild__time",
                 "y": "dapagliflozin 3-o-glucuronide_cumulative amount_DAP50_mild__mean",
                 "xerr": null,
@@ -6933,7 +6933,7 @@
                   "name": null,
                   "base_style": null,
                   "line": {
-                    "type": "DASH",
+                    "type": "NONE",
                     "color": "#66c2a4ff",
                     "thickness": 1.0
                   },
@@ -6953,7 +6953,7 @@
               },
               {
                 "sid": "Tab2_4__plot3_curve6",
-                "name": "Sim moderate 50 mg",
+                "name": "moderate - 50 mg PO",
                 "x": "task_po_dap50_moderate_single__time",
                 "y": "task_po_dap50_moderate_single__Aurine_d3g",
                 "xerr": null,
@@ -6984,7 +6984,7 @@
               },
               {
                 "sid": "Tab2_4__plot3_curve7",
-                "name": "moderate\u00b1SD (n=8)",
+                "name": "moderate - 50 mg DAP PO\u00b1SD (n=8)",
                 "x": "dapagliflozin 3-o-glucuronide_cumulative amount_DAP50_moderate__time",
                 "y": "dapagliflozin 3-o-glucuronide_cumulative amount_DAP50_moderate__mean",
                 "xerr": null,
@@ -6995,7 +6995,7 @@
                   "name": null,
                   "base_style": null,
                   "line": {
-                    "type": "DASH",
+                    "type": "NONE",
                     "color": "#2ca25fff",
                     "thickness": 1.0
                   },
@@ -7015,7 +7015,7 @@
               },
               {
                 "sid": "Tab2_4__plot3_curve8",
-                "name": "Sim severe 50 mg",
+                "name": "severe - 50 mg PO",
                 "x": "task_po_dap50_severe_single__time",
                 "y": "task_po_dap50_severe_single__Aurine_d3g",
                 "xerr": null,
@@ -7046,7 +7046,7 @@
               },
               {
                 "sid": "Tab2_4__plot3_curve9",
-                "name": "severe\u00b1SD (n=4)",
+                "name": "severe - 50 mg DAP PO\u00b1SD (n=4)",
                 "x": "dapagliflozin 3-o-glucuronide_cumulative amount_DAP50_severe__time",
                 "y": "dapagliflozin 3-o-glucuronide_cumulative amount_DAP50_severe__mean",
                 "xerr": null,
@@ -7057,7 +7057,7 @@
                   "name": null,
                   "base_style": null,
                   "line": {
-                    "type": "DASH",
+                    "type": "NONE",
                     "color": "#006d2cff",
                     "thickness": 1.0
                   },

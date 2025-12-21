@@ -113,7 +113,7 @@ class Kasichayanula2011(DapagliflozinSimulationExperiment):
             sid="Fig1",
             num_rows=1,
             num_cols=2,
-            name=f"{self.__class__.__name__}",
+            name=f"{self.__class__.__name__} (Hepatic)",
         )
         Figure.legend_fontsize=10
         plots = fig.create_plots(xaxis=Axis(self.label_time, unit=self.unit_time), legend=True)
@@ -162,7 +162,6 @@ class Kasichayanula2011(DapagliflozinSimulationExperiment):
 
 
 if __name__ == "__main__":
-    # run_experiments(Kasichayanula2011, output_dir=Kasichayanula2011.__name__)
     out = dapagliflozin.RESULTS_PATH_SIMULATION / Kasichayanula2011.__name__
     out.mkdir(parents=True, exist_ok=True)
     run_experiments(Kasichayanula2011, output_dir=out)

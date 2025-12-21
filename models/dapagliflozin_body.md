@@ -11,11 +11,10 @@ length: [m]
 
 ## Parameters `p`
 ```
-BW = 75.0  # [kg] body weight [kg]  
-COBW = 1.548  # [ml/s/kg] cardiac output per bodyweight [ml/s/kg]  
-COHRI = 150.0  # [ml] increase of cardiac output per heartbeat [ml/min*min]  
-DAP2D3G_Km_dap = 0.479  # [mmol/l] Km dapagliflozin UGT1A9  
-DAP2D3G_Vmax = 0.019920054768051  # [mmol/min/l] Vmax dapagliflozin conversion  
+BW = 75.0  # [kg] body weight  
+COBW = 1.548  # [ml/s/kg] cardiac output per bodyweight  
+DAP2D3G_Km_dap = 0.479  # [mmol/l] Km dap (UGT1A9)  
+DAP2D3G_Vmax = 0.019920054768051  # [mmol/min/l] Vmax dap (UGT1A9)  
 FQgu = 0.18  # [-] gut fractional tissue blood flow  
 FQh = 0.215  # [-] hepatic (venous side) fractional tissue blood flow  
 FQki = 0.19  # [-] kidney fractional tissue blood flow  
@@ -30,19 +29,13 @@ FVpo = 0.001  # [l/kg] portal fractional tissue volume
 FVve = 0.0514  # [l/kg] venous fractional tissue volume  
 Fblood = 0.02  # [-] blood fraction of organ volume  
 HCT = 0.51  # [-] hematocrit  
-HEIGHT = 170.0  # [cm] height [cm]  
-HR = 70.0  # [1/min] heart rate [1/min]  
-HRrest = 70.0  # [1/min] heart rate [1/min]  
+HEIGHT = 170.0  # [cm] height  
 Kp_dap = 25.517380513186  # [-] tissue/plasma partition coefficient dap  
-MAP = 100.0  # [133.32239 N/m^2] mean arterial pressure [mmHg]  
-Mr_d3g = 585.0  # [g/mol] Molecular weight d3g [g/mole]  
 Mr_dap = 408.873  # [g/mol] Molecular weight dap [g/mole]  
 PODOSE_dap = 0.0  # [mg] oral dose dap [mg]  
 Ri_dap = 0.0  # [mg/min] Ri [mg/min] rate of infusion dap  
 Vfeces = 1.0  # [l] feces  
-Vstomach = 1.0  # [l] stomach  
 Vurine = 1.0  # [l] urine  
-conversion_min_per_day = 1440.0  # [min/day] Conversion factor min to hours  
 f_cardiac_function = 1.0  # [-] heart function  
 f_cirrhosis = 0.0  # [-] severity of cirrhosis [0, 0.95]  
 f_ugt1a9 = 1.0  # [-] scaling factor UGT1A9 activity  
@@ -84,8 +77,8 @@ IVDOSE_dap = 0.0  # [mg] IV bolus dose dap [mg]
 # y
 Afeces_daptot = Afeces_dap  # [mmol] Sum of dapagliflozin feces  
 Aurine_daptot = Aurine_dap + Aurine_d3g  # [mmol] Sum of dapagliflozin and d3g urine  
-BSA = 0.024265 * (BW / 1)**0.5378 * (HEIGHT / 1)**0.3964  # [m^2] body surface area [m^2]  
-CO = f_cardiac_function * BW * COBW + (HR - HRrest) * COHRI / 60  # [ml/s] cardiac output [ml/s]  
+BSA = 0.024265 * (BW / 1)**0.5378 * (HEIGHT / 1)**0.3964  # [m^2] body surface area  
+CO = f_cardiac_function * BW * COBW  # [ml/s] cardiac output [ml/s]  
 Cve_daptot = Cve_dap + Cve_d3g  # [mmol/l] Sum of dapagliflozin and d3g  
 FQre = 1 - (FQki + FQh)  # [-] rest of body fractional tissue blood flow  
 FVre = 1 - (FVgu + FVki + FVli + FVlu + FVve + FVar)  # [l/kg] rest of body fractional tissue volume  

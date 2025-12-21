@@ -83,31 +83,31 @@ implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.</p></bo
           </dcterms:modified>
           <bqbiol:occursIn>
             <rdf:Bag>
-              <rdf:li rdf:resource="http://identifiers.org/FMA:7203"/>
-              <rdf:li rdf:resource="http://identifiers.org/BTO:0000671"/>
-              <rdf:li rdf:resource="http://identifiers.org/ncit/C12415"/>
+              <rdf:li rdf:resource="https://identifiers.org/FMA:7203"/>
+              <rdf:li rdf:resource="https://identifiers.org/BTO:0000671"/>
+              <rdf:li rdf:resource="https://identifiers.org/ncit/C12415"/>
             </rdf:Bag>
           </bqbiol:occursIn>
           <bqbiol:hasProperty>
             <rdf:Bag>
-              <rdf:li rdf:resource="http://identifiers.org/ncit/C79372"/>
-              <rdf:li rdf:resource="http://identifiers.org/mamo/MAMO_0000046"/>
-              <rdf:li rdf:resource="http://identifiers.org/ncit/C78126"/>
-              <rdf:li rdf:resource="http://identifiers.org/ncit/C98083"/>
-              <rdf:li rdf:resource="http://identifiers.org/ncit/C15299"/>
-              <rdf:li rdf:resource="http://identifiers.org/ncit/C2985"/>
-              <rdf:li rdf:resource="http://identifiers.org/ncit/C99532"/>
+              <rdf:li rdf:resource="https://identifiers.org/ncit/C79372"/>
+              <rdf:li rdf:resource="https://identifiers.org/mamo/MAMO_0000046"/>
+              <rdf:li rdf:resource="https://identifiers.org/ncit/C78126"/>
+              <rdf:li rdf:resource="https://identifiers.org/ncit/C98083"/>
+              <rdf:li rdf:resource="https://identifiers.org/ncit/C15299"/>
+              <rdf:li rdf:resource="https://identifiers.org/ncit/C2985"/>
+              <rdf:li rdf:resource="https://identifiers.org/ncit/C99532"/>
             </rdf:Bag>
           </bqbiol:hasProperty>
           <bqbiol:hasTaxon>
             <rdf:Bag>
-              <rdf:li rdf:resource="http://identifiers.org/taxonomy/9606"/>
-              <rdf:li rdf:resource="http://identifiers.org/snomedct/337915000"/>
+              <rdf:li rdf:resource="https://identifiers.org/taxonomy/9606"/>
+              <rdf:li rdf:resource="https://identifiers.org/snomedct/337915000"/>
             </rdf:Bag>
           </bqbiol:hasTaxon>
           <bqbiol:isDescribedBy>
             <rdf:Bag>
-              <rdf:li rdf:resource="http://identifiers.org/doi/10.5281/zenodo.13987865"/>
+              <rdf:li rdf:resource="https://identifiers.org/doi/10.5281/zenodo.13987865"/>
             </rdf:Bag>
           </bqbiol:isDescribedBy>
         </rdf:Description>
@@ -214,9 +214,9 @@ implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.</p></bo
             <rdf:Description rdf:about="#meta_Vext">
               <bqbiol:is>
                 <rdf:Bag>
-                  <rdf:li rdf:resource="http://identifiers.org/SBO:0000290"/>
-                  <rdf:li rdf:resource="http://identifiers.org/ncit/C13356"/>
-                  <rdf:li rdf:resource="http://identifiers.org/BTO:0000131"/>
+                  <rdf:li rdf:resource="https://identifiers.org/SBO:0000290"/>
+                  <rdf:li rdf:resource="https://identifiers.org/ncit/C13356"/>
+                  <rdf:li rdf:resource="https://identifiers.org/BTO:0000131"/>
                 </rdf:Bag>
               </bqbiol:is>
             </rdf:Description>
@@ -229,10 +229,10 @@ implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.</p></bo
             <rdf:Description rdf:about="#meta_Vki">
               <bqbiol:is>
                 <rdf:Bag>
-                  <rdf:li rdf:resource="http://identifiers.org/SBO:0000290"/>
-                  <rdf:li rdf:resource="http://identifiers.org/FMA:7203"/>
-                  <rdf:li rdf:resource="http://identifiers.org/BTO:0000671"/>
-                  <rdf:li rdf:resource="http://identifiers.org/ncit/C12415"/>
+                  <rdf:li rdf:resource="https://identifiers.org/SBO:0000290"/>
+                  <rdf:li rdf:resource="https://identifiers.org/FMA:7203"/>
+                  <rdf:li rdf:resource="https://identifiers.org/BTO:0000671"/>
+                  <rdf:li rdf:resource="https://identifiers.org/ncit/C12415"/>
                 </rdf:Bag>
               </bqbiol:is>
             </rdf:Description>
@@ -245,10 +245,10 @@ implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.</p></bo
             <rdf:Description rdf:about="#meta_Vmem">
               <bqbiol:is>
                 <rdf:Bag>
-                  <rdf:li rdf:resource="http://identifiers.org/SBO:0000290"/>
-                  <rdf:li rdf:resource="http://identifiers.org/ncit/C13735"/>
-                  <rdf:li rdf:resource="http://identifiers.org/FMA:63841"/>
-                  <rdf:li rdf:resource="http://identifiers.org/GO:0005886"/>
+                  <rdf:li rdf:resource="https://identifiers.org/SBO:0000290"/>
+                  <rdf:li rdf:resource="https://identifiers.org/ncit/C13735"/>
+                  <rdf:li rdf:resource="https://identifiers.org/FMA:63841"/>
+                  <rdf:li rdf:resource="https://identifiers.org/GO:0005886"/>
                 </rdf:Bag>
               </bqbiol:is>
             </rdf:Description>
@@ -261,10 +261,10 @@ implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.</p></bo
             <rdf:Description rdf:about="#meta_Vurine">
               <bqbiol:is>
                 <rdf:Bag>
-                  <rdf:li rdf:resource="http://identifiers.org/SBO:0000290"/>
-                  <rdf:li rdf:resource="http://identifiers.org/FMA:12274"/>
-                  <rdf:li rdf:resource="http://identifiers.org/ncit/C13283"/>
-                  <rdf:li rdf:resource="http://identifiers.org/BTO:0001419"/>
+                  <rdf:li rdf:resource="https://identifiers.org/SBO:0000290"/>
+                  <rdf:li rdf:resource="https://identifiers.org/FMA:12274"/>
+                  <rdf:li rdf:resource="https://identifiers.org/ncit/C13283"/>
+                  <rdf:li rdf:resource="https://identifiers.org/BTO:0001419"/>
                 </rdf:Bag>
               </bqbiol:is>
             </rdf:Description>
@@ -279,9 +279,9 @@ implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.</p></bo
             <rdf:Description rdf:about="#meta_dap_ext">
               <bqbiol:is>
                 <rdf:Bag>
-                  <rdf:li rdf:resource="http://identifiers.org/SBO:0000247"/>
-                  <rdf:li rdf:resource="http://identifiers.org/CHEBI:85078"/>
-                  <rdf:li rdf:resource="http://identifiers.org/ncit/C78126"/>
+                  <rdf:li rdf:resource="https://identifiers.org/SBO:0000247"/>
+                  <rdf:li rdf:resource="https://identifiers.org/CHEBI:85078"/>
+                  <rdf:li rdf:resource="https://identifiers.org/ncit/C78126"/>
                 </rdf:Bag>
               </bqbiol:is>
             </rdf:Description>
@@ -294,9 +294,9 @@ implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.</p></bo
             <rdf:Description rdf:about="#meta_dap">
               <bqbiol:is>
                 <rdf:Bag>
-                  <rdf:li rdf:resource="http://identifiers.org/SBO:0000247"/>
-                  <rdf:li rdf:resource="http://identifiers.org/CHEBI:85078"/>
-                  <rdf:li rdf:resource="http://identifiers.org/ncit/C78126"/>
+                  <rdf:li rdf:resource="https://identifiers.org/SBO:0000247"/>
+                  <rdf:li rdf:resource="https://identifiers.org/CHEBI:85078"/>
+                  <rdf:li rdf:resource="https://identifiers.org/ncit/C78126"/>
                 </rdf:Bag>
               </bqbiol:is>
             </rdf:Description>
@@ -309,9 +309,9 @@ implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.</p></bo
             <rdf:Description rdf:about="#meta_dap_urine">
               <bqbiol:is>
                 <rdf:Bag>
-                  <rdf:li rdf:resource="http://identifiers.org/SBO:0000247"/>
-                  <rdf:li rdf:resource="http://identifiers.org/CHEBI:85078"/>
-                  <rdf:li rdf:resource="http://identifiers.org/ncit/C78126"/>
+                  <rdf:li rdf:resource="https://identifiers.org/SBO:0000247"/>
+                  <rdf:li rdf:resource="https://identifiers.org/CHEBI:85078"/>
+                  <rdf:li rdf:resource="https://identifiers.org/ncit/C78126"/>
                 </rdf:Bag>
               </bqbiol:is>
             </rdf:Description>
@@ -324,9 +324,9 @@ implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.</p></bo
             <rdf:Description rdf:about="#meta_d3g_ext">
               <bqbiol:is>
                 <rdf:Bag>
-                  <rdf:li rdf:resource="http://identifiers.org/SBO:0000247"/>
-                  <rdf:li rdf:resource="http://identifiers.org/pubchem.compound/91617971"/>
-                  <rdf:li rdf:resource="http://identifiers.org/inchikey/ZYZULHSUKTZGTR-PTNNFGGUSA-N"/>
+                  <rdf:li rdf:resource="https://identifiers.org/SBO:0000247"/>
+                  <rdf:li rdf:resource="https://identifiers.org/pubchem.compound/91617971"/>
+                  <rdf:li rdf:resource="https://identifiers.org/inchikey/ZYZULHSUKTZGTR-PTNNFGGUSA-N"/>
                 </rdf:Bag>
               </bqbiol:is>
             </rdf:Description>
@@ -339,9 +339,9 @@ implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.</p></bo
             <rdf:Description rdf:about="#meta_d3g">
               <bqbiol:is>
                 <rdf:Bag>
-                  <rdf:li rdf:resource="http://identifiers.org/SBO:0000247"/>
-                  <rdf:li rdf:resource="http://identifiers.org/pubchem.compound/91617971"/>
-                  <rdf:li rdf:resource="http://identifiers.org/inchikey/ZYZULHSUKTZGTR-PTNNFGGUSA-N"/>
+                  <rdf:li rdf:resource="https://identifiers.org/SBO:0000247"/>
+                  <rdf:li rdf:resource="https://identifiers.org/pubchem.compound/91617971"/>
+                  <rdf:li rdf:resource="https://identifiers.org/inchikey/ZYZULHSUKTZGTR-PTNNFGGUSA-N"/>
                 </rdf:Bag>
               </bqbiol:is>
             </rdf:Description>
@@ -354,16 +354,16 @@ implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.</p></bo
             <rdf:Description rdf:about="#meta_d3g_urine">
               <bqbiol:is>
                 <rdf:Bag>
-                  <rdf:li rdf:resource="http://identifiers.org/SBO:0000247"/>
-                  <rdf:li rdf:resource="http://identifiers.org/pubchem.compound/91617971"/>
-                  <rdf:li rdf:resource="http://identifiers.org/inchikey/ZYZULHSUKTZGTR-PTNNFGGUSA-N"/>
+                  <rdf:li rdf:resource="https://identifiers.org/SBO:0000247"/>
+                  <rdf:li rdf:resource="https://identifiers.org/pubchem.compound/91617971"/>
+                  <rdf:li rdf:resource="https://identifiers.org/inchikey/ZYZULHSUKTZGTR-PTNNFGGUSA-N"/>
                 </rdf:Bag>
               </bqbiol:is>
             </rdf:Description>
           </rdf:RDF>
         </annotation>
       </species>
-      <species metaid="meta_glc_ext" sboTerm="SBO:0000247" id="glc_ext" name="glucose (plasma)" compartment="Vext" initialConcentration="5" substanceUnits="mmole" hasOnlySubstanceUnits="false" boundaryCondition="true" constant="false">
+      <species metaid="meta_glc_ext" sboTerm="SBO:0000247" id="glc_ext" name="glucose kidney (plasma)" compartment="Vext" initialConcentration="5" substanceUnits="mmole" hasOnlySubstanceUnits="false" boundaryCondition="true" constant="false">
         <notes>
           <body xmlns="http://www.w3.org/1999/xhtml">
             <p>Fasting plasma glucose;
@@ -380,9 +380,9 @@ glucose and fasting plasma glucose</p>
             <rdf:Description rdf:about="#meta_glc_ext">
               <bqbiol:is>
                 <rdf:Bag>
-                  <rdf:li rdf:resource="http://identifiers.org/SBO:0000247"/>
-                  <rdf:li rdf:resource="http://identifiers.org/CHEBI:4167"/>
-                  <rdf:li rdf:resource="http://identifiers.org/ncit/C2831"/>
+                  <rdf:li rdf:resource="https://identifiers.org/SBO:0000247"/>
+                  <rdf:li rdf:resource="https://identifiers.org/CHEBI:4167"/>
+                  <rdf:li rdf:resource="https://identifiers.org/ncit/C2831"/>
                 </rdf:Bag>
               </bqbiol:is>
             </rdf:Description>
@@ -395,9 +395,9 @@ glucose and fasting plasma glucose</p>
             <rdf:Description rdf:about="#meta_glc_urine">
               <bqbiol:is>
                 <rdf:Bag>
-                  <rdf:li rdf:resource="http://identifiers.org/SBO:0000247"/>
-                  <rdf:li rdf:resource="http://identifiers.org/CHEBI:4167"/>
-                  <rdf:li rdf:resource="http://identifiers.org/ncit/C2831"/>
+                  <rdf:li rdf:resource="https://identifiers.org/SBO:0000247"/>
+                  <rdf:li rdf:resource="https://identifiers.org/CHEBI:4167"/>
+                  <rdf:li rdf:resource="https://identifiers.org/ncit/C2831"/>
                 </rdf:Bag>
               </bqbiol:is>
             </rdf:Description>
@@ -406,7 +406,7 @@ glucose and fasting plasma glucose</p>
       </species>
     </listOfSpecies>
     <listOfParameters>
-      <parameter metaid="meta_f_renal_function" sboTerm="SBO:0000009" id="f_renal_function" name="parameter for renal function" value="1" units="dimensionless" constant="true">
+      <parameter metaid="meta_f_renal_function" sboTerm="SBO:0000009" id="f_renal_function" name="scaling factor renal function" value="1" units="dimensionless" constant="true">
         <notes>
           <body xmlns="http://www.w3.org/1999/xhtml">
             <p>scaling factor for renal function. 1.0: normal renal function;
@@ -418,7 +418,7 @@ glucose and fasting plasma glucose</p>
             <rdf:Description rdf:about="#meta_f_renal_function">
               <bqbiol:is>
                 <rdf:Bag>
-                  <rdf:li rdf:resource="http://identifiers.org/SBO:0000009"/>
+                  <rdf:li rdf:resource="https://identifiers.org/SBO:0000009"/>
                 </rdf:Bag>
               </bqbiol:is>
             </rdf:Description>
@@ -431,7 +431,7 @@ glucose and fasting plasma glucose</p>
             <rdf:Description rdf:about="#meta_DAP2D3G_Vmax">
               <bqbiol:is>
                 <rdf:Bag>
-                  <rdf:li rdf:resource="http://identifiers.org/SBO:0000186"/>
+                  <rdf:li rdf:resource="https://identifiers.org/SBO:0000186"/>
                 </rdf:Bag>
               </bqbiol:is>
             </rdf:Description>
@@ -442,7 +442,7 @@ glucose and fasting plasma glucose</p>
         <notes>
           <body xmlns="http://www.w3.org/1999/xhtml">
             <p>Km apparent in kidney microsomes for dapagliflozin; 479 µM [Kasichaynula2013]
-Ki for UGT1A9 with other substrates 12-15 µM [Obermeier2010a].</p>
+Ki for UGT1A9 with other substrates 12-15 µM [Obermeier2010a, Pattanawongsa2015].</p>
           </body>
         </notes>
         <annotation>
@@ -450,7 +450,7 @@ Ki for UGT1A9 with other substrates 12-15 µM [Obermeier2010a].</p>
             <rdf:Description rdf:about="#meta_DAP2D3G_Km_dap">
               <bqbiol:is>
                 <rdf:Bag>
-                  <rdf:li rdf:resource="http://identifiers.org/SBO:0000027"/>
+                  <rdf:li rdf:resource="https://identifiers.org/SBO:0000027"/>
                 </rdf:Bag>
               </bqbiol:is>
             </rdf:Description>
@@ -469,7 +469,7 @@ Ki for UGT1A9 with other substrates 12-15 µM [Obermeier2010a].</p>
             <rdf:Description rdf:about="#meta_f_ugt1a9">
               <bqbiol:is>
                 <rdf:Bag>
-                  <rdf:li rdf:resource="http://identifiers.org/SBO:0000002"/>
+                  <rdf:li rdf:resource="https://identifiers.org/SBO:0000002"/>
                 </rdf:Bag>
               </bqbiol:is>
             </rdf:Description>
@@ -482,7 +482,7 @@ Ki for UGT1A9 with other substrates 12-15 µM [Obermeier2010a].</p>
             <rdf:Description rdf:about="#meta_Mr_glc">
               <bqbiol:is>
                 <rdf:Bag>
-                  <rdf:li rdf:resource="http://identifiers.org/SBO:0000647"/>
+                  <rdf:li rdf:resource="https://identifiers.org/SBO:0000647"/>
                 </rdf:Bag>
               </bqbiol:is>
             </rdf:Description>
@@ -491,7 +491,7 @@ Ki for UGT1A9 with other substrates 12-15 µM [Obermeier2010a].</p>
       </parameter>
       <parameter id="cf_mg_per_g" name="Conversion factor mg per g" value="1000" units="mg_per_g" constant="true"/>
       <parameter id="cf_ml_per_l" name="Conversion factor ml per l" value="1000" units="ml_per_l" constant="true"/>
-      <parameter metaid="meta_RTG_E50" sboTerm="SBO:0000009" id="RTG_E50" name="EC50 reduction in RTG" value="6.49377923807214e-06" units="mM" constant="true">
+      <parameter metaid="meta_RTG_E50" sboTerm="SBO:0000009" id="RTG_E50" name="EC50 reduction in RTG" value="9.38382179621963e-06" units="mM" constant="true">
         <notes>
           <body xmlns="http://www.w3.org/1999/xhtml">
             <p>~10 ng/ml graphical estimate for low doses [Komoroski2009]
@@ -503,14 +503,14 @@ Half-maximal pharmacodynamic effect of dapagliflozin.</p>
             <rdf:Description rdf:about="#meta_RTG_E50">
               <bqbiol:is>
                 <rdf:Bag>
-                  <rdf:li rdf:resource="http://identifiers.org/SBO:0000009"/>
+                  <rdf:li rdf:resource="https://identifiers.org/SBO:0000009"/>
                 </rdf:Bag>
               </bqbiol:is>
             </rdf:Description>
           </rdf:RDF>
         </annotation>
       </parameter>
-      <parameter metaid="meta_RTG_gamma" sboTerm="SBO:0000009" id="RTG_gamma" name="hill coefficient reduction in RTG" value="1" units="dimensionless" constant="true">
+      <parameter metaid="meta_RTG_gamma" sboTerm="SBO:0000009" id="RTG_gamma" name="hill coefficient reduction in RTG" value="1.03598899790151" units="dimensionless" constant="true">
         <notes>
           <body xmlns="http://www.w3.org/1999/xhtml">
             <p>gamma effect of dapagliflozin pharmacodynamics.</p>
@@ -521,28 +521,28 @@ Half-maximal pharmacodynamic effect of dapagliflozin.</p>
             <rdf:Description rdf:about="#meta_RTG_gamma">
               <bqbiol:is>
                 <rdf:Bag>
-                  <rdf:li rdf:resource="http://identifiers.org/SBO:0000009"/>
+                  <rdf:li rdf:resource="https://identifiers.org/SBO:0000009"/>
                 </rdf:Bag>
               </bqbiol:is>
             </rdf:Description>
           </rdf:RDF>
         </annotation>
       </parameter>
-      <parameter id="RTG_base" name="Baseline RTG value" value="8.00000843198733" units="mM" constant="true">
+      <parameter id="RTG_base" name="baseline RTG value" value="7.00190957938498" units="mM" constant="true">
         <notes>
           <body xmlns="http://www.w3.org/1999/xhtml">
             <p>typical RTG value without SGLT2 inhibitors in healthy subjects</p>
           </body>
         </notes>
       </parameter>
-      <parameter id="RTG_m_fpg" name="FPG effect on RTG" value="1.25337150891578" units="dimensionless" constant="true">
+      <parameter id="RTG_m_fpg" name="FPG effect on RTG" value="1.6532116030699" units="dimensionless" constant="true">
         <notes>
           <body xmlns="http://www.w3.org/1999/xhtml">
             <p>Effect of the FPG on the change in RTG_base.</p>
           </body>
         </notes>
       </parameter>
-      <parameter id="RTG_max_inhibition" name="RTG maximum inhibition" value="0.706730840016354" units="dimensionless" constant="true">
+      <parameter id="RTG_max_inhibition" name="RTG maximum inhibition" value="0.712546965755432" units="dimensionless" constant="true">
         <notes>
           <body xmlns="http://www.w3.org/1999/xhtml">
             <p>maximum inhibition of RTG via SGLT2</p>
@@ -550,14 +550,14 @@ Half-maximal pharmacodynamic effect of dapagliflozin.</p>
         </notes>
       </parameter>
       <parameter id="fpg_healthy" name="fasting plasma glucose (healthy)" value="5" units="mM" constant="true"/>
-      <parameter id="GFR_healthy" name="Glomerular filtration rate (healthy)" value="100" units="ml_per_min" constant="true"/>
+      <parameter id="GFR_healthy" name="glomerular filtration rate (healthy)" value="100" units="ml_per_min" constant="true"/>
       <parameter metaid="meta_DAPIM_Vmax" sboTerm="SBO:0000186" id="DAPIM_Vmax" name="Vmax dapagliflozin import" value="10" units="mmole_per_min_l" constant="true">
         <annotation>
           <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:vCard="http://www.w3.org/2001/vcard-rdf/3.0#" xmlns:vCard4="http://www.w3.org/2006/vcard/ns#" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/" xmlns:bqmodel="http://biomodels.net/model-qualifiers/">
             <rdf:Description rdf:about="#meta_DAPIM_Vmax">
               <bqbiol:is>
                 <rdf:Bag>
-                  <rdf:li rdf:resource="http://identifiers.org/SBO:0000186"/>
+                  <rdf:li rdf:resource="https://identifiers.org/SBO:0000186"/>
                 </rdf:Bag>
               </bqbiol:is>
             </rdf:Description>
@@ -575,7 +575,7 @@ Half-maximal pharmacodynamic effect of dapagliflozin.</p>
             <rdf:Description rdf:about="#meta_DAPIM_Km_dap">
               <bqbiol:is>
                 <rdf:Bag>
-                  <rdf:li rdf:resource="http://identifiers.org/SBO:0000027"/>
+                  <rdf:li rdf:resource="https://identifiers.org/SBO:0000027"/>
                 </rdf:Bag>
               </bqbiol:is>
             </rdf:Description>
@@ -588,7 +588,7 @@ Half-maximal pharmacodynamic effect of dapagliflozin.</p>
             <rdf:Description rdf:about="#meta_D3GIM_Vmax">
               <bqbiol:is>
                 <rdf:Bag>
-                  <rdf:li rdf:resource="http://identifiers.org/SBO:0000186"/>
+                  <rdf:li rdf:resource="https://identifiers.org/SBO:0000186"/>
                 </rdf:Bag>
               </bqbiol:is>
             </rdf:Description>
@@ -606,7 +606,7 @@ Half-maximal pharmacodynamic effect of dapagliflozin.</p>
             <rdf:Description rdf:about="#meta_D3GIM_Km_d3g">
               <bqbiol:is>
                 <rdf:Bag>
-                  <rdf:li rdf:resource="http://identifiers.org/SBO:0000027"/>
+                  <rdf:li rdf:resource="https://identifiers.org/SBO:0000027"/>
                 </rdf:Bag>
               </bqbiol:is>
             </rdf:Description>
@@ -625,33 +625,33 @@ Half-maximal pharmacodynamic effect of dapagliflozin.</p>
             <rdf:Description rdf:about="#meta_f_DAP2D3G">
               <bqbiol:is>
                 <rdf:Bag>
-                  <rdf:li rdf:resource="http://identifiers.org/SBO:0000002"/>
+                  <rdf:li rdf:resource="https://identifiers.org/SBO:0000002"/>
                 </rdf:Bag>
               </bqbiol:is>
             </rdf:Description>
           </rdf:RDF>
         </annotation>
       </parameter>
-      <parameter metaid="meta_D3GEX_k" sboTerm="SBO:0000009" id="D3GEX_k" name="rate urinary excretion of dapagliflozin-3-o-glucuronide" value="0.450356180744184" units="per_min" constant="true">
+      <parameter metaid="meta_D3GEX_k" sboTerm="SBO:0000009" id="D3GEX_k" name="urinary excretion rate d3g" value="0.450356180744184" units="per_min" constant="true">
         <annotation>
           <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:vCard="http://www.w3.org/2001/vcard-rdf/3.0#" xmlns:vCard4="http://www.w3.org/2006/vcard/ns#" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/" xmlns:bqmodel="http://biomodels.net/model-qualifiers/">
             <rdf:Description rdf:about="#meta_D3GEX_k">
               <bqbiol:is>
                 <rdf:Bag>
-                  <rdf:li rdf:resource="http://identifiers.org/SBO:0000009"/>
+                  <rdf:li rdf:resource="https://identifiers.org/SBO:0000009"/>
                 </rdf:Bag>
               </bqbiol:is>
             </rdf:Description>
           </rdf:RDF>
         </annotation>
       </parameter>
-      <parameter metaid="meta_DAPEX_k" sboTerm="SBO:0000009" id="DAPEX_k" name="rate urinary excretion of dapagliflozin" value="0.0181517912484487" units="per_min" constant="true">
+      <parameter metaid="meta_DAPEX_k" sboTerm="SBO:0000009" id="DAPEX_k" name="urinary excretion rate dap" value="0.0181517912484487" units="per_min" constant="true">
         <annotation>
           <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:vCard="http://www.w3.org/2001/vcard-rdf/3.0#" xmlns:vCard4="http://www.w3.org/2006/vcard/ns#" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/" xmlns:bqmodel="http://biomodels.net/model-qualifiers/">
             <rdf:Description rdf:about="#meta_DAPEX_k">
               <bqbiol:is>
                 <rdf:Bag>
-                  <rdf:li rdf:resource="http://identifiers.org/SBO:0000009"/>
+                  <rdf:li rdf:resource="https://identifiers.org/SBO:0000009"/>
                 </rdf:Bag>
               </bqbiol:is>
             </rdf:Description>
@@ -779,7 +779,7 @@ to the glucose concentration above this threshold.
             <rdf:Description rdf:about="#meta_DAPIM">
               <bqbiol:is>
                 <rdf:Bag>
-                  <rdf:li rdf:resource="http://identifiers.org/SBO:0000655"/>
+                  <rdf:li rdf:resource="https://identifiers.org/SBO:0000655"/>
                 </rdf:Bag>
               </bqbiol:is>
             </rdf:Description>
@@ -837,7 +837,7 @@ to the glucose concentration above this threshold.
             <rdf:Description rdf:about="#meta_D3GIM">
               <bqbiol:is>
                 <rdf:Bag>
-                  <rdf:li rdf:resource="http://identifiers.org/SBO:0000655"/>
+                  <rdf:li rdf:resource="https://identifiers.org/SBO:0000655"/>
                 </rdf:Bag>
               </bqbiol:is>
             </rdf:Description>
@@ -895,8 +895,8 @@ to the glucose concentration above this threshold.
             <rdf:Description rdf:about="#meta_DAP2D3G">
               <bqbiol:is>
                 <rdf:Bag>
-                  <rdf:li rdf:resource="http://identifiers.org/SBO:0000176"/>
-                  <rdf:li rdf:resource="http://identifiers.org/uniprot/O60656"/>
+                  <rdf:li rdf:resource="https://identifiers.org/SBO:0000176"/>
+                  <rdf:li rdf:resource="https://identifiers.org/uniprot/O60656"/>
                 </rdf:Bag>
               </bqbiol:is>
             </rdf:Description>
@@ -936,7 +936,7 @@ to the glucose concentration above this threshold.
             <rdf:Description rdf:about="#meta_D3GEX">
               <bqbiol:is>
                 <rdf:Bag>
-                  <rdf:li rdf:resource="http://identifiers.org/SBO:0000655"/>
+                  <rdf:li rdf:resource="https://identifiers.org/SBO:0000655"/>
                 </rdf:Bag>
               </bqbiol:is>
             </rdf:Description>
@@ -966,7 +966,7 @@ to the glucose concentration above this threshold.
             <rdf:Description rdf:about="#meta_DAPEX">
               <bqbiol:is>
                 <rdf:Bag>
-                  <rdf:li rdf:resource="http://identifiers.org/SBO:0000655"/>
+                  <rdf:li rdf:resource="https://identifiers.org/SBO:0000655"/>
                 </rdf:Bag>
               </bqbiol:is>
             </rdf:Description>
@@ -996,7 +996,7 @@ to the glucose concentration above this threshold.
             <rdf:Description rdf:about="#meta_GLCEX">
               <bqbiol:is>
                 <rdf:Bag>
-                  <rdf:li rdf:resource="http://identifiers.org/SBO:0000655"/>
+                  <rdf:li rdf:resource="https://identifiers.org/SBO:0000655"/>
                 </rdf:Bag>
               </bqbiol:is>
             </rdf:Description>

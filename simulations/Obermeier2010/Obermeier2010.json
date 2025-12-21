@@ -1,7 +1,7 @@
 {
   "experiment_id": "Obermeier2010",
   "base_path": "/home/mkoenig/git/pkdb_models/pkdb_models/models/dapagliflozin",
-  "data_path": "[PosixPath('/home/mkoenig/git/pkdb_data/studies/dapagliflozin'), PosixPath('/home/mkoenig/git/pkdb_data/studies/canagliflozin')]",
+  "data_path": "[PosixPath('/home/mkoenig/git/pkdb_models/pkdb_models/models/dapagliflozin/data/dapagliflozin'), PosixPath('/home/mkoenig/git/pkdb_models/pkdb_models/models/dapagliflozin/data/canagliflozin')]",
   "models": {
     "model": {
       "sid": null,
@@ -39,7 +39,7 @@
               "_units": "kilogram"
             },
             "[KI__glc_ext]": {
-              "_magnitude": 5.000000000000001,
+              "_magnitude": 5.0,
               "_units": "KI__mmole / liter"
             },
             "GU__f_absorption": {
@@ -287,7 +287,7 @@
   "figures": {
     "Fig6": {
       "sid": "Fig6",
-      "name": "Obermeier2010",
+      "name": "Obermeier2010 (Healthy)",
       "num_rows": 1,
       "num_cols": 1,
       "width": 7.0,
@@ -313,8 +313,8 @@
             },
             "yaxis": {
               "sid": "Fig6__plot0_yaxis",
-              "name": "dapagliflozin\nplasma [\u00b5M]",
-              "label": "dapagliflozin\nplasma",
+              "name": "Plasma concentration [\u00b5M]",
+              "label": "Plasma concentration",
               "unit": "\u00b5M",
               "scale": "LINEAR",
               "min": null,
@@ -330,7 +330,7 @@
             "curves": [
               {
                 "sid": "Fig6__plot0_curve0",
-                "name": "[Cve_dap]",
+                "name": "dap, 50 mg PO",
                 "x": "task_po_dap50__time",
                 "y": "task_po_dap50__Cve_dap",
                 "xerr": null,
@@ -361,7 +361,7 @@
               },
               {
                 "sid": "Fig6__plot0_curve1",
-                "name": "[Cve_daptot]",
+                "name": "total dap, 50 mg PO",
                 "x": "task_po_dap50__time",
                 "y": "task_po_dap50__Cve_daptot",
                 "xerr": null,
@@ -392,7 +392,7 @@
               },
               {
                 "sid": "Fig6__plot0_curve2",
-                "name": "dapagliflozin\u00b1SD (n=6)",
+                "name": "dap, 50 mg PO\u00b1SD (n=6)",
                 "x": "dapagliflozin_DAP50__time",
                 "y": "dapagliflozin_DAP50__mean",
                 "xerr": null,
@@ -423,7 +423,7 @@
               },
               {
                 "sid": "Fig6__plot0_curve3",
-                "name": "total dapagliflozin\u00b1SD (n=6)",
+                "name": "total dap, 50 mg PO\u00b1SD (n=6)",
                 "x": "total dapagliflozin_DAP50__time",
                 "y": "total dapagliflozin_DAP50__mean",
                 "xerr": null,

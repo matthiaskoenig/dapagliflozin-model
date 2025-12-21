@@ -62,14 +62,10 @@
                 <a href="../../../../experiments/studies/imamura2013.py">../../../../experiments/studies/imamura2013.py</a>
             <pre>
 <code class="python">from typing import Dict
-
 from sbmlsim.data import DataSet, load_pkdb_dataframe
 from sbmlsim.fit import FitMapping, FitData
 from sbmlutils.console import console
-
-from pkdb_models.models.dapagliflozin.experiments.base_experiment import (
-    DapagliflozinSimulationExperiment,
-)
+from pkdb_models.models.dapagliflozin.experiments.base_experiment import DapagliflozinSimulationExperiment
 from pkdb_models.models.dapagliflozin.experiments.metadata import (
     Tissue,
     Route,
@@ -80,16 +76,15 @@ from pkdb_models.models.dapagliflozin.experiments.metadata import (
     DapagliflozinMappingMetaData,
     Coadministration,
 )
-
 from sbmlsim.plot import Axis, Figure
 from sbmlsim.simulation import Timecourse, TimecourseSim
-
 from pkdb_models.models.dapagliflozin.helpers import run_experiments
+from pathlib import Path
+import pkdb_models.models.dapagliflozin as dapagliflozin
 
 
 class Imamura2013(DapagliflozinSimulationExperiment):
     """Simulation experiment of Imamura2013."""
-
     # FIXME: fpg is 10 but in base experiment for t2dm is 7,5
     # FIXME fasting C - peptide > 1.0 ng / mL(0.33 nmol / L)
     # FIXME glycated hemoglobin (HbA1c) levels <=8.5%.
@@ -109,9 +104,7 @@ class Imamura2013(DapagliflozinSimulationExperiment):
                 # unit conversion
                 if label.startswith("dapagliflozin_"):
                     dset.unit_conversion("mean", 1 / self.Mr.dap)
-
                 dsets[f"{label}"] = dset
-
         # console.print(dsets)
         # console.print(dsets.keys())
         return dsets
@@ -126,24 +119,20 @@ class Imamura2013(DapagliflozinSimulationExperiment):
                 steps=500,
                 changes={
                     **self.default_changes(),
-
                     # physiological changes
                     "BW": Q_(self.bodyweight, "kg"),
-                    "[KI__glc_ext]": Q_(9, "mM"),  # T2DM with FPG < 180 [mg/dl]
+                    "[KI__glc_ext]": Q_(10, "mM"),  # T2DM with FPG < 180 [mg/dl]
                     "GU__f_absorption": Q_(self.fasting_map["not reported"], "dimensionless"),
                     "f_cirrhosis": Q_(self.cirrhosis_map["Control"], "dimensionless"),
                     "KI__f_renal_function": Q_(self.renal_map["Normal renal function"], "dimensionless"),
-
                     # dose (IVDOSE, PODOSE)
                     "PODOSE_dap": Q_(10, "mg"),
                 },
             )]
         )
-
         return tcsims
 
     def fit_mappings(self) -> Dict[str, FitMapping]:
-
         mappings = {}
         for intervention in self.interventions:
             mappings[f"fm_dap10_{intervention}"] = FitMapping(
@@ -169,18 +158,16 @@ class Imamura2013(DapagliflozinSimulationExperiment):
                     coadministration=Coadministration.VOGLIBOSE if "VOG" in intervention else Coadministration.NONE
                 ),
             )
-
         # console.print(mappings)
         return mappings
 
     def figures(self) -> Dict[str, Figure]:
-
         fig = Figure(
             experiment=self,
             sid="Fig2",
             num_rows=1,
             num_cols=1,
-            name=f"{self.__class__.__name__}",
+            name=f"{self.__class__.__name__} (T2DM)",
         )
         plots = fig.create_plots(xaxis=Axis(self.label_time, unit=self.unit_time), legend=True)
         plots[0].set_yaxis(self.label_dap_plasma, unit=self.unit_dap)
@@ -190,28 +177,35 @@ class Imamura2013(DapagliflozinSimulationExperiment):
             task=f"task_po_dap10",
             xid="time",
             yid=f"[Cve_dap]",
-            label="dap",
+            label="10 mg PO",
             color="black",
         )
         # data
-        for intervention in self.interventions:
-            plots[0].add_data(
-                dataset=f"dapagliflozin_{intervention}",
-                xid="time",
-                yid="mean",
-                yid_sd="mean_sd",
-                count="count",
-                label=intervention,
-            )
-
-        return {
-            fig.sid: fig,
-        }
+        plots[0].add_data(
+            dataset="dapagliflozin_DAP10",
+            xid="time",
+            yid="mean",
+            yid_sd="mean_sd",
+            count="count",
+            label="10 mg DAP",
+            color="black",
+        )
+        plots[0].add_data(
+            dataset="dapagliflozin_DAP10, VOG",
+            xid="time",
+            yid="mean",
+            yid_sd="mean_sd",
+            count="count",
+            label="VOG - 10 mg PO",
+            color="tab:blue",
+        )
+        return {fig.sid: fig}
 
 
 if __name__ == "__main__":
-    run_experiments(Imamura2013, output_dir=Imamura2013.__name__)
-</code>
+    out = dapagliflozin.RESULTS_PATH_SIMULATION / Imamura2013.__name__
+    out.mkdir(parents=True, exist_ok=True)
+    run_experiments(Imamura2013, output_dir=out)</code>
         </pre>
             </p>
 

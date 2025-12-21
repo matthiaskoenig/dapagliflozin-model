@@ -178,7 +178,7 @@ class Kasichayanula2011a(DapagliflozinSimulationExperiment):
                 sid=f"Fig1_{subplot}",
                 num_rows=1,
                 num_cols=3,
-                name=f"{self.__class__.__name__} ({subplot})",
+                name=f"{self.__class__.__name__} (T2DM)",
             )
             plots = fig.create_plots(xaxis=Axis(self.label_time, unit=self.unit_time), legend=True)
             plots[0].set_yaxis(self.label_dap_plasma, unit=self.unit_dap)
@@ -223,7 +223,6 @@ class Kasichayanula2011a(DapagliflozinSimulationExperiment):
 
 
 if __name__ == "__main__":
-    # run_experiments(Kasichayanula2011a, output_dir=Kasichayanula2011a.__name__)
     out = dapagliflozin.RESULTS_PATH_SIMULATION / Kasichayanula2011a.__name__
     out.mkdir(parents=True, exist_ok=True)
     run_experiments(Kasichayanula2011a, output_dir=out)

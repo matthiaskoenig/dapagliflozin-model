@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui">
+    <title>Gould2013</title>
+    <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/@mdi/font@4.x/css/materialdesignicons.min.css" rel="stylesheet">
+    <!--<link href="https://cdn.jsdelivr.net/npm/vuetify@2.x/dist/vuetify.min.css" rel="stylesheet">-->
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.2/styles/default.min.css">
+</head>
+
+<body>
+<div id="app">
+    <!-- Vue app-->
+    <v-app>
+        <v-content>
+
+            <a href="../index.html">Experiments</a>
+            <h1>Gould2013</h1>
+
+            <h2>Models</h2>
+            <p>
+            <ul>
+                <li><strong>model</strong>: <a href="../../../../models/results/models/dapagliflozin_body_flat.xml">../../../../models/results/models/dapagliflozin_body_flat.xml</a></li>
+            </ul>
+            </p>
+
+            <h2>Datasets</h2>
+            <p>
+            <ul>
+                <li><strong>glucose_cumulative amount_DAP0</strong>: <a href="Gould2013_glucose_cumulative amount_DAP0.tsv">Gould2013_glucose_cumulative amount_DAP0.tsv</a></li>
+                <li><strong>glucose_cumulative amount_DAP0.001</strong>: <a href="Gould2013_glucose_cumulative amount_DAP0.001.tsv">Gould2013_glucose_cumulative amount_DAP0.001.tsv</a></li>
+                <li><strong>glucose_cumulative amount_DAP0.01</strong>: <a href="Gould2013_glucose_cumulative amount_DAP0.01.tsv">Gould2013_glucose_cumulative amount_DAP0.01.tsv</a></li>
+                <li><strong>glucose_cumulative amount_DAP0.1</strong>: <a href="Gould2013_glucose_cumulative amount_DAP0.1.tsv">Gould2013_glucose_cumulative amount_DAP0.1.tsv</a></li>
+                <li><strong>glucose_cumulative amount_DAP0.3</strong>: <a href="Gould2013_glucose_cumulative amount_DAP0.3.tsv">Gould2013_glucose_cumulative amount_DAP0.3.tsv</a></li>
+                <li><strong>glucose_cumulative amount_DAP1</strong>: <a href="Gould2013_glucose_cumulative amount_DAP1.tsv">Gould2013_glucose_cumulative amount_DAP1.tsv</a></li>
+                <li><strong>glucose_cumulative amount_DAP10</strong>: <a href="Gould2013_glucose_cumulative amount_DAP10.tsv">Gould2013_glucose_cumulative amount_DAP10.tsv</a></li>
+                <li><strong>glucose_cumulative amount_DAP100</strong>: <a href="Gould2013_glucose_cumulative amount_DAP100.tsv">Gould2013_glucose_cumulative amount_DAP100.tsv</a></li>
+                <li><strong>glucose_cumulative amount_DAP2.5</strong>: <a href="Gould2013_glucose_cumulative amount_DAP2.5.tsv">Gould2013_glucose_cumulative amount_DAP2.5.tsv</a></li>
+                <li><strong>glucose_cumulative amount_DAP20</strong>: <a href="Gould2013_glucose_cumulative amount_DAP20.tsv">Gould2013_glucose_cumulative amount_DAP20.tsv</a></li>
+                <li><strong>glucose_cumulative amount_DAP250</strong>: <a href="Gould2013_glucose_cumulative amount_DAP250.tsv">Gould2013_glucose_cumulative amount_DAP250.tsv</a></li>
+                <li><strong>glucose_cumulative amount_DAP5</strong>: <a href="Gould2013_glucose_cumulative amount_DAP5.tsv">Gould2013_glucose_cumulative amount_DAP5.tsv</a></li>
+                <li><strong>glucose_cumulative amount_DAP50</strong>: <a href="Gould2013_glucose_cumulative amount_DAP50.tsv">Gould2013_glucose_cumulative amount_DAP50.tsv</a></li>
+                <li><strong>glucose_cumulative amount_DAP500</strong>: <a href="Gould2013_glucose_cumulative amount_DAP500.tsv">Gould2013_glucose_cumulative amount_DAP500.tsv</a></li>
+            </ul>
+            </p>
+
+            <h2>Figures</h2>
+            <p>
+            <ul>
+                <li><strong>Fig1</strong>: <a href="Gould2013_Fig1.svg">Gould2013_Fig1.svg</a></li>
+            </ul>
+            </p>
+
+            <h3>Fig1</h3>
+            <p>
+            <table>
+                <tr>
+                    <td>
+                        <!--<v-img src="Gould2013_Fig1.svg" max-width="600" width="600"></v-img>-->
+                        <img src="Gould2013_Fig1.svg" width="600">
+                    </td>
+                    <!--
+                    <td>
+                    </td>
+                    -->
+                </tr>
+            </table>
+            </p>
+
+            <h2>Code</h2>
+            <p>
+                <a href="../../../../experiments/studies/gould2013.py">../../../../experiments/studies/gould2013.py</a>
+            <pre>
+<code class="python">from typing import Dict
+from sbmlsim.data import DataSet, load_pkdb_dataframe
+from sbmlsim.fit import FitMapping, FitData
+from sbmlutils.console import console
+from pkdb_models.models.dapagliflozin.experiments.base_experiment import DapagliflozinSimulationExperiment
+from pkdb_models.models.dapagliflozin.experiments.metadata import Tissue, Route, Dosing, ApplicationForm, Health, \
+    Fasting, DapagliflozinMappingMetaData
+from sbmlsim.plot import Axis, Figure
+from sbmlsim.simulation import Timecourse, TimecourseSim
+from pkdb_models.models.dapagliflozin.helpers import run_experiments
+import pkdb_models.models.dapagliflozin as dapagliflozin
+
+
+class Gould2013(DapagliflozinSimulationExperiment):
+    """Simulation experiment of Gould2013."""
+
+    doses = [0, 0.001, 0.01, 0.1, 0.3, 1, 2.5, 5, 10, 20, 50, 100, 250, 500]
+
+    def datasets(self) -> Dict[str, DataSet]:
+        dsets = {}
+        for fig_id in ["Fig1"]:
+            df = load_pkdb_dataframe(f"{self.sid}_{fig_id}", data_path=self.data_path)
+            for label, df_label in df.groupby("label"):
+                dset = DataSet.from_df(df_label, self.ureg)
+                # unit conversion
+                if label.startswith("dapagliflozin_"):
+                    dset.unit_conversion("mean", 1 / self.Mr.dap)
+                dsets[f"{label}"] = dset
+        # console.print(dsets)
+        # console.print(dsets.keys())
+        return dsets
+
+    def simulations(self) -> Dict[str, TimecourseSim]:
+        Q_ = self.Q_
+        tcsims = {}
+        for dose in self.doses:
+            tcsims[f"po_dap{dose}"] = TimecourseSim(
+                [Timecourse(
+                    start=0,
+                    end=25 * 60,  # [min]
+                    steps=500,
+                    changes={
+                        **self.default_changes(),
+                        # physiological changes
+                        "BW": Q_(self.bodyweight_default, "kg"),
+                        "[KI__glc_ext]": Q_(self.fpg_healthy, "mM"),
+                        "GU__f_absorption": Q_(self.fasting_map["fasted"], "dimensionless"),
+                        "f_cirrhosis": Q_(self.cirrhosis_map["Control"], "dimensionless"),
+                        "KI__f_renal_function": Q_(self.renal_map["Normal renal function"], "dimensionless"),
+                        # dose (IVDOSE, PODOSE)
+                        "PODOSE_dap": Q_(dose, "mg"),
+                    },
+                )]
+            )
+        return tcsims
+
+    def fit_mappings(self) -> Dict[str, FitMapping]:
+        mappings = {}
+        for dose in self.doses:
+            applicationform = ApplicationForm.TABLET if dose == [0, 1, 2.5, 5, 10, 20, 50, 100, 250, 500] else ApplicationForm.SOLUTION
+            mappings[f"fm_dap{dose}"] = FitMapping(
+                self,
+                reference=FitData(
+                    self,
+                    dataset=f"glucose_cumulative amount_DAP{dose}",
+                    xid="time",
+                    yid="mean",
+                    yid_sd="mean_sd",
+                    count="count",
+                ),
+                observable=FitData(
+                    self,
+                    task=f"task_po_dap{dose}",
+                    xid="time",
+                    yid=f"KI__UGE",
+                ),
+                metadata=DapagliflozinMappingMetaData(
+                    tissue=Tissue.URINE,
+                    route=Route.PO,
+                    application_form=applicationform,
+                    dosing=Dosing.SINGLE,
+                    health=Health.HEALTHY,
+                    fasting=Fasting.FASTED,
+                ),
+            )
+        # console.print(mappings)
+        return mappings
+
+    def figures(self) -> Dict[str, Figure]:
+        fig = Figure(
+            experiment=self,
+            sid="Fig1",
+            num_rows=1,
+            num_cols=1,
+            name=f"{self.__class__.__name__} (Healthy)",
+        )
+        Figure.legend_fontsize = 6
+        plots = fig.create_plots(xaxis=Axis(self.label_time, unit=self.unit_time), legend=True)
+        plots[0].set_yaxis(self.label_uge, unit=self.unit_uge)
+        # simulation
+        for dose in self.doses:
+            plots[0].add_data(
+                task=f"task_po_dap{dose}",
+                xid="time",
+                yid=f"KI__UGE",
+                label=f"Sim {dose} mg",
+                color=self.dose_colors[dose],
+            )
+            # data
+            plots[0].add_data(
+                dataset=f"glucose_cumulative amount_DAP{dose}",
+                xid="time",
+                yid="mean",
+                yid_sd="mean_sd",
+                count="count",
+                label=f"UGE {dose} mg",
+                color=self.dose_colors[dose],
+                linestyle="",
+            )
+        return {fig.sid: fig}
+
+
+if __name__ == "__main__":
+    out = dapagliflozin.RESULTS_PATH_SIMULATION / Gould2013.__name__
+    out.mkdir(parents=True, exist_ok=True)
+    run_experiments(Gould2013, output_dir=out)</code>
+        </pre>
+            </p>
+
+        </v-content>
+    </v-app>
+</div>
+
+
+<!-- loading dependencies -->
+<script src="https://cdn.jsdelivr.net/npm/vue@2.6.11"></script>
+<script src="https://cdn.jsdelivr.net/npm/vuetify@2.2.6/dist/vuetify.js"></script>
+<link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/@mdi/font@4.x/css/materialdesignicons.min.css" rel="stylesheet">
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.2/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+<script>
+    const app = new Vue({
+        el: '#app',
+        vuetify: new Vuetify(),
+        delimiters: ['${', '}'],
+        data() {
+            return {}
+        }
+    })
+</script>
+
+
+</body>
+</html>

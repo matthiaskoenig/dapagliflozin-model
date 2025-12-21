@@ -123,7 +123,7 @@ class Hwang2022a(DapagliflozinSimulationExperiment):
             sid="Fig2",
             num_rows=1,
             num_cols=1,
-            name=f"{self.__class__.__name__}",
+            name=f"{self.__class__.__name__} (Healthy)",
         )
         Figure.legend_fontsize = 10
         plots = fig.create_plots(xaxis=Axis(self.label_time, unit=self.unit_time), legend=True)
@@ -160,7 +160,6 @@ class Hwang2022a(DapagliflozinSimulationExperiment):
 
 
 if __name__ == "__main__":
-    # run_experiments(Hwang2022a, output_dir=Hwang2022a.__name__)
     out = dapagliflozin.RESULTS_PATH_SIMULATION / Hwang2022a.__name__
     out.mkdir(parents=True, exist_ok=True)
     run_experiments(Hwang2022a, output_dir=out)

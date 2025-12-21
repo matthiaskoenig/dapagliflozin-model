@@ -1,7 +1,7 @@
 {
   "experiment_id": "vanderAartvanderBeek2020",
   "base_path": "/home/mkoenig/git/pkdb_models/pkdb_models/models/dapagliflozin",
-  "data_path": "[PosixPath('/home/mkoenig/git/pkdb_data/studies/dapagliflozin'), PosixPath('/home/mkoenig/git/pkdb_data/studies/canagliflozin')]",
+  "data_path": "[PosixPath('/home/mkoenig/git/pkdb_models/pkdb_models/models/dapagliflozin/data/dapagliflozin'), PosixPath('/home/mkoenig/git/pkdb_models/pkdb_models/models/dapagliflozin/data/canagliflozin')]",
   "models": {
     "model": {
       "sid": null,
@@ -39,7 +39,7 @@
               "_units": "kilogram"
             },
             "[KI__glc_ext]": {
-              "_magnitude": 5.000000000000001,
+              "_magnitude": 5.0,
               "_units": "KI__mmole / liter"
             },
             "GU__f_absorption": {
@@ -51,7 +51,7 @@
               "_units": "dimensionless"
             },
             "KI__f_renal_function": {
-              "_magnitude": 0.6881188118811881,
+              "_magnitude": 1.0,
               "_units": "dimensionless"
             },
             "PODOSE_dap": {
@@ -413,7 +413,7 @@
   "figures": {
     "Fig3": {
       "sid": "Fig3",
-      "name": "vanderAartvanderBeek2020",
+      "name": "vanderAartvanderBeek2020 (Healthy)",
       "num_rows": 1,
       "num_cols": 1,
       "width": 7.0,
@@ -456,7 +456,7 @@
             "curves": [
               {
                 "sid": "Fig3__plot0_curve0",
-                "name": "dap",
+                "name": "10 mg PO",
                 "x": "task_po_dap10__time",
                 "y": "task_po_dap10__Cve_dap",
                 "xerr": null,
@@ -487,7 +487,7 @@
               },
               {
                 "sid": "Fig3__plot0_curve1",
-                "name": "S1 (n=1)",
+                "name": "10 mg PO (S1) (n=1)",
                 "x": "dapagliflozin_DAP_S1__time",
                 "y": "dapagliflozin_DAP_S1__value",
                 "xerr": null,
@@ -499,18 +499,18 @@
                   "base_style": null,
                   "line": {
                     "type": "DASH",
-                    "color": null,
+                    "color": "#000000ff",
                     "thickness": 1.0
                   },
                   "marker": {
                     "size": null,
-                    "type": "SQUARE",
-                    "fill": null,
+                    "type": "CIRCLE",
+                    "fill": "#000000ff",
                     "line_color": "#000000ff",
                     "line_thickness": null
                   },
                   "fill": {
-                    "color": null,
+                    "color": "#000000ff",
                     "second_color": null
                   }
                 },
@@ -518,7 +518,7 @@
               },
               {
                 "sid": "Fig3__plot0_curve2",
-                "name": "S2 (n=1)",
+                "name": "10 mg PO (S2) (n=1)",
                 "x": "dapagliflozin_DAP_S2__time",
                 "y": "dapagliflozin_DAP_S2__value",
                 "xerr": null,
@@ -530,18 +530,18 @@
                   "base_style": null,
                   "line": {
                     "type": "DASH",
-                    "color": null,
+                    "color": "#000000ff",
                     "thickness": 1.0
                   },
                   "marker": {
                     "size": null,
                     "type": "SQUARE",
-                    "fill": null,
+                    "fill": "#000000ff",
                     "line_color": "#000000ff",
                     "line_thickness": null
                   },
                   "fill": {
-                    "color": null,
+                    "color": "#000000ff",
                     "second_color": null
                   }
                 },
@@ -549,7 +549,7 @@
               },
               {
                 "sid": "Fig3__plot0_curve3",
-                "name": "S3 (n=1)",
+                "name": "10 mg PO (S3) (n=1)",
                 "x": "dapagliflozin_DAP_S3__time",
                 "y": "dapagliflozin_DAP_S3__value",
                 "xerr": null,
@@ -561,18 +561,18 @@
                   "base_style": null,
                   "line": {
                     "type": "DASH",
-                    "color": null,
+                    "color": "#000000ff",
                     "thickness": 1.0
                   },
                   "marker": {
                     "size": null,
-                    "type": "SQUARE",
-                    "fill": null,
+                    "type": "DIAMOND",
+                    "fill": "#000000ff",
                     "line_color": "#000000ff",
                     "line_thickness": null
                   },
                   "fill": {
-                    "color": null,
+                    "color": "#000000ff",
                     "second_color": null
                   }
                 },
@@ -580,7 +580,7 @@
               },
               {
                 "sid": "Fig3__plot0_curve4",
-                "name": "S4 (n=1)",
+                "name": "10 mg PO (S4) (n=1)",
                 "x": "dapagliflozin_DAP_S4__time",
                 "y": "dapagliflozin_DAP_S4__value",
                 "xerr": null,
@@ -592,18 +592,18 @@
                   "base_style": null,
                   "line": {
                     "type": "DASH",
-                    "color": null,
+                    "color": "#000000ff",
                     "thickness": 1.0
                   },
                   "marker": {
                     "size": null,
-                    "type": "SQUARE",
-                    "fill": null,
+                    "type": "TRIANGLEUP",
+                    "fill": "#000000ff",
                     "line_color": "#000000ff",
                     "line_thickness": null
                   },
                   "fill": {
-                    "color": null,
+                    "color": "#000000ff",
                     "second_color": null
                   }
                 },
@@ -611,7 +611,7 @@
               },
               {
                 "sid": "Fig3__plot0_curve5",
-                "name": "S5 (n=1)",
+                "name": "10 mg PO (S5) (n=1)",
                 "x": "dapagliflozin_DAP_S5__time",
                 "y": "dapagliflozin_DAP_S5__value",
                 "xerr": null,
@@ -623,18 +623,18 @@
                   "base_style": null,
                   "line": {
                     "type": "DASH",
-                    "color": null,
+                    "color": "#000000ff",
                     "thickness": 1.0
                   },
                   "marker": {
                     "size": null,
-                    "type": "SQUARE",
-                    "fill": null,
+                    "type": "TRIANGLEDOWN",
+                    "fill": "#000000ff",
                     "line_color": "#000000ff",
                     "line_thickness": null
                   },
                   "fill": {
-                    "color": null,
+                    "color": "#000000ff",
                     "second_color": null
                   }
                 },
@@ -642,7 +642,7 @@
               },
               {
                 "sid": "Fig3__plot0_curve6",
-                "name": "S6 (n=1)",
+                "name": "10 mg PO (S6) (n=1)",
                 "x": "dapagliflozin_DAP_S6__time",
                 "y": "dapagliflozin_DAP_S6__value",
                 "xerr": null,
@@ -654,18 +654,18 @@
                   "base_style": null,
                   "line": {
                     "type": "DASH",
-                    "color": null,
+                    "color": "#000000ff",
                     "thickness": 1.0
                   },
                   "marker": {
                     "size": null,
-                    "type": "SQUARE",
-                    "fill": null,
+                    "type": "TRIANGLELEFT",
+                    "fill": "#000000ff",
                     "line_color": "#000000ff",
                     "line_thickness": null
                   },
                   "fill": {
-                    "color": null,
+                    "color": "#000000ff",
                     "second_color": null
                   }
                 },

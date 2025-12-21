@@ -7,7 +7,7 @@ from enum import Enum
 import optparse
 from pathlib import Path
 from pkdb_models.models.dapagliflozin import DAPAGLIFLOZIN_PATH
-from pkdb_models.models.dapagliflozin.simulations import run_simulation_experiments
+from pkdb_models.models.dapagliflozin.simulations import run_simulation_experiments, EXPERIMENTS
 from sbmlutils.console import console
 
 FACTORY_SCRIPT_PATH = DAPAGLIFLOZIN_PATH / "models" / "factory.py"
@@ -21,6 +21,7 @@ class Action(str, Enum):
     # run all
     ALL = "all"
 
+
 def _setup_custom_results_paths(results_dir: str):
     """Override default results paths with custom directory for custom figure output directory."""
     import pkdb_models.models.dapagliflozin as dapagliflozin
@@ -32,10 +33,12 @@ def _setup_custom_results_paths(results_dir: str):
     console.print(f"Figure output directory set to: [cyan]{custom_path}[/cyan]")
     return custom_path
 
+
 def _get_current_results_path():
     """Get the current results path (default or custom)."""
     from pkdb_models.models.dapagliflozin import RESULTS_PATH
     return RESULTS_PATH
+
 
 def _run_factory():
     """Executes the model factory script."""
@@ -47,6 +50,51 @@ def _run_factory():
     )
     console.print("[bold green]Factory finished.[/bold green]")
     console.rule(style="green")
+
+
+def _list_available_experiments():
+    """Display all available experiment groups and individual experiments."""
+    console.rule("[bold cyan]Available Simulation Experiments[/bold cyan]", style="cyan")
+    console.print("\n[bold]You can use these group names:[/bold]")
+    console.print(f"  {', '.join([g for g in EXPERIMENTS.keys()])}")
+    console.print("\n[bold]Or these individual experiment names:[/bold]")
+
+    for group_name in ["studies", "misc", "scan"]:
+        if group_name in EXPERIMENTS and EXPERIMENTS[group_name]:
+            console.print(f"\n[yellow]{group_name}:[/yellow]")
+            for exp in EXPERIMENTS[group_name]:
+                console.print(f"  {exp.__name__}")
+
+    console.print("\n[dim]Use '--experiments' with comma-separated names to run specific experiments.[/dim]")
+    console.print('[dim]Example: run_dapagliflozin --action simulate --experiments "misc,LaCreta2016"[/dim]')
+    console.print('[dim]Or use "all" to run all experiments: run_dapagliflozin --action simulate --experiments all[/dim]\n')
+
+
+def _resolve_experiment_names(experiment_names: list) -> tuple:
+    """Resolve experiment names to experiment classes."""
+    # Build dictionary of all available experiments by name
+    all_available_exp = {}
+    for category, exp_list in EXPERIMENTS.items():
+        if category != "all":
+            for exp in exp_list:
+                all_available_exp[exp.__name__] = exp
+
+    # Validate and collect requested experiments
+    experiment_classes = []
+    not_found = []
+
+    for exp_name in experiment_names:
+        # Check if it's a group name
+        if exp_name in EXPERIMENTS:
+            experiment_classes.extend(EXPERIMENTS[exp_name])
+        # Check if it's an individual experiment
+        elif exp_name in all_available_exp:
+            experiment_classes.append(all_available_exp[exp_name])
+        else:
+            not_found.append(exp_name)
+
+    return experiment_classes, not_found
+
 
 def main() -> None:
     parser = optparse.OptionParser()
@@ -96,27 +144,46 @@ def main() -> None:
         else:
             console.print(f"[cyan]Using figure results directory: {default_path}[/cyan]")
 
+    # Handle different actions
     if action == Action.FACTORY:
         _run_factory()
 
     elif action == Action.LIST_EXPERIMENTS:
-        run_simulation_experiments(list_only=True)
+        _list_available_experiments()
 
     elif action == Action.SIMULATE:
-
         if not options.experiments:
             _parser_message("For '--action simulate', the '--experiments' argument is required.")
+
+        # Parse experiment names
         exp_list = [e.strip() for e in options.experiments.split(",")]
+
+        # Resolve names to experiment classes
+        experiment_classes, not_found = _resolve_experiment_names(exp_list)
+
+        # Report any experiments that weren't found
+        if not_found:
+            console.rule(style="red bold")
+            console.print(f"[red]Warning: The following experiments were not found: {', '.join(not_found)}[/red]")
+            console.rule(style="red bold")
+
+        if not experiment_classes:
+            console.rule(style="red bold")
+            console.print("[red]Error: No valid experiments to run![/red]")
+            console.rule(style="red bold")
+            return
+
+        # Run the experiments
         results_path = _get_current_results_path()
         console.rule("[bold cyan]Running Simulations[/bold cyan]", style="cyan")
-        run_simulation_experiments(specific_experiments=exp_list)
+        run_simulation_experiments(experiment_classes=experiment_classes)
         console.print("[bold green]Simulations finished.[/bold green]")
         console.print(f"[bold green]Results saved to: {results_path / 'simulation'}[/bold green]")
 
     elif action == Action.ALL:
         console.rule("[bold cyan]Running: Factory and all simulations.[/bold cyan]", style="cyan")
-        _run_factory()                              # Run factory
-        run_simulation_experiments(selected="all")  # Run all simulations
+        _run_factory()
+        run_simulation_experiments(selected="all")
         console.print("\n[bold green]All scripts completed successfully![/bold green]")
 
     console.rule(style="white")

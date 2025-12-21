@@ -57,7 +57,9 @@ _m = Model(
     "dapagliflozin_body",
     name="Dapagliflozin body model",
     notes="""
-    # Dapagliflozin body model
+    # Physiologically based pharmacokinetic/ pharmacodynamic (PBPK/PD) model of dapagliflozin
+    
+    Dapagliflozin is an SGLT2 inhibitor prescribed for the management of type 2 diabetes mellitus. The drug lowers blood glucose levels by increasing urinary glucose excretion. Despite established efficacy, dapagliflozin demonstrates significant inter-individual variability in pharmacokinetics and pharmacodynamics, with potential impact on treatment outcomes. To evaluate the sources of variability, we developed a digital twin of dapagliflozin pharmacokinetics and pharmacodynamics built as a PBPK/PD model using curated data from 28 clinical studies. This constitutes a full mechanistic model that integrates absorption, metabolism, excretion, and pharmacodynamics. It accounts for key determinants of variability including renal and hepatic function, and food effects.
     
     metabolites:
     dap: dapagliflozin
@@ -71,11 +73,15 @@ _m = Model(
     model_units=templates.model_units,
     creators=templates.creators,
     annotations=[
-        (BQB.HAS_TAXON, "taxonomy/9606"),
-        (BQB.HAS_TAXON, "VTO:0011993"),
-        (BQB.HAS_TAXON, "snomedct/337915000"),
-        (BQB.IS_DESCRIBED_BY, "https://doi.org/10.5281/zenodo.14976788"),
-    ]
+        # tissue
+        (BQB.OCCURS_IN, "BTO:0001489"),  # whole body
+        (BQB.OCCURS_IN, "FMA:256135"),  # body
+
+        (BQB.HAS_PROPERTY, "ncit/C79369"),  # Pharmacokinetics: Absorption
+        (BQB.HAS_PROPERTY, "ncit/C79371"),  # Pharmacokinetics: Metabolism
+        (BQB.HAS_PROPERTY, "ncit/C79372"),  # Pharmacokinetics: Excretion
+        (BQB.HAS_PROPERTY, "ncit/C79370"),  # Pharmacokinetics: Distribution
+    ] + templates.model_annotations
 )
 
 _m.ports = []
@@ -253,16 +259,16 @@ _m.compartments = [
         sboTerm=SBO.PHYSICAL_COMPARTMENT,
         annotations=annotations.compartments["feces"],
     ),
-    Compartment(
-        "Vstomach",
-        metaId="meta_Vstomach",
-        value=1,
-        unit=U.liter,
-        constant=True,
-        name="stomach",
-        sboTerm=SBO.PHYSICAL_COMPARTMENT,
-        annotations=annotations.compartments["stomach"],
-    ),
+    # Compartment(
+    #     "Vstomach",
+    #     metaId="meta_Vstomach",
+    #     value=1,
+    #     unit=U.liter,
+    #     constant=True,
+    #     name="stomach",
+    #     sboTerm=SBO.PHYSICAL_COMPARTMENT,
+    #     annotations=annotations.compartments["stomach"],
+    # ),
     Compartment(
         "Vpo",
         metaId="meta_Vpo",
@@ -592,40 +598,14 @@ _m.parameters.extend(
             "BW",
             75,
             U.kg,
-            constant=True,
-            name="body weight [kg]",
+            name="body weight",
             sboTerm=SBO.QUANTITATIVE_SYSTEMS_DESCRIPTION_PARAMETER,
         ),
         Parameter(
             "HEIGHT",
             170,
             U.cm,
-            constant=True,
-            name="height [cm]",
-            sboTerm=SBO.QUANTITATIVE_SYSTEMS_DESCRIPTION_PARAMETER,
-        ),
-        Parameter(
-            "HR",
-            70,
-            U.per_min,
-            constant=True,
-            name="heart rate [1/min]",
-            sboTerm=SBO.QUANTITATIVE_SYSTEMS_DESCRIPTION_PARAMETER,
-        ),
-        Parameter(
-            "HRrest",
-            70,
-            U.per_min,
-            constant=True,
-            name="heart rate [1/min]",
-            sboTerm=SBO.QUANTITATIVE_SYSTEMS_DESCRIPTION_PARAMETER,
-        ),
-        Parameter(
-            "MAP",
-            100,
-            U.mmHg,
-            constant=True,
-            name="mean arterial pressure [mmHg]",
+            name="height",
             sboTerm=SBO.QUANTITATIVE_SYSTEMS_DESCRIPTION_PARAMETER,
         ),
         Parameter(
@@ -633,7 +613,7 @@ _m.parameters.extend(
             0,
             U.m2,
             constant=False,
-            name="body surface area [m^2]",
+            name="body surface area",
             sboTerm=SBO.QUANTITATIVE_SYSTEMS_DESCRIPTION_PARAMETER,
         ),
         Parameter(
@@ -641,7 +621,7 @@ _m.parameters.extend(
             1.548,
             U.ml_per_s_kg,
             constant=True,
-            name="cardiac output per bodyweight [ml/s/kg]",
+            name="cardiac output per bodyweight",
             sboTerm=SBO.QUANTITATIVE_SYSTEMS_DESCRIPTION_PARAMETER,
         ),
         Parameter(
@@ -669,14 +649,6 @@ _m.parameters.extend(
             U.l_per_min,
             constant=False,
             name="cardiac output [L/hr]",
-            sboTerm=SBO.QUANTITATIVE_SYSTEMS_DESCRIPTION_PARAMETER,
-        ),
-        Parameter(
-            "COHRI",
-            150,
-            U.ml,
-            constant=True,
-            name="increase of cardiac output per heartbeat [ml/min*min]",
             sboTerm=SBO.QUANTITATIVE_SYSTEMS_DESCRIPTION_PARAMETER,
         ),
         # fractional tissue volumes
@@ -816,14 +788,14 @@ _m.parameters.extend(
             name="rest of body fractional tissue blood flow",
             sboTerm=SBO.QUANTITATIVE_SYSTEMS_DESCRIPTION_PARAMETER,
         ),
-        Parameter(
-            "conversion_min_per_day",
-            1440,
-            U.min_per_day,
-            constant=True,
-            name="Conversion factor min to hours",
-            sboTerm=SBO.QUANTITATIVE_SYSTEMS_DESCRIPTION_PARAMETER,
-        ),
+        # Parameter(
+        #     "conversion_min_per_day",
+        #     1440,
+        #     U.min_per_day,
+        #     constant=True,
+        #     name="Conversion factor min to hours",
+        #     sboTerm=SBO.QUANTITATIVE_SYSTEMS_DESCRIPTION_PARAMETER,
+        # ),
         Parameter(
             "f_cirrhosis",
             0,
@@ -859,7 +831,7 @@ _m.parameters.extend(
             "DAP2D3G_Vmax",
             0.01992005476805105,
             U.mmole_per_min_l,
-            name="Vmax dapagliflozin conversion",
+            name="Vmax dap (UGT1A9)",
             sboTerm=SBO.MAXIMAL_VELOCITY,
             port=True,
         ),
@@ -867,7 +839,7 @@ _m.parameters.extend(
             "DAP2D3G_Km_dap",
             0.479,
             U.mM,
-            name="Km dapagliflozin UGT1A9",
+            name="Km dap (UGT1A9)",
             sboTerm=SBO.MICHAELIS_CONSTANT,
             port=True,
             notes="""
@@ -921,7 +893,7 @@ _m.rules = _m.rules + [
 
 replaced_parameters = {
     "li": ["f_ugt1a9", "DAP2D3G_Vmax", "DAP2D3G_Km_dap"],
-    "gu": [],
+    "gu": ["Mr_dap"],
     "ki": ["f_ugt1a9", "DAP2D3G_Vmax", "DAP2D3G_Km_dap"],
 }
 
@@ -939,19 +911,21 @@ for ckey, pids in replaced_parameters.items():
 
 # species specific parameters
 for sid, sdict in SUBSTANCES_BODY.items():
-    _m.parameters.extend(
-        [
-            # molecular weights
-            Parameter(
-                f"Mr_{sid}",
-                sdict["Mr"],
-                U.g_per_mole,
-                constant=True,
-                name=f"Molecular weight {sid} [g/mole]",
-                sboTerm=SBO.MOLECULAR_MASS,
-            ),
-        ]
-    )
+
+    if "PODOSE" in sdict or "IVDOSE" in sdict:
+        _m.parameters.extend(
+            [
+                # molecular weights
+                Parameter(
+                    f"Mr_{sid}",
+                    sdict["Mr"],
+                    U.g_per_mole,
+                    constant=True,
+                    name=f"Molecular weight {sid} [g/mole]",
+                    sboTerm=SBO.MOLECULAR_MASS,
+                ),
+            ]
+        )
 
     # tissue distribution
     if "ftissue" in sdict:
@@ -1052,7 +1026,7 @@ _m.rules = _m.rules + [
         "BSA", "0.024265 m2 * power(BW/1 kg, 0.5378) * power(HEIGHT/1 cm, 0.3964)", U.m2
     ),
     # cardiac output (depending on heart rate and bodyweight)
-    AssignmentRule("CO", "f_cardiac_function*BW*COBW + (HR-HRrest)*COHRI / 60 s_per_min", U.ml_per_s),
+    AssignmentRule("CO", "f_cardiac_function*BW*COBW", U.ml_per_s),
     # cardiac output (depending on bodyweight)
     AssignmentRule("QC", "CO/1000 ml_per_l * 60 s_per_min", U.l_per_min),
     # volumes

@@ -119,7 +119,7 @@ class FDAMB102002(DapagliflozinSimulationExperiment):
                 sid=f"Fig1_{subplot}",
                 num_rows=1,
                 num_cols=2,
-                name=f"{self.__class__.__name__} ({subplot})",
+                name=f"{self.__class__.__name__} (Healthy)",
             )
             plots = fig.create_plots(xaxis=Axis(self.label_time, unit=self.unit_time), legend=True)
             plots[0].set_yaxis(self.label_dap_plasma, unit=self.unit_dap)
@@ -161,7 +161,6 @@ class FDAMB102002(DapagliflozinSimulationExperiment):
 
 
 if __name__ == "__main__":
-    # run_experiments(FDAMB102002, output_dir=FDAMB102002.__name__)
     out = dapagliflozin.RESULTS_PATH_SIMULATION / FDAMB102002.__name__
     out.mkdir(parents=True, exist_ok=True)
     run_experiments(FDAMB102002, output_dir=out)

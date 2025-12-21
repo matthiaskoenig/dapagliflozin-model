@@ -14,7 +14,6 @@ import pkdb_models.models.dapagliflozin as dapagliflozin
 
 class Komoroski2009(DapagliflozinSimulationExperiment):
     """Simulation experiment of Komoroski2009."""
-    #FIXME: Fig6
 
     conditions = ["fasted", "fed"]
     doses_multi = [2.5, 10, 20, 50, 100]
@@ -325,7 +324,7 @@ class Komoroski2009(DapagliflozinSimulationExperiment):
             sid="Fig_fasting",
             num_rows=1,
             num_cols=2,
-            name=f"{self.__class__.__name__}",
+            name=f"{self.__class__.__name__} (Healthy)",
         )
         Figure.legend_fontsize = 11
         plots = fig.create_plots(xaxis=Axis(self.label_time, unit=self.unit_time), legend=True)
@@ -373,7 +372,7 @@ class Komoroski2009(DapagliflozinSimulationExperiment):
         fig = Figure(
             experiment=self,
             sid="Fig_uge_single",
-            name=f"{self.__class__.__name__}",
+            name=f"{self.__class__.__name__} (Healthy)",
         )
         Figure.legend_fontsize = 7
         plots = fig.create_plots(xaxis=Axis(self.label_time, unit=self.unit_time), legend=True)
@@ -404,7 +403,7 @@ class Komoroski2009(DapagliflozinSimulationExperiment):
             sid="Fig_multi",
             num_rows=1,
             num_cols=2,
-            name=f"{self.__class__.__name__}",
+            name=f"{self.__class__.__name__} (Healthy)",
         )
         Figure.legend_fontsize = 9
         plots = fig.create_plots(xaxis=Axis(self.label_time, unit=self.unit_time), legend=True)
@@ -456,7 +455,7 @@ class Komoroski2009(DapagliflozinSimulationExperiment):
         fig = Figure(
             experiment=self,
             sid="Fig_uge_multi",
-            name=f"{self.__class__.__name__}",
+            name=f"{self.__class__.__name__} (Healthy)",
         )
         Figure.legend_fontsize = 9
         plots = fig.create_plots(xaxis=Axis(self.label_time, unit=self.unit_time), legend=True)
@@ -484,7 +483,6 @@ class Komoroski2009(DapagliflozinSimulationExperiment):
 
 
 if __name__ == "__main__":
-    # run_experiments(Komoroski2009, output_dir=Komoroski2009.__name__)
     out = dapagliflozin.RESULTS_PATH_SIMULATION / Komoroski2009.__name__
     out.mkdir(parents=True, exist_ok=True)
     run_experiments(Komoroski2009, output_dir=out)

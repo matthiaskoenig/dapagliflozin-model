@@ -1,7 +1,7 @@
 {
   "experiment_id": "HepaticRenalImpairment",
   "base_path": "/home/mkoenig/git/pkdb_models/pkdb_models/models/dapagliflozin",
-  "data_path": "[PosixPath('/home/mkoenig/git/pkdb_data/studies/dapagliflozin'), PosixPath('/home/mkoenig/git/pkdb_data/studies/canagliflozin')]",
+  "data_path": "[PosixPath('/home/mkoenig/git/pkdb_models/pkdb_models/models/dapagliflozin/data/dapagliflozin'), PosixPath('/home/mkoenig/git/pkdb_models/pkdb_models/models/dapagliflozin/data/canagliflozin')]",
   "models": {
     "model": {
       "sid": null,
@@ -33,21 +33,37 @@
       "model": "model",
       "simulation": "dap_hepatic_Severe cirrhosis"
     },
-    "task_dap_renal_Normal renal function": {
+    "task_dap_renal_Normal renal function_po50": {
       "model": "model",
-      "simulation": "dap_renal_Normal renal function"
+      "simulation": "dap_renal_Normal renal function_po50"
     },
-    "task_dap_renal_Mild renal impairment": {
+    "task_dap_renal_Normal renal function_po20": {
       "model": "model",
-      "simulation": "dap_renal_Mild renal impairment"
+      "simulation": "dap_renal_Normal renal function_po20"
     },
-    "task_dap_renal_Moderate renal impairment": {
+    "task_dap_renal_Mild renal impairment_po50": {
       "model": "model",
-      "simulation": "dap_renal_Moderate renal impairment"
+      "simulation": "dap_renal_Mild renal impairment_po50"
     },
-    "task_dap_renal_Severe renal impairment": {
+    "task_dap_renal_Mild renal impairment_po20": {
       "model": "model",
-      "simulation": "dap_renal_Severe renal impairment"
+      "simulation": "dap_renal_Mild renal impairment_po20"
+    },
+    "task_dap_renal_Moderate renal impairment_po50": {
+      "model": "model",
+      "simulation": "dap_renal_Moderate renal impairment_po50"
+    },
+    "task_dap_renal_Moderate renal impairment_po20": {
+      "model": "model",
+      "simulation": "dap_renal_Moderate renal impairment_po20"
+    },
+    "task_dap_renal_Severe renal impairment_po50": {
+      "model": "model",
+      "simulation": "dap_renal_Severe renal impairment_po50"
+    },
+    "task_dap_renal_Severe renal impairment_po20": {
+      "model": "model",
+      "simulation": "dap_renal_Severe renal impairment_po20"
     }
   },
   "simulations": {
@@ -60,10 +76,10 @@
         {
           "start": 0,
           "end": 2160,
-          "steps": 4000,
+          "steps": 5000,
           "changes": {
             "PODOSE_dap": {
-              "_magnitude": 5,
+              "_magnitude": 10,
               "_units": "milligram"
             },
             "f_cirrhosis": {
@@ -86,10 +102,10 @@
         {
           "start": 0,
           "end": 2160,
-          "steps": 4000,
+          "steps": 5000,
           "changes": {
             "PODOSE_dap": {
-              "_magnitude": 5,
+              "_magnitude": 10,
               "_units": "milligram"
             },
             "f_cirrhosis": {
@@ -112,10 +128,10 @@
         {
           "start": 0,
           "end": 2160,
-          "steps": 4000,
+          "steps": 5000,
           "changes": {
             "PODOSE_dap": {
-              "_magnitude": 5,
+              "_magnitude": 10,
               "_units": "milligram"
             },
             "f_cirrhosis": {
@@ -138,10 +154,10 @@
         {
           "start": 0,
           "end": 2160,
-          "steps": 4000,
+          "steps": 5000,
           "changes": {
             "PODOSE_dap": {
-              "_magnitude": 5,
+              "_magnitude": 10,
               "_units": "milligram"
             },
             "f_cirrhosis": {
@@ -155,7 +171,7 @@
         }
       ]
     },
-    "dap_renal_Normal renal function": {
+    "dap_renal_Normal renal function_po50": {
       "type": "TimecourseSim",
       "selections": null,
       "reset": true,
@@ -164,10 +180,10 @@
         {
           "start": 0,
           "end": 2160,
-          "steps": 4000,
+          "steps": 5000,
           "changes": {
             "PODOSE_dap": {
-              "_magnitude": 5,
+              "_magnitude": 50,
               "_units": "milligram"
             },
             "KI__f_renal_function": {
@@ -181,7 +197,7 @@
         }
       ]
     },
-    "dap_renal_Mild renal impairment": {
+    "dap_renal_Normal renal function_po20": {
       "type": "TimecourseSim",
       "selections": null,
       "reset": true,
@@ -190,10 +206,36 @@
         {
           "start": 0,
           "end": 2160,
-          "steps": 4000,
+          "steps": 5000,
           "changes": {
             "PODOSE_dap": {
-              "_magnitude": 5,
+              "_magnitude": 20,
+              "_units": "milligram"
+            },
+            "KI__f_renal_function": {
+              "_magnitude": 1.0,
+              "_units": "dimensionless"
+            }
+          },
+          "model_changes": {},
+          "model_manipulations": {},
+          "discard": false
+        }
+      ]
+    },
+    "dap_renal_Mild renal impairment_po50": {
+      "type": "TimecourseSim",
+      "selections": null,
+      "reset": true,
+      "time_offset": 0.0,
+      "timecourses": [
+        {
+          "start": 0,
+          "end": 2160,
+          "steps": 5000,
+          "changes": {
+            "PODOSE_dap": {
+              "_magnitude": 50,
               "_units": "milligram"
             },
             "KI__f_renal_function": {
@@ -207,7 +249,7 @@
         }
       ]
     },
-    "dap_renal_Moderate renal impairment": {
+    "dap_renal_Mild renal impairment_po20": {
       "type": "TimecourseSim",
       "selections": null,
       "reset": true,
@@ -216,10 +258,36 @@
         {
           "start": 0,
           "end": 2160,
-          "steps": 4000,
+          "steps": 5000,
           "changes": {
             "PODOSE_dap": {
-              "_magnitude": 5,
+              "_magnitude": 20,
+              "_units": "milligram"
+            },
+            "KI__f_renal_function": {
+              "_magnitude": 0.6881188118811881,
+              "_units": "dimensionless"
+            }
+          },
+          "model_changes": {},
+          "model_manipulations": {},
+          "discard": false
+        }
+      ]
+    },
+    "dap_renal_Moderate renal impairment_po50": {
+      "type": "TimecourseSim",
+      "selections": null,
+      "reset": true,
+      "time_offset": 0.0,
+      "timecourses": [
+        {
+          "start": 0,
+          "end": 2160,
+          "steps": 5000,
+          "changes": {
+            "PODOSE_dap": {
+              "_magnitude": 50,
               "_units": "milligram"
             },
             "KI__f_renal_function": {
@@ -233,7 +301,7 @@
         }
       ]
     },
-    "dap_renal_Severe renal impairment": {
+    "dap_renal_Moderate renal impairment_po20": {
       "type": "TimecourseSim",
       "selections": null,
       "reset": true,
@@ -242,10 +310,62 @@
         {
           "start": 0,
           "end": 2160,
-          "steps": 4000,
+          "steps": 5000,
           "changes": {
             "PODOSE_dap": {
-              "_magnitude": 5,
+              "_magnitude": 20,
+              "_units": "milligram"
+            },
+            "KI__f_renal_function": {
+              "_magnitude": 0.3217821782178218,
+              "_units": "dimensionless"
+            }
+          },
+          "model_changes": {},
+          "model_manipulations": {},
+          "discard": false
+        }
+      ]
+    },
+    "dap_renal_Severe renal impairment_po50": {
+      "type": "TimecourseSim",
+      "selections": null,
+      "reset": true,
+      "time_offset": 0.0,
+      "timecourses": [
+        {
+          "start": 0,
+          "end": 2160,
+          "steps": 5000,
+          "changes": {
+            "PODOSE_dap": {
+              "_magnitude": 50,
+              "_units": "milligram"
+            },
+            "KI__f_renal_function": {
+              "_magnitude": 0.19306930693069307,
+              "_units": "dimensionless"
+            }
+          },
+          "model_changes": {},
+          "model_manipulations": {},
+          "discard": false
+        }
+      ]
+    },
+    "dap_renal_Severe renal impairment_po20": {
+      "type": "TimecourseSim",
+      "selections": null,
+      "reset": true,
+      "time_offset": 0.0,
+      "timecourses": [
+        {
+          "start": 0,
+          "end": 2160,
+          "steps": 5000,
+          "changes": {
+            "PODOSE_dap": {
+              "_magnitude": 20,
               "_units": "milligram"
             },
             "KI__f_renal_function": {
@@ -1125,866 +1245,1730 @@
       "function": null,
       "variables": null
     },
-    "task_dap_renal_Normal renal function__time": {
+    "task_dap_renal_Normal renal function_po50__time": {
       "type": "TASK",
       "index": "time",
       "unit": null,
-      "task": "task_dap_renal_Normal renal function",
+      "task": "task_dap_renal_Normal renal function_po50",
       "dataset": null,
       "function": null,
       "variables": null
     },
-    "task_dap_renal_Normal renal function__IVDOSE_dap": {
+    "task_dap_renal_Normal renal function_po50__IVDOSE_dap": {
       "type": "TASK",
       "index": "IVDOSE_dap",
       "unit": null,
-      "task": "task_dap_renal_Normal renal function",
+      "task": "task_dap_renal_Normal renal function_po50",
       "dataset": null,
       "function": null,
       "variables": null
     },
-    "task_dap_renal_Normal renal function__PODOSE_dap": {
+    "task_dap_renal_Normal renal function_po50__PODOSE_dap": {
       "type": "TASK",
       "index": "PODOSE_dap",
       "unit": null,
-      "task": "task_dap_renal_Normal renal function",
+      "task": "task_dap_renal_Normal renal function_po50",
       "dataset": null,
       "function": null,
       "variables": null
     },
-    "task_dap_renal_Normal renal function__Cve_daptot": {
+    "task_dap_renal_Normal renal function_po50__Cve_daptot": {
       "type": "TASK",
       "index": "Cve_daptot",
       "unit": null,
-      "task": "task_dap_renal_Normal renal function",
+      "task": "task_dap_renal_Normal renal function_po50",
       "dataset": null,
       "function": null,
       "variables": null
     },
-    "task_dap_renal_Normal renal function__Cve_dap": {
+    "task_dap_renal_Normal renal function_po50__Cve_dap": {
       "type": "TASK",
       "index": "Cve_dap",
       "unit": null,
-      "task": "task_dap_renal_Normal renal function",
+      "task": "task_dap_renal_Normal renal function_po50",
       "dataset": null,
       "function": null,
       "variables": null
     },
-    "task_dap_renal_Normal renal function__Cve_d3g": {
+    "task_dap_renal_Normal renal function_po50__Cve_d3g": {
       "type": "TASK",
       "index": "Cve_d3g",
       "unit": null,
-      "task": "task_dap_renal_Normal renal function",
+      "task": "task_dap_renal_Normal renal function_po50",
       "dataset": null,
       "function": null,
       "variables": null
     },
-    "task_dap_renal_Normal renal function__KI__glc_ext": {
+    "task_dap_renal_Normal renal function_po50__KI__glc_ext": {
       "type": "TASK",
       "index": "KI__glc_ext",
       "unit": null,
-      "task": "task_dap_renal_Normal renal function",
+      "task": "task_dap_renal_Normal renal function_po50",
       "dataset": null,
       "function": null,
       "variables": null
     },
-    "task_dap_renal_Normal renal function__LI__dap": {
+    "task_dap_renal_Normal renal function_po50__LI__dap": {
       "type": "TASK",
       "index": "LI__dap",
       "unit": null,
-      "task": "task_dap_renal_Normal renal function",
+      "task": "task_dap_renal_Normal renal function_po50",
       "dataset": null,
       "function": null,
       "variables": null
     },
-    "task_dap_renal_Normal renal function__LI__d3g": {
+    "task_dap_renal_Normal renal function_po50__LI__d3g": {
       "type": "TASK",
       "index": "LI__d3g",
       "unit": null,
-      "task": "task_dap_renal_Normal renal function",
+      "task": "task_dap_renal_Normal renal function_po50",
       "dataset": null,
       "function": null,
       "variables": null
     },
-    "task_dap_renal_Normal renal function__Aurine_daptot": {
+    "task_dap_renal_Normal renal function_po50__Aurine_daptot": {
       "type": "TASK",
       "index": "Aurine_daptot",
       "unit": null,
-      "task": "task_dap_renal_Normal renal function",
+      "task": "task_dap_renal_Normal renal function_po50",
       "dataset": null,
       "function": null,
       "variables": null
     },
-    "task_dap_renal_Normal renal function__Aurine_dap": {
+    "task_dap_renal_Normal renal function_po50__Aurine_dap": {
       "type": "TASK",
       "index": "Aurine_dap",
       "unit": null,
-      "task": "task_dap_renal_Normal renal function",
+      "task": "task_dap_renal_Normal renal function_po50",
       "dataset": null,
       "function": null,
       "variables": null
     },
-    "task_dap_renal_Normal renal function__Aurine_d3g": {
+    "task_dap_renal_Normal renal function_po50__Aurine_d3g": {
       "type": "TASK",
       "index": "Aurine_d3g",
       "unit": null,
-      "task": "task_dap_renal_Normal renal function",
+      "task": "task_dap_renal_Normal renal function_po50",
       "dataset": null,
       "function": null,
       "variables": null
     },
-    "task_dap_renal_Normal renal function__KI__glc_urine": {
+    "task_dap_renal_Normal renal function_po50__KI__glc_urine": {
       "type": "TASK",
       "index": "KI__glc_urine",
       "unit": null,
-      "task": "task_dap_renal_Normal renal function",
+      "task": "task_dap_renal_Normal renal function_po50",
       "dataset": null,
       "function": null,
       "variables": null
     },
-    "task_dap_renal_Normal renal function__KI__UGE": {
+    "task_dap_renal_Normal renal function_po50__KI__UGE": {
       "type": "TASK",
       "index": "KI__UGE",
       "unit": null,
-      "task": "task_dap_renal_Normal renal function",
+      "task": "task_dap_renal_Normal renal function_po50",
       "dataset": null,
       "function": null,
       "variables": null
     },
-    "task_dap_renal_Normal renal function__KI__RTG": {
+    "task_dap_renal_Normal renal function_po50__KI__RTG": {
       "type": "TASK",
       "index": "KI__RTG",
       "unit": null,
-      "task": "task_dap_renal_Normal renal function",
+      "task": "task_dap_renal_Normal renal function_po50",
       "dataset": null,
       "function": null,
       "variables": null
     },
-    "task_dap_renal_Normal renal function__Afeces_dap": {
+    "task_dap_renal_Normal renal function_po50__Afeces_dap": {
       "type": "TASK",
       "index": "Afeces_dap",
       "unit": null,
-      "task": "task_dap_renal_Normal renal function",
+      "task": "task_dap_renal_Normal renal function_po50",
       "dataset": null,
       "function": null,
       "variables": null
     },
-    "task_dap_renal_Normal renal function__Afeces_daptot": {
+    "task_dap_renal_Normal renal function_po50__Afeces_daptot": {
       "type": "TASK",
       "index": "Afeces_daptot",
       "unit": null,
-      "task": "task_dap_renal_Normal renal function",
+      "task": "task_dap_renal_Normal renal function_po50",
       "dataset": null,
       "function": null,
       "variables": null
     },
-    "task_dap_renal_Normal renal function__KI__D3GEX": {
+    "task_dap_renal_Normal renal function_po50__KI__D3GEX": {
       "type": "TASK",
       "index": "KI__D3GEX",
       "unit": null,
-      "task": "task_dap_renal_Normal renal function",
+      "task": "task_dap_renal_Normal renal function_po50",
       "dataset": null,
       "function": null,
       "variables": null
     },
-    "task_dap_renal_Normal renal function__KI__DAPEX": {
+    "task_dap_renal_Normal renal function_po50__KI__DAPEX": {
       "type": "TASK",
       "index": "KI__DAPEX",
       "unit": null,
-      "task": "task_dap_renal_Normal renal function",
+      "task": "task_dap_renal_Normal renal function_po50",
       "dataset": null,
       "function": null,
       "variables": null
     },
-    "task_dap_renal_Normal renal function__KI__GLCEX": {
+    "task_dap_renal_Normal renal function_po50__KI__GLCEX": {
       "type": "TASK",
       "index": "KI__GLCEX",
       "unit": null,
-      "task": "task_dap_renal_Normal renal function",
+      "task": "task_dap_renal_Normal renal function_po50",
       "dataset": null,
       "function": null,
       "variables": null
     },
-    "task_dap_renal_Normal renal function__KI__f_renal_function": {
+    "task_dap_renal_Normal renal function_po50__KI__f_renal_function": {
       "type": "TASK",
       "index": "KI__f_renal_function",
       "unit": null,
-      "task": "task_dap_renal_Normal renal function",
+      "task": "task_dap_renal_Normal renal function_po50",
       "dataset": null,
       "function": null,
       "variables": null
     },
-    "task_dap_renal_Normal renal function__f_cirrhosis": {
+    "task_dap_renal_Normal renal function_po50__f_cirrhosis": {
       "type": "TASK",
       "index": "f_cirrhosis",
       "unit": null,
-      "task": "task_dap_renal_Normal renal function",
+      "task": "task_dap_renal_Normal renal function_po50",
       "dataset": null,
       "function": null,
       "variables": null
     },
-    "task_dap_renal_Normal renal function__GU__f_absorption": {
+    "task_dap_renal_Normal renal function_po50__GU__f_absorption": {
       "type": "TASK",
       "index": "GU__f_absorption",
       "unit": null,
-      "task": "task_dap_renal_Normal renal function",
+      "task": "task_dap_renal_Normal renal function_po50",
       "dataset": null,
       "function": null,
       "variables": null
     },
-    "task_dap_renal_Normal renal function__f_ugt1a9": {
+    "task_dap_renal_Normal renal function_po50__f_ugt1a9": {
       "type": "TASK",
       "index": "f_ugt1a9",
       "unit": null,
-      "task": "task_dap_renal_Normal renal function",
+      "task": "task_dap_renal_Normal renal function_po50",
       "dataset": null,
       "function": null,
       "variables": null
     },
-    "task_dap_renal_Mild renal impairment__time": {
+    "task_dap_renal_Normal renal function_po20__time": {
       "type": "TASK",
       "index": "time",
       "unit": null,
-      "task": "task_dap_renal_Mild renal impairment",
+      "task": "task_dap_renal_Normal renal function_po20",
       "dataset": null,
       "function": null,
       "variables": null
     },
-    "task_dap_renal_Mild renal impairment__IVDOSE_dap": {
+    "task_dap_renal_Normal renal function_po20__IVDOSE_dap": {
       "type": "TASK",
       "index": "IVDOSE_dap",
       "unit": null,
-      "task": "task_dap_renal_Mild renal impairment",
+      "task": "task_dap_renal_Normal renal function_po20",
       "dataset": null,
       "function": null,
       "variables": null
     },
-    "task_dap_renal_Mild renal impairment__PODOSE_dap": {
+    "task_dap_renal_Normal renal function_po20__PODOSE_dap": {
       "type": "TASK",
       "index": "PODOSE_dap",
       "unit": null,
-      "task": "task_dap_renal_Mild renal impairment",
+      "task": "task_dap_renal_Normal renal function_po20",
       "dataset": null,
       "function": null,
       "variables": null
     },
-    "task_dap_renal_Mild renal impairment__Cve_daptot": {
+    "task_dap_renal_Normal renal function_po20__Cve_daptot": {
       "type": "TASK",
       "index": "Cve_daptot",
       "unit": null,
-      "task": "task_dap_renal_Mild renal impairment",
+      "task": "task_dap_renal_Normal renal function_po20",
       "dataset": null,
       "function": null,
       "variables": null
     },
-    "task_dap_renal_Mild renal impairment__Cve_dap": {
+    "task_dap_renal_Normal renal function_po20__Cve_dap": {
       "type": "TASK",
       "index": "Cve_dap",
       "unit": null,
-      "task": "task_dap_renal_Mild renal impairment",
+      "task": "task_dap_renal_Normal renal function_po20",
       "dataset": null,
       "function": null,
       "variables": null
     },
-    "task_dap_renal_Mild renal impairment__Cve_d3g": {
+    "task_dap_renal_Normal renal function_po20__Cve_d3g": {
       "type": "TASK",
       "index": "Cve_d3g",
       "unit": null,
-      "task": "task_dap_renal_Mild renal impairment",
+      "task": "task_dap_renal_Normal renal function_po20",
       "dataset": null,
       "function": null,
       "variables": null
     },
-    "task_dap_renal_Mild renal impairment__KI__glc_ext": {
+    "task_dap_renal_Normal renal function_po20__KI__glc_ext": {
       "type": "TASK",
       "index": "KI__glc_ext",
       "unit": null,
-      "task": "task_dap_renal_Mild renal impairment",
+      "task": "task_dap_renal_Normal renal function_po20",
       "dataset": null,
       "function": null,
       "variables": null
     },
-    "task_dap_renal_Mild renal impairment__LI__dap": {
+    "task_dap_renal_Normal renal function_po20__LI__dap": {
       "type": "TASK",
       "index": "LI__dap",
       "unit": null,
-      "task": "task_dap_renal_Mild renal impairment",
+      "task": "task_dap_renal_Normal renal function_po20",
       "dataset": null,
       "function": null,
       "variables": null
     },
-    "task_dap_renal_Mild renal impairment__LI__d3g": {
+    "task_dap_renal_Normal renal function_po20__LI__d3g": {
       "type": "TASK",
       "index": "LI__d3g",
       "unit": null,
-      "task": "task_dap_renal_Mild renal impairment",
+      "task": "task_dap_renal_Normal renal function_po20",
       "dataset": null,
       "function": null,
       "variables": null
     },
-    "task_dap_renal_Mild renal impairment__Aurine_daptot": {
+    "task_dap_renal_Normal renal function_po20__Aurine_daptot": {
       "type": "TASK",
       "index": "Aurine_daptot",
       "unit": null,
-      "task": "task_dap_renal_Mild renal impairment",
+      "task": "task_dap_renal_Normal renal function_po20",
       "dataset": null,
       "function": null,
       "variables": null
     },
-    "task_dap_renal_Mild renal impairment__Aurine_dap": {
+    "task_dap_renal_Normal renal function_po20__Aurine_dap": {
       "type": "TASK",
       "index": "Aurine_dap",
       "unit": null,
-      "task": "task_dap_renal_Mild renal impairment",
+      "task": "task_dap_renal_Normal renal function_po20",
       "dataset": null,
       "function": null,
       "variables": null
     },
-    "task_dap_renal_Mild renal impairment__Aurine_d3g": {
+    "task_dap_renal_Normal renal function_po20__Aurine_d3g": {
       "type": "TASK",
       "index": "Aurine_d3g",
       "unit": null,
-      "task": "task_dap_renal_Mild renal impairment",
+      "task": "task_dap_renal_Normal renal function_po20",
       "dataset": null,
       "function": null,
       "variables": null
     },
-    "task_dap_renal_Mild renal impairment__KI__glc_urine": {
+    "task_dap_renal_Normal renal function_po20__KI__glc_urine": {
       "type": "TASK",
       "index": "KI__glc_urine",
       "unit": null,
-      "task": "task_dap_renal_Mild renal impairment",
+      "task": "task_dap_renal_Normal renal function_po20",
       "dataset": null,
       "function": null,
       "variables": null
     },
-    "task_dap_renal_Mild renal impairment__KI__UGE": {
+    "task_dap_renal_Normal renal function_po20__KI__UGE": {
       "type": "TASK",
       "index": "KI__UGE",
       "unit": null,
-      "task": "task_dap_renal_Mild renal impairment",
+      "task": "task_dap_renal_Normal renal function_po20",
       "dataset": null,
       "function": null,
       "variables": null
     },
-    "task_dap_renal_Mild renal impairment__KI__RTG": {
+    "task_dap_renal_Normal renal function_po20__KI__RTG": {
       "type": "TASK",
       "index": "KI__RTG",
       "unit": null,
-      "task": "task_dap_renal_Mild renal impairment",
+      "task": "task_dap_renal_Normal renal function_po20",
       "dataset": null,
       "function": null,
       "variables": null
     },
-    "task_dap_renal_Mild renal impairment__Afeces_dap": {
+    "task_dap_renal_Normal renal function_po20__Afeces_dap": {
       "type": "TASK",
       "index": "Afeces_dap",
       "unit": null,
-      "task": "task_dap_renal_Mild renal impairment",
+      "task": "task_dap_renal_Normal renal function_po20",
       "dataset": null,
       "function": null,
       "variables": null
     },
-    "task_dap_renal_Mild renal impairment__Afeces_daptot": {
+    "task_dap_renal_Normal renal function_po20__Afeces_daptot": {
       "type": "TASK",
       "index": "Afeces_daptot",
       "unit": null,
-      "task": "task_dap_renal_Mild renal impairment",
+      "task": "task_dap_renal_Normal renal function_po20",
       "dataset": null,
       "function": null,
       "variables": null
     },
-    "task_dap_renal_Mild renal impairment__KI__D3GEX": {
+    "task_dap_renal_Normal renal function_po20__KI__D3GEX": {
       "type": "TASK",
       "index": "KI__D3GEX",
       "unit": null,
-      "task": "task_dap_renal_Mild renal impairment",
+      "task": "task_dap_renal_Normal renal function_po20",
       "dataset": null,
       "function": null,
       "variables": null
     },
-    "task_dap_renal_Mild renal impairment__KI__DAPEX": {
+    "task_dap_renal_Normal renal function_po20__KI__DAPEX": {
       "type": "TASK",
       "index": "KI__DAPEX",
       "unit": null,
-      "task": "task_dap_renal_Mild renal impairment",
+      "task": "task_dap_renal_Normal renal function_po20",
       "dataset": null,
       "function": null,
       "variables": null
     },
-    "task_dap_renal_Mild renal impairment__KI__GLCEX": {
+    "task_dap_renal_Normal renal function_po20__KI__GLCEX": {
       "type": "TASK",
       "index": "KI__GLCEX",
       "unit": null,
-      "task": "task_dap_renal_Mild renal impairment",
+      "task": "task_dap_renal_Normal renal function_po20",
       "dataset": null,
       "function": null,
       "variables": null
     },
-    "task_dap_renal_Mild renal impairment__KI__f_renal_function": {
+    "task_dap_renal_Normal renal function_po20__KI__f_renal_function": {
       "type": "TASK",
       "index": "KI__f_renal_function",
       "unit": null,
-      "task": "task_dap_renal_Mild renal impairment",
+      "task": "task_dap_renal_Normal renal function_po20",
       "dataset": null,
       "function": null,
       "variables": null
     },
-    "task_dap_renal_Mild renal impairment__f_cirrhosis": {
+    "task_dap_renal_Normal renal function_po20__f_cirrhosis": {
       "type": "TASK",
       "index": "f_cirrhosis",
       "unit": null,
-      "task": "task_dap_renal_Mild renal impairment",
+      "task": "task_dap_renal_Normal renal function_po20",
       "dataset": null,
       "function": null,
       "variables": null
     },
-    "task_dap_renal_Mild renal impairment__GU__f_absorption": {
+    "task_dap_renal_Normal renal function_po20__GU__f_absorption": {
       "type": "TASK",
       "index": "GU__f_absorption",
       "unit": null,
-      "task": "task_dap_renal_Mild renal impairment",
+      "task": "task_dap_renal_Normal renal function_po20",
       "dataset": null,
       "function": null,
       "variables": null
     },
-    "task_dap_renal_Mild renal impairment__f_ugt1a9": {
+    "task_dap_renal_Normal renal function_po20__f_ugt1a9": {
       "type": "TASK",
       "index": "f_ugt1a9",
       "unit": null,
-      "task": "task_dap_renal_Mild renal impairment",
+      "task": "task_dap_renal_Normal renal function_po20",
       "dataset": null,
       "function": null,
       "variables": null
     },
-    "task_dap_renal_Moderate renal impairment__time": {
+    "task_dap_renal_Mild renal impairment_po50__time": {
       "type": "TASK",
       "index": "time",
       "unit": null,
-      "task": "task_dap_renal_Moderate renal impairment",
+      "task": "task_dap_renal_Mild renal impairment_po50",
       "dataset": null,
       "function": null,
       "variables": null
     },
-    "task_dap_renal_Moderate renal impairment__IVDOSE_dap": {
+    "task_dap_renal_Mild renal impairment_po50__IVDOSE_dap": {
       "type": "TASK",
       "index": "IVDOSE_dap",
       "unit": null,
-      "task": "task_dap_renal_Moderate renal impairment",
+      "task": "task_dap_renal_Mild renal impairment_po50",
       "dataset": null,
       "function": null,
       "variables": null
     },
-    "task_dap_renal_Moderate renal impairment__PODOSE_dap": {
+    "task_dap_renal_Mild renal impairment_po50__PODOSE_dap": {
       "type": "TASK",
       "index": "PODOSE_dap",
       "unit": null,
-      "task": "task_dap_renal_Moderate renal impairment",
+      "task": "task_dap_renal_Mild renal impairment_po50",
       "dataset": null,
       "function": null,
       "variables": null
     },
-    "task_dap_renal_Moderate renal impairment__Cve_daptot": {
+    "task_dap_renal_Mild renal impairment_po50__Cve_daptot": {
       "type": "TASK",
       "index": "Cve_daptot",
       "unit": null,
-      "task": "task_dap_renal_Moderate renal impairment",
+      "task": "task_dap_renal_Mild renal impairment_po50",
       "dataset": null,
       "function": null,
       "variables": null
     },
-    "task_dap_renal_Moderate renal impairment__Cve_dap": {
+    "task_dap_renal_Mild renal impairment_po50__Cve_dap": {
       "type": "TASK",
       "index": "Cve_dap",
       "unit": null,
-      "task": "task_dap_renal_Moderate renal impairment",
+      "task": "task_dap_renal_Mild renal impairment_po50",
       "dataset": null,
       "function": null,
       "variables": null
     },
-    "task_dap_renal_Moderate renal impairment__Cve_d3g": {
+    "task_dap_renal_Mild renal impairment_po50__Cve_d3g": {
       "type": "TASK",
       "index": "Cve_d3g",
       "unit": null,
-      "task": "task_dap_renal_Moderate renal impairment",
+      "task": "task_dap_renal_Mild renal impairment_po50",
       "dataset": null,
       "function": null,
       "variables": null
     },
-    "task_dap_renal_Moderate renal impairment__KI__glc_ext": {
+    "task_dap_renal_Mild renal impairment_po50__KI__glc_ext": {
       "type": "TASK",
       "index": "KI__glc_ext",
       "unit": null,
-      "task": "task_dap_renal_Moderate renal impairment",
+      "task": "task_dap_renal_Mild renal impairment_po50",
       "dataset": null,
       "function": null,
       "variables": null
     },
-    "task_dap_renal_Moderate renal impairment__LI__dap": {
+    "task_dap_renal_Mild renal impairment_po50__LI__dap": {
       "type": "TASK",
       "index": "LI__dap",
       "unit": null,
-      "task": "task_dap_renal_Moderate renal impairment",
+      "task": "task_dap_renal_Mild renal impairment_po50",
       "dataset": null,
       "function": null,
       "variables": null
     },
-    "task_dap_renal_Moderate renal impairment__LI__d3g": {
+    "task_dap_renal_Mild renal impairment_po50__LI__d3g": {
       "type": "TASK",
       "index": "LI__d3g",
       "unit": null,
-      "task": "task_dap_renal_Moderate renal impairment",
+      "task": "task_dap_renal_Mild renal impairment_po50",
       "dataset": null,
       "function": null,
       "variables": null
     },
-    "task_dap_renal_Moderate renal impairment__Aurine_daptot": {
+    "task_dap_renal_Mild renal impairment_po50__Aurine_daptot": {
       "type": "TASK",
       "index": "Aurine_daptot",
       "unit": null,
-      "task": "task_dap_renal_Moderate renal impairment",
+      "task": "task_dap_renal_Mild renal impairment_po50",
       "dataset": null,
       "function": null,
       "variables": null
     },
-    "task_dap_renal_Moderate renal impairment__Aurine_dap": {
+    "task_dap_renal_Mild renal impairment_po50__Aurine_dap": {
       "type": "TASK",
       "index": "Aurine_dap",
       "unit": null,
-      "task": "task_dap_renal_Moderate renal impairment",
+      "task": "task_dap_renal_Mild renal impairment_po50",
       "dataset": null,
       "function": null,
       "variables": null
     },
-    "task_dap_renal_Moderate renal impairment__Aurine_d3g": {
+    "task_dap_renal_Mild renal impairment_po50__Aurine_d3g": {
       "type": "TASK",
       "index": "Aurine_d3g",
       "unit": null,
-      "task": "task_dap_renal_Moderate renal impairment",
+      "task": "task_dap_renal_Mild renal impairment_po50",
       "dataset": null,
       "function": null,
       "variables": null
     },
-    "task_dap_renal_Moderate renal impairment__KI__glc_urine": {
+    "task_dap_renal_Mild renal impairment_po50__KI__glc_urine": {
       "type": "TASK",
       "index": "KI__glc_urine",
       "unit": null,
-      "task": "task_dap_renal_Moderate renal impairment",
+      "task": "task_dap_renal_Mild renal impairment_po50",
       "dataset": null,
       "function": null,
       "variables": null
     },
-    "task_dap_renal_Moderate renal impairment__KI__UGE": {
+    "task_dap_renal_Mild renal impairment_po50__KI__UGE": {
       "type": "TASK",
       "index": "KI__UGE",
       "unit": null,
-      "task": "task_dap_renal_Moderate renal impairment",
+      "task": "task_dap_renal_Mild renal impairment_po50",
       "dataset": null,
       "function": null,
       "variables": null
     },
-    "task_dap_renal_Moderate renal impairment__KI__RTG": {
+    "task_dap_renal_Mild renal impairment_po50__KI__RTG": {
       "type": "TASK",
       "index": "KI__RTG",
       "unit": null,
-      "task": "task_dap_renal_Moderate renal impairment",
+      "task": "task_dap_renal_Mild renal impairment_po50",
       "dataset": null,
       "function": null,
       "variables": null
     },
-    "task_dap_renal_Moderate renal impairment__Afeces_dap": {
+    "task_dap_renal_Mild renal impairment_po50__Afeces_dap": {
       "type": "TASK",
       "index": "Afeces_dap",
       "unit": null,
-      "task": "task_dap_renal_Moderate renal impairment",
+      "task": "task_dap_renal_Mild renal impairment_po50",
       "dataset": null,
       "function": null,
       "variables": null
     },
-    "task_dap_renal_Moderate renal impairment__Afeces_daptot": {
+    "task_dap_renal_Mild renal impairment_po50__Afeces_daptot": {
       "type": "TASK",
       "index": "Afeces_daptot",
       "unit": null,
-      "task": "task_dap_renal_Moderate renal impairment",
+      "task": "task_dap_renal_Mild renal impairment_po50",
       "dataset": null,
       "function": null,
       "variables": null
     },
-    "task_dap_renal_Moderate renal impairment__KI__D3GEX": {
+    "task_dap_renal_Mild renal impairment_po50__KI__D3GEX": {
       "type": "TASK",
       "index": "KI__D3GEX",
       "unit": null,
-      "task": "task_dap_renal_Moderate renal impairment",
+      "task": "task_dap_renal_Mild renal impairment_po50",
       "dataset": null,
       "function": null,
       "variables": null
     },
-    "task_dap_renal_Moderate renal impairment__KI__DAPEX": {
+    "task_dap_renal_Mild renal impairment_po50__KI__DAPEX": {
       "type": "TASK",
       "index": "KI__DAPEX",
       "unit": null,
-      "task": "task_dap_renal_Moderate renal impairment",
+      "task": "task_dap_renal_Mild renal impairment_po50",
       "dataset": null,
       "function": null,
       "variables": null
     },
-    "task_dap_renal_Moderate renal impairment__KI__GLCEX": {
+    "task_dap_renal_Mild renal impairment_po50__KI__GLCEX": {
       "type": "TASK",
       "index": "KI__GLCEX",
       "unit": null,
-      "task": "task_dap_renal_Moderate renal impairment",
+      "task": "task_dap_renal_Mild renal impairment_po50",
       "dataset": null,
       "function": null,
       "variables": null
     },
-    "task_dap_renal_Moderate renal impairment__KI__f_renal_function": {
+    "task_dap_renal_Mild renal impairment_po50__KI__f_renal_function": {
       "type": "TASK",
       "index": "KI__f_renal_function",
       "unit": null,
-      "task": "task_dap_renal_Moderate renal impairment",
+      "task": "task_dap_renal_Mild renal impairment_po50",
       "dataset": null,
       "function": null,
       "variables": null
     },
-    "task_dap_renal_Moderate renal impairment__f_cirrhosis": {
+    "task_dap_renal_Mild renal impairment_po50__f_cirrhosis": {
       "type": "TASK",
       "index": "f_cirrhosis",
       "unit": null,
-      "task": "task_dap_renal_Moderate renal impairment",
+      "task": "task_dap_renal_Mild renal impairment_po50",
       "dataset": null,
       "function": null,
       "variables": null
     },
-    "task_dap_renal_Moderate renal impairment__GU__f_absorption": {
+    "task_dap_renal_Mild renal impairment_po50__GU__f_absorption": {
       "type": "TASK",
       "index": "GU__f_absorption",
       "unit": null,
-      "task": "task_dap_renal_Moderate renal impairment",
+      "task": "task_dap_renal_Mild renal impairment_po50",
       "dataset": null,
       "function": null,
       "variables": null
     },
-    "task_dap_renal_Moderate renal impairment__f_ugt1a9": {
+    "task_dap_renal_Mild renal impairment_po50__f_ugt1a9": {
       "type": "TASK",
       "index": "f_ugt1a9",
       "unit": null,
-      "task": "task_dap_renal_Moderate renal impairment",
+      "task": "task_dap_renal_Mild renal impairment_po50",
       "dataset": null,
       "function": null,
       "variables": null
     },
-    "task_dap_renal_Severe renal impairment__time": {
+    "task_dap_renal_Mild renal impairment_po20__time": {
       "type": "TASK",
       "index": "time",
       "unit": null,
-      "task": "task_dap_renal_Severe renal impairment",
+      "task": "task_dap_renal_Mild renal impairment_po20",
       "dataset": null,
       "function": null,
       "variables": null
     },
-    "task_dap_renal_Severe renal impairment__IVDOSE_dap": {
+    "task_dap_renal_Mild renal impairment_po20__IVDOSE_dap": {
       "type": "TASK",
       "index": "IVDOSE_dap",
       "unit": null,
-      "task": "task_dap_renal_Severe renal impairment",
+      "task": "task_dap_renal_Mild renal impairment_po20",
       "dataset": null,
       "function": null,
       "variables": null
     },
-    "task_dap_renal_Severe renal impairment__PODOSE_dap": {
+    "task_dap_renal_Mild renal impairment_po20__PODOSE_dap": {
       "type": "TASK",
       "index": "PODOSE_dap",
       "unit": null,
-      "task": "task_dap_renal_Severe renal impairment",
+      "task": "task_dap_renal_Mild renal impairment_po20",
       "dataset": null,
       "function": null,
       "variables": null
     },
-    "task_dap_renal_Severe renal impairment__Cve_daptot": {
+    "task_dap_renal_Mild renal impairment_po20__Cve_daptot": {
       "type": "TASK",
       "index": "Cve_daptot",
       "unit": null,
-      "task": "task_dap_renal_Severe renal impairment",
+      "task": "task_dap_renal_Mild renal impairment_po20",
       "dataset": null,
       "function": null,
       "variables": null
     },
-    "task_dap_renal_Severe renal impairment__Cve_dap": {
+    "task_dap_renal_Mild renal impairment_po20__Cve_dap": {
       "type": "TASK",
       "index": "Cve_dap",
       "unit": null,
-      "task": "task_dap_renal_Severe renal impairment",
+      "task": "task_dap_renal_Mild renal impairment_po20",
       "dataset": null,
       "function": null,
       "variables": null
     },
-    "task_dap_renal_Severe renal impairment__Cve_d3g": {
+    "task_dap_renal_Mild renal impairment_po20__Cve_d3g": {
       "type": "TASK",
       "index": "Cve_d3g",
       "unit": null,
-      "task": "task_dap_renal_Severe renal impairment",
+      "task": "task_dap_renal_Mild renal impairment_po20",
       "dataset": null,
       "function": null,
       "variables": null
     },
-    "task_dap_renal_Severe renal impairment__KI__glc_ext": {
+    "task_dap_renal_Mild renal impairment_po20__KI__glc_ext": {
       "type": "TASK",
       "index": "KI__glc_ext",
       "unit": null,
-      "task": "task_dap_renal_Severe renal impairment",
+      "task": "task_dap_renal_Mild renal impairment_po20",
       "dataset": null,
       "function": null,
       "variables": null
     },
-    "task_dap_renal_Severe renal impairment__LI__dap": {
+    "task_dap_renal_Mild renal impairment_po20__LI__dap": {
       "type": "TASK",
       "index": "LI__dap",
       "unit": null,
-      "task": "task_dap_renal_Severe renal impairment",
+      "task": "task_dap_renal_Mild renal impairment_po20",
       "dataset": null,
       "function": null,
       "variables": null
     },
-    "task_dap_renal_Severe renal impairment__LI__d3g": {
+    "task_dap_renal_Mild renal impairment_po20__LI__d3g": {
       "type": "TASK",
       "index": "LI__d3g",
       "unit": null,
-      "task": "task_dap_renal_Severe renal impairment",
+      "task": "task_dap_renal_Mild renal impairment_po20",
       "dataset": null,
       "function": null,
       "variables": null
     },
-    "task_dap_renal_Severe renal impairment__Aurine_daptot": {
+    "task_dap_renal_Mild renal impairment_po20__Aurine_daptot": {
       "type": "TASK",
       "index": "Aurine_daptot",
       "unit": null,
-      "task": "task_dap_renal_Severe renal impairment",
+      "task": "task_dap_renal_Mild renal impairment_po20",
       "dataset": null,
       "function": null,
       "variables": null
     },
-    "task_dap_renal_Severe renal impairment__Aurine_dap": {
+    "task_dap_renal_Mild renal impairment_po20__Aurine_dap": {
       "type": "TASK",
       "index": "Aurine_dap",
       "unit": null,
-      "task": "task_dap_renal_Severe renal impairment",
+      "task": "task_dap_renal_Mild renal impairment_po20",
       "dataset": null,
       "function": null,
       "variables": null
     },
-    "task_dap_renal_Severe renal impairment__Aurine_d3g": {
+    "task_dap_renal_Mild renal impairment_po20__Aurine_d3g": {
       "type": "TASK",
       "index": "Aurine_d3g",
       "unit": null,
-      "task": "task_dap_renal_Severe renal impairment",
+      "task": "task_dap_renal_Mild renal impairment_po20",
       "dataset": null,
       "function": null,
       "variables": null
     },
-    "task_dap_renal_Severe renal impairment__KI__glc_urine": {
+    "task_dap_renal_Mild renal impairment_po20__KI__glc_urine": {
       "type": "TASK",
       "index": "KI__glc_urine",
       "unit": null,
-      "task": "task_dap_renal_Severe renal impairment",
+      "task": "task_dap_renal_Mild renal impairment_po20",
       "dataset": null,
       "function": null,
       "variables": null
     },
-    "task_dap_renal_Severe renal impairment__KI__UGE": {
+    "task_dap_renal_Mild renal impairment_po20__KI__UGE": {
       "type": "TASK",
       "index": "KI__UGE",
       "unit": null,
-      "task": "task_dap_renal_Severe renal impairment",
+      "task": "task_dap_renal_Mild renal impairment_po20",
       "dataset": null,
       "function": null,
       "variables": null
     },
-    "task_dap_renal_Severe renal impairment__KI__RTG": {
+    "task_dap_renal_Mild renal impairment_po20__KI__RTG": {
       "type": "TASK",
       "index": "KI__RTG",
       "unit": null,
-      "task": "task_dap_renal_Severe renal impairment",
+      "task": "task_dap_renal_Mild renal impairment_po20",
       "dataset": null,
       "function": null,
       "variables": null
     },
-    "task_dap_renal_Severe renal impairment__Afeces_dap": {
+    "task_dap_renal_Mild renal impairment_po20__Afeces_dap": {
       "type": "TASK",
       "index": "Afeces_dap",
       "unit": null,
-      "task": "task_dap_renal_Severe renal impairment",
+      "task": "task_dap_renal_Mild renal impairment_po20",
       "dataset": null,
       "function": null,
       "variables": null
     },
-    "task_dap_renal_Severe renal impairment__Afeces_daptot": {
+    "task_dap_renal_Mild renal impairment_po20__Afeces_daptot": {
       "type": "TASK",
       "index": "Afeces_daptot",
       "unit": null,
-      "task": "task_dap_renal_Severe renal impairment",
+      "task": "task_dap_renal_Mild renal impairment_po20",
       "dataset": null,
       "function": null,
       "variables": null
     },
-    "task_dap_renal_Severe renal impairment__KI__D3GEX": {
+    "task_dap_renal_Mild renal impairment_po20__KI__D3GEX": {
       "type": "TASK",
       "index": "KI__D3GEX",
       "unit": null,
-      "task": "task_dap_renal_Severe renal impairment",
+      "task": "task_dap_renal_Mild renal impairment_po20",
       "dataset": null,
       "function": null,
       "variables": null
     },
-    "task_dap_renal_Severe renal impairment__KI__DAPEX": {
+    "task_dap_renal_Mild renal impairment_po20__KI__DAPEX": {
       "type": "TASK",
       "index": "KI__DAPEX",
       "unit": null,
-      "task": "task_dap_renal_Severe renal impairment",
+      "task": "task_dap_renal_Mild renal impairment_po20",
       "dataset": null,
       "function": null,
       "variables": null
     },
-    "task_dap_renal_Severe renal impairment__KI__GLCEX": {
+    "task_dap_renal_Mild renal impairment_po20__KI__GLCEX": {
       "type": "TASK",
       "index": "KI__GLCEX",
       "unit": null,
-      "task": "task_dap_renal_Severe renal impairment",
+      "task": "task_dap_renal_Mild renal impairment_po20",
       "dataset": null,
       "function": null,
       "variables": null
     },
-    "task_dap_renal_Severe renal impairment__KI__f_renal_function": {
+    "task_dap_renal_Mild renal impairment_po20__KI__f_renal_function": {
       "type": "TASK",
       "index": "KI__f_renal_function",
       "unit": null,
-      "task": "task_dap_renal_Severe renal impairment",
+      "task": "task_dap_renal_Mild renal impairment_po20",
       "dataset": null,
       "function": null,
       "variables": null
     },
-    "task_dap_renal_Severe renal impairment__f_cirrhosis": {
+    "task_dap_renal_Mild renal impairment_po20__f_cirrhosis": {
       "type": "TASK",
       "index": "f_cirrhosis",
       "unit": null,
-      "task": "task_dap_renal_Severe renal impairment",
+      "task": "task_dap_renal_Mild renal impairment_po20",
       "dataset": null,
       "function": null,
       "variables": null
     },
-    "task_dap_renal_Severe renal impairment__GU__f_absorption": {
+    "task_dap_renal_Mild renal impairment_po20__GU__f_absorption": {
       "type": "TASK",
       "index": "GU__f_absorption",
       "unit": null,
-      "task": "task_dap_renal_Severe renal impairment",
+      "task": "task_dap_renal_Mild renal impairment_po20",
       "dataset": null,
       "function": null,
       "variables": null
     },
-    "task_dap_renal_Severe renal impairment__f_ugt1a9": {
+    "task_dap_renal_Mild renal impairment_po20__f_ugt1a9": {
       "type": "TASK",
       "index": "f_ugt1a9",
       "unit": null,
-      "task": "task_dap_renal_Severe renal impairment",
+      "task": "task_dap_renal_Mild renal impairment_po20",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_dap_renal_Moderate renal impairment_po50__time": {
+      "type": "TASK",
+      "index": "time",
+      "unit": null,
+      "task": "task_dap_renal_Moderate renal impairment_po50",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_dap_renal_Moderate renal impairment_po50__IVDOSE_dap": {
+      "type": "TASK",
+      "index": "IVDOSE_dap",
+      "unit": null,
+      "task": "task_dap_renal_Moderate renal impairment_po50",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_dap_renal_Moderate renal impairment_po50__PODOSE_dap": {
+      "type": "TASK",
+      "index": "PODOSE_dap",
+      "unit": null,
+      "task": "task_dap_renal_Moderate renal impairment_po50",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_dap_renal_Moderate renal impairment_po50__Cve_daptot": {
+      "type": "TASK",
+      "index": "Cve_daptot",
+      "unit": null,
+      "task": "task_dap_renal_Moderate renal impairment_po50",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_dap_renal_Moderate renal impairment_po50__Cve_dap": {
+      "type": "TASK",
+      "index": "Cve_dap",
+      "unit": null,
+      "task": "task_dap_renal_Moderate renal impairment_po50",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_dap_renal_Moderate renal impairment_po50__Cve_d3g": {
+      "type": "TASK",
+      "index": "Cve_d3g",
+      "unit": null,
+      "task": "task_dap_renal_Moderate renal impairment_po50",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_dap_renal_Moderate renal impairment_po50__KI__glc_ext": {
+      "type": "TASK",
+      "index": "KI__glc_ext",
+      "unit": null,
+      "task": "task_dap_renal_Moderate renal impairment_po50",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_dap_renal_Moderate renal impairment_po50__LI__dap": {
+      "type": "TASK",
+      "index": "LI__dap",
+      "unit": null,
+      "task": "task_dap_renal_Moderate renal impairment_po50",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_dap_renal_Moderate renal impairment_po50__LI__d3g": {
+      "type": "TASK",
+      "index": "LI__d3g",
+      "unit": null,
+      "task": "task_dap_renal_Moderate renal impairment_po50",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_dap_renal_Moderate renal impairment_po50__Aurine_daptot": {
+      "type": "TASK",
+      "index": "Aurine_daptot",
+      "unit": null,
+      "task": "task_dap_renal_Moderate renal impairment_po50",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_dap_renal_Moderate renal impairment_po50__Aurine_dap": {
+      "type": "TASK",
+      "index": "Aurine_dap",
+      "unit": null,
+      "task": "task_dap_renal_Moderate renal impairment_po50",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_dap_renal_Moderate renal impairment_po50__Aurine_d3g": {
+      "type": "TASK",
+      "index": "Aurine_d3g",
+      "unit": null,
+      "task": "task_dap_renal_Moderate renal impairment_po50",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_dap_renal_Moderate renal impairment_po50__KI__glc_urine": {
+      "type": "TASK",
+      "index": "KI__glc_urine",
+      "unit": null,
+      "task": "task_dap_renal_Moderate renal impairment_po50",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_dap_renal_Moderate renal impairment_po50__KI__UGE": {
+      "type": "TASK",
+      "index": "KI__UGE",
+      "unit": null,
+      "task": "task_dap_renal_Moderate renal impairment_po50",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_dap_renal_Moderate renal impairment_po50__KI__RTG": {
+      "type": "TASK",
+      "index": "KI__RTG",
+      "unit": null,
+      "task": "task_dap_renal_Moderate renal impairment_po50",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_dap_renal_Moderate renal impairment_po50__Afeces_dap": {
+      "type": "TASK",
+      "index": "Afeces_dap",
+      "unit": null,
+      "task": "task_dap_renal_Moderate renal impairment_po50",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_dap_renal_Moderate renal impairment_po50__Afeces_daptot": {
+      "type": "TASK",
+      "index": "Afeces_daptot",
+      "unit": null,
+      "task": "task_dap_renal_Moderate renal impairment_po50",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_dap_renal_Moderate renal impairment_po50__KI__D3GEX": {
+      "type": "TASK",
+      "index": "KI__D3GEX",
+      "unit": null,
+      "task": "task_dap_renal_Moderate renal impairment_po50",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_dap_renal_Moderate renal impairment_po50__KI__DAPEX": {
+      "type": "TASK",
+      "index": "KI__DAPEX",
+      "unit": null,
+      "task": "task_dap_renal_Moderate renal impairment_po50",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_dap_renal_Moderate renal impairment_po50__KI__GLCEX": {
+      "type": "TASK",
+      "index": "KI__GLCEX",
+      "unit": null,
+      "task": "task_dap_renal_Moderate renal impairment_po50",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_dap_renal_Moderate renal impairment_po50__KI__f_renal_function": {
+      "type": "TASK",
+      "index": "KI__f_renal_function",
+      "unit": null,
+      "task": "task_dap_renal_Moderate renal impairment_po50",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_dap_renal_Moderate renal impairment_po50__f_cirrhosis": {
+      "type": "TASK",
+      "index": "f_cirrhosis",
+      "unit": null,
+      "task": "task_dap_renal_Moderate renal impairment_po50",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_dap_renal_Moderate renal impairment_po50__GU__f_absorption": {
+      "type": "TASK",
+      "index": "GU__f_absorption",
+      "unit": null,
+      "task": "task_dap_renal_Moderate renal impairment_po50",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_dap_renal_Moderate renal impairment_po50__f_ugt1a9": {
+      "type": "TASK",
+      "index": "f_ugt1a9",
+      "unit": null,
+      "task": "task_dap_renal_Moderate renal impairment_po50",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_dap_renal_Moderate renal impairment_po20__time": {
+      "type": "TASK",
+      "index": "time",
+      "unit": null,
+      "task": "task_dap_renal_Moderate renal impairment_po20",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_dap_renal_Moderate renal impairment_po20__IVDOSE_dap": {
+      "type": "TASK",
+      "index": "IVDOSE_dap",
+      "unit": null,
+      "task": "task_dap_renal_Moderate renal impairment_po20",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_dap_renal_Moderate renal impairment_po20__PODOSE_dap": {
+      "type": "TASK",
+      "index": "PODOSE_dap",
+      "unit": null,
+      "task": "task_dap_renal_Moderate renal impairment_po20",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_dap_renal_Moderate renal impairment_po20__Cve_daptot": {
+      "type": "TASK",
+      "index": "Cve_daptot",
+      "unit": null,
+      "task": "task_dap_renal_Moderate renal impairment_po20",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_dap_renal_Moderate renal impairment_po20__Cve_dap": {
+      "type": "TASK",
+      "index": "Cve_dap",
+      "unit": null,
+      "task": "task_dap_renal_Moderate renal impairment_po20",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_dap_renal_Moderate renal impairment_po20__Cve_d3g": {
+      "type": "TASK",
+      "index": "Cve_d3g",
+      "unit": null,
+      "task": "task_dap_renal_Moderate renal impairment_po20",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_dap_renal_Moderate renal impairment_po20__KI__glc_ext": {
+      "type": "TASK",
+      "index": "KI__glc_ext",
+      "unit": null,
+      "task": "task_dap_renal_Moderate renal impairment_po20",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_dap_renal_Moderate renal impairment_po20__LI__dap": {
+      "type": "TASK",
+      "index": "LI__dap",
+      "unit": null,
+      "task": "task_dap_renal_Moderate renal impairment_po20",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_dap_renal_Moderate renal impairment_po20__LI__d3g": {
+      "type": "TASK",
+      "index": "LI__d3g",
+      "unit": null,
+      "task": "task_dap_renal_Moderate renal impairment_po20",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_dap_renal_Moderate renal impairment_po20__Aurine_daptot": {
+      "type": "TASK",
+      "index": "Aurine_daptot",
+      "unit": null,
+      "task": "task_dap_renal_Moderate renal impairment_po20",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_dap_renal_Moderate renal impairment_po20__Aurine_dap": {
+      "type": "TASK",
+      "index": "Aurine_dap",
+      "unit": null,
+      "task": "task_dap_renal_Moderate renal impairment_po20",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_dap_renal_Moderate renal impairment_po20__Aurine_d3g": {
+      "type": "TASK",
+      "index": "Aurine_d3g",
+      "unit": null,
+      "task": "task_dap_renal_Moderate renal impairment_po20",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_dap_renal_Moderate renal impairment_po20__KI__glc_urine": {
+      "type": "TASK",
+      "index": "KI__glc_urine",
+      "unit": null,
+      "task": "task_dap_renal_Moderate renal impairment_po20",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_dap_renal_Moderate renal impairment_po20__KI__UGE": {
+      "type": "TASK",
+      "index": "KI__UGE",
+      "unit": null,
+      "task": "task_dap_renal_Moderate renal impairment_po20",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_dap_renal_Moderate renal impairment_po20__KI__RTG": {
+      "type": "TASK",
+      "index": "KI__RTG",
+      "unit": null,
+      "task": "task_dap_renal_Moderate renal impairment_po20",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_dap_renal_Moderate renal impairment_po20__Afeces_dap": {
+      "type": "TASK",
+      "index": "Afeces_dap",
+      "unit": null,
+      "task": "task_dap_renal_Moderate renal impairment_po20",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_dap_renal_Moderate renal impairment_po20__Afeces_daptot": {
+      "type": "TASK",
+      "index": "Afeces_daptot",
+      "unit": null,
+      "task": "task_dap_renal_Moderate renal impairment_po20",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_dap_renal_Moderate renal impairment_po20__KI__D3GEX": {
+      "type": "TASK",
+      "index": "KI__D3GEX",
+      "unit": null,
+      "task": "task_dap_renal_Moderate renal impairment_po20",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_dap_renal_Moderate renal impairment_po20__KI__DAPEX": {
+      "type": "TASK",
+      "index": "KI__DAPEX",
+      "unit": null,
+      "task": "task_dap_renal_Moderate renal impairment_po20",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_dap_renal_Moderate renal impairment_po20__KI__GLCEX": {
+      "type": "TASK",
+      "index": "KI__GLCEX",
+      "unit": null,
+      "task": "task_dap_renal_Moderate renal impairment_po20",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_dap_renal_Moderate renal impairment_po20__KI__f_renal_function": {
+      "type": "TASK",
+      "index": "KI__f_renal_function",
+      "unit": null,
+      "task": "task_dap_renal_Moderate renal impairment_po20",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_dap_renal_Moderate renal impairment_po20__f_cirrhosis": {
+      "type": "TASK",
+      "index": "f_cirrhosis",
+      "unit": null,
+      "task": "task_dap_renal_Moderate renal impairment_po20",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_dap_renal_Moderate renal impairment_po20__GU__f_absorption": {
+      "type": "TASK",
+      "index": "GU__f_absorption",
+      "unit": null,
+      "task": "task_dap_renal_Moderate renal impairment_po20",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_dap_renal_Moderate renal impairment_po20__f_ugt1a9": {
+      "type": "TASK",
+      "index": "f_ugt1a9",
+      "unit": null,
+      "task": "task_dap_renal_Moderate renal impairment_po20",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_dap_renal_Severe renal impairment_po50__time": {
+      "type": "TASK",
+      "index": "time",
+      "unit": null,
+      "task": "task_dap_renal_Severe renal impairment_po50",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_dap_renal_Severe renal impairment_po50__IVDOSE_dap": {
+      "type": "TASK",
+      "index": "IVDOSE_dap",
+      "unit": null,
+      "task": "task_dap_renal_Severe renal impairment_po50",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_dap_renal_Severe renal impairment_po50__PODOSE_dap": {
+      "type": "TASK",
+      "index": "PODOSE_dap",
+      "unit": null,
+      "task": "task_dap_renal_Severe renal impairment_po50",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_dap_renal_Severe renal impairment_po50__Cve_daptot": {
+      "type": "TASK",
+      "index": "Cve_daptot",
+      "unit": null,
+      "task": "task_dap_renal_Severe renal impairment_po50",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_dap_renal_Severe renal impairment_po50__Cve_dap": {
+      "type": "TASK",
+      "index": "Cve_dap",
+      "unit": null,
+      "task": "task_dap_renal_Severe renal impairment_po50",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_dap_renal_Severe renal impairment_po50__Cve_d3g": {
+      "type": "TASK",
+      "index": "Cve_d3g",
+      "unit": null,
+      "task": "task_dap_renal_Severe renal impairment_po50",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_dap_renal_Severe renal impairment_po50__KI__glc_ext": {
+      "type": "TASK",
+      "index": "KI__glc_ext",
+      "unit": null,
+      "task": "task_dap_renal_Severe renal impairment_po50",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_dap_renal_Severe renal impairment_po50__LI__dap": {
+      "type": "TASK",
+      "index": "LI__dap",
+      "unit": null,
+      "task": "task_dap_renal_Severe renal impairment_po50",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_dap_renal_Severe renal impairment_po50__LI__d3g": {
+      "type": "TASK",
+      "index": "LI__d3g",
+      "unit": null,
+      "task": "task_dap_renal_Severe renal impairment_po50",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_dap_renal_Severe renal impairment_po50__Aurine_daptot": {
+      "type": "TASK",
+      "index": "Aurine_daptot",
+      "unit": null,
+      "task": "task_dap_renal_Severe renal impairment_po50",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_dap_renal_Severe renal impairment_po50__Aurine_dap": {
+      "type": "TASK",
+      "index": "Aurine_dap",
+      "unit": null,
+      "task": "task_dap_renal_Severe renal impairment_po50",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_dap_renal_Severe renal impairment_po50__Aurine_d3g": {
+      "type": "TASK",
+      "index": "Aurine_d3g",
+      "unit": null,
+      "task": "task_dap_renal_Severe renal impairment_po50",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_dap_renal_Severe renal impairment_po50__KI__glc_urine": {
+      "type": "TASK",
+      "index": "KI__glc_urine",
+      "unit": null,
+      "task": "task_dap_renal_Severe renal impairment_po50",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_dap_renal_Severe renal impairment_po50__KI__UGE": {
+      "type": "TASK",
+      "index": "KI__UGE",
+      "unit": null,
+      "task": "task_dap_renal_Severe renal impairment_po50",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_dap_renal_Severe renal impairment_po50__KI__RTG": {
+      "type": "TASK",
+      "index": "KI__RTG",
+      "unit": null,
+      "task": "task_dap_renal_Severe renal impairment_po50",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_dap_renal_Severe renal impairment_po50__Afeces_dap": {
+      "type": "TASK",
+      "index": "Afeces_dap",
+      "unit": null,
+      "task": "task_dap_renal_Severe renal impairment_po50",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_dap_renal_Severe renal impairment_po50__Afeces_daptot": {
+      "type": "TASK",
+      "index": "Afeces_daptot",
+      "unit": null,
+      "task": "task_dap_renal_Severe renal impairment_po50",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_dap_renal_Severe renal impairment_po50__KI__D3GEX": {
+      "type": "TASK",
+      "index": "KI__D3GEX",
+      "unit": null,
+      "task": "task_dap_renal_Severe renal impairment_po50",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_dap_renal_Severe renal impairment_po50__KI__DAPEX": {
+      "type": "TASK",
+      "index": "KI__DAPEX",
+      "unit": null,
+      "task": "task_dap_renal_Severe renal impairment_po50",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_dap_renal_Severe renal impairment_po50__KI__GLCEX": {
+      "type": "TASK",
+      "index": "KI__GLCEX",
+      "unit": null,
+      "task": "task_dap_renal_Severe renal impairment_po50",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_dap_renal_Severe renal impairment_po50__KI__f_renal_function": {
+      "type": "TASK",
+      "index": "KI__f_renal_function",
+      "unit": null,
+      "task": "task_dap_renal_Severe renal impairment_po50",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_dap_renal_Severe renal impairment_po50__f_cirrhosis": {
+      "type": "TASK",
+      "index": "f_cirrhosis",
+      "unit": null,
+      "task": "task_dap_renal_Severe renal impairment_po50",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_dap_renal_Severe renal impairment_po50__GU__f_absorption": {
+      "type": "TASK",
+      "index": "GU__f_absorption",
+      "unit": null,
+      "task": "task_dap_renal_Severe renal impairment_po50",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_dap_renal_Severe renal impairment_po50__f_ugt1a9": {
+      "type": "TASK",
+      "index": "f_ugt1a9",
+      "unit": null,
+      "task": "task_dap_renal_Severe renal impairment_po50",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_dap_renal_Severe renal impairment_po20__time": {
+      "type": "TASK",
+      "index": "time",
+      "unit": null,
+      "task": "task_dap_renal_Severe renal impairment_po20",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_dap_renal_Severe renal impairment_po20__IVDOSE_dap": {
+      "type": "TASK",
+      "index": "IVDOSE_dap",
+      "unit": null,
+      "task": "task_dap_renal_Severe renal impairment_po20",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_dap_renal_Severe renal impairment_po20__PODOSE_dap": {
+      "type": "TASK",
+      "index": "PODOSE_dap",
+      "unit": null,
+      "task": "task_dap_renal_Severe renal impairment_po20",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_dap_renal_Severe renal impairment_po20__Cve_daptot": {
+      "type": "TASK",
+      "index": "Cve_daptot",
+      "unit": null,
+      "task": "task_dap_renal_Severe renal impairment_po20",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_dap_renal_Severe renal impairment_po20__Cve_dap": {
+      "type": "TASK",
+      "index": "Cve_dap",
+      "unit": null,
+      "task": "task_dap_renal_Severe renal impairment_po20",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_dap_renal_Severe renal impairment_po20__Cve_d3g": {
+      "type": "TASK",
+      "index": "Cve_d3g",
+      "unit": null,
+      "task": "task_dap_renal_Severe renal impairment_po20",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_dap_renal_Severe renal impairment_po20__KI__glc_ext": {
+      "type": "TASK",
+      "index": "KI__glc_ext",
+      "unit": null,
+      "task": "task_dap_renal_Severe renal impairment_po20",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_dap_renal_Severe renal impairment_po20__LI__dap": {
+      "type": "TASK",
+      "index": "LI__dap",
+      "unit": null,
+      "task": "task_dap_renal_Severe renal impairment_po20",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_dap_renal_Severe renal impairment_po20__LI__d3g": {
+      "type": "TASK",
+      "index": "LI__d3g",
+      "unit": null,
+      "task": "task_dap_renal_Severe renal impairment_po20",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_dap_renal_Severe renal impairment_po20__Aurine_daptot": {
+      "type": "TASK",
+      "index": "Aurine_daptot",
+      "unit": null,
+      "task": "task_dap_renal_Severe renal impairment_po20",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_dap_renal_Severe renal impairment_po20__Aurine_dap": {
+      "type": "TASK",
+      "index": "Aurine_dap",
+      "unit": null,
+      "task": "task_dap_renal_Severe renal impairment_po20",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_dap_renal_Severe renal impairment_po20__Aurine_d3g": {
+      "type": "TASK",
+      "index": "Aurine_d3g",
+      "unit": null,
+      "task": "task_dap_renal_Severe renal impairment_po20",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_dap_renal_Severe renal impairment_po20__KI__glc_urine": {
+      "type": "TASK",
+      "index": "KI__glc_urine",
+      "unit": null,
+      "task": "task_dap_renal_Severe renal impairment_po20",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_dap_renal_Severe renal impairment_po20__KI__UGE": {
+      "type": "TASK",
+      "index": "KI__UGE",
+      "unit": null,
+      "task": "task_dap_renal_Severe renal impairment_po20",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_dap_renal_Severe renal impairment_po20__KI__RTG": {
+      "type": "TASK",
+      "index": "KI__RTG",
+      "unit": null,
+      "task": "task_dap_renal_Severe renal impairment_po20",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_dap_renal_Severe renal impairment_po20__Afeces_dap": {
+      "type": "TASK",
+      "index": "Afeces_dap",
+      "unit": null,
+      "task": "task_dap_renal_Severe renal impairment_po20",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_dap_renal_Severe renal impairment_po20__Afeces_daptot": {
+      "type": "TASK",
+      "index": "Afeces_daptot",
+      "unit": null,
+      "task": "task_dap_renal_Severe renal impairment_po20",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_dap_renal_Severe renal impairment_po20__KI__D3GEX": {
+      "type": "TASK",
+      "index": "KI__D3GEX",
+      "unit": null,
+      "task": "task_dap_renal_Severe renal impairment_po20",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_dap_renal_Severe renal impairment_po20__KI__DAPEX": {
+      "type": "TASK",
+      "index": "KI__DAPEX",
+      "unit": null,
+      "task": "task_dap_renal_Severe renal impairment_po20",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_dap_renal_Severe renal impairment_po20__KI__GLCEX": {
+      "type": "TASK",
+      "index": "KI__GLCEX",
+      "unit": null,
+      "task": "task_dap_renal_Severe renal impairment_po20",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_dap_renal_Severe renal impairment_po20__KI__f_renal_function": {
+      "type": "TASK",
+      "index": "KI__f_renal_function",
+      "unit": null,
+      "task": "task_dap_renal_Severe renal impairment_po20",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_dap_renal_Severe renal impairment_po20__f_cirrhosis": {
+      "type": "TASK",
+      "index": "f_cirrhosis",
+      "unit": null,
+      "task": "task_dap_renal_Severe renal impairment_po20",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_dap_renal_Severe renal impairment_po20__GU__f_absorption": {
+      "type": "TASK",
+      "index": "GU__f_absorption",
+      "unit": null,
+      "task": "task_dap_renal_Severe renal impairment_po20",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_dap_renal_Severe renal impairment_po20__f_ugt1a9": {
+      "type": "TASK",
+      "index": "f_ugt1a9",
+      "unit": null,
+      "task": "task_dap_renal_Severe renal impairment_po20",
       "dataset": null,
       "function": null,
       "variables": null
@@ -1993,11 +2977,11 @@
   "figures": {
     "Fig_f_cirrhosis_pk": {
       "sid": "Fig_f_cirrhosis_pk",
-      "name": null,
-      "num_rows": 3,
-      "num_cols": 3,
-      "width": 21.0,
-      "height": 15.0,
+      "name": "Pharmacokinetics: Hepatic impairment",
+      "num_rows": 1,
+      "num_cols": 5,
+      "width": 35.0,
+      "height": 5.0,
       "subplots": [
         {
           "sid": null,
@@ -2079,18 +3063,18 @@
                   "base_style": null,
                   "line": {
                     "type": "SOLID",
-                    "color": "#74a9cfff",
+                    "color": "#C4DFF2ff",
                     "thickness": 2.0
                   },
                   "marker": {
                     "size": null,
                     "type": "NONE",
-                    "fill": "#74a9cfff",
+                    "fill": "#C4DFF2ff",
                     "line_color": "#000000ff",
                     "line_thickness": null
                   },
                   "fill": {
-                    "color": "#74a9cfff",
+                    "color": "#C4DFF2ff",
                     "second_color": null
                   }
                 },
@@ -2141,18 +3125,18 @@
                   "base_style": null,
                   "line": {
                     "type": "SOLID",
-                    "color": "#045a8dff",
+                    "color": "#00446Eff",
                     "thickness": 2.0
                   },
                   "marker": {
                     "size": null,
                     "type": "NONE",
-                    "fill": "#045a8dff",
+                    "fill": "#00446Eff",
                     "line_color": "#000000ff",
                     "line_thickness": null
                   },
                   "fill": {
-                    "color": "#045a8dff",
+                    "color": "#00446Eff",
                     "second_color": null
                   }
                 },
@@ -2203,7 +3187,7 @@
             "curves": [
               {
                 "sid": "Fig_f_cirrhosis_pk__plot1_curve0",
-                "name": null,
+                "name": "Control",
                 "x": "task_dap_hepatic_Control__time",
                 "y": "task_dap_hepatic_Control__Cve_d3g",
                 "xerr": null,
@@ -2234,7 +3218,7 @@
               },
               {
                 "sid": "Fig_f_cirrhosis_pk__plot1_curve1",
-                "name": null,
+                "name": "Mild cirrhosis",
                 "x": "task_dap_hepatic_Mild cirrhosis__time",
                 "y": "task_dap_hepatic_Mild cirrhosis__Cve_d3g",
                 "xerr": null,
@@ -2246,18 +3230,18 @@
                   "base_style": null,
                   "line": {
                     "type": "SOLID",
-                    "color": "#74a9cfff",
+                    "color": "#C4DFF2ff",
                     "thickness": 2.0
                   },
                   "marker": {
                     "size": null,
                     "type": "NONE",
-                    "fill": "#74a9cfff",
+                    "fill": "#C4DFF2ff",
                     "line_color": "#000000ff",
                     "line_thickness": null
                   },
                   "fill": {
-                    "color": "#74a9cfff",
+                    "color": "#C4DFF2ff",
                     "second_color": null
                   }
                 },
@@ -2265,7 +3249,7 @@
               },
               {
                 "sid": "Fig_f_cirrhosis_pk__plot1_curve2",
-                "name": null,
+                "name": "Moderate cirrhosis",
                 "x": "task_dap_hepatic_Moderate cirrhosis__time",
                 "y": "task_dap_hepatic_Moderate cirrhosis__Cve_d3g",
                 "xerr": null,
@@ -2296,7 +3280,7 @@
               },
               {
                 "sid": "Fig_f_cirrhosis_pk__plot1_curve3",
-                "name": null,
+                "name": "Severe cirrhosis",
                 "x": "task_dap_hepatic_Severe cirrhosis__time",
                 "y": "task_dap_hepatic_Severe cirrhosis__Cve_d3g",
                 "xerr": null,
@@ -2308,18 +3292,18 @@
                   "base_style": null,
                   "line": {
                     "type": "SOLID",
-                    "color": "#045a8dff",
+                    "color": "#00446Eff",
                     "thickness": 2.0
                   },
                   "marker": {
                     "size": null,
                     "type": "NONE",
-                    "fill": "#045a8dff",
+                    "fill": "#00446Eff",
                     "line_color": "#000000ff",
                     "line_thickness": null
                   },
                   "fill": {
-                    "color": "#045a8dff",
+                    "color": "#00446Eff",
                     "second_color": null
                   }
                 },
@@ -2353,9 +3337,9 @@
             },
             "yaxis": {
               "sid": "Fig_f_cirrhosis_pk__plot2_yaxis",
-              "name": "DAP + D3G\nplasma [\u00b5M]",
-              "label": "DAP + D3G\nplasma",
-              "unit": "\u00b5M",
+              "name": "dapagliflozin\nurine [\u00b5mole]",
+              "label": "dapagliflozin\nurine",
+              "unit": "\u00b5mole",
               "scale": "LINEAR",
               "min": null,
               "max": null,
@@ -2370,9 +3354,9 @@
             "curves": [
               {
                 "sid": "Fig_f_cirrhosis_pk__plot2_curve0",
-                "name": null,
+                "name": "Control",
                 "x": "task_dap_hepatic_Control__time",
-                "y": "task_dap_hepatic_Control__Cve_daptot",
+                "y": "task_dap_hepatic_Control__Aurine_dap",
                 "xerr": null,
                 "yerr": null,
                 "yaxis_position": null,
@@ -2401,9 +3385,9 @@
               },
               {
                 "sid": "Fig_f_cirrhosis_pk__plot2_curve1",
-                "name": null,
+                "name": "Mild cirrhosis",
                 "x": "task_dap_hepatic_Mild cirrhosis__time",
-                "y": "task_dap_hepatic_Mild cirrhosis__Cve_daptot",
+                "y": "task_dap_hepatic_Mild cirrhosis__Aurine_dap",
                 "xerr": null,
                 "yerr": null,
                 "yaxis_position": null,
@@ -2413,18 +3397,18 @@
                   "base_style": null,
                   "line": {
                     "type": "SOLID",
-                    "color": "#74a9cfff",
+                    "color": "#C4DFF2ff",
                     "thickness": 2.0
                   },
                   "marker": {
                     "size": null,
                     "type": "NONE",
-                    "fill": "#74a9cfff",
+                    "fill": "#C4DFF2ff",
                     "line_color": "#000000ff",
                     "line_thickness": null
                   },
                   "fill": {
-                    "color": "#74a9cfff",
+                    "color": "#C4DFF2ff",
                     "second_color": null
                   }
                 },
@@ -2432,9 +3416,9 @@
               },
               {
                 "sid": "Fig_f_cirrhosis_pk__plot2_curve2",
-                "name": null,
+                "name": "Moderate cirrhosis",
                 "x": "task_dap_hepatic_Moderate cirrhosis__time",
-                "y": "task_dap_hepatic_Moderate cirrhosis__Cve_daptot",
+                "y": "task_dap_hepatic_Moderate cirrhosis__Aurine_dap",
                 "xerr": null,
                 "yerr": null,
                 "yaxis_position": null,
@@ -2463,9 +3447,9 @@
               },
               {
                 "sid": "Fig_f_cirrhosis_pk__plot2_curve3",
-                "name": null,
+                "name": "Severe cirrhosis",
                 "x": "task_dap_hepatic_Severe cirrhosis__time",
-                "y": "task_dap_hepatic_Severe cirrhosis__Cve_daptot",
+                "y": "task_dap_hepatic_Severe cirrhosis__Aurine_dap",
                 "xerr": null,
                 "yerr": null,
                 "yaxis_position": null,
@@ -2475,18 +3459,18 @@
                   "base_style": null,
                   "line": {
                     "type": "SOLID",
-                    "color": "#045a8dff",
+                    "color": "#00446Eff",
                     "thickness": 2.0
                   },
                   "marker": {
                     "size": null,
                     "type": "NONE",
-                    "fill": "#045a8dff",
+                    "fill": "#00446Eff",
                     "line_color": "#000000ff",
                     "line_thickness": null
                   },
                   "fill": {
-                    "color": "#045a8dff",
+                    "color": "#00446Eff",
                     "second_color": null
                   }
                 },
@@ -2520,173 +3504,6 @@
             },
             "yaxis": {
               "sid": "Fig_f_cirrhosis_pk__plot3_yaxis",
-              "name": "dapagliflozin\nurine [\u00b5mole]",
-              "label": "dapagliflozin\nurine",
-              "unit": "\u00b5mole",
-              "scale": "LINEAR",
-              "min": null,
-              "max": null,
-              "grid": false,
-              "label_visible": true,
-              "ticks_visible": true
-            },
-            "yaxis_right": null,
-            "legend": true,
-            "facecolor": "#ffffffff",
-            "title_visible": true,
-            "curves": [
-              {
-                "sid": "Fig_f_cirrhosis_pk__plot3_curve0",
-                "name": null,
-                "x": "task_dap_hepatic_Control__time",
-                "y": "task_dap_hepatic_Control__Aurine_dap",
-                "xerr": null,
-                "yerr": null,
-                "yaxis_position": null,
-                "style": {
-                  "sid": null,
-                  "name": null,
-                  "base_style": null,
-                  "line": {
-                    "type": "SOLID",
-                    "color": "#000000ff",
-                    "thickness": 2.0
-                  },
-                  "marker": {
-                    "size": null,
-                    "type": "NONE",
-                    "fill": "#000000ff",
-                    "line_color": "#000000ff",
-                    "line_thickness": null
-                  },
-                  "fill": {
-                    "color": "#000000ff",
-                    "second_color": null
-                  }
-                },
-                "order": 0
-              },
-              {
-                "sid": "Fig_f_cirrhosis_pk__plot3_curve1",
-                "name": null,
-                "x": "task_dap_hepatic_Mild cirrhosis__time",
-                "y": "task_dap_hepatic_Mild cirrhosis__Aurine_dap",
-                "xerr": null,
-                "yerr": null,
-                "yaxis_position": null,
-                "style": {
-                  "sid": null,
-                  "name": null,
-                  "base_style": null,
-                  "line": {
-                    "type": "SOLID",
-                    "color": "#74a9cfff",
-                    "thickness": 2.0
-                  },
-                  "marker": {
-                    "size": null,
-                    "type": "NONE",
-                    "fill": "#74a9cfff",
-                    "line_color": "#000000ff",
-                    "line_thickness": null
-                  },
-                  "fill": {
-                    "color": "#74a9cfff",
-                    "second_color": null
-                  }
-                },
-                "order": 1
-              },
-              {
-                "sid": "Fig_f_cirrhosis_pk__plot3_curve2",
-                "name": null,
-                "x": "task_dap_hepatic_Moderate cirrhosis__time",
-                "y": "task_dap_hepatic_Moderate cirrhosis__Aurine_dap",
-                "xerr": null,
-                "yerr": null,
-                "yaxis_position": null,
-                "style": {
-                  "sid": null,
-                  "name": null,
-                  "base_style": null,
-                  "line": {
-                    "type": "SOLID",
-                    "color": "#2b8cbeff",
-                    "thickness": 2.0
-                  },
-                  "marker": {
-                    "size": null,
-                    "type": "NONE",
-                    "fill": "#2b8cbeff",
-                    "line_color": "#000000ff",
-                    "line_thickness": null
-                  },
-                  "fill": {
-                    "color": "#2b8cbeff",
-                    "second_color": null
-                  }
-                },
-                "order": 2
-              },
-              {
-                "sid": "Fig_f_cirrhosis_pk__plot3_curve3",
-                "name": null,
-                "x": "task_dap_hepatic_Severe cirrhosis__time",
-                "y": "task_dap_hepatic_Severe cirrhosis__Aurine_dap",
-                "xerr": null,
-                "yerr": null,
-                "yaxis_position": null,
-                "style": {
-                  "sid": null,
-                  "name": null,
-                  "base_style": null,
-                  "line": {
-                    "type": "SOLID",
-                    "color": "#045a8dff",
-                    "thickness": 2.0
-                  },
-                  "marker": {
-                    "size": null,
-                    "type": "NONE",
-                    "fill": "#045a8dff",
-                    "line_color": "#000000ff",
-                    "line_thickness": null
-                  },
-                  "fill": {
-                    "color": "#045a8dff",
-                    "second_color": null
-                  }
-                },
-                "order": 3
-              }
-            ],
-            "areas": []
-          },
-          "row": 2,
-          "col": 1,
-          "row_span": 1,
-          "col_span": 1
-        },
-        {
-          "sid": null,
-          "name": null,
-          "plot": {
-            "sid": "Fig_f_cirrhosis_pk__plot4",
-            "name": null,
-            "xaxis": {
-              "sid": "Fig_f_cirrhosis_pk__plot4_xaxis",
-              "name": "time [hr]",
-              "label": "time",
-              "unit": "hr",
-              "scale": "LINEAR",
-              "min": null,
-              "max": null,
-              "grid": false,
-              "label_visible": true,
-              "ticks_visible": true
-            },
-            "yaxis": {
-              "sid": "Fig_f_cirrhosis_pk__plot4_yaxis",
               "name": "dapagliflozin-3-O-\nglucuronide urine [\u00b5mole]",
               "label": "dapagliflozin-3-O-\nglucuronide urine",
               "unit": "\u00b5mole",
@@ -2703,8 +3520,8 @@
             "title_visible": true,
             "curves": [
               {
-                "sid": "Fig_f_cirrhosis_pk__plot4_curve0",
-                "name": null,
+                "sid": "Fig_f_cirrhosis_pk__plot3_curve0",
+                "name": "Control",
                 "x": "task_dap_hepatic_Control__time",
                 "y": "task_dap_hepatic_Control__Aurine_d3g",
                 "xerr": null,
@@ -2734,8 +3551,8 @@
                 "order": 0
               },
               {
-                "sid": "Fig_f_cirrhosis_pk__plot4_curve1",
-                "name": null,
+                "sid": "Fig_f_cirrhosis_pk__plot3_curve1",
+                "name": "Mild cirrhosis",
                 "x": "task_dap_hepatic_Mild cirrhosis__time",
                 "y": "task_dap_hepatic_Mild cirrhosis__Aurine_d3g",
                 "xerr": null,
@@ -2747,26 +3564,26 @@
                   "base_style": null,
                   "line": {
                     "type": "SOLID",
-                    "color": "#74a9cfff",
+                    "color": "#C4DFF2ff",
                     "thickness": 2.0
                   },
                   "marker": {
                     "size": null,
                     "type": "NONE",
-                    "fill": "#74a9cfff",
+                    "fill": "#C4DFF2ff",
                     "line_color": "#000000ff",
                     "line_thickness": null
                   },
                   "fill": {
-                    "color": "#74a9cfff",
+                    "color": "#C4DFF2ff",
                     "second_color": null
                   }
                 },
                 "order": 1
               },
               {
-                "sid": "Fig_f_cirrhosis_pk__plot4_curve2",
-                "name": null,
+                "sid": "Fig_f_cirrhosis_pk__plot3_curve2",
+                "name": "Moderate cirrhosis",
                 "x": "task_dap_hepatic_Moderate cirrhosis__time",
                 "y": "task_dap_hepatic_Moderate cirrhosis__Aurine_d3g",
                 "xerr": null,
@@ -2796,8 +3613,8 @@
                 "order": 2
               },
               {
-                "sid": "Fig_f_cirrhosis_pk__plot4_curve3",
-                "name": null,
+                "sid": "Fig_f_cirrhosis_pk__plot3_curve3",
+                "name": "Severe cirrhosis",
                 "x": "task_dap_hepatic_Severe cirrhosis__time",
                 "y": "task_dap_hepatic_Severe cirrhosis__Aurine_d3g",
                 "xerr": null,
@@ -2809,18 +3626,18 @@
                   "base_style": null,
                   "line": {
                     "type": "SOLID",
-                    "color": "#045a8dff",
+                    "color": "#00446Eff",
                     "thickness": 2.0
                   },
                   "marker": {
                     "size": null,
                     "type": "NONE",
-                    "fill": "#045a8dff",
+                    "fill": "#00446Eff",
                     "line_color": "#000000ff",
                     "line_thickness": null
                   },
                   "fill": {
-                    "color": "#045a8dff",
+                    "color": "#00446Eff",
                     "second_color": null
                   }
                 },
@@ -2829,8 +3646,8 @@
             ],
             "areas": []
           },
-          "row": 2,
-          "col": 2,
+          "row": 1,
+          "col": 4,
           "row_span": 1,
           "col_span": 1
         },
@@ -2838,10 +3655,10 @@
           "sid": null,
           "name": null,
           "plot": {
-            "sid": "Fig_f_cirrhosis_pk__plot5",
+            "sid": "Fig_f_cirrhosis_pk__plot4",
             "name": null,
             "xaxis": {
-              "sid": "Fig_f_cirrhosis_pk__plot5_xaxis",
+              "sid": "Fig_f_cirrhosis_pk__plot4_xaxis",
               "name": "time [hr]",
               "label": "time",
               "unit": "hr",
@@ -2853,174 +3670,7 @@
               "ticks_visible": true
             },
             "yaxis": {
-              "sid": "Fig_f_cirrhosis_pk__plot5_yaxis",
-              "name": "DAP + D3G\nurine [\u00b5mole]",
-              "label": "DAP + D3G\nurine",
-              "unit": "\u00b5mole",
-              "scale": "LINEAR",
-              "min": null,
-              "max": null,
-              "grid": false,
-              "label_visible": true,
-              "ticks_visible": true
-            },
-            "yaxis_right": null,
-            "legend": true,
-            "facecolor": "#ffffffff",
-            "title_visible": true,
-            "curves": [
-              {
-                "sid": "Fig_f_cirrhosis_pk__plot5_curve0",
-                "name": null,
-                "x": "task_dap_hepatic_Control__time",
-                "y": "task_dap_hepatic_Control__Aurine_daptot",
-                "xerr": null,
-                "yerr": null,
-                "yaxis_position": null,
-                "style": {
-                  "sid": null,
-                  "name": null,
-                  "base_style": null,
-                  "line": {
-                    "type": "SOLID",
-                    "color": "#000000ff",
-                    "thickness": 2.0
-                  },
-                  "marker": {
-                    "size": null,
-                    "type": "NONE",
-                    "fill": "#000000ff",
-                    "line_color": "#000000ff",
-                    "line_thickness": null
-                  },
-                  "fill": {
-                    "color": "#000000ff",
-                    "second_color": null
-                  }
-                },
-                "order": 0
-              },
-              {
-                "sid": "Fig_f_cirrhosis_pk__plot5_curve1",
-                "name": null,
-                "x": "task_dap_hepatic_Mild cirrhosis__time",
-                "y": "task_dap_hepatic_Mild cirrhosis__Aurine_daptot",
-                "xerr": null,
-                "yerr": null,
-                "yaxis_position": null,
-                "style": {
-                  "sid": null,
-                  "name": null,
-                  "base_style": null,
-                  "line": {
-                    "type": "SOLID",
-                    "color": "#74a9cfff",
-                    "thickness": 2.0
-                  },
-                  "marker": {
-                    "size": null,
-                    "type": "NONE",
-                    "fill": "#74a9cfff",
-                    "line_color": "#000000ff",
-                    "line_thickness": null
-                  },
-                  "fill": {
-                    "color": "#74a9cfff",
-                    "second_color": null
-                  }
-                },
-                "order": 1
-              },
-              {
-                "sid": "Fig_f_cirrhosis_pk__plot5_curve2",
-                "name": null,
-                "x": "task_dap_hepatic_Moderate cirrhosis__time",
-                "y": "task_dap_hepatic_Moderate cirrhosis__Aurine_daptot",
-                "xerr": null,
-                "yerr": null,
-                "yaxis_position": null,
-                "style": {
-                  "sid": null,
-                  "name": null,
-                  "base_style": null,
-                  "line": {
-                    "type": "SOLID",
-                    "color": "#2b8cbeff",
-                    "thickness": 2.0
-                  },
-                  "marker": {
-                    "size": null,
-                    "type": "NONE",
-                    "fill": "#2b8cbeff",
-                    "line_color": "#000000ff",
-                    "line_thickness": null
-                  },
-                  "fill": {
-                    "color": "#2b8cbeff",
-                    "second_color": null
-                  }
-                },
-                "order": 2
-              },
-              {
-                "sid": "Fig_f_cirrhosis_pk__plot5_curve3",
-                "name": null,
-                "x": "task_dap_hepatic_Severe cirrhosis__time",
-                "y": "task_dap_hepatic_Severe cirrhosis__Aurine_daptot",
-                "xerr": null,
-                "yerr": null,
-                "yaxis_position": null,
-                "style": {
-                  "sid": null,
-                  "name": null,
-                  "base_style": null,
-                  "line": {
-                    "type": "SOLID",
-                    "color": "#045a8dff",
-                    "thickness": 2.0
-                  },
-                  "marker": {
-                    "size": null,
-                    "type": "NONE",
-                    "fill": "#045a8dff",
-                    "line_color": "#000000ff",
-                    "line_thickness": null
-                  },
-                  "fill": {
-                    "color": "#045a8dff",
-                    "second_color": null
-                  }
-                },
-                "order": 3
-              }
-            ],
-            "areas": []
-          },
-          "row": 2,
-          "col": 3,
-          "row_span": 1,
-          "col_span": 1
-        },
-        {
-          "sid": null,
-          "name": null,
-          "plot": {
-            "sid": "Fig_f_cirrhosis_pk__plot6",
-            "name": null,
-            "xaxis": {
-              "sid": "Fig_f_cirrhosis_pk__plot6_xaxis",
-              "name": "time [hr]",
-              "label": "time",
-              "unit": "hr",
-              "scale": "LINEAR",
-              "min": null,
-              "max": null,
-              "grid": false,
-              "label_visible": true,
-              "ticks_visible": true
-            },
-            "yaxis": {
-              "sid": "Fig_f_cirrhosis_pk__plot6_yaxis",
+              "sid": "Fig_f_cirrhosis_pk__plot4_yaxis",
               "name": "dapagliflozin\nfeces [\u00b5mole]",
               "label": "dapagliflozin\nfeces",
               "unit": "\u00b5mole",
@@ -3037,8 +3687,8 @@
             "title_visible": true,
             "curves": [
               {
-                "sid": "Fig_f_cirrhosis_pk__plot6_curve0",
-                "name": null,
+                "sid": "Fig_f_cirrhosis_pk__plot4_curve0",
+                "name": "Control",
                 "x": "task_dap_hepatic_Control__time",
                 "y": "task_dap_hepatic_Control__Afeces_dap",
                 "xerr": null,
@@ -3068,8 +3718,8 @@
                 "order": 0
               },
               {
-                "sid": "Fig_f_cirrhosis_pk__plot6_curve1",
-                "name": null,
+                "sid": "Fig_f_cirrhosis_pk__plot4_curve1",
+                "name": "Mild cirrhosis",
                 "x": "task_dap_hepatic_Mild cirrhosis__time",
                 "y": "task_dap_hepatic_Mild cirrhosis__Afeces_dap",
                 "xerr": null,
@@ -3081,26 +3731,26 @@
                   "base_style": null,
                   "line": {
                     "type": "SOLID",
-                    "color": "#74a9cfff",
+                    "color": "#C4DFF2ff",
                     "thickness": 2.0
                   },
                   "marker": {
                     "size": null,
                     "type": "NONE",
-                    "fill": "#74a9cfff",
+                    "fill": "#C4DFF2ff",
                     "line_color": "#000000ff",
                     "line_thickness": null
                   },
                   "fill": {
-                    "color": "#74a9cfff",
+                    "color": "#C4DFF2ff",
                     "second_color": null
                   }
                 },
                 "order": 1
               },
               {
-                "sid": "Fig_f_cirrhosis_pk__plot6_curve2",
-                "name": null,
+                "sid": "Fig_f_cirrhosis_pk__plot4_curve2",
+                "name": "Moderate cirrhosis",
                 "x": "task_dap_hepatic_Moderate cirrhosis__time",
                 "y": "task_dap_hepatic_Moderate cirrhosis__Afeces_dap",
                 "xerr": null,
@@ -3130,8 +3780,8 @@
                 "order": 2
               },
               {
-                "sid": "Fig_f_cirrhosis_pk__plot6_curve3",
-                "name": null,
+                "sid": "Fig_f_cirrhosis_pk__plot4_curve3",
+                "name": "Severe cirrhosis",
                 "x": "task_dap_hepatic_Severe cirrhosis__time",
                 "y": "task_dap_hepatic_Severe cirrhosis__Afeces_dap",
                 "xerr": null,
@@ -3143,18 +3793,18 @@
                   "base_style": null,
                   "line": {
                     "type": "SOLID",
-                    "color": "#045a8dff",
+                    "color": "#00446Eff",
                     "thickness": 2.0
                   },
                   "marker": {
                     "size": null,
                     "type": "NONE",
-                    "fill": "#045a8dff",
+                    "fill": "#00446Eff",
                     "line_color": "#000000ff",
                     "line_thickness": null
                   },
                   "fill": {
-                    "color": "#045a8dff",
+                    "color": "#00446Eff",
                     "second_color": null
                   }
                 },
@@ -3163,195 +3813,8 @@
             ],
             "areas": []
           },
-          "row": 3,
-          "col": 1,
-          "row_span": 1,
-          "col_span": 1
-        },
-        {
-          "sid": null,
-          "name": null,
-          "plot": {
-            "sid": "Fig_f_cirrhosis_pk__plot7",
-            "name": null,
-            "xaxis": null,
-            "yaxis": null,
-            "yaxis_right": null,
-            "legend": true,
-            "facecolor": "#ffffffff",
-            "title_visible": true,
-            "curves": [],
-            "areas": []
-          },
-          "row": 3,
-          "col": 2,
-          "row_span": 1,
-          "col_span": 1
-        },
-        {
-          "sid": null,
-          "name": null,
-          "plot": {
-            "sid": "Fig_f_cirrhosis_pk__plot8",
-            "name": null,
-            "xaxis": {
-              "sid": "Fig_f_cirrhosis_pk__plot8_xaxis",
-              "name": "time [hr]",
-              "label": "time",
-              "unit": "hr",
-              "scale": "LINEAR",
-              "min": null,
-              "max": null,
-              "grid": false,
-              "label_visible": true,
-              "ticks_visible": true
-            },
-            "yaxis": {
-              "sid": "Fig_f_cirrhosis_pk__plot8_yaxis",
-              "name": "DAP + D3G\nfeces [\u00b5mole]",
-              "label": "DAP + D3G\nfeces",
-              "unit": "\u00b5mole",
-              "scale": "LINEAR",
-              "min": null,
-              "max": null,
-              "grid": false,
-              "label_visible": true,
-              "ticks_visible": true
-            },
-            "yaxis_right": null,
-            "legend": true,
-            "facecolor": "#ffffffff",
-            "title_visible": true,
-            "curves": [
-              {
-                "sid": "Fig_f_cirrhosis_pk__plot8_curve0",
-                "name": null,
-                "x": "task_dap_hepatic_Control__time",
-                "y": "task_dap_hepatic_Control__Afeces_daptot",
-                "xerr": null,
-                "yerr": null,
-                "yaxis_position": null,
-                "style": {
-                  "sid": null,
-                  "name": null,
-                  "base_style": null,
-                  "line": {
-                    "type": "SOLID",
-                    "color": "#000000ff",
-                    "thickness": 2.0
-                  },
-                  "marker": {
-                    "size": null,
-                    "type": "NONE",
-                    "fill": "#000000ff",
-                    "line_color": "#000000ff",
-                    "line_thickness": null
-                  },
-                  "fill": {
-                    "color": "#000000ff",
-                    "second_color": null
-                  }
-                },
-                "order": 0
-              },
-              {
-                "sid": "Fig_f_cirrhosis_pk__plot8_curve1",
-                "name": null,
-                "x": "task_dap_hepatic_Mild cirrhosis__time",
-                "y": "task_dap_hepatic_Mild cirrhosis__Afeces_daptot",
-                "xerr": null,
-                "yerr": null,
-                "yaxis_position": null,
-                "style": {
-                  "sid": null,
-                  "name": null,
-                  "base_style": null,
-                  "line": {
-                    "type": "SOLID",
-                    "color": "#74a9cfff",
-                    "thickness": 2.0
-                  },
-                  "marker": {
-                    "size": null,
-                    "type": "NONE",
-                    "fill": "#74a9cfff",
-                    "line_color": "#000000ff",
-                    "line_thickness": null
-                  },
-                  "fill": {
-                    "color": "#74a9cfff",
-                    "second_color": null
-                  }
-                },
-                "order": 1
-              },
-              {
-                "sid": "Fig_f_cirrhosis_pk__plot8_curve2",
-                "name": null,
-                "x": "task_dap_hepatic_Moderate cirrhosis__time",
-                "y": "task_dap_hepatic_Moderate cirrhosis__Afeces_daptot",
-                "xerr": null,
-                "yerr": null,
-                "yaxis_position": null,
-                "style": {
-                  "sid": null,
-                  "name": null,
-                  "base_style": null,
-                  "line": {
-                    "type": "SOLID",
-                    "color": "#2b8cbeff",
-                    "thickness": 2.0
-                  },
-                  "marker": {
-                    "size": null,
-                    "type": "NONE",
-                    "fill": "#2b8cbeff",
-                    "line_color": "#000000ff",
-                    "line_thickness": null
-                  },
-                  "fill": {
-                    "color": "#2b8cbeff",
-                    "second_color": null
-                  }
-                },
-                "order": 2
-              },
-              {
-                "sid": "Fig_f_cirrhosis_pk__plot8_curve3",
-                "name": null,
-                "x": "task_dap_hepatic_Severe cirrhosis__time",
-                "y": "task_dap_hepatic_Severe cirrhosis__Afeces_daptot",
-                "xerr": null,
-                "yerr": null,
-                "yaxis_position": null,
-                "style": {
-                  "sid": null,
-                  "name": null,
-                  "base_style": null,
-                  "line": {
-                    "type": "SOLID",
-                    "color": "#045a8dff",
-                    "thickness": 2.0
-                  },
-                  "marker": {
-                    "size": null,
-                    "type": "NONE",
-                    "fill": "#045a8dff",
-                    "line_color": "#000000ff",
-                    "line_thickness": null
-                  },
-                  "fill": {
-                    "color": "#045a8dff",
-                    "second_color": null
-                  }
-                },
-                "order": 3
-              }
-            ],
-            "areas": []
-          },
-          "row": 3,
-          "col": 3,
+          "row": 1,
+          "col": 5,
           "row_span": 1,
           "col_span": 1
         }
@@ -3359,11 +3822,11 @@
     },
     "Fig_KI__f_renal_function_pk": {
       "sid": "Fig_KI__f_renal_function_pk",
-      "name": null,
-      "num_rows": 3,
-      "num_cols": 3,
-      "width": 21.0,
-      "height": 15.0,
+      "name": "Pharmacokinetics: Renal impairment",
+      "num_rows": 1,
+      "num_cols": 5,
+      "width": 35.0,
+      "height": 5.0,
       "subplots": [
         {
           "sid": null,
@@ -3403,8 +3866,8 @@
               {
                 "sid": "Fig_KI__f_renal_function_pk__plot0_curve0",
                 "name": "Normal renal function",
-                "x": "task_dap_renal_Normal renal function__time",
-                "y": "task_dap_renal_Normal renal function__Cve_dap",
+                "x": "task_dap_renal_Normal renal function_po50__time",
+                "y": "task_dap_renal_Normal renal function_po50__Cve_dap",
                 "xerr": null,
                 "yerr": null,
                 "yaxis_position": null,
@@ -3434,8 +3897,8 @@
               {
                 "sid": "Fig_KI__f_renal_function_pk__plot0_curve1",
                 "name": "Mild renal impairment",
-                "x": "task_dap_renal_Mild renal impairment__time",
-                "y": "task_dap_renal_Mild renal impairment__Cve_dap",
+                "x": "task_dap_renal_Mild renal impairment_po50__time",
+                "y": "task_dap_renal_Mild renal impairment_po50__Cve_dap",
                 "xerr": null,
                 "yerr": null,
                 "yaxis_position": null,
@@ -3465,8 +3928,8 @@
               {
                 "sid": "Fig_KI__f_renal_function_pk__plot0_curve2",
                 "name": "Moderate renal impairment",
-                "x": "task_dap_renal_Moderate renal impairment__time",
-                "y": "task_dap_renal_Moderate renal impairment__Cve_dap",
+                "x": "task_dap_renal_Moderate renal impairment_po50__time",
+                "y": "task_dap_renal_Moderate renal impairment_po50__Cve_dap",
                 "xerr": null,
                 "yerr": null,
                 "yaxis_position": null,
@@ -3496,8 +3959,8 @@
               {
                 "sid": "Fig_KI__f_renal_function_pk__plot0_curve3",
                 "name": "Severe renal impairment",
-                "x": "task_dap_renal_Severe renal impairment__time",
-                "y": "task_dap_renal_Severe renal impairment__Cve_dap",
+                "x": "task_dap_renal_Severe renal impairment_po50__time",
+                "y": "task_dap_renal_Severe renal impairment_po50__Cve_dap",
                 "xerr": null,
                 "yerr": null,
                 "yaxis_position": null,
@@ -3569,9 +4032,9 @@
             "curves": [
               {
                 "sid": "Fig_KI__f_renal_function_pk__plot1_curve0",
-                "name": null,
-                "x": "task_dap_renal_Normal renal function__time",
-                "y": "task_dap_renal_Normal renal function__Cve_d3g",
+                "name": "Normal renal function",
+                "x": "task_dap_renal_Normal renal function_po50__time",
+                "y": "task_dap_renal_Normal renal function_po50__Cve_d3g",
                 "xerr": null,
                 "yerr": null,
                 "yaxis_position": null,
@@ -3600,9 +4063,9 @@
               },
               {
                 "sid": "Fig_KI__f_renal_function_pk__plot1_curve1",
-                "name": null,
-                "x": "task_dap_renal_Mild renal impairment__time",
-                "y": "task_dap_renal_Mild renal impairment__Cve_d3g",
+                "name": "Mild renal impairment",
+                "x": "task_dap_renal_Mild renal impairment_po50__time",
+                "y": "task_dap_renal_Mild renal impairment_po50__Cve_d3g",
                 "xerr": null,
                 "yerr": null,
                 "yaxis_position": null,
@@ -3631,9 +4094,9 @@
               },
               {
                 "sid": "Fig_KI__f_renal_function_pk__plot1_curve2",
-                "name": null,
-                "x": "task_dap_renal_Moderate renal impairment__time",
-                "y": "task_dap_renal_Moderate renal impairment__Cve_d3g",
+                "name": "Moderate renal impairment",
+                "x": "task_dap_renal_Moderate renal impairment_po50__time",
+                "y": "task_dap_renal_Moderate renal impairment_po50__Cve_d3g",
                 "xerr": null,
                 "yerr": null,
                 "yaxis_position": null,
@@ -3662,9 +4125,9 @@
               },
               {
                 "sid": "Fig_KI__f_renal_function_pk__plot1_curve3",
-                "name": null,
-                "x": "task_dap_renal_Severe renal impairment__time",
-                "y": "task_dap_renal_Severe renal impairment__Cve_d3g",
+                "name": "Severe renal impairment",
+                "x": "task_dap_renal_Severe renal impairment_po50__time",
+                "y": "task_dap_renal_Severe renal impairment_po50__Cve_d3g",
                 "xerr": null,
                 "yerr": null,
                 "yaxis_position": null,
@@ -3719,9 +4182,9 @@
             },
             "yaxis": {
               "sid": "Fig_KI__f_renal_function_pk__plot2_yaxis",
-              "name": "DAP + D3G\nplasma [\u00b5M]",
-              "label": "DAP + D3G\nplasma",
-              "unit": "\u00b5M",
+              "name": "dapagliflozin\nurine [\u00b5mole]",
+              "label": "dapagliflozin\nurine",
+              "unit": "\u00b5mole",
               "scale": "LINEAR",
               "min": null,
               "max": null,
@@ -3736,9 +4199,9 @@
             "curves": [
               {
                 "sid": "Fig_KI__f_renal_function_pk__plot2_curve0",
-                "name": null,
-                "x": "task_dap_renal_Normal renal function__time",
-                "y": "task_dap_renal_Normal renal function__Cve_daptot",
+                "name": "Normal renal function",
+                "x": "task_dap_renal_Normal renal function_po50__time",
+                "y": "task_dap_renal_Normal renal function_po50__Aurine_dap",
                 "xerr": null,
                 "yerr": null,
                 "yaxis_position": null,
@@ -3767,9 +4230,9 @@
               },
               {
                 "sid": "Fig_KI__f_renal_function_pk__plot2_curve1",
-                "name": null,
-                "x": "task_dap_renal_Mild renal impairment__time",
-                "y": "task_dap_renal_Mild renal impairment__Cve_daptot",
+                "name": "Mild renal impairment",
+                "x": "task_dap_renal_Mild renal impairment_po50__time",
+                "y": "task_dap_renal_Mild renal impairment_po50__Aurine_dap",
                 "xerr": null,
                 "yerr": null,
                 "yaxis_position": null,
@@ -3798,9 +4261,9 @@
               },
               {
                 "sid": "Fig_KI__f_renal_function_pk__plot2_curve2",
-                "name": null,
-                "x": "task_dap_renal_Moderate renal impairment__time",
-                "y": "task_dap_renal_Moderate renal impairment__Cve_daptot",
+                "name": "Moderate renal impairment",
+                "x": "task_dap_renal_Moderate renal impairment_po50__time",
+                "y": "task_dap_renal_Moderate renal impairment_po50__Aurine_dap",
                 "xerr": null,
                 "yerr": null,
                 "yaxis_position": null,
@@ -3829,9 +4292,9 @@
               },
               {
                 "sid": "Fig_KI__f_renal_function_pk__plot2_curve3",
-                "name": null,
-                "x": "task_dap_renal_Severe renal impairment__time",
-                "y": "task_dap_renal_Severe renal impairment__Cve_daptot",
+                "name": "Severe renal impairment",
+                "x": "task_dap_renal_Severe renal impairment_po50__time",
+                "y": "task_dap_renal_Severe renal impairment_po50__Aurine_dap",
                 "xerr": null,
                 "yerr": null,
                 "yaxis_position": null,
@@ -3886,8 +4349,8 @@
             },
             "yaxis": {
               "sid": "Fig_KI__f_renal_function_pk__plot3_yaxis",
-              "name": "dapagliflozin\nurine [\u00b5mole]",
-              "label": "dapagliflozin\nurine",
+              "name": "dapagliflozin-3-O-\nglucuronide urine [\u00b5mole]",
+              "label": "dapagliflozin-3-O-\nglucuronide urine",
               "unit": "\u00b5mole",
               "scale": "LINEAR",
               "min": null,
@@ -3903,9 +4366,9 @@
             "curves": [
               {
                 "sid": "Fig_KI__f_renal_function_pk__plot3_curve0",
-                "name": null,
-                "x": "task_dap_renal_Normal renal function__time",
-                "y": "task_dap_renal_Normal renal function__Aurine_dap",
+                "name": "Normal renal function",
+                "x": "task_dap_renal_Normal renal function_po50__time",
+                "y": "task_dap_renal_Normal renal function_po50__Aurine_d3g",
                 "xerr": null,
                 "yerr": null,
                 "yaxis_position": null,
@@ -3934,9 +4397,9 @@
               },
               {
                 "sid": "Fig_KI__f_renal_function_pk__plot3_curve1",
-                "name": null,
-                "x": "task_dap_renal_Mild renal impairment__time",
-                "y": "task_dap_renal_Mild renal impairment__Aurine_dap",
+                "name": "Mild renal impairment",
+                "x": "task_dap_renal_Mild renal impairment_po50__time",
+                "y": "task_dap_renal_Mild renal impairment_po50__Aurine_d3g",
                 "xerr": null,
                 "yerr": null,
                 "yaxis_position": null,
@@ -3965,9 +4428,9 @@
               },
               {
                 "sid": "Fig_KI__f_renal_function_pk__plot3_curve2",
-                "name": null,
-                "x": "task_dap_renal_Moderate renal impairment__time",
-                "y": "task_dap_renal_Moderate renal impairment__Aurine_dap",
+                "name": "Moderate renal impairment",
+                "x": "task_dap_renal_Moderate renal impairment_po50__time",
+                "y": "task_dap_renal_Moderate renal impairment_po50__Aurine_d3g",
                 "xerr": null,
                 "yerr": null,
                 "yaxis_position": null,
@@ -3996,9 +4459,9 @@
               },
               {
                 "sid": "Fig_KI__f_renal_function_pk__plot3_curve3",
-                "name": null,
-                "x": "task_dap_renal_Severe renal impairment__time",
-                "y": "task_dap_renal_Severe renal impairment__Aurine_dap",
+                "name": "Severe renal impairment",
+                "x": "task_dap_renal_Severe renal impairment_po50__time",
+                "y": "task_dap_renal_Severe renal impairment_po50__Aurine_d3g",
                 "xerr": null,
                 "yerr": null,
                 "yaxis_position": null,
@@ -4028,8 +4491,8 @@
             ],
             "areas": []
           },
-          "row": 2,
-          "col": 1,
+          "row": 1,
+          "col": 4,
           "row_span": 1,
           "col_span": 1
         },
@@ -4053,8 +4516,8 @@
             },
             "yaxis": {
               "sid": "Fig_KI__f_renal_function_pk__plot4_yaxis",
-              "name": "dapagliflozin-3-O-\nglucuronide urine [\u00b5mole]",
-              "label": "dapagliflozin-3-O-\nglucuronide urine",
+              "name": "dapagliflozin\nfeces [\u00b5mole]",
+              "label": "dapagliflozin\nfeces",
               "unit": "\u00b5mole",
               "scale": "LINEAR",
               "min": null,
@@ -4070,9 +4533,9 @@
             "curves": [
               {
                 "sid": "Fig_KI__f_renal_function_pk__plot4_curve0",
-                "name": null,
-                "x": "task_dap_renal_Normal renal function__time",
-                "y": "task_dap_renal_Normal renal function__Aurine_d3g",
+                "name": "Normal renal function",
+                "x": "task_dap_renal_Normal renal function_po50__time",
+                "y": "task_dap_renal_Normal renal function_po50__Afeces_dap",
                 "xerr": null,
                 "yerr": null,
                 "yaxis_position": null,
@@ -4101,9 +4564,9 @@
               },
               {
                 "sid": "Fig_KI__f_renal_function_pk__plot4_curve1",
-                "name": null,
-                "x": "task_dap_renal_Mild renal impairment__time",
-                "y": "task_dap_renal_Mild renal impairment__Aurine_d3g",
+                "name": "Mild renal impairment",
+                "x": "task_dap_renal_Mild renal impairment_po50__time",
+                "y": "task_dap_renal_Mild renal impairment_po50__Afeces_dap",
                 "xerr": null,
                 "yerr": null,
                 "yaxis_position": null,
@@ -4132,9 +4595,9 @@
               },
               {
                 "sid": "Fig_KI__f_renal_function_pk__plot4_curve2",
-                "name": null,
-                "x": "task_dap_renal_Moderate renal impairment__time",
-                "y": "task_dap_renal_Moderate renal impairment__Aurine_d3g",
+                "name": "Moderate renal impairment",
+                "x": "task_dap_renal_Moderate renal impairment_po50__time",
+                "y": "task_dap_renal_Moderate renal impairment_po50__Afeces_dap",
                 "xerr": null,
                 "yerr": null,
                 "yaxis_position": null,
@@ -4163,9 +4626,9 @@
               },
               {
                 "sid": "Fig_KI__f_renal_function_pk__plot4_curve3",
-                "name": null,
-                "x": "task_dap_renal_Severe renal impairment__time",
-                "y": "task_dap_renal_Severe renal impairment__Aurine_d3g",
+                "name": "Severe renal impairment",
+                "x": "task_dap_renal_Severe renal impairment_po50__time",
+                "y": "task_dap_renal_Severe renal impairment_po50__Afeces_dap",
                 "xerr": null,
                 "yerr": null,
                 "yaxis_position": null,
@@ -4195,529 +4658,8 @@
             ],
             "areas": []
           },
-          "row": 2,
-          "col": 2,
-          "row_span": 1,
-          "col_span": 1
-        },
-        {
-          "sid": null,
-          "name": null,
-          "plot": {
-            "sid": "Fig_KI__f_renal_function_pk__plot5",
-            "name": null,
-            "xaxis": {
-              "sid": "Fig_KI__f_renal_function_pk__plot5_xaxis",
-              "name": "time [hr]",
-              "label": "time",
-              "unit": "hr",
-              "scale": "LINEAR",
-              "min": null,
-              "max": null,
-              "grid": false,
-              "label_visible": true,
-              "ticks_visible": true
-            },
-            "yaxis": {
-              "sid": "Fig_KI__f_renal_function_pk__plot5_yaxis",
-              "name": "DAP + D3G\nurine [\u00b5mole]",
-              "label": "DAP + D3G\nurine",
-              "unit": "\u00b5mole",
-              "scale": "LINEAR",
-              "min": null,
-              "max": null,
-              "grid": false,
-              "label_visible": true,
-              "ticks_visible": true
-            },
-            "yaxis_right": null,
-            "legend": true,
-            "facecolor": "#ffffffff",
-            "title_visible": true,
-            "curves": [
-              {
-                "sid": "Fig_KI__f_renal_function_pk__plot5_curve0",
-                "name": null,
-                "x": "task_dap_renal_Normal renal function__time",
-                "y": "task_dap_renal_Normal renal function__Aurine_daptot",
-                "xerr": null,
-                "yerr": null,
-                "yaxis_position": null,
-                "style": {
-                  "sid": null,
-                  "name": null,
-                  "base_style": null,
-                  "line": {
-                    "type": "SOLID",
-                    "color": "#000000ff",
-                    "thickness": 2.0
-                  },
-                  "marker": {
-                    "size": null,
-                    "type": "NONE",
-                    "fill": "#000000ff",
-                    "line_color": "#000000ff",
-                    "line_thickness": null
-                  },
-                  "fill": {
-                    "color": "#000000ff",
-                    "second_color": null
-                  }
-                },
-                "order": 0
-              },
-              {
-                "sid": "Fig_KI__f_renal_function_pk__plot5_curve1",
-                "name": null,
-                "x": "task_dap_renal_Mild renal impairment__time",
-                "y": "task_dap_renal_Mild renal impairment__Aurine_daptot",
-                "xerr": null,
-                "yerr": null,
-                "yaxis_position": null,
-                "style": {
-                  "sid": null,
-                  "name": null,
-                  "base_style": null,
-                  "line": {
-                    "type": "SOLID",
-                    "color": "#66c2a4ff",
-                    "thickness": 2.0
-                  },
-                  "marker": {
-                    "size": null,
-                    "type": "NONE",
-                    "fill": "#66c2a4ff",
-                    "line_color": "#000000ff",
-                    "line_thickness": null
-                  },
-                  "fill": {
-                    "color": "#66c2a4ff",
-                    "second_color": null
-                  }
-                },
-                "order": 1
-              },
-              {
-                "sid": "Fig_KI__f_renal_function_pk__plot5_curve2",
-                "name": null,
-                "x": "task_dap_renal_Moderate renal impairment__time",
-                "y": "task_dap_renal_Moderate renal impairment__Aurine_daptot",
-                "xerr": null,
-                "yerr": null,
-                "yaxis_position": null,
-                "style": {
-                  "sid": null,
-                  "name": null,
-                  "base_style": null,
-                  "line": {
-                    "type": "SOLID",
-                    "color": "#2ca25fff",
-                    "thickness": 2.0
-                  },
-                  "marker": {
-                    "size": null,
-                    "type": "NONE",
-                    "fill": "#2ca25fff",
-                    "line_color": "#000000ff",
-                    "line_thickness": null
-                  },
-                  "fill": {
-                    "color": "#2ca25fff",
-                    "second_color": null
-                  }
-                },
-                "order": 2
-              },
-              {
-                "sid": "Fig_KI__f_renal_function_pk__plot5_curve3",
-                "name": null,
-                "x": "task_dap_renal_Severe renal impairment__time",
-                "y": "task_dap_renal_Severe renal impairment__Aurine_daptot",
-                "xerr": null,
-                "yerr": null,
-                "yaxis_position": null,
-                "style": {
-                  "sid": null,
-                  "name": null,
-                  "base_style": null,
-                  "line": {
-                    "type": "SOLID",
-                    "color": "#006d2cff",
-                    "thickness": 2.0
-                  },
-                  "marker": {
-                    "size": null,
-                    "type": "NONE",
-                    "fill": "#006d2cff",
-                    "line_color": "#000000ff",
-                    "line_thickness": null
-                  },
-                  "fill": {
-                    "color": "#006d2cff",
-                    "second_color": null
-                  }
-                },
-                "order": 3
-              }
-            ],
-            "areas": []
-          },
-          "row": 2,
-          "col": 3,
-          "row_span": 1,
-          "col_span": 1
-        },
-        {
-          "sid": null,
-          "name": null,
-          "plot": {
-            "sid": "Fig_KI__f_renal_function_pk__plot6",
-            "name": null,
-            "xaxis": {
-              "sid": "Fig_KI__f_renal_function_pk__plot6_xaxis",
-              "name": "time [hr]",
-              "label": "time",
-              "unit": "hr",
-              "scale": "LINEAR",
-              "min": null,
-              "max": null,
-              "grid": false,
-              "label_visible": true,
-              "ticks_visible": true
-            },
-            "yaxis": {
-              "sid": "Fig_KI__f_renal_function_pk__plot6_yaxis",
-              "name": "dapagliflozin\nfeces [\u00b5mole]",
-              "label": "dapagliflozin\nfeces",
-              "unit": "\u00b5mole",
-              "scale": "LINEAR",
-              "min": null,
-              "max": null,
-              "grid": false,
-              "label_visible": true,
-              "ticks_visible": true
-            },
-            "yaxis_right": null,
-            "legend": true,
-            "facecolor": "#ffffffff",
-            "title_visible": true,
-            "curves": [
-              {
-                "sid": "Fig_KI__f_renal_function_pk__plot6_curve0",
-                "name": null,
-                "x": "task_dap_renal_Normal renal function__time",
-                "y": "task_dap_renal_Normal renal function__Afeces_dap",
-                "xerr": null,
-                "yerr": null,
-                "yaxis_position": null,
-                "style": {
-                  "sid": null,
-                  "name": null,
-                  "base_style": null,
-                  "line": {
-                    "type": "SOLID",
-                    "color": "#000000ff",
-                    "thickness": 2.0
-                  },
-                  "marker": {
-                    "size": null,
-                    "type": "NONE",
-                    "fill": "#000000ff",
-                    "line_color": "#000000ff",
-                    "line_thickness": null
-                  },
-                  "fill": {
-                    "color": "#000000ff",
-                    "second_color": null
-                  }
-                },
-                "order": 0
-              },
-              {
-                "sid": "Fig_KI__f_renal_function_pk__plot6_curve1",
-                "name": null,
-                "x": "task_dap_renal_Mild renal impairment__time",
-                "y": "task_dap_renal_Mild renal impairment__Afeces_dap",
-                "xerr": null,
-                "yerr": null,
-                "yaxis_position": null,
-                "style": {
-                  "sid": null,
-                  "name": null,
-                  "base_style": null,
-                  "line": {
-                    "type": "SOLID",
-                    "color": "#66c2a4ff",
-                    "thickness": 2.0
-                  },
-                  "marker": {
-                    "size": null,
-                    "type": "NONE",
-                    "fill": "#66c2a4ff",
-                    "line_color": "#000000ff",
-                    "line_thickness": null
-                  },
-                  "fill": {
-                    "color": "#66c2a4ff",
-                    "second_color": null
-                  }
-                },
-                "order": 1
-              },
-              {
-                "sid": "Fig_KI__f_renal_function_pk__plot6_curve2",
-                "name": null,
-                "x": "task_dap_renal_Moderate renal impairment__time",
-                "y": "task_dap_renal_Moderate renal impairment__Afeces_dap",
-                "xerr": null,
-                "yerr": null,
-                "yaxis_position": null,
-                "style": {
-                  "sid": null,
-                  "name": null,
-                  "base_style": null,
-                  "line": {
-                    "type": "SOLID",
-                    "color": "#2ca25fff",
-                    "thickness": 2.0
-                  },
-                  "marker": {
-                    "size": null,
-                    "type": "NONE",
-                    "fill": "#2ca25fff",
-                    "line_color": "#000000ff",
-                    "line_thickness": null
-                  },
-                  "fill": {
-                    "color": "#2ca25fff",
-                    "second_color": null
-                  }
-                },
-                "order": 2
-              },
-              {
-                "sid": "Fig_KI__f_renal_function_pk__plot6_curve3",
-                "name": null,
-                "x": "task_dap_renal_Severe renal impairment__time",
-                "y": "task_dap_renal_Severe renal impairment__Afeces_dap",
-                "xerr": null,
-                "yerr": null,
-                "yaxis_position": null,
-                "style": {
-                  "sid": null,
-                  "name": null,
-                  "base_style": null,
-                  "line": {
-                    "type": "SOLID",
-                    "color": "#006d2cff",
-                    "thickness": 2.0
-                  },
-                  "marker": {
-                    "size": null,
-                    "type": "NONE",
-                    "fill": "#006d2cff",
-                    "line_color": "#000000ff",
-                    "line_thickness": null
-                  },
-                  "fill": {
-                    "color": "#006d2cff",
-                    "second_color": null
-                  }
-                },
-                "order": 3
-              }
-            ],
-            "areas": []
-          },
-          "row": 3,
-          "col": 1,
-          "row_span": 1,
-          "col_span": 1
-        },
-        {
-          "sid": null,
-          "name": null,
-          "plot": {
-            "sid": "Fig_KI__f_renal_function_pk__plot7",
-            "name": null,
-            "xaxis": null,
-            "yaxis": null,
-            "yaxis_right": null,
-            "legend": true,
-            "facecolor": "#ffffffff",
-            "title_visible": true,
-            "curves": [],
-            "areas": []
-          },
-          "row": 3,
-          "col": 2,
-          "row_span": 1,
-          "col_span": 1
-        },
-        {
-          "sid": null,
-          "name": null,
-          "plot": {
-            "sid": "Fig_KI__f_renal_function_pk__plot8",
-            "name": null,
-            "xaxis": {
-              "sid": "Fig_KI__f_renal_function_pk__plot8_xaxis",
-              "name": "time [hr]",
-              "label": "time",
-              "unit": "hr",
-              "scale": "LINEAR",
-              "min": null,
-              "max": null,
-              "grid": false,
-              "label_visible": true,
-              "ticks_visible": true
-            },
-            "yaxis": {
-              "sid": "Fig_KI__f_renal_function_pk__plot8_yaxis",
-              "name": "DAP + D3G\nfeces [\u00b5mole]",
-              "label": "DAP + D3G\nfeces",
-              "unit": "\u00b5mole",
-              "scale": "LINEAR",
-              "min": null,
-              "max": null,
-              "grid": false,
-              "label_visible": true,
-              "ticks_visible": true
-            },
-            "yaxis_right": null,
-            "legend": true,
-            "facecolor": "#ffffffff",
-            "title_visible": true,
-            "curves": [
-              {
-                "sid": "Fig_KI__f_renal_function_pk__plot8_curve0",
-                "name": null,
-                "x": "task_dap_renal_Normal renal function__time",
-                "y": "task_dap_renal_Normal renal function__Afeces_daptot",
-                "xerr": null,
-                "yerr": null,
-                "yaxis_position": null,
-                "style": {
-                  "sid": null,
-                  "name": null,
-                  "base_style": null,
-                  "line": {
-                    "type": "SOLID",
-                    "color": "#000000ff",
-                    "thickness": 2.0
-                  },
-                  "marker": {
-                    "size": null,
-                    "type": "NONE",
-                    "fill": "#000000ff",
-                    "line_color": "#000000ff",
-                    "line_thickness": null
-                  },
-                  "fill": {
-                    "color": "#000000ff",
-                    "second_color": null
-                  }
-                },
-                "order": 0
-              },
-              {
-                "sid": "Fig_KI__f_renal_function_pk__plot8_curve1",
-                "name": null,
-                "x": "task_dap_renal_Mild renal impairment__time",
-                "y": "task_dap_renal_Mild renal impairment__Afeces_daptot",
-                "xerr": null,
-                "yerr": null,
-                "yaxis_position": null,
-                "style": {
-                  "sid": null,
-                  "name": null,
-                  "base_style": null,
-                  "line": {
-                    "type": "SOLID",
-                    "color": "#66c2a4ff",
-                    "thickness": 2.0
-                  },
-                  "marker": {
-                    "size": null,
-                    "type": "NONE",
-                    "fill": "#66c2a4ff",
-                    "line_color": "#000000ff",
-                    "line_thickness": null
-                  },
-                  "fill": {
-                    "color": "#66c2a4ff",
-                    "second_color": null
-                  }
-                },
-                "order": 1
-              },
-              {
-                "sid": "Fig_KI__f_renal_function_pk__plot8_curve2",
-                "name": null,
-                "x": "task_dap_renal_Moderate renal impairment__time",
-                "y": "task_dap_renal_Moderate renal impairment__Afeces_daptot",
-                "xerr": null,
-                "yerr": null,
-                "yaxis_position": null,
-                "style": {
-                  "sid": null,
-                  "name": null,
-                  "base_style": null,
-                  "line": {
-                    "type": "SOLID",
-                    "color": "#2ca25fff",
-                    "thickness": 2.0
-                  },
-                  "marker": {
-                    "size": null,
-                    "type": "NONE",
-                    "fill": "#2ca25fff",
-                    "line_color": "#000000ff",
-                    "line_thickness": null
-                  },
-                  "fill": {
-                    "color": "#2ca25fff",
-                    "second_color": null
-                  }
-                },
-                "order": 2
-              },
-              {
-                "sid": "Fig_KI__f_renal_function_pk__plot8_curve3",
-                "name": null,
-                "x": "task_dap_renal_Severe renal impairment__time",
-                "y": "task_dap_renal_Severe renal impairment__Afeces_daptot",
-                "xerr": null,
-                "yerr": null,
-                "yaxis_position": null,
-                "style": {
-                  "sid": null,
-                  "name": null,
-                  "base_style": null,
-                  "line": {
-                    "type": "SOLID",
-                    "color": "#006d2cff",
-                    "thickness": 2.0
-                  },
-                  "marker": {
-                    "size": null,
-                    "type": "NONE",
-                    "fill": "#006d2cff",
-                    "line_color": "#000000ff",
-                    "line_thickness": null
-                  },
-                  "fill": {
-                    "color": "#006d2cff",
-                    "second_color": null
-                  }
-                },
-                "order": 3
-              }
-            ],
-            "areas": []
-          },
-          "row": 3,
-          "col": 3,
+          "row": 1,
+          "col": 5,
           "row_span": 1,
           "col_span": 1
         }
@@ -4725,11 +4667,11 @@
     },
     "Fig_f_cirrhosis_pd": {
       "sid": "Fig_f_cirrhosis_pd",
-      "name": null,
-      "num_rows": 2,
-      "num_cols": 3,
-      "width": 21.0,
-      "height": 10.0,
+      "name": "Pharmacodynamics: Hepatic impairment",
+      "num_rows": 1,
+      "num_cols": 5,
+      "width": 35.0,
+      "height": 5.0,
       "subplots": [
         {
           "sid": null,
@@ -4751,8 +4693,8 @@
             },
             "yaxis": {
               "sid": "Fig_f_cirrhosis_pd__plot0_yaxis",
-              "name": "glucose plasma [mM]",
-              "label": "glucose plasma",
+              "name": "RTG [mM]",
+              "label": "RTG",
               "unit": "mM",
               "scale": "LINEAR",
               "min": null,
@@ -4770,7 +4712,7 @@
                 "sid": "Fig_f_cirrhosis_pd__plot0_curve0",
                 "name": "Control",
                 "x": "task_dap_hepatic_Control__time",
-                "y": "task_dap_hepatic_Control__KI__glc_ext",
+                "y": "task_dap_hepatic_Control__KI__RTG",
                 "xerr": null,
                 "yerr": null,
                 "yaxis_position": null,
@@ -4801,7 +4743,7 @@
                 "sid": "Fig_f_cirrhosis_pd__plot0_curve1",
                 "name": "Mild cirrhosis",
                 "x": "task_dap_hepatic_Mild cirrhosis__time",
-                "y": "task_dap_hepatic_Mild cirrhosis__KI__glc_ext",
+                "y": "task_dap_hepatic_Mild cirrhosis__KI__RTG",
                 "xerr": null,
                 "yerr": null,
                 "yaxis_position": null,
@@ -4811,18 +4753,18 @@
                   "base_style": null,
                   "line": {
                     "type": "SOLID",
-                    "color": "#74a9cfff",
+                    "color": "#C4DFF2ff",
                     "thickness": 2.0
                   },
                   "marker": {
                     "size": null,
                     "type": "NONE",
-                    "fill": "#74a9cfff",
+                    "fill": "#C4DFF2ff",
                     "line_color": "#000000ff",
                     "line_thickness": null
                   },
                   "fill": {
-                    "color": "#74a9cfff",
+                    "color": "#C4DFF2ff",
                     "second_color": null
                   }
                 },
@@ -4832,7 +4774,7 @@
                 "sid": "Fig_f_cirrhosis_pd__plot0_curve2",
                 "name": "Moderate cirrhosis",
                 "x": "task_dap_hepatic_Moderate cirrhosis__time",
-                "y": "task_dap_hepatic_Moderate cirrhosis__KI__glc_ext",
+                "y": "task_dap_hepatic_Moderate cirrhosis__KI__RTG",
                 "xerr": null,
                 "yerr": null,
                 "yaxis_position": null,
@@ -4863,7 +4805,7 @@
                 "sid": "Fig_f_cirrhosis_pd__plot0_curve3",
                 "name": "Severe cirrhosis",
                 "x": "task_dap_hepatic_Severe cirrhosis__time",
-                "y": "task_dap_hepatic_Severe cirrhosis__KI__glc_ext",
+                "y": "task_dap_hepatic_Severe cirrhosis__KI__RTG",
                 "xerr": null,
                 "yerr": null,
                 "yaxis_position": null,
@@ -4873,18 +4815,18 @@
                   "base_style": null,
                   "line": {
                     "type": "SOLID",
-                    "color": "#045a8dff",
+                    "color": "#00446Eff",
                     "thickness": 2.0
                   },
                   "marker": {
                     "size": null,
                     "type": "NONE",
-                    "fill": "#045a8dff",
+                    "fill": "#00446Eff",
                     "line_color": "#000000ff",
                     "line_thickness": null
                   },
                   "fill": {
-                    "color": "#045a8dff",
+                    "color": "#00446Eff",
                     "second_color": null
                   }
                 },
@@ -4918,173 +4860,6 @@
             },
             "yaxis": {
               "sid": "Fig_f_cirrhosis_pd__plot1_yaxis",
-              "name": "RTG [mM]",
-              "label": "RTG",
-              "unit": "mM",
-              "scale": "LINEAR",
-              "min": null,
-              "max": null,
-              "grid": false,
-              "label_visible": true,
-              "ticks_visible": true
-            },
-            "yaxis_right": null,
-            "legend": true,
-            "facecolor": "#ffffffff",
-            "title_visible": true,
-            "curves": [
-              {
-                "sid": "Fig_f_cirrhosis_pd__plot1_curve0",
-                "name": null,
-                "x": "task_dap_hepatic_Control__time",
-                "y": "task_dap_hepatic_Control__KI__RTG",
-                "xerr": null,
-                "yerr": null,
-                "yaxis_position": null,
-                "style": {
-                  "sid": null,
-                  "name": null,
-                  "base_style": null,
-                  "line": {
-                    "type": "SOLID",
-                    "color": "#000000ff",
-                    "thickness": 2.0
-                  },
-                  "marker": {
-                    "size": null,
-                    "type": "NONE",
-                    "fill": "#000000ff",
-                    "line_color": "#000000ff",
-                    "line_thickness": null
-                  },
-                  "fill": {
-                    "color": "#000000ff",
-                    "second_color": null
-                  }
-                },
-                "order": 0
-              },
-              {
-                "sid": "Fig_f_cirrhosis_pd__plot1_curve1",
-                "name": null,
-                "x": "task_dap_hepatic_Mild cirrhosis__time",
-                "y": "task_dap_hepatic_Mild cirrhosis__KI__RTG",
-                "xerr": null,
-                "yerr": null,
-                "yaxis_position": null,
-                "style": {
-                  "sid": null,
-                  "name": null,
-                  "base_style": null,
-                  "line": {
-                    "type": "SOLID",
-                    "color": "#74a9cfff",
-                    "thickness": 2.0
-                  },
-                  "marker": {
-                    "size": null,
-                    "type": "NONE",
-                    "fill": "#74a9cfff",
-                    "line_color": "#000000ff",
-                    "line_thickness": null
-                  },
-                  "fill": {
-                    "color": "#74a9cfff",
-                    "second_color": null
-                  }
-                },
-                "order": 1
-              },
-              {
-                "sid": "Fig_f_cirrhosis_pd__plot1_curve2",
-                "name": null,
-                "x": "task_dap_hepatic_Moderate cirrhosis__time",
-                "y": "task_dap_hepatic_Moderate cirrhosis__KI__RTG",
-                "xerr": null,
-                "yerr": null,
-                "yaxis_position": null,
-                "style": {
-                  "sid": null,
-                  "name": null,
-                  "base_style": null,
-                  "line": {
-                    "type": "SOLID",
-                    "color": "#2b8cbeff",
-                    "thickness": 2.0
-                  },
-                  "marker": {
-                    "size": null,
-                    "type": "NONE",
-                    "fill": "#2b8cbeff",
-                    "line_color": "#000000ff",
-                    "line_thickness": null
-                  },
-                  "fill": {
-                    "color": "#2b8cbeff",
-                    "second_color": null
-                  }
-                },
-                "order": 2
-              },
-              {
-                "sid": "Fig_f_cirrhosis_pd__plot1_curve3",
-                "name": null,
-                "x": "task_dap_hepatic_Severe cirrhosis__time",
-                "y": "task_dap_hepatic_Severe cirrhosis__KI__RTG",
-                "xerr": null,
-                "yerr": null,
-                "yaxis_position": null,
-                "style": {
-                  "sid": null,
-                  "name": null,
-                  "base_style": null,
-                  "line": {
-                    "type": "SOLID",
-                    "color": "#045a8dff",
-                    "thickness": 2.0
-                  },
-                  "marker": {
-                    "size": null,
-                    "type": "NONE",
-                    "fill": "#045a8dff",
-                    "line_color": "#000000ff",
-                    "line_thickness": null
-                  },
-                  "fill": {
-                    "color": "#045a8dff",
-                    "second_color": null
-                  }
-                },
-                "order": 3
-              }
-            ],
-            "areas": []
-          },
-          "row": 1,
-          "col": 2,
-          "row_span": 1,
-          "col_span": 1
-        },
-        {
-          "sid": null,
-          "name": null,
-          "plot": {
-            "sid": "Fig_f_cirrhosis_pd__plot2",
-            "name": null,
-            "xaxis": {
-              "sid": "Fig_f_cirrhosis_pd__plot2_xaxis",
-              "name": "time [hr]",
-              "label": "time",
-              "unit": "hr",
-              "scale": "LINEAR",
-              "min": null,
-              "max": null,
-              "grid": false,
-              "label_visible": true,
-              "ticks_visible": true
-            },
-            "yaxis": {
-              "sid": "Fig_f_cirrhosis_pd__plot2_yaxis",
               "name": "UGE [g]",
               "label": "UGE",
               "unit": "g",
@@ -5101,8 +4876,8 @@
             "title_visible": true,
             "curves": [
               {
-                "sid": "Fig_f_cirrhosis_pd__plot2_curve0",
-                "name": null,
+                "sid": "Fig_f_cirrhosis_pd__plot1_curve0",
+                "name": "Control",
                 "x": "task_dap_hepatic_Control__time",
                 "y": "task_dap_hepatic_Control__KI__UGE",
                 "xerr": null,
@@ -5132,8 +4907,8 @@
                 "order": 0
               },
               {
-                "sid": "Fig_f_cirrhosis_pd__plot2_curve1",
-                "name": null,
+                "sid": "Fig_f_cirrhosis_pd__plot1_curve1",
+                "name": "Mild cirrhosis",
                 "x": "task_dap_hepatic_Mild cirrhosis__time",
                 "y": "task_dap_hepatic_Mild cirrhosis__KI__UGE",
                 "xerr": null,
@@ -5145,26 +4920,26 @@
                   "base_style": null,
                   "line": {
                     "type": "SOLID",
-                    "color": "#74a9cfff",
+                    "color": "#C4DFF2ff",
                     "thickness": 2.0
                   },
                   "marker": {
                     "size": null,
                     "type": "NONE",
-                    "fill": "#74a9cfff",
+                    "fill": "#C4DFF2ff",
                     "line_color": "#000000ff",
                     "line_thickness": null
                   },
                   "fill": {
-                    "color": "#74a9cfff",
+                    "color": "#C4DFF2ff",
                     "second_color": null
                   }
                 },
                 "order": 1
               },
               {
-                "sid": "Fig_f_cirrhosis_pd__plot2_curve2",
-                "name": null,
+                "sid": "Fig_f_cirrhosis_pd__plot1_curve2",
+                "name": "Moderate cirrhosis",
                 "x": "task_dap_hepatic_Moderate cirrhosis__time",
                 "y": "task_dap_hepatic_Moderate cirrhosis__KI__UGE",
                 "xerr": null,
@@ -5194,8 +4969,8 @@
                 "order": 2
               },
               {
-                "sid": "Fig_f_cirrhosis_pd__plot2_curve3",
-                "name": null,
+                "sid": "Fig_f_cirrhosis_pd__plot1_curve3",
+                "name": "Severe cirrhosis",
                 "x": "task_dap_hepatic_Severe cirrhosis__time",
                 "y": "task_dap_hepatic_Severe cirrhosis__KI__UGE",
                 "xerr": null,
@@ -5207,18 +4982,185 @@
                   "base_style": null,
                   "line": {
                     "type": "SOLID",
-                    "color": "#045a8dff",
+                    "color": "#00446Eff",
                     "thickness": 2.0
                   },
                   "marker": {
                     "size": null,
                     "type": "NONE",
-                    "fill": "#045a8dff",
+                    "fill": "#00446Eff",
                     "line_color": "#000000ff",
                     "line_thickness": null
                   },
                   "fill": {
-                    "color": "#045a8dff",
+                    "color": "#00446Eff",
+                    "second_color": null
+                  }
+                },
+                "order": 3
+              }
+            ],
+            "areas": []
+          },
+          "row": 1,
+          "col": 2,
+          "row_span": 1,
+          "col_span": 1
+        },
+        {
+          "sid": null,
+          "name": null,
+          "plot": {
+            "sid": "Fig_f_cirrhosis_pd__plot2",
+            "name": null,
+            "xaxis": {
+              "sid": "Fig_f_cirrhosis_pd__plot2_xaxis",
+              "name": "dapagliflozin\nplasma [\u00b5M]",
+              "label": "dapagliflozin\nplasma",
+              "unit": "\u00b5M",
+              "scale": "LINEAR",
+              "min": null,
+              "max": null,
+              "grid": false,
+              "label_visible": true,
+              "ticks_visible": true
+            },
+            "yaxis": {
+              "sid": "Fig_f_cirrhosis_pd__plot2_yaxis",
+              "name": "RTG [mM]",
+              "label": "RTG",
+              "unit": "mM",
+              "scale": "LINEAR",
+              "min": null,
+              "max": null,
+              "grid": false,
+              "label_visible": true,
+              "ticks_visible": true
+            },
+            "yaxis_right": null,
+            "legend": true,
+            "facecolor": "#ffffffff",
+            "title_visible": true,
+            "curves": [
+              {
+                "sid": "Fig_f_cirrhosis_pd__plot2_curve0",
+                "name": "Control",
+                "x": "task_dap_hepatic_Control__Cve_dap",
+                "y": "task_dap_hepatic_Control__KI__RTG",
+                "xerr": null,
+                "yerr": null,
+                "yaxis_position": null,
+                "style": {
+                  "sid": null,
+                  "name": null,
+                  "base_style": null,
+                  "line": {
+                    "type": "SOLID",
+                    "color": "#000000ff",
+                    "thickness": 2.0
+                  },
+                  "marker": {
+                    "size": null,
+                    "type": "NONE",
+                    "fill": "#000000ff",
+                    "line_color": "#000000ff",
+                    "line_thickness": null
+                  },
+                  "fill": {
+                    "color": "#000000ff",
+                    "second_color": null
+                  }
+                },
+                "order": 0
+              },
+              {
+                "sid": "Fig_f_cirrhosis_pd__plot2_curve1",
+                "name": "Mild cirrhosis",
+                "x": "task_dap_hepatic_Mild cirrhosis__Cve_dap",
+                "y": "task_dap_hepatic_Mild cirrhosis__KI__RTG",
+                "xerr": null,
+                "yerr": null,
+                "yaxis_position": null,
+                "style": {
+                  "sid": null,
+                  "name": null,
+                  "base_style": null,
+                  "line": {
+                    "type": "SOLID",
+                    "color": "#C4DFF2ff",
+                    "thickness": 2.0
+                  },
+                  "marker": {
+                    "size": null,
+                    "type": "NONE",
+                    "fill": "#C4DFF2ff",
+                    "line_color": "#000000ff",
+                    "line_thickness": null
+                  },
+                  "fill": {
+                    "color": "#C4DFF2ff",
+                    "second_color": null
+                  }
+                },
+                "order": 1
+              },
+              {
+                "sid": "Fig_f_cirrhosis_pd__plot2_curve2",
+                "name": "Moderate cirrhosis",
+                "x": "task_dap_hepatic_Moderate cirrhosis__Cve_dap",
+                "y": "task_dap_hepatic_Moderate cirrhosis__KI__RTG",
+                "xerr": null,
+                "yerr": null,
+                "yaxis_position": null,
+                "style": {
+                  "sid": null,
+                  "name": null,
+                  "base_style": null,
+                  "line": {
+                    "type": "SOLID",
+                    "color": "#2b8cbeff",
+                    "thickness": 2.0
+                  },
+                  "marker": {
+                    "size": null,
+                    "type": "NONE",
+                    "fill": "#2b8cbeff",
+                    "line_color": "#000000ff",
+                    "line_thickness": null
+                  },
+                  "fill": {
+                    "color": "#2b8cbeff",
+                    "second_color": null
+                  }
+                },
+                "order": 2
+              },
+              {
+                "sid": "Fig_f_cirrhosis_pd__plot2_curve3",
+                "name": "Severe cirrhosis",
+                "x": "task_dap_hepatic_Severe cirrhosis__Cve_dap",
+                "y": "task_dap_hepatic_Severe cirrhosis__KI__RTG",
+                "xerr": null,
+                "yerr": null,
+                "yaxis_position": null,
+                "style": {
+                  "sid": null,
+                  "name": null,
+                  "base_style": null,
+                  "line": {
+                    "type": "SOLID",
+                    "color": "#00446Eff",
+                    "thickness": 2.0
+                  },
+                  "marker": {
+                    "size": null,
+                    "type": "NONE",
+                    "fill": "#00446Eff",
+                    "line_color": "#000000ff",
+                    "line_thickness": null
+                  },
+                  "fill": {
+                    "color": "#00446Eff",
                     "second_color": null
                   }
                 },
@@ -5252,173 +5194,6 @@
             },
             "yaxis": {
               "sid": "Fig_f_cirrhosis_pd__plot3_yaxis",
-              "name": "RTG [mM]",
-              "label": "RTG",
-              "unit": "mM",
-              "scale": "LINEAR",
-              "min": null,
-              "max": null,
-              "grid": false,
-              "label_visible": true,
-              "ticks_visible": true
-            },
-            "yaxis_right": null,
-            "legend": true,
-            "facecolor": "#ffffffff",
-            "title_visible": true,
-            "curves": [
-              {
-                "sid": "Fig_f_cirrhosis_pd__plot3_curve0",
-                "name": null,
-                "x": "task_dap_hepatic_Control__Cve_dap",
-                "y": "task_dap_hepatic_Control__KI__RTG",
-                "xerr": null,
-                "yerr": null,
-                "yaxis_position": null,
-                "style": {
-                  "sid": null,
-                  "name": null,
-                  "base_style": null,
-                  "line": {
-                    "type": "SOLID",
-                    "color": "#000000ff",
-                    "thickness": 2.0
-                  },
-                  "marker": {
-                    "size": null,
-                    "type": "NONE",
-                    "fill": "#000000ff",
-                    "line_color": "#000000ff",
-                    "line_thickness": null
-                  },
-                  "fill": {
-                    "color": "#000000ff",
-                    "second_color": null
-                  }
-                },
-                "order": 0
-              },
-              {
-                "sid": "Fig_f_cirrhosis_pd__plot3_curve1",
-                "name": null,
-                "x": "task_dap_hepatic_Mild cirrhosis__Cve_dap",
-                "y": "task_dap_hepatic_Mild cirrhosis__KI__RTG",
-                "xerr": null,
-                "yerr": null,
-                "yaxis_position": null,
-                "style": {
-                  "sid": null,
-                  "name": null,
-                  "base_style": null,
-                  "line": {
-                    "type": "SOLID",
-                    "color": "#74a9cfff",
-                    "thickness": 2.0
-                  },
-                  "marker": {
-                    "size": null,
-                    "type": "NONE",
-                    "fill": "#74a9cfff",
-                    "line_color": "#000000ff",
-                    "line_thickness": null
-                  },
-                  "fill": {
-                    "color": "#74a9cfff",
-                    "second_color": null
-                  }
-                },
-                "order": 1
-              },
-              {
-                "sid": "Fig_f_cirrhosis_pd__plot3_curve2",
-                "name": null,
-                "x": "task_dap_hepatic_Moderate cirrhosis__Cve_dap",
-                "y": "task_dap_hepatic_Moderate cirrhosis__KI__RTG",
-                "xerr": null,
-                "yerr": null,
-                "yaxis_position": null,
-                "style": {
-                  "sid": null,
-                  "name": null,
-                  "base_style": null,
-                  "line": {
-                    "type": "SOLID",
-                    "color": "#2b8cbeff",
-                    "thickness": 2.0
-                  },
-                  "marker": {
-                    "size": null,
-                    "type": "NONE",
-                    "fill": "#2b8cbeff",
-                    "line_color": "#000000ff",
-                    "line_thickness": null
-                  },
-                  "fill": {
-                    "color": "#2b8cbeff",
-                    "second_color": null
-                  }
-                },
-                "order": 2
-              },
-              {
-                "sid": "Fig_f_cirrhosis_pd__plot3_curve3",
-                "name": null,
-                "x": "task_dap_hepatic_Severe cirrhosis__Cve_dap",
-                "y": "task_dap_hepatic_Severe cirrhosis__KI__RTG",
-                "xerr": null,
-                "yerr": null,
-                "yaxis_position": null,
-                "style": {
-                  "sid": null,
-                  "name": null,
-                  "base_style": null,
-                  "line": {
-                    "type": "SOLID",
-                    "color": "#045a8dff",
-                    "thickness": 2.0
-                  },
-                  "marker": {
-                    "size": null,
-                    "type": "NONE",
-                    "fill": "#045a8dff",
-                    "line_color": "#000000ff",
-                    "line_thickness": null
-                  },
-                  "fill": {
-                    "color": "#045a8dff",
-                    "second_color": null
-                  }
-                },
-                "order": 3
-              }
-            ],
-            "areas": []
-          },
-          "row": 2,
-          "col": 1,
-          "row_span": 1,
-          "col_span": 1
-        },
-        {
-          "sid": null,
-          "name": null,
-          "plot": {
-            "sid": "Fig_f_cirrhosis_pd__plot4",
-            "name": null,
-            "xaxis": {
-              "sid": "Fig_f_cirrhosis_pd__plot4_xaxis",
-              "name": "dapagliflozin\nplasma [\u00b5M]",
-              "label": "dapagliflozin\nplasma",
-              "unit": "\u00b5M",
-              "scale": "LINEAR",
-              "min": null,
-              "max": null,
-              "grid": false,
-              "label_visible": true,
-              "ticks_visible": true
-            },
-            "yaxis": {
-              "sid": "Fig_f_cirrhosis_pd__plot4_yaxis",
               "name": "glucose excretion\nurine [\u00b5mole/min]",
               "label": "glucose excretion\nurine",
               "unit": "\u00b5mole/min",
@@ -5435,8 +5210,8 @@
             "title_visible": true,
             "curves": [
               {
-                "sid": "Fig_f_cirrhosis_pd__plot4_curve0",
-                "name": null,
+                "sid": "Fig_f_cirrhosis_pd__plot3_curve0",
+                "name": "Control",
                 "x": "task_dap_hepatic_Control__Cve_dap",
                 "y": "task_dap_hepatic_Control__KI__GLCEX",
                 "xerr": null,
@@ -5466,8 +5241,8 @@
                 "order": 0
               },
               {
-                "sid": "Fig_f_cirrhosis_pd__plot4_curve1",
-                "name": null,
+                "sid": "Fig_f_cirrhosis_pd__plot3_curve1",
+                "name": "Mild cirrhosis",
                 "x": "task_dap_hepatic_Mild cirrhosis__Cve_dap",
                 "y": "task_dap_hepatic_Mild cirrhosis__KI__GLCEX",
                 "xerr": null,
@@ -5479,26 +5254,26 @@
                   "base_style": null,
                   "line": {
                     "type": "SOLID",
-                    "color": "#74a9cfff",
+                    "color": "#C4DFF2ff",
                     "thickness": 2.0
                   },
                   "marker": {
                     "size": null,
                     "type": "NONE",
-                    "fill": "#74a9cfff",
+                    "fill": "#C4DFF2ff",
                     "line_color": "#000000ff",
                     "line_thickness": null
                   },
                   "fill": {
-                    "color": "#74a9cfff",
+                    "color": "#C4DFF2ff",
                     "second_color": null
                   }
                 },
                 "order": 1
               },
               {
-                "sid": "Fig_f_cirrhosis_pd__plot4_curve2",
-                "name": null,
+                "sid": "Fig_f_cirrhosis_pd__plot3_curve2",
+                "name": "Moderate cirrhosis",
                 "x": "task_dap_hepatic_Moderate cirrhosis__Cve_dap",
                 "y": "task_dap_hepatic_Moderate cirrhosis__KI__GLCEX",
                 "xerr": null,
@@ -5528,8 +5303,8 @@
                 "order": 2
               },
               {
-                "sid": "Fig_f_cirrhosis_pd__plot4_curve3",
-                "name": null,
+                "sid": "Fig_f_cirrhosis_pd__plot3_curve3",
+                "name": "Severe cirrhosis",
                 "x": "task_dap_hepatic_Severe cirrhosis__Cve_dap",
                 "y": "task_dap_hepatic_Severe cirrhosis__KI__GLCEX",
                 "xerr": null,
@@ -5541,18 +5316,18 @@
                   "base_style": null,
                   "line": {
                     "type": "SOLID",
-                    "color": "#045a8dff",
+                    "color": "#00446Eff",
                     "thickness": 2.0
                   },
                   "marker": {
                     "size": null,
                     "type": "NONE",
-                    "fill": "#045a8dff",
+                    "fill": "#00446Eff",
                     "line_color": "#000000ff",
                     "line_thickness": null
                   },
                   "fill": {
-                    "color": "#045a8dff",
+                    "color": "#00446Eff",
                     "second_color": null
                   }
                 },
@@ -5561,8 +5336,8 @@
             ],
             "areas": []
           },
-          "row": 2,
-          "col": 2,
+          "row": 1,
+          "col": 4,
           "row_span": 1,
           "col_span": 1
         },
@@ -5570,10 +5345,10 @@
           "sid": null,
           "name": null,
           "plot": {
-            "sid": "Fig_f_cirrhosis_pd__plot5",
+            "sid": "Fig_f_cirrhosis_pd__plot4",
             "name": null,
             "xaxis": {
-              "sid": "Fig_f_cirrhosis_pd__plot5_xaxis",
+              "sid": "Fig_f_cirrhosis_pd__plot4_xaxis",
               "name": "dapagliflozin\nplasma [\u00b5M]",
               "label": "dapagliflozin\nplasma",
               "unit": "\u00b5M",
@@ -5585,7 +5360,7 @@
               "ticks_visible": true
             },
             "yaxis": {
-              "sid": "Fig_f_cirrhosis_pd__plot5_yaxis",
+              "sid": "Fig_f_cirrhosis_pd__plot4_yaxis",
               "name": "UGE [g]",
               "label": "UGE",
               "unit": "g",
@@ -5602,8 +5377,8 @@
             "title_visible": true,
             "curves": [
               {
-                "sid": "Fig_f_cirrhosis_pd__plot5_curve0",
-                "name": null,
+                "sid": "Fig_f_cirrhosis_pd__plot4_curve0",
+                "name": "Control",
                 "x": "task_dap_hepatic_Control__Cve_dap",
                 "y": "task_dap_hepatic_Control__KI__UGE",
                 "xerr": null,
@@ -5633,8 +5408,8 @@
                 "order": 0
               },
               {
-                "sid": "Fig_f_cirrhosis_pd__plot5_curve1",
-                "name": null,
+                "sid": "Fig_f_cirrhosis_pd__plot4_curve1",
+                "name": "Mild cirrhosis",
                 "x": "task_dap_hepatic_Mild cirrhosis__Cve_dap",
                 "y": "task_dap_hepatic_Mild cirrhosis__KI__UGE",
                 "xerr": null,
@@ -5646,26 +5421,26 @@
                   "base_style": null,
                   "line": {
                     "type": "SOLID",
-                    "color": "#74a9cfff",
+                    "color": "#C4DFF2ff",
                     "thickness": 2.0
                   },
                   "marker": {
                     "size": null,
                     "type": "NONE",
-                    "fill": "#74a9cfff",
+                    "fill": "#C4DFF2ff",
                     "line_color": "#000000ff",
                     "line_thickness": null
                   },
                   "fill": {
-                    "color": "#74a9cfff",
+                    "color": "#C4DFF2ff",
                     "second_color": null
                   }
                 },
                 "order": 1
               },
               {
-                "sid": "Fig_f_cirrhosis_pd__plot5_curve2",
-                "name": null,
+                "sid": "Fig_f_cirrhosis_pd__plot4_curve2",
+                "name": "Moderate cirrhosis",
                 "x": "task_dap_hepatic_Moderate cirrhosis__Cve_dap",
                 "y": "task_dap_hepatic_Moderate cirrhosis__KI__UGE",
                 "xerr": null,
@@ -5695,8 +5470,8 @@
                 "order": 2
               },
               {
-                "sid": "Fig_f_cirrhosis_pd__plot5_curve3",
-                "name": null,
+                "sid": "Fig_f_cirrhosis_pd__plot4_curve3",
+                "name": "Severe cirrhosis",
                 "x": "task_dap_hepatic_Severe cirrhosis__Cve_dap",
                 "y": "task_dap_hepatic_Severe cirrhosis__KI__UGE",
                 "xerr": null,
@@ -5708,18 +5483,18 @@
                   "base_style": null,
                   "line": {
                     "type": "SOLID",
-                    "color": "#045a8dff",
+                    "color": "#00446Eff",
                     "thickness": 2.0
                   },
                   "marker": {
                     "size": null,
                     "type": "NONE",
-                    "fill": "#045a8dff",
+                    "fill": "#00446Eff",
                     "line_color": "#000000ff",
                     "line_thickness": null
                   },
                   "fill": {
-                    "color": "#045a8dff",
+                    "color": "#00446Eff",
                     "second_color": null
                   }
                 },
@@ -5728,8 +5503,8 @@
             ],
             "areas": []
           },
-          "row": 2,
-          "col": 3,
+          "row": 1,
+          "col": 5,
           "row_span": 1,
           "col_span": 1
         }
@@ -5737,11 +5512,11 @@
     },
     "Fig_KI__f_renal_function_pd": {
       "sid": "Fig_KI__f_renal_function_pd",
-      "name": null,
-      "num_rows": 2,
-      "num_cols": 3,
-      "width": 21.0,
-      "height": 10.0,
+      "name": "Pharmacodynamics: Renal impairment",
+      "num_rows": 1,
+      "num_cols": 5,
+      "width": 35.0,
+      "height": 5.0,
       "subplots": [
         {
           "sid": null,
@@ -5763,8 +5538,8 @@
             },
             "yaxis": {
               "sid": "Fig_KI__f_renal_function_pd__plot0_yaxis",
-              "name": "glucose plasma [mM]",
-              "label": "glucose plasma",
+              "name": "RTG [mM]",
+              "label": "RTG",
               "unit": "mM",
               "scale": "LINEAR",
               "min": null,
@@ -5781,8 +5556,8 @@
               {
                 "sid": "Fig_KI__f_renal_function_pd__plot0_curve0",
                 "name": "Normal renal function",
-                "x": "task_dap_renal_Normal renal function__time",
-                "y": "task_dap_renal_Normal renal function__KI__glc_ext",
+                "x": "task_dap_renal_Normal renal function_po20__time",
+                "y": "task_dap_renal_Normal renal function_po20__KI__RTG",
                 "xerr": null,
                 "yerr": null,
                 "yaxis_position": null,
@@ -5812,8 +5587,8 @@
               {
                 "sid": "Fig_KI__f_renal_function_pd__plot0_curve1",
                 "name": "Mild renal impairment",
-                "x": "task_dap_renal_Mild renal impairment__time",
-                "y": "task_dap_renal_Mild renal impairment__KI__glc_ext",
+                "x": "task_dap_renal_Mild renal impairment_po20__time",
+                "y": "task_dap_renal_Mild renal impairment_po20__KI__RTG",
                 "xerr": null,
                 "yerr": null,
                 "yaxis_position": null,
@@ -5843,8 +5618,8 @@
               {
                 "sid": "Fig_KI__f_renal_function_pd__plot0_curve2",
                 "name": "Moderate renal impairment",
-                "x": "task_dap_renal_Moderate renal impairment__time",
-                "y": "task_dap_renal_Moderate renal impairment__KI__glc_ext",
+                "x": "task_dap_renal_Moderate renal impairment_po20__time",
+                "y": "task_dap_renal_Moderate renal impairment_po20__KI__RTG",
                 "xerr": null,
                 "yerr": null,
                 "yaxis_position": null,
@@ -5874,8 +5649,8 @@
               {
                 "sid": "Fig_KI__f_renal_function_pd__plot0_curve3",
                 "name": "Severe renal impairment",
-                "x": "task_dap_renal_Severe renal impairment__time",
-                "y": "task_dap_renal_Severe renal impairment__KI__glc_ext",
+                "x": "task_dap_renal_Severe renal impairment_po20__time",
+                "y": "task_dap_renal_Severe renal impairment_po20__KI__RTG",
                 "xerr": null,
                 "yerr": null,
                 "yaxis_position": null,
@@ -5930,9 +5705,9 @@
             },
             "yaxis": {
               "sid": "Fig_KI__f_renal_function_pd__plot1_yaxis",
-              "name": "RTG [mM]",
-              "label": "RTG",
-              "unit": "mM",
+              "name": "UGE [g]",
+              "label": "UGE",
+              "unit": "g",
               "scale": "LINEAR",
               "min": null,
               "max": null,
@@ -5947,9 +5722,9 @@
             "curves": [
               {
                 "sid": "Fig_KI__f_renal_function_pd__plot1_curve0",
-                "name": null,
-                "x": "task_dap_renal_Normal renal function__time",
-                "y": "task_dap_renal_Normal renal function__KI__RTG",
+                "name": "Normal renal function",
+                "x": "task_dap_renal_Normal renal function_po20__time",
+                "y": "task_dap_renal_Normal renal function_po20__KI__UGE",
                 "xerr": null,
                 "yerr": null,
                 "yaxis_position": null,
@@ -5978,9 +5753,9 @@
               },
               {
                 "sid": "Fig_KI__f_renal_function_pd__plot1_curve1",
-                "name": null,
-                "x": "task_dap_renal_Mild renal impairment__time",
-                "y": "task_dap_renal_Mild renal impairment__KI__RTG",
+                "name": "Mild renal impairment",
+                "x": "task_dap_renal_Mild renal impairment_po20__time",
+                "y": "task_dap_renal_Mild renal impairment_po20__KI__UGE",
                 "xerr": null,
                 "yerr": null,
                 "yaxis_position": null,
@@ -6009,9 +5784,9 @@
               },
               {
                 "sid": "Fig_KI__f_renal_function_pd__plot1_curve2",
-                "name": null,
-                "x": "task_dap_renal_Moderate renal impairment__time",
-                "y": "task_dap_renal_Moderate renal impairment__KI__RTG",
+                "name": "Moderate renal impairment",
+                "x": "task_dap_renal_Moderate renal impairment_po20__time",
+                "y": "task_dap_renal_Moderate renal impairment_po20__KI__UGE",
                 "xerr": null,
                 "yerr": null,
                 "yaxis_position": null,
@@ -6040,9 +5815,9 @@
               },
               {
                 "sid": "Fig_KI__f_renal_function_pd__plot1_curve3",
-                "name": null,
-                "x": "task_dap_renal_Severe renal impairment__time",
-                "y": "task_dap_renal_Severe renal impairment__KI__RTG",
+                "name": "Severe renal impairment",
+                "x": "task_dap_renal_Severe renal impairment_po20__time",
+                "y": "task_dap_renal_Severe renal impairment_po20__KI__UGE",
                 "xerr": null,
                 "yerr": null,
                 "yaxis_position": null,
@@ -6085,9 +5860,9 @@
             "name": null,
             "xaxis": {
               "sid": "Fig_KI__f_renal_function_pd__plot2_xaxis",
-              "name": "time [hr]",
-              "label": "time",
-              "unit": "hr",
+              "name": "dapagliflozin\nplasma [\u00b5M]",
+              "label": "dapagliflozin\nplasma",
+              "unit": "\u00b5M",
               "scale": "LINEAR",
               "min": null,
               "max": null,
@@ -6097,9 +5872,9 @@
             },
             "yaxis": {
               "sid": "Fig_KI__f_renal_function_pd__plot2_yaxis",
-              "name": "UGE [g]",
-              "label": "UGE",
-              "unit": "g",
+              "name": "RTG [mM]",
+              "label": "RTG",
+              "unit": "mM",
               "scale": "LINEAR",
               "min": null,
               "max": null,
@@ -6114,9 +5889,9 @@
             "curves": [
               {
                 "sid": "Fig_KI__f_renal_function_pd__plot2_curve0",
-                "name": null,
-                "x": "task_dap_renal_Normal renal function__time",
-                "y": "task_dap_renal_Normal renal function__KI__UGE",
+                "name": "Normal renal function",
+                "x": "task_dap_renal_Normal renal function_po20__Cve_dap",
+                "y": "task_dap_renal_Normal renal function_po20__KI__RTG",
                 "xerr": null,
                 "yerr": null,
                 "yaxis_position": null,
@@ -6145,9 +5920,9 @@
               },
               {
                 "sid": "Fig_KI__f_renal_function_pd__plot2_curve1",
-                "name": null,
-                "x": "task_dap_renal_Mild renal impairment__time",
-                "y": "task_dap_renal_Mild renal impairment__KI__UGE",
+                "name": "Mild renal impairment",
+                "x": "task_dap_renal_Mild renal impairment_po20__Cve_dap",
+                "y": "task_dap_renal_Mild renal impairment_po20__KI__RTG",
                 "xerr": null,
                 "yerr": null,
                 "yaxis_position": null,
@@ -6176,9 +5951,9 @@
               },
               {
                 "sid": "Fig_KI__f_renal_function_pd__plot2_curve2",
-                "name": null,
-                "x": "task_dap_renal_Moderate renal impairment__time",
-                "y": "task_dap_renal_Moderate renal impairment__KI__UGE",
+                "name": "Moderate renal impairment",
+                "x": "task_dap_renal_Moderate renal impairment_po20__Cve_dap",
+                "y": "task_dap_renal_Moderate renal impairment_po20__KI__RTG",
                 "xerr": null,
                 "yerr": null,
                 "yaxis_position": null,
@@ -6207,9 +5982,9 @@
               },
               {
                 "sid": "Fig_KI__f_renal_function_pd__plot2_curve3",
-                "name": null,
-                "x": "task_dap_renal_Severe renal impairment__time",
-                "y": "task_dap_renal_Severe renal impairment__KI__UGE",
+                "name": "Severe renal impairment",
+                "x": "task_dap_renal_Severe renal impairment_po20__Cve_dap",
+                "y": "task_dap_renal_Severe renal impairment_po20__KI__RTG",
                 "xerr": null,
                 "yerr": null,
                 "yaxis_position": null,
@@ -6264,9 +6039,9 @@
             },
             "yaxis": {
               "sid": "Fig_KI__f_renal_function_pd__plot3_yaxis",
-              "name": "RTG [mM]",
-              "label": "RTG",
-              "unit": "mM",
+              "name": "glucose excretion\nurine [\u00b5mole/min]",
+              "label": "glucose excretion\nurine",
+              "unit": "\u00b5mole/min",
               "scale": "LINEAR",
               "min": null,
               "max": null,
@@ -6281,9 +6056,9 @@
             "curves": [
               {
                 "sid": "Fig_KI__f_renal_function_pd__plot3_curve0",
-                "name": null,
-                "x": "task_dap_renal_Normal renal function__Cve_dap",
-                "y": "task_dap_renal_Normal renal function__KI__RTG",
+                "name": "Normal renal function",
+                "x": "task_dap_renal_Normal renal function_po20__Cve_dap",
+                "y": "task_dap_renal_Normal renal function_po20__KI__GLCEX",
                 "xerr": null,
                 "yerr": null,
                 "yaxis_position": null,
@@ -6312,9 +6087,9 @@
               },
               {
                 "sid": "Fig_KI__f_renal_function_pd__plot3_curve1",
-                "name": null,
-                "x": "task_dap_renal_Mild renal impairment__Cve_dap",
-                "y": "task_dap_renal_Mild renal impairment__KI__RTG",
+                "name": "Mild renal impairment",
+                "x": "task_dap_renal_Mild renal impairment_po20__Cve_dap",
+                "y": "task_dap_renal_Mild renal impairment_po20__KI__GLCEX",
                 "xerr": null,
                 "yerr": null,
                 "yaxis_position": null,
@@ -6343,9 +6118,9 @@
               },
               {
                 "sid": "Fig_KI__f_renal_function_pd__plot3_curve2",
-                "name": null,
-                "x": "task_dap_renal_Moderate renal impairment__Cve_dap",
-                "y": "task_dap_renal_Moderate renal impairment__KI__RTG",
+                "name": "Moderate renal impairment",
+                "x": "task_dap_renal_Moderate renal impairment_po20__Cve_dap",
+                "y": "task_dap_renal_Moderate renal impairment_po20__KI__GLCEX",
                 "xerr": null,
                 "yerr": null,
                 "yaxis_position": null,
@@ -6374,9 +6149,9 @@
               },
               {
                 "sid": "Fig_KI__f_renal_function_pd__plot3_curve3",
-                "name": null,
-                "x": "task_dap_renal_Severe renal impairment__Cve_dap",
-                "y": "task_dap_renal_Severe renal impairment__KI__RTG",
+                "name": "Severe renal impairment",
+                "x": "task_dap_renal_Severe renal impairment_po20__Cve_dap",
+                "y": "task_dap_renal_Severe renal impairment_po20__KI__GLCEX",
                 "xerr": null,
                 "yerr": null,
                 "yaxis_position": null,
@@ -6406,8 +6181,8 @@
             ],
             "areas": []
           },
-          "row": 2,
-          "col": 1,
+          "row": 1,
+          "col": 4,
           "row_span": 1,
           "col_span": 1
         },
@@ -6431,9 +6206,9 @@
             },
             "yaxis": {
               "sid": "Fig_KI__f_renal_function_pd__plot4_yaxis",
-              "name": "glucose excretion\nurine [\u00b5mole/min]",
-              "label": "glucose excretion\nurine",
-              "unit": "\u00b5mole/min",
+              "name": "UGE [g]",
+              "label": "UGE",
+              "unit": "g",
               "scale": "LINEAR",
               "min": null,
               "max": null,
@@ -6448,9 +6223,9 @@
             "curves": [
               {
                 "sid": "Fig_KI__f_renal_function_pd__plot4_curve0",
-                "name": null,
-                "x": "task_dap_renal_Normal renal function__Cve_dap",
-                "y": "task_dap_renal_Normal renal function__KI__GLCEX",
+                "name": "Normal renal function",
+                "x": "task_dap_renal_Normal renal function_po20__Cve_dap",
+                "y": "task_dap_renal_Normal renal function_po20__KI__UGE",
                 "xerr": null,
                 "yerr": null,
                 "yaxis_position": null,
@@ -6479,9 +6254,9 @@
               },
               {
                 "sid": "Fig_KI__f_renal_function_pd__plot4_curve1",
-                "name": null,
-                "x": "task_dap_renal_Mild renal impairment__Cve_dap",
-                "y": "task_dap_renal_Mild renal impairment__KI__GLCEX",
+                "name": "Mild renal impairment",
+                "x": "task_dap_renal_Mild renal impairment_po20__Cve_dap",
+                "y": "task_dap_renal_Mild renal impairment_po20__KI__UGE",
                 "xerr": null,
                 "yerr": null,
                 "yaxis_position": null,
@@ -6510,9 +6285,9 @@
               },
               {
                 "sid": "Fig_KI__f_renal_function_pd__plot4_curve2",
-                "name": null,
-                "x": "task_dap_renal_Moderate renal impairment__Cve_dap",
-                "y": "task_dap_renal_Moderate renal impairment__KI__GLCEX",
+                "name": "Moderate renal impairment",
+                "x": "task_dap_renal_Moderate renal impairment_po20__Cve_dap",
+                "y": "task_dap_renal_Moderate renal impairment_po20__KI__UGE",
                 "xerr": null,
                 "yerr": null,
                 "yaxis_position": null,
@@ -6541,9 +6316,9 @@
               },
               {
                 "sid": "Fig_KI__f_renal_function_pd__plot4_curve3",
-                "name": null,
-                "x": "task_dap_renal_Severe renal impairment__Cve_dap",
-                "y": "task_dap_renal_Severe renal impairment__KI__GLCEX",
+                "name": "Severe renal impairment",
+                "x": "task_dap_renal_Severe renal impairment_po20__Cve_dap",
+                "y": "task_dap_renal_Severe renal impairment_po20__KI__UGE",
                 "xerr": null,
                 "yerr": null,
                 "yaxis_position": null,
@@ -6573,175 +6348,8 @@
             ],
             "areas": []
           },
-          "row": 2,
-          "col": 2,
-          "row_span": 1,
-          "col_span": 1
-        },
-        {
-          "sid": null,
-          "name": null,
-          "plot": {
-            "sid": "Fig_KI__f_renal_function_pd__plot5",
-            "name": null,
-            "xaxis": {
-              "sid": "Fig_KI__f_renal_function_pd__plot5_xaxis",
-              "name": "dapagliflozin\nplasma [\u00b5M]",
-              "label": "dapagliflozin\nplasma",
-              "unit": "\u00b5M",
-              "scale": "LINEAR",
-              "min": null,
-              "max": null,
-              "grid": false,
-              "label_visible": true,
-              "ticks_visible": true
-            },
-            "yaxis": {
-              "sid": "Fig_KI__f_renal_function_pd__plot5_yaxis",
-              "name": "UGE [g]",
-              "label": "UGE",
-              "unit": "g",
-              "scale": "LINEAR",
-              "min": null,
-              "max": null,
-              "grid": false,
-              "label_visible": true,
-              "ticks_visible": true
-            },
-            "yaxis_right": null,
-            "legend": true,
-            "facecolor": "#ffffffff",
-            "title_visible": true,
-            "curves": [
-              {
-                "sid": "Fig_KI__f_renal_function_pd__plot5_curve0",
-                "name": null,
-                "x": "task_dap_renal_Normal renal function__Cve_dap",
-                "y": "task_dap_renal_Normal renal function__KI__UGE",
-                "xerr": null,
-                "yerr": null,
-                "yaxis_position": null,
-                "style": {
-                  "sid": null,
-                  "name": null,
-                  "base_style": null,
-                  "line": {
-                    "type": "SOLID",
-                    "color": "#000000ff",
-                    "thickness": 2.0
-                  },
-                  "marker": {
-                    "size": null,
-                    "type": "NONE",
-                    "fill": "#000000ff",
-                    "line_color": "#000000ff",
-                    "line_thickness": null
-                  },
-                  "fill": {
-                    "color": "#000000ff",
-                    "second_color": null
-                  }
-                },
-                "order": 0
-              },
-              {
-                "sid": "Fig_KI__f_renal_function_pd__plot5_curve1",
-                "name": null,
-                "x": "task_dap_renal_Mild renal impairment__Cve_dap",
-                "y": "task_dap_renal_Mild renal impairment__KI__UGE",
-                "xerr": null,
-                "yerr": null,
-                "yaxis_position": null,
-                "style": {
-                  "sid": null,
-                  "name": null,
-                  "base_style": null,
-                  "line": {
-                    "type": "SOLID",
-                    "color": "#66c2a4ff",
-                    "thickness": 2.0
-                  },
-                  "marker": {
-                    "size": null,
-                    "type": "NONE",
-                    "fill": "#66c2a4ff",
-                    "line_color": "#000000ff",
-                    "line_thickness": null
-                  },
-                  "fill": {
-                    "color": "#66c2a4ff",
-                    "second_color": null
-                  }
-                },
-                "order": 1
-              },
-              {
-                "sid": "Fig_KI__f_renal_function_pd__plot5_curve2",
-                "name": null,
-                "x": "task_dap_renal_Moderate renal impairment__Cve_dap",
-                "y": "task_dap_renal_Moderate renal impairment__KI__UGE",
-                "xerr": null,
-                "yerr": null,
-                "yaxis_position": null,
-                "style": {
-                  "sid": null,
-                  "name": null,
-                  "base_style": null,
-                  "line": {
-                    "type": "SOLID",
-                    "color": "#2ca25fff",
-                    "thickness": 2.0
-                  },
-                  "marker": {
-                    "size": null,
-                    "type": "NONE",
-                    "fill": "#2ca25fff",
-                    "line_color": "#000000ff",
-                    "line_thickness": null
-                  },
-                  "fill": {
-                    "color": "#2ca25fff",
-                    "second_color": null
-                  }
-                },
-                "order": 2
-              },
-              {
-                "sid": "Fig_KI__f_renal_function_pd__plot5_curve3",
-                "name": null,
-                "x": "task_dap_renal_Severe renal impairment__Cve_dap",
-                "y": "task_dap_renal_Severe renal impairment__KI__UGE",
-                "xerr": null,
-                "yerr": null,
-                "yaxis_position": null,
-                "style": {
-                  "sid": null,
-                  "name": null,
-                  "base_style": null,
-                  "line": {
-                    "type": "SOLID",
-                    "color": "#006d2cff",
-                    "thickness": 2.0
-                  },
-                  "marker": {
-                    "size": null,
-                    "type": "NONE",
-                    "fill": "#006d2cff",
-                    "line_color": "#000000ff",
-                    "line_thickness": null
-                  },
-                  "fill": {
-                    "color": "#006d2cff",
-                    "second_color": null
-                  }
-                },
-                "order": 3
-              }
-            ],
-            "areas": []
-          },
-          "row": 2,
-          "col": 3,
+          "row": 1,
+          "col": 5,
           "row_span": 1,
           "col_span": 1
         }

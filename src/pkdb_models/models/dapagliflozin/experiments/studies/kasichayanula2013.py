@@ -44,6 +44,13 @@ class Kasichayanula2013(DapagliflozinSimulationExperiment):
         "moderate": 6.79,
         "severe": 7.23,
     }  # mM
+    hba1c = {
+        "healthy": 5.5,
+        "normal": 8.6,
+        "mild": 8.5,
+        "moderate": 7.1,
+        "severe": 7.1,
+    }  # mM
     renal_functions = {  # fasting plasma glucose
         "healthy": 118.5/100,
         "normal": 133.2/100,
@@ -145,7 +152,7 @@ class Kasichayanula2013(DapagliflozinSimulationExperiment):
             for group in self.groups:
                 if group == "healthy":
                     continue
-                health = Health.HEALTHY if group == "normal" else Health.RENAL_IMPAIRMENT
+                health = Health.HEALTHY if group in ["normal", "healthy"] else Health.RENAL_IMPAIRMENT
                 tissue = Tissue.URINE if "cumulative" in prefix else Tissue.PLASMA
                 mappings[f"fm_dap20_{group}_{sid}"] = FitMapping(
                     self,
@@ -222,7 +229,7 @@ class Kasichayanula2013(DapagliflozinSimulationExperiment):
             sid="Fig1",
             num_rows=2,
             num_cols=2,
-            name=f"{self.__class__.__name__}",
+            name=f"{self.__class__.__name__} (T2DM, Renal)",
         )
         Figure.legend_fontsize = 9
         plots = fig.create_plots(xaxis=Axis(self.label_time, unit=self.unit_time, min=-24), legend=True)
@@ -265,7 +272,7 @@ class Kasichayanula2013(DapagliflozinSimulationExperiment):
             sid="Tab2_4",
             num_rows=2,
             num_cols=2,
-            name=f"{self.__class__.__name__}",
+            name=f"{self.__class__.__name__} (T2DM, Renal)",
         )
         Figure.legend_fontsize = 9
         plots = fig.create_plots(xaxis=Axis(self.label_time, unit=self.unit_time), legend=True)
@@ -320,7 +327,6 @@ class Kasichayanula2013(DapagliflozinSimulationExperiment):
 
 
 if __name__ == "__main__":
-    # run_experiments(Kasichayanula2013, output_dir=Kasichayanula2013.__name__)
     out = dapagliflozin.RESULTS_PATH_SIMULATION / Kasichayanula2013.__name__
     out.mkdir(parents=True, exist_ok=True)
     run_experiments(Kasichayanula2013, output_dir=out)

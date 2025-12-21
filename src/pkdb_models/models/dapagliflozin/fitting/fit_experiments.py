@@ -25,7 +25,7 @@ experiment_classes = [
     FDAMB102003,
     FDAMB102006,
     FDAMB102007,
-    # Gould2013,
+    Gould2013,
     Hwang2022a,
     Imamura2013,
     Jang2020,
@@ -67,7 +67,7 @@ def filter_control(fit_mapping_key: str, fit_mapping: FitMapping) -> bool:
     if metadata.coadministration != Coadministration.NONE:
         return False
 
-    # filter health (no renal, cardiac impairment, ...)
+    # filter health (no renal, cardiac impairment, hepatic impairment, ...)
     if metadata.health not in {Health.HEALTHY, Health.T1DM, Health.T2DM, Health.HYPERTENSION}:
         return False
 

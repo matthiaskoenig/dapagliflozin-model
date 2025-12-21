@@ -33,10 +33,17 @@ class Watada2019(DapagliflozinSimulationExperiment):
         "DAP5": 61.6,
         "DAP10": 59.8,
     }  # [kg]
+
+    # T1DM
     fpgs = {  # fasting plasma glucose
-        "DAP0": 134/18,  # [mM]
-        "DAP5": 142.9/18,  # [mM]
-        "DAP10": 133.4/18,  # [mM]
+        "DAP0": 7.45,  # 134/18,  # [mM]
+        "DAP5": 7.94,  # 142.9/18,  # [mM]
+        "DAP10": 7.41,  # 133.4/18,  # [mM]
+    }
+    hba1cs = {  # fasting plasma glucose
+        "DAP0": 8.1,  # [%]
+        "DAP5": 7.9,  # [mM]
+        "DAP10": 7.9,  # [mM]
     }
     gfrs = {  # fasting plasma glucose
         "DAP0": 95.4/100,  # [ml/min/(1.73*m^2)]
@@ -143,7 +150,7 @@ class Watada2019(DapagliflozinSimulationExperiment):
             sid="Fig1",
             num_rows=1,
             num_cols=3,
-            name=f"{self.__class__.__name__}",
+            name=f"{self.__class__.__name__} (T1DM)",
         )
         plots = fig.create_plots(xaxis=Axis(self.label_time, unit=self.unit_time), legend=True)
         plots[0].set_yaxis(self.label_dap_plasma, unit=self.unit_dap)
@@ -184,7 +191,6 @@ class Watada2019(DapagliflozinSimulationExperiment):
 
 
 if __name__ == "__main__":
-    # run_experiments(Watada2019, output_dir=Watada2019.__name__)
     out = dapagliflozin.RESULTS_PATH_SIMULATION / Watada2019.__name__
     out.mkdir(parents=True, exist_ok=True)
     run_experiments(Watada2019, output_dir=out)
