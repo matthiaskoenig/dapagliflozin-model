@@ -8,7 +8,8 @@ This repository provides the dapagliflozin physiologically based pharmacokinetic
 The model is distributed as [SBML](http://sbml.org) format available from [`dapagliflozin_body_flat.xml`](./models/dapagliflozin_body_flat.xml) with 
 corresponding [SBML4humans model report](https://sbml4humans.de/model_url?url=https://raw.githubusercontent.com/matthiaskoenig/dapagliflozin-model/main/models/dapagliflozin_body_flat.xml) and [model equations](./models/dapagliflozin_body_flat.md).
 
-The COMBINE archive is available from [`dapagliflozin_model.omex`](./dapagliflozin_model.omex).
+The COMBINE archive is available from [`dapagliflozin_model.omex`](./dapagliflozin_model.omex). 
+The FAIR assessment is available from [`dapagliflozin_model_fair.xlsx`](./dapagliflozin_model_fair.xlsx).
 
 ![model overview](./figures/dapagliflozin_model.png)
 
