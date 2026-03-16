@@ -1,3 +1,12 @@
+# --------------------------------------------------------
+# Dockerfile
+# --------------------------------------------------------
+# Build and push image
+#   docker build -f Dockerfile -t matthiaskoenig/dapagliflozin:0.9.9 -t matthiaskoenig/dapagliflozin:latest .
+#   docker login
+#   docker push --all-tags matthiaskoenig/dapagliflozin
+# --------------------------------------------------------
+
 FROM python:3.14-slim
 
 # install uv
