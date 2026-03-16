@@ -4,10 +4,10 @@ build-backend = "hatchling.build"
 
 [project]
 name = "dapagliflozin-model"
-version = "0.9.6"
+version = "0.9.9"
 description = "Python code for dapagliflozin-model"
 readme = "README.md"
-requires-python = ">=3.13"
+requires-python = ">=3.14"
 authors = [
     {name="Nike Nemitz", email="nike.philine.elise@gmail.com"},
     {name="Michelle Elias", email="michelleelias66@gmail.com"},
@@ -21,7 +21,7 @@ classifiers = [
 	"Intended Audience :: Science/Research",
 	"License :: OSI Approved :: MIT License",
 	"Operating System :: OS Independent",
-    "Programming Language :: Python :: 3.13",
+    "Programming Language :: Python :: 3.14",
 	"Programming Language :: Python :: Implementation :: CPython",
 	"Topic :: Scientific/Engineering",
 	"Topic :: Scientific/Engineering :: Bio-Informatics",
