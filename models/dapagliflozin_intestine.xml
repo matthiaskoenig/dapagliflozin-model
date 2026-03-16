@@ -20,7 +20,7 @@
         </ul>
         <p>The content of this model has been carefully created in a manual research effort.</p>
         <h2>Terms of use</h2>
-        <p>Copyright © 2025 <a href="https://livermetabolism.com" title="Matthias König" target="_blank">Matthias König</a>.</p>
+        <p>Copyright © 2026 <a href="https://livermetabolism.com" title="Matthias König" target="_blank">Matthias König</a>.</p>
         <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">
           <img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by/4.0/88x31.png"/>
         </a>
@@ -68,11 +68,36 @@ implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.</p></bo
             </rdf:Bag>
           </dcterms:creator>
           <dcterms:created rdf:parseType="Resource">
-            <dcterms:W3CDTF>1900-01-01T00:00:00Z</dcterms:W3CDTF>
+            <dcterms:W3CDTF>2026-03-16T12:03:46Z</dcterms:W3CDTF>
           </dcterms:created>
           <dcterms:modified rdf:parseType="Resource">
-            <dcterms:W3CDTF>1900-01-01T00:00:00Z</dcterms:W3CDTF>
+            <dcterms:W3CDTF>2026-03-16T12:03:46Z</dcterms:W3CDTF>
           </dcterms:modified>
+          <bqbiol:hasTaxon>
+            <rdf:Bag>
+              <rdf:li rdf:resource="https://identifiers.org/taxonomy/9606"/>
+              <rdf:li rdf:resource="https://identifiers.org/snomedct/337915000"/>
+            </rdf:Bag>
+          </bqbiol:hasTaxon>
+          <bqbiol:hasProperty>
+            <rdf:Bag>
+              <rdf:li rdf:resource="https://identifiers.org/mamo/MAMO_0000046"/>
+              <rdf:li rdf:resource="https://identifiers.org/ncit/C78126"/>
+              <rdf:li rdf:resource="https://identifiers.org/ncit/C98083"/>
+              <rdf:li rdf:resource="https://identifiers.org/ncit/C15299"/>
+              <rdf:li rdf:resource="https://identifiers.org/ncit/C2985"/>
+              <rdf:li rdf:resource="https://identifiers.org/ncit/C99532"/>
+              <rdf:li rdf:resource="https://identifiers.org/ncit/C79369"/>
+              <rdf:li rdf:resource="https://identifiers.org/ncit/C79372"/>
+            </rdf:Bag>
+          </bqbiol:hasProperty>
+          <bqbiol:isDescribedBy>
+            <rdf:Bag>
+              <rdf:li rdf:resource="https://identifiers.org/doi/10.3390/pharmaceutics18030287"/>
+              <rdf:li rdf:resource="https://identifiers.org/doi/10.5281/10.36903/physiome.31368556"/>
+              <rdf:li rdf:resource="https://identifiers.org/doi/10.5281/zenodo.13987865"/>
+            </rdf:Bag>
+          </bqbiol:isDescribedBy>
           <bqbiol:occursIn>
             <rdf:Bag>
               <rdf:li rdf:resource="https://identifiers.org/FMA:45615"/>
@@ -82,29 +107,6 @@ implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.</p></bo
               <rdf:li rdf:resource="https://identifiers.org/BTO:0000648"/>
             </rdf:Bag>
           </bqbiol:occursIn>
-          <bqbiol:hasProperty>
-            <rdf:Bag>
-              <rdf:li rdf:resource="https://identifiers.org/ncit/C79369"/>
-              <rdf:li rdf:resource="https://identifiers.org/ncit/C79372"/>
-              <rdf:li rdf:resource="https://identifiers.org/mamo/MAMO_0000046"/>
-              <rdf:li rdf:resource="https://identifiers.org/ncit/C78126"/>
-              <rdf:li rdf:resource="https://identifiers.org/ncit/C98083"/>
-              <rdf:li rdf:resource="https://identifiers.org/ncit/C15299"/>
-              <rdf:li rdf:resource="https://identifiers.org/ncit/C2985"/>
-              <rdf:li rdf:resource="https://identifiers.org/ncit/C99532"/>
-            </rdf:Bag>
-          </bqbiol:hasProperty>
-          <bqbiol:hasTaxon>
-            <rdf:Bag>
-              <rdf:li rdf:resource="https://identifiers.org/taxonomy/9606"/>
-              <rdf:li rdf:resource="https://identifiers.org/snomedct/337915000"/>
-            </rdf:Bag>
-          </bqbiol:hasTaxon>
-          <bqbiol:isDescribedBy>
-            <rdf:Bag>
-              <rdf:li rdf:resource="https://identifiers.org/doi/10.5281/zenodo.13987865"/>
-            </rdf:Bag>
-          </bqbiol:isDescribedBy>
         </rdf:Description>
       </rdf:RDF>
     </annotation>
