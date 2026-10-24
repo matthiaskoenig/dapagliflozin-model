@@ -1,7 +1,10 @@
 {
   "experiment_id": "Yang2013",
-  "base_path": "/home/mkoenig/git/pkdb_models/pkdb_models/models/dapagliflozin",
-  "data_path": "[PosixPath('/home/mkoenig/git/pkdb_models/pkdb_models/models/dapagliflozin/data/dapagliflozin'), PosixPath('/home/mkoenig/git/pkdb_models/pkdb_models/models/dapagliflozin/data/canagliflozin')]",
+  "base_path": "/home/mkoenig/git/dapagliflozin-model/src/pkdb_models/models/dapagliflozin",
+  "data_path": [
+    "/home/mkoenig/git/dapagliflozin-model/src/pkdb_models/models/dapagliflozin/data/dapagliflozin",
+    "/home/mkoenig/git/dapagliflozin-model/src/pkdb_models/models/dapagliflozin/data/canagliflozin"
+  ],
   "models": {
     "model": {
       "sid": null,
@@ -9,1417 +12,1779 @@
       "language": "SBML",
       "language_type": "SBML",
       "source": {
-        "source": "/home/mkoenig/git/pkdb_models/pkdb_models/models/dapagliflozin/models/results/models/dapagliflozin_body_flat.xml",
-        "path": "/home/mkoenig/git/pkdb_models/pkdb_models/models/dapagliflozin/models/results/models/dapagliflozin_body_flat.xml",
-        "content": "None"
+        "source": "/home/mkoenig/git/dapagliflozin-model/src/pkdb_models/models/dapagliflozin/models/output/models/dapagliflozin_body_flat.xml",
+        "path": "/home/mkoenig/git/dapagliflozin-model/src/pkdb_models/models/dapagliflozin/models/output/models/dapagliflozin_body_flat.xml",
+        "content": null
       },
-      "changes": {}
+      "base_path": null,
+      "changes": {},
+      "selections": [
+        "Afeces_dap",
+        "Afeces_daptot",
+        "Aurine_d3g",
+        "Aurine_dap",
+        "Aurine_dapmet",
+        "Aurine_daptot",
+        "GU__FED_f_absorption",
+        "GU__fed",
+        "IVDOSE_dap",
+        "KI__D3GEX",
+        "KI__DAPEX",
+        "KI__GFR",
+        "KI__GLCEX",
+        "KI__METEX",
+        "KI__RTG",
+        "KI__UGE",
+        "KI__f_renal_function",
+        "KI__glc_urine",
+        "KI__pg",
+        "PODOSE_dap",
+        "[Cve_d3g]",
+        "[Cve_dap]",
+        "[Cve_dapmet]",
+        "[Cve_daptot]",
+        "[KI__fpg]",
+        "f_cirrhosis",
+        "f_ugt1a9",
+        "time"
+      ],
+      "parameters": {}
     }
   },
   "tasks": {
     "task_po_dap5_single": {
+      "sid": "model__po_dap5_single",
+      "name": null,
       "model": "model",
-      "simulation": "po_dap5_single"
+      "simulation": "po_dap5_single",
+      "observables": []
     },
     "task_po_dap10_single": {
+      "sid": "model__po_dap10_single",
+      "name": null,
       "model": "model",
-      "simulation": "po_dap10_single"
+      "simulation": "po_dap10_single",
+      "observables": []
     },
     "task_po_dap5_multi": {
+      "sid": "model__po_dap5_multi",
+      "name": null,
       "model": "model",
-      "simulation": "po_dap5_multi"
+      "simulation": "po_dap5_multi",
+      "observables": []
     },
     "task_po_dap10_multi": {
+      "sid": "model__po_dap10_multi",
+      "name": null,
       "model": "model",
-      "simulation": "po_dap10_multi"
+      "simulation": "po_dap10_multi",
+      "observables": []
     }
   },
+  "observables": {},
   "simulations": {
     "po_dap5_single": {
-      "type": "TimecourseSim",
-      "selections": null,
-      "reset": true,
-      "time_offset": 0.0,
-      "timecourses": [
-        {
-          "start": 0,
-          "end": 6000,
-          "steps": 1000,
-          "changes": {
-            "BW": {
-              "_magnitude": 62.8,
-              "_units": "kilogram"
-            },
-            "[KI__glc_ext]": {
-              "_magnitude": 5.0,
-              "_units": "KI__mmole / liter"
-            },
-            "GU__f_absorption": {
-              "_magnitude": 1.0,
-              "_units": "dimensionless"
-            },
-            "f_cirrhosis": {
-              "_magnitude": 0,
-              "_units": "dimensionless"
-            },
-            "KI__f_renal_function": {
-              "_magnitude": 1.0,
-              "_units": "dimensionless"
-            },
-            "PODOSE_dap": {
-              "_magnitude": 5,
-              "_units": "milligram"
-            }
-          },
-          "model_changes": {},
-          "model_manipulations": {},
-          "discard": false
+      "type": "Simulation",
+      "time_unit": "hr",
+      "start": 0.0,
+      "end": 100,
+      "preinit_changes": {
+        "BW": {
+          "value": 62.8,
+          "unit": "kilogram"
+        },
+        "[KI__fpg]": {
+          "value": 5.0,
+          "unit": "millimolar"
+        },
+        "GU__fed": {
+          "value": 0.0,
+          "unit": "dimensionless"
+        },
+        "f_cirrhosis": {
+          "value": 0,
+          "unit": "dimensionless"
+        },
+        "KI__f_renal_function": {
+          "value": 1.0,
+          "unit": "dimensionless"
+        },
+        "PODOSE_dap": {
+          "value": 5,
+          "unit": "milligram"
         }
-      ]
+      },
+      "changes": [],
+      "presimulation": null,
+      "times": null,
+      "steps": null,
+      "time_shift": 0.0
     },
     "po_dap10_single": {
-      "type": "TimecourseSim",
-      "selections": null,
-      "reset": true,
-      "time_offset": 0.0,
-      "timecourses": [
-        {
-          "start": 0,
-          "end": 6000,
-          "steps": 1000,
-          "changes": {
-            "BW": {
-              "_magnitude": 62.2,
-              "_units": "kilogram"
-            },
-            "[KI__glc_ext]": {
-              "_magnitude": 5.0,
-              "_units": "KI__mmole / liter"
-            },
-            "GU__f_absorption": {
-              "_magnitude": 1.0,
-              "_units": "dimensionless"
-            },
-            "f_cirrhosis": {
-              "_magnitude": 0,
-              "_units": "dimensionless"
-            },
-            "KI__f_renal_function": {
-              "_magnitude": 1.0,
-              "_units": "dimensionless"
-            },
-            "PODOSE_dap": {
-              "_magnitude": 10,
-              "_units": "milligram"
-            }
-          },
-          "model_changes": {},
-          "model_manipulations": {},
-          "discard": false
+      "type": "Simulation",
+      "time_unit": "hr",
+      "start": 0.0,
+      "end": 100,
+      "preinit_changes": {
+        "BW": {
+          "value": 62.2,
+          "unit": "kilogram"
+        },
+        "[KI__fpg]": {
+          "value": 5.0,
+          "unit": "millimolar"
+        },
+        "GU__fed": {
+          "value": 0.0,
+          "unit": "dimensionless"
+        },
+        "f_cirrhosis": {
+          "value": 0,
+          "unit": "dimensionless"
+        },
+        "KI__f_renal_function": {
+          "value": 1.0,
+          "unit": "dimensionless"
+        },
+        "PODOSE_dap": {
+          "value": 10,
+          "unit": "milligram"
         }
-      ]
+      },
+      "changes": [],
+      "presimulation": null,
+      "times": null,
+      "steps": null,
+      "time_shift": 0.0
     },
     "po_dap5_multi": {
-      "type": "TimecourseSim",
-      "selections": null,
-      "reset": true,
-      "time_offset": -12960,
-      "timecourses": [
-        {
-          "start": 0,
-          "end": 1440,
-          "steps": 50,
-          "changes": {
-            "[KI__glc_ext]": {
-              "_magnitude": 5.0,
-              "_units": "KI__mmole / liter"
-            },
-            "GU__f_absorption": {
-              "_magnitude": 1.0,
-              "_units": "dimensionless"
-            },
-            "f_cirrhosis": {
-              "_magnitude": 0,
-              "_units": "dimensionless"
-            },
-            "KI__f_renal_function": {
-              "_magnitude": 1.0,
-              "_units": "dimensionless"
-            },
-            "PODOSE_dap": {
-              "_magnitude": 5,
-              "_units": "milligram"
-            }
-          },
-          "model_changes": {},
-          "model_manipulations": {},
-          "discard": false
+      "type": "Simulation",
+      "time_unit": "hr",
+      "start": 0.0,
+      "end": 316,
+      "preinit_changes": {
+        "BW": {
+          "value": 62.8,
+          "unit": "kilogram"
         },
-        {
-          "start": 0,
-          "end": 1440,
-          "steps": 50,
-          "changes": {
-            "KI__glc_urine": {
-              "_magnitude": 0,
-              "_units": "KI__mmole"
-            },
-            "PODOSE_dap": {
-              "_magnitude": 5,
-              "_units": "milligram"
-            }
-          },
-          "model_changes": {},
-          "model_manipulations": {},
-          "discard": false
+        "[KI__fpg]": {
+          "value": 5.0,
+          "unit": "millimolar"
         },
-        {
-          "start": 0,
-          "end": 1440,
-          "steps": 50,
-          "changes": {
-            "KI__glc_urine": {
-              "_magnitude": 0,
-              "_units": "KI__mmole"
-            },
-            "PODOSE_dap": {
-              "_magnitude": 5,
-              "_units": "milligram"
-            }
-          },
-          "model_changes": {},
-          "model_manipulations": {},
-          "discard": false
+        "GU__fed": {
+          "value": 0.0,
+          "unit": "dimensionless"
         },
-        {
-          "start": 0,
-          "end": 1440,
-          "steps": 50,
-          "changes": {
-            "KI__glc_urine": {
-              "_magnitude": 0,
-              "_units": "KI__mmole"
-            },
-            "PODOSE_dap": {
-              "_magnitude": 5,
-              "_units": "milligram"
-            }
-          },
-          "model_changes": {},
-          "model_manipulations": {},
-          "discard": false
+        "f_cirrhosis": {
+          "value": 0,
+          "unit": "dimensionless"
         },
-        {
-          "start": 0,
-          "end": 1440,
-          "steps": 50,
-          "changes": {
-            "KI__glc_urine": {
-              "_magnitude": 0,
-              "_units": "KI__mmole"
-            },
-            "PODOSE_dap": {
-              "_magnitude": 5,
-              "_units": "milligram"
-            }
-          },
-          "model_changes": {},
-          "model_manipulations": {},
-          "discard": false
+        "KI__f_renal_function": {
+          "value": 1.0,
+          "unit": "dimensionless"
         },
-        {
-          "start": 0,
-          "end": 1440,
-          "steps": 50,
-          "changes": {
-            "KI__glc_urine": {
-              "_magnitude": 0,
-              "_units": "KI__mmole"
-            },
-            "PODOSE_dap": {
-              "_magnitude": 5,
-              "_units": "milligram"
-            }
-          },
-          "model_changes": {},
-          "model_manipulations": {},
-          "discard": false
-        },
-        {
-          "start": 0,
-          "end": 1440,
-          "steps": 50,
-          "changes": {
-            "KI__glc_urine": {
-              "_magnitude": 0,
-              "_units": "KI__mmole"
-            },
-            "PODOSE_dap": {
-              "_magnitude": 5,
-              "_units": "milligram"
-            }
-          },
-          "model_changes": {},
-          "model_manipulations": {},
-          "discard": false
-        },
-        {
-          "start": 0,
-          "end": 1440,
-          "steps": 50,
-          "changes": {
-            "KI__glc_urine": {
-              "_magnitude": 0,
-              "_units": "KI__mmole"
-            },
-            "PODOSE_dap": {
-              "_magnitude": 5,
-              "_units": "milligram"
-            }
-          },
-          "model_changes": {},
-          "model_manipulations": {},
-          "discard": false
-        },
-        {
-          "start": 0,
-          "end": 1440,
-          "steps": 50,
-          "changes": {
-            "KI__glc_urine": {
-              "_magnitude": 0,
-              "_units": "KI__mmole"
-            },
-            "PODOSE_dap": {
-              "_magnitude": 5,
-              "_units": "milligram"
-            }
-          },
-          "model_changes": {},
-          "model_manipulations": {},
-          "discard": false
-        },
-        {
-          "start": 0,
-          "end": 6000,
-          "steps": 2000,
-          "changes": {
-            "KI__glc_urine": {
-              "_magnitude": 0,
-              "_units": "KI__mmole"
-            },
-            "PODOSE_dap": {
-              "_magnitude": 5,
-              "_units": "milligram"
-            }
-          },
-          "model_changes": {},
-          "model_manipulations": {},
-          "discard": false
+        "PODOSE_dap": {
+          "value": 5,
+          "unit": "milligram"
         }
-      ]
+      },
+      "changes": [
+        {
+          "times": [
+            96,
+            120,
+            144,
+            168,
+            192,
+            216
+          ],
+          "values": {
+            "KI__glc_urine": {
+              "value": 0,
+              "unit": "millimole"
+            }
+          }
+        },
+        {
+          "times": [
+            96,
+            120,
+            144,
+            168,
+            192,
+            216
+          ],
+          "values": {
+            "PODOSE_dap": "PODOSE_dap + 5.0"
+          }
+        }
+      ],
+      "presimulation": null,
+      "times": null,
+      "steps": null,
+      "time_shift": -216
     },
     "po_dap10_multi": {
-      "type": "TimecourseSim",
-      "selections": null,
-      "reset": true,
-      "time_offset": -12960,
-      "timecourses": [
-        {
-          "start": 0,
-          "end": 1440,
-          "steps": 50,
-          "changes": {
-            "[KI__glc_ext]": {
-              "_magnitude": 5.0,
-              "_units": "KI__mmole / liter"
-            },
-            "GU__f_absorption": {
-              "_magnitude": 1.0,
-              "_units": "dimensionless"
-            },
-            "f_cirrhosis": {
-              "_magnitude": 0,
-              "_units": "dimensionless"
-            },
-            "KI__f_renal_function": {
-              "_magnitude": 1.0,
-              "_units": "dimensionless"
-            },
-            "PODOSE_dap": {
-              "_magnitude": 10,
-              "_units": "milligram"
-            }
-          },
-          "model_changes": {},
-          "model_manipulations": {},
-          "discard": false
+      "type": "Simulation",
+      "time_unit": "hr",
+      "start": 0.0,
+      "end": 316,
+      "preinit_changes": {
+        "BW": {
+          "value": 62.2,
+          "unit": "kilogram"
         },
-        {
-          "start": 0,
-          "end": 1440,
-          "steps": 50,
-          "changes": {
-            "KI__glc_urine": {
-              "_magnitude": 0,
-              "_units": "KI__mmole"
-            },
-            "PODOSE_dap": {
-              "_magnitude": 10,
-              "_units": "milligram"
-            }
-          },
-          "model_changes": {},
-          "model_manipulations": {},
-          "discard": false
+        "[KI__fpg]": {
+          "value": 5.0,
+          "unit": "millimolar"
         },
-        {
-          "start": 0,
-          "end": 1440,
-          "steps": 50,
-          "changes": {
-            "KI__glc_urine": {
-              "_magnitude": 0,
-              "_units": "KI__mmole"
-            },
-            "PODOSE_dap": {
-              "_magnitude": 10,
-              "_units": "milligram"
-            }
-          },
-          "model_changes": {},
-          "model_manipulations": {},
-          "discard": false
+        "GU__fed": {
+          "value": 0.0,
+          "unit": "dimensionless"
         },
-        {
-          "start": 0,
-          "end": 1440,
-          "steps": 50,
-          "changes": {
-            "KI__glc_urine": {
-              "_magnitude": 0,
-              "_units": "KI__mmole"
-            },
-            "PODOSE_dap": {
-              "_magnitude": 10,
-              "_units": "milligram"
-            }
-          },
-          "model_changes": {},
-          "model_manipulations": {},
-          "discard": false
+        "f_cirrhosis": {
+          "value": 0,
+          "unit": "dimensionless"
         },
-        {
-          "start": 0,
-          "end": 1440,
-          "steps": 50,
-          "changes": {
-            "KI__glc_urine": {
-              "_magnitude": 0,
-              "_units": "KI__mmole"
-            },
-            "PODOSE_dap": {
-              "_magnitude": 10,
-              "_units": "milligram"
-            }
-          },
-          "model_changes": {},
-          "model_manipulations": {},
-          "discard": false
+        "KI__f_renal_function": {
+          "value": 1.0,
+          "unit": "dimensionless"
         },
-        {
-          "start": 0,
-          "end": 1440,
-          "steps": 50,
-          "changes": {
-            "KI__glc_urine": {
-              "_magnitude": 0,
-              "_units": "KI__mmole"
-            },
-            "PODOSE_dap": {
-              "_magnitude": 10,
-              "_units": "milligram"
-            }
-          },
-          "model_changes": {},
-          "model_manipulations": {},
-          "discard": false
-        },
-        {
-          "start": 0,
-          "end": 1440,
-          "steps": 50,
-          "changes": {
-            "KI__glc_urine": {
-              "_magnitude": 0,
-              "_units": "KI__mmole"
-            },
-            "PODOSE_dap": {
-              "_magnitude": 10,
-              "_units": "milligram"
-            }
-          },
-          "model_changes": {},
-          "model_manipulations": {},
-          "discard": false
-        },
-        {
-          "start": 0,
-          "end": 1440,
-          "steps": 50,
-          "changes": {
-            "KI__glc_urine": {
-              "_magnitude": 0,
-              "_units": "KI__mmole"
-            },
-            "PODOSE_dap": {
-              "_magnitude": 10,
-              "_units": "milligram"
-            }
-          },
-          "model_changes": {},
-          "model_manipulations": {},
-          "discard": false
-        },
-        {
-          "start": 0,
-          "end": 1440,
-          "steps": 50,
-          "changes": {
-            "KI__glc_urine": {
-              "_magnitude": 0,
-              "_units": "KI__mmole"
-            },
-            "PODOSE_dap": {
-              "_magnitude": 10,
-              "_units": "milligram"
-            }
-          },
-          "model_changes": {},
-          "model_manipulations": {},
-          "discard": false
-        },
-        {
-          "start": 0,
-          "end": 6000,
-          "steps": 2000,
-          "changes": {
-            "KI__glc_urine": {
-              "_magnitude": 0,
-              "_units": "KI__mmole"
-            },
-            "PODOSE_dap": {
-              "_magnitude": 10,
-              "_units": "milligram"
-            }
-          },
-          "model_changes": {},
-          "model_manipulations": {},
-          "discard": false
+        "PODOSE_dap": {
+          "value": 10,
+          "unit": "milligram"
         }
-      ]
+      },
+      "changes": [
+        {
+          "times": [
+            96,
+            120,
+            144,
+            168,
+            192,
+            216
+          ],
+          "values": {
+            "KI__glc_urine": {
+              "value": 0,
+              "unit": "millimole"
+            }
+          }
+        },
+        {
+          "times": [
+            96,
+            120,
+            144,
+            168,
+            192,
+            216
+          ],
+          "values": {
+            "PODOSE_dap": "PODOSE_dap + 10.0"
+          }
+        }
+      ],
+      "presimulation": null,
+      "times": null,
+      "steps": null,
+      "time_shift": -216
     }
   },
   "data": {
     "task_po_dap5_single__time": {
       "type": "TASK",
+      "sid": "task_po_dap5_single__time",
       "index": "time",
+      "selection": "time",
       "unit": null,
       "task": "task_po_dap5_single",
       "dataset": null,
       "function": null,
-      "variables": null
+      "variables": null,
+      "parameters": {},
+      "sel": null
     },
     "task_po_dap5_single__IVDOSE_dap": {
       "type": "TASK",
+      "sid": "task_po_dap5_single__IVDOSE_dap",
       "index": "IVDOSE_dap",
+      "selection": "IVDOSE_dap",
       "unit": null,
       "task": "task_po_dap5_single",
       "dataset": null,
       "function": null,
-      "variables": null
+      "variables": null,
+      "parameters": {},
+      "sel": null
     },
     "task_po_dap5_single__PODOSE_dap": {
       "type": "TASK",
+      "sid": "task_po_dap5_single__PODOSE_dap",
       "index": "PODOSE_dap",
+      "selection": "PODOSE_dap",
       "unit": null,
       "task": "task_po_dap5_single",
       "dataset": null,
       "function": null,
-      "variables": null
+      "variables": null,
+      "parameters": {},
+      "sel": null
     },
-    "task_po_dap5_single__Cve_daptot": {
+    "task_po_dap5_single__conc__Cve_daptot": {
       "type": "TASK",
+      "sid": "task_po_dap5_single__conc__Cve_daptot",
       "index": "Cve_daptot",
+      "selection": "[Cve_daptot]",
       "unit": null,
       "task": "task_po_dap5_single",
       "dataset": null,
       "function": null,
-      "variables": null
+      "variables": null,
+      "parameters": {},
+      "sel": null
     },
-    "task_po_dap5_single__Cve_dap": {
+    "task_po_dap5_single__conc__Cve_dap": {
       "type": "TASK",
+      "sid": "task_po_dap5_single__conc__Cve_dap",
       "index": "Cve_dap",
+      "selection": "[Cve_dap]",
       "unit": null,
       "task": "task_po_dap5_single",
       "dataset": null,
       "function": null,
-      "variables": null
+      "variables": null,
+      "parameters": {},
+      "sel": null
     },
-    "task_po_dap5_single__Cve_d3g": {
+    "task_po_dap5_single__conc__Cve_d3g": {
       "type": "TASK",
+      "sid": "task_po_dap5_single__conc__Cve_d3g",
       "index": "Cve_d3g",
+      "selection": "[Cve_d3g]",
       "unit": null,
       "task": "task_po_dap5_single",
       "dataset": null,
       "function": null,
-      "variables": null
+      "variables": null,
+      "parameters": {},
+      "sel": null
     },
-    "task_po_dap5_single__KI__glc_ext": {
+    "task_po_dap5_single__conc__Cve_dapmet": {
       "type": "TASK",
-      "index": "KI__glc_ext",
+      "sid": "task_po_dap5_single__conc__Cve_dapmet",
+      "index": "Cve_dapmet",
+      "selection": "[Cve_dapmet]",
       "unit": null,
       "task": "task_po_dap5_single",
       "dataset": null,
       "function": null,
-      "variables": null
-    },
-    "task_po_dap5_single__LI__dap": {
-      "type": "TASK",
-      "index": "LI__dap",
-      "unit": null,
-      "task": "task_po_dap5_single",
-      "dataset": null,
-      "function": null,
-      "variables": null
-    },
-    "task_po_dap5_single__LI__d3g": {
-      "type": "TASK",
-      "index": "LI__d3g",
-      "unit": null,
-      "task": "task_po_dap5_single",
-      "dataset": null,
-      "function": null,
-      "variables": null
+      "variables": null,
+      "parameters": {},
+      "sel": null
     },
     "task_po_dap5_single__Aurine_daptot": {
       "type": "TASK",
+      "sid": "task_po_dap5_single__Aurine_daptot",
       "index": "Aurine_daptot",
+      "selection": "Aurine_daptot",
       "unit": null,
       "task": "task_po_dap5_single",
       "dataset": null,
       "function": null,
-      "variables": null
+      "variables": null,
+      "parameters": {},
+      "sel": null
     },
     "task_po_dap5_single__Aurine_dap": {
       "type": "TASK",
+      "sid": "task_po_dap5_single__Aurine_dap",
       "index": "Aurine_dap",
+      "selection": "Aurine_dap",
       "unit": null,
       "task": "task_po_dap5_single",
       "dataset": null,
       "function": null,
-      "variables": null
+      "variables": null,
+      "parameters": {},
+      "sel": null
     },
     "task_po_dap5_single__Aurine_d3g": {
       "type": "TASK",
+      "sid": "task_po_dap5_single__Aurine_d3g",
       "index": "Aurine_d3g",
+      "selection": "Aurine_d3g",
       "unit": null,
       "task": "task_po_dap5_single",
       "dataset": null,
       "function": null,
-      "variables": null
+      "variables": null,
+      "parameters": {},
+      "sel": null
     },
-    "task_po_dap5_single__KI__glc_urine": {
+    "task_po_dap5_single__Aurine_dapmet": {
       "type": "TASK",
-      "index": "KI__glc_urine",
+      "sid": "task_po_dap5_single__Aurine_dapmet",
+      "index": "Aurine_dapmet",
+      "selection": "Aurine_dapmet",
       "unit": null,
       "task": "task_po_dap5_single",
       "dataset": null,
       "function": null,
-      "variables": null
-    },
-    "task_po_dap5_single__KI__UGE": {
-      "type": "TASK",
-      "index": "KI__UGE",
-      "unit": null,
-      "task": "task_po_dap5_single",
-      "dataset": null,
-      "function": null,
-      "variables": null
-    },
-    "task_po_dap5_single__KI__RTG": {
-      "type": "TASK",
-      "index": "KI__RTG",
-      "unit": null,
-      "task": "task_po_dap5_single",
-      "dataset": null,
-      "function": null,
-      "variables": null
+      "variables": null,
+      "parameters": {},
+      "sel": null
     },
     "task_po_dap5_single__Afeces_dap": {
       "type": "TASK",
+      "sid": "task_po_dap5_single__Afeces_dap",
       "index": "Afeces_dap",
+      "selection": "Afeces_dap",
       "unit": null,
       "task": "task_po_dap5_single",
       "dataset": null,
       "function": null,
-      "variables": null
+      "variables": null,
+      "parameters": {},
+      "sel": null
     },
     "task_po_dap5_single__Afeces_daptot": {
       "type": "TASK",
+      "sid": "task_po_dap5_single__Afeces_daptot",
       "index": "Afeces_daptot",
+      "selection": "Afeces_daptot",
       "unit": null,
       "task": "task_po_dap5_single",
       "dataset": null,
       "function": null,
-      "variables": null
+      "variables": null,
+      "parameters": {},
+      "sel": null
     },
-    "task_po_dap5_single__KI__D3GEX": {
+    "task_po_dap5_single__conc__KI__fpg": {
       "type": "TASK",
-      "index": "KI__D3GEX",
+      "sid": "task_po_dap5_single__conc__KI__fpg",
+      "index": "KI__fpg",
+      "selection": "[KI__fpg]",
       "unit": null,
       "task": "task_po_dap5_single",
       "dataset": null,
       "function": null,
-      "variables": null
+      "variables": null,
+      "parameters": {},
+      "sel": null
     },
-    "task_po_dap5_single__KI__DAPEX": {
+    "task_po_dap5_single__KI__pg": {
       "type": "TASK",
-      "index": "KI__DAPEX",
+      "sid": "task_po_dap5_single__KI__pg",
+      "index": "KI__pg",
+      "selection": "KI__pg",
       "unit": null,
       "task": "task_po_dap5_single",
       "dataset": null,
       "function": null,
-      "variables": null
+      "variables": null,
+      "parameters": {},
+      "sel": null
+    },
+    "task_po_dap5_single__KI__glc_urine": {
+      "type": "TASK",
+      "sid": "task_po_dap5_single__KI__glc_urine",
+      "index": "KI__glc_urine",
+      "selection": "KI__glc_urine",
+      "unit": null,
+      "task": "task_po_dap5_single",
+      "dataset": null,
+      "function": null,
+      "variables": null,
+      "parameters": {},
+      "sel": null
+    },
+    "task_po_dap5_single__KI__UGE": {
+      "type": "TASK",
+      "sid": "task_po_dap5_single__KI__UGE",
+      "index": "KI__UGE",
+      "selection": "KI__UGE",
+      "unit": null,
+      "task": "task_po_dap5_single",
+      "dataset": null,
+      "function": null,
+      "variables": null,
+      "parameters": {},
+      "sel": null
+    },
+    "task_po_dap5_single__KI__RTG": {
+      "type": "TASK",
+      "sid": "task_po_dap5_single__KI__RTG",
+      "index": "KI__RTG",
+      "selection": "KI__RTG",
+      "unit": null,
+      "task": "task_po_dap5_single",
+      "dataset": null,
+      "function": null,
+      "variables": null,
+      "parameters": {},
+      "sel": null
     },
     "task_po_dap5_single__KI__GLCEX": {
       "type": "TASK",
+      "sid": "task_po_dap5_single__KI__GLCEX",
       "index": "KI__GLCEX",
+      "selection": "KI__GLCEX",
       "unit": null,
       "task": "task_po_dap5_single",
       "dataset": null,
       "function": null,
-      "variables": null
+      "variables": null,
+      "parameters": {},
+      "sel": null
+    },
+    "task_po_dap5_single__KI__D3GEX": {
+      "type": "TASK",
+      "sid": "task_po_dap5_single__KI__D3GEX",
+      "index": "KI__D3GEX",
+      "selection": "KI__D3GEX",
+      "unit": null,
+      "task": "task_po_dap5_single",
+      "dataset": null,
+      "function": null,
+      "variables": null,
+      "parameters": {},
+      "sel": null
+    },
+    "task_po_dap5_single__KI__DAPEX": {
+      "type": "TASK",
+      "sid": "task_po_dap5_single__KI__DAPEX",
+      "index": "KI__DAPEX",
+      "selection": "KI__DAPEX",
+      "unit": null,
+      "task": "task_po_dap5_single",
+      "dataset": null,
+      "function": null,
+      "variables": null,
+      "parameters": {},
+      "sel": null
+    },
+    "task_po_dap5_single__KI__METEX": {
+      "type": "TASK",
+      "sid": "task_po_dap5_single__KI__METEX",
+      "index": "KI__METEX",
+      "selection": "KI__METEX",
+      "unit": null,
+      "task": "task_po_dap5_single",
+      "dataset": null,
+      "function": null,
+      "variables": null,
+      "parameters": {},
+      "sel": null
     },
     "task_po_dap5_single__KI__f_renal_function": {
       "type": "TASK",
+      "sid": "task_po_dap5_single__KI__f_renal_function",
       "index": "KI__f_renal_function",
+      "selection": "KI__f_renal_function",
       "unit": null,
       "task": "task_po_dap5_single",
       "dataset": null,
       "function": null,
-      "variables": null
+      "variables": null,
+      "parameters": {},
+      "sel": null
+    },
+    "task_po_dap5_single__KI__GFR": {
+      "type": "TASK",
+      "sid": "task_po_dap5_single__KI__GFR",
+      "index": "KI__GFR",
+      "selection": "KI__GFR",
+      "unit": null,
+      "task": "task_po_dap5_single",
+      "dataset": null,
+      "function": null,
+      "variables": null,
+      "parameters": {},
+      "sel": null
     },
     "task_po_dap5_single__f_cirrhosis": {
       "type": "TASK",
+      "sid": "task_po_dap5_single__f_cirrhosis",
       "index": "f_cirrhosis",
+      "selection": "f_cirrhosis",
       "unit": null,
       "task": "task_po_dap5_single",
       "dataset": null,
       "function": null,
-      "variables": null
+      "variables": null,
+      "parameters": {},
+      "sel": null
     },
-    "task_po_dap5_single__GU__f_absorption": {
+    "task_po_dap5_single__GU__fed": {
       "type": "TASK",
-      "index": "GU__f_absorption",
+      "sid": "task_po_dap5_single__GU__fed",
+      "index": "GU__fed",
+      "selection": "GU__fed",
       "unit": null,
       "task": "task_po_dap5_single",
       "dataset": null,
       "function": null,
-      "variables": null
+      "variables": null,
+      "parameters": {},
+      "sel": null
+    },
+    "task_po_dap5_single__GU__FED_f_absorption": {
+      "type": "TASK",
+      "sid": "task_po_dap5_single__GU__FED_f_absorption",
+      "index": "GU__FED_f_absorption",
+      "selection": "GU__FED_f_absorption",
+      "unit": null,
+      "task": "task_po_dap5_single",
+      "dataset": null,
+      "function": null,
+      "variables": null,
+      "parameters": {},
+      "sel": null
     },
     "task_po_dap5_single__f_ugt1a9": {
       "type": "TASK",
+      "sid": "task_po_dap5_single__f_ugt1a9",
       "index": "f_ugt1a9",
+      "selection": "f_ugt1a9",
       "unit": null,
       "task": "task_po_dap5_single",
       "dataset": null,
       "function": null,
-      "variables": null
+      "variables": null,
+      "parameters": {},
+      "sel": null
     },
     "task_po_dap10_single__time": {
       "type": "TASK",
+      "sid": "task_po_dap10_single__time",
       "index": "time",
+      "selection": "time",
       "unit": null,
       "task": "task_po_dap10_single",
       "dataset": null,
       "function": null,
-      "variables": null
+      "variables": null,
+      "parameters": {},
+      "sel": null
     },
     "task_po_dap10_single__IVDOSE_dap": {
       "type": "TASK",
+      "sid": "task_po_dap10_single__IVDOSE_dap",
       "index": "IVDOSE_dap",
+      "selection": "IVDOSE_dap",
       "unit": null,
       "task": "task_po_dap10_single",
       "dataset": null,
       "function": null,
-      "variables": null
+      "variables": null,
+      "parameters": {},
+      "sel": null
     },
     "task_po_dap10_single__PODOSE_dap": {
       "type": "TASK",
+      "sid": "task_po_dap10_single__PODOSE_dap",
       "index": "PODOSE_dap",
+      "selection": "PODOSE_dap",
       "unit": null,
       "task": "task_po_dap10_single",
       "dataset": null,
       "function": null,
-      "variables": null
+      "variables": null,
+      "parameters": {},
+      "sel": null
     },
-    "task_po_dap10_single__Cve_daptot": {
+    "task_po_dap10_single__conc__Cve_daptot": {
       "type": "TASK",
+      "sid": "task_po_dap10_single__conc__Cve_daptot",
       "index": "Cve_daptot",
+      "selection": "[Cve_daptot]",
       "unit": null,
       "task": "task_po_dap10_single",
       "dataset": null,
       "function": null,
-      "variables": null
+      "variables": null,
+      "parameters": {},
+      "sel": null
     },
-    "task_po_dap10_single__Cve_dap": {
+    "task_po_dap10_single__conc__Cve_dap": {
       "type": "TASK",
+      "sid": "task_po_dap10_single__conc__Cve_dap",
       "index": "Cve_dap",
+      "selection": "[Cve_dap]",
       "unit": null,
       "task": "task_po_dap10_single",
       "dataset": null,
       "function": null,
-      "variables": null
+      "variables": null,
+      "parameters": {},
+      "sel": null
     },
-    "task_po_dap10_single__Cve_d3g": {
+    "task_po_dap10_single__conc__Cve_d3g": {
       "type": "TASK",
+      "sid": "task_po_dap10_single__conc__Cve_d3g",
       "index": "Cve_d3g",
+      "selection": "[Cve_d3g]",
       "unit": null,
       "task": "task_po_dap10_single",
       "dataset": null,
       "function": null,
-      "variables": null
+      "variables": null,
+      "parameters": {},
+      "sel": null
     },
-    "task_po_dap10_single__KI__glc_ext": {
+    "task_po_dap10_single__conc__Cve_dapmet": {
       "type": "TASK",
-      "index": "KI__glc_ext",
+      "sid": "task_po_dap10_single__conc__Cve_dapmet",
+      "index": "Cve_dapmet",
+      "selection": "[Cve_dapmet]",
       "unit": null,
       "task": "task_po_dap10_single",
       "dataset": null,
       "function": null,
-      "variables": null
-    },
-    "task_po_dap10_single__LI__dap": {
-      "type": "TASK",
-      "index": "LI__dap",
-      "unit": null,
-      "task": "task_po_dap10_single",
-      "dataset": null,
-      "function": null,
-      "variables": null
-    },
-    "task_po_dap10_single__LI__d3g": {
-      "type": "TASK",
-      "index": "LI__d3g",
-      "unit": null,
-      "task": "task_po_dap10_single",
-      "dataset": null,
-      "function": null,
-      "variables": null
+      "variables": null,
+      "parameters": {},
+      "sel": null
     },
     "task_po_dap10_single__Aurine_daptot": {
       "type": "TASK",
+      "sid": "task_po_dap10_single__Aurine_daptot",
       "index": "Aurine_daptot",
+      "selection": "Aurine_daptot",
       "unit": null,
       "task": "task_po_dap10_single",
       "dataset": null,
       "function": null,
-      "variables": null
+      "variables": null,
+      "parameters": {},
+      "sel": null
     },
     "task_po_dap10_single__Aurine_dap": {
       "type": "TASK",
+      "sid": "task_po_dap10_single__Aurine_dap",
       "index": "Aurine_dap",
+      "selection": "Aurine_dap",
       "unit": null,
       "task": "task_po_dap10_single",
       "dataset": null,
       "function": null,
-      "variables": null
+      "variables": null,
+      "parameters": {},
+      "sel": null
     },
     "task_po_dap10_single__Aurine_d3g": {
       "type": "TASK",
+      "sid": "task_po_dap10_single__Aurine_d3g",
       "index": "Aurine_d3g",
+      "selection": "Aurine_d3g",
       "unit": null,
       "task": "task_po_dap10_single",
       "dataset": null,
       "function": null,
-      "variables": null
+      "variables": null,
+      "parameters": {},
+      "sel": null
     },
-    "task_po_dap10_single__KI__glc_urine": {
+    "task_po_dap10_single__Aurine_dapmet": {
       "type": "TASK",
-      "index": "KI__glc_urine",
+      "sid": "task_po_dap10_single__Aurine_dapmet",
+      "index": "Aurine_dapmet",
+      "selection": "Aurine_dapmet",
       "unit": null,
       "task": "task_po_dap10_single",
       "dataset": null,
       "function": null,
-      "variables": null
-    },
-    "task_po_dap10_single__KI__UGE": {
-      "type": "TASK",
-      "index": "KI__UGE",
-      "unit": null,
-      "task": "task_po_dap10_single",
-      "dataset": null,
-      "function": null,
-      "variables": null
-    },
-    "task_po_dap10_single__KI__RTG": {
-      "type": "TASK",
-      "index": "KI__RTG",
-      "unit": null,
-      "task": "task_po_dap10_single",
-      "dataset": null,
-      "function": null,
-      "variables": null
+      "variables": null,
+      "parameters": {},
+      "sel": null
     },
     "task_po_dap10_single__Afeces_dap": {
       "type": "TASK",
+      "sid": "task_po_dap10_single__Afeces_dap",
       "index": "Afeces_dap",
+      "selection": "Afeces_dap",
       "unit": null,
       "task": "task_po_dap10_single",
       "dataset": null,
       "function": null,
-      "variables": null
+      "variables": null,
+      "parameters": {},
+      "sel": null
     },
     "task_po_dap10_single__Afeces_daptot": {
       "type": "TASK",
+      "sid": "task_po_dap10_single__Afeces_daptot",
       "index": "Afeces_daptot",
+      "selection": "Afeces_daptot",
       "unit": null,
       "task": "task_po_dap10_single",
       "dataset": null,
       "function": null,
-      "variables": null
+      "variables": null,
+      "parameters": {},
+      "sel": null
     },
-    "task_po_dap10_single__KI__D3GEX": {
+    "task_po_dap10_single__conc__KI__fpg": {
       "type": "TASK",
-      "index": "KI__D3GEX",
+      "sid": "task_po_dap10_single__conc__KI__fpg",
+      "index": "KI__fpg",
+      "selection": "[KI__fpg]",
       "unit": null,
       "task": "task_po_dap10_single",
       "dataset": null,
       "function": null,
-      "variables": null
+      "variables": null,
+      "parameters": {},
+      "sel": null
     },
-    "task_po_dap10_single__KI__DAPEX": {
+    "task_po_dap10_single__KI__pg": {
       "type": "TASK",
-      "index": "KI__DAPEX",
+      "sid": "task_po_dap10_single__KI__pg",
+      "index": "KI__pg",
+      "selection": "KI__pg",
       "unit": null,
       "task": "task_po_dap10_single",
       "dataset": null,
       "function": null,
-      "variables": null
+      "variables": null,
+      "parameters": {},
+      "sel": null
+    },
+    "task_po_dap10_single__KI__glc_urine": {
+      "type": "TASK",
+      "sid": "task_po_dap10_single__KI__glc_urine",
+      "index": "KI__glc_urine",
+      "selection": "KI__glc_urine",
+      "unit": null,
+      "task": "task_po_dap10_single",
+      "dataset": null,
+      "function": null,
+      "variables": null,
+      "parameters": {},
+      "sel": null
+    },
+    "task_po_dap10_single__KI__UGE": {
+      "type": "TASK",
+      "sid": "task_po_dap10_single__KI__UGE",
+      "index": "KI__UGE",
+      "selection": "KI__UGE",
+      "unit": null,
+      "task": "task_po_dap10_single",
+      "dataset": null,
+      "function": null,
+      "variables": null,
+      "parameters": {},
+      "sel": null
+    },
+    "task_po_dap10_single__KI__RTG": {
+      "type": "TASK",
+      "sid": "task_po_dap10_single__KI__RTG",
+      "index": "KI__RTG",
+      "selection": "KI__RTG",
+      "unit": null,
+      "task": "task_po_dap10_single",
+      "dataset": null,
+      "function": null,
+      "variables": null,
+      "parameters": {},
+      "sel": null
     },
     "task_po_dap10_single__KI__GLCEX": {
       "type": "TASK",
+      "sid": "task_po_dap10_single__KI__GLCEX",
       "index": "KI__GLCEX",
+      "selection": "KI__GLCEX",
       "unit": null,
       "task": "task_po_dap10_single",
       "dataset": null,
       "function": null,
-      "variables": null
+      "variables": null,
+      "parameters": {},
+      "sel": null
+    },
+    "task_po_dap10_single__KI__D3GEX": {
+      "type": "TASK",
+      "sid": "task_po_dap10_single__KI__D3GEX",
+      "index": "KI__D3GEX",
+      "selection": "KI__D3GEX",
+      "unit": null,
+      "task": "task_po_dap10_single",
+      "dataset": null,
+      "function": null,
+      "variables": null,
+      "parameters": {},
+      "sel": null
+    },
+    "task_po_dap10_single__KI__DAPEX": {
+      "type": "TASK",
+      "sid": "task_po_dap10_single__KI__DAPEX",
+      "index": "KI__DAPEX",
+      "selection": "KI__DAPEX",
+      "unit": null,
+      "task": "task_po_dap10_single",
+      "dataset": null,
+      "function": null,
+      "variables": null,
+      "parameters": {},
+      "sel": null
+    },
+    "task_po_dap10_single__KI__METEX": {
+      "type": "TASK",
+      "sid": "task_po_dap10_single__KI__METEX",
+      "index": "KI__METEX",
+      "selection": "KI__METEX",
+      "unit": null,
+      "task": "task_po_dap10_single",
+      "dataset": null,
+      "function": null,
+      "variables": null,
+      "parameters": {},
+      "sel": null
     },
     "task_po_dap10_single__KI__f_renal_function": {
       "type": "TASK",
+      "sid": "task_po_dap10_single__KI__f_renal_function",
       "index": "KI__f_renal_function",
+      "selection": "KI__f_renal_function",
       "unit": null,
       "task": "task_po_dap10_single",
       "dataset": null,
       "function": null,
-      "variables": null
+      "variables": null,
+      "parameters": {},
+      "sel": null
+    },
+    "task_po_dap10_single__KI__GFR": {
+      "type": "TASK",
+      "sid": "task_po_dap10_single__KI__GFR",
+      "index": "KI__GFR",
+      "selection": "KI__GFR",
+      "unit": null,
+      "task": "task_po_dap10_single",
+      "dataset": null,
+      "function": null,
+      "variables": null,
+      "parameters": {},
+      "sel": null
     },
     "task_po_dap10_single__f_cirrhosis": {
       "type": "TASK",
+      "sid": "task_po_dap10_single__f_cirrhosis",
       "index": "f_cirrhosis",
+      "selection": "f_cirrhosis",
       "unit": null,
       "task": "task_po_dap10_single",
       "dataset": null,
       "function": null,
-      "variables": null
+      "variables": null,
+      "parameters": {},
+      "sel": null
     },
-    "task_po_dap10_single__GU__f_absorption": {
+    "task_po_dap10_single__GU__fed": {
       "type": "TASK",
-      "index": "GU__f_absorption",
+      "sid": "task_po_dap10_single__GU__fed",
+      "index": "GU__fed",
+      "selection": "GU__fed",
       "unit": null,
       "task": "task_po_dap10_single",
       "dataset": null,
       "function": null,
-      "variables": null
+      "variables": null,
+      "parameters": {},
+      "sel": null
+    },
+    "task_po_dap10_single__GU__FED_f_absorption": {
+      "type": "TASK",
+      "sid": "task_po_dap10_single__GU__FED_f_absorption",
+      "index": "GU__FED_f_absorption",
+      "selection": "GU__FED_f_absorption",
+      "unit": null,
+      "task": "task_po_dap10_single",
+      "dataset": null,
+      "function": null,
+      "variables": null,
+      "parameters": {},
+      "sel": null
     },
     "task_po_dap10_single__f_ugt1a9": {
       "type": "TASK",
+      "sid": "task_po_dap10_single__f_ugt1a9",
       "index": "f_ugt1a9",
+      "selection": "f_ugt1a9",
       "unit": null,
       "task": "task_po_dap10_single",
       "dataset": null,
       "function": null,
-      "variables": null
+      "variables": null,
+      "parameters": {},
+      "sel": null
     },
     "task_po_dap5_multi__time": {
       "type": "TASK",
+      "sid": "task_po_dap5_multi__time",
       "index": "time",
+      "selection": "time",
       "unit": null,
       "task": "task_po_dap5_multi",
       "dataset": null,
       "function": null,
-      "variables": null
+      "variables": null,
+      "parameters": {},
+      "sel": null
     },
     "task_po_dap5_multi__IVDOSE_dap": {
       "type": "TASK",
+      "sid": "task_po_dap5_multi__IVDOSE_dap",
       "index": "IVDOSE_dap",
+      "selection": "IVDOSE_dap",
       "unit": null,
       "task": "task_po_dap5_multi",
       "dataset": null,
       "function": null,
-      "variables": null
+      "variables": null,
+      "parameters": {},
+      "sel": null
     },
     "task_po_dap5_multi__PODOSE_dap": {
       "type": "TASK",
+      "sid": "task_po_dap5_multi__PODOSE_dap",
       "index": "PODOSE_dap",
+      "selection": "PODOSE_dap",
       "unit": null,
       "task": "task_po_dap5_multi",
       "dataset": null,
       "function": null,
-      "variables": null
+      "variables": null,
+      "parameters": {},
+      "sel": null
     },
-    "task_po_dap5_multi__Cve_daptot": {
+    "task_po_dap5_multi__conc__Cve_daptot": {
       "type": "TASK",
+      "sid": "task_po_dap5_multi__conc__Cve_daptot",
       "index": "Cve_daptot",
+      "selection": "[Cve_daptot]",
       "unit": null,
       "task": "task_po_dap5_multi",
       "dataset": null,
       "function": null,
-      "variables": null
+      "variables": null,
+      "parameters": {},
+      "sel": null
     },
-    "task_po_dap5_multi__Cve_dap": {
+    "task_po_dap5_multi__conc__Cve_dap": {
       "type": "TASK",
+      "sid": "task_po_dap5_multi__conc__Cve_dap",
       "index": "Cve_dap",
+      "selection": "[Cve_dap]",
       "unit": null,
       "task": "task_po_dap5_multi",
       "dataset": null,
       "function": null,
-      "variables": null
+      "variables": null,
+      "parameters": {},
+      "sel": null
     },
-    "task_po_dap5_multi__Cve_d3g": {
+    "task_po_dap5_multi__conc__Cve_d3g": {
       "type": "TASK",
+      "sid": "task_po_dap5_multi__conc__Cve_d3g",
       "index": "Cve_d3g",
+      "selection": "[Cve_d3g]",
       "unit": null,
       "task": "task_po_dap5_multi",
       "dataset": null,
       "function": null,
-      "variables": null
+      "variables": null,
+      "parameters": {},
+      "sel": null
     },
-    "task_po_dap5_multi__KI__glc_ext": {
+    "task_po_dap5_multi__conc__Cve_dapmet": {
       "type": "TASK",
-      "index": "KI__glc_ext",
+      "sid": "task_po_dap5_multi__conc__Cve_dapmet",
+      "index": "Cve_dapmet",
+      "selection": "[Cve_dapmet]",
       "unit": null,
       "task": "task_po_dap5_multi",
       "dataset": null,
       "function": null,
-      "variables": null
-    },
-    "task_po_dap5_multi__LI__dap": {
-      "type": "TASK",
-      "index": "LI__dap",
-      "unit": null,
-      "task": "task_po_dap5_multi",
-      "dataset": null,
-      "function": null,
-      "variables": null
-    },
-    "task_po_dap5_multi__LI__d3g": {
-      "type": "TASK",
-      "index": "LI__d3g",
-      "unit": null,
-      "task": "task_po_dap5_multi",
-      "dataset": null,
-      "function": null,
-      "variables": null
+      "variables": null,
+      "parameters": {},
+      "sel": null
     },
     "task_po_dap5_multi__Aurine_daptot": {
       "type": "TASK",
+      "sid": "task_po_dap5_multi__Aurine_daptot",
       "index": "Aurine_daptot",
+      "selection": "Aurine_daptot",
       "unit": null,
       "task": "task_po_dap5_multi",
       "dataset": null,
       "function": null,
-      "variables": null
+      "variables": null,
+      "parameters": {},
+      "sel": null
     },
     "task_po_dap5_multi__Aurine_dap": {
       "type": "TASK",
+      "sid": "task_po_dap5_multi__Aurine_dap",
       "index": "Aurine_dap",
+      "selection": "Aurine_dap",
       "unit": null,
       "task": "task_po_dap5_multi",
       "dataset": null,
       "function": null,
-      "variables": null
+      "variables": null,
+      "parameters": {},
+      "sel": null
     },
     "task_po_dap5_multi__Aurine_d3g": {
       "type": "TASK",
+      "sid": "task_po_dap5_multi__Aurine_d3g",
       "index": "Aurine_d3g",
+      "selection": "Aurine_d3g",
       "unit": null,
       "task": "task_po_dap5_multi",
       "dataset": null,
       "function": null,
-      "variables": null
+      "variables": null,
+      "parameters": {},
+      "sel": null
     },
-    "task_po_dap5_multi__KI__glc_urine": {
+    "task_po_dap5_multi__Aurine_dapmet": {
       "type": "TASK",
-      "index": "KI__glc_urine",
+      "sid": "task_po_dap5_multi__Aurine_dapmet",
+      "index": "Aurine_dapmet",
+      "selection": "Aurine_dapmet",
       "unit": null,
       "task": "task_po_dap5_multi",
       "dataset": null,
       "function": null,
-      "variables": null
-    },
-    "task_po_dap5_multi__KI__UGE": {
-      "type": "TASK",
-      "index": "KI__UGE",
-      "unit": null,
-      "task": "task_po_dap5_multi",
-      "dataset": null,
-      "function": null,
-      "variables": null
-    },
-    "task_po_dap5_multi__KI__RTG": {
-      "type": "TASK",
-      "index": "KI__RTG",
-      "unit": null,
-      "task": "task_po_dap5_multi",
-      "dataset": null,
-      "function": null,
-      "variables": null
+      "variables": null,
+      "parameters": {},
+      "sel": null
     },
     "task_po_dap5_multi__Afeces_dap": {
       "type": "TASK",
+      "sid": "task_po_dap5_multi__Afeces_dap",
       "index": "Afeces_dap",
+      "selection": "Afeces_dap",
       "unit": null,
       "task": "task_po_dap5_multi",
       "dataset": null,
       "function": null,
-      "variables": null
+      "variables": null,
+      "parameters": {},
+      "sel": null
     },
     "task_po_dap5_multi__Afeces_daptot": {
       "type": "TASK",
+      "sid": "task_po_dap5_multi__Afeces_daptot",
       "index": "Afeces_daptot",
+      "selection": "Afeces_daptot",
       "unit": null,
       "task": "task_po_dap5_multi",
       "dataset": null,
       "function": null,
-      "variables": null
+      "variables": null,
+      "parameters": {},
+      "sel": null
     },
-    "task_po_dap5_multi__KI__D3GEX": {
+    "task_po_dap5_multi__conc__KI__fpg": {
       "type": "TASK",
-      "index": "KI__D3GEX",
+      "sid": "task_po_dap5_multi__conc__KI__fpg",
+      "index": "KI__fpg",
+      "selection": "[KI__fpg]",
       "unit": null,
       "task": "task_po_dap5_multi",
       "dataset": null,
       "function": null,
-      "variables": null
+      "variables": null,
+      "parameters": {},
+      "sel": null
     },
-    "task_po_dap5_multi__KI__DAPEX": {
+    "task_po_dap5_multi__KI__pg": {
       "type": "TASK",
-      "index": "KI__DAPEX",
+      "sid": "task_po_dap5_multi__KI__pg",
+      "index": "KI__pg",
+      "selection": "KI__pg",
       "unit": null,
       "task": "task_po_dap5_multi",
       "dataset": null,
       "function": null,
-      "variables": null
+      "variables": null,
+      "parameters": {},
+      "sel": null
+    },
+    "task_po_dap5_multi__KI__glc_urine": {
+      "type": "TASK",
+      "sid": "task_po_dap5_multi__KI__glc_urine",
+      "index": "KI__glc_urine",
+      "selection": "KI__glc_urine",
+      "unit": null,
+      "task": "task_po_dap5_multi",
+      "dataset": null,
+      "function": null,
+      "variables": null,
+      "parameters": {},
+      "sel": null
+    },
+    "task_po_dap5_multi__KI__UGE": {
+      "type": "TASK",
+      "sid": "task_po_dap5_multi__KI__UGE",
+      "index": "KI__UGE",
+      "selection": "KI__UGE",
+      "unit": null,
+      "task": "task_po_dap5_multi",
+      "dataset": null,
+      "function": null,
+      "variables": null,
+      "parameters": {},
+      "sel": null
+    },
+    "task_po_dap5_multi__KI__RTG": {
+      "type": "TASK",
+      "sid": "task_po_dap5_multi__KI__RTG",
+      "index": "KI__RTG",
+      "selection": "KI__RTG",
+      "unit": null,
+      "task": "task_po_dap5_multi",
+      "dataset": null,
+      "function": null,
+      "variables": null,
+      "parameters": {},
+      "sel": null
     },
     "task_po_dap5_multi__KI__GLCEX": {
       "type": "TASK",
+      "sid": "task_po_dap5_multi__KI__GLCEX",
       "index": "KI__GLCEX",
+      "selection": "KI__GLCEX",
       "unit": null,
       "task": "task_po_dap5_multi",
       "dataset": null,
       "function": null,
-      "variables": null
+      "variables": null,
+      "parameters": {},
+      "sel": null
+    },
+    "task_po_dap5_multi__KI__D3GEX": {
+      "type": "TASK",
+      "sid": "task_po_dap5_multi__KI__D3GEX",
+      "index": "KI__D3GEX",
+      "selection": "KI__D3GEX",
+      "unit": null,
+      "task": "task_po_dap5_multi",
+      "dataset": null,
+      "function": null,
+      "variables": null,
+      "parameters": {},
+      "sel": null
+    },
+    "task_po_dap5_multi__KI__DAPEX": {
+      "type": "TASK",
+      "sid": "task_po_dap5_multi__KI__DAPEX",
+      "index": "KI__DAPEX",
+      "selection": "KI__DAPEX",
+      "unit": null,
+      "task": "task_po_dap5_multi",
+      "dataset": null,
+      "function": null,
+      "variables": null,
+      "parameters": {},
+      "sel": null
+    },
+    "task_po_dap5_multi__KI__METEX": {
+      "type": "TASK",
+      "sid": "task_po_dap5_multi__KI__METEX",
+      "index": "KI__METEX",
+      "selection": "KI__METEX",
+      "unit": null,
+      "task": "task_po_dap5_multi",
+      "dataset": null,
+      "function": null,
+      "variables": null,
+      "parameters": {},
+      "sel": null
     },
     "task_po_dap5_multi__KI__f_renal_function": {
       "type": "TASK",
+      "sid": "task_po_dap5_multi__KI__f_renal_function",
       "index": "KI__f_renal_function",
+      "selection": "KI__f_renal_function",
       "unit": null,
       "task": "task_po_dap5_multi",
       "dataset": null,
       "function": null,
-      "variables": null
+      "variables": null,
+      "parameters": {},
+      "sel": null
+    },
+    "task_po_dap5_multi__KI__GFR": {
+      "type": "TASK",
+      "sid": "task_po_dap5_multi__KI__GFR",
+      "index": "KI__GFR",
+      "selection": "KI__GFR",
+      "unit": null,
+      "task": "task_po_dap5_multi",
+      "dataset": null,
+      "function": null,
+      "variables": null,
+      "parameters": {},
+      "sel": null
     },
     "task_po_dap5_multi__f_cirrhosis": {
       "type": "TASK",
+      "sid": "task_po_dap5_multi__f_cirrhosis",
       "index": "f_cirrhosis",
+      "selection": "f_cirrhosis",
       "unit": null,
       "task": "task_po_dap5_multi",
       "dataset": null,
       "function": null,
-      "variables": null
+      "variables": null,
+      "parameters": {},
+      "sel": null
     },
-    "task_po_dap5_multi__GU__f_absorption": {
+    "task_po_dap5_multi__GU__fed": {
       "type": "TASK",
-      "index": "GU__f_absorption",
+      "sid": "task_po_dap5_multi__GU__fed",
+      "index": "GU__fed",
+      "selection": "GU__fed",
       "unit": null,
       "task": "task_po_dap5_multi",
       "dataset": null,
       "function": null,
-      "variables": null
+      "variables": null,
+      "parameters": {},
+      "sel": null
+    },
+    "task_po_dap5_multi__GU__FED_f_absorption": {
+      "type": "TASK",
+      "sid": "task_po_dap5_multi__GU__FED_f_absorption",
+      "index": "GU__FED_f_absorption",
+      "selection": "GU__FED_f_absorption",
+      "unit": null,
+      "task": "task_po_dap5_multi",
+      "dataset": null,
+      "function": null,
+      "variables": null,
+      "parameters": {},
+      "sel": null
     },
     "task_po_dap5_multi__f_ugt1a9": {
       "type": "TASK",
+      "sid": "task_po_dap5_multi__f_ugt1a9",
       "index": "f_ugt1a9",
+      "selection": "f_ugt1a9",
       "unit": null,
       "task": "task_po_dap5_multi",
       "dataset": null,
       "function": null,
-      "variables": null
+      "variables": null,
+      "parameters": {},
+      "sel": null
     },
     "task_po_dap10_multi__time": {
       "type": "TASK",
+      "sid": "task_po_dap10_multi__time",
       "index": "time",
+      "selection": "time",
       "unit": null,
       "task": "task_po_dap10_multi",
       "dataset": null,
       "function": null,
-      "variables": null
+      "variables": null,
+      "parameters": {},
+      "sel": null
     },
     "task_po_dap10_multi__IVDOSE_dap": {
       "type": "TASK",
+      "sid": "task_po_dap10_multi__IVDOSE_dap",
       "index": "IVDOSE_dap",
+      "selection": "IVDOSE_dap",
       "unit": null,
       "task": "task_po_dap10_multi",
       "dataset": null,
       "function": null,
-      "variables": null
+      "variables": null,
+      "parameters": {},
+      "sel": null
     },
     "task_po_dap10_multi__PODOSE_dap": {
       "type": "TASK",
+      "sid": "task_po_dap10_multi__PODOSE_dap",
       "index": "PODOSE_dap",
+      "selection": "PODOSE_dap",
       "unit": null,
       "task": "task_po_dap10_multi",
       "dataset": null,
       "function": null,
-      "variables": null
+      "variables": null,
+      "parameters": {},
+      "sel": null
     },
-    "task_po_dap10_multi__Cve_daptot": {
+    "task_po_dap10_multi__conc__Cve_daptot": {
       "type": "TASK",
+      "sid": "task_po_dap10_multi__conc__Cve_daptot",
       "index": "Cve_daptot",
+      "selection": "[Cve_daptot]",
       "unit": null,
       "task": "task_po_dap10_multi",
       "dataset": null,
       "function": null,
-      "variables": null
+      "variables": null,
+      "parameters": {},
+      "sel": null
     },
-    "task_po_dap10_multi__Cve_dap": {
+    "task_po_dap10_multi__conc__Cve_dap": {
       "type": "TASK",
+      "sid": "task_po_dap10_multi__conc__Cve_dap",
       "index": "Cve_dap",
+      "selection": "[Cve_dap]",
       "unit": null,
       "task": "task_po_dap10_multi",
       "dataset": null,
       "function": null,
-      "variables": null
+      "variables": null,
+      "parameters": {},
+      "sel": null
     },
-    "task_po_dap10_multi__Cve_d3g": {
+    "task_po_dap10_multi__conc__Cve_d3g": {
       "type": "TASK",
+      "sid": "task_po_dap10_multi__conc__Cve_d3g",
       "index": "Cve_d3g",
+      "selection": "[Cve_d3g]",
       "unit": null,
       "task": "task_po_dap10_multi",
       "dataset": null,
       "function": null,
-      "variables": null
+      "variables": null,
+      "parameters": {},
+      "sel": null
     },
-    "task_po_dap10_multi__KI__glc_ext": {
+    "task_po_dap10_multi__conc__Cve_dapmet": {
       "type": "TASK",
-      "index": "KI__glc_ext",
+      "sid": "task_po_dap10_multi__conc__Cve_dapmet",
+      "index": "Cve_dapmet",
+      "selection": "[Cve_dapmet]",
       "unit": null,
       "task": "task_po_dap10_multi",
       "dataset": null,
       "function": null,
-      "variables": null
-    },
-    "task_po_dap10_multi__LI__dap": {
-      "type": "TASK",
-      "index": "LI__dap",
-      "unit": null,
-      "task": "task_po_dap10_multi",
-      "dataset": null,
-      "function": null,
-      "variables": null
-    },
-    "task_po_dap10_multi__LI__d3g": {
-      "type": "TASK",
-      "index": "LI__d3g",
-      "unit": null,
-      "task": "task_po_dap10_multi",
-      "dataset": null,
-      "function": null,
-      "variables": null
+      "variables": null,
+      "parameters": {},
+      "sel": null
     },
     "task_po_dap10_multi__Aurine_daptot": {
       "type": "TASK",
+      "sid": "task_po_dap10_multi__Aurine_daptot",
       "index": "Aurine_daptot",
+      "selection": "Aurine_daptot",
       "unit": null,
       "task": "task_po_dap10_multi",
       "dataset": null,
       "function": null,
-      "variables": null
+      "variables": null,
+      "parameters": {},
+      "sel": null
     },
     "task_po_dap10_multi__Aurine_dap": {
       "type": "TASK",
+      "sid": "task_po_dap10_multi__Aurine_dap",
       "index": "Aurine_dap",
+      "selection": "Aurine_dap",
       "unit": null,
       "task": "task_po_dap10_multi",
       "dataset": null,
       "function": null,
-      "variables": null
+      "variables": null,
+      "parameters": {},
+      "sel": null
     },
     "task_po_dap10_multi__Aurine_d3g": {
       "type": "TASK",
+      "sid": "task_po_dap10_multi__Aurine_d3g",
       "index": "Aurine_d3g",
+      "selection": "Aurine_d3g",
       "unit": null,
       "task": "task_po_dap10_multi",
       "dataset": null,
       "function": null,
-      "variables": null
+      "variables": null,
+      "parameters": {},
+      "sel": null
     },
-    "task_po_dap10_multi__KI__glc_urine": {
+    "task_po_dap10_multi__Aurine_dapmet": {
       "type": "TASK",
-      "index": "KI__glc_urine",
+      "sid": "task_po_dap10_multi__Aurine_dapmet",
+      "index": "Aurine_dapmet",
+      "selection": "Aurine_dapmet",
       "unit": null,
       "task": "task_po_dap10_multi",
       "dataset": null,
       "function": null,
-      "variables": null
-    },
-    "task_po_dap10_multi__KI__UGE": {
-      "type": "TASK",
-      "index": "KI__UGE",
-      "unit": null,
-      "task": "task_po_dap10_multi",
-      "dataset": null,
-      "function": null,
-      "variables": null
-    },
-    "task_po_dap10_multi__KI__RTG": {
-      "type": "TASK",
-      "index": "KI__RTG",
-      "unit": null,
-      "task": "task_po_dap10_multi",
-      "dataset": null,
-      "function": null,
-      "variables": null
+      "variables": null,
+      "parameters": {},
+      "sel": null
     },
     "task_po_dap10_multi__Afeces_dap": {
       "type": "TASK",
+      "sid": "task_po_dap10_multi__Afeces_dap",
       "index": "Afeces_dap",
+      "selection": "Afeces_dap",
       "unit": null,
       "task": "task_po_dap10_multi",
       "dataset": null,
       "function": null,
-      "variables": null
+      "variables": null,
+      "parameters": {},
+      "sel": null
     },
     "task_po_dap10_multi__Afeces_daptot": {
       "type": "TASK",
+      "sid": "task_po_dap10_multi__Afeces_daptot",
       "index": "Afeces_daptot",
+      "selection": "Afeces_daptot",
       "unit": null,
       "task": "task_po_dap10_multi",
       "dataset": null,
       "function": null,
-      "variables": null
+      "variables": null,
+      "parameters": {},
+      "sel": null
     },
-    "task_po_dap10_multi__KI__D3GEX": {
+    "task_po_dap10_multi__conc__KI__fpg": {
       "type": "TASK",
-      "index": "KI__D3GEX",
+      "sid": "task_po_dap10_multi__conc__KI__fpg",
+      "index": "KI__fpg",
+      "selection": "[KI__fpg]",
       "unit": null,
       "task": "task_po_dap10_multi",
       "dataset": null,
       "function": null,
-      "variables": null
+      "variables": null,
+      "parameters": {},
+      "sel": null
     },
-    "task_po_dap10_multi__KI__DAPEX": {
+    "task_po_dap10_multi__KI__pg": {
       "type": "TASK",
-      "index": "KI__DAPEX",
+      "sid": "task_po_dap10_multi__KI__pg",
+      "index": "KI__pg",
+      "selection": "KI__pg",
       "unit": null,
       "task": "task_po_dap10_multi",
       "dataset": null,
       "function": null,
-      "variables": null
+      "variables": null,
+      "parameters": {},
+      "sel": null
+    },
+    "task_po_dap10_multi__KI__glc_urine": {
+      "type": "TASK",
+      "sid": "task_po_dap10_multi__KI__glc_urine",
+      "index": "KI__glc_urine",
+      "selection": "KI__glc_urine",
+      "unit": null,
+      "task": "task_po_dap10_multi",
+      "dataset": null,
+      "function": null,
+      "variables": null,
+      "parameters": {},
+      "sel": null
+    },
+    "task_po_dap10_multi__KI__UGE": {
+      "type": "TASK",
+      "sid": "task_po_dap10_multi__KI__UGE",
+      "index": "KI__UGE",
+      "selection": "KI__UGE",
+      "unit": null,
+      "task": "task_po_dap10_multi",
+      "dataset": null,
+      "function": null,
+      "variables": null,
+      "parameters": {},
+      "sel": null
+    },
+    "task_po_dap10_multi__KI__RTG": {
+      "type": "TASK",
+      "sid": "task_po_dap10_multi__KI__RTG",
+      "index": "KI__RTG",
+      "selection": "KI__RTG",
+      "unit": null,
+      "task": "task_po_dap10_multi",
+      "dataset": null,
+      "function": null,
+      "variables": null,
+      "parameters": {},
+      "sel": null
     },
     "task_po_dap10_multi__KI__GLCEX": {
       "type": "TASK",
+      "sid": "task_po_dap10_multi__KI__GLCEX",
       "index": "KI__GLCEX",
+      "selection": "KI__GLCEX",
       "unit": null,
       "task": "task_po_dap10_multi",
       "dataset": null,
       "function": null,
-      "variables": null
+      "variables": null,
+      "parameters": {},
+      "sel": null
+    },
+    "task_po_dap10_multi__KI__D3GEX": {
+      "type": "TASK",
+      "sid": "task_po_dap10_multi__KI__D3GEX",
+      "index": "KI__D3GEX",
+      "selection": "KI__D3GEX",
+      "unit": null,
+      "task": "task_po_dap10_multi",
+      "dataset": null,
+      "function": null,
+      "variables": null,
+      "parameters": {},
+      "sel": null
+    },
+    "task_po_dap10_multi__KI__DAPEX": {
+      "type": "TASK",
+      "sid": "task_po_dap10_multi__KI__DAPEX",
+      "index": "KI__DAPEX",
+      "selection": "KI__DAPEX",
+      "unit": null,
+      "task": "task_po_dap10_multi",
+      "dataset": null,
+      "function": null,
+      "variables": null,
+      "parameters": {},
+      "sel": null
+    },
+    "task_po_dap10_multi__KI__METEX": {
+      "type": "TASK",
+      "sid": "task_po_dap10_multi__KI__METEX",
+      "index": "KI__METEX",
+      "selection": "KI__METEX",
+      "unit": null,
+      "task": "task_po_dap10_multi",
+      "dataset": null,
+      "function": null,
+      "variables": null,
+      "parameters": {},
+      "sel": null
     },
     "task_po_dap10_multi__KI__f_renal_function": {
       "type": "TASK",
+      "sid": "task_po_dap10_multi__KI__f_renal_function",
       "index": "KI__f_renal_function",
+      "selection": "KI__f_renal_function",
       "unit": null,
       "task": "task_po_dap10_multi",
       "dataset": null,
       "function": null,
-      "variables": null
+      "variables": null,
+      "parameters": {},
+      "sel": null
+    },
+    "task_po_dap10_multi__KI__GFR": {
+      "type": "TASK",
+      "sid": "task_po_dap10_multi__KI__GFR",
+      "index": "KI__GFR",
+      "selection": "KI__GFR",
+      "unit": null,
+      "task": "task_po_dap10_multi",
+      "dataset": null,
+      "function": null,
+      "variables": null,
+      "parameters": {},
+      "sel": null
     },
     "task_po_dap10_multi__f_cirrhosis": {
       "type": "TASK",
+      "sid": "task_po_dap10_multi__f_cirrhosis",
       "index": "f_cirrhosis",
+      "selection": "f_cirrhosis",
       "unit": null,
       "task": "task_po_dap10_multi",
       "dataset": null,
       "function": null,
-      "variables": null
+      "variables": null,
+      "parameters": {},
+      "sel": null
     },
-    "task_po_dap10_multi__GU__f_absorption": {
+    "task_po_dap10_multi__GU__fed": {
       "type": "TASK",
-      "index": "GU__f_absorption",
+      "sid": "task_po_dap10_multi__GU__fed",
+      "index": "GU__fed",
+      "selection": "GU__fed",
       "unit": null,
       "task": "task_po_dap10_multi",
       "dataset": null,
       "function": null,
-      "variables": null
+      "variables": null,
+      "parameters": {},
+      "sel": null
+    },
+    "task_po_dap10_multi__GU__FED_f_absorption": {
+      "type": "TASK",
+      "sid": "task_po_dap10_multi__GU__FED_f_absorption",
+      "index": "GU__FED_f_absorption",
+      "selection": "GU__FED_f_absorption",
+      "unit": null,
+      "task": "task_po_dap10_multi",
+      "dataset": null,
+      "function": null,
+      "variables": null,
+      "parameters": {},
+      "sel": null
     },
     "task_po_dap10_multi__f_ugt1a9": {
       "type": "TASK",
+      "sid": "task_po_dap10_multi__f_ugt1a9",
       "index": "f_ugt1a9",
+      "selection": "f_ugt1a9",
       "unit": null,
       "task": "task_po_dap10_multi",
       "dataset": null,
       "function": null,
-      "variables": null
+      "variables": null,
+      "parameters": {},
+      "sel": null
     }
   },
   "figures": {
-    "Fig1_plasma": {
-      "sid": "Fig1_plasma",
+    "Fig1": {
+      "sid": "Fig1",
       "name": "Yang2013 (Healthy)",
-      "num_rows": 1,
-      "num_cols": 1,
-      "width": 7.0,
-      "height": 5.0,
+      "num_rows": 2,
+      "num_cols": 2,
+      "width": null,
+      "height": null,
+      "settings": {},
       "subplots": [
         {
           "sid": null,
           "name": null,
           "plot": {
-            "sid": "Fig1_plasma__plot0",
+            "sid": "Fig1__plot0",
             "name": null,
             "xaxis": {
-              "sid": "Fig1_plasma__plot0_xaxis",
+              "sid": "Fig1__plot0_xaxis",
               "name": "time [hr]",
               "label": "time",
               "unit": "hr",
               "scale": "LINEAR",
-              "min": -2,
-              "max": 30,
+              "min": -1,
+              "max": 25,
               "grid": false,
               "label_visible": true,
               "ticks_visible": true
             },
             "yaxis": {
-              "sid": "Fig1_plasma__plot0_yaxis",
+              "sid": "Fig1__plot0_yaxis",
               "name": "dapagliflozin\nplasma [\u00b5M]",
               "label": "dapagliflozin\nplasma",
               "unit": "\u00b5M",
-              "scale": "LINEAR",
-              "min": null,
+              "scale": "LOG10",
+              "min": 0.0005,
               "max": null,
               "grid": false,
               "label_visible": true,
@@ -1431,12 +1796,13 @@
             "title_visible": true,
             "curves": [
               {
-                "sid": "Fig1_plasma__plot0_curve0",
-                "name": "5 mg PO",
+                "sid": "Fig1__plot0_curve0",
+                "name": "5 mg PO, day 1",
                 "x": "task_po_dap5_single__time",
-                "y": "task_po_dap5_single__Cve_dap",
+                "y": "task_po_dap5_single__conc__Cve_dap",
                 "xerr": null,
                 "yerr": null,
+                "over": [],
                 "yaxis_position": null,
                 "style": {
                   "sid": null,
@@ -1444,30 +1810,31 @@
                   "base_style": null,
                   "line": {
                     "type": "SOLID",
-                    "color": "#f57c00ff",
+                    "color": "#a9a9a9ff",
                     "thickness": 2.0
                   },
                   "marker": {
                     "size": null,
                     "type": "NONE",
-                    "fill": "#f57c00ff",
+                    "fill": "#a9a9a9ff",
                     "line_color": "#000000ff",
                     "line_thickness": null
                   },
                   "fill": {
-                    "color": "#f57c00ff",
+                    "color": "#a9a9a9ff",
                     "second_color": null
                   }
                 },
                 "order": 0
               },
               {
-                "sid": "Fig1_plasma__plot0_curve1",
-                "name": "5 mg PO\u00b1SD (n=14)",
+                "sid": "Fig1__plot0_curve1",
+                "name": "5 mg PO, day 1\u00b1SD (n=14)",
                 "x": "dapagliflozin_SD_DAP5__time",
                 "y": "dapagliflozin_SD_DAP5__mean",
                 "xerr": null,
                 "yerr": "dapagliflozin_SD_DAP5__mean_sd",
+                "over": [],
                 "yaxis_position": null,
                 "style": {
                   "sid": null,
@@ -1475,30 +1842,31 @@
                   "base_style": null,
                   "line": {
                     "type": "DASH",
-                    "color": "#f57c00ff",
+                    "color": "#a9a9a9ff",
                     "thickness": 1.0
                   },
                   "marker": {
                     "size": null,
-                    "type": "SQUARE",
-                    "fill": "#f57c00ff",
+                    "type": "CIRCLE",
+                    "fill": "#a9a9a9ff",
                     "line_color": "#000000ff",
                     "line_thickness": null
                   },
                   "fill": {
-                    "color": "#f57c00ff",
+                    "color": "#a9a9a9ff",
                     "second_color": null
                   }
                 },
                 "order": 1
               },
               {
-                "sid": "Fig1_plasma__plot0_curve2",
-                "name": "10 mg PO",
-                "x": "task_po_dap10_single__time",
-                "y": "task_po_dap10_single__Cve_dap",
+                "sid": "Fig1__plot0_curve2",
+                "name": "5 mg PO, day 10",
+                "x": "task_po_dap5_multi__time",
+                "y": "task_po_dap5_multi__conc__Cve_dap",
                 "xerr": null,
                 "yerr": null,
+                "over": [],
                 "yaxis_position": null,
                 "style": {
                   "sid": null,
@@ -1506,30 +1874,31 @@
                   "base_style": null,
                   "line": {
                     "type": "SOLID",
-                    "color": "#ef6c00ff",
+                    "color": "#d04b6fff",
                     "thickness": 2.0
                   },
                   "marker": {
                     "size": null,
                     "type": "NONE",
-                    "fill": "#ef6c00ff",
+                    "fill": "#d04b6fff",
                     "line_color": "#000000ff",
                     "line_thickness": null
                   },
                   "fill": {
-                    "color": "#ef6c00ff",
+                    "color": "#d04b6fff",
                     "second_color": null
                   }
                 },
                 "order": 2
               },
               {
-                "sid": "Fig1_plasma__plot0_curve3",
-                "name": "10 mg PO\u00b1SD (n=14)",
-                "x": "dapagliflozin_SD_DAP10__time",
-                "y": "dapagliflozin_SD_DAP10__mean",
+                "sid": "Fig1__plot0_curve3",
+                "name": "5 mg PO, day 10\u00b1SD (n=14)",
+                "x": "dapagliflozin_MD_DAP5__time",
+                "y": "dapagliflozin_MD_DAP5__mean",
                 "xerr": null,
-                "yerr": "dapagliflozin_SD_DAP10__mean_sd",
+                "yerr": "dapagliflozin_MD_DAP5__mean_sd",
+                "over": [],
                 "yaxis_position": null,
                 "style": {
                   "sid": null,
@@ -1537,238 +1906,579 @@
                   "base_style": null,
                   "line": {
                     "type": "DASH",
-                    "color": "#ef6c00ff",
+                    "color": "#d04b6fff",
                     "thickness": 1.0
                   },
                   "marker": {
                     "size": null,
                     "type": "SQUARE",
-                    "fill": "#ef6c00ff",
+                    "fill": "#d04b6fff",
                     "line_color": "#000000ff",
                     "line_thickness": null
                   },
                   "fill": {
-                    "color": "#ef6c00ff",
+                    "color": "#d04b6fff",
                     "second_color": null
                   }
                 },
                 "order": 3
               }
             ],
-            "areas": []
+            "areas": [],
+            "bands": []
           },
           "row": 1,
           "col": 1,
           "row_span": 1,
           "col_span": 1
+        },
+        {
+          "sid": null,
+          "name": null,
+          "plot": {
+            "sid": "Fig1__plot1",
+            "name": null,
+            "xaxis": {
+              "sid": "Fig1__plot1_xaxis",
+              "name": "time [hr]",
+              "label": "time",
+              "unit": "hr",
+              "scale": "LINEAR",
+              "min": -1,
+              "max": 25,
+              "grid": false,
+              "label_visible": true,
+              "ticks_visible": true
+            },
+            "yaxis": {
+              "sid": "Fig1__plot1_yaxis",
+              "name": "dapagliflozin-3-O-\nglucuronide plasma [\u00b5M]",
+              "label": "dapagliflozin-3-O-\nglucuronide plasma",
+              "unit": "\u00b5M",
+              "scale": "LOG10",
+              "min": 0.0005,
+              "max": null,
+              "grid": false,
+              "label_visible": true,
+              "ticks_visible": true
+            },
+            "yaxis_right": null,
+            "legend": true,
+            "facecolor": "#ffffffff",
+            "title_visible": true,
+            "curves": [
+              {
+                "sid": "Fig1__plot1_curve0",
+                "name": "5 mg PO, day 1",
+                "x": "task_po_dap5_single__time",
+                "y": "task_po_dap5_single__conc__Cve_d3g",
+                "xerr": null,
+                "yerr": null,
+                "over": [],
+                "yaxis_position": null,
+                "style": {
+                  "sid": null,
+                  "name": null,
+                  "base_style": null,
+                  "line": {
+                    "type": "SOLID",
+                    "color": "#a9a9a9ff",
+                    "thickness": 2.0
+                  },
+                  "marker": {
+                    "size": null,
+                    "type": "NONE",
+                    "fill": "#a9a9a9ff",
+                    "line_color": "#000000ff",
+                    "line_thickness": null
+                  },
+                  "fill": {
+                    "color": "#a9a9a9ff",
+                    "second_color": null
+                  }
+                },
+                "order": 0
+              },
+              {
+                "sid": "Fig1__plot1_curve1",
+                "name": "5 mg PO, day 1\u00b1SD (n=14)",
+                "x": "dapagliflozin_3_o_glucuronide_SD_DAP5__time",
+                "y": "dapagliflozin_3_o_glucuronide_SD_DAP5__mean",
+                "xerr": null,
+                "yerr": "dapagliflozin_3_o_glucuronide_SD_DAP5__mean_sd",
+                "over": [],
+                "yaxis_position": null,
+                "style": {
+                  "sid": null,
+                  "name": null,
+                  "base_style": null,
+                  "line": {
+                    "type": "DASH",
+                    "color": "#a9a9a9ff",
+                    "thickness": 1.0
+                  },
+                  "marker": {
+                    "size": null,
+                    "type": "CIRCLE",
+                    "fill": "#a9a9a9ff",
+                    "line_color": "#000000ff",
+                    "line_thickness": null
+                  },
+                  "fill": {
+                    "color": "#a9a9a9ff",
+                    "second_color": null
+                  }
+                },
+                "order": 1
+              },
+              {
+                "sid": "Fig1__plot1_curve2",
+                "name": "5 mg PO, day 10",
+                "x": "task_po_dap5_multi__time",
+                "y": "task_po_dap5_multi__conc__Cve_d3g",
+                "xerr": null,
+                "yerr": null,
+                "over": [],
+                "yaxis_position": null,
+                "style": {
+                  "sid": null,
+                  "name": null,
+                  "base_style": null,
+                  "line": {
+                    "type": "SOLID",
+                    "color": "#d04b6fff",
+                    "thickness": 2.0
+                  },
+                  "marker": {
+                    "size": null,
+                    "type": "NONE",
+                    "fill": "#d04b6fff",
+                    "line_color": "#000000ff",
+                    "line_thickness": null
+                  },
+                  "fill": {
+                    "color": "#d04b6fff",
+                    "second_color": null
+                  }
+                },
+                "order": 2
+              },
+              {
+                "sid": "Fig1__plot1_curve3",
+                "name": "5 mg PO, day 10\u00b1SD (n=14)",
+                "x": "dapagliflozin_3_o_glucuronide_MD_DAP5__time",
+                "y": "dapagliflozin_3_o_glucuronide_MD_DAP5__mean",
+                "xerr": null,
+                "yerr": "dapagliflozin_3_o_glucuronide_MD_DAP5__mean_sd",
+                "over": [],
+                "yaxis_position": null,
+                "style": {
+                  "sid": null,
+                  "name": null,
+                  "base_style": null,
+                  "line": {
+                    "type": "DASH",
+                    "color": "#d04b6fff",
+                    "thickness": 1.0
+                  },
+                  "marker": {
+                    "size": null,
+                    "type": "SQUARE",
+                    "fill": "#d04b6fff",
+                    "line_color": "#000000ff",
+                    "line_thickness": null
+                  },
+                  "fill": {
+                    "color": "#d04b6fff",
+                    "second_color": null
+                  }
+                },
+                "order": 3
+              }
+            ],
+            "areas": [],
+            "bands": []
+          },
+          "row": 1,
+          "col": 2,
+          "row_span": 1,
+          "col_span": 1
+        },
+        {
+          "sid": null,
+          "name": null,
+          "plot": {
+            "sid": "Fig1__plot2",
+            "name": null,
+            "xaxis": {
+              "sid": "Fig1__plot2_xaxis",
+              "name": "time [hr]",
+              "label": "time",
+              "unit": "hr",
+              "scale": "LINEAR",
+              "min": -1,
+              "max": 25,
+              "grid": false,
+              "label_visible": true,
+              "ticks_visible": true
+            },
+            "yaxis": {
+              "sid": "Fig1__plot2_yaxis",
+              "name": "dapagliflozin\nplasma [\u00b5M]",
+              "label": "dapagliflozin\nplasma",
+              "unit": "\u00b5M",
+              "scale": "LOG10",
+              "min": 0.0005,
+              "max": null,
+              "grid": false,
+              "label_visible": true,
+              "ticks_visible": true
+            },
+            "yaxis_right": null,
+            "legend": true,
+            "facecolor": "#ffffffff",
+            "title_visible": true,
+            "curves": [
+              {
+                "sid": "Fig1__plot2_curve0",
+                "name": "10 mg PO, day 1",
+                "x": "task_po_dap10_single__time",
+                "y": "task_po_dap10_single__conc__Cve_dap",
+                "xerr": null,
+                "yerr": null,
+                "over": [],
+                "yaxis_position": null,
+                "style": {
+                  "sid": null,
+                  "name": null,
+                  "base_style": null,
+                  "line": {
+                    "type": "SOLID",
+                    "color": "#a9a9a9ff",
+                    "thickness": 2.0
+                  },
+                  "marker": {
+                    "size": null,
+                    "type": "NONE",
+                    "fill": "#a9a9a9ff",
+                    "line_color": "#000000ff",
+                    "line_thickness": null
+                  },
+                  "fill": {
+                    "color": "#a9a9a9ff",
+                    "second_color": null
+                  }
+                },
+                "order": 0
+              },
+              {
+                "sid": "Fig1__plot2_curve1",
+                "name": "10 mg PO, day 1\u00b1SD (n=14)",
+                "x": "dapagliflozin_SD_DAP10__time",
+                "y": "dapagliflozin_SD_DAP10__mean",
+                "xerr": null,
+                "yerr": "dapagliflozin_SD_DAP10__mean_sd",
+                "over": [],
+                "yaxis_position": null,
+                "style": {
+                  "sid": null,
+                  "name": null,
+                  "base_style": null,
+                  "line": {
+                    "type": "DASH",
+                    "color": "#a9a9a9ff",
+                    "thickness": 1.0
+                  },
+                  "marker": {
+                    "size": null,
+                    "type": "CIRCLE",
+                    "fill": "#a9a9a9ff",
+                    "line_color": "#000000ff",
+                    "line_thickness": null
+                  },
+                  "fill": {
+                    "color": "#a9a9a9ff",
+                    "second_color": null
+                  }
+                },
+                "order": 1
+              },
+              {
+                "sid": "Fig1__plot2_curve2",
+                "name": "10 mg PO, day 10",
+                "x": "task_po_dap10_multi__time",
+                "y": "task_po_dap10_multi__conc__Cve_dap",
+                "xerr": null,
+                "yerr": null,
+                "over": [],
+                "yaxis_position": null,
+                "style": {
+                  "sid": null,
+                  "name": null,
+                  "base_style": null,
+                  "line": {
+                    "type": "SOLID",
+                    "color": "#b63c7cff",
+                    "thickness": 2.0
+                  },
+                  "marker": {
+                    "size": null,
+                    "type": "NONE",
+                    "fill": "#b63c7cff",
+                    "line_color": "#000000ff",
+                    "line_thickness": null
+                  },
+                  "fill": {
+                    "color": "#b63c7cff",
+                    "second_color": null
+                  }
+                },
+                "order": 2
+              },
+              {
+                "sid": "Fig1__plot2_curve3",
+                "name": "10 mg PO, day 10\u00b1SD (n=13)",
+                "x": "dapagliflozin_MD_DAP10__time",
+                "y": "dapagliflozin_MD_DAP10__mean",
+                "xerr": null,
+                "yerr": "dapagliflozin_MD_DAP10__mean_sd",
+                "over": [],
+                "yaxis_position": null,
+                "style": {
+                  "sid": null,
+                  "name": null,
+                  "base_style": null,
+                  "line": {
+                    "type": "DASH",
+                    "color": "#b63c7cff",
+                    "thickness": 1.0
+                  },
+                  "marker": {
+                    "size": null,
+                    "type": "SQUARE",
+                    "fill": "#b63c7cff",
+                    "line_color": "#000000ff",
+                    "line_thickness": null
+                  },
+                  "fill": {
+                    "color": "#b63c7cff",
+                    "second_color": null
+                  }
+                },
+                "order": 3
+              }
+            ],
+            "areas": [],
+            "bands": []
+          },
+          "row": 2,
+          "col": 1,
+          "row_span": 1,
+          "col_span": 1
+        },
+        {
+          "sid": null,
+          "name": null,
+          "plot": {
+            "sid": "Fig1__plot3",
+            "name": null,
+            "xaxis": {
+              "sid": "Fig1__plot3_xaxis",
+              "name": "time [hr]",
+              "label": "time",
+              "unit": "hr",
+              "scale": "LINEAR",
+              "min": -1,
+              "max": 25,
+              "grid": false,
+              "label_visible": true,
+              "ticks_visible": true
+            },
+            "yaxis": {
+              "sid": "Fig1__plot3_yaxis",
+              "name": "dapagliflozin-3-O-\nglucuronide plasma [\u00b5M]",
+              "label": "dapagliflozin-3-O-\nglucuronide plasma",
+              "unit": "\u00b5M",
+              "scale": "LOG10",
+              "min": 0.0005,
+              "max": null,
+              "grid": false,
+              "label_visible": true,
+              "ticks_visible": true
+            },
+            "yaxis_right": null,
+            "legend": true,
+            "facecolor": "#ffffffff",
+            "title_visible": true,
+            "curves": [
+              {
+                "sid": "Fig1__plot3_curve0",
+                "name": "10 mg PO, day 1",
+                "x": "task_po_dap10_single__time",
+                "y": "task_po_dap10_single__conc__Cve_d3g",
+                "xerr": null,
+                "yerr": null,
+                "over": [],
+                "yaxis_position": null,
+                "style": {
+                  "sid": null,
+                  "name": null,
+                  "base_style": null,
+                  "line": {
+                    "type": "SOLID",
+                    "color": "#a9a9a9ff",
+                    "thickness": 2.0
+                  },
+                  "marker": {
+                    "size": null,
+                    "type": "NONE",
+                    "fill": "#a9a9a9ff",
+                    "line_color": "#000000ff",
+                    "line_thickness": null
+                  },
+                  "fill": {
+                    "color": "#a9a9a9ff",
+                    "second_color": null
+                  }
+                },
+                "order": 0
+              },
+              {
+                "sid": "Fig1__plot3_curve1",
+                "name": "10 mg PO, day 1\u00b1SD (n=14)",
+                "x": "dapagliflozin_3_o_glucuronide_SD_DAP10__time",
+                "y": "dapagliflozin_3_o_glucuronide_SD_DAP10__mean",
+                "xerr": null,
+                "yerr": "dapagliflozin_3_o_glucuronide_SD_DAP10__mean_sd",
+                "over": [],
+                "yaxis_position": null,
+                "style": {
+                  "sid": null,
+                  "name": null,
+                  "base_style": null,
+                  "line": {
+                    "type": "DASH",
+                    "color": "#a9a9a9ff",
+                    "thickness": 1.0
+                  },
+                  "marker": {
+                    "size": null,
+                    "type": "CIRCLE",
+                    "fill": "#a9a9a9ff",
+                    "line_color": "#000000ff",
+                    "line_thickness": null
+                  },
+                  "fill": {
+                    "color": "#a9a9a9ff",
+                    "second_color": null
+                  }
+                },
+                "order": 1
+              },
+              {
+                "sid": "Fig1__plot3_curve2",
+                "name": "10 mg PO, day 10",
+                "x": "task_po_dap10_multi__time",
+                "y": "task_po_dap10_multi__conc__Cve_d3g",
+                "xerr": null,
+                "yerr": null,
+                "over": [],
+                "yaxis_position": null,
+                "style": {
+                  "sid": null,
+                  "name": null,
+                  "base_style": null,
+                  "line": {
+                    "type": "SOLID",
+                    "color": "#b63c7cff",
+                    "thickness": 2.0
+                  },
+                  "marker": {
+                    "size": null,
+                    "type": "NONE",
+                    "fill": "#b63c7cff",
+                    "line_color": "#000000ff",
+                    "line_thickness": null
+                  },
+                  "fill": {
+                    "color": "#b63c7cff",
+                    "second_color": null
+                  }
+                },
+                "order": 2
+              },
+              {
+                "sid": "Fig1__plot3_curve3",
+                "name": "10 mg PO, day 10\u00b1SD (n=13)",
+                "x": "dapagliflozin_3_o_glucuronide_MD_DAP10__time",
+                "y": "dapagliflozin_3_o_glucuronide_MD_DAP10__mean",
+                "xerr": null,
+                "yerr": "dapagliflozin_3_o_glucuronide_MD_DAP10__mean_sd",
+                "over": [],
+                "yaxis_position": null,
+                "style": {
+                  "sid": null,
+                  "name": null,
+                  "base_style": null,
+                  "line": {
+                    "type": "DASH",
+                    "color": "#b63c7cff",
+                    "thickness": 1.0
+                  },
+                  "marker": {
+                    "size": null,
+                    "type": "SQUARE",
+                    "fill": "#b63c7cff",
+                    "line_color": "#000000ff",
+                    "line_thickness": null
+                  },
+                  "fill": {
+                    "color": "#b63c7cff",
+                    "second_color": null
+                  }
+                },
+                "order": 3
+              }
+            ],
+            "areas": [],
+            "bands": []
+          },
+          "row": 2,
+          "col": 2,
+          "row_span": 1,
+          "col_span": 1
         }
       ]
     },
-    "Fig1_d3g": {
-      "sid": "Fig1_d3g",
+    "Tab3": {
+      "sid": "Tab3",
       "name": "Yang2013 (Healthy)",
       "num_rows": 1,
-      "num_cols": 1,
-      "width": 7.0,
-      "height": 5.0,
+      "num_cols": 2,
+      "width": null,
+      "height": null,
+      "settings": {},
       "subplots": [
         {
           "sid": null,
           "name": null,
           "plot": {
-            "sid": "Fig1_d3g__plot0",
-            "name": null,
+            "sid": "Tab3__plot0",
+            "name": "day 1",
             "xaxis": {
-              "sid": "Fig1_d3g__plot0_xaxis",
+              "sid": "Tab3__plot0_xaxis",
               "name": "time [hr]",
               "label": "time",
               "unit": "hr",
               "scale": "LINEAR",
               "min": -2,
-              "max": 30,
+              "max": 100,
               "grid": false,
               "label_visible": true,
               "ticks_visible": true
             },
             "yaxis": {
-              "sid": "Fig1_d3g__plot0_yaxis",
-              "name": "dapagliflozin-3-O-\nglucuronide plasma [\u00b5M]",
-              "label": "dapagliflozin-3-O-\nglucuronide plasma",
-              "unit": "\u00b5M",
-              "scale": "LINEAR",
-              "min": null,
-              "max": null,
-              "grid": false,
-              "label_visible": true,
-              "ticks_visible": true
-            },
-            "yaxis_right": null,
-            "legend": true,
-            "facecolor": "#ffffffff",
-            "title_visible": true,
-            "curves": [
-              {
-                "sid": "Fig1_d3g__plot0_curve0",
-                "name": "5 mg PO",
-                "x": "task_po_dap5_single__time",
-                "y": "task_po_dap5_single__Cve_d3g",
-                "xerr": null,
-                "yerr": null,
-                "yaxis_position": null,
-                "style": {
-                  "sid": null,
-                  "name": null,
-                  "base_style": null,
-                  "line": {
-                    "type": "SOLID",
-                    "color": "#f57c00ff",
-                    "thickness": 2.0
-                  },
-                  "marker": {
-                    "size": null,
-                    "type": "NONE",
-                    "fill": "#f57c00ff",
-                    "line_color": "#000000ff",
-                    "line_thickness": null
-                  },
-                  "fill": {
-                    "color": "#f57c00ff",
-                    "second_color": null
-                  }
-                },
-                "order": 0
-              },
-              {
-                "sid": "Fig1_d3g__plot0_curve1",
-                "name": "5 mg PO\u00b1SD (n=14)",
-                "x": "dapagliflozin 3-o-glucuronide_SD_DAP5__time",
-                "y": "dapagliflozin 3-o-glucuronide_SD_DAP5__mean",
-                "xerr": null,
-                "yerr": "dapagliflozin 3-o-glucuronide_SD_DAP5__mean_sd",
-                "yaxis_position": null,
-                "style": {
-                  "sid": null,
-                  "name": null,
-                  "base_style": null,
-                  "line": {
-                    "type": "DASH",
-                    "color": "#f57c00ff",
-                    "thickness": 1.0
-                  },
-                  "marker": {
-                    "size": null,
-                    "type": "SQUARE",
-                    "fill": "#f57c00ff",
-                    "line_color": "#000000ff",
-                    "line_thickness": null
-                  },
-                  "fill": {
-                    "color": "#f57c00ff",
-                    "second_color": null
-                  }
-                },
-                "order": 1
-              },
-              {
-                "sid": "Fig1_d3g__plot0_curve2",
-                "name": "10 mg PO",
-                "x": "task_po_dap10_single__time",
-                "y": "task_po_dap10_single__Cve_d3g",
-                "xerr": null,
-                "yerr": null,
-                "yaxis_position": null,
-                "style": {
-                  "sid": null,
-                  "name": null,
-                  "base_style": null,
-                  "line": {
-                    "type": "SOLID",
-                    "color": "#ef6c00ff",
-                    "thickness": 2.0
-                  },
-                  "marker": {
-                    "size": null,
-                    "type": "NONE",
-                    "fill": "#ef6c00ff",
-                    "line_color": "#000000ff",
-                    "line_thickness": null
-                  },
-                  "fill": {
-                    "color": "#ef6c00ff",
-                    "second_color": null
-                  }
-                },
-                "order": 2
-              },
-              {
-                "sid": "Fig1_d3g__plot0_curve3",
-                "name": "10 mg PO\u00b1SD (n=14)",
-                "x": "dapagliflozin 3-o-glucuronide_SD_DAP10__time",
-                "y": "dapagliflozin 3-o-glucuronide_SD_DAP10__mean",
-                "xerr": null,
-                "yerr": "dapagliflozin 3-o-glucuronide_SD_DAP10__mean_sd",
-                "yaxis_position": null,
-                "style": {
-                  "sid": null,
-                  "name": null,
-                  "base_style": null,
-                  "line": {
-                    "type": "DASH",
-                    "color": "#ef6c00ff",
-                    "thickness": 1.0
-                  },
-                  "marker": {
-                    "size": null,
-                    "type": "SQUARE",
-                    "fill": "#ef6c00ff",
-                    "line_color": "#000000ff",
-                    "line_thickness": null
-                  },
-                  "fill": {
-                    "color": "#ef6c00ff",
-                    "second_color": null
-                  }
-                },
-                "order": 3
-              }
-            ],
-            "areas": []
-          },
-          "row": 1,
-          "col": 1,
-          "row_span": 1,
-          "col_span": 1
-        }
-      ]
-    },
-    "Fig1_uge": {
-      "sid": "Fig1_uge",
-      "name": "Yang2013 (Healthy)",
-      "num_rows": 1,
-      "num_cols": 1,
-      "width": 7.0,
-      "height": 5.0,
-      "subplots": [
-        {
-          "sid": null,
-          "name": null,
-          "plot": {
-            "sid": "Fig1_uge__plot0",
-            "name": null,
-            "xaxis": {
-              "sid": "Fig1_uge__plot0_xaxis",
-              "name": "time [hr]",
-              "label": "time",
-              "unit": "hr",
-              "scale": "LINEAR",
-              "min": null,
-              "max": null,
-              "grid": false,
-              "label_visible": true,
-              "ticks_visible": true
-            },
-            "yaxis": {
-              "sid": "Fig1_uge__plot0_yaxis",
+              "sid": "Tab3__plot0_yaxis",
               "name": "UGE [g]",
               "label": "UGE",
               "unit": "g",
@@ -1785,12 +2495,13 @@
             "title_visible": true,
             "curves": [
               {
-                "sid": "Fig1_uge__plot0_curve0",
-                "name": "5 mg PO",
+                "sid": "Tab3__plot0_curve0",
+                "name": "5 mg PO, day 1",
                 "x": "task_po_dap5_single__time",
                 "y": "task_po_dap5_single__KI__UGE",
                 "xerr": null,
                 "yerr": null,
+                "over": [],
                 "yaxis_position": null,
                 "style": {
                   "sid": null,
@@ -1798,61 +2509,63 @@
                   "base_style": null,
                   "line": {
                     "type": "SOLID",
-                    "color": "#f57c00ff",
+                    "color": "#d04b6fff",
                     "thickness": 2.0
                   },
                   "marker": {
                     "size": null,
                     "type": "NONE",
-                    "fill": "#f57c00ff",
+                    "fill": "#d04b6fff",
                     "line_color": "#000000ff",
                     "line_thickness": null
                   },
                   "fill": {
-                    "color": "#f57c00ff",
+                    "color": "#d04b6fff",
                     "second_color": null
                   }
                 },
                 "order": 0
               },
               {
-                "sid": "Fig1_uge__plot0_curve1",
-                "name": "5 mg PO\u00b1SD (n=14)",
-                "x": "glucose_cumulative amount_SD_DAP5__time",
-                "y": "glucose_cumulative amount_SD_DAP5__mean",
+                "sid": "Tab3__plot0_curve1",
+                "name": "5 mg PO, day 1\u00b1SD (n=14)",
+                "x": "glucose_cumulative_amount_SD_DAP5__time",
+                "y": "glucose_cumulative_amount_SD_DAP5__mean",
                 "xerr": null,
-                "yerr": "glucose_cumulative amount_SD_DAP5__mean_sd",
+                "yerr": "glucose_cumulative_amount_SD_DAP5__mean_sd",
+                "over": [],
                 "yaxis_position": null,
                 "style": {
                   "sid": null,
                   "name": null,
                   "base_style": null,
                   "line": {
-                    "type": "DASH",
-                    "color": "#f57c00ff",
+                    "type": "NONE",
+                    "color": "#d04b6fff",
                     "thickness": 1.0
                   },
                   "marker": {
                     "size": null,
                     "type": "SQUARE",
-                    "fill": "#f57c00ff",
+                    "fill": "#d04b6fff",
                     "line_color": "#000000ff",
                     "line_thickness": null
                   },
                   "fill": {
-                    "color": "#f57c00ff",
+                    "color": "#d04b6fff",
                     "second_color": null
                   }
                 },
                 "order": 1
               },
               {
-                "sid": "Fig1_uge__plot0_curve2",
-                "name": "10 mg PO",
+                "sid": "Tab3__plot0_curve2",
+                "name": "10 mg PO, day 1",
                 "x": "task_po_dap10_single__time",
                 "y": "task_po_dap10_single__KI__UGE",
                 "xerr": null,
                 "yerr": null,
+                "over": [],
                 "yaxis_position": null,
                 "style": {
                   "sid": null,
@@ -1860,446 +2573,84 @@
                   "base_style": null,
                   "line": {
                     "type": "SOLID",
-                    "color": "#ef6c00ff",
+                    "color": "#b63c7cff",
                     "thickness": 2.0
                   },
                   "marker": {
                     "size": null,
                     "type": "NONE",
-                    "fill": "#ef6c00ff",
+                    "fill": "#b63c7cff",
                     "line_color": "#000000ff",
                     "line_thickness": null
                   },
                   "fill": {
-                    "color": "#ef6c00ff",
+                    "color": "#b63c7cff",
                     "second_color": null
                   }
                 },
                 "order": 2
               },
               {
-                "sid": "Fig1_uge__plot0_curve3",
-                "name": "10 mg PO\u00b1SD (n=14)",
-                "x": "glucose_cumulative amount_SD_DAP10__time",
-                "y": "glucose_cumulative amount_SD_DAP10__mean",
+                "sid": "Tab3__plot0_curve3",
+                "name": "10 mg PO, day 1\u00b1SD (n=14)",
+                "x": "glucose_cumulative_amount_SD_DAP10__time",
+                "y": "glucose_cumulative_amount_SD_DAP10__mean",
                 "xerr": null,
-                "yerr": "glucose_cumulative amount_SD_DAP10__mean_sd",
+                "yerr": "glucose_cumulative_amount_SD_DAP10__mean_sd",
+                "over": [],
                 "yaxis_position": null,
                 "style": {
                   "sid": null,
                   "name": null,
                   "base_style": null,
                   "line": {
-                    "type": "DASH",
-                    "color": "#ef6c00ff",
+                    "type": "NONE",
+                    "color": "#b63c7cff",
                     "thickness": 1.0
                   },
                   "marker": {
                     "size": null,
                     "type": "SQUARE",
-                    "fill": "#ef6c00ff",
+                    "fill": "#b63c7cff",
                     "line_color": "#000000ff",
                     "line_thickness": null
                   },
                   "fill": {
-                    "color": "#ef6c00ff",
+                    "color": "#b63c7cff",
                     "second_color": null
                   }
                 },
                 "order": 3
               }
             ],
-            "areas": []
+            "areas": [],
+            "bands": []
           },
           "row": 1,
           "col": 1,
           "row_span": 1,
           "col_span": 1
-        }
-      ]
-    },
-    "Fig2_plasma": {
-      "sid": "Fig2_plasma",
-      "name": "Yang2013 (Healthy)",
-      "num_rows": 1,
-      "num_cols": 1,
-      "width": 7.0,
-      "height": 5.0,
-      "subplots": [
+        },
         {
           "sid": null,
           "name": null,
           "plot": {
-            "sid": "Fig2_plasma__plot0",
-            "name": null,
+            "sid": "Tab3__plot1",
+            "name": "day 10",
             "xaxis": {
-              "sid": "Fig2_plasma__plot0_xaxis",
+              "sid": "Tab3__plot1_xaxis",
               "name": "time [hr]",
               "label": "time",
               "unit": "hr",
               "scale": "LINEAR",
-              "min": -24,
-              "max": 30,
+              "min": -2,
+              "max": 100,
               "grid": false,
               "label_visible": true,
               "ticks_visible": true
             },
             "yaxis": {
-              "sid": "Fig2_plasma__plot0_yaxis",
-              "name": "dapagliflozin\nplasma [\u00b5M]",
-              "label": "dapagliflozin\nplasma",
-              "unit": "\u00b5M",
-              "scale": "LINEAR",
-              "min": null,
-              "max": null,
-              "grid": false,
-              "label_visible": true,
-              "ticks_visible": true
-            },
-            "yaxis_right": null,
-            "legend": true,
-            "facecolor": "#ffffffff",
-            "title_visible": true,
-            "curves": [
-              {
-                "sid": "Fig2_plasma__plot0_curve0",
-                "name": "5 mg PO",
-                "x": "task_po_dap5_multi__time",
-                "y": "task_po_dap5_multi__Cve_dap",
-                "xerr": null,
-                "yerr": null,
-                "yaxis_position": null,
-                "style": {
-                  "sid": null,
-                  "name": null,
-                  "base_style": null,
-                  "line": {
-                    "type": "SOLID",
-                    "color": "#f57c00ff",
-                    "thickness": 2.0
-                  },
-                  "marker": {
-                    "size": null,
-                    "type": "NONE",
-                    "fill": "#f57c00ff",
-                    "line_color": "#000000ff",
-                    "line_thickness": null
-                  },
-                  "fill": {
-                    "color": "#f57c00ff",
-                    "second_color": null
-                  }
-                },
-                "order": 0
-              },
-              {
-                "sid": "Fig2_plasma__plot0_curve1",
-                "name": "5 mg PO\u00b1SD (n=14)",
-                "x": "dapagliflozin_MD_DAP5__time",
-                "y": "dapagliflozin_MD_DAP5__mean",
-                "xerr": null,
-                "yerr": "dapagliflozin_MD_DAP5__mean_sd",
-                "yaxis_position": null,
-                "style": {
-                  "sid": null,
-                  "name": null,
-                  "base_style": null,
-                  "line": {
-                    "type": "DASH",
-                    "color": "#f57c00ff",
-                    "thickness": 1.0
-                  },
-                  "marker": {
-                    "size": null,
-                    "type": "SQUARE",
-                    "fill": "#f57c00ff",
-                    "line_color": "#000000ff",
-                    "line_thickness": null
-                  },
-                  "fill": {
-                    "color": "#f57c00ff",
-                    "second_color": null
-                  }
-                },
-                "order": 1
-              },
-              {
-                "sid": "Fig2_plasma__plot0_curve2",
-                "name": "10 mg PO",
-                "x": "task_po_dap10_multi__time",
-                "y": "task_po_dap10_multi__Cve_dap",
-                "xerr": null,
-                "yerr": null,
-                "yaxis_position": null,
-                "style": {
-                  "sid": null,
-                  "name": null,
-                  "base_style": null,
-                  "line": {
-                    "type": "SOLID",
-                    "color": "#ef6c00ff",
-                    "thickness": 2.0
-                  },
-                  "marker": {
-                    "size": null,
-                    "type": "NONE",
-                    "fill": "#ef6c00ff",
-                    "line_color": "#000000ff",
-                    "line_thickness": null
-                  },
-                  "fill": {
-                    "color": "#ef6c00ff",
-                    "second_color": null
-                  }
-                },
-                "order": 2
-              },
-              {
-                "sid": "Fig2_plasma__plot0_curve3",
-                "name": "10 mg PO\u00b1SD (n=13)",
-                "x": "dapagliflozin_MD_DAP10__time",
-                "y": "dapagliflozin_MD_DAP10__mean",
-                "xerr": null,
-                "yerr": "dapagliflozin_MD_DAP10__mean_sd",
-                "yaxis_position": null,
-                "style": {
-                  "sid": null,
-                  "name": null,
-                  "base_style": null,
-                  "line": {
-                    "type": "DASH",
-                    "color": "#ef6c00ff",
-                    "thickness": 1.0
-                  },
-                  "marker": {
-                    "size": null,
-                    "type": "SQUARE",
-                    "fill": "#ef6c00ff",
-                    "line_color": "#000000ff",
-                    "line_thickness": null
-                  },
-                  "fill": {
-                    "color": "#ef6c00ff",
-                    "second_color": null
-                  }
-                },
-                "order": 3
-              }
-            ],
-            "areas": []
-          },
-          "row": 1,
-          "col": 1,
-          "row_span": 1,
-          "col_span": 1
-        }
-      ]
-    },
-    "Fig2_d3g": {
-      "sid": "Fig2_d3g",
-      "name": "Yang2013 (Healthy)",
-      "num_rows": 1,
-      "num_cols": 1,
-      "width": 7.0,
-      "height": 5.0,
-      "subplots": [
-        {
-          "sid": null,
-          "name": null,
-          "plot": {
-            "sid": "Fig2_d3g__plot0",
-            "name": null,
-            "xaxis": {
-              "sid": "Fig2_d3g__plot0_xaxis",
-              "name": "time [hr]",
-              "label": "time",
-              "unit": "hr",
-              "scale": "LINEAR",
-              "min": -24,
-              "max": 30,
-              "grid": false,
-              "label_visible": true,
-              "ticks_visible": true
-            },
-            "yaxis": {
-              "sid": "Fig2_d3g__plot0_yaxis",
-              "name": "dapagliflozin-3-O-\nglucuronide plasma [\u00b5M]",
-              "label": "dapagliflozin-3-O-\nglucuronide plasma",
-              "unit": "\u00b5M",
-              "scale": "LINEAR",
-              "min": null,
-              "max": null,
-              "grid": false,
-              "label_visible": true,
-              "ticks_visible": true
-            },
-            "yaxis_right": null,
-            "legend": true,
-            "facecolor": "#ffffffff",
-            "title_visible": true,
-            "curves": [
-              {
-                "sid": "Fig2_d3g__plot0_curve0",
-                "name": "5 mg PO",
-                "x": "task_po_dap5_multi__time",
-                "y": "task_po_dap5_multi__Cve_d3g",
-                "xerr": null,
-                "yerr": null,
-                "yaxis_position": null,
-                "style": {
-                  "sid": null,
-                  "name": null,
-                  "base_style": null,
-                  "line": {
-                    "type": "SOLID",
-                    "color": "#f57c00ff",
-                    "thickness": 2.0
-                  },
-                  "marker": {
-                    "size": null,
-                    "type": "NONE",
-                    "fill": "#f57c00ff",
-                    "line_color": "#000000ff",
-                    "line_thickness": null
-                  },
-                  "fill": {
-                    "color": "#f57c00ff",
-                    "second_color": null
-                  }
-                },
-                "order": 0
-              },
-              {
-                "sid": "Fig2_d3g__plot0_curve1",
-                "name": "5 mg PO\u00b1SD (n=14)",
-                "x": "dapagliflozin 3-o-glucuronide_MD_DAP5__time",
-                "y": "dapagliflozin 3-o-glucuronide_MD_DAP5__mean",
-                "xerr": null,
-                "yerr": "dapagliflozin 3-o-glucuronide_MD_DAP5__mean_sd",
-                "yaxis_position": null,
-                "style": {
-                  "sid": null,
-                  "name": null,
-                  "base_style": null,
-                  "line": {
-                    "type": "DASH",
-                    "color": "#f57c00ff",
-                    "thickness": 1.0
-                  },
-                  "marker": {
-                    "size": null,
-                    "type": "SQUARE",
-                    "fill": "#f57c00ff",
-                    "line_color": "#000000ff",
-                    "line_thickness": null
-                  },
-                  "fill": {
-                    "color": "#f57c00ff",
-                    "second_color": null
-                  }
-                },
-                "order": 1
-              },
-              {
-                "sid": "Fig2_d3g__plot0_curve2",
-                "name": "10 mg PO",
-                "x": "task_po_dap10_multi__time",
-                "y": "task_po_dap10_multi__Cve_d3g",
-                "xerr": null,
-                "yerr": null,
-                "yaxis_position": null,
-                "style": {
-                  "sid": null,
-                  "name": null,
-                  "base_style": null,
-                  "line": {
-                    "type": "SOLID",
-                    "color": "#ef6c00ff",
-                    "thickness": 2.0
-                  },
-                  "marker": {
-                    "size": null,
-                    "type": "NONE",
-                    "fill": "#ef6c00ff",
-                    "line_color": "#000000ff",
-                    "line_thickness": null
-                  },
-                  "fill": {
-                    "color": "#ef6c00ff",
-                    "second_color": null
-                  }
-                },
-                "order": 2
-              },
-              {
-                "sid": "Fig2_d3g__plot0_curve3",
-                "name": "10 mg PO\u00b1SD (n=13)",
-                "x": "dapagliflozin 3-o-glucuronide_MD_DAP10__time",
-                "y": "dapagliflozin 3-o-glucuronide_MD_DAP10__mean",
-                "xerr": null,
-                "yerr": "dapagliflozin 3-o-glucuronide_MD_DAP10__mean_sd",
-                "yaxis_position": null,
-                "style": {
-                  "sid": null,
-                  "name": null,
-                  "base_style": null,
-                  "line": {
-                    "type": "DASH",
-                    "color": "#ef6c00ff",
-                    "thickness": 1.0
-                  },
-                  "marker": {
-                    "size": null,
-                    "type": "SQUARE",
-                    "fill": "#ef6c00ff",
-                    "line_color": "#000000ff",
-                    "line_thickness": null
-                  },
-                  "fill": {
-                    "color": "#ef6c00ff",
-                    "second_color": null
-                  }
-                },
-                "order": 3
-              }
-            ],
-            "areas": []
-          },
-          "row": 1,
-          "col": 1,
-          "row_span": 1,
-          "col_span": 1
-        }
-      ]
-    },
-    "Fig2_uge": {
-      "sid": "Fig2_uge",
-      "name": "Yang2013 (Healthy)",
-      "num_rows": 1,
-      "num_cols": 1,
-      "width": 7.0,
-      "height": 5.0,
-      "subplots": [
-        {
-          "sid": null,
-          "name": null,
-          "plot": {
-            "sid": "Fig2_uge__plot0",
-            "name": null,
-            "xaxis": {
-              "sid": "Fig2_uge__plot0_xaxis",
-              "name": "time [hr]",
-              "label": "time",
-              "unit": "hr",
-              "scale": "LINEAR",
-              "min": null,
-              "max": null,
-              "grid": false,
-              "label_visible": true,
-              "ticks_visible": true
-            },
-            "yaxis": {
-              "sid": "Fig2_uge__plot0_yaxis",
+              "sid": "Tab3__plot1_yaxis",
               "name": "UGE [g]",
               "label": "UGE",
               "unit": "g",
@@ -2316,12 +2667,13 @@
             "title_visible": true,
             "curves": [
               {
-                "sid": "Fig2_uge__plot0_curve0",
-                "name": "5 mg PO",
+                "sid": "Tab3__plot1_curve0",
+                "name": "5 mg PO, day 10",
                 "x": "task_po_dap5_multi__time",
                 "y": "task_po_dap5_multi__KI__UGE",
                 "xerr": null,
                 "yerr": null,
+                "over": [],
                 "yaxis_position": null,
                 "style": {
                   "sid": null,
@@ -2329,61 +2681,63 @@
                   "base_style": null,
                   "line": {
                     "type": "SOLID",
-                    "color": "#f57c00ff",
+                    "color": "#d04b6fff",
                     "thickness": 2.0
                   },
                   "marker": {
                     "size": null,
                     "type": "NONE",
-                    "fill": "#f57c00ff",
+                    "fill": "#d04b6fff",
                     "line_color": "#000000ff",
                     "line_thickness": null
                   },
                   "fill": {
-                    "color": "#f57c00ff",
+                    "color": "#d04b6fff",
                     "second_color": null
                   }
                 },
                 "order": 0
               },
               {
-                "sid": "Fig2_uge__plot0_curve1",
-                "name": "5 mg PO\u00b1SD (n=14)",
-                "x": "glucose_cumulative amount_MD_DAP5__time",
-                "y": "glucose_cumulative amount_MD_DAP5__mean",
+                "sid": "Tab3__plot1_curve1",
+                "name": "5 mg PO, day 10\u00b1SD (n=14)",
+                "x": "glucose_cumulative_amount_MD_DAP5__time",
+                "y": "glucose_cumulative_amount_MD_DAP5__mean",
                 "xerr": null,
-                "yerr": "glucose_cumulative amount_MD_DAP5__mean_sd",
+                "yerr": "glucose_cumulative_amount_MD_DAP5__mean_sd",
+                "over": [],
                 "yaxis_position": null,
                 "style": {
                   "sid": null,
                   "name": null,
                   "base_style": null,
                   "line": {
-                    "type": "DASH",
-                    "color": "#f57c00ff",
+                    "type": "NONE",
+                    "color": "#d04b6fff",
                     "thickness": 1.0
                   },
                   "marker": {
                     "size": null,
                     "type": "SQUARE",
-                    "fill": "#f57c00ff",
+                    "fill": "#d04b6fff",
                     "line_color": "#000000ff",
                     "line_thickness": null
                   },
                   "fill": {
-                    "color": "#f57c00ff",
+                    "color": "#d04b6fff",
                     "second_color": null
                   }
                 },
                 "order": 1
               },
               {
-                "sid": "Fig2_uge__plot0_curve2",
-                "name": "10 mg PO",
+                "sid": "Tab3__plot1_curve2",
+                "name": "10 mg PO, day 10",
                 "x": "task_po_dap10_multi__time",
                 "y": "task_po_dap10_multi__KI__UGE",
                 "xerr": null,
                 "yerr": null,
+                "over": [],
                 "yaxis_position": null,
                 "style": {
                   "sid": null,
@@ -2391,59 +2745,61 @@
                   "base_style": null,
                   "line": {
                     "type": "SOLID",
-                    "color": "#ef6c00ff",
+                    "color": "#b63c7cff",
                     "thickness": 2.0
                   },
                   "marker": {
                     "size": null,
                     "type": "NONE",
-                    "fill": "#ef6c00ff",
+                    "fill": "#b63c7cff",
                     "line_color": "#000000ff",
                     "line_thickness": null
                   },
                   "fill": {
-                    "color": "#ef6c00ff",
+                    "color": "#b63c7cff",
                     "second_color": null
                   }
                 },
                 "order": 2
               },
               {
-                "sid": "Fig2_uge__plot0_curve3",
-                "name": "10 mg PO\u00b1SD (n=13)",
-                "x": "glucose_cumulative amount_MD_DAP10__time",
-                "y": "glucose_cumulative amount_MD_DAP10__mean",
+                "sid": "Tab3__plot1_curve3",
+                "name": "10 mg PO, day 10\u00b1SD (n=13)",
+                "x": "glucose_cumulative_amount_MD_DAP10__time",
+                "y": "glucose_cumulative_amount_MD_DAP10__mean",
                 "xerr": null,
-                "yerr": "glucose_cumulative amount_MD_DAP10__mean_sd",
+                "yerr": "glucose_cumulative_amount_MD_DAP10__mean_sd",
+                "over": [],
                 "yaxis_position": null,
                 "style": {
                   "sid": null,
                   "name": null,
                   "base_style": null,
                   "line": {
-                    "type": "DASH",
-                    "color": "#ef6c00ff",
+                    "type": "NONE",
+                    "color": "#b63c7cff",
                     "thickness": 1.0
                   },
                   "marker": {
                     "size": null,
                     "type": "SQUARE",
-                    "fill": "#ef6c00ff",
+                    "fill": "#b63c7cff",
                     "line_color": "#000000ff",
                     "line_thickness": null
                   },
                   "fill": {
-                    "color": "#ef6c00ff",
+                    "color": "#b63c7cff",
                     "second_color": null
                   }
                 },
                 "order": 3
               }
             ],
-            "areas": []
+            "areas": [],
+            "bands": []
           },
           "row": 1,
-          "col": 1,
+          "col": 2,
           "row_span": 1,
           "col_span": 1
         }

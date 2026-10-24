@@ -1,0 +1,2241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>PD_20261020_014612__f2826 | sbmlsim fit report</title>
+<style>
+:root {
+  --bg: #ffffff; --bg-soft: #f6f7f9; --bg-card: #ffffff;
+  --fg: #1b1f24; --fg-soft: #5b6472; --line: #e3e6ea;
+  --accent: #3b5bdb; --training: #2f9e44; --validation: #1c7ed6; --outlier: #e8590c;
+  --excluded: #868e96;
+  --radius: 10px; --shadow: 0 1px 2px rgba(16,24,40,.06), 0 1px 3px rgba(16,24,40,.1);
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #14171c; --bg-soft: #1a1e24; --bg-card: #1a1e24;
+    --fg: #e6e9ee; --fg-soft: #9aa4b2; --line: #2a3038;
+    --accent: #748ffc; --training: #51cf66; --validation: #4dabf7; --outlier: #ff922b;
+    --excluded: #adb5bd;
+    --shadow: none;
+  }
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0; background: var(--bg); color: var(--fg);
+  font: 15px/1.55 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+}
+code, .mono { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; font-size: .92em; }
+a { color: var(--accent); text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+header.top {
+  position: sticky; top: 0; z-index: 20; background: var(--bg);
+  border-bottom: 1px solid var(--line); padding: 14px 24px 0;
+}
+.top .row { display: flex; flex-wrap: wrap; gap: 12px; align-items: baseline; }
+.top h1 { margin: 0; font-size: 20px; font-weight: 650; letter-spacing: -.01em; }
+.top .sub { color: var(--fg-soft); font-size: 13px; }
+.badges { display: flex; flex-wrap: wrap; gap: 8px; margin-left: auto; }
+.badge {
+  background: var(--bg-soft); border: 1px solid var(--line); border-radius: 999px;
+  padding: 2px 10px; font-size: 12px; color: var(--fg-soft); white-space: nowrap;
+}
+.badge b { color: var(--fg); font-weight: 600; }
+.badge.failed, .badge.failed b { color: var(--outlier); border-color: var(--outlier); }
+nav.sections { display: flex; gap: 4px; margin-top: 12px; }
+nav.sections a {
+  padding: 8px 14px; border-bottom: 2px solid transparent; color: var(--fg-soft);
+  font-size: 14px; font-weight: 550;
+}
+nav.sections a.active { color: var(--fg); border-bottom-color: var(--accent); }
+.search { display: flex; gap: 8px; align-items: center; padding: 10px 0 12px; }
+.search input {
+  flex: 1; max-width: 460px; padding: 8px 12px; font-size: 14px; color: var(--fg);
+  background: var(--bg-soft); border: 1px solid var(--line); border-radius: 8px;
+}
+.search input:focus { outline: 2px solid var(--accent); outline-offset: -1px; }
+.chip {
+  border: 1px solid var(--line); background: var(--bg-soft); color: var(--fg-soft);
+  border-radius: 999px; padding: 5px 12px; font-size: 12.5px; cursor: pointer;
+}
+.chip[aria-pressed="true"] { color: #fff; border-color: transparent; }
+.chip[data-kind="training"][aria-pressed="true"] { background: var(--training); }
+.chip[data-kind="validation"][aria-pressed="true"] { background: var(--validation); }
+.chip[data-kind="outlier"][aria-pressed="true"] { background: var(--outlier); }
+.chip[data-kind="excluded"][aria-pressed="true"] { background: var(--excluded); }
+#hits { color: var(--fg-soft); font-size: 12.5px; margin-left: auto; }
+
+main { padding: 24px; max-width: 1400px; margin: 0 auto; }
+section { margin-bottom: 44px; scroll-margin-top: 150px; }
+section > h2 {
+  font-size: 17px; font-weight: 650; margin: 0 0 4px; padding-bottom: 8px;
+  border-bottom: 1px solid var(--line);
+}
+h3 { font-size: 14px; font-weight: 600; color: var(--fg-soft); margin: 26px 0 10px;
+     text-transform: uppercase; letter-spacing: .04em; }
+.card {
+  background: var(--bg-card); border: 1px solid var(--line); border-radius: var(--radius);
+  box-shadow: var(--shadow); padding: 16px; margin-bottom: 16px;
+}
+/* a heading which opens a card sits at the padding of the card */
+.card > h3:first-child { margin-top: 0; }
+.grid { display: grid; gap: 16px; grid-template-columns: repeat(auto-fit, minmax(330px, 1fr));
+        margin-bottom: 16px; }
+/* the gap of the grid is the space between its cards */
+.grid > .card { margin-bottom: 0; }
+.card.wide { grid-column: 1 / -1; }
+
+table { border-collapse: collapse; width: 100%; font-size: 13.5px; }
+/* two tables in one card, e.g. the networks and their arrays */
+table + table { margin-top: 24px; }
+th, td { text-align: left; padding: 7px 12px 7px 0; border-bottom: 1px solid var(--line); }
+th { color: var(--fg-soft); font-weight: 600; white-space: nowrap; }
+th[data-sort] { cursor: pointer; user-select: none; }
+th[data-sort]:hover { color: var(--fg); }
+th[data-sort]::after { content: " ⇅"; opacity: .35; }
+th[data-sort].asc::after { content: " ↑"; opacity: 1; }
+th[data-sort].desc::after { content: " ↓"; opacity: 1; }
+td.num, th.num { text-align: right; padding-right: 18px; font-variant-numeric: tabular-nums; }
+tbody tr:hover { background: var(--bg-soft); }
+tr.total td { font-weight: 650; border-top: 2px solid var(--line); }
+
+.kv { display: grid; grid-template-columns: max-content 1fr; gap: 4px 20px; font-size: 13.5px;
+      margin: 0; }
+.kv dt { color: var(--fg-soft); }
+.kv dd { margin: 0; word-break: break-word; white-space: pre-line; }
+
+.tag { border-radius: 999px; padding: 1px 9px; font-size: 11.5px; font-weight: 600; color: #fff; }
+.tag.training { background: var(--training); }
+.tag.validation { background: var(--validation); }
+.tag.outlier { background: var(--outlier); }
+.tag.excluded { background: var(--excluded); }
+.warn { color: var(--outlier); }
+
+/* what a value means, on the header of a column or next to a figure */
+.hint {
+  display: inline-flex; align-items: center; justify-content: center;
+  width: 14px; height: 14px; margin-left: 4px; border-radius: 50%;
+  border: 1px solid var(--line); color: var(--fg-soft);
+  font-size: 10px; font-weight: 700; line-height: 1; cursor: help;
+  position: relative; vertical-align: middle; user-select: none;
+}
+.hint:hover, .hint:focus { border-color: var(--accent); color: var(--accent); }
+.hint::after {
+  content: attr(data-tip);
+  position: absolute; bottom: calc(100% + 8px); left: 50%;
+  transform: translateX(-50%);
+  width: max-content; max-width: 320px; padding: 8px 10px;
+  border-radius: 6px; border: 1px solid var(--line);
+  background: var(--bg); color: var(--fg); box-shadow: 0 4px 16px rgb(0 0 0 / 18%);
+  font-size: 12px; font-weight: 400; line-height: 1.45; text-align: left;
+  white-space: normal; opacity: 0; visibility: hidden; transition: opacity .12s;
+  z-index: 20; pointer-events: none;
+}
+.hint:hover::after, .hint:focus::after { opacity: 1; visibility: visible; }
+/* a tooltip of the last columns would leave the page */
+td:last-child .hint::after, th:last-child .hint::after { left: auto; right: 0; transform: none; }
+/* on a phone a wide table scrolls inside its card and not the page; the
+   tooltips of its header open downwards, into the table, not above the card */
+@media (max-width: 700px) {
+  .card { overflow-x: auto; }
+  th .hint::after { bottom: auto; top: calc(100% + 8px); }
+  /* the header of a phone is not sticky, it would cover half of the screen,
+     and its rows wrap; the gutter is 16px */
+  header.top { position: static; padding: 12px 16px 0; }
+  main { padding: 16px; }
+  footer { padding: 8px 16px 24px; }
+  section { scroll-margin-top: 16px; }
+  nav.sections { overflow-x: auto; }
+  nav.sections a { padding: 8px 10px; white-space: nowrap; }
+  .search { flex-wrap: wrap; }
+  .search input { flex-basis: 100%; max-width: none; }
+}
+
+figure { margin: 0; }
+figure img {
+  width: 100%; height: auto; background: #fff; border: 1px solid var(--line);
+  border-radius: 8px; cursor: zoom-in;
+}
+figcaption { color: var(--fg-soft); font-size: 12.5px; margin-top: 6px; }
+
+.mapping { }
+.mapping header { display: flex; gap: 10px; align-items: baseline; flex-wrap: wrap; margin-bottom: 10px; }
+.mapping header .name { font-weight: 650; }
+.mapping header .exp { color: var(--fg-soft); font-size: 13px; }
+.mapping .metrics { margin-left: auto; display: flex; gap: 14px; font-size: 12.5px; color: var(--fg-soft); }
+.mapping .metrics b { color: var(--fg); font-weight: 600; }
+.hidden { display: none !important; }
+.failed { color: var(--outlier); }
+.empty { color: var(--fg-soft); font-style: italic; padding: 16px 0; }
+
+pre.code {
+  margin: 0; padding: 14px 16px; overflow-x: auto; max-height: 70vh;
+  background: var(--bg-soft); border: 1px solid var(--line); border-radius: 8px;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  font-size: 12.5px; line-height: 1.5; tab-size: 4;
+}
+#lightbox {
+  position: fixed; inset: 0; background: rgba(8,10,14,.86); z-index: 50;
+  display: none; align-items: center; justify-content: center; padding: 24px; cursor: zoom-out;
+}
+#lightbox.open { display: flex; }
+#lightbox img { max-width: 100%; max-height: 100%; background: #fff; border-radius: 8px; }
+footer { color: var(--fg-soft); font-size: 12.5px; padding: 8px 24px 32px; max-width: 1400px; margin: 0 auto; }
+</style>
+<style>
+.tab-panel { display: none; }
+.tab-panel.active { display: block; }
+/* the groupings of the evaluation, one shown at a time */
+.grouping-tabs { display: flex; flex-wrap: wrap; gap: 6px; margin: 0 0 12px; }
+.grouping-tab {
+  border: 1px solid var(--line); background: var(--bg-soft); color: var(--fg-soft);
+  border-radius: 999px; padding: 5px 12px; font-size: 12.5px; cursor: pointer;
+}
+.grouping-tab.active { background: var(--accent); border-color: transparent; color: #fff; }
+.grouping-panel { display: none; }
+.grouping-panel.active { display: block; }
+.warn.card { border-color: var(--outlier); }
+/* a long id of a fit mapping breaks, its table stays in its card */
+.wrap { overflow-wrap: anywhere; min-width: 12em; }
+
+/* the report document: a text to read, numbered tables, equations, figures;
+   its card has the width of the other cards, its lines a width to read */
+.document { padding: 24px 32px; line-height: 1.6; overflow-x: auto; }
+.document > * { max-width: 960px; }
+.document .doc-head { display: flex; flex-wrap: wrap; gap: 6px 16px; align-items: baseline; margin-bottom: 12px; }
+.document .doc-title { margin: 0; font-size: 19px; font-weight: 650; letter-spacing: -.01em; }
+.document .downloads { margin-left: auto; color: var(--fg-soft); font-size: 13px; }
+.document section { margin-bottom: 28px; }
+.document section section { margin-bottom: 18px; }
+.document h3 { margin: 24px 0 8px; color: var(--fg); font-size: 15.5px; font-weight: 650;
+               text-transform: none; letter-spacing: 0; }
+.document h4 { margin: 18px 0 6px; font-size: 14.5px; font-weight: 600; }
+.document p { margin: 8px 0; }
+.document table { width: auto; min-width: 60%; margin: 18px 0; }
+.document caption { caption-side: top; text-align: left; color: var(--fg-soft);
+                    font-size: 13px; line-height: 1.5; padding-bottom: 8px; }
+.document th, .document td { padding: 5px 16px 5px 0; }
+.document .equation { display: flex; gap: 16px; align-items: center; margin: 14px 0; overflow-x: auto; }
+.document .equation math { flex: 1; }
+.document .eqno { color: var(--fg-soft); }
+.document figure { margin: 20px 0; }
+.document figure img { width: auto; max-width: 100%; }
+.document #references ol { margin: 0; padding-left: 1.8em; font-size: 13.5px; }
+.document #references li { margin-bottom: 4px; }
+@media (max-width: 700px) {
+  .document { padding: 16px; }
+  .document .downloads { margin-left: 0; }
+}
+</style>
+</head>
+<body data-items="mappings">
+
+<header class="top">
+  <div class="row">
+    <h1>PD_20261020_014612__f2826</h1>
+    <span class="sub">PD</span>
+    <div class="badges">
+<span class="badge">mappings <b>46</b></span><span class="badge">parameters <b>4</b></span><span class="badge">cost <b>55.5419</b></span><span class="badge">runs <b>3</b></span><span class="badge">identifiable <b>3/4</b></span>    </div>
+  </div>
+  <nav class="sections">
+    <a href="#report" data-tab="report" class="active">Report</a>
+    <a href="#mappings" data-tab="mappings">Fit mappings</a>
+  </nav>
+  <div class="search">
+    <input id="search" type="search" placeholder="Search parameters, mappings, metrics …" autocomplete="off">
+    <button class="chip" data-kind="training" aria-pressed="true">training</button>
+    <button class="chip" data-kind="validation" aria-pressed="true">validation</button>
+    <button class="chip" data-kind="outlier" aria-pressed="true">outlier</button>
+    <span id="hits"></span>
+  </div>
+</header>
+
+<main>
+<div id="report" class="tab-panel active" data-panel="report">
+<article class="card document">
+  <header class="doc-head">
+    <p class="doc-title">Dapagliflozin PBPK/PD model: fit PD</p>
+<span class="downloads"><a href="report.pdf">PDF</a> · <a href="report.typ">Typst</a> · <a href="report.tex">LaTeX</a> · <a href="report_standalone.tex">LaTeX document</a> · <a href="references.bib">BibTeX</a></span>  </header>
+  <section>
+<h2>Methods: Dapagliflozin PBPK/PD model: fit PD</h2>
+<section>
+<h3>Parameters and data</h3>
+<p>4 parameters were optimized: EC50 reduction in RTG (<code>KI__RTG_E50</code>), hill coefficient reduction in RTG (<code>KI__RTG_gamma</code>), FPG effect on RTG (<code>KI__RTG_m_fpg</code>) and maximal relative reduction of the RTG (<code>KI__RTG_max_inhibition</code>). The parameters of the adopted fit PK_20261020_002954__89bab were fixed at their fitted values.</p>
+<p>A fit mapping is a curve of a study, the data and the observable of the model it is compared with. The fit has 31 fit mappings of training data with 254 data points, whose residuals enter the objective; and 15 fit mappings of validation data with 47 data points, which were simulated and evaluated with the fitted parameters but not fitted. The fit was set up and run with sbmlsim [<a href="#ref-Koenig2026_sbmlsim">1</a>].</p>
+</section>
+<section>
+<h3>Objective function</h3>
+<p>The parameters were estimated by minimizing the objective function</p>
+<div class="equation"><math display="block"><mrow><mi>F</mi><mo stretchy="false">&#x00028;</mo><mover><mrow><mi>p</mi></mrow><mo stretchy="true">&#x02192;</mo></mover><mo stretchy="false">&#x00029;</mo><mo>&#x0003D;</mo><mfrac><mrow><mn>1</mn></mrow><mrow><mn>2</mn></mrow></mfrac><munder><mo>&#x02211;</mo><mrow><mi>k</mi></mrow></munder><munder><mo>&#x02211;</mo><mrow><mi>i</mi></mrow></munder><mi>&#x003C1;</mi><mrow><mo stretchy="true" fence="true" form="prefix">&#x00028;</mo><msub><mi>w</mi><mrow><mi>i</mi><mo>&#x0002C;</mo><mi>k</mi></mrow></msub><mspace width="0.167em" /><msub><mi>r</mi><mrow><mi>i</mi><mo>&#x0002C;</mo><mi>k</mi></mrow></msub><mo stretchy="false">&#x00028;</mo><mover><mrow><mi>p</mi></mrow><mo stretchy="true">&#x02192;</mo></mover><msup><mo stretchy="false">&#x00029;</mo><mn>2</mn></msup><mo stretchy="true" fence="true" form="postfix">&#x00029;</mo></mrow></mrow></math><span class="eqno">(1)</span></div>
+<p>where <math display="inline"><mrow><mi>k</mi></mrow></math> runs over the fit mappings of the training data and <math display="inline"><mrow><mi>i</mi></mrow></math> over their data points, <math display="inline"><mrow><msub><mi>r</mi><mrow><mi>i</mi><mo>&#x0002C;</mo><mi>k</mi></mrow></msub></mrow></math> is the residual, <math display="inline"><mrow><msub><mi>w</mi><mrow><mi>i</mi><mo>&#x0002C;</mo><mi>k</mi></mrow></msub><mo>&#x0003D;</mo><msub><mi>w</mi><mi>k</mi></msub><mspace width="0.167em" /><msubsup><mi>w</mi><mrow><mi>i</mi><mo>&#x0002C;</mo><mi>k</mi></mrow><mrow><mi>p</mi></mrow></msubsup></mrow></math> the weight of the data point and <math display="inline"><mrow><mi>&#x003C1;</mi></mrow></math> the loss function, applied to the squared weighted residual <math display="inline"><mrow><mi>z</mi><mo>&#x0003D;</mo><msub><mi>w</mi><mrow><mi>i</mi><mo>&#x0002C;</mo><mi>k</mi></mrow></msub><mspace width="0.167em" /><msubsup><mi>r</mi><mrow><mi>i</mi><mo>&#x0002C;</mo><mi>k</mi></mrow><mn>2</mn></msubsup></mrow></math>. The loss function is linear, <math display="inline"><mrow><mi>&#x003C1;</mi><mo stretchy="false">&#x00028;</mo><mi>z</mi><mo stretchy="false">&#x00029;</mo><mo>&#x0003D;</mo><mi>z</mi></mrow></math>, i.e. a standard least squares problem.</p>
+<p>The residuals are normalized by the mean <math display="inline"><mrow><msub><mover><mrow><mi>y</mi></mrow><mo accent="true">&#x02015;</mo></mover><mi>k</mi></msub></mrow></math> of the data of their curve, which makes curves of different quantities and magnitudes comparable:</p>
+<div class="equation"><math display="block"><mrow><msub><mi>r</mi><mrow><mi>i</mi><mo>&#x0002C;</mo><mi>k</mi></mrow></msub><mo>&#x0003D;</mo><mfrac><mrow><msub><mi>y</mi><mrow><mi>i</mi><mo>&#x0002C;</mo><mi>k</mi></mrow></msub><mo>&#x02212;</mo><msub><mi>f</mi><mi>k</mi></msub><mo stretchy="false">&#x00028;</mo><msub><mi>x</mi><mrow><mi>i</mi><mo>&#x0002C;</mo><mi>k</mi></mrow></msub><mo>&#x0002C;</mo><mover><mrow><mi>p</mi></mrow><mo stretchy="true">&#x02192;</mo></mover><mo stretchy="false">&#x00029;</mo></mrow><mrow><msub><mover><mrow><mi>y</mi></mrow><mo accent="true">&#x02015;</mo></mover><mi>k</mi></msub></mrow></mfrac></mrow></math><span class="eqno">(2)</span></div>
+<p>The weight of curve <math display="inline"><mrow><mi>k</mi></mrow></math> is <math display="inline"><mrow><msub><mi>w</mi><mi>k</mi></msub><mo>&#x0003D;</mo><msub><mi>n</mi><mi>k</mi></msub><mo>&#x0002F;</mo><msub><mi>N</mi><mi>k</mi></msub></mrow></math>, the weight <math display="inline"><mrow><msub><mi>n</mi><mi>k</mi></msub></mrow></math> of its fit mapping (the weight its fit mapping collection assigns, 1 by default, or, for a collection which uses the weights of its mappings, the weight of the mapping, by default the number of subjects of its data) divided by the number <math display="inline"><mrow><msub><mi>N</mi><mi>k</mi></msub></mrow></math> of its data points.</p>
+<p>A data point is weighted with the inverse of its coefficient of variation, <math display="inline"><mrow><msubsup><mi>w</mi><mrow><mi>i</mi><mo>&#x0002C;</mo><mi>k</mi></mrow><mrow><mi>p</mi></mrow></msubsup><mo>&#x0003D;</mo><mo stretchy="false">&#x0007C;</mo><msub><mi>y</mi><mrow><mi>i</mi><mo>&#x0002C;</mo><mi>k</mi></mrow></msub><mo stretchy="false">&#x0007C;</mo><mo>&#x0002F;</mo><msub><mi>&#x003C3;</mi><mrow><mi>i</mi><mo>&#x0002C;</mo><mi>k</mi></mrow></msub></mrow></math>, with <math display="inline"><mrow><msub><mi>&#x003C3;</mi><mrow><mi>i</mi><mo>&#x0002C;</mo><mi>k</mi></mrow></msub></mrow></math> the standard deviation of the data point, or its standard error for data without a standard deviation. An error of zero is missing, a missing error of a curve with errors is replaced by the largest error of the curve, and the data points of a curve without errors have the weight <math display="inline"><mrow><msubsup><mi>w</mi><mrow><mi>i</mi><mo>&#x0002C;</mo><mi>k</mi></mrow><mrow><mi>p</mi></mrow></msubsup><mo>&#x0003D;</mo><mn>2</mn></mrow></math>, the weight of a coefficient of variation of 0.5.</p>
+</section>
+<section>
+<h3>Optimization</h3>
+<p>The optimizer searched the parameters in log10 space within their bounds; bounds, values and intervals are given in the units of the fit parameters, the units of the table of the parameters.</p>
+<p>The objective was minimized in 3 runs with differential evolution [<a href="#ref-Storn1997">2</a>] of SciPy [<a href="#ref-Virtanen2020">3</a>] within the bounds of the parameters, with the strategy <code>best1bin</code>, a population of 15 times the number of parameters, at most 1000 generations, the relative tolerance 0.01 of convergence, the recombination constant 0.7 and a mutation dithered between 0.5 and 1. The initial population of a run was drawn by latin hypercube sampling [<a href="#ref-McKay1979">4</a>], with a seed of every run derived from the seed 1234 of the fit. The best member of the final population was polished with the L-BFGS-B method of SciPy.</p>
+<p>The convergence of the runs was assessed from the traces of their cost and the waterfall plot of their final costs, and the parameter set with the lowest cost was used.</p>
+<p>The models were simulated with libRoadRunner [<a href="#ref-Welsh2023">5</a>] and its integrator CVODE [<a href="#ref-Hindmarsh2005">6</a>] with the relative tolerance <math display="inline"><mrow><msup><mn>10</mn><mrow><mo>&#x02212;</mo><mn>6</mn></mrow></msup></mrow></math> and the absolute tolerances <math display="inline"><mrow><msup><mn>10</mn><mrow><mo>&#x02212;</mo><mn>12</mn></mrow></msup></mrow></math> of an amount, <math display="inline"><mrow><msup><mn>10</mn><mrow><mo>&#x02212;</mo><mn>12</mn></mrow></msup></mrow></math> of a concentration and <math display="inline"><mrow><msup><mn>10</mn><mrow><mo>&#x02212;</mo><mn>6</mn></mrow></msup></mrow></math> of the other states, which for a species in a concentration is multiplied by the initial volume of its compartment. It ran with the variable step size of libRoadRunner, i.e. with an output at every step of the integrator. A data point at the time of a change after the start of a simulation, e.g. a dose or the reset of a collection, was compared with the state before the change, except the first data point of a curve with data at later times, which starts a collection and was compared with the state after the change.</p>
+</section>
+<section>
+<h3>Goodness of fit</h3>
+<p>The goodness of fit is given per kind of data (training data and validation data) by metrics over its <math display="inline"><mrow><mi>n</mi></mrow></math> data points with the residuals <math display="inline"><mrow><msub><mi>e</mi><mi>i</mi></msub><mo>&#x0003D;</mo><msub><mi>y</mi><mi>i</mi></msub><mo>&#x02212;</mo><mi>f</mi><mo stretchy="false">&#x00028;</mo><msub><mi>x</mi><mi>i</mi></msub><mo>&#x0002C;</mo><mover accent="true"><mrow><mover><mrow><mi>p</mi></mrow><mo stretchy="true">&#x02192;</mo></mover></mrow><mo>&#x0005E;</mo></mover><mo stretchy="false">&#x00029;</mo></mrow></math> at the fitted parameters <math display="inline"><mrow><mover accent="true"><mrow><mover><mrow><mi>p</mi></mrow><mo stretchy="true">&#x02192;</mo></mover></mrow><mo>&#x0005E;</mo></mover></mrow></math>, the mean squared error, its root and the root mean squared error normalized by the mean <math display="inline"><mrow><msub><mover><mrow><mi>y</mi></mrow><mo accent="true">&#x02015;</mo></mover><mrow><mi>k</mi><mo stretchy="false">&#x00028;</mo><mi>i</mi><mo stretchy="false">&#x00029;</mo></mrow></msub></mrow></math> of the data of the curve of a point:</p>
+<div class="equation"><math display="block"><mrow><mrow><mi mathvariant="normal">M</mi><mi mathvariant="normal">S</mi><mi mathvariant="normal">E</mi></mrow><mo>&#x0003D;</mo><mfrac><mrow><mn>1</mn></mrow><mrow><mi>n</mi></mrow></mfrac><munderover><mo>&#x02211;</mo><mrow><mi>i</mi><mo>&#x0003D;</mo><mn>1</mn></mrow><mrow><mi>n</mi></mrow></munderover><msubsup><mi>e</mi><mi>i</mi><mn>2</mn></msubsup><mo>&#x0002C;</mo><mspace width="1em" /><mrow><mi mathvariant="normal">R</mi><mi mathvariant="normal">M</mi><mi mathvariant="normal">S</mi><mi mathvariant="normal">E</mi></mrow><mo>&#x0003D;</mo><msqrt><mrow><mrow><mi mathvariant="normal">M</mi><mi mathvariant="normal">S</mi><mi mathvariant="normal">E</mi></mrow></mrow></msqrt><mo>&#x0002C;</mo><mspace width="1em" /><mrow><mi mathvariant="normal">N</mi><mi mathvariant="normal">R</mi><mi mathvariant="normal">M</mi><mi mathvariant="normal">S</mi><mi mathvariant="normal">E</mi></mrow><mo>&#x0003D;</mo><msqrt><mrow><mfrac><mrow><mn>1</mn></mrow><mrow><mi>n</mi></mrow></mfrac><msubsup><mo>&#x02211;</mo><mrow><mi>i</mi><mo>&#x0003D;</mo><mn>1</mn></mrow><mrow><mi>n</mi></mrow></msubsup><msup><mrow><mo stretchy="true" fence="true" form="prefix">&#x00028;</mo><mfrac><mrow><msub><mi>e</mi><mi>i</mi></msub></mrow><mrow><msub><mover><mrow><mi>y</mi></mrow><mo accent="true">&#x02015;</mo></mover><mrow><mi>k</mi><mo stretchy="false">&#x00028;</mo><mi>i</mi><mo stretchy="false">&#x00029;</mo></mrow></msub></mrow></mfrac><mo stretchy="true" fence="true" form="postfix">&#x00029;</mo></mrow><mn>2</mn></msup></mrow></msqrt></mrow></math><span class="eqno">(3)</span></div>
+<p>The root mean square of the residuals of the objective, i.e. what the fit minimizes, and the coefficient of determination:</p>
+<div class="equation"><math display="block"><mrow><msub><mrow><mi mathvariant="normal">R</mi><mi mathvariant="normal">M</mi><mi mathvariant="normal">S</mi><mi mathvariant="normal">E</mi></mrow><mi>w</mi></msub><mo>&#x0003D;</mo><msqrt><mrow><mfrac><mrow><mn>1</mn></mrow><mrow><mi>n</mi></mrow></mfrac><msubsup><mo>&#x02211;</mo><mrow><mi>i</mi><mo>&#x0003D;</mo><mn>1</mn></mrow><mrow><mi>n</mi></mrow></msubsup><mi>&#x003C1;</mi><mrow><mo stretchy="true" fence="true" form="prefix">&#x00028;</mo><msub><mi>w</mi><mi>i</mi></msub><mspace width="0.167em" /><msubsup><mi>r</mi><mi>i</mi><mn>2</mn></msubsup><mo stretchy="true" fence="true" form="postfix">&#x00029;</mo></mrow></mrow></msqrt><mo>&#x0002C;</mo><mspace width="1em" /><msup><mi>R</mi><mn>2</mn></msup><mo>&#x0003D;</mo><mn>1</mn><mo>&#x02212;</mo><mfrac><mrow><msub><mo>&#x02211;</mo><mrow><mi>i</mi></mrow></msub><msubsup><mi>e</mi><mi>i</mi><mn>2</mn></msubsup></mrow><mrow><msub><mo>&#x02211;</mo><mrow><mi>i</mi></mrow></msub><msup><mrow><mo stretchy="true" fence="true" form="prefix">&#x00028;</mo><msub><mi>y</mi><mi>i</mi></msub><mo>&#x02212;</mo><mover><mrow><mi>y</mi></mrow><mo accent="true">&#x02015;</mo></mover><mo stretchy="true" fence="true" form="postfix">&#x00029;</mo></mrow><mn>2</mn></msup></mrow></mfrac></mrow></math><span class="eqno">(4)</span></div>
+<p>The predictions of a non-linear model are no linear regression of the data, so <math display="inline"><mrow><msup><mi>R</mi><mn>2</mn></msup></mrow></math> can be negative: the prediction is worse than the mean of the data. The information criteria of Akaike [<a href="#ref-Akaike1974">7</a>] and Schwarz [<a href="#ref-Schwarz1978">8</a>] with the number <math display="inline"><mrow><msub><mi>n</mi><mi>p</mi></msub></mrow></math> of fitted parameters are those of a least squares fit with normally distributed residuals, up to an additive constant, so only differences between models fitted to the same data are meaningful:</p>
+<div class="equation"><math display="block"><mrow><mrow><mi mathvariant="normal">A</mi><mi mathvariant="normal">I</mi><mi mathvariant="normal">C</mi></mrow><mo>&#x0003D;</mo><mi>n</mi><mi>ln</mi><mo stretchy="false">&#x00028;</mo><mrow><mi mathvariant="normal">M</mi><mi mathvariant="normal">S</mi><mi mathvariant="normal">E</mi></mrow><mo stretchy="false">&#x00029;</mo><mo>&#x0002B;</mo><mn>2</mn><msub><mi>n</mi><mi>p</mi></msub><mo>&#x0002C;</mo><mspace width="1em" /><mrow><mi mathvariant="normal">B</mi><mi mathvariant="normal">I</mi><mi mathvariant="normal">C</mi></mrow><mo>&#x0003D;</mo><mi>n</mi><mi>ln</mi><mo stretchy="false">&#x00028;</mo><mrow><mi mathvariant="normal">M</mi><mi mathvariant="normal">S</mi><mi mathvariant="normal">E</mi></mrow><mo stretchy="false">&#x00029;</mo><mo>&#x0002B;</mo><msub><mi>n</mi><mi>p</mi></msub><mi>ln</mi><mo stretchy="false">&#x00028;</mo><mi>n</mi><mo stretchy="false">&#x00029;</mo></mrow></math><span class="eqno">(5)</span></div>
+<p>The percentage of the data points whose prediction <math display="inline"><mrow><msub><mi>f</mi><mi>i</mi></msub><mo>&#x0003D;</mo><mi>f</mi><mo stretchy="false">&#x00028;</mo><msub><mi>x</mi><mi>i</mi></msub><mo>&#x0002C;</mo><mover accent="true"><mrow><mover><mrow><mi>p</mi></mrow><mo stretchy="true">&#x02192;</mo></mover></mrow><mo>&#x0005E;</mo></mover><mo stretchy="false">&#x00029;</mo></mrow></math> lies within twofold of the data is taken over the <math display="inline"><mrow><msub><mi>n</mi><mo>&#x0002B;</mo></msub></mrow></math> data points with positive data <math display="inline"><mrow><msub><mi>y</mi><mi>i</mi></msub><mo>&#x0003E;</mo><mn>0</mn></mrow></math> and a positive prediction <math display="inline"><mrow><msub><mi>f</mi><mi>i</mi></msub><mo>&#x0003E;</mo><mn>0</mn></mrow></math>; the others have no ratio and are not counted, and a kind of data without such a point has no percentage:</p>
+<div class="equation"><math display="block"><mrow><msub><mi>P</mi><mn>2</mn></msub><mo>&#x0003D;</mo><mfrac><mrow><mn>100</mn></mrow><mrow><msub><mi>n</mi><mo>&#x0002B;</mo></msub></mrow></mfrac><mrow><mo stretchy="true" fence="true" form="prefix">&#x0007C;</mo><mrow><mo stretchy="true" fence="true" form="prefix">&#x0007B;</mo><mi>i</mi><mi>:</mi><mfrac><mrow><mn>1</mn></mrow><mrow><mn>2</mn></mrow></mfrac><mo>&#x02264;</mo><mfrac><mrow><msub><mi>f</mi><mi>i</mi></msub></mrow><mrow><msub><mi>y</mi><mi>i</mi></msub></mrow></mfrac><mo>&#x02264;</mo><mn>2</mn><mo stretchy="true" fence="true" form="postfix">&#x0007D;</mo></mrow><mo stretchy="true" fence="true" form="postfix">&#x0007C;</mo></mrow></mrow></math><span class="eqno">(6)</span></div>
+<p>The goodness of fit plot shows the predictions against the data on logarithmic axes, with the lines of twofold <math display="inline"><mrow><mi>f</mi><mo>&#x0003D;</mo><mn>2</mn><mi>y</mi></mrow></math> and <math display="inline"><mrow><mi>f</mi><mo>&#x0003D;</mo><mi>y</mi><mo>&#x0002F;</mo><mn>2</mn></mrow></math>. The Bland-Altman plot [<a href="#ref-Bland1986">9</a>] shows the ratio of prediction and data as <math display="inline"><mrow><msub><mi>d</mi><mi>i</mi></msub><mo>&#x0003D;</mo><msub><mi>log</mi><mrow><mn>10</mn></mrow></msub><mo stretchy="false">&#x00028;</mo><msub><mi>f</mi><mi>i</mi></msub><mo>&#x0002F;</mo><msub><mi>y</mi><mi>i</mi></msub><mo stretchy="false">&#x00029;</mo></mrow></math> against the geometric mean <math display="inline"><mrow><msqrt><mrow><msub><mi>f</mi><mi>i</mi></msub><mspace width="0.167em" /><msub><mi>y</mi><mi>i</mi></msub></mrow></msqrt></mrow></math> for the data points with positive values, with the bias <math display="inline"><mrow><mover><mrow><mi>d</mi></mrow><mo accent="true">&#x02015;</mo></mover></mrow></math> and the limits of agreement <math display="inline"><mrow><mover><mrow><mi>d</mi></mrow><mo accent="true">&#x02015;</mo></mover><mi>&#x000B1;</mi><mn>1.96</mn><mspace width="0.167em" /><msub><mi>s</mi><mi>d</mi></msub></mrow></math>, with the sample standard deviation <math display="inline"><mrow><msub><mi>s</mi><mi>d</mi></msub></mrow></math> of <math display="inline"><mrow><msub><mi>d</mi><mi>i</mi></msub></mrow></math>, of the training data; they are read as the fold factors <math display="inline"><mrow><msup><mn>10</mn><mrow><mover><mrow><mi>d</mi></mrow><mo accent="true">&#x02015;</mo></mover></mrow></msup></mrow></math> and <math display="inline"><mrow><msup><mn>10</mn><mrow><mover><mrow><mi>d</mi></mrow><mo accent="true">&#x02015;</mo></mover><mi>&#x000B1;</mi><mn>1.96</mn><mspace width="0.167em" /><msub><mi>s</mi><mi>d</mi></msub></mrow></msup></mrow></math>.</p>
+</section>
+<section>
+<h3>Identifiability</h3>
+<p>The identifiability of the parameters was analysed with the profile likelihood [<a href="#ref-Raue2009">10</a>, <a href="#ref-Kreutz2013">11</a>]. The profile of a parameter is the lowest objective with the parameter fixed:</p>
+<div class="equation"><math display="block"><mrow><mrow><mi mathvariant="normal">P</mi><mi mathvariant="normal">L</mi></mrow><mo stretchy="false">&#x00028;</mo><msub><mi>p</mi><mi>j</mi></msub><mo stretchy="false">&#x00029;</mo><mo>&#x0003D;</mo><msub><mo>min</mo><mrow><msub><mi>p</mi><mrow><mi>l</mi><mo>&#x02260;</mo><mi>j</mi></mrow></msub></mrow></msub><mi>F</mi><mo stretchy="false">&#x00028;</mo><mover><mrow><mi>p</mi></mrow><mo stretchy="true">&#x02192;</mo></mover><mo stretchy="false">&#x00029;</mo></mrow></math><span class="eqno">(7)</span></div>
+<p>At every point of a scan the other parameters were re-optimized from the previous point with the least squares optimizer of SciPy with the relative step 0.05. A scan ran from the optimum in both directions in the space of the optimizer, with steps in decades of the parameter, starting at 0.1. A step which raised the objective by more than 0.2 of the distance between the objective at the optimum and the threshold was reduced by the factor 2 and repeated, down to 0.01, and the step after one which raised it by less than that divided by the factor was enlarged by the factor, up to 1. A scan stopped at the threshold, at the bound of the parameter, at a point which failed or after 50 points.</p>
+<p>The confidence intervals are the values at which the profile crosses the threshold of the likelihood ratio test</p>
+<div class="equation"><math display="block"><mrow><msub><mi>F</mi><mrow><mrow><mi mathvariant="normal">t</mi><mi mathvariant="normal">h</mi><mi mathvariant="normal">r</mi></mrow></mrow></msub><mo>&#x0003D;</mo><msub><mi>F</mi><mrow><mo>min</mo></mrow></msub><mo>&#x0002B;</mo><mfrac><mrow><msubsup><mi>&#x003C7;</mi><mrow><mi>&#x003B1;</mi></mrow><mn>2</mn></msubsup><mo stretchy="false">&#x00028;</mo><mrow><mi mathvariant="normal">d</mi><mi mathvariant="normal">f</mi></mrow><mo stretchy="false">&#x00029;</mo></mrow><mrow><mn>2</mn></mrow></mfrac></mrow></math><span class="eqno">(8)</span></div>
+<p>with <math display="inline"><mrow><msub><mi>F</mi><mrow><mo>min</mo></mrow></msub></mrow></math> the lowest objective of the fit and of all profiles and <math display="inline"><mrow><msubsup><mi>&#x003C7;</mi><mrow><mi>&#x003B1;</mi></mrow><mn>2</mn></msubsup><mo stretchy="false">&#x00028;</mo><mrow><mi mathvariant="normal">d</mi><mi mathvariant="normal">f</mi></mrow><mo stretchy="false">&#x00029;</mo></mrow></math> the quantile of the <math display="inline"><mrow><msup><mi>&#x003C7;</mi><mn>2</mn></msup></mrow></math> distribution at the confidence level <math display="inline"><mrow><mi>&#x003B1;</mi><mo>&#x0003D;</mo><mn>0.95</mn></mrow></math> with df = 1 degrees of freedom, i.e. 1.92 above the lowest objective. The threshold has this confidence level if <math display="inline"><mrow><mi>F</mi></mrow></math> is the negative log-likelihood of the data up to a constant, i.e. if the weighted residuals are independent and normally distributed with unit variance; otherwise the level is approximate. A crossing is interpolated between two points of the profile, on the logarithm of a parameter on a logarithmic scale. A parameter is identifiable if its profile reaches the threshold within the scan on both sides of the optimum, i.e. its confidence interval is finite; practically non-identifiable towards the lower bound if its profile reaches the threshold above the optimum but not below it within the scan, which ends at the lower bound or after 50 points; practically non-identifiable towards the upper bound if its profile reaches the threshold below the optimum but not above it within the scan, which ends at the upper bound or after 50 points; practically non-identifiable if its profile reaches the threshold on neither side within the scans, which end at the bounds or after 50 points, and is not flat; and structurally non-identifiable if its profile is flat on both sides. A side of a profile is flat if it rises by less than 0.05 of the distance between the lowest objective and the threshold, and a profile with a point which failed or did not converge is not classified. The profile likelihood is preferred over the intervals of the Fisher information, its intervals are invariant under a transformation of the parameters and can be asymmetric [<a href="#ref-Wieland2021">12</a>].</p>
+<p>The Fisher information is the local alternative to the profiles: it is the Gauss-Newton approximation of the curvature of the objective at the optimum, from the Jacobian <math display="inline"><mrow><mi>J</mi></mrow></math> of the weighted residuals of the training data with respect to the parameters <math display="inline"><mrow><mover><mrow><mi>p</mi></mrow><mo stretchy="true">&#x02192;</mo></mover></mrow></math> in the space of the optimizer, computed by central finite differences with the step <math display="inline"><mrow><msub><mi>h</mi><mi>j</mi></msub><mo>&#x0003D;</mo><mi>&#x003F5;</mi><mo>max</mo><mo stretchy="false">&#x00028;</mo><mo stretchy="false">&#x0007C;</mo><msub><mi>p</mi><mi>j</mi></msub><mo stretchy="false">&#x0007C;</mo><mo>&#x0002C;</mo><mn>1</mn><mo stretchy="false">&#x00029;</mo><mo>&#x0002C;</mo><mtext>&#x000A0;</mtext><mi>&#x003F5;</mi><mo>&#x0003D;</mo><msup><mn>10</mn><mrow><mo>&#x02212;</mo><mn>6</mn></mrow></msup></mrow></math> of the parameter <math display="inline"><mrow><msub><mi>p</mi><mi>j</mi></msub></mrow></math>:</p>
+<div class="equation"><math display="block"><mrow><mi>I</mi><mo>&#x0003D;</mo><msup><mi>J</mi><mo>&#x022A4;</mo></msup><mi>J</mi><mo>&#x0002C;</mo><mspace width="1em" /><mrow><mi mathvariant="normal">c</mi><mi mathvariant="normal">o</mi><mi mathvariant="normal">v</mi></mrow><mo>&#x0003D;</mo><msup><mi>&#x003C3;</mi><mn>2</mn></msup><msup><mi>I</mi><mrow><mo>&#x02212;</mo><mn>1</mn></mrow></msup><mo>&#x0002C;</mo><mspace width="1em" /><msup><mi>&#x003C3;</mi><mn>2</mn></msup><mo>&#x0003D;</mo><mfrac><mrow><mn>2</mn><mi>F</mi></mrow><mrow><mi>n</mi><mo>&#x02212;</mo><msub><mi>n</mi><mi>p</mi></msub></mrow></mfrac></mrow></math><span class="eqno">(9)</span></div>
+<p>with the number <math display="inline"><mrow><mi>n</mi></mrow></math> of data points of the training data and the number <math display="inline"><mrow><msub><mi>n</mi><mi>p</mi></msub></mrow></math> of parameters. The information has rank 4 of 4, the number of its eigenvalues above <math display="inline"><mrow><msup><mn>10</mn><mrow><mo>&#x02212;</mo><mn>8</mn></mrow></msup></mrow></math> of the largest one, and the condition number 799; the covariance of an information of a lower rank is computed with the pseudo-inverse. The Wald intervals are <math display="inline"><mrow><msub><mover accent="true"><mrow><mi>p</mi></mrow><mo>&#x0005E;</mo></mover><mi>j</mi></msub><mi>&#x000B1;</mi><msub><mi>t</mi><mrow><mo stretchy="false">&#x00028;</mo><mn>1</mn><mo>&#x0002B;</mo><mi>&#x003B1;</mi><mo stretchy="false">&#x00029;</mo><mo>&#x0002F;</mo><mn>2</mn><mo>&#x0002C;</mo><mspace width="0.167em" /><mi>n</mi><mo>&#x02212;</mo><msub><mi>n</mi><mi>p</mi></msub></mrow></msub><mspace width="0.167em" /><msub><mrow><mi mathvariant="normal">S</mi><mi mathvariant="normal">E</mi></mrow><mi>j</mi></msub></mrow></math> with the standard errors <math display="inline"><mrow><msub><mrow><mi mathvariant="normal">S</mi><mi mathvariant="normal">E</mi></mrow><mi>j</mi></msub><mo>&#x0003D;</mo><msqrt><mrow><msub><mrow><mi mathvariant="normal">c</mi><mi mathvariant="normal">o</mi><mi mathvariant="normal">v</mi></mrow><mrow><mi>j</mi><mi>j</mi></mrow></msub></mrow></msqrt></mrow></math> at the confidence level <math display="inline"><mrow><mi>&#x003B1;</mi><mo>&#x0003D;</mo><mn>0.95</mn></mrow></math>, transformed back into the units of the fit parameters.</p>
+</section>
+<section>
+<h3>Provenance</h3>
+<p>The fit PD_20261020_014612__f2826 was run on 2026-10-19 23:46:14 UTC with sbmlsim 0.10.0 [<a href="#ref-Koenig2026_sbmlsim">1</a>], libRoadRunner 2.10.0 [<a href="#ref-Welsh2023">5</a>], SciPy 1.18.1 [<a href="#ref-Virtanen2020">3</a>], NumPy 2.5.3 [<a href="#ref-Harris2020">13</a>] and Python 3.14.4 (seed 1234). The models and data were those of commit <code>266a01e9f9840563604534c348eeeae5ab4e3a46</code> of <code>/home/mkoenig/git/pkdb_models-dapagliflozin</code>; their SHA-256 checksums are listed in <a href="#tab:checksums:PD_20261020_014612__f2826">Table 1</a>. The fit kept the values <code>ftissue_dap</code> = 0.411373, <code>Kp_dap</code> = 1.20018, <code>GU__Ka_dis_dap</code> = 1.09176, <code>GU__DAPABS_k</code> = 0.0444919, <code>GU__FED_f_absorption</code> = 0.189289, <code>DAPMET_k</code> = 0.0658713, <code>KI__DAPEX_f</code> = 0.460206 and <code>KI__D3GEX_f</code> = 1.80546 of the model fixed.</p>
+<table id="tab:checksums:PD_20261020_014612__f2826">
+<caption>Table 1. SHA-256 checksums of the models and data of the fit PD_20261020_014612__f2826, their first 12 characters; the full checksums are in the provenance of the result (optimization_result.json).</caption>
+<thead><tr><th style="text-align: left">File</th><th style="text-align: left">SHA-256</th></tr></thead>
+<tbody>
+<tr><td style="text-align: left"><code>pkdb_models/models/dapagliflozin/data/canagliflozin/Sha2015/.Sha2015_Fig2.tsv</code></td><td style="text-align: left"><code>9888c59afb2b...</code></td></tr>
+<tr><td style="text-align: left"><code>pkdb_models/models/dapagliflozin/data/canagliflozin/Sha2015/.Sha2015_Fig3.tsv</code></td><td style="text-align: left"><code>5058aa68df88...</code></td></tr>
+<tr><td style="text-align: left"><code>pkdb_models/models/dapagliflozin/data/canagliflozin/Sha2015/.Sha2015_TabGroups.tsv</code></td><td style="text-align: left"><code>1c17a90fc63e...</code></td></tr>
+<tr><td style="text-align: left"><code>pkdb_models/models/dapagliflozin/data/canagliflozin/Sha2015/.Sha2015_TabInterventions.tsv</code></td><td style="text-align: left"><code>866a70d1f6a7...</code></td></tr>
+<tr><td style="text-align: left"><code>pkdb_models/models/dapagliflozin/data/dapagliflozin/Boulton2013/.Boulton2013_Fig1.tsv</code></td><td style="text-align: left"><code>cc06471f1d18...</code></td></tr>
+<tr><td style="text-align: left"><code>pkdb_models/models/dapagliflozin/data/dapagliflozin/Boulton2013/.Boulton2013_Tab1.tsv</code></td><td style="text-align: left"><code>e10b748372b2...</code></td></tr>
+<tr><td style="text-align: left"><code>pkdb_models/models/dapagliflozin/data/dapagliflozin/Boulton2013/.Boulton2013_TabGroups.tsv</code></td><td style="text-align: left"><code>baa2677dd9a0...</code></td></tr>
+<tr><td style="text-align: left"><code>pkdb_models/models/dapagliflozin/data/dapagliflozin/Boulton2013/.Boulton2013_TabInterventions.tsv</code></td><td style="text-align: left"><code>48ee8e7259f2...</code></td></tr>
+<tr><td style="text-align: left"><code>pkdb_models/models/dapagliflozin/data/dapagliflozin/Cho2021/.Cho2021_Fig6.tsv</code></td><td style="text-align: left"><code>c9f1da565072...</code></td></tr>
+<tr><td style="text-align: left"><code>pkdb_models/models/dapagliflozin/data/dapagliflozin/Cho2021/.Cho2021_Tab5.tsv</code></td><td style="text-align: left"><code>5f956c0bd354...</code></td></tr>
+<tr><td style="text-align: left"><code>pkdb_models/models/dapagliflozin/data/dapagliflozin/Cho2021/.Cho2021_TabGroups.tsv</code></td><td style="text-align: left"><code>445946a31a8f...</code></td></tr>
+<tr><td style="text-align: left"><code>pkdb_models/models/dapagliflozin/data/dapagliflozin/Cho2021/.Cho2021_TabInterventions.tsv</code></td><td style="text-align: left"><code>4691fd37ca19...</code></td></tr>
+<tr><td style="text-align: left"><code>pkdb_models/models/dapagliflozin/data/dapagliflozin/FDAMB102002/.FDAMB102002_Fig12.tsv</code></td><td style="text-align: left"><code>8d98a3fae7b5...</code></td></tr>
+<tr><td style="text-align: left"><code>pkdb_models/models/dapagliflozin/data/dapagliflozin/FDAMB102002/.FDAMB102002_Fig17.tsv</code></td><td style="text-align: left"><code>19868e2823ba...</code></td></tr>
+<tr><td style="text-align: left"><code>pkdb_models/models/dapagliflozin/data/dapagliflozin/FDAMB102002/.FDAMB102002_Tab7.tsv</code></td><td style="text-align: left"><code>84d3d77c0d82...</code></td></tr>
+<tr><td style="text-align: left"><code>pkdb_models/models/dapagliflozin/data/dapagliflozin/FDAMB102002/.FDAMB102002_TabGroups.tsv</code></td><td style="text-align: left"><code>e563991e0003...</code></td></tr>
+<tr><td style="text-align: left"><code>pkdb_models/models/dapagliflozin/data/dapagliflozin/FDAMB102002/.FDAMB102002_TabInterventions.tsv</code></td><td style="text-align: left"><code>9efae56172a1...</code></td></tr>
+<tr><td style="text-align: left"><code>pkdb_models/models/dapagliflozin/data/dapagliflozin/FDAMB102003/.FDAMB102003_Fig13.tsv</code></td><td style="text-align: left"><code>3c6bc562b764...</code></td></tr>
+<tr><td style="text-align: left"><code>pkdb_models/models/dapagliflozin/data/dapagliflozin/FDAMB102003/.FDAMB102003_Fig18.tsv</code></td><td style="text-align: left"><code>80954c4abc97...</code></td></tr>
+<tr><td style="text-align: left"><code>pkdb_models/models/dapagliflozin/data/dapagliflozin/FDAMB102003/.FDAMB102003_Tab12.tsv</code></td><td style="text-align: left"><code>4ffcf8e24586...</code></td></tr>
+<tr><td style="text-align: left"><code>pkdb_models/models/dapagliflozin/data/dapagliflozin/FDAMB102003/.FDAMB102003_Tab8.tsv</code></td><td style="text-align: left"><code>9ffc161ed251...</code></td></tr>
+<tr><td style="text-align: left"><code>pkdb_models/models/dapagliflozin/data/dapagliflozin/FDAMB102003/.FDAMB102003_Tab8A.tsv</code></td><td style="text-align: left"><code>2bcefc3176ac...</code></td></tr>
+<tr><td style="text-align: left"><code>pkdb_models/models/dapagliflozin/data/dapagliflozin/FDAMB102003/.FDAMB102003_TabGroups.tsv</code></td><td style="text-align: left"><code>510acbf2acf2...</code></td></tr>
+<tr><td style="text-align: left"><code>pkdb_models/models/dapagliflozin/data/dapagliflozin/FDAMB102003/.FDAMB102003_TabInterventions.tsv</code></td><td style="text-align: left"><code>a4843e12731a...</code></td></tr>
+<tr><td style="text-align: left"><code>pkdb_models/models/dapagliflozin/data/dapagliflozin/FDAMB102006/.FDAMB102006_Tab11.tsv</code></td><td style="text-align: left"><code>49e3c6565c1e...</code></td></tr>
+<tr><td style="text-align: left"><code>pkdb_models/models/dapagliflozin/data/dapagliflozin/FDAMB102006/.FDAMB102006_Tab11A.tsv</code></td><td style="text-align: left"><code>e77578783a53...</code></td></tr>
+<tr><td style="text-align: left"><code>pkdb_models/models/dapagliflozin/data/dapagliflozin/FDAMB102006/.FDAMB102006_TabGroups.tsv</code></td><td style="text-align: left"><code>da4ae5a1af69...</code></td></tr>
+<tr><td style="text-align: left"><code>pkdb_models/models/dapagliflozin/data/dapagliflozin/FDAMB102006/.FDAMB102006_TabInterventions.tsv</code></td><td style="text-align: left"><code>8f894f9264c1...</code></td></tr>
+<tr><td style="text-align: left"><code>pkdb_models/models/dapagliflozin/data/dapagliflozin/FDAMB102007/.FDAMB102007_Fig3.tsv</code></td><td style="text-align: left"><code>fdcd54d1d32f...</code></td></tr>
+<tr><td style="text-align: left"><code>pkdb_models/models/dapagliflozin/data/dapagliflozin/FDAMB102007/.FDAMB102007_Tab13.tsv</code></td><td style="text-align: left"><code>8d5ee0f0a8d9...</code></td></tr>
+<tr><td style="text-align: left"><code>pkdb_models/models/dapagliflozin/data/dapagliflozin/FDAMB102007/.FDAMB102007_Tab13A.tsv</code></td><td style="text-align: left"><code>b159e24becb1...</code></td></tr>
+<tr><td style="text-align: left"><code>pkdb_models/models/dapagliflozin/data/dapagliflozin/FDAMB102007/.FDAMB102007_Tab14.tsv</code></td><td style="text-align: left"><code>45869ab42ce7...</code></td></tr>
+<tr><td style="text-align: left"><code>pkdb_models/models/dapagliflozin/data/dapagliflozin/FDAMB102007/.FDAMB102007_Tab14A.tsv</code></td><td style="text-align: left"><code>2bd4db1a6c9a...</code></td></tr>
+<tr><td style="text-align: left"><code>pkdb_models/models/dapagliflozin/data/dapagliflozin/FDAMB102007/.FDAMB102007_TabGroups.tsv</code></td><td style="text-align: left"><code>02e13ad2de3f...</code></td></tr>
+<tr><td style="text-align: left"><code>pkdb_models/models/dapagliflozin/data/dapagliflozin/FDAMB102007/.FDAMB102007_TabInterventions.tsv</code></td><td style="text-align: left"><code>ba4ef3395beb...</code></td></tr>
+<tr><td style="text-align: left"><code>pkdb_models/models/dapagliflozin/data/dapagliflozin/Gould2013/.Gould2013_Fig1.tsv</code></td><td style="text-align: left"><code>d93ae8e1b647...</code></td></tr>
+<tr><td style="text-align: left"><code>pkdb_models/models/dapagliflozin/data/dapagliflozin/Gould2013/.Gould2013_Fig1a.tsv</code></td><td style="text-align: left"><code>32928f5f3415...</code></td></tr>
+<tr><td style="text-align: left"><code>pkdb_models/models/dapagliflozin/data/dapagliflozin/Gould2013/.Gould2013_Tab2.tsv</code></td><td style="text-align: left"><code>66064be308d4...</code></td></tr>
+<tr><td style="text-align: left"><code>pkdb_models/models/dapagliflozin/data/dapagliflozin/Gould2013/.Gould2013_Tab3.tsv</code></td><td style="text-align: left"><code>b30cb721cae8...</code></td></tr>
+<tr><td style="text-align: left"><code>pkdb_models/models/dapagliflozin/data/dapagliflozin/Gould2013/.Gould2013_TabGroups.tsv</code></td><td style="text-align: left"><code>09ff53622f61...</code></td></tr>
+<tr><td style="text-align: left"><code>pkdb_models/models/dapagliflozin/data/dapagliflozin/Gould2013/.Gould2013_TabIndividuals.tsv</code></td><td style="text-align: left"><code>fbf7f132fbe3...</code></td></tr>
+<tr><td style="text-align: left"><code>pkdb_models/models/dapagliflozin/data/dapagliflozin/Gould2013/.Gould2013_TabInterventions.tsv</code></td><td style="text-align: left"><code>029143b476b3...</code></td></tr>
+<tr><td style="text-align: left"><code>pkdb_models/models/dapagliflozin/data/dapagliflozin/Hwang2022a/.Hwang2022a_Fig1.tsv</code></td><td style="text-align: left"><code>c53a3388d323...</code></td></tr>
+<tr><td style="text-align: left"><code>pkdb_models/models/dapagliflozin/data/dapagliflozin/Hwang2022a/.Hwang2022a_Fig2.tsv</code></td><td style="text-align: left"><code>6cfbefd16762...</code></td></tr>
+<tr><td style="text-align: left"><code>pkdb_models/models/dapagliflozin/data/dapagliflozin/Hwang2022a/.Hwang2022a_Fig4.tsv</code></td><td style="text-align: left"><code>488d6e524645...</code></td></tr>
+<tr><td style="text-align: left"><code>pkdb_models/models/dapagliflozin/data/dapagliflozin/Hwang2022a/.Hwang2022a_Tab2.tsv</code></td><td style="text-align: left"><code>3cf62d65a1e7...</code></td></tr>
+<tr><td style="text-align: left"><code>pkdb_models/models/dapagliflozin/data/dapagliflozin/Hwang2022a/.Hwang2022a_Tab3.tsv</code></td><td style="text-align: left"><code>ecbdbc0b2ec6...</code></td></tr>
+<tr><td style="text-align: left"><code>pkdb_models/models/dapagliflozin/data/dapagliflozin/Hwang2022a/.Hwang2022a_TabGroups.tsv</code></td><td style="text-align: left"><code>163e159de102...</code></td></tr>
+<tr><td style="text-align: left"><code>pkdb_models/models/dapagliflozin/data/dapagliflozin/Hwang2022a/.Hwang2022a_TabInterventions.tsv</code></td><td style="text-align: left"><code>0b60f83b6227...</code></td></tr>
+<tr><td style="text-align: left"><code>pkdb_models/models/dapagliflozin/data/dapagliflozin/Hwang2022a/.Hwang2022a_TabS2.tsv</code></td><td style="text-align: left"><code>0fa6cfc2ac58...</code></td></tr>
+<tr><td style="text-align: left"><code>pkdb_models/models/dapagliflozin/data/dapagliflozin/Imamura2013/.Imamura2013_Fig2.tsv</code></td><td style="text-align: left"><code>9918b3cea6cf...</code></td></tr>
+<tr><td style="text-align: left"><code>pkdb_models/models/dapagliflozin/data/dapagliflozin/Imamura2013/.Imamura2013_Tab2.tsv</code></td><td style="text-align: left"><code>2b5e6bba934f...</code></td></tr>
+<tr><td style="text-align: left"><code>pkdb_models/models/dapagliflozin/data/dapagliflozin/Imamura2013/.Imamura2013_TabGroups.tsv</code></td><td style="text-align: left"><code>53304764f2ed...</code></td></tr>
+<tr><td style="text-align: left"><code>pkdb_models/models/dapagliflozin/data/dapagliflozin/Imamura2013/.Imamura2013_TabInterventions.tsv</code></td><td style="text-align: left"><code>8f05f9649ad7...</code></td></tr>
+<tr><td style="text-align: left"><code>pkdb_models/models/dapagliflozin/data/dapagliflozin/Jang2020/.Jang2020_Fig2.tsv</code></td><td style="text-align: left"><code>e15c3d846b03...</code></td></tr>
+<tr><td style="text-align: left"><code>pkdb_models/models/dapagliflozin/data/dapagliflozin/Jang2020/.Jang2020_Fig3.tsv</code></td><td style="text-align: left"><code>513acd3f936e...</code></td></tr>
+<tr><td style="text-align: left"><code>pkdb_models/models/dapagliflozin/data/dapagliflozin/Jang2020/.Jang2020_Tab1.tsv</code></td><td style="text-align: left"><code>221d4fee7fe7...</code></td></tr>
+<tr><td style="text-align: left"><code>pkdb_models/models/dapagliflozin/data/dapagliflozin/Jang2020/.Jang2020_TabGroups.tsv</code></td><td style="text-align: left"><code>e0a5aae17ce1...</code></td></tr>
+<tr><td style="text-align: left"><code>pkdb_models/models/dapagliflozin/data/dapagliflozin/Jang2020/.Jang2020_TabInterventions.tsv</code></td><td style="text-align: left"><code>814ff82fc5b1...</code></td></tr>
+<tr><td style="text-align: left"><code>pkdb_models/models/dapagliflozin/data/dapagliflozin/Kasichayanula2011/.Kasichayanula2011_Fig1.tsv</code></td><td style="text-align: left"><code>c2fb3ae6b27a...</code></td></tr>
+<tr><td style="text-align: left"><code>pkdb_models/models/dapagliflozin/data/dapagliflozin/Kasichayanula2011/.Kasichayanula2011_Fig2.tsv</code></td><td style="text-align: left"><code>0d782a7fc79f...</code></td></tr>
+<tr><td style="text-align: left"><code>pkdb_models/models/dapagliflozin/data/dapagliflozin/Kasichayanula2011/.Kasichayanula2011_Tab2.tsv</code></td><td style="text-align: left"><code>3e01e5c21939...</code></td></tr>
+<tr><td style="text-align: left"><code>pkdb_models/models/dapagliflozin/data/dapagliflozin/Kasichayanula2011/.Kasichayanula2011_TabGroups.tsv</code></td><td style="text-align: left"><code>5a3c03b34db1...</code></td></tr>
+<tr><td style="text-align: left"><code>pkdb_models/models/dapagliflozin/data/dapagliflozin/Kasichayanula2011/.Kasichayanula2011_TabInterventions.tsv</code></td><td style="text-align: left"><code>1364c9b89ca1...</code></td></tr>
+<tr><td style="text-align: left"><code>pkdb_models/models/dapagliflozin/data/dapagliflozin/Kasichayanula2011a/.Kasichayanula2011a_Fig2.tsv</code></td><td style="text-align: left"><code>aaed0eb4f448...</code></td></tr>
+<tr><td style="text-align: left"><code>pkdb_models/models/dapagliflozin/data/dapagliflozin/Kasichayanula2011a/.Kasichayanula2011a_Fig3.tsv</code></td><td style="text-align: left"><code>5021152af0f7...</code></td></tr>
+<tr><td style="text-align: left"><code>pkdb_models/models/dapagliflozin/data/dapagliflozin/Kasichayanula2011a/.Kasichayanula2011a_Fig4.tsv</code></td><td style="text-align: left"><code>3a331ea3638e...</code></td></tr>
+<tr><td style="text-align: left"><code>pkdb_models/models/dapagliflozin/data/dapagliflozin/Kasichayanula2011a/.Kasichayanula2011a_Fig5.tsv</code></td><td style="text-align: left"><code>6aa1c457948f...</code></td></tr>
+<tr><td style="text-align: left"><code>pkdb_models/models/dapagliflozin/data/dapagliflozin/Kasichayanula2011a/.Kasichayanula2011a_Fig6.tsv</code></td><td style="text-align: left"><code>4179d88569fc...</code></td></tr>
+<tr><td style="text-align: left"><code>pkdb_models/models/dapagliflozin/data/dapagliflozin/Kasichayanula2011a/.Kasichayanula2011a_Tab2.tsv</code></td><td style="text-align: left"><code>87ba4fae0e9e...</code></td></tr>
+<tr><td style="text-align: left"><code>pkdb_models/models/dapagliflozin/data/dapagliflozin/Kasichayanula2011a/.Kasichayanula2011a_Tab2A.tsv</code></td><td style="text-align: left"><code>f7ddb2f91cdf...</code></td></tr>
+<tr><td style="text-align: left"><code>pkdb_models/models/dapagliflozin/data/dapagliflozin/Kasichayanula2011a/.Kasichayanula2011a_TabGroups.tsv</code></td><td style="text-align: left"><code>2ff07e921fec...</code></td></tr>
+<tr><td style="text-align: left"><code>pkdb_models/models/dapagliflozin/data/dapagliflozin/Kasichayanula2011a/.Kasichayanula2011a_TabIndividuals.tsv</code></td><td style="text-align: left"><code>f6a71c1fefe2...</code></td></tr>
+<tr><td style="text-align: left"><code>pkdb_models/models/dapagliflozin/data/dapagliflozin/Kasichayanula2011a/.Kasichayanula2011a_TabInterventions.tsv</code></td><td style="text-align: left"><code>7fa2cf646d6e...</code></td></tr>
+<tr><td style="text-align: left"><code>pkdb_models/models/dapagliflozin/data/dapagliflozin/Kasichayanula2011b/.Kasichayanula2011b_Fig1.tsv</code></td><td style="text-align: left"><code>82715bbd1639...</code></td></tr>
+<tr><td style="text-align: left"><code>pkdb_models/models/dapagliflozin/data/dapagliflozin/Kasichayanula2011b/.Kasichayanula2011b_Tab1.tsv</code></td><td style="text-align: left"><code>0061412006ad...</code></td></tr>
+<tr><td style="text-align: left"><code>pkdb_models/models/dapagliflozin/data/dapagliflozin/Kasichayanula2011b/.Kasichayanula2011b_TabGroups.tsv</code></td><td style="text-align: left"><code>ae27615b4f10...</code></td></tr>
+<tr><td style="text-align: left"><code>pkdb_models/models/dapagliflozin/data/dapagliflozin/Kasichayanula2011b/.Kasichayanula2011b_TabInterventions.tsv</code></td><td style="text-align: left"><code>1a96cfb372e9...</code></td></tr>
+<tr><td style="text-align: left"><code>pkdb_models/models/dapagliflozin/data/dapagliflozin/Kasichayanula2011c/.Kasichayanula2011c_Fig3.tsv</code></td><td style="text-align: left"><code>4bfd473b9826...</code></td></tr>
+<tr><td style="text-align: left"><code>pkdb_models/models/dapagliflozin/data/dapagliflozin/Kasichayanula2011c/.Kasichayanula2011c_Fig4.tsv</code></td><td style="text-align: left"><code>4ca9bb12bcde...</code></td></tr>
+<tr><td style="text-align: left"><code>pkdb_models/models/dapagliflozin/data/dapagliflozin/Kasichayanula2011c/.Kasichayanula2011c_Tab2.tsv</code></td><td style="text-align: left"><code>8de2215e981b...</code></td></tr>
+<tr><td style="text-align: left"><code>pkdb_models/models/dapagliflozin/data/dapagliflozin/Kasichayanula2011c/.Kasichayanula2011c_Tab3.tsv</code></td><td style="text-align: left"><code>dc71602be922...</code></td></tr>
+<tr><td style="text-align: left"><code>pkdb_models/models/dapagliflozin/data/dapagliflozin/Kasichayanula2011c/.Kasichayanula2011c_TabGroups.tsv</code></td><td style="text-align: left"><code>6e18181424d4...</code></td></tr>
+<tr><td style="text-align: left"><code>pkdb_models/models/dapagliflozin/data/dapagliflozin/Kasichayanula2011c/.Kasichayanula2011c_TabInterventions.tsv</code></td><td style="text-align: left"><code>3c7697f1a970...</code></td></tr>
+<tr><td style="text-align: left"><code>pkdb_models/models/dapagliflozin/data/dapagliflozin/Kasichayanula2012/.Kasichayanula2012_Fig2.tsv</code></td><td style="text-align: left"><code>46c04d6f66d0...</code></td></tr>
+<tr><td style="text-align: left"><code>pkdb_models/models/dapagliflozin/data/dapagliflozin/Kasichayanula2012/.Kasichayanula2012_Fig3.tsv</code></td><td style="text-align: left"><code>bc3e9f9769ff...</code></td></tr>
+<tr><td style="text-align: left"><code>pkdb_models/models/dapagliflozin/data/dapagliflozin/Kasichayanula2012/.Kasichayanula2012_Fig4.tsv</code></td><td style="text-align: left"><code>41cf946ad3d2...</code></td></tr>
+<tr><td style="text-align: left"><code>pkdb_models/models/dapagliflozin/data/dapagliflozin/Kasichayanula2012/.Kasichayanula2012_Tab1.tsv</code></td><td style="text-align: left"><code>319ebfd08432...</code></td></tr>
+<tr><td style="text-align: left"><code>pkdb_models/models/dapagliflozin/data/dapagliflozin/Kasichayanula2012/.Kasichayanula2012_Tab2.tsv</code></td><td style="text-align: left"><code>15ad4982152d...</code></td></tr>
+<tr><td style="text-align: left"><code>pkdb_models/models/dapagliflozin/data/dapagliflozin/Kasichayanula2012/.Kasichayanula2012_Tab3.tsv</code></td><td style="text-align: left"><code>2cf49f341ed4...</code></td></tr>
+<tr><td style="text-align: left"><code>pkdb_models/models/dapagliflozin/data/dapagliflozin/Kasichayanula2012/.Kasichayanula2012_TabGroups.tsv</code></td><td style="text-align: left"><code>31142b4b2c9b...</code></td></tr>
+<tr><td style="text-align: left"><code>pkdb_models/models/dapagliflozin/data/dapagliflozin/Kasichayanula2012/.Kasichayanula2012_TabInterventions.tsv</code></td><td style="text-align: left"><code>958efe0f56cc...</code></td></tr>
+<tr><td style="text-align: left"><code>pkdb_models/models/dapagliflozin/data/dapagliflozin/Kasichayanula2013/.Kasichayanula2013_Fig1.tsv</code></td><td style="text-align: left"><code>3a9f535f38e4...</code></td></tr>
+<tr><td style="text-align: left"><code>pkdb_models/models/dapagliflozin/data/dapagliflozin/Kasichayanula2013/.Kasichayanula2013_Fig2.tsv</code></td><td style="text-align: left"><code>6ec70b4384e8...</code></td></tr>
+<tr><td style="text-align: left"><code>pkdb_models/models/dapagliflozin/data/dapagliflozin/Kasichayanula2013/.Kasichayanula2013_Tab2.tsv</code></td><td style="text-align: left"><code>ace08984344a...</code></td></tr>
+<tr><td style="text-align: left"><code>pkdb_models/models/dapagliflozin/data/dapagliflozin/Kasichayanula2013/.Kasichayanula2013_Tab2A.tsv</code></td><td style="text-align: left"><code>4bedeeed70b3...</code></td></tr>
+<tr><td style="text-align: left"><code>pkdb_models/models/dapagliflozin/data/dapagliflozin/Kasichayanula2013/.Kasichayanula2013_Tab4.tsv</code></td><td style="text-align: left"><code>6f5ec42b18ce...</code></td></tr>
+<tr><td style="text-align: left"><code>pkdb_models/models/dapagliflozin/data/dapagliflozin/Kasichayanula2013/.Kasichayanula2013_Tab4A.tsv</code></td><td style="text-align: left"><code>30d888b00017...</code></td></tr>
+<tr><td style="text-align: left"><code>pkdb_models/models/dapagliflozin/data/dapagliflozin/Kasichayanula2013/.Kasichayanula2013_TabGroups.tsv</code></td><td style="text-align: left"><code>228678add7c5...</code></td></tr>
+<tr><td style="text-align: left"><code>pkdb_models/models/dapagliflozin/data/dapagliflozin/Kasichayanula2013/.Kasichayanula2013_TabIndividuals.tsv</code></td><td style="text-align: left"><code>d70cb20af140...</code></td></tr>
+<tr><td style="text-align: left"><code>pkdb_models/models/dapagliflozin/data/dapagliflozin/Kasichayanula2013/.Kasichayanula2013_TabInterventions.tsv</code></td><td style="text-align: left"><code>289df1c46c8a...</code></td></tr>
+<tr><td style="text-align: left"><code>pkdb_models/models/dapagliflozin/data/dapagliflozin/Kasichayanula2013a/.Kasichayanula2013a_Fig1.tsv</code></td><td style="text-align: left"><code>28e0585cb639...</code></td></tr>
+<tr><td style="text-align: left"><code>pkdb_models/models/dapagliflozin/data/dapagliflozin/Kasichayanula2013a/.Kasichayanula2013a_Tab1.tsv</code></td><td style="text-align: left"><code>55aa172ac000...</code></td></tr>
+<tr><td style="text-align: left"><code>pkdb_models/models/dapagliflozin/data/dapagliflozin/Kasichayanula2013a/.Kasichayanula2013a_Tab1A.tsv</code></td><td style="text-align: left"><code>99f03406f7fe...</code></td></tr>
+<tr><td style="text-align: left"><code>pkdb_models/models/dapagliflozin/data/dapagliflozin/Kasichayanula2013a/.Kasichayanula2013a_TabGroups.tsv</code></td><td style="text-align: left"><code>876c83b13b51...</code></td></tr>
+<tr><td style="text-align: left"><code>pkdb_models/models/dapagliflozin/data/dapagliflozin/Kasichayanula2013a/.Kasichayanula2013a_TabInterventions.tsv</code></td><td style="text-align: left"><code>cb9f4725f8db...</code></td></tr>
+<tr><td style="text-align: left"><code>pkdb_models/models/dapagliflozin/data/dapagliflozin/Khomitskaya2018/.Khomitskaya2018_Fig2.tsv</code></td><td style="text-align: left"><code>9141b687145c...</code></td></tr>
+<tr><td style="text-align: left"><code>pkdb_models/models/dapagliflozin/data/dapagliflozin/Khomitskaya2018/.Khomitskaya2018_Tab2.tsv</code></td><td style="text-align: left"><code>eb18af4cf03e...</code></td></tr>
+<tr><td style="text-align: left"><code>pkdb_models/models/dapagliflozin/data/dapagliflozin/Khomitskaya2018/.Khomitskaya2018_TabGroups.tsv</code></td><td style="text-align: left"><code>39a6b7a2d1f1...</code></td></tr>
+<tr><td style="text-align: left"><code>pkdb_models/models/dapagliflozin/data/dapagliflozin/Khomitskaya2018/.Khomitskaya2018_TabInterventions.tsv</code></td><td style="text-align: left"><code>eb07aa78649d...</code></td></tr>
+<tr><td style="text-align: left"><code>pkdb_models/models/dapagliflozin/data/dapagliflozin/Kim2023/.Kim2023_Fig1.tsv</code></td><td style="text-align: left"><code>faf8a67de950...</code></td></tr>
+<tr><td style="text-align: left"><code>pkdb_models/models/dapagliflozin/data/dapagliflozin/Kim2023/.Kim2023_Fig2.tsv</code></td><td style="text-align: left"><code>7419518c5dc2...</code></td></tr>
+<tr><td style="text-align: left"><code>pkdb_models/models/dapagliflozin/data/dapagliflozin/Kim2023/.Kim2023_Tab2.tsv</code></td><td style="text-align: left"><code>e4b13d62892b...</code></td></tr>
+<tr><td style="text-align: left"><code>pkdb_models/models/dapagliflozin/data/dapagliflozin/Kim2023/.Kim2023_Tab3.tsv</code></td><td style="text-align: left"><code>ea1325423a66...</code></td></tr>
+<tr><td style="text-align: left"><code>pkdb_models/models/dapagliflozin/data/dapagliflozin/Kim2023/.Kim2023_TabGroups.tsv</code></td><td style="text-align: left"><code>e6e46d776a7a...</code></td></tr>
+<tr><td style="text-align: left"><code>pkdb_models/models/dapagliflozin/data/dapagliflozin/Kim2023/.Kim2023_TabInterventions.tsv</code></td><td style="text-align: left"><code>00fa9049fea8...</code></td></tr>
+<tr><td style="text-align: left"><code>pkdb_models/models/dapagliflozin/data/dapagliflozin/Kim2023/.Kim2023_TabS2.tsv</code></td><td style="text-align: left"><code>aa635231e391...</code></td></tr>
+<tr><td style="text-align: left"><code>pkdb_models/models/dapagliflozin/data/dapagliflozin/Kim2023a/.Kim2023a_Fig2.tsv</code></td><td style="text-align: left"><code>37c777bb108d...</code></td></tr>
+<tr><td style="text-align: left"><code>pkdb_models/models/dapagliflozin/data/dapagliflozin/Kim2023a/.Kim2023a_Fig3.tsv</code></td><td style="text-align: left"><code>fe3ab763b290...</code></td></tr>
+<tr><td style="text-align: left"><code>pkdb_models/models/dapagliflozin/data/dapagliflozin/Kim2023a/.Kim2023a_Tab1.tsv</code></td><td style="text-align: left"><code>375b50f8f0d6...</code></td></tr>
+<tr><td style="text-align: left"><code>pkdb_models/models/dapagliflozin/data/dapagliflozin/Kim2023a/.Kim2023a_Tab2.tsv</code></td><td style="text-align: left"><code>c9a0ac803166...</code></td></tr>
+<tr><td style="text-align: left"><code>pkdb_models/models/dapagliflozin/data/dapagliflozin/Kim2023a/.Kim2023a_TabGroups.tsv</code></td><td style="text-align: left"><code>ae4dbf307be3...</code></td></tr>
+<tr><td style="text-align: left"><code>pkdb_models/models/dapagliflozin/data/dapagliflozin/Kim2023a/.Kim2023a_TabInterventions.tsv</code></td><td style="text-align: left"><code>a5e38ea82c77...</code></td></tr>
+<tr><td style="text-align: left"><code>pkdb_models/models/dapagliflozin/data/dapagliflozin/Komoroski2009/.Komoroski2009_Fig3.tsv</code></td><td style="text-align: left"><code>7d55baedd71d...</code></td></tr>
+<tr><td style="text-align: left"><code>pkdb_models/models/dapagliflozin/data/dapagliflozin/Komoroski2009/.Komoroski2009_Fig4.tsv</code></td><td style="text-align: left"><code>b5d0cee0bb14...</code></td></tr>
+<tr><td style="text-align: left"><code>pkdb_models/models/dapagliflozin/data/dapagliflozin/Komoroski2009/.Komoroski2009_Fig5.tsv</code></td><td style="text-align: left"><code>0dfa0f66b56a...</code></td></tr>
+<tr><td style="text-align: left"><code>pkdb_models/models/dapagliflozin/data/dapagliflozin/Komoroski2009/.Komoroski2009_Fig6.tsv</code></td><td style="text-align: left"><code>392a6f0e226b...</code></td></tr>
+<tr><td style="text-align: left"><code>pkdb_models/models/dapagliflozin/data/dapagliflozin/Komoroski2009/.Komoroski2009_Tab1.tsv</code></td><td style="text-align: left"><code>bb02e819a644...</code></td></tr>
+<tr><td style="text-align: left"><code>pkdb_models/models/dapagliflozin/data/dapagliflozin/Komoroski2009/.Komoroski2009_Tab1A.tsv</code></td><td style="text-align: left"><code>a1bf6a459427...</code></td></tr>
+<tr><td style="text-align: left"><code>pkdb_models/models/dapagliflozin/data/dapagliflozin/Komoroski2009/.Komoroski2009_Tab2.tsv</code></td><td style="text-align: left"><code>a17bfdd6c41d...</code></td></tr>
+<tr><td style="text-align: left"><code>pkdb_models/models/dapagliflozin/data/dapagliflozin/Komoroski2009/.Komoroski2009_Tab6.tsv</code></td><td style="text-align: left"><code>a17bfdd6c41d...</code></td></tr>
+<tr><td style="text-align: left"><code>pkdb_models/models/dapagliflozin/data/dapagliflozin/Komoroski2009/.Komoroski2009_TabGroups.tsv</code></td><td style="text-align: left"><code>9149127333d9...</code></td></tr>
+<tr><td style="text-align: left"><code>pkdb_models/models/dapagliflozin/data/dapagliflozin/Komoroski2009/.Komoroski2009_TabInterventions.tsv</code></td><td style="text-align: left"><code>1ee03a62d1a3...</code></td></tr>
+<tr><td style="text-align: left"><code>pkdb_models/models/dapagliflozin/data/dapagliflozin/LaCreta2016/.LaCreta2016_Fig2.tsv</code></td><td style="text-align: left"><code>f3eda6a27bd4...</code></td></tr>
+<tr><td style="text-align: left"><code>pkdb_models/models/dapagliflozin/data/dapagliflozin/LaCreta2016/.LaCreta2016_Tab2.tsv</code></td><td style="text-align: left"><code>49e1da53b16b...</code></td></tr>
+<tr><td style="text-align: left"><code>pkdb_models/models/dapagliflozin/data/dapagliflozin/LaCreta2016/.LaCreta2016_Tab3.tsv</code></td><td style="text-align: left"><code>d1bb4ac6905d...</code></td></tr>
+<tr><td style="text-align: left"><code>pkdb_models/models/dapagliflozin/data/dapagliflozin/LaCreta2016/.LaCreta2016_TabGroups.tsv</code></td><td style="text-align: left"><code>afe1bf6b7615...</code></td></tr>
+<tr><td style="text-align: left"><code>pkdb_models/models/dapagliflozin/data/dapagliflozin/LaCreta2016/.LaCreta2016_TabInterventions.tsv</code></td><td style="text-align: left"><code>57ff50e647a3...</code></td></tr>
+<tr><td style="text-align: left"><code>pkdb_models/models/dapagliflozin/data/dapagliflozin/Obermeier2010/.Obermeier2010_Fig6.tsv</code></td><td style="text-align: left"><code>fb6a24ac0629...</code></td></tr>
+<tr><td style="text-align: left"><code>pkdb_models/models/dapagliflozin/data/dapagliflozin/Obermeier2010/.Obermeier2010_Fig7.tsv</code></td><td style="text-align: left"><code>cf66e56ba7a4...</code></td></tr>
+<tr><td style="text-align: left"><code>pkdb_models/models/dapagliflozin/data/dapagliflozin/Obermeier2010/.Obermeier2010_Tab1.tsv</code></td><td style="text-align: left"><code>78bb4acc8c9b...</code></td></tr>
+<tr><td style="text-align: left"><code>pkdb_models/models/dapagliflozin/data/dapagliflozin/Obermeier2010/.Obermeier2010_TabGroups.tsv</code></td><td style="text-align: left"><code>1be4244cd62a...</code></td></tr>
+<tr><td style="text-align: left"><code>pkdb_models/models/dapagliflozin/data/dapagliflozin/Obermeier2010/.Obermeier2010_TabInterventions.tsv</code></td><td style="text-align: left"><code>b3e812b9a452...</code></td></tr>
+<tr><td style="text-align: left"><code>pkdb_models/models/dapagliflozin/data/dapagliflozin/Shah2019a/.Shah2019a_Fig3.tsv</code></td><td style="text-align: left"><code>39ad37ab950b...</code></td></tr>
+<tr><td style="text-align: left"><code>pkdb_models/models/dapagliflozin/data/dapagliflozin/Shah2019a/.Shah2019a_Tab7.tsv</code></td><td style="text-align: left"><code>6ea3f122d095...</code></td></tr>
+<tr><td style="text-align: left"><code>pkdb_models/models/dapagliflozin/data/dapagliflozin/Shah2019a/.Shah2019a_TabGroups.tsv</code></td><td style="text-align: left"><code>a4a374c11800...</code></td></tr>
+<tr><td style="text-align: left"><code>pkdb_models/models/dapagliflozin/data/dapagliflozin/Shah2019a/.Shah2019a_TabInterventions.tsv</code></td><td style="text-align: left"><code>e078d756ce4f...</code></td></tr>
+<tr><td style="text-align: left"><code>pkdb_models/models/dapagliflozin/data/dapagliflozin/Watada2019/.Watada2019_Fig1.tsv</code></td><td style="text-align: left"><code>17914be7adc2...</code></td></tr>
+<tr><td style="text-align: left"><code>pkdb_models/models/dapagliflozin/data/dapagliflozin/Watada2019/.Watada2019_Tab2.tsv</code></td><td style="text-align: left"><code>d101ef8d2e69...</code></td></tr>
+<tr><td style="text-align: left"><code>pkdb_models/models/dapagliflozin/data/dapagliflozin/Watada2019/.Watada2019_Tab3.tsv</code></td><td style="text-align: left"><code>13496a64ebfd...</code></td></tr>
+<tr><td style="text-align: left"><code>pkdb_models/models/dapagliflozin/data/dapagliflozin/Watada2019/.Watada2019_TabGroups.tsv</code></td><td style="text-align: left"><code>c81302866175...</code></td></tr>
+<tr><td style="text-align: left"><code>pkdb_models/models/dapagliflozin/data/dapagliflozin/Watada2019/.Watada2019_TabInterventions.tsv</code></td><td style="text-align: left"><code>9978adbc0973...</code></td></tr>
+<tr><td style="text-align: left"><code>pkdb_models/models/dapagliflozin/data/dapagliflozin/Yang2013/.Yang2013_Fig.tsv</code></td><td style="text-align: left"><code>904258727851...</code></td></tr>
+<tr><td style="text-align: left"><code>pkdb_models/models/dapagliflozin/data/dapagliflozin/Yang2013/.Yang2013_Fig1.tsv</code></td><td style="text-align: left"><code>b061926dcce1...</code></td></tr>
+<tr><td style="text-align: left"><code>pkdb_models/models/dapagliflozin/data/dapagliflozin/Yang2013/.Yang2013_Tab2.tsv</code></td><td style="text-align: left"><code>f0ccf3ba01cc...</code></td></tr>
+<tr><td style="text-align: left"><code>pkdb_models/models/dapagliflozin/data/dapagliflozin/Yang2013/.Yang2013_Tab3.tsv</code></td><td style="text-align: left"><code>b620b4c92760...</code></td></tr>
+<tr><td style="text-align: left"><code>pkdb_models/models/dapagliflozin/data/dapagliflozin/Yang2013/.Yang2013_TabGroups.tsv</code></td><td style="text-align: left"><code>5783bc234e30...</code></td></tr>
+<tr><td style="text-align: left"><code>pkdb_models/models/dapagliflozin/data/dapagliflozin/Yang2013/.Yang2013_TabInterventions.tsv</code></td><td style="text-align: left"><code>f422800044b2...</code></td></tr>
+<tr><td style="text-align: left"><code>pkdb_models/models/dapagliflozin/data/dapagliflozin/vanderAartvanderBeek2020/.vanderAartvanderBeek2020_Fig3.tsv</code></td><td style="text-align: left"><code>03719e965463...</code></td></tr>
+<tr><td style="text-align: left"><code>pkdb_models/models/dapagliflozin/data/dapagliflozin/vanderAartvanderBeek2020/.vanderAartvanderBeek2020_TabGroups.tsv</code></td><td style="text-align: left"><code>033515791883...</code></td></tr>
+<tr><td style="text-align: left"><code>pkdb_models/models/dapagliflozin/data/dapagliflozin/vanderAartvanderBeek2020/.vanderAartvanderBeek2020_TabIndividuals.tsv</code></td><td style="text-align: left"><code>77b6cfffbdb8...</code></td></tr>
+<tr><td style="text-align: left"><code>pkdb_models/models/dapagliflozin/data/dapagliflozin/vanderAartvanderBeek2020/.vanderAartvanderBeek2020_TabInterventions.tsv</code></td><td style="text-align: left"><code>9daa3d0a8674...</code></td></tr>
+<tr><td style="text-align: left"><code>pkdb_models/models/dapagliflozin/models/output/models/dapagliflozin_body_flat.xml</code></td><td style="text-align: left"><code>32faeb4412ab...</code></td></tr>
+</tbody>
+</table>
+</section>
+</section>
+<section>
+<h2>Results: Dapagliflozin PBPK/PD model: fit PD</h2>
+<section>
+<h3>Parameters</h3>
+<table id="tab:parameters:PD_20261020_014612__f2826">
+<caption>Table 2. Parameters of the fit PD_20261020_014612__f2826, the parameter set PD_20261020_014612__f2826_0, cost 55.5, with their bounds in the optimization. The 95% confidence intervals are those of the profile likelihood, LB and UB an interval which is open towards the lower or the upper bound, and the Wald intervals of the Fisher information for a parameter without a profile. Identifiable is the classification of the profile: yes, no (LB) or no (UB) if the profile does not reach the threshold towards the lower or the upper bound, no if it reaches it on neither side, structural if it is flat.</caption>
+<thead><tr><th style="text-align: left">Parameter</th><th style="text-align: left">Description</th><th style="text-align: right">Value [95% CI]</th><th style="text-align: left">Unit</th><th style="text-align: right">Bounds</th><th style="text-align: left">Identifiable</th></tr></thead>
+<tbody>
+<tr><td style="text-align: left"><code>KI__RTG_E50</code></td><td style="text-align: left">EC50 reduction in RTG</td><td style="text-align: right">5.76e-06 [4.88e-06, 6.83e-06]</td><td style="text-align: left">mmol/l</td><td style="text-align: right">[1e-07, 0.0001]</td><td style="text-align: left">yes</td></tr>
+<tr><td style="text-align: left"><code>KI__RTG_gamma</code></td><td style="text-align: left">hill coefficient reduction in RTG</td><td style="text-align: right">2.8 [1.68, UB]</td><td style="text-align: left">dimensionless</td><td style="text-align: right">[1, 4]</td><td style="text-align: left">no (UB)</td></tr>
+<tr><td style="text-align: left"><code>KI__RTG_m_fpg</code></td><td style="text-align: left">FPG effect on RTG</td><td style="text-align: right">1.99 [1.55, 2.44]</td><td style="text-align: left">dimensionless</td><td style="text-align: right">[0.1, 5]</td><td style="text-align: left">yes</td></tr>
+<tr><td style="text-align: left"><code>KI__RTG_max_inhibition</code></td><td style="text-align: left">maximal relative reduction of the RTG</td><td style="text-align: right">0.64 [0.618, 0.67]</td><td style="text-align: left">dimensionless</td><td style="text-align: right">[0.3, 0.95]</td><td style="text-align: left">yes</td></tr>
+</tbody>
+</table>
+</section>
+<section>
+<h3>Data</h3>
+<table id="tab:data:PD_20261020_014612__f2826">
+<caption>Table 3. Data of the fit PD_20261020_014612__f2826: the number of fit mappings and, in parentheses, of data points per study and kind. The training data enters the cost, the validation data and the outliers are evaluated only.</caption>
+<thead><tr><th style="text-align: left">Study</th><th style="text-align: right">Training</th><th style="text-align: right">Validation</th><th style="text-align: right">Outlier</th><th style="text-align: right">Total</th></tr></thead>
+<tbody>
+<tr><td style="text-align: left">FDAMB102002</td><td style="text-align: right">5 (60)</td><td style="text-align: right">-</td><td style="text-align: right">-</td><td style="text-align: right">5 (60)</td></tr>
+<tr><td style="text-align: left">FDAMB102003</td><td style="text-align: right">6 (36)</td><td style="text-align: right">-</td><td style="text-align: right">-</td><td style="text-align: right">6 (36)</td></tr>
+<tr><td style="text-align: left">FDAMB102007</td><td style="text-align: right">-</td><td style="text-align: right">4 (8)</td><td style="text-align: right">-</td><td style="text-align: right">4 (8)</td></tr>
+<tr><td style="text-align: left">Gould2013</td><td style="text-align: right">3 (6)</td><td style="text-align: right">4 (8)</td><td style="text-align: right">-</td><td style="text-align: right">7 (14)</td></tr>
+<tr><td style="text-align: left">Kasichayanula2011a</td><td style="text-align: right">3 (6)</td><td style="text-align: right">1 (2)</td><td style="text-align: right">-</td><td style="text-align: right">4 (8)</td></tr>
+<tr><td style="text-align: left">Kim2023</td><td style="text-align: right">1 (1)</td><td style="text-align: right">1 (1)</td><td style="text-align: right">-</td><td style="text-align: right">2 (2)</td></tr>
+<tr><td style="text-align: left">Komoroski2009</td><td style="text-align: right">8 (132)</td><td style="text-align: right">1 (18)</td><td style="text-align: right">-</td><td style="text-align: right">9 (150)</td></tr>
+<tr><td style="text-align: left">Sha2015</td><td style="text-align: right">1 (5)</td><td style="text-align: right">1 (4)</td><td style="text-align: right">-</td><td style="text-align: right">2 (9)</td></tr>
+<tr><td style="text-align: left">Watada2019</td><td style="text-align: right">-</td><td style="text-align: right">3 (6)</td><td style="text-align: right">-</td><td style="text-align: right">3 (6)</td></tr>
+<tr><td style="text-align: left">Yang2013</td><td style="text-align: right">4 (8)</td><td style="text-align: right">-</td><td style="text-align: right">-</td><td style="text-align: right">4 (8)</td></tr>
+<tr><td style="text-align: left">Total</td><td style="text-align: right">31 (254)</td><td style="text-align: right">15 (47)</td><td style="text-align: right">-</td><td style="text-align: right">46 (301)</td></tr>
+</tbody>
+</table>
+</section>
+<section>
+<h3>Goodness of fit</h3>
+<table id="tab:metrics:PD_20261020_014612__f2826">
+<caption>Table 4. Goodness of fit of the fit PD_20261020_014612__f2826 per kind of data, the parameter set PD_20261020_014612__f2826_0. The cost is defined on the training data only, 2-fold is the percentage of the data points with a positive value and prediction whose prediction is within twofold of the data.</caption>
+<thead><tr><th style="text-align: left">Kind</th><th style="text-align: right">n</th><th style="text-align: right">cost</th><th style="text-align: right">MSE</th><th style="text-align: right">RMSE</th><th style="text-align: right">NRMSE</th><th style="text-align: right">RMSE_w</th><th style="text-align: right">R²</th><th style="text-align: right">2-fold [%]</th><th style="text-align: right">AIC</th><th style="text-align: right">BIC</th></tr></thead>
+<tbody>
+<tr><td style="text-align: left">training</td><td style="text-align: right">254</td><td style="text-align: right">55.5</td><td style="text-align: right">389</td><td style="text-align: right">19.7</td><td style="text-align: right">0.31</td><td style="text-align: right">0.661</td><td style="text-align: right">0.868</td><td style="text-align: right">95.6</td><td style="text-align: right">1522.6</td><td style="text-align: right">1536.8</td></tr>
+<tr><td style="text-align: left">validation</td><td style="text-align: right">47</td><td style="text-align: right">-</td><td style="text-align: right">153</td><td style="text-align: right">12.4</td><td style="text-align: right">1.16</td><td style="text-align: right">3.06</td><td style="text-align: right">0.805</td><td style="text-align: right">34.3</td><td style="text-align: right">244.3</td><td style="text-align: right">251.7</td></tr>
+</tbody>
+</table>
+</section>
+<section>
+<h3>Figures</h3>
+<figure id="fig:traces:PD_20261020_014612__f2826"><img src="plots/traces.svg" alt="Figure 1"><figcaption>Figure 1. Cost of the optimizers over their steps, fit PD_20261020_014612__f2826. The cost of every optimization run over its steps. Runs which end at the same cost found the same optimum; a run which stops much higher is stuck in a local minimum.</figcaption></figure>
+<figure id="fig:waterfall:PD_20261020_014612__f2826"><img src="plots/waterfall.svg" alt="Figure 2"><figcaption>Figure 2. Cost of the optimization runs, ordered, fit PD_20261020_014612__f2826. The final cost of the runs, ordered. A flat plateau at the left is the global optimum found repeatedly, which is the evidence that the multistart converged; steps to the right are local minima.</figcaption></figure>
+<figure id="fig:goodness_of_fit:PD_20261020_014612__f2826"><img src="plots/goodness_of_fit.svg" alt="Figure 3"><figcaption>Figure 3. Prediction against the measured data points, per kind of fit mapping, with the agreement of the training data, the lines of twofold and the metrics of the panel, fit PD_20261020_014612__f2826. Within twofold of the data are 237 of the 248 training data points (95.6%) and 12 of the 35 validation data points (34.3%); only the data points with a positive value and prediction are counted. Prediction against measurement, one point per data point, with a panel per kind of fit mapping. The points scatter around the diagonal when the model describes the data; a systematic deviation from it is a systematic error of the model. The band is the agreement of the training data, i.e. the same band the Bland-Altman plot draws, here as lines parallel to the diagonal. The dark red dotted lines are twofold, prediction = 2 x measurement and prediction = measurement / 2; the caption states the points between them of every kind. A point which is zero or negative is not drawn on the logarithmic axes and not counted, the title of a panel then states the points drawn of all. The validation panel shows how the fit describes data it was not fitted on, the outlier panel the data the fit dropped. The box of a panel carries its R², its normalized RMSE, the RMSE of the residuals of the cost, its fold errors GMFE and AFE and the percentages of its points within twofold and within two standard deviations of the data.</figcaption></figure>
+<figure id="fig:bland_altman:PD_20261020_014612__f2826"><img src="plots/bland_altman.svg" alt="Figure 4"><figcaption>Figure 4. Agreement of prediction and measurement as a ratio, per kind of fit mapping, with the agreement of the training data and the agreement of the panel, fit PD_20261020_014612__f2826. The ratio of prediction and measurement over the geometric mean of the two, i.e. the goodness of fit with the diagonal turned into the horizontal. The band is the same, the bias and the limits of agreement <code>bias ± 1.96 SD</code> of the training data as fold factors. A bias away from 1 is a systematic over- or underprediction, wide limits are a large scatter, and a trend over the mean is a model which describes the large or the small values better. The box of a panel carries the bias and the SD of its own points as fold factors and the share of them inside the limits of agreement of the training data.</figcaption></figure>
+<figure id="fig:profiles:PD_20261020_014612__f2826"><img src="plots/profiles.svg" alt="Figure 5"><figcaption>Figure 5. Profile likelihood of every parameter: the cost with the parameter fixed and the other parameters optimized, the threshold of the confidence level and the confidence interval, fit PD_20261020_014612__f2826. One profile per parameter. A profile which crosses the dashed threshold on both sides gives a finite confidence interval; one which stays below it up to a bound is practically non-identifiable; a flat profile is structurally non-identifiable, the parameter is compensated by the others.</figcaption></figure>
+</section>
+<section>
+<h3>Provenance</h3>
+<table id="tab:provenance:PD_20261020_014612__f2826">
+<caption>Table 5. Provenance of the fit PD_20261020_014612__f2826: the versions it ran with and the revision of its models and data; the SHA-256 checksums of the models and data are listed in <a href="#tab:checksums:PD_20261020_014612__f2826">Table 1</a>.</caption>
+<thead><tr><th style="text-align: left">Item</th><th style="text-align: left">Value</th></tr></thead>
+<tbody>
+<tr><td style="text-align: left">Fit</td><td style="text-align: left"><code>PD_20261020_014612__f2826</code></td></tr>
+<tr><td style="text-align: left">Created</td><td style="text-align: left">2026-10-19 23:46:14 UTC</td></tr>
+<tr><td style="text-align: left">Seed</td><td style="text-align: left">1234</td></tr>
+<tr><td style="text-align: left">Python</td><td style="text-align: left">3.14.4</td></tr>
+<tr><td style="text-align: left">sbmlsim</td><td style="text-align: left">0.10.0</td></tr>
+<tr><td style="text-align: left">libRoadRunner</td><td style="text-align: left">2.10.0</td></tr>
+<tr><td style="text-align: left">SciPy</td><td style="text-align: left">1.18.1</td></tr>
+<tr><td style="text-align: left">NumPy</td><td style="text-align: left">2.5.3</td></tr>
+<tr><td style="text-align: left">Repository</td><td style="text-align: left"><code>/home/mkoenig/git/pkdb_models-dapagliflozin</code></td></tr>
+<tr><td style="text-align: left">Commit</td><td style="text-align: left"><code>266a01e9f9840563604534c348eeeae5ab4e3a46</code></td></tr>
+<tr><td style="text-align: left">Uncommitted changes</td><td style="text-align: left">no</td></tr>
+</tbody>
+</table>
+</section>
+</section>
+<section id="references">
+<h2>References</h2>
+<ol>
+<li id="ref-Koenig2026_sbmlsim">König M (2026). sbmlsim: SBML simulation made easy. Zenodo Version 0.10.0. doi:10.5281/zenodo.3597770.</li>
+<li id="ref-Storn1997">Storn R, Price K (1997). Differential evolution - a simple and efficient heuristic for global optimization over continuous spaces. Journal of Global Optimization 11:341-359. doi:10.1023/A:1008202821328.</li>
+<li id="ref-Virtanen2020">Virtanen P, Gommers R, Oliphant TE, Haberland M, Reddy T, Cournapeau D, et al. (2020). SciPy 1.0: fundamental algorithms for scientific computing in Python. Nature Methods 17:261-272. doi:10.1038/s41592-019-0686-2.</li>
+<li id="ref-McKay1979">McKay MD, Beckman RJ, Conover WJ (1979). A comparison of three methods for selecting values of input variables in the analysis of output from a computer code. Technometrics 21(2):239-245. doi:10.2307/1268522.</li>
+<li id="ref-Welsh2023">Welsh C, Xu J, Smith L, König M, Choi K, Sauro HM (2023). libRoadRunner 2.0: a high performance SBML simulation and analysis library. Bioinformatics 39(1):btac770. doi:10.1093/bioinformatics/btac770.</li>
+<li id="ref-Hindmarsh2005">Hindmarsh AC, Brown PN, Grant KE, Lee SL, Serban R, Shumaker DE, Woodward CS (2005). SUNDIALS: suite of nonlinear and differential/algebraic equation solvers. ACM Transactions on Mathematical Software 31(3):363-396. doi:10.1145/1089014.1089020.</li>
+<li id="ref-Akaike1974">Akaike H (1974). A new look at the statistical model identification. IEEE Transactions on Automatic Control 19(6):716-723. doi:10.1109/TAC.1974.1100705.</li>
+<li id="ref-Schwarz1978">Schwarz G (1978). Estimating the dimension of a model. The Annals of Statistics 6(2):461-464. doi:10.1214/aos/1176344136.</li>
+<li id="ref-Bland1986">Bland JM, Altman DG (1986). Statistical methods for assessing agreement between two methods of clinical measurement. The Lancet 327(8476):307-310. doi:10.1016/S0140-6736(86)90837-8.</li>
+<li id="ref-Raue2009">Raue A, Kreutz C, Maiwald T, Bachmann J, Schilling M, Klingmüller U, Timmer J (2009). Structural and practical identifiability analysis of partially observed dynamical models by exploiting the profile likelihood. Bioinformatics 25(15):1923-1929. doi:10.1093/bioinformatics/btp358.</li>
+<li id="ref-Kreutz2013">Kreutz C, Raue A, Kaschek D, Timmer J (2013). Profile likelihood in systems biology. The FEBS Journal 280(11):2564-2571. doi:10.1111/febs.12276.</li>
+<li id="ref-Wieland2021">Wieland FG, Hauber AL, Rosenblatt M, Tönsing C, Timmer J (2021). On structural and practical identifiability. Current Opinion in Systems Biology 25:60-69. doi:10.1016/j.coisb.2021.03.005.</li>
+<li id="ref-Harris2020">Harris CR, Millman KJ, van der Walt SJ, Gommers R, Virtanen P, Cournapeau D, et al. (2020). Array programming with NumPy. Nature 585:357-362. doi:10.1038/s41586-020-2649-2.</li>
+</ol>
+</section>
+</article>
+
+<section id="overview">
+  <h2>Overview</h2>
+
+  <h3>Fit</h3>
+  <div class="card">
+    <dl class="kv">
+      <dt>problem</dt><dd class="mono">PD</dd>
+      <dt>parameter sets</dt><dd class="mono">PD_20261020_014612__f2826_0</dd>
+      <dt>fit mappings</dt><dd class="mono">31 training, 15 validation</dd>
+      <dt>experiments</dt><dd class="mono">FDAMB102002, FDAMB102003, FDAMB102007, Gould2013, Kasichayanula2011a, Kim2023, Komoroski2009, Sha2015, Watada2019, Yang2013</dd>
+      <dt>base path</dt><dd class="mono">/home/mkoenig/git/dapagliflozin-model/src/pkdb_models/models/dapagliflozin</dd>
+      <dt>data path</dt><dd class="mono">/home/mkoenig/git/dapagliflozin-model/src/pkdb_models/models/dapagliflozin/data/dapagliflozin
+/home/mkoenig/git/dapagliflozin-model/src/pkdb_models/models/dapagliflozin/data/canagliflozin</dd>
+      <dt>optimization</dt><dd class="mono">3 runs</dd>
+    </dl>
+  </div>
+
+  <h3>Parameters</h3>
+  <div class="card">
+    <table data-filter="row">
+      <thead><tr>
+        <th data-sort="text">parameter</th>
+<th class="num" data-sort="num">PD_20261020_014612__f2826_0</th>        <th class="num" data-sort="num">lower</th><th class="num" data-sort="num">upper</th>
+        <th data-sort="text">unit</th>
+      </tr></thead>
+      <tbody>
+      <tr>
+        <td class="mono">KI__RTG_E50</td>
+<td class="num mono">5.7563e-06</td>        <td class="num mono">1e-07</td><td class="num mono">0.0001</td>
+        <td>mM</td>
+      </tr>
+      <tr>
+        <td class="mono">KI__RTG_gamma</td>
+<td class="num mono">2.8011</td>        <td class="num mono">1</td><td class="num mono">4</td>
+        <td>dimensionless</td>
+      </tr>
+      <tr>
+        <td class="mono">KI__RTG_m_fpg</td>
+<td class="num mono">1.991</td>        <td class="num mono">0.1</td><td class="num mono">5</td>
+        <td>dimensionless</td>
+      </tr>
+      <tr>
+        <td class="mono">KI__RTG_max_inhibition</td>
+<td class="num mono">0.64001</td>        <td class="num mono">0.3</td><td class="num mono">0.95</td>
+        <td>dimensionless</td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h3>Settings</h3>
+  <div class="card">
+    <table data-filter="row">
+      <thead><tr><th data-sort="text">setting</th><th data-sort="text">value</th></tr></thead>
+      <tbody>
+      <tr><td>residual</td><td class="mono">NORMALIZED</td></tr>
+      <tr><td>parameter scale</td><td class="mono">LOG10</td></tr>
+      <tr><td>loss function</td><td class="mono">LINEAR</td></tr>
+      <tr><td>weighting curves</td><td class="mono">[&#39;MAPPING&#39;, &#39;POINTS&#39;]</td></tr>
+      <tr><td>weighting points</td><td class="mono">ERROR_WEIGHTING</td></tr>
+      <tr><td>variable step size</td><td class="mono">True</td></tr>
+      <tr><td>relative tolerance</td><td class="mono">1e-06</td></tr>
+      <tr><td>absolute tolerance</td><td class="mono">amount 1.0e-12, concentration 1.0e-12, other 1.0e-06</td></tr>
+      <tr><td>initial time step</td><td class="mono">0.0</td></tr>
+      <tr><td>data at change</td><td class="mono">before</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h3>Data</h3>
+  <div class="card">
+    <table>
+      <thead><tr>
+        <th data-sort="text">experiment</th>
+<th class="num" data-sort="num">training</th><th class="num" data-sort="num">validation</th><th class="num" data-sort="num">outlier</th>        <th class="num" data-sort="num">mappings</th>
+      </tr></thead>
+      <tbody>
+      <tr><td>FDAMB102002</td>
+<td class="num">5</td><td class="num">0</td><td class="num">0</td>        <td class="num">5</td></tr>
+      <tr><td>FDAMB102003</td>
+<td class="num">6</td><td class="num">0</td><td class="num">0</td>        <td class="num">6</td></tr>
+      <tr><td>FDAMB102007</td>
+<td class="num">0</td><td class="num">4</td><td class="num">0</td>        <td class="num">4</td></tr>
+      <tr><td>Gould2013</td>
+<td class="num">3</td><td class="num">4</td><td class="num">0</td>        <td class="num">7</td></tr>
+      <tr><td>Kasichayanula2011a</td>
+<td class="num">3</td><td class="num">1</td><td class="num">0</td>        <td class="num">4</td></tr>
+      <tr><td>Kim2023</td>
+<td class="num">1</td><td class="num">1</td><td class="num">0</td>        <td class="num">2</td></tr>
+      <tr><td>Komoroski2009</td>
+<td class="num">8</td><td class="num">1</td><td class="num">0</td>        <td class="num">9</td></tr>
+      <tr><td>Sha2015</td>
+<td class="num">1</td><td class="num">1</td><td class="num">0</td>        <td class="num">2</td></tr>
+      <tr><td>Watada2019</td>
+<td class="num">0</td><td class="num">3</td><td class="num">0</td>        <td class="num">3</td></tr>
+      <tr><td>Yang2013</td>
+<td class="num">4</td><td class="num">0</td><td class="num">0</td>        <td class="num">4</td></tr>
+      </tbody>
+      <tfoot><tr class="total"><td>total</td>
+<td class="num">31</td><td class="num">15</td><td class="num">0</td>        <td class="num">46</td></tr></tfoot>
+    </table>
+  </div>
+</section>
+
+<section id="results">
+  <h2>Results</h2>
+
+  <h3>Metrics</h3>
+  <div class="card">
+    <table data-filter="row">
+      <thead><tr>        <th class=""
+            data-sort="text">parameter_set</th>
+        <th class=""
+            data-sort="text">kind</th>
+        <th class="num"
+            data-sort="num">n<span class="hint" tabindex="0" data-tip="Number of data points which enter the value.">?</span></th>
+        <th class="num"
+            data-sort="num">k<span class="hint" tabindex="0" data-tip="Number of parameters the fit adjusts.">?</span></th>
+        <th class="num"
+            data-sort="num">cost<span class="hint" tabindex="0" data-tip="The objective the optimization minimizes, 0.5 * sum of the squared weighted residuals. It is defined on the training data, so it is not reported for the validation data.">?</span></th>
+        <th class="num"
+            data-sort="num">MSE<span class="hint" tabindex="0" data-tip="Mean squared error of the data and the prediction, unweighted, so the fit mappings with the largest values dominate it.">?</span></th>
+        <th class="num"
+            data-sort="num">RMSE<span class="hint" tabindex="0" data-tip="Root mean squared error, the square root of the MSE, in the unit of the data.">?</span></th>
+        <th class="num"
+            data-sort="num">NRMSE<span class="hint" tabindex="0" data-tip="Root mean square of the residuals normalized by the mean of their fit mapping, so every curve counts the same whatever its magnitude; the RMSE of the small curves is small even when they are missed by a factor.">?</span></th>
+        <th class="num"
+            data-sort="num">RMSE_w<span class="hint" tabindex="0" data-tip="Root mean square of the residuals of the cost, i.e. the residuals of the residual type, weighted and with the loss function applied; the cost of the training data is 0.5 * n * RMSE_w². A parameter set can have a larger RMSE and smaller weighted residuals than another one.">?</span></th>
+        <th class="num"
+            data-sort="num">R2<span class="hint" tabindex="0" data-tip="Coefficient of determination, 1 - SSE/SST. The prediction of a non-linear model is not a linear regression, so this is not the square of a correlation and is negative when the prediction is worse than the mean of the data.">?</span></th>
+        <th class="num"
+            data-sort="num">2-fold [%]<span class="hint" tabindex="0" data-tip="Percentage of the data points whose prediction lies within twofold of the data, 0.5 &lt;= prediction/data &lt;= 2. Only the data points with a positive value and prediction have a ratio and are counted; - if no point has one.">?</span></th>
+        <th class="num"
+            data-sort="num">AIC<span class="hint" tabindex="0" data-tip="Akaike information criterion, n*ln(MSE) + 2*k, up to a constant. Only differences between models fitted on the same data are meaningful; the smaller one is preferred.">?</span></th>
+        <th class="num"
+            data-sort="num">BIC<span class="hint" tabindex="0" data-tip="Bayesian information criterion, n*ln(MSE) + k*ln(n), up to the same constant as the AIC. It charges a parameter more than the AIC from eight data points on, so it prefers the smaller model.">?</span></th>
+        <th class="num"
+            data-sort="num">GMFE</th>
+        <th class="num"
+            data-sort="num">AFE</th>
+        <th class="num"
+            data-sort="num">1.25-fold [%]<span class="hint" tabindex="0" data-tip="Percentage of the data points with a ratio whose prediction lies within 1.25-fold of the data.">?</span></th>
+        <th class="num"
+            data-sort="num">1.5-fold [%]<span class="hint" tabindex="0" data-tip="Percentage of the data points with a ratio whose prediction lies within 1.5-fold of the data.">?</span></th>
+        <th class="num"
+            data-sort="num">1 SD [%]<span class="hint" tabindex="0" data-tip="Percentage of the data points with a standard deviation whose prediction lies within one standard deviation of the data; - if no point has one.">?</span></th>
+        <th class="num"
+            data-sort="num">2 SD [%]<span class="hint" tabindex="0" data-tip="Percentage of the data points with a standard deviation whose prediction lies within two standard deviations of the data; - if no point has one.">?</span></th>
+</tr></thead>
+      <tbody>
+      <tr><td class="">PD_20261020_014612__f2826_0</td><td class="">training</td><td class="num mono">254</td><td class="num mono">4</td><td class="num mono">55.5419</td><td class="num mono">388.828</td><td class="num mono">19.7187</td><td class="num mono">0.309855</td><td class="num mono">0.661315</td><td class="num mono">0.868193</td><td class="num mono">95.6</td><td class="num mono">1522.64</td><td class="num mono">1536.79</td><td class="num mono">1.27888</td><td class="num mono">0.941063</td><td class="num mono">52.0</td><td class="num mono">81.5</td><td class="num mono">63.6</td><td class="num mono">86.4</td></tr>
+      <tr><td class="">PD_20261020_014612__f2826_0</td><td class="">validation</td><td class="num mono">47</td><td class="num mono">4</td><td class="num mono">-</td><td class="num mono">152.632</td><td class="num mono">12.3544</td><td class="num mono">1.1586</td><td class="num mono">3.05569</td><td class="num mono">0.804524</td><td class="num mono">34.3</td><td class="num mono">244.317</td><td class="num mono">251.718</td><td class="num mono">4.17561</td><td class="num mono">0.309875</td><td class="num mono">20.0</td><td class="num mono">22.9</td><td class="num mono">50.0</td><td class="num mono">75.0</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h3>Optimization runs</h3>
+  <div class="grid">
+    <div class="card"><figure>
+      <img loading="lazy" src="plots/traces.svg" alt="Cost of the optimizers over their steps">
+      <figcaption>Cost of the optimizers over their steps<span class="hint" tabindex="0" data-tip="The cost of every optimization run over its steps. Runs which end at the same cost found the same optimum; a run which stops much higher is stuck in a local minimum.">?</span></figcaption>
+    </figure></div>
+    <div class="card"><figure>
+      <img loading="lazy" src="plots/waterfall.svg" alt="Cost of the optimization runs, ordered">
+      <figcaption>Cost of the optimization runs, ordered<span class="hint" tabindex="0" data-tip="The final cost of the runs, ordered. A flat plateau at the left is the global optimum found repeatedly, which is the evidence that the multistart converged; steps to the right are local minima.">?</span></figcaption>
+    </figure></div>
+  </div>
+
+  <h3>Predictions and costs</h3>
+  <div class="grid">
+    <div class="card wide"><figure>
+      <img loading="lazy" src="plots/goodness_of_fit.svg" alt="Prediction against the measured data points, per kind of fit mapping, with the agreement of the training data, the lines of twofold and the metrics of the panel. Within twofold of the data are 237 of the 248 training data points (95.6%) and 12 of the 35 validation data points (34.3%); only the data points with a positive value and prediction are counted">
+      <figcaption>Prediction against the measured data points, per kind of fit mapping, with the agreement of the training data, the lines of twofold and the metrics of the panel. Within twofold of the data are 237 of the 248 training data points (95.6%) and 12 of the 35 validation data points (34.3%); only the data points with a positive value and prediction are counted<span class="hint" tabindex="0" data-tip="Prediction against measurement, one point per data point, with a panel per kind of fit mapping. The points scatter around the diagonal when the model describes the data; a systematic deviation from it is a systematic error of the model. The band is the agreement of the training data, i.e. the same band the Bland-Altman plot draws, here as lines parallel to the diagonal. The dark red dotted lines are twofold, prediction = 2 x measurement and prediction = measurement / 2; the caption states the points between them of every kind. A point which is zero or negative is not drawn on the logarithmic axes and not counted, the title of a panel then states the points drawn of all. The validation panel shows how the fit describes data it was not fitted on, the outlier panel the data the fit dropped. The box of a panel carries its R², its normalized RMSE, the RMSE of the residuals of the cost, its fold errors GMFE and AFE and the percentages of its points within twofold and within two standard deviations of the data.">?</span></figcaption>
+    </figure></div>
+    <div class="card wide"><figure>
+      <img loading="lazy" src="plots/bland_altman.svg" alt="Agreement of prediction and measurement as a ratio, per kind of fit mapping, with the agreement of the training data and the agreement of the panel">
+      <figcaption>Agreement of prediction and measurement as a ratio, per kind of fit mapping, with the agreement of the training data and the agreement of the panel<span class="hint" tabindex="0" data-tip="The ratio of prediction and measurement over the geometric mean of the two, i.e. the goodness of fit with the diagonal turned into the horizontal. The band is the same, the bias and the limits of agreement `bias ± 1.96 SD` of the training data as fold factors. A bias away from 1 is a systematic over- or underprediction, wide limits are a large scatter, and a trend over the mean is a model which describes the large or the small values better. The box of a panel carries the bias and the SD of its own points as fold factors and the share of them inside the limits of agreement of the training data.">?</span></figcaption>
+    </figure></div>
+  </div>
+
+  <h3>Optimization runs (3)</h3>
+  <div class="card">
+    <table data-filter="row">
+      <thead><tr>        <th class="" data-sort="text">run</th>
+        <th class="num" data-sort="num">success</th>
+        <th class="num" data-sort="num">duration</th>
+        <th class="num" data-sort="num">cost</th>
+</tr></thead>
+      <tbody>
+<tr><td class="">2</td><td class="num mono">True</td><td class="num mono">183.40</td><td class="num mono">55.5419</td></tr><tr><td class="">0</td><td class="num mono">True</td><td class="num mono">170.80</td><td class="num mono">55.6094</td></tr><tr><td class="">1</td><td class="num mono">True</td><td class="num mono">231.43</td><td class="num mono">55.7004</td></tr>      </tbody>
+    </table>
+  </div>
+</section>
+
+
+<!-- the local analysis and the profiles are one section under one heading -->
+<section id="identifiability">
+  <h2>Identifiability</h2>
+  <h3>Fisher information</h3>
+  <p>The curvature of the cost at the parameters, <code>FIM = J'J</code> with the jacobian of the weighted residuals, from which the standard errors and the correlations of the parameters follow. It is a local statement: the intervals are exact for a cost which is a quadratic around the optimum and approximate for a non-linear model, where the profile likelihood is the one to trust. The errors and the intervals are computed in the space the optimizer searches, so an interval on a logarithmic scale is not symmetric around the value.</p>
+  <div class="grid">
+    <div class="card wide">
+      <h3>Analysis</h3>
+      <dl class="kv">
+<dt>parameter set</dt><dd class="mono">PD_20261020_014612__f2826_0</dd><dt>parameter scale</dt><dd class="mono">LOG10</dd><dt>data points</dt><dd class="mono">254</dd><dt>rank</dt><dd class="mono">4 of 4</dd><dt>condition number</dt><dd class="mono">798.6</dd><dt>confidence level</dt><dd class="mono">95%</dd>        <dt>eigenvalues<span class="hint" tabindex="0" data-tip="Eigenvalues of the Fisher information, largest first. A small eigenvalue is a combination of parameters the data does not determine; a spread over orders of magnitude is a sloppy model.">?</span></dt>
+        <dd class="mono">5.016e+04, 1449, 418.2, 62.8</dd>
+      </dl>
+    </div>
+    <!-- the table of seven columns needs the width of the page -->
+    <div class="card wide">
+      <h3>Parameters</h3>
+      <table data-filter="row">
+        <thead><tr>          <th data-sort="text">parameter</th>
+          <th class="num" data-sort="num">value<span class="hint" tabindex="0" data-tip="Value of the parameter in the unit of its fit parameter, the unit of the table of the parameters.">?</span></th>
+          <th class="num" data-sort="num">se<span class="hint" tabindex="0" data-tip="Standard error of the parameter, the square root of the diagonal of the covariance, in the space the optimizer searches.">?</span></th>
+          <th class="num" data-sort="num">cv<span class="hint" tabindex="0" data-tip="The standard error relative to the value, in percent: the coefficient of variation of the parameter in the units of the model (to first order, also for a parameter searched as a logarithm).">?</span></th>
+          <th class="num" data-sort="num">ci_lower<span class="hint" tabindex="0" data-tip="Lower bound of the confidence interval.">?</span></th>
+          <th class="num" data-sort="num">ci_upper<span class="hint" tabindex="0" data-tip="Upper bound of the confidence interval.">?</span></th>
+          <th data-sort="text">unit</th>
+</tr></thead>
+        <tbody>
+        <tr><td>KI__RTG_E50</td><td class="num mono">5.7563e-06</td><td class="num mono">0.023549</td><td class="num mono">5.4223</td><td class="num mono">5.1733e-06</td><td class="num mono">6.405e-06</td><td>mM</td></tr>
+        <tr><td>KI__RTG_gamma</td><td class="num mono">2.8011</td><td class="num mono">0.082441</td><td class="num mono">18.983</td><td class="num mono">1.9273</td><td class="num mono">4.0709</td><td>dimensionless</td></tr>
+        <tr><td>KI__RTG_m_fpg</td><td class="num mono">1.991</td><td class="num mono">0.032701</td><td class="num mono">7.5297</td><td class="num mono">1.7166</td><td class="num mono">2.3093</td><td>dimensionless</td></tr>
+        <tr><td>KI__RTG_max_inhibition</td><td class="num mono">0.64001</td><td class="num mono">0.0057002</td><td class="num mono">1.3125</td><td class="num mono">0.62368</td><td class="num mono">0.65677</td><td>dimensionless</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="card">
+    <h3>Correlation<span class="hint" tabindex="0" data-tip="Correlation of the parameters from the covariance. A pair at plus or minus one is a pair the data only determines together, i.e. the fit trades one against the other.">?</span></h3>
+    <table>
+      <thead><tr><th></th><th class="num">KI__RTG_E50</th><th class="num">KI__RTG_gamma</th><th class="num">KI__RTG_m_fpg</th><th class="num">KI__RTG_max_inhibition</th></tr></thead>
+      <tbody>
+      <tr><td>KI__RTG_E50</td><td class="num mono">1.000</td><td class="num mono">0.648</td><td class="num mono">0.010</td><td class="num mono">-0.162</td></tr>
+      <tr><td>KI__RTG_gamma</td><td class="num mono">0.648</td><td class="num mono">1.000</td><td class="num mono">-0.129</td><td class="num mono">-0.684</td></tr>
+      <tr><td>KI__RTG_m_fpg</td><td class="num mono">0.010</td><td class="num mono">-0.129</td><td class="num mono">1.000</td><td class="num mono">0.472</td></tr>
+      <tr><td>KI__RTG_max_inhibition</td><td class="num mono">-0.162</td><td class="num mono">-0.684</td><td class="num mono">0.472</td><td class="num mono">1.000</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <style>
+    .tag.identifiable { background: var(--training); }
+    .tag.non_identifiable_lower, .tag.non_identifiable_upper { background: var(--outlier); }
+    .tag.non_identifiable { background: #c92a2a; }
+    .tag.structural { background: #862e9c; }
+  </style>
+  <h3>Profile likelihood</h3>
+  <p>Profile likelihood of the parameters: every parameter is fixed at values around the optimum and the other parameters are optimized again. A parameter is identifiable if its profile crosses the threshold of the confidence level on both sides of the optimum, i.e., its confidence interval is finite; practically non-identifiable if the profile stays below the threshold up to a bound of the parameter; structurally non-identifiable if the profile is flat. An open side of an interval is shown as the bound of the parameter.</p>
+  <div class="grid">
+    <div class="card wide">
+      <h3>Analysis</h3>
+      <dl class="kv">
+<dt>parameter set</dt><dd class="mono">PD_20261020_014612__f2826_0</dd><dt>cost</dt><dd class="mono">55.5419</dd><dt>minimal cost</dt><dd class="mono">55.5419</dd><dt>confidence level</dt><dd class="mono">95%</dd><dt>degrees of freedom</dt><dd class="mono">1</dd><dt>threshold</dt><dd class="mono">57.4626</dd><dt>reoptimize</dt><dd class="mono">True</dd><dt>duration</dt><dd class="mono">130.8 s</dd>      </dl>
+    </div>
+    <!-- the table of seven columns needs the width of the page -->
+    <div class="card wide">
+      <h3>Parameters</h3>
+      <table data-filter="row">
+        <thead><tr>
+          <th data-sort="text">parameter</th><th class="num" data-sort="num">value</th>
+          <th class="num" data-sort="num">ci lower</th><th class="num" data-sort="num">ci upper</th>
+          <th data-sort="text">unit</th><th data-sort="text">identifiability</th>
+          <th class="num" data-sort="num">points</th>
+        </tr></thead>
+        <tbody>
+        <tr>
+          <td class="mono">KI__RTG_E50</td><td class="num mono">5.7563e-06</td>
+          <td class="num mono">4.885e-06</td><td class="num mono">6.83e-06</td>
+          <td>mM</td>
+          <td><span class="tag identifiability identifiable">identifiable</span></td>
+          <td class="num mono">13</td>
+        </tr>
+        <tr>
+          <td class="mono">KI__RTG_gamma</td><td class="num mono">2.8011</td>
+          <td class="num mono">1.677</td><td class="num mono">&gt; 4</td>
+          <td>dimensionless</td>
+          <td><span class="tag identifiability non_identifiable_upper">non-identifiable (upper)</span></td>
+          <td class="num mono">11</td>
+        </tr>
+        <tr>
+          <td class="mono">KI__RTG_m_fpg</td><td class="num mono">1.991</td>
+          <td class="num mono">1.555</td><td class="num mono">2.442</td>
+          <td>dimensionless</td>
+          <td><span class="tag identifiability identifiable">identifiable</span></td>
+          <td class="num mono">15</td>
+        </tr>
+        <tr>
+          <td class="mono">KI__RTG_max_inhibition</td><td class="num mono">0.64001</td>
+          <td class="num mono">0.618</td><td class="num mono">0.6703</td>
+          <td>dimensionless</td>
+          <td><span class="tag identifiability identifiable">identifiable</span></td>
+          <td class="num mono">6</td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <div class="grid">
+    <div class="card wide"><figure>
+      <img loading="lazy" src="plots/profiles.svg" alt="Profile likelihood of every parameter: the cost with the parameter fixed and the other parameters optimized, the threshold of the confidence level and the confidence interval">
+      <figcaption>Profile likelihood of every parameter: the cost with the parameter fixed and the other parameters optimized, the threshold of the confidence level and the confidence interval<span class="hint" tabindex="0" data-tip="One profile per parameter. A profile which crosses the dashed threshold on both sides gives a finite confidence interval; one which stays below it up to a bound is practically non-identifiable; a flat profile is structurally non-identifiable, the parameter is compensated by the others.">?</span></figcaption>
+    </figure></div>
+  </div>
+  <h3>Profiles</h3>
+  <div class="grid">
+    <div class="card"><figure>
+      <img loading="lazy" src="plots/profile_KI__RTG_E50.svg" alt="Profile of &#39;KI__RTG_E50&#39; and the paths of the other parameters along it">
+      <figcaption>Profile of &#39;KI__RTG_E50&#39; and the paths of the other parameters along it</figcaption>
+    </figure></div>
+    <div class="card"><figure>
+      <img loading="lazy" src="plots/profile_KI__RTG_gamma.svg" alt="Profile of &#39;KI__RTG_gamma&#39; and the paths of the other parameters along it">
+      <figcaption>Profile of &#39;KI__RTG_gamma&#39; and the paths of the other parameters along it</figcaption>
+    </figure></div>
+    <div class="card"><figure>
+      <img loading="lazy" src="plots/profile_KI__RTG_m_fpg.svg" alt="Profile of &#39;KI__RTG_m_fpg&#39; and the paths of the other parameters along it">
+      <figcaption>Profile of &#39;KI__RTG_m_fpg&#39; and the paths of the other parameters along it</figcaption>
+    </figure></div>
+    <div class="card"><figure>
+      <img loading="lazy" src="plots/profile_KI__RTG_max_inhibition.svg" alt="Profile of &#39;KI__RTG_max_inhibition&#39; and the paths of the other parameters along it">
+      <figcaption>Profile of &#39;KI__RTG_max_inhibition&#39; and the paths of the other parameters along it</figcaption>
+    </figure></div>
+  </div>
+</section>
+</div>
+
+<section id="mappings" class="tab-panel" data-panel="mappings">
+  <h2>Fit mappings (46)</h2>
+
+  <h3>Cost, weight and residuals of the fit mappings</h3>
+  <div class="grid">
+    <div class="card"><figure>
+      <img loading="lazy" src="plots/cost_bar.svg" alt="Cost and weight of every fit mapping">
+      <figcaption>Cost and weight of every fit mapping<span class="hint" tabindex="0" data-tip="How much every fit mapping contributes to the cost, with its weight. A mapping which dominates the cost dominates the fit.">?</span></figcaption>
+    </figure></div>
+    <div class="card"><figure>
+      <img loading="lazy" src="plots/residual_boxplot.svg" alt="Distribution of the squared weighted residuals">
+      <figcaption>Distribution of the squared weighted residuals<span class="hint" tabindex="0" data-tip="The distribution of the squared weighted residuals per mapping. A mapping whose box sits far above the others is the one the model describes worst.">?</span></figcaption>
+    </figure></div>
+  </div>
+
+  <h3>Metrics of the fit mappings</h3>
+  <div class="card">
+    <table data-filter="row">
+      <thead><tr>        <th class=""
+            data-sort="text">parameter set</th>
+        <th class=""
+            data-sort="text">experiment</th>
+        <th class=""
+            data-sort="text">mapping</th>
+        <th class=""
+            data-sort="text">kind</th>
+        <th class="num"
+            data-sort="num">n<span class="hint" tabindex="0" data-tip="Number of data points which enter the value.">?</span></th>
+        <th class="num"
+            data-sort="num">MSE<span class="hint" tabindex="0" data-tip="Mean squared error of the data and the prediction, unweighted, so the fit mappings with the largest values dominate it.">?</span></th>
+        <th class="num"
+            data-sort="num">RMSE<span class="hint" tabindex="0" data-tip="Root mean squared error, the square root of the MSE, in the unit of the data.">?</span></th>
+        <th class="num"
+            data-sort="num">NRMSE<span class="hint" tabindex="0" data-tip="Root mean square of the residuals normalized by the mean of their fit mapping, so every curve counts the same whatever its magnitude; the RMSE of the small curves is small even when they are missed by a factor.">?</span></th>
+        <th class="num"
+            data-sort="num">RMSE_w<span class="hint" tabindex="0" data-tip="Root mean square of the residuals of the cost, i.e. the residuals of the residual type, weighted and with the loss function applied; the cost of the training data is 0.5 * n * RMSE_w². A parameter set can have a larger RMSE and smaller weighted residuals than another one.">?</span></th>
+        <th class="num"
+            data-sort="num">R2<span class="hint" tabindex="0" data-tip="Coefficient of determination, 1 - SSE/SST. The prediction of a non-linear model is not a linear regression, so this is not the square of a correlation and is negative when the prediction is worse than the mean of the data.">?</span></th>
+        <th class="num"
+            data-sort="num">2-fold [%]<span class="hint" tabindex="0" data-tip="Percentage of the data points whose prediction lies within twofold of the data, 0.5 &lt;= prediction/data &lt;= 2. Only the data points with a positive value and prediction have a ratio and are counted; - if no point has one.">?</span></th>
+</tr></thead>
+      <tbody>
+      <tr data-kind="training">
+        <td>PD_20261020_014612__f2826_0</td><td>FDAMB102002</td>
+        <td class="mono wrap">fm_dap2p5_uge</td>
+        <td><span class="tag training">training</span></td>
+        <td class="num">12</td>
+        <td class="num mono">19.84</td><td class="num mono">4.454</td>
+        <td class="num mono">0.3511</td><td class="num mono">0.3511</td>
+        <td class="num mono">0.3167</td><td class="num mono">83.3</td>
+      </tr>
+      <tr data-kind="training">
+        <td>PD_20261020_014612__f2826_0</td><td>FDAMB102002</td>
+        <td class="mono wrap">fm_dap10_uge</td>
+        <td><span class="tag training">training</span></td>
+        <td class="num">12</td>
+        <td class="num mono">83.56</td><td class="num mono">9.141</td>
+        <td class="num mono">0.4367</td><td class="num mono">0.4367</td>
+        <td class="num mono">0.357</td><td class="num mono">91.7</td>
+      </tr>
+      <tr data-kind="training">
+        <td>PD_20261020_014612__f2826_0</td><td>FDAMB102002</td>
+        <td class="mono wrap">fm_dap20_uge</td>
+        <td><span class="tag training">training</span></td>
+        <td class="num">12</td>
+        <td class="num mono">8.426</td><td class="num mono">2.903</td>
+        <td class="num mono">0.09532</td><td class="num mono">0.09532</td>
+        <td class="num mono">0.9684</td><td class="num mono">100.0</td>
+      </tr>
+      <tr data-kind="training">
+        <td>PD_20261020_014612__f2826_0</td><td>FDAMB102002</td>
+        <td class="mono wrap">fm_dap50_uge</td>
+        <td><span class="tag training">training</span></td>
+        <td class="num">12</td>
+        <td class="num mono">26.68</td><td class="num mono">5.165</td>
+        <td class="num mono">0.1598</td><td class="num mono">0.1598</td>
+        <td class="num mono">0.9193</td><td class="num mono">100.0</td>
+      </tr>
+      <tr data-kind="training">
+        <td>PD_20261020_014612__f2826_0</td><td>FDAMB102002</td>
+        <td class="mono wrap">fm_dap100_uge</td>
+        <td><span class="tag training">training</span></td>
+        <td class="num">12</td>
+        <td class="num mono">7.627</td><td class="num mono">2.762</td>
+        <td class="num mono">0.08966</td><td class="num mono">0.08966</td>
+        <td class="num mono">0.9726</td><td class="num mono">100.0</td>
+      </tr>
+      <tr data-kind="training">
+        <td>PD_20261020_014612__f2826_0</td><td>FDAMB102003</td>
+        <td class="mono wrap">fm_dap5_uge_day1</td>
+        <td><span class="tag training">training</span></td>
+        <td class="num">6</td>
+        <td class="num mono">45.34</td><td class="num mono">6.734</td>
+        <td class="num mono">0.2571</td><td class="num mono">0.4694</td>
+        <td class="num mono">0.7605</td><td class="num mono">100.0</td>
+      </tr>
+      <tr data-kind="training">
+        <td>PD_20261020_014612__f2826_0</td><td>FDAMB102003</td>
+        <td class="mono wrap">fm_dap5_uge_day14</td>
+        <td><span class="tag training">training</span></td>
+        <td class="num">6</td>
+        <td class="num mono">109.6</td><td class="num mono">10.47</td>
+        <td class="num mono">0.4787</td><td class="num mono">0.874</td>
+        <td class="num mono">0.1786</td><td class="num mono">66.7</td>
+      </tr>
+      <tr data-kind="training">
+        <td>PD_20261020_014612__f2826_0</td><td>FDAMB102003</td>
+        <td class="mono wrap">fm_dap25_uge_day1</td>
+        <td><span class="tag training">training</span></td>
+        <td class="num">6</td>
+        <td class="num mono">14.23</td><td class="num mono">3.772</td>
+        <td class="num mono">0.0892</td><td class="num mono">0.1784</td>
+        <td class="num mono">0.9719</td><td class="num mono">100.0</td>
+      </tr>
+      <tr data-kind="training">
+        <td>PD_20261020_014612__f2826_0</td><td>FDAMB102003</td>
+        <td class="mono wrap">fm_dap25_uge_day14</td>
+        <td><span class="tag training">training</span></td>
+        <td class="num">6</td>
+        <td class="num mono">7.185</td><td class="num mono">2.681</td>
+        <td class="num mono">0.0689</td><td class="num mono">0.1378</td>
+        <td class="num mono">0.9836</td><td class="num mono">100.0</td>
+      </tr>
+      <tr data-kind="training">
+        <td>PD_20261020_014612__f2826_0</td><td>FDAMB102003</td>
+        <td class="mono wrap">fm_dap100_uge_day1</td>
+        <td><span class="tag training">training</span></td>
+        <td class="num">6</td>
+        <td class="num mono">26.71</td><td class="num mono">5.168</td>
+        <td class="num mono">0.1208</td><td class="num mono">0.261</td>
+        <td class="num mono">0.9546</td><td class="num mono">100.0</td>
+      </tr>
+      <tr data-kind="training">
+        <td>PD_20261020_014612__f2826_0</td><td>FDAMB102003</td>
+        <td class="mono wrap">fm_dap100_uge_day14</td>
+        <td><span class="tag training">training</span></td>
+        <td class="num">6</td>
+        <td class="num mono">6.643</td><td class="num mono">2.577</td>
+        <td class="num mono">0.06639</td><td class="num mono">0.1434</td>
+        <td class="num mono">0.9843</td><td class="num mono">100.0</td>
+      </tr>
+      <tr data-kind="validation">
+        <td>PD_20261020_014612__f2826_0</td><td>FDAMB102007</td>
+        <td class="mono wrap">fm_dap20_normal</td>
+        <td><span class="tag validation">validation</span></td>
+        <td class="num">2</td>
+        <td class="num mono">74.62</td><td class="num mono">8.638</td>
+        <td class="num mono">0.1889</td><td class="num mono">0.3272</td>
+        <td class="num mono">0.9643</td><td class="num mono">100.0</td>
+      </tr>
+      <tr data-kind="validation">
+        <td>PD_20261020_014612__f2826_0</td><td>FDAMB102007</td>
+        <td class="mono wrap">fm_dap20_mild</td>
+        <td><span class="tag validation">validation</span></td>
+        <td class="num">2</td>
+        <td class="num mono">625</td><td class="num mono">25</td>
+        <td class="num mono">0.7118</td><td class="num mono">1.233</td>
+        <td class="num mono">0.4934</td><td class="num mono">0.0</td>
+      </tr>
+      <tr data-kind="validation">
+        <td>PD_20261020_014612__f2826_0</td><td>FDAMB102007</td>
+        <td class="mono wrap">fm_dap20_moderate</td>
+        <td><span class="tag validation">validation</span></td>
+        <td class="num">2</td>
+        <td class="num mono">5.132</td><td class="num mono">2.265</td>
+        <td class="num mono">0.226</td><td class="num mono">0.5536</td>
+        <td class="num mono">0.9489</td><td class="num mono">100.0</td>
+      </tr>
+      <tr data-kind="validation">
+        <td>PD_20261020_014612__f2826_0</td><td>FDAMB102007</td>
+        <td class="mono wrap">fm_dap20_severe</td>
+        <td><span class="tag validation">validation</span></td>
+        <td class="num">2</td>
+        <td class="num mono">25.75</td><td class="num mono">5.075</td>
+        <td class="num mono">1.468</td><td class="num mono">3.284</td>
+        <td class="num mono">-1.156</td><td class="num mono">0.0</td>
+      </tr>
+      <tr data-kind="training">
+        <td>PD_20261020_014612__f2826_0</td><td>Gould2013</td>
+        <td class="mono wrap">fm_dap0p3</td>
+        <td><span class="tag training">training</span></td>
+        <td class="num">2</td>
+        <td class="num mono">0.02175</td><td class="num mono">0.1475</td>
+        <td class="num mono">0.4983</td><td class="num mono">0.9026</td>
+        <td class="num mono">0.7517</td><td class="num mono">100.0</td>
+      </tr>
+      <tr data-kind="training">
+        <td>PD_20261020_014612__f2826_0</td><td>Gould2013</td>
+        <td class="mono wrap">fm_dap1</td>
+        <td><span class="tag training">training</span></td>
+        <td class="num">2</td>
+        <td class="num mono">79.2</td><td class="num mono">8.899</td>
+        <td class="num mono">0.927</td><td class="num mono">2.148</td>
+        <td class="num mono">0.1407</td><td class="num mono">0.0</td>
+      </tr>
+      <tr data-kind="training">
+        <td>PD_20261020_014612__f2826_0</td><td>Gould2013</td>
+        <td class="mono wrap">fm_dap2p5</td>
+        <td><span class="tag training">training</span></td>
+        <td class="num">2</td>
+        <td class="num mono">19.56</td><td class="num mono">4.423</td>
+        <td class="num mono">0.3865</td><td class="num mono">0.9468</td>
+        <td class="num mono">0.8506</td><td class="num mono">100.0</td>
+      </tr>
+      <tr data-kind="validation">
+        <td>PD_20261020_014612__f2826_0</td><td>Gould2013</td>
+        <td class="mono wrap">fm_dap0</td>
+        <td><span class="tag validation">validation</span></td>
+        <td class="num">2</td>
+        <td class="num mono">0.002212</td><td class="num mono">0.04704</td>
+        <td class="num mono">1.107</td><td class="num mono">5.191</td>
+        <td class="num mono">-0.2249</td><td class="num mono">100.0</td>
+      </tr>
+      <tr data-kind="validation">
+        <td>PD_20261020_014612__f2826_0</td><td>Gould2013</td>
+        <td class="mono wrap">fm_dap0p001</td>
+        <td><span class="tag validation">validation</span></td>
+        <td class="num">2</td>
+        <td class="num mono">0.003488</td><td class="num mono">0.05906</td>
+        <td class="num mono">1.737</td><td class="num mono">3.931</td>
+        <td class="num mono">-2.017</td><td class="num mono">0.0</td>
+      </tr>
+      <tr data-kind="validation">
+        <td>PD_20261020_014612__f2826_0</td><td>Gould2013</td>
+        <td class="mono wrap">fm_dap0p01</td>
+        <td><span class="tag validation">validation</span></td>
+        <td class="num">2</td>
+        <td class="num mono">0.005781</td><td class="num mono">0.07604</td>
+        <td class="num mono">3.456</td><td class="num mono">10.93</td>
+        <td class="num mono">-10.94</td><td class="num mono">0.0</td>
+      </tr>
+      <tr data-kind="validation">
+        <td>PD_20261020_014612__f2826_0</td><td>Gould2013</td>
+        <td class="mono wrap">fm_dap0p1</td>
+        <td><span class="tag validation">validation</span></td>
+        <td class="num">2</td>
+        <td class="num mono">0.003694</td><td class="num mono">0.06078</td>
+        <td class="num mono">1.665</td><td class="num mono">3.214</td>
+        <td class="num mono">-1.773</td><td class="num mono">0.0</td>
+      </tr>
+      <tr data-kind="training">
+        <td>PD_20261020_014612__f2826_0</td><td>Kasichayanula2011a</td>
+        <td class="mono wrap">fm_dap2p5_uge</td>
+        <td><span class="tag training">training</span></td>
+        <td class="num">2</td>
+        <td class="num mono">882.1</td><td class="num mono">29.7</td>
+        <td class="num mono">0.7472</td><td class="num mono">2.754</td>
+        <td class="num mono">-256.7</td><td class="num mono">100.0</td>
+      </tr>
+      <tr data-kind="training">
+        <td>PD_20261020_014612__f2826_0</td><td>Kasichayanula2011a</td>
+        <td class="mono wrap">fm_dap10_uge</td>
+        <td><span class="tag training">training</span></td>
+        <td class="num">2</td>
+        <td class="num mono">2492</td><td class="num mono">49.92</td>
+        <td class="num mono">0.7141</td><td class="num mono">3.413</td>
+        <td class="num mono">-1106</td><td class="num mono">100.0</td>
+      </tr>
+      <tr data-kind="training">
+        <td>PD_20261020_014612__f2826_0</td><td>Kasichayanula2011a</td>
+        <td class="mono wrap">fm_dap20_uge</td>
+        <td><span class="tag training">training</span></td>
+        <td class="num">2</td>
+        <td class="num mono">2988</td><td class="num mono">54.66</td>
+        <td class="num mono">0.7303</td><td class="num mono">3.229</td>
+        <td class="num mono">-872.1</td><td class="num mono">100.0</td>
+      </tr>
+      <tr data-kind="validation">
+        <td>PD_20261020_014612__f2826_0</td><td>Kasichayanula2011a</td>
+        <td class="mono wrap">fm_dap0_uge</td>
+        <td><span class="tag validation">validation</span></td>
+        <td class="num">2</td>
+        <td class="num mono">67.23</td><td class="num mono">8.199</td>
+        <td class="num mono">1.012</td><td class="num mono">1.672</td>
+        <td class="num mono">-38.78</td><td class="num mono">0.0</td>
+      </tr>
+      <tr data-kind="training">
+        <td>PD_20261020_014612__f2826_0</td><td>Kim2023</td>
+        <td class="mono wrap">fm_dap10_DAP10_uge</td>
+        <td><span class="tag training">training</span></td>
+        <td class="num">1</td>
+        <td class="num mono">2.782</td><td class="num mono">1.668</td>
+        <td class="num mono">0.03516</td><td class="num mono">0.2844</td>
+        <td class="num mono">-</td><td class="num mono">100.0</td>
+      </tr>
+      <tr data-kind="validation">
+        <td>PD_20261020_014612__f2826_0</td><td>Kim2023</td>
+        <td class="mono wrap">fm_dap10_EV5__DAP10_uge</td>
+        <td><span class="tag validation">validation</span></td>
+        <td class="num">1</td>
+        <td class="num mono">13.75</td><td class="num mono">3.709</td>
+        <td class="num mono">0.07494</td><td class="num mono">0.6191</td>
+        <td class="num mono">-</td><td class="num mono">100.0</td>
+      </tr>
+      <tr data-kind="training">
+        <td>PD_20261020_014612__f2826_0</td><td>Komoroski2009</td>
+        <td class="mono wrap">fm_po_dap_2p5_single</td>
+        <td><span class="tag training">training</span></td>
+        <td class="num">18</td>
+        <td class="num mono">204.1</td><td class="num mono">14.29</td>
+        <td class="num mono">0.4971</td><td class="num mono">0.3705</td>
+        <td class="num mono">-1.759</td><td class="num mono">77.8</td>
+      </tr>
+      <tr data-kind="training">
+        <td>PD_20261020_014612__f2826_0</td><td>Komoroski2009</td>
+        <td class="mono wrap">fm_po_dap_5_single</td>
+        <td><span class="tag training">training</span></td>
+        <td class="num">12</td>
+        <td class="num mono">27.3</td><td class="num mono">5.225</td>
+        <td class="num mono">0.1737</td><td class="num mono">0.1585</td>
+        <td class="num mono">0.7377</td><td class="num mono">100.0</td>
+      </tr>
+      <tr data-kind="training">
+        <td>PD_20261020_014612__f2826_0</td><td>Komoroski2009</td>
+        <td class="mono wrap">fm_po_dap_10_single</td>
+        <td><span class="tag training">training</span></td>
+        <td class="num">18</td>
+        <td class="num mono">449.4</td><td class="num mono">21.2</td>
+        <td class="num mono">0.3531</td><td class="num mono">0.2632</td>
+        <td class="num mono">0.2172</td><td class="num mono">94.4</td>
+      </tr>
+      <tr data-kind="training">
+        <td>PD_20261020_014612__f2826_0</td><td>Komoroski2009</td>
+        <td class="mono wrap">fm_po_dap_20_single</td>
+        <td><span class="tag training">training</span></td>
+        <td class="num">12</td>
+        <td class="num mono">19.83</td><td class="num mono">4.453</td>
+        <td class="num mono">0.09368</td><td class="num mono">0.08552</td>
+        <td class="num mono">0.9565</td><td class="num mono">100.0</td>
+      </tr>
+      <tr data-kind="training">
+        <td>PD_20261020_014612__f2826_0</td><td>Komoroski2009</td>
+        <td class="mono wrap">fm_po_dap_50_single</td>
+        <td><span class="tag training">training</span></td>
+        <td class="num">18</td>
+        <td class="num mono">31.19</td><td class="num mono">5.585</td>
+        <td class="num mono">0.072</td><td class="num mono">0.05367</td>
+        <td class="num mono">0.975</td><td class="num mono">100.0</td>
+      </tr>
+      <tr data-kind="training">
+        <td>PD_20261020_014612__f2826_0</td><td>Komoroski2009</td>
+        <td class="mono wrap">fm_po_dap_100_single</td>
+        <td><span class="tag training">training</span></td>
+        <td class="num">18</td>
+        <td class="num mono">983.9</td><td class="num mono">31.37</td>
+        <td class="num mono">0.2812</td><td class="num mono">0.2096</td>
+        <td class="num mono">0.7292</td><td class="num mono">100.0</td>
+      </tr>
+      <tr data-kind="training">
+        <td>PD_20261020_014612__f2826_0</td><td>Komoroski2009</td>
+        <td class="mono wrap">fm_po_dap_250_single</td>
+        <td><span class="tag training">training</span></td>
+        <td class="num">18</td>
+        <td class="num mono">903.7</td><td class="num mono">30.06</td>
+        <td class="num mono">0.247</td><td class="num mono">0.1841</td>
+        <td class="num mono">0.8212</td><td class="num mono">100.0</td>
+      </tr>
+      <tr data-kind="training">
+        <td>PD_20261020_014612__f2826_0</td><td>Komoroski2009</td>
+        <td class="mono wrap">fm_po_dap_500_single</td>
+        <td><span class="tag training">training</span></td>
+        <td class="num">18</td>
+        <td class="num mono">1901</td><td class="num mono">43.6</td>
+        <td class="num mono">0.3187</td><td class="num mono">0.2375</td>
+        <td class="num mono">0.7587</td><td class="num mono">100.0</td>
+      </tr>
+      <tr data-kind="validation">
+        <td>PD_20261020_014612__f2826_0</td><td>Komoroski2009</td>
+        <td class="mono wrap">fm_po_dap_0_single</td>
+        <td><span class="tag validation">validation</span></td>
+        <td class="num">18</td>
+        <td class="num mono">1.625</td><td class="num mono">1.275</td>
+        <td class="num mono">0.8948</td><td class="num mono">0.667</td>
+        <td class="num mono">-4.873</td><td class="num mono">11.1</td>
+      </tr>
+      <tr data-kind="training">
+        <td>PD_20261020_014612__f2826_0</td><td>Sha2015</td>
+        <td class="mono wrap">fm_po_dap10_glucose_cumulative_amount</td>
+        <td><span class="tag training">training</span></td>
+        <td class="num">5</td>
+        <td class="num mono">27.28</td><td class="num mono">5.223</td>
+        <td class="num mono">0.2149</td><td class="num mono">1.325</td>
+        <td class="num mono">0.8375</td><td class="num mono">100.0</td>
+      </tr>
+      <tr data-kind="validation">
+        <td>PD_20261020_014612__f2826_0</td><td>Sha2015</td>
+        <td class="mono wrap">fm_po_dap10_renal_threshold</td>
+        <td><span class="tag validation">validation</span></td>
+        <td class="num">4</td>
+        <td class="num mono">0.09783</td><td class="num mono">0.3128</td>
+        <td class="num mono">0.07718</td><td class="num mono">0.7131</td>
+        <td class="num mono">0.519</td><td class="num mono">100.0</td>
+      </tr>
+      <tr data-kind="validation">
+        <td>PD_20261020_014612__f2826_0</td><td>Watada2019</td>
+        <td class="mono wrap">fm_po_DAP0_uge</td>
+        <td><span class="tag validation">validation</span></td>
+        <td class="num">2</td>
+        <td class="num mono">314.8</td><td class="num mono">17.74</td>
+        <td class="num mono">1.014</td><td class="num mono">2.591</td>
+        <td class="num mono">-31.76</td><td class="num mono">0.0</td>
+      </tr>
+      <tr data-kind="validation">
+        <td>PD_20261020_014612__f2826_0</td><td>Watada2019</td>
+        <td class="mono wrap">fm_po_DAP5_uge</td>
+        <td><span class="tag validation">validation</span></td>
+        <td class="num">2</td>
+        <td class="num mono">1437</td><td class="num mono">37.91</td>
+        <td class="num mono">0.567</td><td class="num mono">3.074</td>
+        <td class="num mono">0.3828</td><td class="num mono">100.0</td>
+      </tr>
+      <tr data-kind="validation">
+        <td>PD_20261020_014612__f2826_0</td><td>Watada2019</td>
+        <td class="mono wrap">fm_po_DAP10_uge</td>
+        <td><span class="tag validation">validation</span></td>
+        <td class="num">2</td>
+        <td class="num mono">1016</td><td class="num mono">31.87</td>
+        <td class="num mono">0.4907</td><td class="num mono">3.221</td>
+        <td class="num mono">0.6041</td><td class="num mono">100.0</td>
+      </tr>
+      <tr data-kind="training">
+        <td>PD_20261020_014612__f2826_0</td><td>Yang2013</td>
+        <td class="mono wrap">fm_po_dap5_KI__UGE_single</td>
+        <td><span class="tag training">training</span></td>
+        <td class="num">2</td>
+        <td class="num mono">201.3</td><td class="num mono">14.19</td>
+        <td class="num mono">0.3366</td><td class="num mono">1.518</td>
+        <td class="num mono">-5.776</td><td class="num mono">100.0</td>
+      </tr>
+      <tr data-kind="training">
+        <td>PD_20261020_014612__f2826_0</td><td>Yang2013</td>
+        <td class="mono wrap">fm_po_dap10_KI__UGE_single</td>
+        <td><span class="tag training">training</span></td>
+        <td class="num">2</td>
+        <td class="num mono">438.2</td><td class="num mono">20.93</td>
+        <td class="num mono">0.3434</td><td class="num mono">1.637</td>
+        <td class="num mono">-1.252</td><td class="num mono">100.0</td>
+      </tr>
+      <tr data-kind="training">
+        <td>PD_20261020_014612__f2826_0</td><td>Yang2013</td>
+        <td class="mono wrap">fm_po_dap5_KI__UGE_multi</td>
+        <td><span class="tag training">training</span></td>
+        <td class="num">2</td>
+        <td class="num mono">26.58</td><td class="num mono">5.155</td>
+        <td class="num mono">0.1514</td><td class="num mono">0.7247</td>
+        <td class="num mono">0.2493</td><td class="num mono">100.0</td>
+      </tr>
+      <tr data-kind="training">
+        <td>PD_20261020_014612__f2826_0</td><td>Yang2013</td>
+        <td class="mono wrap">fm_po_dap10_KI__UGE_multi</td>
+        <td><span class="tag training">training</span></td>
+        <td class="num">2</td>
+        <td class="num mono">134.1</td><td class="num mono">11.58</td>
+        <td class="num mono">0.2083</td><td class="num mono">0.908</td>
+        <td class="num mono">0.3623</td><td class="num mono">100.0</td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h3>Data and simulation of the fit mappings</h3>
+  <div class="card mapping" data-kind="training" data-filter="card">
+    <header>
+      <span class="name mono">fm_dap2p5_uge</span>
+      <span class="exp">FDAMB102002 · KI__UGE</span>
+      <span class="tag training">training</span>
+      <span class="metrics">
+<span>n <b>12</b></span><span>RMSE <b>4.454</b></span><span>R² <b>0.3167</b></span><span>2-fold <b>83.3%</b></span><span>GMFE <b>1.4</b></span>      </span>
+    </header>
+    <div class="grid">
+      <figure>
+        <img loading="lazy" src="plots/FDAMB102002_fm_dap2p5_uge.svg" alt="Data, simulation and agreement">
+        <figcaption>Data, simulation and agreement</figcaption>
+      </figure>
+    </div>
+  </div>
+  <div class="card mapping" data-kind="training" data-filter="card">
+    <header>
+      <span class="name mono">fm_dap10_uge</span>
+      <span class="exp">FDAMB102002 · KI__UGE</span>
+      <span class="tag training">training</span>
+      <span class="metrics">
+<span>n <b>12</b></span><span>RMSE <b>9.141</b></span><span>R² <b>0.357</b></span><span>2-fold <b>91.7%</b></span><span>GMFE <b>1.48</b></span>      </span>
+    </header>
+    <div class="grid">
+      <figure>
+        <img loading="lazy" src="plots/FDAMB102002_fm_dap10_uge.svg" alt="Data, simulation and agreement">
+        <figcaption>Data, simulation and agreement</figcaption>
+      </figure>
+    </div>
+  </div>
+  <div class="card mapping" data-kind="training" data-filter="card">
+    <header>
+      <span class="name mono">fm_dap20_uge</span>
+      <span class="exp">FDAMB102002 · KI__UGE</span>
+      <span class="tag training">training</span>
+      <span class="metrics">
+<span>n <b>12</b></span><span>RMSE <b>2.903</b></span><span>R² <b>0.9684</b></span><span>2-fold <b>100.0%</b></span><span>GMFE <b>1.1</b></span>      </span>
+    </header>
+    <div class="grid">
+      <figure>
+        <img loading="lazy" src="plots/FDAMB102002_fm_dap20_uge.svg" alt="Data, simulation and agreement">
+        <figcaption>Data, simulation and agreement</figcaption>
+      </figure>
+    </div>
+  </div>
+  <div class="card mapping" data-kind="training" data-filter="card">
+    <header>
+      <span class="name mono">fm_dap50_uge</span>
+      <span class="exp">FDAMB102002 · KI__UGE</span>
+      <span class="tag training">training</span>
+      <span class="metrics">
+<span>n <b>12</b></span><span>RMSE <b>5.165</b></span><span>R² <b>0.9193</b></span><span>2-fold <b>100.0%</b></span><span>GMFE <b>1.14</b></span>      </span>
+    </header>
+    <div class="grid">
+      <figure>
+        <img loading="lazy" src="plots/FDAMB102002_fm_dap50_uge.svg" alt="Data, simulation and agreement">
+        <figcaption>Data, simulation and agreement</figcaption>
+      </figure>
+    </div>
+  </div>
+  <div class="card mapping" data-kind="training" data-filter="card">
+    <header>
+      <span class="name mono">fm_dap100_uge</span>
+      <span class="exp">FDAMB102002 · KI__UGE</span>
+      <span class="tag training">training</span>
+      <span class="metrics">
+<span>n <b>12</b></span><span>RMSE <b>2.762</b></span><span>R² <b>0.9726</b></span><span>2-fold <b>100.0%</b></span><span>GMFE <b>1.1</b></span>      </span>
+    </header>
+    <div class="grid">
+      <figure>
+        <img loading="lazy" src="plots/FDAMB102002_fm_dap100_uge.svg" alt="Data, simulation and agreement">
+        <figcaption>Data, simulation and agreement</figcaption>
+      </figure>
+    </div>
+  </div>
+  <div class="card mapping" data-kind="training" data-filter="card">
+    <header>
+      <span class="name mono">fm_dap5_uge_day1</span>
+      <span class="exp">FDAMB102003 · KI__UGE</span>
+      <span class="tag training">training</span>
+      <span class="metrics">
+<span>n <b>6</b></span><span>RMSE <b>6.734</b></span><span>R² <b>0.7605</b></span><span>2-fold <b>100.0%</b></span><span>GMFE <b>1.37</b></span>      </span>
+    </header>
+    <div class="grid">
+      <figure>
+        <img loading="lazy" src="plots/FDAMB102003_fm_dap5_uge_day1.svg" alt="Data, simulation and agreement">
+        <figcaption>Data, simulation and agreement</figcaption>
+      </figure>
+    </div>
+  </div>
+  <div class="card mapping" data-kind="training" data-filter="card">
+    <header>
+      <span class="name mono">fm_dap5_uge_day14</span>
+      <span class="exp">FDAMB102003 · KI__UGE</span>
+      <span class="tag training">training</span>
+      <span class="metrics">
+<span>n <b>6</b></span><span>RMSE <b>10.47</b></span><span>R² <b>0.1786</b></span><span>2-fold <b>66.7%</b></span><span>GMFE <b>1.62</b></span>      </span>
+    </header>
+    <div class="grid">
+      <figure>
+        <img loading="lazy" src="plots/FDAMB102003_fm_dap5_uge_day14.svg" alt="Data, simulation and agreement">
+        <figcaption>Data, simulation and agreement</figcaption>
+      </figure>
+    </div>
+  </div>
+  <div class="card mapping" data-kind="training" data-filter="card">
+    <header>
+      <span class="name mono">fm_dap25_uge_day1</span>
+      <span class="exp">FDAMB102003 · KI__UGE</span>
+      <span class="tag training">training</span>
+      <span class="metrics">
+<span>n <b>6</b></span><span>RMSE <b>3.772</b></span><span>R² <b>0.9719</b></span><span>2-fold <b>100.0%</b></span><span>GMFE <b>1.08</b></span>      </span>
+    </header>
+    <div class="grid">
+      <figure>
+        <img loading="lazy" src="plots/FDAMB102003_fm_dap25_uge_day1.svg" alt="Data, simulation and agreement">
+        <figcaption>Data, simulation and agreement</figcaption>
+      </figure>
+    </div>
+  </div>
+  <div class="card mapping" data-kind="training" data-filter="card">
+    <header>
+      <span class="name mono">fm_dap25_uge_day14</span>
+      <span class="exp">FDAMB102003 · KI__UGE</span>
+      <span class="tag training">training</span>
+      <span class="metrics">
+<span>n <b>6</b></span><span>RMSE <b>2.681</b></span><span>R² <b>0.9836</b></span><span>2-fold <b>100.0%</b></span><span>GMFE <b>1.08</b></span>      </span>
+    </header>
+    <div class="grid">
+      <figure>
+        <img loading="lazy" src="plots/FDAMB102003_fm_dap25_uge_day14.svg" alt="Data, simulation and agreement">
+        <figcaption>Data, simulation and agreement</figcaption>
+      </figure>
+    </div>
+  </div>
+  <div class="card mapping" data-kind="training" data-filter="card">
+    <header>
+      <span class="name mono">fm_dap100_uge_day1</span>
+      <span class="exp">FDAMB102003 · KI__UGE</span>
+      <span class="tag training">training</span>
+      <span class="metrics">
+<span>n <b>6</b></span><span>RMSE <b>5.168</b></span><span>R² <b>0.9546</b></span><span>2-fold <b>100.0%</b></span><span>GMFE <b>1.11</b></span>      </span>
+    </header>
+    <div class="grid">
+      <figure>
+        <img loading="lazy" src="plots/FDAMB102003_fm_dap100_uge_day1.svg" alt="Data, simulation and agreement">
+        <figcaption>Data, simulation and agreement</figcaption>
+      </figure>
+    </div>
+  </div>
+  <div class="card mapping" data-kind="training" data-filter="card">
+    <header>
+      <span class="name mono">fm_dap100_uge_day14</span>
+      <span class="exp">FDAMB102003 · KI__UGE</span>
+      <span class="tag training">training</span>
+      <span class="metrics">
+<span>n <b>6</b></span><span>RMSE <b>2.577</b></span><span>R² <b>0.9843</b></span><span>2-fold <b>100.0%</b></span><span>GMFE <b>1.08</b></span>      </span>
+    </header>
+    <div class="grid">
+      <figure>
+        <img loading="lazy" src="plots/FDAMB102003_fm_dap100_uge_day14.svg" alt="Data, simulation and agreement">
+        <figcaption>Data, simulation and agreement</figcaption>
+      </figure>
+    </div>
+  </div>
+  <div class="card mapping" data-kind="validation" data-filter="card">
+    <header>
+      <span class="name mono">fm_dap20_normal</span>
+      <span class="exp">FDAMB102007 · KI__UGE</span>
+      <span class="tag validation">validation</span>
+      <span class="metrics">
+<span>n <b>2</b></span><span>RMSE <b>8.638</b></span><span>R² <b>0.9643</b></span><span>2-fold <b>100.0%</b></span><span>GMFE <b>1.13</b></span>      </span>
+    </header>
+    <div class="grid">
+      <figure>
+        <img loading="lazy" src="plots/FDAMB102007_fm_dap20_normal.svg" alt="Data, simulation and agreement">
+        <figcaption>Data, simulation and agreement</figcaption>
+      </figure>
+    </div>
+  </div>
+  <div class="card mapping" data-kind="validation" data-filter="card">
+    <header>
+      <span class="name mono">fm_dap20_mild</span>
+      <span class="exp">FDAMB102007 · KI__UGE</span>
+      <span class="tag validation">validation</span>
+      <span class="metrics">
+<span>n <b>2</b></span><span>RMSE <b>25</b></span><span>R² <b>0.4934</b></span><span>2-fold <b>0.0%</b></span><span>GMFE <b>2.01</b></span>      </span>
+    </header>
+    <div class="grid">
+      <figure>
+        <img loading="lazy" src="plots/FDAMB102007_fm_dap20_mild.svg" alt="Data, simulation and agreement">
+        <figcaption>Data, simulation and agreement</figcaption>
+      </figure>
+    </div>
+  </div>
+  <div class="card mapping" data-kind="validation" data-filter="card">
+    <header>
+      <span class="name mono">fm_dap20_moderate</span>
+      <span class="exp">FDAMB102007 · KI__UGE</span>
+      <span class="tag validation">validation</span>
+      <span class="metrics">
+<span>n <b>2</b></span><span>RMSE <b>2.265</b></span><span>R² <b>0.9489</b></span><span>2-fold <b>100.0%</b></span><span>GMFE <b>1.16</b></span>      </span>
+    </header>
+    <div class="grid">
+      <figure>
+        <img loading="lazy" src="plots/FDAMB102007_fm_dap20_moderate.svg" alt="Data, simulation and agreement">
+        <figcaption>Data, simulation and agreement</figcaption>
+      </figure>
+    </div>
+  </div>
+  <div class="card mapping" data-kind="validation" data-filter="card">
+    <header>
+      <span class="name mono">fm_dap20_severe</span>
+      <span class="exp">FDAMB102007 · KI__UGE</span>
+      <span class="tag validation">validation</span>
+      <span class="metrics">
+<span>n <b>2</b></span><span>RMSE <b>5.075</b></span><span>R² <b>-1.156</b></span><span>2-fold <b>0.0%</b></span><span>GMFE <b>2.04</b></span>      </span>
+    </header>
+    <div class="grid">
+      <figure>
+        <img loading="lazy" src="plots/FDAMB102007_fm_dap20_severe.svg" alt="Data, simulation and agreement">
+        <figcaption>Data, simulation and agreement</figcaption>
+      </figure>
+    </div>
+  </div>
+  <div class="card mapping" data-kind="training" data-filter="card">
+    <header>
+      <span class="name mono">fm_dap0p3</span>
+      <span class="exp">Gould2013 · KI__UGE</span>
+      <span class="tag training">training</span>
+      <span class="metrics">
+<span>n <b>2</b></span><span>RMSE <b>0.1475</b></span><span>R² <b>0.7517</b></span><span>2-fold <b>100.0%</b></span><span>GMFE <b>1.35</b></span>      </span>
+    </header>
+    <div class="grid">
+      <figure>
+        <img loading="lazy" src="plots/Gould2013_fm_dap0p3.svg" alt="Data, simulation and agreement">
+        <figcaption>Data, simulation and agreement</figcaption>
+      </figure>
+    </div>
+  </div>
+  <div class="card mapping" data-kind="training" data-filter="card">
+    <header>
+      <span class="name mono">fm_dap1</span>
+      <span class="exp">Gould2013 · KI__UGE</span>
+      <span class="tag training">training</span>
+      <span class="metrics">
+<span>n <b>2</b></span><span>RMSE <b>8.899</b></span><span>R² <b>0.1407</b></span><span>2-fold <b>0.0%</b></span><span>GMFE <b>2.9</b></span>      </span>
+    </header>
+    <div class="grid">
+      <figure>
+        <img loading="lazy" src="plots/Gould2013_fm_dap1.svg" alt="Data, simulation and agreement">
+        <figcaption>Data, simulation and agreement</figcaption>
+      </figure>
+    </div>
+  </div>
+  <div class="card mapping" data-kind="training" data-filter="card">
+    <header>
+      <span class="name mono">fm_dap2p5</span>
+      <span class="exp">Gould2013 · KI__UGE</span>
+      <span class="tag training">training</span>
+      <span class="metrics">
+<span>n <b>2</b></span><span>RMSE <b>4.423</b></span><span>R² <b>0.8506</b></span><span>2-fold <b>100.0%</b></span><span>GMFE <b>1.38</b></span>      </span>
+    </header>
+    <div class="grid">
+      <figure>
+        <img loading="lazy" src="plots/Gould2013_fm_dap2p5.svg" alt="Data, simulation and agreement">
+        <figcaption>Data, simulation and agreement</figcaption>
+      </figure>
+    </div>
+  </div>
+  <div class="card mapping" data-kind="validation" data-filter="card">
+    <header>
+      <span class="name mono">fm_dap0</span>
+      <span class="exp">Gould2013 · KI__UGE</span>
+      <span class="tag validation">validation</span>
+      <span class="metrics">
+<span>n <b>2</b></span><span>RMSE <b>0.04704</b></span><span>R² <b>-0.2249</b></span><span>2-fold <b>100.0%</b></span><span>GMFE <b>1.78</b></span>      </span>
+    </header>
+    <div class="grid">
+      <figure>
+        <img loading="lazy" src="plots/Gould2013_fm_dap0.svg" alt="Data, simulation and agreement">
+        <figcaption>Data, simulation and agreement</figcaption>
+      </figure>
+    </div>
+  </div>
+  <div class="card mapping" data-kind="validation" data-filter="card">
+    <header>
+      <span class="name mono">fm_dap0p001</span>
+      <span class="exp">Gould2013 · KI__UGE</span>
+      <span class="tag validation">validation</span>
+      <span class="metrics">
+<span>n <b>2</b></span><span>RMSE <b>0.05906</b></span><span>R² <b>-2.017</b></span><span>2-fold <b>0.0%</b></span><span>GMFE <b>2.23</b></span>      </span>
+    </header>
+    <div class="grid">
+      <figure>
+        <img loading="lazy" src="plots/Gould2013_fm_dap0p001.svg" alt="Data, simulation and agreement">
+        <figcaption>Data, simulation and agreement</figcaption>
+      </figure>
+    </div>
+  </div>
+  <div class="card mapping" data-kind="validation" data-filter="card">
+    <header>
+      <span class="name mono">fm_dap0p01</span>
+      <span class="exp">Gould2013 · KI__UGE</span>
+      <span class="tag validation">validation</span>
+      <span class="metrics">
+<span>n <b>2</b></span><span>RMSE <b>0.07604</b></span><span>R² <b>-10.94</b></span><span>2-fold <b>0.0%</b></span><span>GMFE <b>3.44</b></span>      </span>
+    </header>
+    <div class="grid">
+      <figure>
+        <img loading="lazy" src="plots/Gould2013_fm_dap0p01.svg" alt="Data, simulation and agreement">
+        <figcaption>Data, simulation and agreement</figcaption>
+      </figure>
+    </div>
+  </div>
+  <div class="card mapping" data-kind="validation" data-filter="card">
+    <header>
+      <span class="name mono">fm_dap0p1</span>
+      <span class="exp">Gould2013 · KI__UGE</span>
+      <span class="tag validation">validation</span>
+      <span class="metrics">
+<span>n <b>2</b></span><span>RMSE <b>0.06078</b></span><span>R² <b>-1.773</b></span><span>2-fold <b>0.0%</b></span><span>GMFE <b>2.18</b></span>      </span>
+    </header>
+    <div class="grid">
+      <figure>
+        <img loading="lazy" src="plots/Gould2013_fm_dap0p1.svg" alt="Data, simulation and agreement">
+        <figcaption>Data, simulation and agreement</figcaption>
+      </figure>
+    </div>
+  </div>
+  <div class="card mapping" data-kind="training" data-filter="card">
+    <header>
+      <span class="name mono">fm_dap2p5_uge</span>
+      <span class="exp">Kasichayanula2011a · KI__UGE</span>
+      <span class="tag training">training</span>
+      <span class="metrics">
+<span>n <b>2</b></span><span>RMSE <b>29.7</b></span><span>R² <b>-256.7</b></span><span>2-fold <b>100.0%</b></span><span>GMFE <b>1.77</b></span>      </span>
+    </header>
+    <div class="grid">
+      <figure>
+        <img loading="lazy" src="plots/Kasichayanula2011a_fm_dap2p5_uge.svg" alt="Data, simulation and agreement">
+        <figcaption>Data, simulation and agreement</figcaption>
+      </figure>
+    </div>
+  </div>
+  <div class="card mapping" data-kind="training" data-filter="card">
+    <header>
+      <span class="name mono">fm_dap10_uge</span>
+      <span class="exp">Kasichayanula2011a · KI__UGE</span>
+      <span class="tag training">training</span>
+      <span class="metrics">
+<span>n <b>2</b></span><span>RMSE <b>49.92</b></span><span>R² <b>-1106</b></span><span>2-fold <b>100.0%</b></span><span>GMFE <b>1.32</b></span>      </span>
+    </header>
+    <div class="grid">
+      <figure>
+        <img loading="lazy" src="plots/Kasichayanula2011a_fm_dap10_uge.svg" alt="Data, simulation and agreement">
+        <figcaption>Data, simulation and agreement</figcaption>
+      </figure>
+    </div>
+  </div>
+  <div class="card mapping" data-kind="training" data-filter="card">
+    <header>
+      <span class="name mono">fm_dap20_uge</span>
+      <span class="exp">Kasichayanula2011a · KI__UGE</span>
+      <span class="tag training">training</span>
+      <span class="metrics">
+<span>n <b>2</b></span><span>RMSE <b>54.66</b></span><span>R² <b>-872.1</b></span><span>2-fold <b>100.0%</b></span><span>GMFE <b>1.15</b></span>      </span>
+    </header>
+    <div class="grid">
+      <figure>
+        <img loading="lazy" src="plots/Kasichayanula2011a_fm_dap20_uge.svg" alt="Data, simulation and agreement">
+        <figcaption>Data, simulation and agreement</figcaption>
+      </figure>
+    </div>
+  </div>
+  <div class="card mapping" data-kind="validation" data-filter="card">
+    <header>
+      <span class="name mono">fm_dap0_uge</span>
+      <span class="exp">Kasichayanula2011a · KI__UGE</span>
+      <span class="tag validation">validation</span>
+      <span class="metrics">
+<span>n <b>2</b></span><span>RMSE <b>8.199</b></span><span>R² <b>-38.78</b></span><span>2-fold <b>0.0%</b></span><span>GMFE <b>643</b></span>      </span>
+    </header>
+    <div class="grid">
+      <figure>
+        <img loading="lazy" src="plots/Kasichayanula2011a_fm_dap0_uge.svg" alt="Data, simulation and agreement">
+        <figcaption>Data, simulation and agreement</figcaption>
+      </figure>
+    </div>
+  </div>
+  <div class="card mapping" data-kind="training" data-filter="card">
+    <header>
+      <span class="name mono">fm_dap10_DAP10_uge</span>
+      <span class="exp">Kim2023 · KI__UGE</span>
+      <span class="tag training">training</span>
+      <span class="metrics">
+<span>n <b>1</b></span><span>RMSE <b>1.668</b></span><span>R² <b>-</b></span><span>2-fold <b>100.0%</b></span><span>GMFE <b>1.04</b></span>      </span>
+    </header>
+    <div class="grid">
+      <figure>
+        <img loading="lazy" src="plots/Kim2023_fm_dap10_DAP10_uge.svg" alt="Data, simulation and agreement">
+        <figcaption>Data, simulation and agreement</figcaption>
+      </figure>
+    </div>
+  </div>
+  <div class="card mapping" data-kind="validation" data-filter="card">
+    <header>
+      <span class="name mono">fm_dap10_EV5__DAP10_uge</span>
+      <span class="exp">Kim2023 · KI__UGE</span>
+      <span class="tag validation">validation</span>
+      <span class="metrics">
+<span>n <b>1</b></span><span>RMSE <b>3.709</b></span><span>R² <b>-</b></span><span>2-fold <b>100.0%</b></span><span>GMFE <b>1.08</b></span>      </span>
+    </header>
+    <div class="grid">
+      <figure>
+        <img loading="lazy" src="plots/Kim2023_fm_dap10_EV5__DAP10_uge.svg" alt="Data, simulation and agreement">
+        <figcaption>Data, simulation and agreement</figcaption>
+      </figure>
+    </div>
+  </div>
+  <div class="card mapping" data-kind="training" data-filter="card">
+    <header>
+      <span class="name mono">fm_po_dap_2p5_single</span>
+      <span class="exp">Komoroski2009 · KI__UGE</span>
+      <span class="tag training">training</span>
+      <span class="metrics">
+<span>n <b>18</b></span><span>RMSE <b>14.29</b></span><span>R² <b>-1.759</b></span><span>2-fold <b>77.8%</b></span><span>GMFE <b>1.83</b></span>      </span>
+    </header>
+    <div class="grid">
+      <figure>
+        <img loading="lazy" src="plots/Komoroski2009_fm_po_dap_2p5_single.svg" alt="Data, simulation and agreement">
+        <figcaption>Data, simulation and agreement</figcaption>
+      </figure>
+    </div>
+  </div>
+  <div class="card mapping" data-kind="training" data-filter="card">
+    <header>
+      <span class="name mono">fm_po_dap_5_single</span>
+      <span class="exp">Komoroski2009 · KI__UGE</span>
+      <span class="tag training">training</span>
+      <span class="metrics">
+<span>n <b>12</b></span><span>RMSE <b>5.225</b></span><span>R² <b>0.7377</b></span><span>2-fold <b>100.0%</b></span><span>GMFE <b>1.2</b></span>      </span>
+    </header>
+    <div class="grid">
+      <figure>
+        <img loading="lazy" src="plots/Komoroski2009_fm_po_dap_5_single.svg" alt="Data, simulation and agreement">
+        <figcaption>Data, simulation and agreement</figcaption>
+      </figure>
+    </div>
+  </div>
+  <div class="card mapping" data-kind="training" data-filter="card">
+    <header>
+      <span class="name mono">fm_po_dap_10_single</span>
+      <span class="exp">Komoroski2009 · KI__UGE</span>
+      <span class="tag training">training</span>
+      <span class="metrics">
+<span>n <b>18</b></span><span>RMSE <b>21.2</b></span><span>R² <b>0.2172</b></span><span>2-fold <b>94.4%</b></span><span>GMFE <b>1.38</b></span>      </span>
+    </header>
+    <div class="grid">
+      <figure>
+        <img loading="lazy" src="plots/Komoroski2009_fm_po_dap_10_single.svg" alt="Data, simulation and agreement">
+        <figcaption>Data, simulation and agreement</figcaption>
+      </figure>
+    </div>
+  </div>
+  <div class="card mapping" data-kind="training" data-filter="card">
+    <header>
+      <span class="name mono">fm_po_dap_20_single</span>
+      <span class="exp">Komoroski2009 · KI__UGE</span>
+      <span class="tag training">training</span>
+      <span class="metrics">
+<span>n <b>12</b></span><span>RMSE <b>4.453</b></span><span>R² <b>0.9565</b></span><span>2-fold <b>100.0%</b></span><span>GMFE <b>1.13</b></span>      </span>
+    </header>
+    <div class="grid">
+      <figure>
+        <img loading="lazy" src="plots/Komoroski2009_fm_po_dap_20_single.svg" alt="Data, simulation and agreement">
+        <figcaption>Data, simulation and agreement</figcaption>
+      </figure>
+    </div>
+  </div>
+  <div class="card mapping" data-kind="training" data-filter="card">
+    <header>
+      <span class="name mono">fm_po_dap_50_single</span>
+      <span class="exp">Komoroski2009 · KI__UGE</span>
+      <span class="tag training">training</span>
+      <span class="metrics">
+<span>n <b>18</b></span><span>RMSE <b>5.585</b></span><span>R² <b>0.975</b></span><span>2-fold <b>100.0%</b></span><span>GMFE <b>1.09</b></span>      </span>
+    </header>
+    <div class="grid">
+      <figure>
+        <img loading="lazy" src="plots/Komoroski2009_fm_po_dap_50_single.svg" alt="Data, simulation and agreement">
+        <figcaption>Data, simulation and agreement</figcaption>
+      </figure>
+    </div>
+  </div>
+  <div class="card mapping" data-kind="training" data-filter="card">
+    <header>
+      <span class="name mono">fm_po_dap_100_single</span>
+      <span class="exp">Komoroski2009 · KI__UGE</span>
+      <span class="tag training">training</span>
+      <span class="metrics">
+<span>n <b>18</b></span><span>RMSE <b>31.37</b></span><span>R² <b>0.7292</b></span><span>2-fold <b>100.0%</b></span><span>GMFE <b>1.28</b></span>      </span>
+    </header>
+    <div class="grid">
+      <figure>
+        <img loading="lazy" src="plots/Komoroski2009_fm_po_dap_100_single.svg" alt="Data, simulation and agreement">
+        <figcaption>Data, simulation and agreement</figcaption>
+      </figure>
+    </div>
+  </div>
+  <div class="card mapping" data-kind="training" data-filter="card">
+    <header>
+      <span class="name mono">fm_po_dap_250_single</span>
+      <span class="exp">Komoroski2009 · KI__UGE</span>
+      <span class="tag training">training</span>
+      <span class="metrics">
+<span>n <b>18</b></span><span>RMSE <b>30.06</b></span><span>R² <b>0.8212</b></span><span>2-fold <b>100.0%</b></span><span>GMFE <b>1.28</b></span>      </span>
+    </header>
+    <div class="grid">
+      <figure>
+        <img loading="lazy" src="plots/Komoroski2009_fm_po_dap_250_single.svg" alt="Data, simulation and agreement">
+        <figcaption>Data, simulation and agreement</figcaption>
+      </figure>
+    </div>
+  </div>
+  <div class="card mapping" data-kind="training" data-filter="card">
+    <header>
+      <span class="name mono">fm_po_dap_500_single</span>
+      <span class="exp">Komoroski2009 · KI__UGE</span>
+      <span class="tag training">training</span>
+      <span class="metrics">
+<span>n <b>18</b></span><span>RMSE <b>43.6</b></span><span>R² <b>0.7587</b></span><span>2-fold <b>100.0%</b></span><span>GMFE <b>1.36</b></span>      </span>
+    </header>
+    <div class="grid">
+      <figure>
+        <img loading="lazy" src="plots/Komoroski2009_fm_po_dap_500_single.svg" alt="Data, simulation and agreement">
+        <figcaption>Data, simulation and agreement</figcaption>
+      </figure>
+    </div>
+  </div>
+  <div class="card mapping" data-kind="validation" data-filter="card">
+    <header>
+      <span class="name mono">fm_po_dap_0_single</span>
+      <span class="exp">Komoroski2009 · KI__UGE</span>
+      <span class="tag validation">validation</span>
+      <span class="metrics">
+<span>n <b>18</b></span><span>RMSE <b>1.275</b></span><span>R² <b>-4.873</b></span><span>2-fold <b>11.1%</b></span><span>GMFE <b>5.84</b></span>      </span>
+    </header>
+    <div class="grid">
+      <figure>
+        <img loading="lazy" src="plots/Komoroski2009_fm_po_dap_0_single.svg" alt="Data, simulation and agreement">
+        <figcaption>Data, simulation and agreement</figcaption>
+      </figure>
+    </div>
+  </div>
+  <div class="card mapping" data-kind="training" data-filter="card">
+    <header>
+      <span class="name mono">fm_po_dap10_glucose_cumulative_amount</span>
+      <span class="exp">Sha2015 · KI__UGE</span>
+      <span class="tag training">training</span>
+      <span class="metrics">
+<span>n <b>5</b></span><span>RMSE <b>5.223</b></span><span>R² <b>0.8375</b></span><span>2-fold <b>100.0%</b></span><span>GMFE <b>1.08</b></span>      </span>
+    </header>
+    <div class="grid">
+      <figure>
+        <img loading="lazy" src="plots/Sha2015_fm_po_dap10_glucose_cumulative_amount.svg" alt="Data, simulation and agreement">
+        <figcaption>Data, simulation and agreement</figcaption>
+      </figure>
+    </div>
+  </div>
+  <div class="card mapping" data-kind="validation" data-filter="card">
+    <header>
+      <span class="name mono">fm_po_dap10_renal_threshold</span>
+      <span class="exp">Sha2015 · KI__RTG</span>
+      <span class="tag validation">validation</span>
+      <span class="metrics">
+<span>n <b>4</b></span><span>RMSE <b>0.3128</b></span><span>R² <b>0.519</b></span><span>2-fold <b>100.0%</b></span><span>GMFE <b>1.07</b></span>      </span>
+    </header>
+    <div class="grid">
+      <figure>
+        <img loading="lazy" src="plots/Sha2015_fm_po_dap10_renal_threshold.svg" alt="Data, simulation and agreement">
+        <figcaption>Data, simulation and agreement</figcaption>
+      </figure>
+    </div>
+  </div>
+  <div class="card mapping" data-kind="validation" data-filter="card">
+    <header>
+      <span class="name mono">fm_po_DAP0_uge</span>
+      <span class="exp">Watada2019 · KI__UGE</span>
+      <span class="tag validation">validation</span>
+      <span class="metrics">
+<span>n <b>2</b></span><span>RMSE <b>17.74</b></span><span>R² <b>-31.76</b></span><span>2-fold <b>0.0%</b></span><span>GMFE <b>201</b></span>      </span>
+    </header>
+    <div class="grid">
+      <figure>
+        <img loading="lazy" src="plots/Watada2019_fm_po_DAP0_uge.svg" alt="Data, simulation and agreement">
+        <figcaption>Data, simulation and agreement</figcaption>
+      </figure>
+    </div>
+  </div>
+  <div class="card mapping" data-kind="validation" data-filter="card">
+    <header>
+      <span class="name mono">fm_po_DAP5_uge</span>
+      <span class="exp">Watada2019 · KI__UGE</span>
+      <span class="tag validation">validation</span>
+      <span class="metrics">
+<span>n <b>2</b></span><span>RMSE <b>37.91</b></span><span>R² <b>0.3828</b></span><span>2-fold <b>100.0%</b></span><span>GMFE <b>1.78</b></span>      </span>
+    </header>
+    <div class="grid">
+      <figure>
+        <img loading="lazy" src="plots/Watada2019_fm_po_DAP5_uge.svg" alt="Data, simulation and agreement">
+        <figcaption>Data, simulation and agreement</figcaption>
+      </figure>
+    </div>
+  </div>
+  <div class="card mapping" data-kind="validation" data-filter="card">
+    <header>
+      <span class="name mono">fm_po_DAP10_uge</span>
+      <span class="exp">Watada2019 · KI__UGE</span>
+      <span class="tag validation">validation</span>
+      <span class="metrics">
+<span>n <b>2</b></span><span>RMSE <b>31.87</b></span><span>R² <b>0.6041</b></span><span>2-fold <b>100.0%</b></span><span>GMFE <b>1.59</b></span>      </span>
+    </header>
+    <div class="grid">
+      <figure>
+        <img loading="lazy" src="plots/Watada2019_fm_po_DAP10_uge.svg" alt="Data, simulation and agreement">
+        <figcaption>Data, simulation and agreement</figcaption>
+      </figure>
+    </div>
+  </div>
+  <div class="card mapping" data-kind="training" data-filter="card">
+    <header>
+      <span class="name mono">fm_po_dap5_KI__UGE_single</span>
+      <span class="exp">Yang2013 · KI__UGE</span>
+      <span class="tag training">training</span>
+      <span class="metrics">
+<span>n <b>2</b></span><span>RMSE <b>14.19</b></span><span>R² <b>-5.776</b></span><span>2-fold <b>100.0%</b></span><span>GMFE <b>1.45</b></span>      </span>
+    </header>
+    <div class="grid">
+      <figure>
+        <img loading="lazy" src="plots/Yang2013_fm_po_dap5_KI__UGE_single.svg" alt="Data, simulation and agreement">
+        <figcaption>Data, simulation and agreement</figcaption>
+      </figure>
+    </div>
+  </div>
+  <div class="card mapping" data-kind="training" data-filter="card">
+    <header>
+      <span class="name mono">fm_po_dap10_KI__UGE_single</span>
+      <span class="exp">Yang2013 · KI__UGE</span>
+      <span class="tag training">training</span>
+      <span class="metrics">
+<span>n <b>2</b></span><span>RMSE <b>20.93</b></span><span>R² <b>-1.252</b></span><span>2-fold <b>100.0%</b></span><span>GMFE <b>1.38</b></span>      </span>
+    </header>
+    <div class="grid">
+      <figure>
+        <img loading="lazy" src="plots/Yang2013_fm_po_dap10_KI__UGE_single.svg" alt="Data, simulation and agreement">
+        <figcaption>Data, simulation and agreement</figcaption>
+      </figure>
+    </div>
+  </div>
+  <div class="card mapping" data-kind="training" data-filter="card">
+    <header>
+      <span class="name mono">fm_po_dap5_KI__UGE_multi</span>
+      <span class="exp">Yang2013 · KI__UGE</span>
+      <span class="tag training">training</span>
+      <span class="metrics">
+<span>n <b>2</b></span><span>RMSE <b>5.155</b></span><span>R² <b>0.2493</b></span><span>2-fold <b>100.0%</b></span><span>GMFE <b>1.17</b></span>      </span>
+    </header>
+    <div class="grid">
+      <figure>
+        <img loading="lazy" src="plots/Yang2013_fm_po_dap5_KI__UGE_multi.svg" alt="Data, simulation and agreement">
+        <figcaption>Data, simulation and agreement</figcaption>
+      </figure>
+    </div>
+  </div>
+  <div class="card mapping" data-kind="training" data-filter="card">
+    <header>
+      <span class="name mono">fm_po_dap10_KI__UGE_multi</span>
+      <span class="exp">Yang2013 · KI__UGE</span>
+      <span class="tag training">training</span>
+      <span class="metrics">
+<span>n <b>2</b></span><span>RMSE <b>11.58</b></span><span>R² <b>0.3623</b></span><span>2-fold <b>100.0%</b></span><span>GMFE <b>1.15</b></span>      </span>
+    </header>
+    <div class="grid">
+      <figure>
+        <img loading="lazy" src="plots/Yang2013_fm_po_dap10_KI__UGE_multi.svg" alt="Data, simulation and agreement">
+        <figcaption>Data, simulation and agreement</figcaption>
+      </figure>
+    </div>
+  </div>
+  <p class="empty hidden" data-empty>No fit mapping matches the search.</p>
+</section>
+
+<script>
+(function () {
+  "use strict";
+  // ---- the tabs: a link with data-tab shows the panel of that name ------
+  const tabs = Array.from(document.querySelectorAll("nav.sections a[data-tab]"));
+  const panels = Array.from(document.querySelectorAll(".tab-panel"));
+  function show(name) {
+    for (const tab of tabs) tab.classList.toggle("active", tab.dataset.tab === name);
+    for (const panel of panels) panel.classList.toggle("active", panel.dataset.panel === name);
+  }
+  // the tab of the element an address names, e.g. a table of the report
+  function tabOf(hash) {
+    const target = hash.length > 1 ? document.getElementById(decodeURIComponent(hash.slice(1))) : null;
+    const panel = target ? target.closest(".tab-panel") : null;
+    return panel ? panel.dataset.panel : null;
+  }
+  for (const tab of tabs) {
+    tab.addEventListener("click", (event) => {
+      event.preventDefault();
+      show(tab.dataset.tab);
+      history.replaceState(null, "", "#" + tab.dataset.tab);
+      window.scrollTo(0, 0);
+    });
+  }
+  window.addEventListener("hashchange", () => {
+    const name = tabOf(location.hash);
+    if (name) show(name);
+  });
+  show(tabOf(location.hash) || "report");
+
+  // ---- the groupings of the evaluation: a button shows its grouping -----
+  const groupingTabs = Array.from(document.querySelectorAll(".grouping-tab"));
+  const groupingPanels = Array.from(document.querySelectorAll(".grouping-panel"));
+  for (const tab of groupingTabs) {
+    tab.addEventListener("click", () => {
+      for (const other of groupingTabs) {
+        const active = other === tab;
+        other.classList.toggle("active", active);
+        other.setAttribute("aria-pressed", active ? "true" : "false");
+      }
+      for (const panel of groupingPanels) {
+        panel.classList.toggle("active", panel.dataset.grouping === tab.dataset.grouping);
+      }
+    });
+  }
+})();
+</script>
+</main>
+
+<footer>
+<a href="report.txt">report.txt</a> · <a href="parameters.json">parameters.json</a> · <a href="metrics.tsv">metrics.tsv</a> · <a href="metrics_mappings.tsv">metrics_mappings.tsv</a> · <a href="metrics_observables.tsv">metrics_observables.tsv</a> · <a href="datapoints.tsv">datapoints.tsv</a> · <a href="optimization_result.json">optimization_result.json</a> · <a href="fisher.tsv">fisher.tsv</a> · <a href="identifiability.json">identifiability.json</a> · <a href="identifiability.tsv">identifiability.tsv</a><br>created by sbmlsim 0.13.0 on 2026-10-24 12:30</footer>
+
+<div id="lightbox"><img alt=""></div>
+
+<script>
+(function () {
+  "use strict";
+
+  // ---- search and the filter chips ------------------------------------
+  const search = document.getElementById("search");
+  const hits = document.getElementById("hits");
+  const chips = Array.from(document.querySelectorAll(".chip"));
+  const cards = Array.from(document.querySelectorAll('[data-filter="card"]'));
+  const rows = Array.from(document.querySelectorAll('table[data-filter="row"] tbody tr'));
+  const empty = document.querySelector("[data-empty]");
+  const itemLabel = document.body.dataset.items || "items";
+
+  const haystack = new Map();
+  for (const node of [...cards, ...rows]) {
+    haystack.set(node, node.textContent.toLowerCase());
+  }
+
+  function activeKinds() {
+    return new Set(chips.filter((c) => c.getAttribute("aria-pressed") === "true")
+                        .map((c) => c.dataset.kind));
+  }
+
+  function matches(node, query, kinds) {
+    const kind = node.dataset.kind;
+    if (kind && !kinds.has(kind)) return false;
+    return !query || haystack.get(node).includes(query);
+  }
+
+  function apply() {
+    const query = search.value.trim().toLowerCase();
+    const kinds = activeKinds();
+    let shownCards = 0;
+    for (const node of cards) {
+      const show = matches(node, query, kinds);
+      node.classList.toggle("hidden", !show);
+      if (show) shownCards += 1;
+    }
+    for (const node of rows) {
+      node.classList.toggle("hidden", !matches(node, query, kinds));
+    }
+    if (empty) empty.classList.toggle("hidden", shownCards > 0 || cards.length === 0);
+    const filtering = Boolean(query) || (chips.length > 0 && kinds.size < chips.length);
+    hits.textContent = filtering
+      ? shownCards + " / " + cards.length + " " + itemLabel
+      : "";
+  }
+
+  search.addEventListener("input", apply);
+  for (const chip of chips) {
+    chip.addEventListener("click", () => {
+      chip.setAttribute("aria-pressed", chip.getAttribute("aria-pressed") === "true" ? "false" : "true");
+      apply();
+    });
+  }
+  document.addEventListener("keydown", (event) => {
+    if (event.key === "/" && document.activeElement !== search) {
+      event.preventDefault();
+      search.focus();
+    } else if (event.key === "Escape") {
+      if (document.activeElement === search && search.value) { search.value = ""; apply(); }
+      closeLightbox();
+    }
+  });
+
+  // ---- sortable tables -------------------------------------------------
+  function cellValue(row, index, kind) {
+    const text = row.cells[index] ? row.cells[index].textContent.trim() : "";
+    if (kind !== "num") return text.toLowerCase();
+    // the AIC of a perfect fit is -inf, a cell without a value sorts last
+    if (text === "-inf") return Number.NEGATIVE_INFINITY;
+    const value = parseFloat(text);
+    return Number.isNaN(value) ? Number.POSITIVE_INFINITY : value;
+  }
+
+  for (const table of document.querySelectorAll("table")) {
+    const headers = Array.from(table.querySelectorAll("th[data-sort]"));
+    headers.forEach((th, index) => {
+      th.addEventListener("click", () => {
+        const body = table.tBodies[0];
+        if (!body) return;
+        const kind = th.dataset.sort;
+        const descending = th.classList.contains("asc");
+        for (const other of headers) other.classList.remove("asc", "desc");
+        th.classList.add(descending ? "desc" : "asc");
+        const sorted = Array.from(body.rows).sort((a, b) => {
+          const left = cellValue(a, index, kind);
+          const right = cellValue(b, index, kind);
+          if (left < right) return descending ? 1 : -1;
+          if (left > right) return descending ? -1 : 1;
+          return 0;
+        });
+        for (const row of sorted) body.appendChild(row);
+      });
+    });
+  }
+
+  // ---- the section the page is scrolled to -----------------------------
+  // a tab (data-tab) is not a section, its page marks the tab which is shown
+  const links = Array.from(document.querySelectorAll("nav.sections a:not([data-tab])"));
+  const sections = links.map((link) => document.querySelector(link.getAttribute("href")));
+  function scrollspy() {
+    let current = 0;
+    sections.forEach((section, index) => {
+      if (section && section.getBoundingClientRect().top < 200) current = index;
+    });
+    links.forEach((link, index) => link.classList.toggle("active", index === current));
+  }
+  window.addEventListener("scroll", scrollspy, { passive: true });
+  scrollspy();
+
+  // ---- click a figure to enlarge it ------------------------------------
+  const lightbox = document.getElementById("lightbox");
+  const lightboxImage = lightbox.querySelector("img");
+  function closeLightbox() { lightbox.classList.remove("open"); lightboxImage.src = ""; }
+  for (const image of document.querySelectorAll("figure img")) {
+    image.addEventListener("click", () => {
+      lightboxImage.src = image.getAttribute("src");
+      lightbox.classList.add("open");
+    });
+  }
+  lightbox.addEventListener("click", closeLightbox);
+
+  apply();
+})();
+</script>
+</body>
+</html>

@@ -1,176 +1,210 @@
-from typing import Dict
-from sbmlsim.data import DataSet, load_pkdb_dataframe
-from sbmlsim.fit import FitMapping, FitData
-from sbmlutils.console import console
-from pkdb_models.models.dapagliflozin.experiments.base_experiment import DapagliflozinSimulationExperiment
-from pkdb_models.models.dapagliflozin.experiments.metadata import Tissue, Route, Dosing, ApplicationForm, Health, \
-    Fasting, DapagliflozinMappingMetaData
+"""Simulation experiment of the study FDAMB102003."""
+
+import itertools
+from typing import ClassVar, override
+
+from pkpdsim.metadata import (
+    ApplicationForm,
+    Dosing,
+    Fasting,
+    Health,
+    PKPDMappingMetaData,
+    Route,
+    Tissue,
+)
+from sbmlsim import Q
+from sbmlsim.data import DataSet
+from sbmlsim.fit import FitData, FitMapping
 from sbmlsim.plot import Axis, Figure
-from sbmlsim.simulation import Timecourse, TimecourseSim
-from pkdb_models.models.dapagliflozin.helpers import run_experiments
-from pathlib import Path
-import pkdb_models.models.dapagliflozin as dapagliflozin
+from sbmlsim.simulation import Change, Simulation
+
+from pkdb_models.models.dapagliflozin import MODEL
+from pkdb_models.models.dapagliflozin.experiments.base_experiment import (
+    DapagliflozinSimulationExperiment,
+)
+
 
 class FDAMB102003(DapagliflozinSimulationExperiment):
-    """Simulation experiment of FDA_MB102003."""
+    """Simulation experiment of FDAMB102003.
 
-    doses = [5, 25, 100]  # placebo uge, i.e. 0 dose removed
+    Study MB102003 of the clinical pharmacology review of NDA 202293 (T2DM
+    study of Komoroski 2009, Clin Pharmacol Ther 85:513): subjects with type 2
+    diabetes took 5 (n=11), 25 (n=12) or 100 mg (n=16) dapagliflozin once daily
+    for 14 days (the "2.5, 10 mg" of the review text is a typo). The review
+    reports neither the formulation (curated as tablet), the fasting state,
+    the body weight nor the glucose: the T2DM defaults of the model
+    (`fpg_t2dm`, `bodyweight_default`) are used until the publication is
+    curated. Plasma on days 1 and 14 (Fig13, day 1 n=11/12/15, day 14
+    n=10/12/14), the urinary dapagliflozin of 0-24 hr (Table 8, %UR as amount)
+    and the cumulative urinary glucose excretion over 0-24 hr (Fig18, without
+    SD) on days 1 and 14. The urine is collected per day and reset with every
+    dose; a data point at the time of a reset is compared with the state
+    before it. The placebo group is not simulated.
+    """
 
-    info = {
+    doses: ClassVar[list[float]] = [5, 25, 100]
+    days: ClassVar[dict[int, float]] = {1: 0.0, 14: 312.0}
+
+    info: ClassVar[dict[str, str]] = {
         "[Cve_dap]": "dapagliflozin",
         "Aurine_dap": "dapagliflozin_urine",
         "KI__UGE": "uge",
     }
 
-    def datasets(self) -> Dict[str, DataSet]:
+    @override
+    def datasets(self) -> dict[str, DataSet]:
         dsets = {}
         # Fig13: dap
         # Tab8A: dap_urine
         # Fig18: UGE
         for fig_id in ["Fig13", "Fig18", "Tab8A"]:
-            df = load_pkdb_dataframe(f"{self.sid}_{fig_id}", data_path=self.data_path)
+            df = self.load_dataframe(fig_id)
             for label, df_label in df.groupby("label"):
-                dset = DataSet.from_df(df_label, self.ureg)
-                # unit conversion to mole/l
-                if label.startswith("dapagliflozin_"):
-                    dset.unit_conversion("mean", 1 / self.Mr.dap)
-                dsets[f"{label}"] = dset
-        # console.print(dsets)
-        # console.print(dsets.keys())
+                label = str(label)
+                if "_recovery_" in label:
+                    # the recovery in % of the dose repeats the amounts
+                    continue
+                # one dataset per day, the days differ in the number of
+                # subjects
+                for day, start in self.days.items():
+                    df_day = df_label[
+                        (df_label.time >= start) & (df_label.time <= start + 24)
+                    ]
+                    if df_day.empty:
+                        continue
+                    dset = DataSet.from_df(df_day, self.ureg)
+                    if label.startswith("dapagliflozin_"):
+                        dset.unit_conversion("mean", 1 / self.Mr.dap)
+                    dsets[f"{label}_day{day}"] = dset
         return dsets
 
-    def simulations(self) -> Dict[str, TimecourseSim]:
-        Q_ = self.Q_
-        tcsims = {}
+    @override
+    def simulations(self) -> dict[str, Simulation]:
+        simulations = {}
         for dose in self.doses:
-            tc0 = Timecourse(
-                start=0,
-                end=24 * 60,  # [min]
-                steps=500,
-                changes={
+            simulations[f"po_DAP{dose}"] = Simulation(
+                time_unit="hr",
+                end=13 * 24 + 25,
+                preinit_changes={
                     **self.default_changes(),
                     # physiological changes
-                    "BW": Q_(self.bodyweight_default, "kg"),
-                    "[KI__glc_ext]": Q_(self.fpg_t2dm, "mM"),
-                    "GU__f_absorption": Q_(self.fasting_map["fasted"], "dimensionless"),
-                    "f_cirrhosis": Q_(self.cirrhosis_map["Control"], "dimensionless"),
-                    "KI__f_renal_function": Q_(self.renal_map["Normal renal function"], "dimensionless"),
+                    "BW": Q(self.bodyweight_default, "kg"),
+                    "[KI__fpg]": Q(self.fpg_t2dm, "mM"),
+                    "GU__fed": Q(self.fasting_map["fasted"], "dimensionless"),
+                    "f_cirrhosis": Q(self.cirrhosis_map["Control"], "dimensionless"),
+                    "KI__f_renal_function": Q(
+                        self.renal_map["Normal renal function"], "dimensionless"
+                    ),
                     # dose (IVDOSE, PODOSE)
-                    "PODOSE_dap": Q_(dose, "mg"),
+                    "PODOSE_dap": Q(dose, "mg"),
                 },
+                changes=[
+                    Change(
+                        [24 * k for k in range(1, 14)],
+                        {
+                            "KI__glc_urine": Q(0, "mmole"),  # reset UGE
+                            "Aurine_dap": Q(0, "mmole"),  # reset urinary dap
+                        },
+                    ),
+                    self.add_doses(
+                        [24 * k for k in range(1, 14)], {"PODOSE_dap": Q(dose, "mg")}
+                    ),
+                ],
             )
-            tc1 = Timecourse(
-                start=0,
-                end=24 * 60,  # [min]
-                steps=500,
-                changes={
-                    "KI__glc_urine": Q_(0, "mmole"),  # reset UGE
-                    "Aurine_dap": Q_(0, "mmole"),  # reset urinary dap
-                    "PODOSE_dap": Q_(dose, "mg"),
-                },
-            )
-            tc2 = Timecourse(
-                start=0,
-                end=25 * 60,  # [min]
-                steps=500,
-                changes={
-                    "KI__glc_urine": Q_(0, "mmole"),  # reset UGE
-                    "Aurine_dap": Q_(0, "mmole"),  # reset urinary dap
-                    "PODOSE_dap": Q_(dose, "mg"),
-                },
-            )
-            tcsims[f"po_DAP{dose}"] = TimecourseSim(
-                [tc0] + [tc1 for _ in range(12)] + [tc2],
-                # time_offset=-13*24*60,
-            )
-        return tcsims
+        return simulations
 
-    def fit_mappings(self) -> Dict[str, FitMapping]:
+    @override
+    def fit_mappings(self) -> dict[str, FitMapping]:
         mappings = {}
         for dose in self.doses:
-            for kp, sid in enumerate(self.info):
-                name = self.info[sid]
-                if name.startswith("dapagliflozin") and dose == 0:
-                    continue
-                mappings[f"fm_dap{dose}_{name}"] = FitMapping(
+            for (sid, name), day in itertools.product(self.info.items(), self.days):
+                mappings[f"fm_dap{dose}_{name}_day{day}"] = FitMapping(
                     self,
                     reference=FitData(
                         self,
-                        dataset=f"{name}_MAD{dose}",
+                        dataset=f"{name}_MAD{dose}_day{day}",
                         xid="time",
                         yid="mean",
-                        yid_sd="mean_sd",
+                        # the urinary glucose has no SD
+                        yid_sd=None if name == "uge" else "mean_sd",
                         count="count",
                     ),
                     observable=FitData(
-                        self, task=f"task_po_DAP{dose}", xid="time", yid=sid,
+                        self,
+                        task=f"task_po_DAP{dose}",
+                        xid="time",
+                        yid=sid,
                     ),
-                    metadata=DapagliflozinMappingMetaData(
+                    metadata=PKPDMappingMetaData(
                         tissue=Tissue.PLASMA if sid == "[Cve_dap]" else Tissue.URINE,
                         route=Route.PO,
                         application_form=ApplicationForm.TABLET,
                         dosing=Dosing.MULTIPLE,
                         health=Health.T2DM,
-                        fasting=Fasting.FASTED,
+                        fasting=Fasting.NR,
                     ),
                 )
         return mappings
 
-    def figures(self) -> Dict[str, Figure]:
-        figures = {}
-        subplots = ["all", "start", "end"]
-        for subplot in subplots:
-            fig = Figure(
-                experiment=self,
-                sid=f"Fig1_{subplot}",
-                num_rows=1,
-                num_cols=3,
-                name=f"{self.__class__.__name__} (T2DM)"
+    @override
+    def figures(self) -> dict[str, Figure]:
+        return {
+            **self._figure_days(sid="Fig13", key="[Cve_dap]"),
+            **self._figure_days(sid="Tab8", key="Aurine_dap"),
+            **self._figure_days(sid="Fig18", key="KI__UGE"),
+        }
+
+    def _figure_days(self, sid: str, key: str) -> dict[str, Figure]:
+        """Plasma (Fig13), urinary dapagliflozin (Tab8) or glucose (Fig18) per day."""
+        name = self.info[key]
+        fig = Figure(
+            experiment=self,
+            sid=sid,
+            num_rows=1,
+            num_cols=len(self.days),
+            name=f"{self.__class__.__name__} (T2DM)",
+            # one legend of the row, right of the grid
+            settings={"legend_scope": "row"},
+        )
+        plots = fig.create_plots(
+            xaxis=Axis(self.label_time, unit=self.unit_time), legend=True
+        )
+        for plot, (day, start) in zip(plots, self.days.items(), strict=True):
+            plot.set_title(f"day {day}")
+            plot.set_xaxis(
+                self.label_time, unit=self.unit_time, min=start - 1, max=start + 25
             )
-            plots = fig.create_plots(xaxis=Axis(self.label_time, unit=self.unit_time), legend=True)
-            plots[0].set_yaxis(self.label_dap_plasma, unit=self.unit_dap)
-            plots[1].set_yaxis(self.label_dap_urine, unit=self.unit_dap_urine)
-            plots[2].set_yaxis(self.label_uge, unit=self.unit_uge)
-
-            for kp in [0, 1, 2]:
-                if subplot == "start":
-                    plots[kp].xaxis.min = -3
-                    plots[kp].xaxis.max = 30
-                elif subplot == "end":
-                    plots[kp].xaxis.min = 310
-                    plots[kp].xaxis.max = 340
-
+            if key == "[Cve_dap]":
+                # log scale as the source
+                plot.set_yaxis(self.label_dap_plasma, unit=self.unit_dap, scale="log")
+            elif key == "Aurine_dap":
+                plot.set_yaxis(self.label_dap_urine, unit=self.unit_dap_urine)
+            else:
+                plot.set_yaxis(self.label_uge, unit=self.unit_uge)
             for dose in self.doses:
-                for kp, sid in enumerate(self.info):
-                    name = self.info[sid]
-                    if name.startswith("dapagliflozin") and dose == 0:
-                        continue
-                    dose_label = f"{dose} mg PO"
-                    # simulation
-                    plots[kp].add_data(
-                        task=f"task_po_DAP{dose}",
-                        xid="time",
-                        yid=sid,
-                        label=f"{dose_label}",
-                        color=self.dose_colors[dose],
-                    )
-                    # data
-                    plots[kp].add_data(
-                        dataset=f"{name}_MAD{dose}",
-                        xid="time",
-                        yid="mean",
-                        yid_sd=None if sid == "KI__UGE" else "mean_sd",
-                        label=f"{dose_label}",
-                        color=self.dose_colors[dose],
-                        linestyle="--" if name == "dapagliflozin" else ""
-                    )
-                    # print(sid)
-            figures[fig.sid] = fig
-
-        return figures
+                dose_label = f"{dose} mg PO"
+                # simulation
+                plot.add_data(
+                    task=f"task_po_DAP{dose}",
+                    xid="time",
+                    yid=key,
+                    label=dose_label,
+                    color=self.dose_colors[dose],
+                )
+                # data
+                plot.add_data(
+                    dataset=f"{name}_MAD{dose}_day{day}",
+                    xid="time",
+                    yid="mean",
+                    yid_sd=None if name == "uge" else "mean_sd",
+                    # no count in the label: the days differ in n, the legend
+                    # of the row shows a dose once
+                    label=f"{dose_label} data",
+                    color=self.dose_colors[dose],
+                    linestyle="",
+                )
+        return self.figures_by_sid(fig)
 
 
 if __name__ == "__main__":
-    out = dapagliflozin.RESULTS_PATH_SIMULATION / FDAMB102003.__name__
-    out.mkdir(parents=True, exist_ok=True)
-    run_experiments(FDAMB102003, output_dir=out)
+    MODEL.run_experiments(FDAMB102003, output_dir=FDAMB102003.__name__)

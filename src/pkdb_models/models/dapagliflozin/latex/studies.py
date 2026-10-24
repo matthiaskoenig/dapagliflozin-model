@@ -1,20 +1,19 @@
-"""Module for creating latex table from study table."""
+"""LaTeX table of the studies of the dapagliflozin model."""
 
 from pathlib import Path
+
 import pandas as pd
 from sbmlutils.console import console
 
 
 def create_latex_table(df: pd.DataFrame) -> str:
     """Transform DataFrame into LaTeX table."""
-
     #   p{2.6cm}  % Study
     #   p{1.7cm}  % PK-DB ID
     #   p{1.5cm}  % Substance
     #   p{0.9cm}  % Route
     #   p{1.0cm}  % Dosing
     #   p{0.7cm}  % Dose [mg]
-
 
     # Preamble:
     latex_header = r"""
@@ -23,14 +22,14 @@ def create_latex_table(df: pd.DataFrame) -> str:
 \centering
 \tabcolsep=3.5pt\relax
 \scriptsize
-\begin{threeparttable} 
+\begin{threeparttable}
 
-\caption{\scriptsize{\textbf{Summary of studies for modeling.} 
-Overview of study identifiers, PK-DB IDs, administered substance, route, dosing, 
-and subject characteristics, including health status (\emph{H}), renal impairment (\emph{RI}), 
+\caption{\scriptsize{\textbf{Summary of studies for modeling.}
+Overview of study identifiers, PK-DB IDs, administered substance, route, dosing,
+and subject characteristics, including health status (\emph{H}), renal impairment (\emph{RI}),
 hepatic impairment (\emph{HI}), fasting status and urinary glucose excretion (\emph{UGE}) and renal
-treshold for glucose (\emph{RTG}). \emph{DAP P} = dapagliflozin plasma, \emph{DAP U} = dapagliflozin urine, 
-\emph{DAP F} = dapagliflozin feces, \emph{D3G P} = dapagliflozin-3 glucuronide plasma, 
+treshold for glucose (\emph{RTG}). \emph{DAP P} = dapagliflozin plasma, \emph{DAP U} = dapagliflozin urine,
+\emph{DAP F} = dapagliflozin feces, \emph{D3G P} = dapagliflozin-3 glucuronide plasma,
 \emph{D3G U} = dapagliflozin-3 glucuronide urine}},
 \label{table:curated_data_overview}
 
@@ -57,35 +56,41 @@ treshold for glucose (\emph{RTG}). \emph{DAP P} = dapagliflozin plasma, \emph{DA
     p{0.6cm}  % RTG
 }
 \toprule
-""".strip('\n')
+""".strip("\n")
 
     # Rename columns
-    df = df.rename(columns={
-        "study": "Study",
-        "pkdb": "PK-DB",
-        "substance": "Substance",
-        "route": "Route",
-        "dosing": "Dosing",
-        "dose": "Dose [mg]",
-
-        "healthy": "H",
-        "renal impairment": "RI",
-        "hepatic impairment": "HI",
-        "t1dm": "T1",
-        "t2dm": "T2",
-
-        "dap plasma": "DAP P",
-        "dap urine": "DAP U",
-        "dap feces": "DAP F",
-        "d3g plasma": "D3G P",
-        "d3g urine": "D3G U",
-
-        "fed": "Fed",
-        "fasted": "Fast",
-
-    })
+    df = df.rename(
+        columns={
+            "study": "Study",
+            "pkdb": "PK-DB",
+            "substance": "Substance",
+            "route": "Route",
+            "dosing": "Dosing",
+            "dose": "Dose [mg]",
+            "healthy": "H",
+            "renal impairment": "RI",
+            "hepatic impairment": "HI",
+            "t1dm": "T1",
+            "t2dm": "T2",
+            "dap plasma": "DAP P",
+            "dap urine": "DAP U",
+            "dap feces": "DAP F",
+            "d3g plasma": "D3G P",
+            "d3g urine": "D3G U",
+            "fed": "Fed",
+            "fasted": "Fast",
+        }
+    )
     columns_bool = [
-        "H", "RI", "HI", "T1", "T2", "Fed", "Fast", "UGE", "RTG",
+        "H",
+        "RI",
+        "HI",
+        "T1",
+        "T2",
+        "Fed",
+        "Fast",
+        "UGE",
+        "RTG",
         "DAP P",
         "DAP U",
         "DAP F",
@@ -94,8 +99,9 @@ treshold for glucose (\emph{RTG}). \emph{DAP P} = dapagliflozin plasma, \emph{DA
     ]
     # Convert True/False to checkmarks
     for col in columns_bool:
-        df[col] = df[col].apply(lambda x: r"\checkmark" if str(x).strip().upper() in "TRUE" else "")
-
+        df[col] = df[col].apply(
+            lambda x: r"\checkmark" if str(x).strip().upper() in "TRUE" else ""
+        )
 
     # console.print(df)
 
@@ -120,12 +126,17 @@ treshold for glucose (\emph{RTG}). \emph{DAP P} = dapagliflozin plasma, \emph{DA
         values[1] = f"\\href{{https://identifiers.org/pkdb:{values[1]}}}{{{values[1]}}}"
 
         # Converting leftover "TRUE" or "-" strings
-        row_str = " & ".join(v.replace("TRUE", r"\checkmark").replace("-", "")
-                             for v in values) + r" \\"
+        row_str = (
+            " & ".join(
+                v.replace("TRUE", r"\checkmark").replace("-", "") for v in values
+            )
+            + r" \\"
+        )
 
         # fix for long name
-        row_str = row_str.replace("vanderAartvanderBeek2020 ",
-                                       r"vanderAart\-vanderBeek2020 ")
+        row_str = row_str.replace(
+            "vanderAartvanderBeek2020 ", r"vanderAart\-vanderBeek2020 "
+        )
 
         latex_body += row_str + "\n"
 
@@ -134,10 +145,10 @@ treshold for glucose (\emph{RTG}). \emph{DAP P} = dapagliflozin plasma, \emph{DA
 \bottomrule
 \end{tabularx}
 
-\end{threeparttable} 
+\end{threeparttable}
 \end{table}
 \end{landscape}
-""".strip('\n')
+""".strip("\n")
 
     # Combine all parts
     full_latex = latex_header + "\n" + latex_body + latex_footer
@@ -151,8 +162,8 @@ treshold for glucose (\emph{RTG}). \emph{DAP P} = dapagliflozin plasma, \emph{DA
 
 if __name__ == "__main__":
     # Input and output file paths
-    tsv_path = Path(__file__).parent / 'dapagliflozin_studies.tsv'
-    latex_path = Path(__file__).parent / 'dapagliflozin_studies.tex'
+    tsv_path = Path(__file__).parent / "dapagliflozin_studies.tsv"
+    latex_path = Path(__file__).parent / "dapagliflozin_studies.tex"
 
     # Load TSV file
     columns = [
@@ -163,7 +174,6 @@ if __name__ == "__main__":
         "route",
         "dosing",
         "dose",
-
         "healthy",
         "renal impairment",
         "hepatic impairment",
@@ -180,7 +190,10 @@ if __name__ == "__main__":
         "RTG",
     ]
     df = pd.read_csv(
-        tsv_path, sep="\t", skiprows=1, skipfooter=27,
+        tsv_path,
+        sep="\t",
+        skiprows=1,
+        skipfooter=27,
         usecols=columns,
         engine="python",
     )[columns]
@@ -192,5 +205,5 @@ if __name__ == "__main__":
     latex_str = create_latex_table(df)
 
     # Save LaTeX table to file
-    with open(latex_path, 'w') as f_tex:
+    with open(latex_path, "w") as f_tex:
         f_tex.write(latex_str)

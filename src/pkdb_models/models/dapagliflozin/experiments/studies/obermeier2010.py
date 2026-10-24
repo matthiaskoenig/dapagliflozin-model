@@ -1,81 +1,128 @@
-from typing import Dict
-from sbmlsim.data import DataSet, load_pkdb_dataframe
-from sbmlsim.fit import FitMapping, FitData
-from sbmlutils.console import console
-from pkdb_models.models.dapagliflozin.experiments.base_experiment import DapagliflozinSimulationExperiment
-from pkdb_models.models.dapagliflozin.experiments.metadata import Tissue, Route, Dosing, ApplicationForm, Health, \
-    Fasting, DapagliflozinMappingMetaData
+"""Simulation experiment of the study Obermeier2010."""
+
+from typing import ClassVar, override
+
+from pkpdsim.metadata import (
+    ApplicationForm,
+    Dosing,
+    Fasting,
+    Health,
+    PKPDMappingMetaData,
+    Route,
+    Tissue,
+)
+from sbmlsim import Q
+from sbmlsim.data import DataSet
+from sbmlsim.fit import FitData, FitMapping
 from sbmlsim.plot import Axis, Figure
-from sbmlsim.simulation import Timecourse, TimecourseSim
-from pkdb_models.models.dapagliflozin.helpers import run_experiments
-from pathlib import Path
-import pkdb_models.models.dapagliflozin as dapagliflozin
+from sbmlsim.simulation import Simulation
+
+from pkdb_models.models.dapagliflozin import MODEL
+from pkdb_models.models.dapagliflozin.experiments.base_experiment import (
+    DapagliflozinSimulationExperiment,
+)
 
 
 class Obermeier2010(DapagliflozinSimulationExperiment):
-    """Simulation experiment of Obermeier2010."""
-    # FIXME find supplemental for bodyweight
+    """Simulation experiment of Obermeier2010.
 
-    def datasets(self) -> Dict[str, DataSet]:
+    Human ADME study: single oral dose of 50 mg [14C]dapagliflozin as a solution
+    in 6 fasted healthy men. Fig 6: plasma dapagliflozin and total radioactivity
+    (TRA, ng equivalents of dapagliflozin); Fig 7: dapagliflozin, its
+    3-O-glucuronide (M15, quantified by radioactivity, ng equivalents of
+    dapagliflozin), their sum and TRA in the samples of the metabolite profiling
+    at 1, 4 and 12 hr.
+    """
+
+    #: body weight [kg], not reported: CL/F 4.9 ml/min/kg and AUC 2.43 µg*hr/ml
+    #: (50 mg / 2.43 µg*hr/ml = 343 ml/min) give 70 kg
+    bodyweight = 70.0
+    #: the analytes of the plasma: observable, label of the data, key, label
+    #: of the figures, color
+    analytes: ClassVar[list[tuple[str, str, str, str, str]]] = [
+        ("[Cve_dap]", "dapagliflozin", "dap", "dapagliflozin", "black"),
+        (
+            "[Cve_d3g]",
+            "dapagliflozin 3-o-glucuronide",
+            "d3g",
+            "D3G (M15)",
+            "tab:orange",
+        ),
+        (
+            "[Cve_daptot]",
+            "total dapagliflozin",
+            "daptot",
+            "DAP + metabolites (TRA)",
+            "tab:blue",
+        ),
+    ]
+
+    @override
+    def datasets(self) -> dict[str, DataSet]:
         dsets = {}
-        for fig_id in ["Fig6"]:
-            df = load_pkdb_dataframe(f"{self.sid}_{fig_id}", data_path=self.data_path)
+        for fig_id in ["Fig6", "Fig7"]:
+            df = self.load_dataframe(fig_id)
             for label, df_label in df.groupby("label"):
+                label = str(label)
                 dset = DataSet.from_df(df_label, self.ureg)
-                # unit conversion
-                if label.startswith("dapagliflozin_"):
-                    dset.unit_conversion("mean", 1 / self.Mr.dap)
-                elif label.startswith("total dapagliflozin_"):
-                    dset.unit_conversion("mean", 1 / self.Mr.daptot)
-                dsets[f"{label}"] = dset
-        # console.print(dsets)
-        # console.print(dsets.keys())
+                # unit conversion to mole/l: the glucuronide (M15) and the
+                # total radioactivity are in ng equivalents of dapagliflozin
+                dset.unit_conversion("mean", 1 / self.Mr.dap)
+                dsets[self.to_sid(f"{fig_id}_{label}")] = dset
         return dsets
 
-    def simulations(self) -> Dict[str, TimecourseSim]:
-        Q_ = self.Q_
-        tcsims = {}
-        tcsims[f"po_dap50"] = TimecourseSim(
-            [Timecourse(
-                start=0,
-                end=30 * 60,  # [min]
-                steps=500,
-                changes={
-                    **self.default_changes(),
-                    # physiological changes
-                    "BW": Q_(self.bodyweight_default, "kg"),
-                    "[KI__glc_ext]": Q_(self.fpg_healthy, "mM"),
-                    "GU__f_absorption": Q_(self.fasting_map["fasted"], "dimensionless"),
-                    "f_cirrhosis": Q_(self.cirrhosis_map["Control"], "dimensionless"),
-                    "KI__f_renal_function": Q_(self.renal_map["Normal renal function"], "dimensionless"),
-                    # dose (IVDOSE, PODOSE)
-                    "PODOSE_dap": Q_(50, "mg"),
-                },
-            )]
+    @override
+    def simulations(self) -> dict[str, Simulation]:
+        simulations = {}
+        simulations["po_dap50"] = Simulation(
+            time_unit="hr",
+            end=30,
+            preinit_changes={
+                **self.default_changes(),
+                # physiological changes
+                "BW": Q(self.bodyweight, "kg"),
+                "[KI__fpg]": Q(self.fpg_healthy, "mM"),
+                "GU__fed": Q(self.fasting_map["fasted"], "dimensionless"),
+                "f_cirrhosis": Q(self.cirrhosis_map["Control"], "dimensionless"),
+                "KI__f_renal_function": Q(
+                    self.renal_map["Normal renal function"], "dimensionless"
+                ),
+                # dose (IVDOSE, PODOSE)
+                "PODOSE_dap": Q(50, "mg"),
+            },
         )
-        return tcsims
+        return simulations
 
-    def fit_mappings(self) -> Dict[str, FitMapping]:
+    @override
+    def fit_mappings(self) -> dict[str, FitMapping]:
         mappings = {}
+        # Fig 6: dapagliflozin and TRA; Fig 7: the analytes of the profiling
+        # samples (dapagliflozin and TRA are the subjects of Fig 6 again)
         infos = [
-            ("[Cve_dap]", "dapagliflozin"),
-            ("[Cve_daptot]", "total dapagliflozin"),
+            ("Fig6", "[Cve_dap]", "dapagliflozin", "dap"),
+            ("Fig6", "[Cve_daptot]", "total dapagliflozin", "daptot"),
+            ("Fig7", "[Cve_dap]", "dapagliflozin", "dap"),
+            ("Fig7", "[Cve_d3g]", "dapagliflozin 3-o-glucuronide", "d3g"),
+            ("Fig7", "[Cve_daptot]", "total dapagliflozin", "daptot"),
         ]
-        for sid, name in infos:
-            mappings[f"fm_dap50_DAP50"] = FitMapping(
+        for fig_id, sid, name, key in infos:
+            suffix = "" if fig_id == "Fig6" else "_profiling"
+            mappings[self.to_sid(f"fm_dap50_{key}{suffix}")] = FitMapping(
                 self,
                 reference=FitData(
                     self,
-                    dataset=f"{name}_DAP50",
+                    dataset=self.to_sid(f"{fig_id}_{name}_DAP50"),
                     xid="time",
                     yid="mean",
-                    yid_sd="mean_sd",
                     count="count",
                 ),
                 observable=FitData(
-                    self, task=f"task_po_dap50", xid="time", yid=sid,
+                    self,
+                    task="task_po_dap50",
+                    xid="time",
+                    yid=sid,
                 ),
-                metadata=DapagliflozinMappingMetaData(
+                metadata=PKPDMappingMetaData(
                     tissue=Tissue.PLASMA,
                     route=Route.PO,
                     application_form=ApplicationForm.SOLUTION,
@@ -84,50 +131,58 @@ class Obermeier2010(DapagliflozinSimulationExperiment):
                     fasting=Fasting.FASTED,
                 ),
             )
-        # console.print(mappings)
         return mappings
 
-    def figures(self) -> Dict[str, Figure]:
-        fig = Figure(
-            experiment=self,
-            sid="Fig6",
-            num_rows=1,
-            num_cols=1,
-            name=f"{self.__class__.__name__} (Healthy)",
-        )
-        Figure.legend_fontsize = 11
-        plots = fig.create_plots(xaxis=Axis(self.label_time, unit=self.unit_time), legend=True)
-        plots[0].set_yaxis("Plasma concentration", unit=self.unit_dap)
-        substance = [
-            ("[Cve_dap]", "dap", "black"),
-            ("[Cve_daptot]", "total dap", "tab:blue"),
-        ]
-        # simulation
-        for sid, label_analyte, color in substance:
-            plots[0].add_data(
-                task="task_po_dap50",
-                xid="time",
-                yid=sid,
-                label=f"{label_analyte}, 50 mg PO",
-                color=color,
+    @override
+    def figures(self) -> dict[str, Figure]:
+        figures = {}
+        for fig_id in ["Fig6", "Fig7"]:
+            fig = Figure(
+                experiment=self,
+                sid=fig_id,
+                num_rows=1,
+                num_cols=2,
+                name=f"{self.__class__.__name__} (Healthy)",
             )
-        # data
-        for _, label_analyte, color in substance:
-            dataset_name = "dapagliflozin" if label_analyte == "dap" \
-                else "total dapagliflozin"
-            plots[0].add_data(
-                dataset=f"{dataset_name}_DAP50",
-                xid="time",
-                yid="mean",
-                yid_sd="mean_sd",
-                count="count",
-                label=f"{label_analyte}, 50 mg PO",
-                color=color,
+            plots = fig.create_plots(
+                xaxis=Axis(self.label_time, unit=self.unit_time), legend=True
             )
-        return {fig.sid: fig}
+            plots[0].set_yaxis("plasma concentration", unit=self.unit_dap)
+            plots[1].set_yaxis("plasma concentration", unit=self.unit_dap, scale="log")
+            for plot in plots:
+                for sid, name, key, label, color in self.analytes:
+                    if fig_id == "Fig6" and key == "d3g":
+                        continue
+                    plot.add_data(
+                        task="task_po_dap50",
+                        xid="time",
+                        yid=sid,
+                        label=f"{label}, 50 mg PO",
+                        color=color,
+                    )
+                    plot.add_data(
+                        dataset=self.to_sid(f"{fig_id}_{name}_DAP50"),
+                        xid="time",
+                        yid="mean",
+                        count="count",
+                        label=label,
+                        color=color,
+                    )
+                if fig_id == "Fig7":
+                    # the measured sum of dapagliflozin and M15
+                    plot.add_data(
+                        dataset=self.to_sid(
+                            "Fig7_dapagliflozin + dapagliflozin-3-o-glucuronide_DAP50"
+                        ),
+                        xid="time",
+                        yid="mean",
+                        count="count",
+                        label="dapagliflozin + D3G",
+                        color="tab:green",
+                    )
+            figures.update(self.figures_by_sid(fig))
+        return figures
 
 
 if __name__ == "__main__":
-    out = dapagliflozin.RESULTS_PATH_SIMULATION / Obermeier2010.__name__
-    out.mkdir(parents=True, exist_ok=True)
-    run_experiments(Obermeier2010, output_dir=out)
+    MODEL.run_experiments(Obermeier2010, output_dir=Obermeier2010.__name__)

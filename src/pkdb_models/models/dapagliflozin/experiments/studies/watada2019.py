@@ -1,150 +1,190 @@
-from typing import Dict
-from sbmlsim.data import DataSet, load_pkdb_dataframe
-from sbmlsim.fit import FitMapping, FitData
-from sbmlutils.console import console
+"""Simulation experiment of the study Watada2019."""
 
-import pkdb_models
-from pkdb_models.models import dapagliflozin
-from pkdb_models.models.dapagliflozin.experiments.base_experiment import DapagliflozinSimulationExperiment
-from pkdb_models.models.dapagliflozin.experiments.metadata import Tissue, Route, Dosing, ApplicationForm, Health, \
-    Fasting, DapagliflozinMappingMetaData, Coadministration
+from typing import ClassVar, override
+
+from pkpdsim.metadata import (
+    ApplicationForm,
+    Coadministration,
+    Dosing,
+    Fasting,
+    Health,
+    PKPDMappingMetaData,
+    Route,
+    Tissue,
+)
+from sbmlsim import Q
+from sbmlsim.data import DataSet
+from sbmlsim.fit import FitData, FitMapping
 from sbmlsim.plot import Axis, Figure
-from sbmlsim.simulation import Timecourse, TimecourseSim
-from pkdb_models.models.dapagliflozin.helpers import run_experiments
-from pathlib import Path
-import pkdb_models.models.dapagliflozin as dapagliflozin
+from sbmlsim.simulation import Change, Simulation
+
+from pkdb_models.models.dapagliflozin import MODEL
+from pkdb_models.models.dapagliflozin.experiments.base_experiment import (
+    DapagliflozinSimulationExperiment,
+)
+
 
 class Watada2019(DapagliflozinSimulationExperiment):
-    """Simulation experiment of Watada2019."""
+    """Simulation experiment of Watada2019.
 
-    info = [
+    Placebo, 5 and 10 mg dapagliflozin once daily for 7 days as add-on to
+    insulin in Japanese patients with type 1 diabetes. Plasma of day 7 (Fig 1,
+    60 min before and 0.5 to 24 hr after the dose) and the 24 hr urinary glucose
+    of day -1 and day 7 (Tab 3). The urinary glucose is driven by the glucose of
+    the day, the mean of the 7-point SMBG (9.5-10.3 mM), not by the FPG
+    (7.4-7.9 mM). Fasting before the dose is not reported.
+    """
+
+    info: ClassVar[list[tuple[str, str]]] = [
         ("[Cve_dap]", "dapagliflozin"),
         ("[Cve_d3g]", "dapagliflozin 3-o-glucuronide"),
         ("KI__UGE", "uge"),
     ]
-    interventions = ["DAP0", "DAP5", "DAP10"]
-    doses = {
+    interventions: ClassVar[list[str]] = ["DAP0", "DAP5", "DAP10"]
+    doses: ClassVar[dict[str, float]] = {
         "DAP0": 0,
         "DAP5": 5,
         "DAP10": 10,
     }
-    bodyweights = {
+    bodyweights: ClassVar[dict[str, float]] = {
         "DAP0": 57.2,
         "DAP5": 61.6,
         "DAP10": 59.8,
     }  # [kg]
 
-    # T1DM
-    fpgs = {  # fasting plasma glucose
-        "DAP0": 7.45,  # 134/18,  # [mM]
-        "DAP5": 7.94,  # 142.9/18,  # [mM]
-        "DAP10": 7.41,  # 133.4/18,  # [mM]
+    markers: ClassVar[dict[str, str]] = {"DAP0": "o", "DAP5": "s", "DAP10": "D"}
+    #: mg/dl of glucose in mM
+    mgdl = 10 / 180.16
+    #: fasting plasma glucose at baseline (Tab 1) [mg/dl]
+    fpgs: ClassVar[dict[str, float]] = {
+        "DAP0": 134.0,
+        "DAP5": 142.9,
+        "DAP10": 133.4,
     }
-    hba1cs = {  # fasting plasma glucose
-        "DAP0": 8.1,  # [%]
-        "DAP5": 7.9,  # [mM]
-        "DAP10": 7.9,  # [mM]
+    #: the mean of the 7-point SMBG at baseline (Tab 1) and on day 7 (baseline
+    #: and the change of the text) [mg/dl]: the glucose of the day which is
+    #: filtered, as `KI__PG_delta` above the FPG
+    smbgs_baseline: ClassVar[dict[str, float]] = {
+        "DAP0": 178.70,
+        "DAP5": 184.32,
+        "DAP10": 177.01,
     }
-    gfrs = {  # fasting plasma glucose
-        "DAP0": 95.4/100,  # [ml/min/(1.73*m^2)]
-        "DAP5": 91.6/100,  # [ml/min/(1.73*m^2)]
-        "DAP10": 94.6/100,  # [ml/min/(1.73*m^2)]
+    smbgs_day7: ClassVar[dict[str, float]] = {
+        "DAP0": 178.70 + 6.54,
+        "DAP5": 184.32 - 1.99,
+        "DAP10": 177.01 - 5.68,
+    }
+    #: eGFR (Tab 1) [ml/min/1.73 m2]
+    egfrs: ClassVar[dict[str, float]] = {
+        "DAP0": 95.4,
+        "DAP5": 91.6,
+        "DAP10": 94.6,
     }
 
-    def datasets(self) -> Dict[str, DataSet]:
+    @override
+    def datasets(self) -> dict[str, DataSet]:
         dsets = {}
         for fig_id in ["Fig1", "Tab3"]:
-            df = load_pkdb_dataframe(f"{self.sid}_{fig_id}", data_path=self.data_path)
+            df = self.load_dataframe(fig_id)
             for label, df_label in df.groupby("label"):
+                label = str(label)
                 dset = DataSet.from_df(df_label, self.ureg)
                 # unit conversion to mole/l
                 if label.startswith("dapagliflozin_"):
                     dset.unit_conversion("mean", 1 / self.Mr.dap)
                 elif label.startswith("dapagliflozin 3-o-glucuronide"):
                     dset.unit_conversion("mean", 1 / self.Mr.d3g)
-                dsets[f"{label}"] = dset
-        # console.print(dsets)
-        # console.print(dsets.keys())
+                dsets[self.to_sid(label)] = dset
         return dsets
 
-    def simulations(self) -> Dict[str, TimecourseSim]:
-        Q_ = self.Q_
-        tcsims = {}
+    @override
+    def simulations(self) -> dict[str, Simulation]:
+        simulations = {}
         for intervention, dose in self.doses.items():
-            # baseline simulation for
-            tc0 = Timecourse(
-                start=0,
-                end=25 * 60,  # [min]
-                steps=500,
-                changes={
+            fpg = self.fpgs[intervention] * self.mgdl
+            # the 24 hr urine of day -1 (baseline) without dapagliflozin, then
+            # doses on days 1 to 7, the dose of day 7 at time 0; the urine is
+            # collected per day from the doses
+            simulations[self.to_sid(f"po_{intervention}")] = Simulation(
+                time_unit="hr",
+                end=24 + 6 * 24 + 48,
+                preinit_changes={
                     **self.default_changes(),
                     # physiological changes
-                    "BW": Q_(self.bodyweights[intervention], "kg"),
-                    "[KI__glc_ext]": Q_(self.fpgs[intervention], "mM"),
-                    "KI__f_renal_function": Q_(self.gfrs[intervention], "dimensionless"),
-                    "GU__f_absorption": Q_(self.fasting_map["fasted"], "dimensionless"),
-                    "f_cirrhosis": Q_(self.cirrhosis_map["Control"], "dimensionless"),
+                    "BW": Q(self.bodyweights[intervention], "kg"),
+                    "[KI__fpg]": Q(fpg, "mM"),
+                    "KI__PG_delta": Q(
+                        self.smbgs_baseline[intervention] * self.mgdl - fpg, "mM"
+                    ),
+                    "KI__f_renal_function": Q(
+                        self.egfrs[intervention] / self.gfr_healthy, "dimensionless"
+                    ),
+                    "GU__fed": Q(self.fasting_map["not reported"], "dimensionless"),
+                    "f_cirrhosis": Q(self.cirrhosis_map["Control"], "dimensionless"),
                     # dose (IVDOSE, PODOSE)
-                    "PODOSE_dap": Q_(0, "mg"),
+                    "PODOSE_dap": Q(0, "mg"),
                 },
+                changes=[
+                    Change(
+                        [24 + 24 * k for k in range(7)],
+                        {"KI__glc_urine": Q(0, "mmole")},  # reset UGE
+                    ),
+                    self.add_doses(
+                        [24 + 24 * k for k in range(7)], {"PODOSE_dap": Q(dose, "mg")}
+                    ),
+                    # the glucose of the days on treatment
+                    Change(
+                        [24],
+                        {
+                            "KI__PG_delta": Q(
+                                self.smbgs_day7[intervention] * self.mgdl - fpg,
+                                "mM",
+                            )
+                        },
+                    ),
+                ],
+                time_shift=-(24 + 6 * 24),
             )
-            tc1 = Timecourse(
-                start=0,
-                end=24 * 60,  # [min]
-                steps=500,
-                changes={
-                    "KI__glc_urine": Q_(0, "mmole"),  # reset UGE
-                    "PODOSE_dap": Q_(dose, "mg"),
-                },
-            )
-            tc2 = Timecourse(
-                start=0,
-                end=48 * 60,  # [min]
-                steps=500,
-                changes={
-                    "KI__glc_urine": Q_(0, "mmole"),  # reset UGE
-                    "PODOSE_dap": Q_(dose, "mg"),
-                },
-            )
-            tcsims[f"po_{intervention}"] = TimecourseSim(
-                [tc0] + [tc1 for _ in range(6)] + [tc2],
-                time_offset=-7 * 24 * 60,
-            )
-        return tcsims
+        return simulations
 
-    def fit_mappings(self) -> Dict[str, FitMapping]:
+    @override
+    def fit_mappings(self) -> dict[str, FitMapping]:
         mappings = {}
         for intervention, dose in self.doses.items():
-            for k, (sid, name) in enumerate(self.info):
+            for sid, name in self.info:
                 if dose == 0 and name != "uge":
                     continue
                 tissue = Tissue.URINE if name == "uge" else Tissue.PLASMA
-                mappings[f"fm_po_{intervention}_{name}"] = FitMapping(
+                mappings[self.to_sid(f"fm_po_{intervention}_{name}")] = FitMapping(
                     self,
                     reference=FitData(
                         self,
-                        dataset=f"{name}_{intervention}",
+                        dataset=self.to_sid(f"{name}_{intervention}"),
                         xid="time",
                         yid="mean",
                         yid_sd="mean_sd",
                         count="count",
                     ),
                     observable=FitData(
-                        self, task=f"task_po_{intervention}", xid="time", yid=sid,
+                        self,
+                        task=self.to_sid(f"task_po_{intervention}"),
+                        xid="time",
+                        yid=sid,
                     ),
-                    metadata=DapagliflozinMappingMetaData(
+                    metadata=PKPDMappingMetaData(
                         tissue=tissue,
                         route=Route.PO,
                         application_form=ApplicationForm.TABLET,
                         dosing=Dosing.MULTIPLE,
                         health=Health.T1DM,
-                        fasting=Fasting.FASTED,
-                        coadministration=Coadministration.INSULIN
+                        fasting=Fasting.NR,
+                        coadministration=Coadministration.INSULIN,
                     ),
                 )
         return mappings
 
-    def figures(self) -> Dict[str, Figure]:
+    @override
+    def figures(self) -> dict[str, Figure]:
         fig = Figure(
             experiment=self,
             sid="Fig1",
@@ -152,23 +192,21 @@ class Watada2019(DapagliflozinSimulationExperiment):
             num_cols=3,
             name=f"{self.__class__.__name__} (T1DM)",
         )
-        plots = fig.create_plots(xaxis=Axis(self.label_time, unit=self.unit_time), legend=True)
+        plots = fig.create_plots(
+            xaxis=Axis(self.label_time, unit=self.unit_time), legend=True
+        )
         plots[0].set_yaxis(self.label_dap_plasma, unit=self.unit_dap)
         plots[1].set_yaxis(self.label_d3g_plasma, unit=self.unit_d3g)
         plots[2].set_yaxis(self.label_uge, unit=self.unit_uge)
-        plots[0].xaxis.min = -24
-        plots[0].xaxis.max = 30
-        plots[1].xaxis.min = -24
-        plots[1].xaxis.max = 30
+        plots[0].set_xaxis(self.label_time, unit=self.unit_time, min=-2, max=26)
+        plots[1].set_xaxis(self.label_time, unit=self.unit_time, min=-2, max=26)
 
         for intervention, dose in self.doses.items():
             for k, (sid, name) in enumerate(self.info):
                 # simulation
-                if dose == 0 and k in [0, 1]:
-                    pass
-                else:
+                if not (dose == 0 and k in [0, 1]):
                     plots[k].add_data(
-                        task=f"task_po_{intervention}",
+                        task=self.to_sid(f"task_po_{intervention}"),
                         xid="time",
                         yid=sid,
                         label=f"{dose} mg",
@@ -178,7 +216,7 @@ class Watada2019(DapagliflozinSimulationExperiment):
                 if dose == 0 and name != "uge":
                     continue
                 plots[k].add_data(
-                    dataset=f"{name}_{intervention}",
+                    dataset=self.to_sid(f"{name}_{intervention}"),
                     xid="time",
                     yid="mean",
                     yid_sd="mean_sd",
@@ -186,11 +224,10 @@ class Watada2019(DapagliflozinSimulationExperiment):
                     label=f"{dose} mg",
                     linestyle="" if name == "uge" else "--",
                     color=self.dose_colors[dose],
+                    marker=self.markers[intervention],
                 )
-        return {fig.sid: fig,}
+        return self.figures_by_sid(fig)
 
 
 if __name__ == "__main__":
-    out = dapagliflozin.RESULTS_PATH_SIMULATION / Watada2019.__name__
-    out.mkdir(parents=True, exist_ok=True)
-    run_experiments(Watada2019, output_dir=out)
+    MODEL.run_experiments(Watada2019, output_dir=Watada2019.__name__)

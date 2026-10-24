@@ -1,0 +1,5 @@
+parameter	value	unit	lower_bound	upper_bound	ci_lower	ci_upper	identifiability	n_points	cost_min	converged
+KI__RTG_E50	5.756297279633785e-06	mM	1e-07	0.0001	4.8849011169670785e-06	6.83005748340434e-06	identifiable	13	55.54191407071735	True
+KI__RTG_gamma	2.801078952624347	dimensionless	1.0	4.0	1.6772904331987568		non_identifiable_upper	11	55.54191407071735	True
+KI__RTG_m_fpg	1.9909861957557706	dimensionless	0.1	5.0	1.554546811929719	2.4418241856244216	identifiable	15	55.54191407071735	True
+KI__RTG_max_inhibition	0.6400139753517339	dimensionless	0.3	0.95	0.6180284782266602	0.6702697942601404	identifiable	6	55.54191407071735	True

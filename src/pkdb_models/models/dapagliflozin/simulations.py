@@ -1,19 +1,51 @@
-"""Run all simulation experiments."""
-import shutil
-from typing import List
-from pathlib import Path
-from sbmlutils.console import console
-from pkdb_models.models.dapagliflozin.helpers import run_experiments
-from pkdb_models.models.dapagliflozin.experiments.studies import *
-from pkdb_models.models.dapagliflozin.experiments.misc import *
-from pkdb_models.models.dapagliflozin.experiments.scans import *
-import pkdb_models.models.dapagliflozin as dapagliflozin
-from sbmlutils import log
-from sbmlsim.plot import Figure
+"""The simulation experiments of the dapagliflozin model and their groups.
 
-logger = log.get_logger(__name__)
+They are the registry of `MODEL`, the experiments its commands simulate.
+"""
 
-EXPERIMENTS = {
+from sbmlsim.experiment import SimulationExperiment
+
+from pkdb_models.models.dapagliflozin import MODEL
+from pkdb_models.models.dapagliflozin.experiments.misc import (
+    DoseDependencyExperiment,
+    FoodEffect,
+    HepaticRenalImpairment,
+)
+from pkdb_models.models.dapagliflozin.experiments.scans import (
+    DapagliflozinParameterScan,
+)
+from pkdb_models.models.dapagliflozin.experiments.studies import (
+    FDAMB102002,
+    FDAMB102003,
+    FDAMB102006,
+    FDAMB102007,
+    Boulton2013,
+    Cho2021,
+    Gould2013,
+    Hwang2022a,
+    Imamura2013,
+    Jang2020,
+    Kasichayanula2011,
+    Kasichayanula2011a,
+    Kasichayanula2011b,
+    Kasichayanula2011c,
+    Kasichayanula2012,
+    Kasichayanula2013,
+    Kasichayanula2013a,
+    Khomitskaya2018,
+    Kim2023,
+    Kim2023a,
+    Komoroski2009,
+    LaCreta2016,
+    Obermeier2010,
+    Sha2015,
+    Shah2019a,
+    Watada2019,
+    Yang2013,
+    vanderAartvanderBeek2020,
+)
+
+EXPERIMENTS: dict[str, list[type[SimulationExperiment]]] = {
     "studies": [
         Boulton2013,
         Cho2021,
@@ -38,7 +70,7 @@ EXPERIMENTS = {
         Komoroski2009,
         LaCreta2016,
         Obermeier2010,
-        Sha2015,
+        Sha2015,  # the dapagliflozin groups of the canagliflozin study Sha2015
         Shah2019a,
         vanderAartvanderBeek2020,
         Watada2019,
@@ -83,75 +115,12 @@ EXPERIMENTS = {
         FoodEffect,
         HepaticRenalImpairment,
     ],
-    "scan": [
+    "scans": [
         DapagliflozinParameterScan,
-    ]
+    ],
 }
-
-EXPERIMENTS["all"] = EXPERIMENTS["studies"] + EXPERIMENTS["misc"] + EXPERIMENTS["scan"]
-
-
-def run_simulation_experiments(
-    selected: str = None,
-    experiment_classes: List = None,
-    output_dir: Path = None
-) -> None:
-    """Run dapagliflozin simulation experiments."""
-
-    Figure.fig_dpi = 600
-    Figure.legend_fontsize = 10
-
-    # Determine which experiments to run
-    if experiment_classes is not None:
-        experiments_to_run = experiment_classes
-        if output_dir is None:
-            output_dir = dapagliflozin.RESULTS_PATH_SIMULATION / "custom_selection"
-    elif selected:
-        # Using the 'selected' parameter
-        if selected not in EXPERIMENTS:
-            console.rule(style="red bold")
-            console.print(
-                f"[red]Error: Unknown group '{selected}'. Valid groups: {', '.join(EXPERIMENTS.keys())}[/red]"
-            )
-            console.rule(style="red bold")
-            return
-        experiments_to_run = EXPERIMENTS[selected]
-        if output_dir is None:
-            output_dir = dapagliflozin.RESULTS_PATH_SIMULATION / selected
-    else:
-        console.print("\n[red bold]Error: No experiments specified![/red bold]")
-        console.print("[yellow]Use selected='all' or selected='studies' or provide experiment_classes=[...][/yellow]\n")
-        return
-
-    # Run the experiments
-    run_experiments(experiment_classes=experiments_to_run, output_dir=output_dir)
-
-    # Collect figures into one folder
-    figures_dir = output_dir / "_figures"
-    figures_dir.mkdir(parents=True, exist_ok=True)
-    for f in output_dir.glob("**/*.png"):
-        if f.parent == figures_dir:
-            continue
-        try:
-            shutil.copy2(f, figures_dir / f.name)
-        except Exception as err:
-            print(f"file {f.name} in {f.parent} fails, skipping. Error: {err}")
-    console.print(f"Figures copied to: file://{figures_dir}", style="info")
+EXPERIMENTS["all"] = EXPERIMENTS["studies"] + EXPERIMENTS["misc"] + EXPERIMENTS["scans"]
 
 
 if __name__ == "__main__":
-    """
-    # Run experiments
-    
-    # selected = "all"
-    # selected = "misc"
-    # selected = "studies"
-    # selected = "pharmacodynamics"
-    # selected = "dose_dependency"
-    # selected = "food"
-    # selected = "hepatic_impairment"
-    # selected = "renal_impairment"
-    # selected = "scan"
-    """
-
-    run_simulation_experiments(selected="all")
+    MODEL.run_simulation_experiments(EXPERIMENTS["all"], MODEL.simulation_dir / "all")

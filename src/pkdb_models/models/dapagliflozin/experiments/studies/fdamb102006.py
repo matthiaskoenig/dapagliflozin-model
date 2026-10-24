@@ -1,20 +1,44 @@
-from typing import Dict
-from sbmlsim.data import DataSet, load_pkdb_dataframe
-from sbmlsim.fit import FitMapping, FitData
-from sbmlutils.console import console
-from pkdb_models.models.dapagliflozin.experiments.base_experiment import DapagliflozinSimulationExperiment
-from pkdb_models.models.dapagliflozin.experiments.metadata import Tissue, Route, Dosing, ApplicationForm, Health, \
-    Fasting, DapagliflozinMappingMetaData
+"""Simulation experiment of the study FDAMB102006."""
+
+from typing import ClassVar, override
+
+from pkpdsim.metadata import (
+    ApplicationForm,
+    Dosing,
+    Fasting,
+    Health,
+    PKPDMappingMetaData,
+    Route,
+    Tissue,
+)
+from sbmlsim import Q
+from sbmlsim.data import DataSet
+from sbmlsim.fit import FitData, FitMapping
 from sbmlsim.plot import Axis, Figure
-from sbmlsim.simulation import Timecourse, TimecourseSim
-from pkdb_models.models.dapagliflozin.helpers import run_experiments
-from pathlib import Path
-import pkdb_models.models.dapagliflozin as dapagliflozin
+from sbmlsim.simulation import Simulation
+
+from pkdb_models.models.dapagliflozin import MODEL
+from pkdb_models.models.dapagliflozin.experiments.base_experiment import (
+    DapagliflozinSimulationExperiment,
+)
+
 
 class FDAMB102006(DapagliflozinSimulationExperiment):
-    """Simulation experiment of FDAMB102006."""
+    """Simulation experiment of FDAMB102006.
 
-    colors = {
+    Study MB102006 of the clinical pharmacology review of NDA 202293, the mass
+    balance study of Obermeier2010 (the plasma curves are the experiment
+    Obermeier2010): 6 healthy men took 50 mg [14C]-dapagliflozin as an oral
+    solution (PEG/water) in the fasted state; urine and feces over 13 days
+    (Table 11). The total radioactivity (TRA) in urine (75.2 % of the dose) is
+    dapagliflozin (1.2 %), D3G (61 %) and other metabolites, which the model has
+    (`Aurine_daptot` = dap + d3g + dapmet). The TRA in feces (21 %) contains
+    metabolites besides dapagliflozin (15.4 %) which the model does not have
+    (`Afeces_daptot` = `Afeces_dap`): a limitation. The amounts of the copy
+    are in µmol of the dose (D3G in molar equivalents).
+    """
+
+    colors: ClassVar[dict[str, str]] = {
         "Aurine_daptot": "black",
         "Aurine_dap": "tab:blue",
         "Aurine_d3g": "tab:orange",
@@ -22,85 +46,87 @@ class FDAMB102006(DapagliflozinSimulationExperiment):
         "Afeces_dap": "tab:blue",
     }
 
-    info = {
+    info: ClassVar[dict[str, str]] = {
         "Aurine_daptot": "total dapagliflozin_urine",
         "Aurine_dap": "dapagliflozin_urine",
         "Aurine_d3g": "dapagliflozin 3-o-glucuronide_urine",
         "Afeces_daptot": "total dapagliflozin_feces",
         "Afeces_dap": "dapagliflozin_feces",
-        # "Afeces_urine_dap": "total_dapagliflozin_feces_urine",
     }
 
-    def datasets(self) -> Dict[str, DataSet]:
+    @override
+    def datasets(self) -> dict[str, DataSet]:
         dsets = {}
         for fig_id in ["Tab11A"]:
-            df = load_pkdb_dataframe(f"{self.sid}_{fig_id}", data_path=self.data_path)
+            df = self.load_dataframe(fig_id)
             for label, df_label in df.groupby("label"):
+                label = str(label)
                 dset = DataSet.from_df(df_label, self.ureg)
-                dsets[f"{label}"] = dset
-        # console.print(dsets)
-        # console.print(dsets.keys())
+                dsets[self.to_sid(label)] = dset
         return dsets
 
-    def simulations(self) -> Dict[str, TimecourseSim]:
-        Q_ = self.Q_
-        tcsims = {}
-        tcsims[f"po_DAP50"] = TimecourseSim(
-            Timecourse(
-                start=0,
-                end=14 * 24 * 60,  # [min]
-                steps=500,
-                changes={
-                    **self.default_changes(),
-                    # physiological changes
-                    "BW": Q_(self.bodyweight_default, "kg"),
-                    "[KI__glc_ext]": Q_(self.fpg_healthy, "mM"),
-                    "GU__f_absorption": Q_(self.fasting_map["not reported"], "dimensionless"),
-                    "f_cirrhosis": Q_(self.cirrhosis_map["Control"], "dimensionless"),
-                    "KI__f_renal_function": Q_(self.renal_map["Normal renal function"], "dimensionless"),
-                    # dose (IVDOSE, PODOSE)
-                    "PODOSE_dap": Q_(50, "mg"),
-                },
-            )
+    @override
+    def simulations(self) -> dict[str, Simulation]:
+        simulations = {}
+        simulations["po_DAP50"] = Simulation(
+            time_unit="hr",
+            end=14 * 24,
+            preinit_changes={
+                **self.default_changes(),
+                # physiological changes
+                "BW": Q(self.bodyweight_default, "kg"),
+                "[KI__fpg]": Q(self.fpg_healthy, "mM"),
+                "GU__fed": Q(self.fasting_map["fasted"], "dimensionless"),
+                "f_cirrhosis": Q(self.cirrhosis_map["Control"], "dimensionless"),
+                "KI__f_renal_function": Q(
+                    self.renal_map["Normal renal function"], "dimensionless"
+                ),
+                # dose (IVDOSE, PODOSE)
+                "PODOSE_dap": Q(50, "mg"),
+            },
         )
-        return tcsims
+        return simulations
 
-    def fit_mappings(self) -> Dict[str, FitMapping]:
+    @override
+    def fit_mappings(self) -> dict[str, FitMapping]:
         mappings = {}
         for sid, name in self.info.items():
-            mappings[f"fm_DAP50_{name}"] = FitMapping(
+            mappings[self.to_sid(f"fm_DAP50_{name}")] = FitMapping(
                 self,
                 reference=FitData(
                     self,
-                    dataset=f"{name}",
+                    dataset=self.to_sid(name),
                     xid="time",
                     yid="mean",
                     yid_sd="mean_sd",
                     count="count",
                 ),
                 observable=FitData(
-                    self, task=f"task_po_DAP50", xid="time", yid=sid,
+                    self,
+                    task="task_po_DAP50",
+                    xid="time",
+                    yid=sid,
                 ),
-                metadata=DapagliflozinMappingMetaData(
+                metadata=PKPDMappingMetaData(
                     tissue=Tissue.URINE if "urine" in sid else Tissue.FECES,
                     route=Route.PO,
-                    application_form=ApplicationForm.TABLET,
+                    application_form=ApplicationForm.SOLUTION,
                     dosing=Dosing.SINGLE,
                     health=Health.HEALTHY,
-                    fasting=Fasting.NR,
+                    fasting=Fasting.FASTED,
                 ),
             )
         return mappings
 
-    def figures(self) -> Dict[str, Figure]:
+    @override
+    def figures(self) -> dict[str, Figure]:
         fig = Figure(
             experiment=self,
-            sid=f"Tab11",
+            sid="Tab11",
             num_rows=1,
             num_cols=2,
             name=f"{self.__class__.__name__} (Healthy)",
         )
-        Figure.legend_fontsize = 10
         plots = fig.create_plots(xaxis=Axis(self.label_time, unit="day"), legend=True)
         plots[0].set_yaxis("Excretion urine", unit=self.unit_daptot_urine)
         plots[1].set_yaxis("Excretion feces", unit=self.unit_daptot_feces)
@@ -126,27 +152,25 @@ class FDAMB102006(DapagliflozinSimulationExperiment):
 
             # simulation
             plots[kp].add_data(
-                task=f"task_po_DAP50",
+                task="task_po_DAP50",
                 xid="time",
                 yid=sid,
-                label=f"{label}",
+                label=label,
                 color=self.colors[sid],
             )
             # data
             plots[kp].add_data(
-                dataset=f"{name}",
+                dataset=self.to_sid(name),
                 xid="time",
                 yid="mean",
                 yid_sd="mean_sd",
-                label=f"{label}",
+                label=label,
                 color=self.colors[sid],
-                linestyle=""
+                linestyle="",
             )
 
-        return {fig.sid: fig}
+        return self.figures_by_sid(fig)
 
 
 if __name__ == "__main__":
-    out = dapagliflozin.RESULTS_PATH_SIMULATION / FDAMB102006.__name__
-    out.mkdir(parents=True, exist_ok=True)
-    run_experiments(FDAMB102006, output_dir=out)
+    MODEL.run_experiments(FDAMB102006, output_dir=FDAMB102006.__name__)

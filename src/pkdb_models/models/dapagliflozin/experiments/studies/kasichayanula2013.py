@@ -1,229 +1,328 @@
-from typing import Dict
-from sbmlsim.data import DataSet, load_pkdb_dataframe
-from sbmlsim.fit import FitMapping, FitData
-from sbmlutils.console import console
-from pkdb_models.models.dapagliflozin.experiments.base_experiment import DapagliflozinSimulationExperiment
-from pkdb_models.models.dapagliflozin.experiments.metadata import Tissue, Route, Dosing, ApplicationForm, Health, \
-    Fasting, DapagliflozinMappingMetaData
+"""Simulation experiment of the study Kasichayanula2013."""
+
+from typing import ClassVar, override
+
+from pkpdsim.metadata import (
+    ApplicationForm,
+    Dosing,
+    Fasting,
+    Health,
+    PKPDMappingMetaData,
+    Route,
+    Tissue,
+)
+from sbmlsim import Q
+from sbmlsim.data import DataSet
+from sbmlsim.fit import FitData, FitMapping
 from sbmlsim.plot import Axis, Figure
-from sbmlsim.simulation import Timecourse, TimecourseSim
-from pkdb_models.models.dapagliflozin.helpers import run_experiments
-from pathlib import Path
-import pkdb_models.models.dapagliflozin as dapagliflozin
+from sbmlsim.simulation import Change, Simulation
+from sbmlsim.units import Quantity
+
+from pkdb_models.models.dapagliflozin import MODEL
+from pkdb_models.models.dapagliflozin.experiments.base_experiment import (
+    DapagliflozinSimulationExperiment,
+)
+
 
 class Kasichayanula2013(DapagliflozinSimulationExperiment):
+    """Simulation experiment of Kasichayanula2013 (trial MB102007).
+
+    Healthy subjects and type 2 diabetes with normal renal function and with
+    mild, moderate and severe renal impairment (creatinine clearance by
+    Cockcroft-Gault). Day 1: a single tablet of 50 mg after an overnight fast,
+    urine 0-72 hr. Days 4-10: a subset of the diabetic patients (normal 4,
+    mild 4, moderate 6, severe 3) took 20 mg once daily (7 doses), plasma and
+    urine 0-24 hr on day 4 (first 20 mg dose) and day 10 (last dose). The
+    diabetic patients took their metformin, sulfonylurea or insulin 4 hr after
+    dapagliflozin; no interaction with dapagliflozin is expected
+    (Kasichayanula2011c), `Coadministration.NONE`.
+
+    The "dapagliflozin" panel of Fig1 (A) is a duplicate of the
+    dapagliflozin-3-O-glucuronide panel (B) (the plotted values of the normal
+    and mild groups are 0.93-1.03 times the glucuronide; the scaled curation
+    has AUC0-24 1.6-1.9 times the AUC of Table 4): its mappings are outliers.
     """
-    Simulation experiment of Kasichayanula2013.
-    Renal impairment and T2DM.
-    """
-    groups = [
+
+    groups: ClassVar[list[str]] = [
         "healthy",
         "normal",
         "mild",
         "moderate",
         "severe",
     ]
-    colors = {
-        "healthy": DapagliflozinSimulationExperiment.renal_colors["Normal renal function"],
-        "normal": DapagliflozinSimulationExperiment.renal_colors["Normal renal function"],
+    #: the groups of the multiple dosing (type 2 diabetes)
+    groups_multi: ClassVar[list[str]] = ["normal", "mild", "moderate", "severe"]
+    colors: ClassVar[dict[str, str]] = {
+        # the healthy subjects, the normal renal function of the T2DM groups is black
+        "healthy": "tab:gray",
+        "normal": DapagliflozinSimulationExperiment.renal_colors[
+            "Normal renal function"
+        ],
         "mild": DapagliflozinSimulationExperiment.renal_colors["Mild renal impairment"],
-        "moderate": DapagliflozinSimulationExperiment.renal_colors["Moderate renal impairment"],
-        "severe": DapagliflozinSimulationExperiment.renal_colors["Severe renal impairment"],
+        "moderate": DapagliflozinSimulationExperiment.renal_colors[
+            "Moderate renal impairment"
+        ],
+        "severe": DapagliflozinSimulationExperiment.renal_colors[
+            "Severe renal impairment"
+        ],
     }
-    bodyweights = {
+    bodyweights: ClassVar[dict[str, float]] = {
         "healthy": 77.9,
-        "normal": 79.2,
+        "normal": 97.2,
         "mild": 73.9,
         "moderate": 77.4,
         "severe": 78.4,
-    } # [kg]
-    fpgs = { # fasting plasma glucose
+    }  # [kg] (Table 1)
+    fpgs: ClassVar[dict[str, float]] = {  # fasting plasma glucose
         "healthy": 4.94,
         "normal": 9.32,
         "mild": 7.75,
         "moderate": 6.79,
         "severe": 7.23,
     }  # mM
-    hba1c = {
-        "healthy": 5.5,
-        "normal": 8.6,
-        "mild": 8.5,
-        "moderate": 7.1,
-        "severe": 7.1,
-    }  # mM
-    renal_functions = {  # fasting plasma glucose
-        "healthy": 118.5/100,
-        "normal": 133.2/100,
-        "mild": 69.6/100,
-        "moderate": 42.6/100,
-        "severe": 24.3/100,
+    #: creatinine clearance (Cockcroft-Gault, Table 1) [ml/min] relative to the
+    #: GFR of healthy kidneys (101 ml/min); the iohexol GFR of the subjects of
+    #: the multiple dosing (Fig2) is 122.7/64.8/50.9/19.6 ml/min on average
+    #: (normal/mild/moderate/severe), the creatinine clearance of the obese
+    #: normal group (97.2 kg) overestimates their GFR; the classification of
+    #: the study is used for both parts
+    renal_functions: ClassVar[dict[str, float]] = {
+        "healthy": 118.5 / DapagliflozinSimulationExperiment.gfr_healthy,
+        "normal": 133.2 / DapagliflozinSimulationExperiment.gfr_healthy,
+        "mild": 69.6 / DapagliflozinSimulationExperiment.gfr_healthy,
+        "moderate": 42.6 / DapagliflozinSimulationExperiment.gfr_healthy,
+        "severe": 24.3 / DapagliflozinSimulationExperiment.gfr_healthy,
     }
-    info = [
+    #: the first 20 mg dose (day 4) is 72 hr after the 50 mg dose (day 1), the
+    #: last (day 10) 216 hr after it; the time of the multiple dosing is shifted
+    #: to the last dose
+    t_d4 = 72.0  # [hr]
+    t_d10 = 216.0  # [hr]
+    info: ClassVar[list[tuple[str, str]]] = [
         ("[Cve_dap]", "dapagliflozin"),
         ("Aurine_dap", "dapagliflozin_cumulative amount"),
         ("[Cve_d3g]", "dapagliflozin 3-o-glucuronide"),
         ("Aurine_d3g", "dapagliflozin 3-o-glucuronide_cumulative amount"),
     ]
+    urine_info: ClassVar[list[tuple[str, str]]] = [
+        ("Aurine_dap", "dapagliflozin"),
+        ("Aurine_d3g", "dapagliflozin 3-o-glucuronide"),
+    ]
 
-    def datasets(self) -> Dict[str, DataSet]:
+    @override
+    def datasets(self) -> dict[str, DataSet]:
         dsets = {}
         for fig_id in ["Fig1", "Tab4A", "Tab2A"]:
-            df = load_pkdb_dataframe(f"{self.sid}_{fig_id}", data_path=self.data_path)
+            df = self.load_dataframe(fig_id)
+            # the recovery in % of the dose duplicates the cumulative amounts
+            df = df[df["measurement_type"] != "recovery"].copy()
+            # digitized times such as 3.99999999999999 hr: sbmlsim cannot output
+            # two times which are equal after the last dose (day 10)
+            df["time"] = df["time"].round(12)
+            # the urine of the multiple dosing starts at a dose with the reset of
+            # the urinary amounts: a data point at the time of a change is
+            # compared with the state before it, i.e., the 0 at the start of day 4
+            # and day 10 with the amount of the day before
+            multi_urine = df["label"].str.contains("cumulative amount_DAP20_d")
+            df = df[~(multi_urine & (df["time"] == 0.0))].copy()
+            # the urine of day 4 in the time of the multiple dosing simulation
+            d4 = df["label"].str.contains("_DAP20_d4_")
+            df.loc[d4, "time"] = df.loc[d4, "time"] + self.t_d4 - self.t_d10
             for label, df_label in df.groupby("label"):
+                label = str(label)
                 dset = DataSet.from_df(df_label, self.ureg)
-                # unit conversion to mole/l
-                if label.startswith("dapagliflozin_"):
+                # unit conversion to mole/l and mole; the urinary glucuronide is
+                # the recovery in % of the dose times the dose, i.e., mg of
+                # dapagliflozin equivalents
+                if label.startswith(
+                    ("dapagliflozin_", "dapagliflozin 3-o-glucuronide_cumulative")
+                ):
                     dset.unit_conversion("mean", 1 / self.Mr.dap)
                 elif label.startswith("dapagliflozin 3-o-glucuronide"):
                     dset.unit_conversion("mean", 1 / self.Mr.d3g)
-                dsets[f"{label}"] = dset
-        # console.print(dsets)
-        # console.print(dsets.keys())
+                dsets[self.to_sid(label)] = dset
         return dsets
 
-    def simulations(self) -> Dict[str, TimecourseSim]:
-        Q_ = self.Q_
-        tcsims = {}
-        for group in self.groups:
-            changes = {
-                # physiological changes
-                "BW": Q_(self.bodyweights[group], "kg"),
-                "[KI__glc_ext]": Q_(self.fpgs[group], "mM"),
-                "KI__f_renal_function": Q_(self.renal_functions[group], "dimensionless"),
-                "GU__f_absorption": Q_(self.fasting_map["fasted"], "dimensionless"),
-                "f_cirrhosis": Q_(self.cirrhosis_map["Control"], "dimensionless"),
-            }
-            # single dose
-            for dose in [20, 50]:
-                tcsims[f"po_dap{dose}_{group}_single"] = TimecourseSim(
-                    Timecourse(
-                        start=0,
-                        end=65 * 60,  # [min]
-                        steps=500,
-                        changes={
-                            **self.default_changes(),
-                            **changes,
-                            "PODOSE_dap": Q_(dose, "mg"),
-                        },
-                    )
-                )
-            # multiple dose
-            tc0 = Timecourse(
-                start=0,
-                end=24 * 60,  # [min]
-                steps=500,
-                changes={
-                    **self.default_changes(),
-                    **changes,
-                    "PODOSE_dap": Q_(20, "mg"),
-                },
-            )
-            tc1 = Timecourse(
-                start=0,
-                end=24 * 60,  # [min]
-                steps=500,
-                changes={
-                    "Aurine_dap": Q_(0, "mmole"),
-                    "Aurine_d3g": Q_(0, "mmole"),
-                    "PODOSE_dap": Q_(20, "mg"),
-                },
-            )
-            tc2 = Timecourse(
-                start=0,
-                end=48 * 60,  # [min]
-                steps=500,
-                changes={
-                    "Aurine_dap": Q_(0, "mmole"),
-                    "Aurine_d3g": Q_(0, "mmole"),
-                    "PODOSE_dap": Q_(20, "mg"),
-                },
-            )
-            tcsims[f"po_dap20_{group}_multi"] = TimecourseSim(
-                [tc0] + [tc1 for _ in range(5)] + [tc2],
-                time_offset=-6*24*60,
-            )
-        return tcsims
+    def group_changes(self, group: str) -> dict[str, Quantity]:
+        """Get the changes of the physiology of a group.
 
-    def fit_mappings(self) -> Dict[str, FitMapping]:
+        Args:
+            group: the group of subjects.
+
+        Returns:
+            The changes by parameter id.
+        """
+        return {
+            "BW": Q(self.bodyweights[group], "kg"),
+            "[KI__fpg]": Q(self.fpgs[group], "mM"),
+            "KI__f_renal_function": Q(self.renal_functions[group], "dimensionless"),
+            "GU__fed": Q(self.fasting_map["fasted"], "dimensionless"),
+            "f_cirrhosis": Q(self.cirrhosis_map["Control"], "dimensionless"),
+        }
+
+    @override
+    def simulations(self) -> dict[str, Simulation]:
+        simulations = {}
+        for group in self.groups:
+            # single dose of 50 mg on day 1, urine 0-72 hr
+            simulations[self.to_sid(f"po_dap50_{group}_single")] = Simulation(
+                time_unit="hr",
+                end=73,
+                preinit_changes={
+                    **self.default_changes(),
+                    **self.group_changes(group),
+                    "PODOSE_dap": Q(50, "mg"),
+                },
+            )
+        for group in self.groups_multi:
+            # 50 mg on day 1, 20 mg once daily on days 4-10, the urine of every
+            # 20 mg dose interval is collected separately
+            simulations[self.to_sid(f"po_dap20_{group}_multi")] = Simulation(
+                time_unit="hr",
+                end=self.t_d10 + 48,
+                preinit_changes={
+                    **self.default_changes(),
+                    **self.group_changes(group),
+                    "PODOSE_dap": Q(50, "mg"),
+                },
+                changes=[
+                    Change(
+                        [self.t_d4 + 24 * k for k in range(7)],
+                        {
+                            "Aurine_dap": Q(0, "mmole"),
+                            "Aurine_d3g": Q(0, "mmole"),
+                            "Aurine_dapmet": Q(0, "mmole"),
+                        },
+                    ),
+                    self.add_doses(
+                        [self.t_d4 + 24 * k for k in range(7)],
+                        {"PODOSE_dap": Q(20, "mg")},
+                    ),
+                ],
+                time_shift=-self.t_d10,
+            )
+        return simulations
+
+    @staticmethod
+    def health(group: str) -> Health:
+        """Get the health status of a group.
+
+        Args:
+            group: the group of subjects.
+
+        Returns:
+            The health status.
+        """
+        if group == "healthy":
+            return Health.HEALTHY
+        if group == "normal":
+            return Health.T2DM
+        return Health.T2DM_RENAL_IMPAIRMENT
+
+    @override
+    def fit_mappings(self) -> dict[str, FitMapping]:
         mappings = {}
-        # Fig1
-        for kp, data in enumerate(self.info):
-            sid, prefix = data[0], data[1]
-            for group in self.groups:
-                if group == "healthy":
-                    continue
-                health = Health.HEALTHY if group in ["normal", "healthy"] else Health.RENAL_IMPAIRMENT
+        # day 10 (Fig1, Tab4): plasma and urine 0-24 hr after the last dose; the
+        # dapagliflozin plasma (Fig1A) is a duplicate of the glucuronide
+        for sid, prefix in self.info:
+            for group in self.groups_multi:
                 tissue = Tissue.URINE if "cumulative" in prefix else Tissue.PLASMA
-                mappings[f"fm_dap20_{group}_{sid}"] = FitMapping(
+                mappings[self.to_sid(f"fm_dap20_d10_{group}_{sid}")] = FitMapping(
                     self,
                     reference=FitData(
                         self,
-                        dataset=f"{prefix}_DAP20_d10_{group}",
+                        dataset=self.to_sid(f"{prefix}_DAP20_d10_{group}"),
                         xid="time",
                         yid="mean",
                         yid_sd="mean_sd",
                         count="count",
                     ),
                     observable=FitData(
-                        self, task=f"task_po_dap20_{group}_multi", xid="time", yid=sid,
+                        self,
+                        task=self.to_sid(f"task_po_dap20_{group}_multi"),
+                        xid="time",
+                        yid=sid,
                     ),
-                    metadata=DapagliflozinMappingMetaData(
+                    metadata=PKPDMappingMetaData(
                         tissue=tissue,
                         route=Route.PO,
                         application_form=ApplicationForm.TABLET,
                         dosing=Dosing.MULTIPLE,
-                        health=health,
+                        health=self.health(group),
                         fasting=Fasting.FASTED,
                     ),
                 )
-        # Tab2
-        for group in self.groups:
-            if group == "healthy":
-                # skipping the 50 mg normal urinary recovery
-                continue
-            health = Health.HEALTHY if group == "normal" else Health.RENAL_IMPAIRMENT
-            # simulation
-            for k, sid in enumerate(["Aurine_dap", "Aurine_d3g"]):
-                if k == 0:
-                    substance = "dapagliflozin"
-                elif k == 1:
-                    substance = "dapagliflozin 3-o-glucuronide"
-                for dose in [20, 50]:
-                    if dose == 20:
-                        dset_id = f"{substance}_cumulative amount_DAP20_d4_{group}"
-                    elif dose == 50:
-                        dset_id = f"{substance}_cumulative amount_DAP50_{group}"
-                    mappings[f"fm_dap{dose}_{group}_{substance}"] = FitMapping(
+        # day 4 (Tab4): urine 0-24 hr after the first 20 mg dose
+        for sid, substance in self.urine_info:
+            for group in self.groups_multi:
+                mappings[self.to_sid(f"fm_dap20_d4_{group}_{substance}")] = FitMapping(
+                    self,
+                    reference=FitData(
                         self,
-                        reference=FitData(
-                            self,
-                            dataset=dset_id,
-                            xid="time",
-                            yid="mean",
-                            yid_sd="mean_sd",
-                            count="count",
+                        dataset=self.to_sid(
+                            f"{substance}_cumulative amount_DAP20_d4_{group}"
                         ),
-                        observable=FitData(
-                            self, task=f"task_po_dap{dose}_{group}_single", xid="time", yid=sid,
+                        xid="time",
+                        yid="mean",
+                        yid_sd="mean_sd",
+                        count="count",
+                    ),
+                    observable=FitData(
+                        self,
+                        task=self.to_sid(f"task_po_dap20_{group}_multi"),
+                        xid="time",
+                        yid=sid,
+                    ),
+                    metadata=PKPDMappingMetaData(
+                        tissue=Tissue.URINE,
+                        route=Route.PO,
+                        application_form=ApplicationForm.TABLET,
+                        dosing=Dosing.MULTIPLE,
+                        health=self.health(group),
+                        fasting=Fasting.FASTED,
+                    ),
+                )
+        # day 1 (Tab2): urine 0-72 hr after 50 mg
+        for sid, substance in self.urine_info:
+            for group in self.groups:
+                mappings[self.to_sid(f"fm_dap50_{group}_{substance}")] = FitMapping(
+                    self,
+                    reference=FitData(
+                        self,
+                        dataset=self.to_sid(
+                            f"{substance}_cumulative amount_DAP50_{group}"
                         ),
-                        metadata=DapagliflozinMappingMetaData(
-                            tissue=tissue,
-                            route=Route.PO,
-                            application_form=ApplicationForm.TABLET,
-                            dosing=Dosing.SINGLE,
-                            health=health,
-                            fasting=Fasting.FASTED,
-                        ),
-                    )
+                        xid="time",
+                        yid="mean",
+                        yid_sd="mean_sd",
+                        count="count",
+                    ),
+                    observable=FitData(
+                        self,
+                        task=self.to_sid(f"task_po_dap50_{group}_single"),
+                        xid="time",
+                        yid=sid,
+                    ),
+                    metadata=PKPDMappingMetaData(
+                        tissue=Tissue.URINE,
+                        route=Route.PO,
+                        application_form=ApplicationForm.TABLET,
+                        dosing=Dosing.SINGLE,
+                        health=self.health(group),
+                        fasting=Fasting.FASTED,
+                    ),
+                )
         return mappings
 
-    def figures(self) -> Dict[str, Figure]:
+    @override
+    def figures(self) -> dict[str, Figure]:
         return {
             **self.figure_fig1(),
             **self.figure_tab2(),
         }
 
-    def figure_fig1(self) -> Dict[str, Figure]:
+    def figure_fig1(self) -> dict[str, Figure]:
+        """Plasma and urine after the last of the multiple doses (Fig1, Tab4)."""
         fig = Figure(
             experiment=self,
             sid="Fig1",
@@ -231,42 +330,46 @@ class Kasichayanula2013(DapagliflozinSimulationExperiment):
             num_cols=2,
             name=f"{self.__class__.__name__} (T2DM, Renal)",
         )
-        Figure.legend_fontsize = 9
-        plots = fig.create_plots(xaxis=Axis(self.label_time, unit=self.unit_time, min=-24), legend=True)
+        # the legend is outside of the panels, inside it covers the data
+        fig.settings = {**fig.settings, "legend_position": "outside"}
+        plots = fig.create_plots(
+            xaxis=Axis(self.label_time, unit=self.unit_time, min=-24, max=48),
+            legend=True,
+        )
         plots[0].set_yaxis(self.label_dap_plasma, unit=self.unit_dap)
         plots[1].set_yaxis(self.label_dap_urine, unit=self.unit_dap_urine)
         plots[2].set_yaxis(self.label_d3g_plasma, unit=self.unit_d3g)
         plots[3].set_yaxis(self.label_d3g_urine, unit=self.unit_d3g_urine)
 
-        for kp, data in enumerate(self.info):
-            sid, prefix = data[0], data[1]
-            for group in self.groups:
-                if group == "healthy":
-                    continue
+        for kp, (sid, prefix) in enumerate(self.info):
+            for group in self.groups_multi:
                 # simulation
                 plots[kp].add_data(
-                    task=f"task_po_dap20_{group}_multi",
+                    task=self.to_sid(f"task_po_dap20_{group}_multi"),
                     xid="time",
                     yid=sid,
                     label=f"{group} - 20 mg PO",
                     color=self.colors[group],
                 )
-                # data
+                # data; the dapagliflozin plasma is the duplicated glucuronide
                 plots[kp].add_data(
-                    dataset=f"{prefix}_DAP20_d10_{group}",
+                    dataset=self.to_sid(f"{prefix}_DAP20_d10_{group}"),
                     xid="time",
                     yid="mean",
                     yid_sd="mean_sd",
                     count="count",
-                    label=f"{group} - 20 mg PO",
+                    label=(
+                        f"{group} (D3G, outlier)"
+                        if sid == "[Cve_dap]"
+                        else f"{group} - 20 mg PO"
+                    ),
                     color=self.colors[group],
-                    linestyle="" if sid in ["Aurine_dap", "Aurine_d3g"] else "--"
+                    linestyle="" if sid in ["Aurine_dap", "Aurine_d3g"] else "--",
                 )
-        return {
-            fig.sid: fig,
-        }
+        return self.figures_by_sid(fig)
 
-    def figure_tab2(self) -> Dict[str, Figure]:
+    def figure_tab2(self) -> dict[str, Figure]:
+        """Urine after 50 mg (Tab2) and after 20 mg on day 4 and 10 (Tab4)."""
         fig = Figure(
             experiment=self,
             sid="Tab2_4",
@@ -274,59 +377,67 @@ class Kasichayanula2013(DapagliflozinSimulationExperiment):
             num_cols=2,
             name=f"{self.__class__.__name__} (T2DM, Renal)",
         )
-        Figure.legend_fontsize = 9
-        plots = fig.create_plots(xaxis=Axis(self.label_time, unit=self.unit_time), legend=True)
+        # the legend is outside of the panels, inside it covers the data
+        fig.settings = {**fig.settings, "legend_position": "outside"}
+        plots = fig.create_plots(
+            xaxis=Axis(self.label_time, unit=self.unit_time), legend=True
+        )
         plots[0].set_yaxis(self.label_dap_urine, unit=self.unit_dap_urine)
-        plots[1].set_yaxis(self.label_dap_urine, unit=self.unit_dap_urine)
-        plots[2].set_yaxis(self.label_d3g_urine, unit=self.unit_d3g_urine)
+        plots[1].set_yaxis(self.label_d3g_urine, unit=self.unit_d3g_urine)
+        plots[2].set_yaxis(self.label_dap_urine, unit=self.unit_dap_urine)
         plots[3].set_yaxis(self.label_d3g_urine, unit=self.unit_d3g_urine)
-        for group in self.groups:
-            # simulation
-            for kp, sid in enumerate(["Aurine_dap", "Aurine_d3g"]):
-                if group != "healthy":
-                    plots[2*kp].add_data(
-                        task=f"task_po_dap20_{group}_single",
-                        xid="time",
-                        yid=sid,
-                        label=f"{group} - 20 mg PO",
-                        color=self.colors[group],
-                    )
-                plots[2*kp+1].add_data(
-                    task=f"task_po_dap50_{group}_single",
+        for kp in [2, 3]:
+            plots[kp].set_xaxis(
+                f"{self.label_time} to the last dose",
+                unit=self.unit_time,
+                min=self.t_d4 - self.t_d10 - 24,
+                max=48,
+            )
+        for kp, (sid, substance) in enumerate(self.urine_info):
+            for group in self.groups:
+                # single dose
+                plots[kp].add_data(
+                    task=self.to_sid(f"task_po_dap50_{group}_single"),
                     xid="time",
                     yid=sid,
                     label=f"{group} - 50 mg PO",
                     color=self.colors[group],
                 )
-            # data
-            for kp, substance in enumerate(["dapagliflozin", "dapagliflozin 3-o-glucuronide"]):
-                if group != "healthy":
-                    plots[2*kp].add_data(
-                        dataset=f"{substance}_cumulative amount_DAP20_d4_{group}",
-                        xid="time",
-                        yid="mean",
-                        yid_sd="mean_sd",
-                        count="count",
-                        label=f"{group} - 20 mg PO",
-                        color=self.colors[group],
-                        linestyle="",
-                    )
-                plots[2*kp+1].add_data(
-                    dataset=f"{substance}_cumulative amount_DAP50_{group}",
+                plots[kp].add_data(
+                    dataset=self.to_sid(f"{substance}_cumulative amount_DAP50_{group}"),
                     xid="time",
                     yid="mean",
                     yid_sd="mean_sd",
                     count="count",
-                    label=f"{group} - 50 mg DAP PO",
+                    label=f"{group} - 50 mg PO",
                     color=self.colors[group],
                     linestyle="",
                 )
-        return {
-            fig.sid: fig,
-        }
+                if group not in self.groups_multi:
+                    continue
+                # multiple dose, day 4 and day 10
+                plots[kp + 2].add_data(
+                    task=self.to_sid(f"task_po_dap20_{group}_multi"),
+                    xid="time",
+                    yid=sid,
+                    label=f"{group} - 20 mg PO",
+                    color=self.colors[group],
+                )
+                for day in ["d4", "d10"]:
+                    plots[kp + 2].add_data(
+                        dataset=self.to_sid(
+                            f"{substance}_cumulative amount_DAP20_{day}_{group}"
+                        ),
+                        xid="time",
+                        yid="mean",
+                        yid_sd="mean_sd",
+                        count="count",
+                        label=f"{group} - 20 mg PO day 4, 10" if day == "d4" else None,
+                        color=self.colors[group],
+                        linestyle="",
+                    )
+        return self.figures_by_sid(fig)
 
 
 if __name__ == "__main__":
-    out = dapagliflozin.RESULTS_PATH_SIMULATION / Kasichayanula2013.__name__
-    out.mkdir(parents=True, exist_ok=True)
-    run_experiments(Kasichayanula2013, output_dir=out)
+    MODEL.run_experiments(Kasichayanula2013, output_dir=Kasichayanula2013.__name__)

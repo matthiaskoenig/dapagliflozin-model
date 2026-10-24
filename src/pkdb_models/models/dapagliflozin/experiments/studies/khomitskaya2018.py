@@ -1,113 +1,142 @@
-from typing import Dict
-from sbmlsim.data import DataSet, load_pkdb_dataframe
-from sbmlsim.fit import FitMapping, FitData
-from sbmlutils.console import console
-from pkdb_models.models.dapagliflozin.experiments.base_experiment import DapagliflozinSimulationExperiment
-from pkdb_models.models.dapagliflozin.experiments.metadata import Tissue, Route, Dosing, ApplicationForm, Health, \
-    Fasting, DapagliflozinMappingMetaData, Coadministration
+"""Simulation experiment of the study Khomitskaya2018."""
+
+from typing import ClassVar, override
+
+from pkpdsim.metadata import (
+    ApplicationForm,
+    Coadministration,
+    Dosing,
+    Fasting,
+    Health,
+    PKPDMappingMetaData,
+    Route,
+    Tissue,
+)
+from sbmlsim import Q
+from sbmlsim.data import DataSet
+from sbmlsim.fit import FitData, FitMapping
 from sbmlsim.plot import Axis, Figure
-from sbmlsim.simulation import Timecourse, TimecourseSim
-from pkdb_models.models.dapagliflozin.helpers import run_experiments
-from pathlib import Path
-import pkdb_models.models.dapagliflozin as dapagliflozin
+from sbmlsim.simulation import Simulation
+
+from pkdb_models.models.dapagliflozin import MODEL
+from pkdb_models.models.dapagliflozin.experiments.base_experiment import (
+    DapagliflozinSimulationExperiment,
+)
 
 
 class Khomitskaya2018(DapagliflozinSimulationExperiment):
-    """Simulation experiment of Khomitskaya2018."""
+    """Simulation experiment of Khomitskaya2018.
 
-    interventions = ["DAP10", "DAP10, MET1000"]
+    Bioequivalence of a single dose of dapagliflozin 10 mg with metformin XR
+    1000 mg in healthy subjects (crossover, 71.9 kg), 30 min after a standard
+    breakfast (about 600 kcal): the fixed combination (FCDP, Xigduo XR
+    10/1000 mg, `DAP10, MET1000`) and the individual tablets (Forxiga 10 mg
+    with 2 x 500 mg metformin XR, `DAP10`). Both arms are coadministered with
+    metformin, which does not change the exposure of dapagliflozin
+    (Kasichayanula2011c), so both are simulated without an interaction
+    factor; the late points (24-72 hr) are from the log inset of Fig2A.
+    """
+
+    interventions: ClassVar[list[str]] = ["DAP10", "DAP10, MET1000"]
+    labels_intervention: ClassVar[dict[str, str]] = {
+        "DAP10": "10 mg + MET XR 1000 mg",
+        "DAP10, MET1000": "FCDP 10/1000 mg",
+    }
     bodyweight = 71.9  # [kg]
 
-    def datasets(self) -> Dict[str, DataSet]:
+    @override
+    def datasets(self) -> dict[str, DataSet]:
         dsets = {}
         for fig_id in ["Fig2"]:
-            df = load_pkdb_dataframe(f"{self.sid}_{fig_id}", data_path=self.data_path)
+            df = self.load_dataframe(fig_id)
             for label, df_label in df.groupby("label"):
+                label = str(label)
                 dset = DataSet.from_df(df_label, self.ureg)
                 # unit conversion
                 if label.startswith("dapagliflozin_"):
                     dset.unit_conversion("mean", 1 / self.Mr.dap)
-                dsets[f"{label}"] = dset
-        # console.print(dsets)
-        # console.print(dsets.keys())
+                dsets[self.to_sid(label)] = dset
         return dsets
 
-    def simulations(self) -> Dict[str, TimecourseSim]:
-        Q_ = self.Q_
-        tcsims = {}
-        tcsims[f"po_dap10"] = TimecourseSim(
-            [Timecourse(
-                start=0,
-                end=80 * 60,  # [min]
-                steps=500,
-                changes={
-                    **self.default_changes(),
-                    # physiological changes
-                    "BW": Q_(self.bodyweight, "kg"),
-                    "[KI__glc_ext]": Q_(self.fpg_healthy, "mM"),
-                    "GU__f_absorption": Q_(self.fasting_map["fed"], "dimensionless"),
-                    "f_cirrhosis": Q_(self.cirrhosis_map["Control"], "dimensionless"),
-                    "KI__f_renal_function": Q_(self.renal_map["Normal renal function"], "dimensionless"),
-                    # dose (IVDOSE, PODOSE)
-                    "PODOSE_dap": Q_(10, "mg"),
-                },
-            )]
+    @override
+    def simulations(self) -> dict[str, Simulation]:
+        simulations = {}
+        simulations["po_dap10"] = Simulation(
+            time_unit="hr",
+            end=80,
+            preinit_changes={
+                **self.default_changes(),
+                # physiological changes
+                "BW": Q(self.bodyweight, "kg"),
+                "[KI__fpg]": Q(self.fpg_healthy, "mM"),
+                "GU__fed": Q(self.fasting_map["fed"], "dimensionless"),
+                "f_cirrhosis": Q(self.cirrhosis_map["Control"], "dimensionless"),
+                "KI__f_renal_function": Q(
+                    self.renal_map["Normal renal function"], "dimensionless"
+                ),
+                # dose (IVDOSE, PODOSE)
+                "PODOSE_dap": Q(10, "mg"),
+            },
         )
-        return tcsims
+        return simulations
 
-    def fit_mappings(self) -> Dict[str, FitMapping]:
+    @override
+    def fit_mappings(self) -> dict[str, FitMapping]:
         mappings = {}
         for intervention in self.interventions:
-            mappings[f"fm_dap10_{intervention}"] = FitMapping(
+            mappings[self.to_sid(f"fm_dap10_{intervention}")] = FitMapping(
                 self,
                 reference=FitData(
                     self,
-                    dataset=f"dapagliflozin_{intervention}",
+                    dataset=self.to_sid(f"dapagliflozin_{intervention}"),
                     xid="time",
                     yid="mean",
                     yid_sd="mean_sd",
                     count="count",
                 ),
                 observable=FitData(
-                    self, task=f"task_po_dap10", xid="time", yid=f"[Cve_dap]",
+                    self,
+                    task="task_po_dap10",
+                    xid="time",
+                    yid="[Cve_dap]",
                 ),
-                metadata=DapagliflozinMappingMetaData(
+                metadata=PKPDMappingMetaData(
                     tissue=Tissue.PLASMA,
                     route=Route.PO,
                     application_form=ApplicationForm.TABLET,
                     dosing=Dosing.SINGLE,
                     health=Health.HEALTHY,
                     fasting=Fasting.FED,
-                    coadministration=Coadministration.METFORMIN if "MET" in intervention else Coadministration.NONE
+                    # both arms with metformin XR 1000 mg
+                    coadministration=Coadministration.METFORMIN,
                 ),
             )
-        # console.print(mappings)
         return mappings
 
-    def figures(self) -> Dict[str, Figure]:
+    @override
+    def figures(self) -> dict[str, Figure]:
         fig = Figure(
             experiment=self,
             sid="Fig2",
             name=f"{self.__class__.__name__} (Healthy)",
         )
-        plots = fig.create_plots(xaxis=Axis(self.label_time, unit=self.unit_time), legend=True)
+        plots = fig.create_plots(
+            xaxis=Axis(self.label_time, unit=self.unit_time), legend=True
+        )
         plots[0].set_yaxis(self.label_dap_plasma, unit=self.unit_dap)
         # simulation
         plots[0].add_data(
-            task=f"task_po_dap10",
+            task="task_po_dap10",
             xid="time",
-            yid=f"[Cve_dap]",
-            label="10 mg PO",
+            yid="[Cve_dap]",
+            label="10 mg PO (fed)",
             color="black",
         )
         # data
         for intervention in self.interventions:
-            if "MET" in intervention:
-                label = "MET1000 - 10 mg PO"
-            else:
-                label = "10 mg PO"
+            label = self.labels_intervention[intervention]
             plots[0].add_data(
-                dataset=f"dapagliflozin_{intervention}",
+                dataset=self.to_sid(f"dapagliflozin_{intervention}"),
                 xid="time",
                 yid="mean",
                 yid_sd="mean_sd",
@@ -116,10 +145,8 @@ class Khomitskaya2018(DapagliflozinSimulationExperiment):
                 color="tab:blue" if "MET" in intervention else "black",
             )
 
-        return {fig.sid: fig,}
+        return self.figures_by_sid(fig)
 
 
 if __name__ == "__main__":
-    out = dapagliflozin.RESULTS_PATH_SIMULATION / Khomitskaya2018.__name__
-    out.mkdir(parents=True, exist_ok=True)
-    run_experiments(Khomitskaya2018, output_dir=out)
+    MODEL.run_experiments(Khomitskaya2018, output_dir=Khomitskaya2018.__name__)

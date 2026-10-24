@@ -1,146 +1,187 @@
-from typing import Dict
+"""Dependency of the pharmacokinetics and pharmacodynamics on the dose and glucose.
+
+Single oral doses of dapagliflozin (0 - 500 mg) at a plasma glucose of 5 mM, and
+plasma glucose levels from 5 to 15 mM without dapagliflozin and with a single
+oral dose of 10 mg.
+"""
+
+from typing import ClassVar, override
+
+from sbmlsim import Q
 from sbmlsim.plot import Axis, Figure, Plot
-from sbmlsim.simulation import Timecourse, TimecourseSim
-from pkdb_models.models.dapagliflozin.experiments.base_experiment import DapagliflozinSimulationExperiment
-from pkdb_models.models.dapagliflozin.helpers import run_experiments
+from sbmlsim.simulation import Simulation
+
+from pkdb_models.models.dapagliflozin import MODEL
+from pkdb_models.models.dapagliflozin.experiments.base_experiment import (
+    DapagliflozinSimulationExperiment,
+)
 
 
 class DoseDependencyExperiment(DapagliflozinSimulationExperiment):
     """Test different doses of dapagliflozin and different glucose concentrations."""
 
-    dapagliflozin_doses = [0, 2.5, 5, 10, 20, 50, 100, 250, 500]  # [mg]
-    glucose_values = [5, 7, 9, 11, 13, 15]  # [mM]
-    dpi = 300
-    legend_font_size = 10
-    colors_glc = ["black", '#d4b9da', '#c994c7', '#df65b0', '#dd1c77', '#980043']
+    dapagliflozin_doses: ClassVar[list[float]] = [
+        0,
+        2.5,
+        5,
+        10,
+        20,
+        50,
+        100,
+        250,
+        500,
+    ]  # [mg]
+    glucose_values: ClassVar[list[float]] = [5, 7, 9, 11, 13, 15]  # [mM]
+    #: oral doses of dapagliflozin of the glucose simulations [mg]
+    glucose_doses: ClassVar[list[float]] = [0, 10]
+    colors_glc: ClassVar[list[str]] = [
+        "black",
+        "#d4b9da",
+        "#c994c7",
+        "#df65b0",
+        "#dd1c77",
+        "#980043",
+    ]
 
-    def simulations(self) -> Dict[str, TimecourseSim]:
-        Q_ = self.Q_
-        tcsims = {}
+    def _simulation(self, dose: float, glc: float) -> Simulation:
+        """Single oral dose of dapagliflozin at a plasma glucose.
+
+        Args:
+            dose: oral dose of dapagliflozin [mg].
+            glc: plasma glucose [mM].
+        """
+        return Simulation(
+            time_unit="hr",
+            end=96,
+            preinit_changes={
+                **self.default_changes(),
+                "PODOSE_dap": Q(dose, "mg"),
+                "[KI__fpg]": Q(glc, "mM"),  # Glucose
+            },
+        )
+
+    @override
+    def simulations(self) -> dict[str, Simulation]:
+        simulations: dict[str, Simulation] = {}
         # dapagliflozin
         for dap in self.dapagliflozin_doses:
-            tcsims[f"dapagliflozin_glc5_dap{dap}"] = TimecourseSim(
-                Timecourse(
-                    start=0,
-                    end=24 * 60,  # [min]
-                    steps=3000,
-                    changes={
-                        **self.default_changes(),
-                        f"PODOSE_dap": Q_(dap, "mg"),
-                        f"[KI__glc_ext]": Q_(5, "mM"),  # Glucose
-                    },
-                )
+            simulations[self.to_sid(f"dapagliflozin_glc5_dap{dap}")] = self._simulation(
+                dose=dap, glc=5
             )
         # glucose
         for glc in self.glucose_values:
-            for dose in [0, 10]:
-
-                tcsims[f"glucose_glc{glc}_dap{dose}"] = TimecourseSim(
-                    Timecourse(
-                        start=0,
-                        end=24 * 60,  # [min]
-                        steps=3000,
-                        changes={
-                            **self.default_changes(),
-                            f"PODOSE_dap": Q_(dose, "mg"),
-                            f"[KI__glc_ext]": Q_(glc, "mM"),  # Glucose
-                        },
-                    )
+            for dose in self.glucose_doses:
+                simulations[self.to_sid(f"glucose_glc{glc}_dap{dose}")] = (
+                    self._simulation(dose=dose, glc=glc)
                 )
 
-        return tcsims
+        return simulations
 
-    def figures(self) -> Dict[str, Figure]:
+    @override
+    def figures(self) -> dict[str, Figure]:
         return {
             **self.figure_pk(),
             **self.figure_pd(),
         }
 
-    def figure_pk(self) -> Dict[str, Figure]:
-        figures = {}
-        Figure.legend_fontsize = self.legend_font_size
-        Figure.fig_dpi = self.dpi
-        for key in ["dapagliflozin", "glucose"]:
-            if key == "dapagliflozin":
-                values = self.dapagliflozin_doses
-                colors = self.dose_colors
-                name = "Pharmacokinetics: Dapagliflozin dose dependency"
-            elif key == "glucose":
-                values = self.glucose_values
-                colors = self.colors_glc
-                name = "Pharmacokinetics: Glucose dependency"
+    def _add_curves(
+        self, plot: Plot, key: str, xid: str, yid: str, by_dose: bool = True
+    ) -> None:
+        """Add the curves of the doses of dapagliflozin or of the glucose levels.
+
+        Args:
+            plot: plot to add the curves to.
+            key: `dapagliflozin` (the doses of dapagliflozin at 5 mM glucose) or
+                `glucose` (the glucose levels without and with 10 mg
+                dapagliflozin, dashed without dapagliflozin).
+            xid: id of the x data.
+            yid: id of the y data.
+            by_dose: order of the glucose curves, all glucose levels of a dose
+                after another, otherwise the doses of a glucose level after
+                another.
+        """
+        if key == "dapagliflozin":
+            for dose in self.dapagliflozin_doses:
+                plot.add_data(
+                    task=self.to_sid(f"task_dapagliflozin_glc5_dap{dose}"),
+                    xid=xid,
+                    yid=yid,
+                    label=f"{dose} mg",
+                    color=self.dose_colors[dose],
+                )
+            return
+
+        curves = [
+            (k, dose)
+            for dose in self.glucose_doses
+            for k in range(len(self.glucose_values))
+        ]
+        if not by_dose:
+            curves = [
+                (k, dose)
+                for k in range(len(self.glucose_values))
+                for dose in self.glucose_doses
+            ]
+        for k, dose in curves:
+            glc = self.glucose_values[k]
+            plot.add_data(
+                task=self.to_sid(f"task_glucose_glc{glc}_dap{dose}"),
+                xid=xid,
+                yid=yid,
+                label=f"{glc} mM at {dose} mg",
+                color=self.colors_glc[k],
+                linestyle="-" if dose == 10 else "--",
+            )
+
+    def figure_pk(self) -> dict[str, Figure]:
+        """Timecourses of dapagliflozin and its glucuronide in plasma, urine and feces."""
+        figures: list[Figure] = []
+        for key, name in [
+            ("dapagliflozin", "Pharmacokinetics: Dapagliflozin dose dependency"),
+            ("glucose", "Pharmacokinetics: Glucose dependency"),
+        ]:
             fig = Figure(
                 experiment=self,
-                sid=f"Fig_{key}_dependency_pk",
+                sid=self.to_sid(f"Fig_{key}_dependency_pk"),
                 num_rows=1,
                 num_cols=5,
-                name=name
+                name=name,
+                settings={"legend_scope": "row"},
             )
             plots = fig.create_plots(xaxis=Axis("time", unit="hr"), legend=True)
             sids = [
                 # plasma
                 "[Cve_dap]",
                 "[Cve_d3g]",
-                #"[Cve_daptot]",
                 # urine
                 "Aurine_dap",
                 "Aurine_d3g",
-                #"Aurine_daptot",
                 # feces
                 "Afeces_dap",
-                #None,
-                #"Afeces_daptot",
             ]
             for ksid, sid in enumerate(sids):
-                if not sid:
-                    continue
                 plots[ksid].set_yaxis(label=self.labels[sid], unit=self.units[sid])
+                self._add_curves(plots[ksid], key, xid="time", yid=sid)
+            figures.append(fig)
+        return self.figures_by_sid(*figures)
 
-                if key == "dapagliflozin":
-                    for kval, value in enumerate(values):
-                        plots[ksid].add_data(
-                            task=f"task_{key}_glc5_dap{value}",
-                            xid="time",
-                            yid=sid,
-                            label=f"{value} {'mg' if key == 'dapagliflozin' else 'mM'}",
-                            color=(colors[kval] if key == "glucose" else self.dose_colors[value]),
-                        )
-                elif key == "glucose":
-                    for dose in [0, 10]:
-                        for kval, value in enumerate(values):
-                            plots[ksid].add_data(
-                                task=f"task_{key}_glc{value}_dap{dose}",
-                                xid="time",
-                                yid=sid,
-                                label=f"{value} {'mg' if key == 'dapagliflozin' else 'mM'} at {dose} mg",
-                                color=(colors[kval] if key == "glucose" else self.dose_colors[value]),
-                                linestyle="-" if dose == 10 else "--",
-                            )
-            figures[fig.sid] = fig
-        return figures
-
-    def figure_pd(self) -> Dict[str, Figure]:
-        figures = {}
-        Figure.fig_dpi = self.dpi
-        for key in ["dapagliflozin", "glucose"]:
-            if key == "dapagliflozin":
-                values = self.dapagliflozin_doses
-                colors = self.dose_colors
-                name = "Pharmacodynamics: Dapagliflozin dose dependency"
-            elif key == "glucose":
-                values = self.glucose_values
-                colors = self.colors_glc
-                name = "Pharmacodynamics: Glucose dependency"
+    def figure_pd(self) -> dict[str, Figure]:
+        """Timecourses of RTG and UGE and their dependency on dapagliflozin in plasma."""
+        figures: list[Figure] = []
+        for key, name in [
+            ("dapagliflozin", "Pharmacodynamics: Dapagliflozin dose dependency"),
+            ("glucose", "Pharmacodynamics: Glucose dependency"),
+        ]:
             fig = Figure(
                 experiment=self,
-                sid=f"Fig_{key}_dependency_pd",
+                sid=self.to_sid(f"Fig_{key}_dependency_pd"),
                 num_rows=1,
                 num_cols=5,
                 name=name,
+                settings={"legend_scope": "row"},
             )
             plots = fig.create_plots(xaxis=Axis("time", unit="hr"), legend=True)
             sids = [
-                #"[KI__glc_ext]",
                 "KI__RTG",
                 "KI__UGE",
             ]
@@ -148,89 +189,26 @@ class DoseDependencyExperiment(DapagliflozinSimulationExperiment):
                 plots[ksid].set_yaxis(label=self.labels[sid], unit=self.units[sid])
 
             for ksid, sid in enumerate(sids):
-
-                if key == "dapagliflozin":
-                    for kval, value in enumerate(values):
-                        plots[ksid].add_data(
-                            task=f"task_{key}_glc5_dap{value}",
-                            xid="time",
-                            yid=sid,
-                            label=f"{value} {'mg' if key == 'dapagliflozin' else 'mM'}",
-                            color=(colors[kval] if key == "glucose" else self.dose_colors[value]),
-                        )
-                elif key == "glucose":
-                    for dose in [0, 10]:
-                        for kval, value in enumerate(values):
-                            plots[ksid].add_data(
-                                task=f"task_{key}_glc{value}_dap{dose}",
-                                xid="time",
-                                yid=sid,
-                                label=f"{value} {'mg' if key == 'dapagliflozin' else 'mM'} at {dose} mg",
-                                color=(colors[kval] if key == "glucose" else self.dose_colors[value]),
-                                linestyle="-" if dose == 10 else "--",
-                            )
+                self._add_curves(plots[ksid], key, xid="time", yid=sid)
 
             # exposure-response panels
             for ksid in range(2, 5):
                 plots[ksid].set_xaxis(label=self.label_dap_plasma, unit=self.unit_dap)
             plots[2].set_yaxis(label=self.label_rtg, unit=self.unit_rtg)
-            plots[3].set_yaxis(label=self.labels["KI__GLCEX"], unit=self.units["KI__GLCEX"])
+            plots[3].set_yaxis(
+                label=self.labels["KI__GLCEX"], unit=self.units["KI__GLCEX"]
+            )
             plots[4].set_yaxis(label=self.label_uge, unit=self.unit_uge)
 
-            for kval, value in enumerate(values):
-                series_label = f"{value} {'mg' if key == 'dapagliflozin' else 'mM'}"
-                color = (colors[kval] if key == "glucose" else self.dose_colors[value])
-                if key == "dapagliflozin":
-                    plots[2].add_data(
-                        task=f"task_{key}_glc5_dap{value}",
-                        xid="[Cve_dap]",
-                        yid="KI__RTG",
-                        label=series_label,
-                        color=color,
-                    )
-                    plots[3].add_data(
-                        task=f"task_{key}_glc5_dap{value}",
-                        xid="[Cve_dap]",
-                        yid="KI__GLCEX",
-                        label=series_label,
-                        color=color,
-                    )
-                    plots[4].add_data(
-                        task=f"task_{key}_glc5_dap{value}",
-                        xid="[Cve_dap]",
-                        yid="KI__UGE",
-                        label=series_label,
-                        color=color,
-                    )
-                elif key == "glucose":
-                    for dose in [0, 10]:
-                        plots[2].add_data(
-                            task=f"task_{key}_glc{value}_dap{dose}",
-                            xid="[Cve_dap]",
-                            yid="KI__RTG",
-                            label=f"{series_label} at {dose} mg",
-                            color=color,
-                            linestyle="-" if dose == 10 else "--",
-                        )
-                        plots[3].add_data(
-                            task=f"task_{key}_glc{value}_dap{dose}",
-                            xid="[Cve_dap]",
-                            yid="KI__GLCEX",
-                            label=f"{series_label} at {dose} mg",
-                            color=color,
-                            linestyle="-" if dose == 10 else "--",
-                        )
-                        plots[4].add_data(
-                            task=f"task_{key}_glc{value}_dap{dose}",
-                            xid="[Cve_dap]",
-                            yid="KI__UGE",
-                            label=f"{series_label} at {dose} mg",
-                            color=color,
-                            linestyle="-" if dose == 10 else "--",
-                        )
-            figures[fig.sid] = fig
-        return figures
+            for ksid, yid in [(2, "KI__RTG"), (3, "KI__GLCEX"), (4, "KI__UGE")]:
+                self._add_curves(
+                    plots[ksid], key, xid="[Cve_dap]", yid=yid, by_dose=False
+                )
+            figures.append(fig)
+        return self.figures_by_sid(*figures)
 
 
 if __name__ == "__main__":
-    run_experiments(DoseDependencyExperiment, output_dir=DoseDependencyExperiment.__name__)
+    MODEL.run_experiments(
+        DoseDependencyExperiment, output_dir=DoseDependencyExperiment.__name__
+    )

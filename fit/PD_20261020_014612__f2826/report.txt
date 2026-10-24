@@ -1,0 +1,530 @@
+--------------------------------------------------------------------------------
+OptimizationProblem: PD
+--------------------------------------------------------------------------------
+Experiments
+	*** FitMappingCollection ***
+experiment: Boulton2013
+mappings: ['fm_DAP10_dapagliflozin', 'fm_C14DAP008_dapagliflozin']
+weights: [None, None]
+use_mapping_weights: True
+kind: excluded
+fit_parameters: {}
+	*** FitMappingCollection ***
+experiment: Cho2021
+mappings: ['fm_dap10_DAP10', 'fm_dap10_RC10']
+weights: [None, None]
+use_mapping_weights: True
+kind: excluded
+fit_parameters: {}
+	*** FitMappingCollection ***
+experiment: FDAMB102002
+mappings: ['fm_dap2p5_uge', 'fm_dap10_uge', 'fm_dap20_uge', 'fm_dap50_uge', 'fm_dap100_uge']
+weights: [6.0, 6.0, 6.0, 6.0, 6.0]
+use_mapping_weights: True
+kind: training
+fit_parameters: {}
+	*** FitMappingCollection ***
+experiment: FDAMB102002
+mappings: ['fm_dap2p5_dapagliflozin', 'fm_dap10_dapagliflozin', 'fm_dap20_dapagliflozin', 'fm_dap50_dapagliflozin', 'fm_dap100_dapagliflozin']
+weights: [None, None, None, None, None]
+use_mapping_weights: True
+kind: excluded
+fit_parameters: {}
+	*** FitMappingCollection ***
+experiment: FDAMB102003
+mappings: ['fm_dap5_uge_day1', 'fm_dap5_uge_day14', 'fm_dap25_uge_day1', 'fm_dap25_uge_day14', 'fm_dap100_uge_day1', 'fm_dap100_uge_day14']
+weights: [10.0, 10.0, 12.0, 12.0, 14.0, 14.0]
+use_mapping_weights: True
+kind: training
+fit_parameters: {}
+	*** FitMappingCollection ***
+experiment: FDAMB102003
+mappings: ['fm_dap5_dapagliflozin_day1', 'fm_dap5_dapagliflozin_day14', 'fm_dap5_dapagliflozin_urine_day1', 'fm_dap5_dapagliflozin_urine_day14', 'fm_dap25_dapagliflozin_day1', 'fm_dap25_dapagliflozin_day14', 'fm_dap25_dapagliflozin_urine_day1', 'fm_dap25_dapagliflozin_urine_day14', 'fm_dap100_dapagliflozin_day1', 'fm_dap100_dapagliflozin_day14', 'fm_dap100_dapagliflozin_urine_day1', 'fm_dap100_dapagliflozin_urine_day14']
+weights: [None, None, None, None, None, None, None, None, None, None, None, None]
+use_mapping_weights: True
+kind: excluded
+fit_parameters: {}
+	*** FitMappingCollection ***
+experiment: FDAMB102006
+mappings: ['fm_DAP50_total_dapagliflozin_urine', 'fm_DAP50_dapagliflozin_urine', 'fm_DAP50_dapagliflozin_3_o_glucuronide_urine', 'fm_DAP50_total_dapagliflozin_feces', 'fm_DAP50_dapagliflozin_feces']
+weights: [None, None, None, None, None]
+use_mapping_weights: True
+kind: excluded
+fit_parameters: {}
+	*** FitMappingCollection ***
+experiment: FDAMB102007
+mappings: ['fm_dap20_normal', 'fm_dap20_mild', 'fm_dap20_moderate', 'fm_dap20_severe']
+weights: [3.0, 3.0, 6.0, 5.0]
+use_mapping_weights: True
+kind: validation
+fit_parameters: {}
+	*** FitMappingCollection ***
+experiment: FDAMB102007
+mappings: ['fm_dap50_healthy_dapagliflozin_cumulative_amount', 'fm_dap50_healthy_dapagliflozin_3_o_glucuronide_cumulative_amount', 'fm_dap50_normal_dapagliflozin_cumulative_amount', 'fm_dap50_normal_dapagliflozin_3_o_glucuronide_cumulative_amount', 'fm_dap50_mild_dapagliflozin_cumulative_amount', 'fm_dap50_mild_dapagliflozin_3_o_glucuronide_cumulative_amount', 'fm_dap50_moderate_dapagliflozin_cumulative_amount', 'fm_dap50_moderate_dapagliflozin_3_o_glucuronide_cumulative_amount', 'fm_dap50_severe_dapagliflozin_cumulative_amount', 'fm_dap50_severe_dapagliflozin_3_o_glucuronide_cumulative_amount']
+weights: [None, None, None, None, None, None, None, None, None, None]
+use_mapping_weights: True
+kind: excluded
+fit_parameters: {}
+	*** FitMappingCollection ***
+experiment: Gould2013
+mappings: ['fm_dap0p3', 'fm_dap1', 'fm_dap2p5']
+weights: [5.0, 6.0, 6.0]
+use_mapping_weights: True
+kind: training
+fit_parameters: {}
+	*** FitMappingCollection ***
+experiment: Gould2013
+mappings: ['fm_dap0', 'fm_dap0p001', 'fm_dap0p01', 'fm_dap0p1']
+weights: [22.0, 5.0, 5.0, 5.0]
+use_mapping_weights: True
+kind: validation
+fit_parameters: {}
+	*** FitMappingCollection ***
+experiment: Gould2013
+mappings: ['fm_dap5', 'fm_dap10', 'fm_dap20', 'fm_dap50', 'fm_dap100', 'fm_dap250', 'fm_dap500']
+weights: [None, None, None, None, None, None, None]
+use_mapping_weights: True
+kind: excluded
+fit_parameters: {}
+	*** FitMappingCollection ***
+experiment: Hwang2022a
+mappings: ['fm_dap10_C1236T_CC', 'fm_dap10_C1236T_CT', 'fm_dap10_C1236T_TT', 'fm_dap10_G2677TA_GG', 'fm_dap10_G2677TA_GT', 'fm_dap10_G2677TA_GA', 'fm_dap10_G2677TA_TT', 'fm_dap10_G2677TA_TA', 'fm_dap10_G2677TA_AA', 'fm_dap10_C3435T_CC', 'fm_dap10_C3435T_CT', 'fm_dap10_C3435T_TT']
+weights: [None, None, None, None, None, None, None, None, None, None, None, None]
+use_mapping_weights: True
+kind: excluded
+fit_parameters: {}
+	*** FitMappingCollection ***
+experiment: Imamura2013
+mappings: ['fm_dap10_DAP10', 'fm_dap10_DAP10__VOG']
+weights: [None, None]
+use_mapping_weights: True
+kind: excluded
+fit_parameters: {}
+	*** FitMappingCollection ***
+experiment: Jang2020
+mappings: ['fm_dap10_DAP10', 'fm_dap10_DAP10__LOB05']
+weights: [None, None]
+use_mapping_weights: True
+kind: excluded
+fit_parameters: {}
+	*** FitMappingCollection ***
+experiment: Kasichayanula2011
+mappings: ['fm_dap10_healthy_dap', 'fm_dap10_healthy_d3g', 'fm_dap10_mild_dap', 'fm_dap10_mild_d3g', 'fm_dap10_moderate_dap', 'fm_dap10_moderate_d3g', 'fm_dap10_severe_dap', 'fm_dap10_severe_d3g']
+weights: [None, None, None, None, None, None, None, None]
+use_mapping_weights: True
+kind: excluded
+fit_parameters: {}
+	*** FitMappingCollection ***
+experiment: Kasichayanula2011a
+mappings: ['fm_dap2p5_uge', 'fm_dap10_uge', 'fm_dap20_uge']
+weights: [9.0, 9.0, 9.0]
+use_mapping_weights: True
+kind: training
+fit_parameters: {}
+	*** FitMappingCollection ***
+experiment: Kasichayanula2011a
+mappings: ['fm_dap0_uge']
+weights: [9.0]
+use_mapping_weights: True
+kind: validation
+fit_parameters: {}
+	*** FitMappingCollection ***
+experiment: Kasichayanula2011a
+mappings: ['fm_dap2p5_dapagliflozin', 'fm_dap2p5_dapagliflozin_3_o_glucuronide', 'fm_dap2p5_dapagliflozin_urine', 'fm_dap10_dapagliflozin', 'fm_dap10_dapagliflozin_3_o_glucuronide', 'fm_dap10_dapagliflozin_urine', 'fm_dap20_dapagliflozin', 'fm_dap20_dapagliflozin_3_o_glucuronide', 'fm_dap20_dapagliflozin_urine', 'fm_sad2p5_dapagliflozin_urine', 'fm_sad10_dapagliflozin_urine', 'fm_sad20_dapagliflozin_urine', 'fm_sad50_dapagliflozin_urine']
+weights: [None, None, None, None, None, None, None, None, None, None, None, None, None]
+use_mapping_weights: True
+kind: excluded
+fit_parameters: {}
+	*** FitMappingCollection ***
+experiment: Kasichayanula2011b
+mappings: ['fm_po_dap10_fasted_dap', 'fm_po_dap10_fasted_d3g', 'fm_po_dap10_fed_dap', 'fm_po_dap10_fed_d3g']
+weights: [None, None, None, None]
+use_mapping_weights: True
+kind: excluded
+fit_parameters: {}
+	*** FitMappingCollection ***
+experiment: Kasichayanula2011c
+mappings: ['fm_po_DAP50_S1', 'fm_po_DAP50__PIO45_S1', 'fm_po_DAP20_S2', 'fm_po_DAP20__MET1000_S2', 'fm_po_DAP20_S3', 'fm_po_DAP20__GLI4_S3', 'fm_po_DAP20__SIT100_S3']
+weights: [None, None, None, None, None, None, None]
+use_mapping_weights: True
+kind: excluded
+fit_parameters: {}
+	*** FitMappingCollection ***
+experiment: Kasichayanula2012
+mappings: ['fm_dap20_DAP20', 'fm_dap20_DAP20__SIM40', 'fm_dap20_DAP20__VAL320']
+weights: [None, None, None]
+use_mapping_weights: True
+kind: excluded
+fit_parameters: {}
+	*** FitMappingCollection ***
+experiment: Kasichayanula2013
+mappings: ['fm_dap20_d10_normal__Cve_dap_', 'fm_dap20_d10_mild__Cve_dap_', 'fm_dap20_d10_moderate__Cve_dap_', 'fm_dap20_d10_severe__Cve_dap_', 'fm_dap20_d10_normal_Aurine_dap', 'fm_dap20_d10_mild_Aurine_dap', 'fm_dap20_d10_moderate_Aurine_dap', 'fm_dap20_d10_severe_Aurine_dap', 'fm_dap20_d10_normal__Cve_d3g_', 'fm_dap20_d10_mild__Cve_d3g_', 'fm_dap20_d10_moderate__Cve_d3g_', 'fm_dap20_d10_severe__Cve_d3g_', 'fm_dap20_d10_normal_Aurine_d3g', 'fm_dap20_d10_mild_Aurine_d3g', 'fm_dap20_d10_moderate_Aurine_d3g', 'fm_dap20_d10_severe_Aurine_d3g', 'fm_dap20_d4_normal_dapagliflozin', 'fm_dap20_d4_mild_dapagliflozin', 'fm_dap20_d4_moderate_dapagliflozin', 'fm_dap20_d4_severe_dapagliflozin', 'fm_dap20_d4_normal_dapagliflozin_3_o_glucuronide', 'fm_dap20_d4_mild_dapagliflozin_3_o_glucuronide', 'fm_dap20_d4_moderate_dapagliflozin_3_o_glucuronide', 'fm_dap20_d4_severe_dapagliflozin_3_o_glucuronide', 'fm_dap50_healthy_dapagliflozin', 'fm_dap50_normal_dapagliflozin', 'fm_dap50_mild_dapagliflozin', 'fm_dap50_moderate_dapagliflozin', 'fm_dap50_severe_dapagliflozin', 'fm_dap50_healthy_dapagliflozin_3_o_glucuronide', 'fm_dap50_normal_dapagliflozin_3_o_glucuronide', 'fm_dap50_mild_dapagliflozin_3_o_glucuronide', 'fm_dap50_moderate_dapagliflozin_3_o_glucuronide', 'fm_dap50_severe_dapagliflozin_3_o_glucuronide']
+weights: [None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None]
+use_mapping_weights: True
+kind: excluded
+fit_parameters: {}
+	*** FitMappingCollection ***
+experiment: Kasichayanula2013a
+mappings: ['fm_po_dap10_dapagliflozin_RIF', 'fm_po_dap10_dapagliflozin_RIF_rifampicin', 'fm_po_dap10_dapagliflozin_MFA', 'fm_po_dap10_dapagliflozin_MFA_mefenamic_acid', 'fm_po_dap10_dapagliflozin_cumulative_amount_RIF', 'fm_po_dap10_dapagliflozin_cumulative_amount_RIF_rifampicin', 'fm_po_dap10_dapagliflozin_cumulative_amount_MFA', 'fm_po_dap10_dapagliflozin_cumulative_amount_MFA_mefenamic_acid', 'fm_po_dap10_dapagliflozin_3_o_glucuronide_RIF', 'fm_po_dap10_dapagliflozin_3_o_glucuronide_RIF_rifampicin', 'fm_po_dap10_dapagliflozin_3_o_glucuronide_MFA', 'fm_po_dap10_dapagliflozin_3_o_glucuronide_MFA_mefenamic_acid', 'fm_po_dap10_dapagliflozin_3_o_glucuronide_cumulative_amount_RIF', 'fm_po_dap10_dapagliflozin_3_o_glucuronide_cumulative_amount_RIF_rifampicin', 'fm_po_dap10_dapagliflozin_3_o_glucuronide_cumulative_amount_MFA', 'fm_po_dap10_dapagliflozin_3_o_glucuronide_cumulative_amount_MFA_mefenamic_acid']
+weights: [None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None]
+use_mapping_weights: True
+kind: excluded
+fit_parameters: {}
+	*** FitMappingCollection ***
+experiment: Khomitskaya2018
+mappings: ['fm_dap10_DAP10', 'fm_dap10_DAP10__MET1000']
+weights: [None, None]
+use_mapping_weights: True
+kind: excluded
+fit_parameters: {}
+	*** FitMappingCollection ***
+experiment: Kim2023
+mappings: ['fm_dap10_DAP10_uge']
+weights: [18.0]
+use_mapping_weights: True
+kind: training
+fit_parameters: {}
+	*** FitMappingCollection ***
+experiment: Kim2023
+mappings: ['fm_dap10_EV5__DAP10_uge']
+weights: [18.0]
+use_mapping_weights: True
+kind: validation
+fit_parameters: {}
+	*** FitMappingCollection ***
+experiment: Kim2023
+mappings: ['fm_dap10_DAP10_dapagliflozin', 'fm_dap10_EV5__DAP10_dapagliflozin']
+weights: [None, None]
+use_mapping_weights: True
+kind: excluded
+fit_parameters: {}
+	*** FitMappingCollection ***
+experiment: Kim2023a
+mappings: ['fm_dap10_DAP10', 'fm_dap10_DAP_FOR10']
+weights: [None, None]
+use_mapping_weights: True
+kind: excluded
+fit_parameters: {}
+	*** FitMappingCollection ***
+experiment: Komoroski2009
+mappings: ['fm_po_dap_2p5_single', 'fm_po_dap_5_single', 'fm_po_dap_10_single', 'fm_po_dap_20_single', 'fm_po_dap_50_single', 'fm_po_dap_100_single', 'fm_po_dap_250_single', 'fm_po_dap_500_single']
+weights: [5.0, 5.0, 5.0, 5.0, 5.0, 5.0, 5.0, 5.0]
+use_mapping_weights: True
+kind: training
+fit_parameters: {}
+	*** FitMappingCollection ***
+experiment: Komoroski2009
+mappings: ['fm_po_dap_0_single']
+weights: [5.0]
+use_mapping_weights: True
+kind: validation
+fit_parameters: {}
+	*** FitMappingCollection ***
+experiment: Komoroski2009
+mappings: ['fm_po_dap250_fasted', 'fm_po_dap250_fed', 'fm_po_dap250_fasted_urine', 'fm_po_dap250_fed_urine', 'fm_po_dap2p5_MD_single', 'fm_po_dap10_MD_single', 'fm_po_dap20_MD_single', 'fm_po_dap50_MD_single', 'fm_po_dap100_MD_single', 'fm_po_dap2p5_MD_multi', 'fm_po_dap10_MD_multi', 'fm_po_dap20_MD_multi', 'fm_po_dap50_MD_multi', 'fm_po_dap100_MD_multi', 'fm_po_dap_2p5_uge_multi', 'fm_po_dap_10_uge_multi', 'fm_po_dap_20_uge_multi', 'fm_po_dap_50_uge_multi', 'fm_po_dap_100_uge_multi']
+weights: [None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None]
+use_mapping_weights: True
+kind: excluded
+fit_parameters: {}
+	*** FitMappingCollection ***
+experiment: LaCreta2016
+mappings: ['fm_po_dap2p5_NH_fasted', 'fm_po_dap10_NH_fasted', 'fm_po_dap2p5_HS_fasted', 'fm_po_dap10_HS_fasted', 'fm_po_dap2p5_NH_fed', 'fm_po_dap2p5_HS_fed', 'fm_po_dap10_HS_fed']
+weights: [None, None, None, None, None, None, None]
+use_mapping_weights: True
+kind: excluded
+fit_parameters: {}
+	*** FitMappingCollection ***
+experiment: Obermeier2010
+mappings: ['fm_dap50_dap', 'fm_dap50_daptot', 'fm_dap50_dap_profiling', 'fm_dap50_d3g_profiling', 'fm_dap50_daptot_profiling']
+weights: [None, None, None, None, None]
+use_mapping_weights: True
+kind: excluded
+fit_parameters: {}
+	*** FitMappingCollection ***
+experiment: Sha2015
+mappings: ['fm_po_dap10_glucose_cumulative_amount']
+weights: [54.0]
+use_mapping_weights: True
+kind: training
+fit_parameters: {}
+	*** FitMappingCollection ***
+experiment: Sha2015
+mappings: ['fm_po_dap10_renal_threshold']
+weights: [54.0]
+use_mapping_weights: True
+kind: validation
+fit_parameters: {}
+	*** FitMappingCollection ***
+experiment: Sha2015
+mappings: ['fm_po_dap10_dapagliflozin']
+weights: [None]
+use_mapping_weights: True
+kind: excluded
+fit_parameters: {}
+	*** FitMappingCollection ***
+experiment: Shah2019a
+mappings: ['fm_po_dap5_fasted', 'fm_po_dap5_fed']
+weights: [None, None]
+use_mapping_weights: True
+kind: excluded
+fit_parameters: {}
+	*** FitMappingCollection ***
+experiment: vanderAartvanderBeek2020
+mappings: ['fm_dap10_S1', 'fm_dap10_S2', 'fm_dap10_S3', 'fm_dap10_S4', 'fm_dap10_S5', 'fm_dap10_S6']
+weights: [None, None, None, None, None, None]
+use_mapping_weights: True
+kind: excluded
+fit_parameters: {}
+	*** FitMappingCollection ***
+experiment: Watada2019
+mappings: ['fm_po_DAP0_uge', 'fm_po_DAP5_uge', 'fm_po_DAP10_uge']
+weights: [14.0, 14.0, 14.0]
+use_mapping_weights: True
+kind: validation
+fit_parameters: {}
+	*** FitMappingCollection ***
+experiment: Watada2019
+mappings: ['fm_po_DAP5_dapagliflozin', 'fm_po_DAP5_dapagliflozin_3_o_glucuronide', 'fm_po_DAP10_dapagliflozin', 'fm_po_DAP10_dapagliflozin_3_o_glucuronide']
+weights: [None, None, None, None]
+use_mapping_weights: True
+kind: excluded
+fit_parameters: {}
+	*** FitMappingCollection ***
+experiment: Yang2013
+mappings: ['fm_po_dap5_KI__UGE_single', 'fm_po_dap10_KI__UGE_single', 'fm_po_dap5_KI__UGE_multi', 'fm_po_dap10_KI__UGE_multi']
+weights: [14.0, 14.0, 14.0, 13.0]
+use_mapping_weights: True
+kind: training
+fit_parameters: {}
+	*** FitMappingCollection ***
+experiment: Yang2013
+mappings: ['fm_po_dap5_Cve_dap_single', 'fm_po_dap10_Cve_dap_single', 'fm_po_dap5_Cve_d3g_single', 'fm_po_dap10_Cve_d3g_single', 'fm_po_dap5_Cve_dap_multi', 'fm_po_dap10_Cve_dap_multi', 'fm_po_dap5_Cve_d3g_multi', 'fm_po_dap10_Cve_d3g_multi']
+weights: [None, None, None, None, None, None, None, None]
+use_mapping_weights: True
+kind: excluded
+fit_parameters: {}
+Parameters
+	FitParameter<KI__RTG_E50 = 4e-06 [1e-07 - 0.0001]>
+	FitParameter<KI__RTG_gamma = 1.5 [1.0 - 4.0]>
+	FitParameter<KI__RTG_m_fpg = 1.5 [0.1 - 5]>
+	FitParameter<KI__RTG_max_inhibition = 0.7 [0.3 - 0.95]>
+FitSettings:
+	residual: NORMALIZED
+	parameter_scale: LOG10
+	loss_function: LINEAR
+	weighting_curves: ['MAPPING', 'POINTS']
+	weighting_points: ERROR_WEIGHTING
+	variable_step_size: True
+	relative_tolerance: 1e-06
+	absolute_tolerance: {'amount': 1e-12, 'concentration': 1e-12, 'other': 1e-06, 'ids': {}}
+	initial_time_step: 0.0
+	data_at_change: before
+Mappings: 46 (31 training, 15 validation)
+Data
+	experiment_keys: ['FDAMB102002', 'FDAMB102002', 'FDAMB102002', 'FDAMB102002', 'FDAMB102002', 'FDAMB102003', 'FDAMB102003', 'FDAMB102003', 'FDAMB102003', 'FDAMB102003', 'FDAMB102003', 'FDAMB102007', 'FDAMB102007', 'FDAMB102007', 'FDAMB102007', 'Gould2013', 'Gould2013', 'Gould2013', 'Gould2013', 'Gould2013', 'Gould2013', 'Gould2013', 'Kasichayanula2011a', 'Kasichayanula2011a', 'Kasichayanula2011a', 'Kasichayanula2011a', 'Kim2023', 'Kim2023', 'Komoroski2009', 'Komoroski2009', 'Komoroski2009', 'Komoroski2009', 'Komoroski2009', 'Komoroski2009', 'Komoroski2009', 'Komoroski2009', 'Komoroski2009', 'Sha2015', 'Sha2015', 'Watada2019', 'Watada2019', 'Watada2019', 'Yang2013', 'Yang2013', 'Yang2013', 'Yang2013']
+	mapping_keys: ['fm_dap2p5_uge', 'fm_dap10_uge', 'fm_dap20_uge', 'fm_dap50_uge', 'fm_dap100_uge', 'fm_dap5_uge_day1', 'fm_dap5_uge_day14', 'fm_dap25_uge_day1', 'fm_dap25_uge_day14', 'fm_dap100_uge_day1', 'fm_dap100_uge_day14', 'fm_dap20_normal', 'fm_dap20_mild', 'fm_dap20_moderate', 'fm_dap20_severe', 'fm_dap0p3', 'fm_dap1', 'fm_dap2p5', 'fm_dap0', 'fm_dap0p001', 'fm_dap0p01', 'fm_dap0p1', 'fm_dap2p5_uge', 'fm_dap10_uge', 'fm_dap20_uge', 'fm_dap0_uge', 'fm_dap10_DAP10_uge', 'fm_dap10_EV5__DAP10_uge', 'fm_po_dap_2p5_single', 'fm_po_dap_5_single', 'fm_po_dap_10_single', 'fm_po_dap_20_single', 'fm_po_dap_50_single', 'fm_po_dap_100_single', 'fm_po_dap_250_single', 'fm_po_dap_500_single', 'fm_po_dap_0_single', 'fm_po_dap10_glucose_cumulative_amount', 'fm_po_dap10_renal_threshold', 'fm_po_DAP0_uge', 'fm_po_DAP5_uge', 'fm_po_DAP10_uge', 'fm_po_dap5_KI__UGE_single', 'fm_po_dap10_KI__UGE_single', 'fm_po_dap5_KI__UGE_multi', 'fm_po_dap10_KI__UGE_multi']
+	xid_observable: ['time', 'time', 'time', 'time', 'time', 'time', 'time', 'time', 'time', 'time', 'time', 'time', 'time', 'time', 'time', 'time', 'time', 'time', 'time', 'time', 'time', 'time', 'time', 'time', 'time', 'time', 'time', 'time', 'time', 'time', 'time', 'time', 'time', 'time', 'time', 'time', 'time', 'time', 'time', 'time', 'time', 'time', 'time', 'time', 'time', 'time']
+	yid_observable: ['KI__UGE', 'KI__UGE', 'KI__UGE', 'KI__UGE', 'KI__UGE', 'KI__UGE', 'KI__UGE', 'KI__UGE', 'KI__UGE', 'KI__UGE', 'KI__UGE', 'KI__UGE', 'KI__UGE', 'KI__UGE', 'KI__UGE', 'KI__UGE', 'KI__UGE', 'KI__UGE', 'KI__UGE', 'KI__UGE', 'KI__UGE', 'KI__UGE', 'KI__UGE', 'KI__UGE', 'KI__UGE', 'KI__UGE', 'KI__UGE', 'KI__UGE', 'KI__UGE', 'KI__UGE', 'KI__UGE', 'KI__UGE', 'KI__UGE', 'KI__UGE', 'KI__UGE', 'KI__UGE', 'KI__UGE', 'KI__UGE', 'KI__RTG', 'KI__UGE', 'KI__UGE', 'KI__UGE', 'KI__UGE', 'KI__UGE', 'KI__UGE', 'KI__UGE']
+	x_references: [array([  240.,   480.,   720.,   960.,  1200.,  1440., 18960., 19200.,
+       19440., 19680., 19920., 20160.]), array([  240.,   480.,   720.,   960.,  1200.,  1440., 18960., 19200.,
+       19440., 19680., 19920., 20160.]), array([  240.,   480.,   720.,   960.,  1200.,  1440., 18960., 19200.,
+       19440., 19680., 19920., 20160.]), array([  240.,   480.,   720.,   960.,  1200.,  1440., 18960., 19200.,
+       19440., 19680., 19920., 20160.]), array([  240.,   480.,   720.,   960.,  1200.,  1440., 18960., 19200.,
+       19440., 19680., 19920., 20160.]), array([ 240.,  480.,  720.,  960., 1200., 1440.]), array([18960., 19200., 19440., 19680., 19920., 20160.]), array([ 240.,  480.,  720.,  960., 1200., 1440.]), array([18960., 19200., 19440., 19680., 19920., 20160.]), array([ 240.,  480.,  720.,  960., 1200., 1440.]), array([18960., 19200., 19440., 19680., 19920., 20160.]), array([   0., 1440.]), array([   0., 1440.]), array([   0., 1440.]), array([   0., 1440.]), array([   0., 1440.]), array([   0., 1440.]), array([   0., 1440.]), array([   0., 1440.]), array([   0., 1440.]), array([   0., 1440.]), array([   0., 1440.]), array([ 1440., 20160.]), array([ 1440., 20160.]), array([ 1440., 20160.]), array([ 1440., 20160.]), array([1440.]), array([1440.]), array([ 240.,  480.,  720.,  960., 1200., 1440., 1680., 1920., 2160.,
+       2400., 2640., 2880., 3600., 4320., 5040., 5760., 6480., 7200.]), array([ 240.,  480.,  720.,  960., 1200., 1440., 1680., 1920., 2160.,
+       2400., 2640., 2880.]), array([ 240.,  480.,  720.,  960., 1200., 1440., 1680., 1920., 2160.,
+       2400., 2640., 2880., 3600., 4320., 5040., 5760., 6480., 7200.]), array([ 240.,  480.,  720.,  960., 1200., 1440., 1680., 1920., 2160.,
+       2400., 2640., 2880.]), array([ 240.,  480.,  720.,  960., 1200., 1440., 1680., 1920., 2160.,
+       2400., 2640., 2880., 3600., 4320., 5040., 5760., 6480., 7200.]), array([ 240.,  480.,  720.,  960., 1200., 1440., 1680., 1920., 2160.,
+       2400., 2640., 2880., 3600., 4320., 5040., 5760., 6480., 7200.]), array([ 240.,  480.,  720.,  960., 1200., 1440., 1680., 1920., 2160.,
+       2400., 2640., 2880., 3600., 4320., 5040., 5760., 6480., 7200.]), array([ 240.,  480.,  720.,  960., 1200., 1440., 1680., 1920., 2160.,
+       2400., 2640., 2880., 3600., 4320., 5040., 5760., 6480., 7200.]), array([ 240.,  480.,  720.,  960., 1200., 1440., 1680., 1920., 2160.,
+       2400., 2640., 2880., 3600., 4320., 5040., 5760., 6480., 7200.]), array([ 140.,  260.,  620.,  860., 1460.]), array([ 140.,  440.,  740., 1160.]), array([-8640.,  1440.]), array([-8640.,  1440.]), array([-8640.,  1440.]), array([1440., 5760.]), array([1440., 5760.]), array([1440., 5760.]), array([1440., 5760.])]
+	y_references: [array([ 4.62427746,  8.67052023, 13.29479769, 16.1849711 , 17.68786127,
+       17.91907514,  3.57541899,  7.37430168, 10.94972067, 13.63128492,
+       17.87709497, 20.44692737]), array([ 5.31791908, 10.98265896, 19.88439306, 27.05202312, 33.75722543,
+       40.23121387,  5.1396648 ,  8.7150838 , 16.53631285, 21.22905028,
+       28.60335196, 33.74301676]), array([ 6.01156069, 17.34104046, 26.3583815 , 36.30057803, 48.09248555,
+       58.03468208,  8.04469274, 13.8547486 , 25.25139665, 34.8603352 ,
+       42.34636872, 48.93854749]), array([ 7.86127168, 17.10982659, 30.28901734, 43.8150289 , 54.33526012,
+       62.19653179,  7.59776536, 12.73743017, 23.01675978, 33.29608939,
+       42.23463687, 53.40782123]), array([ 6.47398844, 14.10404624, 26.58959538, 34.21965318, 47.6300578 ,
+       58.49710983, 10.27932961, 17.20670391, 25.25139665, 30.83798883,
+       43.12849162, 55.41899441]), array([ 5.91133005, 12.80788177, 23.6453202 , 31.03448276, 38.42364532,
+       45.32019704]), array([ 5.32687651, 10.16949153, 18.40193705, 27.60290557, 32.92978208,
+       36.80387409]), array([11.33004926, 19.7044335 , 35.96059113, 49.26108374, 62.06896552,
+       75.36945813]), array([11.13801453, 17.91767554, 31.96125908, 44.55205811, 57.62711864,
+       70.21791768]), array([ 9.85221675, 19.21182266, 35.4679803 , 50.24630542, 61.08374384,
+       80.78817734]), array([11.13801453, 17.91767554, 32.92978208, 44.55205811, 57.14285714,
+       69.24939467]), array([ 0.        , 91.45321101]), array([ 0.        , 70.24440367]), array([ 0.        , 20.04550459]), array([0.        , 6.91155963]), array([0.   , 0.592]), array([ 0.   , 19.201]), array([ 0.   , 22.887]), array([0.   , 0.085]), array([0.   , 0.068]), array([0.   , 0.044]), array([0.   , 0.073]), array([37.9, 41.6]), array([68.4, 71.4]), array([76.7, 73. ]), array([9.4, 6.8]), array([47.44486]), array([49.48541]), array([ 3.71459965, 11.24068101, 19.39885868, 23.77391037, 27.51686575,
+       31.25982112, 32.48148017, 32.43894658, 32.396413  , 32.35387942,
+       32.31134583, 32.26881225, 33.40304115, 32.01597372, 35.67386193,
+       35.55098713, 35.42574936, 34.03631895]), array([ 5.60734413, 13.76434032, 23.81644396, 27.56176231, 31.30235471,
+       36.30713973, 36.89670247, 37.4862652 , 37.44609459, 37.40119803,
+       37.35866445, 36.05430121]), array([ 3.71459965, 18.81165893, 27.60429589, 36.39456988, 41.39699193,
+       52.71092522, 57.71807323, 62.72285826, 67.72764329, 73.99189499,
+       75.21119106, 73.9091908 , 80.09073831, 81.22496721, 81.09736646,
+       83.50051395, 82.11344652, 80.72401612]), array([ 4.97642931, 15.02853295, 25.07827361, 36.3922069 , 43.92065124,
+       53.9703919 , 58.9775399 , 63.98468791, 66.46817661, 67.68747268,
+       67.64257612, 66.33821288]), array([  6.23589598,  20.0711256 ,  32.01597372,  42.07280332,
+        50.23216248,  59.02007349,  66.5508808 ,  72.81749548,
+        78.45319534,  87.87202117,  91.61733952,  94.09964673,
+       106.591524  , 113.40398634, 117.69278938, 117.56991458,
+       120.59925094, 119.21100202]), array([  8.76191826,  23.86134052,  38.95839979,  50.27233309,
+        61.58862936,  72.90256265,  82.95466629,  94.89951441,
+       106.2134477 , 115.00372169, 120.00850672, 128.79996219,
+       157.69208048, 173.96944671, 188.98380179, 192.01668262,
+       196.93994494, 194.28632191]), array([ 11.28321459,  26.38499982,  36.43474049,  50.27469606,
+        60.3267997 ,  72.90019967,  84.21649594,  96.79225889,
+       106.84908848, 118.15829582, 128.21039946, 143.30745874,
+       173.46613263, 193.52662484, 213.58948003, 220.40548683,
+       225.95966398, 228.98663737]), array([ 13.80923688,  28.90629615,  40.22259242,  52.79835537,
+        64.11465164,  75.42622195,  88.0019849 ,  98.05645152,
+       110.63457744, 121.94614776, 133.26008105, 144.57401434,
+       185.45351434, 213.71708078, 241.34973239, 261.41613204,
+       285.26683916, 304.06550172]), array([1.07733595, 2.18358074, 2.14310837, 2.10456326, 2.06409089,
+       0.88461038, 0.84413801, 1.9503828 , 0.76897504, 1.87521983,
+       0.69381206, 0.65333969, 1.68442151, 1.56878617, 1.45700533,
+       1.34715176, 1.22958916, 1.11395381]), array([ 7.25394256, 11.73382977, 26.7496105 , 35.16291208, 40.64448336]), array([3.46206897, 3.80344828, 4.3137931 , 4.63103448]), array([20.6, 14.4]), array([ 18.6, 115.1]), array([ 14.3, 115.6]), array([36.7, 47.6]), array([47. , 74.9]), array([28.1, 40. ]), array([41.1, 70.1])]
+	y_errors: [None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, array([0.451, 0.451]), array([10.728, 10.728]), None, None, array([0.0332, 0.0332]), array([0.011, 0.011]), array([0.049, 0.049]), array([12.71942446, 13.03597122]), array([13.65467626, 11.73381295]), array([17.60431655, 20.52517986]), array([15.57627119, 11.13559322]), array([13.05330294]), array([13.05330294]), None, None, None, None, None, None, None, None, None, array([ 1.08075783,  2.16225679,  6.94923763,  9.26602074, 11.58261857]), array([0.74498274, 0.5169268 , 0.76525438, 0.47638352]), array([29.1, 10.3]), array([15.2, 25. ]), array([13.1, 17.2]), array([11.2, 16.8]), array([10.7, 23.6]), array([ 7.5, 14.6]), array([ 9.3, 24. ])]
+	y_errors_type: [None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, 'SD', 'SD', None, None, 'SD', 'SD', 'SD', 'SD', 'SD', 'SD', 'SD', 'SD', 'SD', None, None, None, None, None, None, None, None, None, 'SD', 'SD', 'SD', 'SD', 'SD', 'SD', 'SD', 'SD', 'SD']
+	weights: [array([1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1.]), array([1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1.]), array([1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1.]), array([1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1.]), array([1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1.]), array([3.33333333, 3.33333333, 3.33333333, 3.33333333, 3.33333333,
+       3.33333333]), array([3.33333333, 3.33333333, 3.33333333, 3.33333333, 3.33333333,
+       3.33333333]), array([4., 4., 4., 4., 4., 4.]), array([4., 4., 4., 4., 4., 4.]), array([4.66666667, 4.66666667, 4.66666667, 4.66666667, 4.66666667,
+       4.66666667]), array([4.66666667, 4.66666667, 4.66666667, 4.66666667, 4.66666667,
+       4.66666667]), array([3., 3.]), array([3., 3.]), array([6., 6.]), array([5., 5.]), array([0.        , 3.28159645]), array([0.        , 5.36940716]), array([6., 6.]), array([22., 22.]), array([0.        , 5.12048193]), array([ 0., 10.]), array([0.       , 3.7244898]), array([13.40862557, 14.3602649 ]), array([22.54172813, 27.38240343]), array([19.60598692, 16.00473186]), array([2.71566921, 2.74794521]), array([65.4246273]), array([68.23846684]), array([0.55555556, 0.55555556, 0.55555556, 0.55555556, 0.55555556,
+       0.55555556, 0.55555556, 0.55555556, 0.55555556, 0.55555556,
+       0.55555556, 0.55555556, 0.55555556, 0.55555556, 0.55555556,
+       0.55555556, 0.55555556, 0.55555556]), array([0.83333333, 0.83333333, 0.83333333, 0.83333333, 0.83333333,
+       0.83333333, 0.83333333, 0.83333333, 0.83333333, 0.83333333,
+       0.83333333, 0.83333333]), array([0.55555556, 0.55555556, 0.55555556, 0.55555556, 0.55555556,
+       0.55555556, 0.55555556, 0.55555556, 0.55555556, 0.55555556,
+       0.55555556, 0.55555556, 0.55555556, 0.55555556, 0.55555556,
+       0.55555556, 0.55555556, 0.55555556]), array([0.83333333, 0.83333333, 0.83333333, 0.83333333, 0.83333333,
+       0.83333333, 0.83333333, 0.83333333, 0.83333333, 0.83333333,
+       0.83333333, 0.83333333]), array([0.55555556, 0.55555556, 0.55555556, 0.55555556, 0.55555556,
+       0.55555556, 0.55555556, 0.55555556, 0.55555556, 0.55555556,
+       0.55555556, 0.55555556, 0.55555556, 0.55555556, 0.55555556,
+       0.55555556, 0.55555556, 0.55555556]), array([0.55555556, 0.55555556, 0.55555556, 0.55555556, 0.55555556,
+       0.55555556, 0.55555556, 0.55555556, 0.55555556, 0.55555556,
+       0.55555556, 0.55555556, 0.55555556, 0.55555556, 0.55555556,
+       0.55555556, 0.55555556, 0.55555556]), array([0.55555556, 0.55555556, 0.55555556, 0.55555556, 0.55555556,
+       0.55555556, 0.55555556, 0.55555556, 0.55555556, 0.55555556,
+       0.55555556, 0.55555556, 0.55555556, 0.55555556, 0.55555556,
+       0.55555556, 0.55555556, 0.55555556]), array([0.55555556, 0.55555556, 0.55555556, 0.55555556, 0.55555556,
+       0.55555556, 0.55555556, 0.55555556, 0.55555556, 0.55555556,
+       0.55555556, 0.55555556, 0.55555556, 0.55555556, 0.55555556,
+       0.55555556, 0.55555556, 0.55555556]), array([0.55555556, 0.55555556, 0.55555556, 0.55555556, 0.55555556,
+       0.55555556, 0.55555556, 0.55555556, 0.55555556, 0.55555556,
+       0.55555556, 0.55555556, 0.55555556, 0.55555556, 0.55555556,
+       0.55555556, 0.55555556, 0.55555556]), array([72.48856086, 58.60791468, 41.57230025, 40.98409241, 37.89820218]), array([ 62.73693117,  99.33041126,  76.10045534, 131.23662465]), array([4.95532646, 9.78640777]), array([ 8.56578947, 32.228     ]), array([ 7.64122137, 47.04651163]), array([22.9375    , 19.83333333]), array([30.74766355, 22.21610169]), array([26.22666667, 19.17808219]), array([28.72580645, 18.98541667])]
+	weights_points: [array([2., 2., 2., 2., 2., 2., 2., 2., 2., 2., 2., 2.]), array([2., 2., 2., 2., 2., 2., 2., 2., 2., 2., 2., 2.]), array([2., 2., 2., 2., 2., 2., 2., 2., 2., 2., 2., 2.]), array([2., 2., 2., 2., 2., 2., 2., 2., 2., 2., 2., 2.]), array([2., 2., 2., 2., 2., 2., 2., 2., 2., 2., 2., 2.]), array([2., 2., 2., 2., 2., 2.]), array([2., 2., 2., 2., 2., 2.]), array([2., 2., 2., 2., 2., 2.]), array([2., 2., 2., 2., 2., 2.]), array([2., 2., 2., 2., 2., 2.]), array([2., 2., 2., 2., 2., 2.]), array([2., 2.]), array([2., 2.]), array([2., 2.]), array([2., 2.]), array([0.        , 1.31263858]), array([0.        , 1.78980239]), array([2., 2.]), array([2., 2.]), array([0.        , 2.04819277]), array([0., 4.]), array([0.        , 1.48979592]), array([2.97969457, 3.19116998]), array([5.00927292, 6.08497854]), array([4.35688598, 3.55660708]), array([0.60348205, 0.61065449]), array([3.63470152]), array([3.79102594]), array([2., 2., 2., 2., 2., 2., 2., 2., 2., 2., 2., 2., 2., 2., 2., 2., 2.,
+       2.]), array([2., 2., 2., 2., 2., 2., 2., 2., 2., 2., 2., 2.]), array([2., 2., 2., 2., 2., 2., 2., 2., 2., 2., 2., 2., 2., 2., 2., 2., 2.,
+       2.]), array([2., 2., 2., 2., 2., 2., 2., 2., 2., 2., 2., 2.]), array([2., 2., 2., 2., 2., 2., 2., 2., 2., 2., 2., 2., 2., 2., 2., 2., 2.,
+       2.]), array([2., 2., 2., 2., 2., 2., 2., 2., 2., 2., 2., 2., 2., 2., 2., 2., 2.,
+       2.]), array([2., 2., 2., 2., 2., 2., 2., 2., 2., 2., 2., 2., 2., 2., 2., 2., 2.,
+       2.]), array([2., 2., 2., 2., 2., 2., 2., 2., 2., 2., 2., 2., 2., 2., 2., 2., 2.,
+       2.]), array([2., 2., 2., 2., 2., 2., 2., 2., 2., 2., 2., 2., 2., 2., 2., 2., 2.,
+       2.]), array([6.71190378, 5.42665877, 3.84928706, 3.79482337, 3.50909279]), array([4.64718009, 7.35780824, 5.63707077, 9.72123146]), array([0.70790378, 1.39805825]), array([1.22368421, 4.604     ]), array([1.09160305, 6.72093023]), array([3.27678571, 2.83333333]), array([4.39252336, 3.17372881]), array([3.74666667, 2.73972603]), array([4.41935484, 2.92083333])]
+	weights_curves: [0.5, 0.5, 0.5, 0.5, 0.5, 1.6666666666666667, 1.6666666666666667, 2.0, 2.0, 2.3333333333333335, 2.3333333333333335, 1.5, 1.5, 3.0, 2.5, 2.5, 3.0, 3.0, 11.0, 2.5, 2.5, 2.5, 4.5, 4.5, 4.5, 4.5, 18.0, 18.0, 0.2777777777777778, 0.4166666666666667, 0.2777777777777778, 0.4166666666666667, 0.2777777777777778, 0.2777777777777778, 0.2777777777777778, 0.2777777777777778, 0.2777777777777778, 10.8, 13.5, 7.0, 7.0, 7.0, 7.0, 7.0, 7.0, 6.5]
+--------------------------------------------------------------------------------
+Parameter sets: ['PD_20261020_014612__f2826_0']
+--------------------------------------------------------------------------------
+             parameter          unit  PD_20261020_014612__f2826_0
+           KI__RTG_E50            mM                     0.000006
+         KI__RTG_gamma dimensionless                     2.801079
+         KI__RTG_m_fpg dimensionless                     1.990986
+KI__RTG_max_inhibition dimensionless                     0.640014
+
+PD_20261020_014612__f2826_0: cost = 55.5419
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+Metrics: PD_20261020_014612__f2826_0
+--------------------------------------------------------------------------------
+              parameter_set       kind   n  k      cost        MSE      RMSE    NRMSE   RMSE_w       R2  within_2fold         AIC         BIC     GMFE      AFE  within_1.25fold  within_1.5fold  within_1sd  within_2sd
+PD_20261020_014612__f2826_0   training 254  4 55.541912 388.827981 19.718722 0.309855 0.661315 0.868193     95.564516 1522.636807 1536.786145 1.278881 0.941063        52.016129       81.451613   63.636364   86.363636
+PD_20261020_014612__f2826_0 validation  47  4       NaN 152.631583 12.354416 1.158600 3.055690 0.804524     34.285714  244.317272  251.717863 4.175610 0.309875        20.000000       22.857143   50.000000   75.000000
+
+        experiment                               mapping       kind  n         MSE      RMSE    NRMSE    RMSE_w           R2  within_2fold       GMFE      AFE  within_1.25fold  within_1.5fold  within_1sd  within_2sd
+       FDAMB102002                         fm_dap2p5_uge   training 12   19.839189  4.454120 0.351095  0.351095     0.316748     83.333333   1.399753 1.361154        50.000000       58.333333         NaN         NaN
+       FDAMB102002                          fm_dap10_uge   training 12   83.555238  9.140855 0.436679  0.436679     0.356987     91.666667   1.483547 1.483547        16.666667       50.000000         NaN         NaN
+       FDAMB102002                          fm_dap20_uge   training 12    8.425864  2.902734 0.095319  0.095319     0.968398    100.000000   1.101455 1.057972        83.333333      100.000000         NaN         NaN
+       FDAMB102002                          fm_dap50_uge   training 12   26.676756  5.164955 0.159783  0.159783     0.919330    100.000000   1.142939 1.014657        91.666667      100.000000         NaN         NaN
+       FDAMB102002                         fm_dap100_uge   training 12    7.626744  2.761656 0.089655  0.089655     0.972640    100.000000   1.103316 1.039478        83.333333      100.000000         NaN         NaN
+       FDAMB102003                      fm_dap5_uge_day1   training  6   45.341131  6.733582 0.257100  0.469399     0.760496    100.000000   1.365947 1.239302        33.333333       66.666667         NaN         NaN
+       FDAMB102003                     fm_dap5_uge_day14   training  6  109.634478 10.470648 0.478713  0.874007     0.178573     66.666667   1.621368 1.621368        16.666667       50.000000         NaN         NaN
+       FDAMB102003                     fm_dap25_uge_day1   training  6   14.225785  3.771708 0.089203  0.178405     0.971948    100.000000   1.076246 0.987524       100.000000      100.000000         NaN         NaN
+       FDAMB102003                    fm_dap25_uge_day14   training  6    7.185089  2.680502 0.068903  0.137807     0.983562    100.000000   1.079845 1.075580        83.333333      100.000000         NaN         NaN
+       FDAMB102003                    fm_dap100_uge_day1   training  6   26.708232  5.168001 0.120818  0.260997     0.954585    100.000000   1.112377 1.011934       100.000000      100.000000         NaN         NaN
+       FDAMB102003                   fm_dap100_uge_day14   training  6    6.643179  2.577436 0.066392  0.143423     0.984261    100.000000   1.077113 1.077113        83.333333      100.000000         NaN         NaN
+       FDAMB102007                       fm_dap20_normal validation  2   74.616873  8.638106 0.188908  0.327198     0.964314    100.000000   1.133578 1.133578       100.000000      100.000000         NaN         NaN
+       FDAMB102007                         fm_dap20_mild validation  2  624.986364 24.999727 0.711793  1.232861     0.493351      0.000000   2.013342 0.496687         0.000000        0.000000         NaN         NaN
+       FDAMB102007                     fm_dap20_moderate validation  2    5.131505  2.265282 0.226014  0.553619     0.948918    100.000000   1.159816 1.159816       100.000000      100.000000         NaN         NaN
+       FDAMB102007                       fm_dap20_severe validation  2   25.751303  5.074574 1.468431  3.283512    -1.156290      0.000000   2.038338 2.038338         0.000000        0.000000         NaN         NaN
+         Gould2013                             fm_dap0p3   training  2    0.021751  0.147483 0.498254  0.902595     0.751743    100.000000   1.352319 1.352319         0.000000      100.000000       100.0       100.0
+         Gould2013                               fm_dap1   training  2   79.197352  8.899289 0.926961  2.147952     0.140743      0.000000   2.902424 0.344540         0.000000        0.000000         0.0       100.0
+         Gould2013                             fm_dap2p5   training  2   19.564378  4.423164 0.386522  0.946782     0.850601    100.000000   1.376107 0.726688         0.000000      100.000000         NaN         NaN
+         Gould2013                               fm_dap0 validation  2    0.002212  0.047037 1.106743  5.191087    -0.224881    100.000000   1.782586 1.782586         0.000000        0.000000         NaN         NaN
+         Gould2013                           fm_dap0p001 validation  2    0.003488  0.059057 1.736983  3.930529    -2.017110      0.000000   2.228232 2.228232         0.000000        0.000000         0.0         0.0
+         Gould2013                            fm_dap0p01 validation  2    0.005781  0.076035 3.456138 10.929267   -10.944888      0.000000   3.443858 3.443858         0.000000        0.000000         0.0         0.0
+         Gould2013                             fm_dap0p1 validation  2    0.003694  0.060778 1.665142  3.213548    -1.772699      0.000000   2.177434 2.177434         0.000000        0.000000         0.0       100.0
+Kasichayanula2011a                         fm_dap2p5_uge   training  2  882.072962 29.699713 0.747163  2.753922  -256.727673    100.000000   1.770475 0.564820         0.000000        0.000000         0.0        50.0
+Kasichayanula2011a                          fm_dap10_uge   training  2 2491.780118 49.917734 0.714131  3.412766 -1106.457830    100.000000   1.323797 0.755403         0.000000      100.000000         0.0        50.0
+Kasichayanula2011a                          fm_dap20_uge   training  2 2988.037692 54.662946 0.730300  3.229035  -872.057032    100.000000   1.152388 0.867764       100.000000      100.000000        50.0        50.0
+Kasichayanula2011a                           fm_dap0_uge validation  2   67.228117  8.199275 1.012256  1.671521   -38.779951      0.000000 642.767826 0.001556         0.000000        0.000000       100.0       100.0
+           Kim2023                    fm_dap10_DAP10_uge   training  1    2.782308  1.668025 0.035157  0.284370          NaN    100.000000   1.036438 0.964843       100.000000      100.000000       100.0       100.0
+           Kim2023               fm_dap10_EV5__DAP10_uge validation  1   13.753529  3.708575 0.074943  0.619077          NaN    100.000000   1.081014 0.925057       100.000000      100.000000       100.0       100.0
+     Komoroski2009                  fm_po_dap_2p5_single   training 18  204.066977 14.285201 0.497106  0.370521    -1.759168     77.777778   1.830893 0.617941         5.555556       16.666667         NaN         NaN
+     Komoroski2009                    fm_po_dap_5_single   training 12   27.296917  5.224645 0.173671  0.158539     0.737699    100.000000   1.201682 0.953071        83.333333       91.666667         NaN         NaN
+     Komoroski2009                   fm_po_dap_10_single   training 18  449.381749 21.198626 0.353093  0.263180     0.217208     94.444444   1.382239 0.801975        33.333333       61.111111         NaN         NaN
+     Komoroski2009                   fm_po_dap_20_single   training 12   19.833293  4.453459 0.093681  0.085518     0.956528    100.000000   1.130931 1.130931        91.666667       91.666667         NaN         NaN
+     Komoroski2009                   fm_po_dap_50_single   training 18   31.188496  5.584666 0.072002  0.053667     0.975010    100.000000   1.087576 0.993480        94.444444      100.000000         NaN         NaN
+     Komoroski2009                  fm_po_dap_100_single   training 18  983.880884 31.366876 0.281161  0.209565     0.729233    100.000000   1.284330 0.783768        27.777778      100.000000         NaN         NaN
+     Komoroski2009                  fm_po_dap_250_single   training 18  903.695464 30.061528 0.246960  0.184073     0.821188    100.000000   1.281648 0.780245        27.777778      100.000000         NaN         NaN
+     Komoroski2009                  fm_po_dap_500_single   training 18 1901.348936 43.604460 0.318666  0.237520     0.758687    100.000000   1.363318 0.733505         0.000000       88.888889         NaN         NaN
+     Komoroski2009                    fm_po_dap_0_single validation 18    1.625172  1.274822 0.894819  0.666959    -4.873123     11.111111   5.843473 0.171131         0.000000        5.555556         NaN         NaN
+           Sha2015 fm_po_dap10_glucose_cumulative_amount   training  5   27.279544  5.222982 0.214858  1.324661     0.837549    100.000000   1.080395 1.022677        80.000000      100.000000       100.0       100.0
+           Sha2015           fm_po_dap10_renal_threshold validation  4    0.097834  0.312784 0.077181  0.713083     0.519014    100.000000   1.074186 0.993223       100.000000      100.000000       100.0       100.0
+        Watada2019                        fm_po_DAP0_uge validation  2  314.830581 17.743466 1.013912  2.591037   -31.760726      0.000000 200.932688 0.004977         0.000000        0.000000        50.0       100.0
+        Watada2019                        fm_po_DAP5_uge validation  2 1436.944559 37.907052 0.567046  3.073555     0.382772    100.000000   1.775646 0.563175         0.000000        0.000000         0.0        50.0
+        Watada2019                       fm_po_DAP10_uge validation  2 1015.638758 31.869088 0.490671  3.220521     0.604105    100.000000   1.586625 0.630269         0.000000        0.000000         0.0        50.0
+          Yang2013             fm_po_dap5_KI__UGE_single   training  2  201.277909 14.187245 0.336589  1.518294    -5.776464    100.000000   1.446166 0.691483         0.000000       50.000000        50.0       100.0
+          Yang2013            fm_po_dap10_KI__UGE_single   training  2  438.166036 20.932416 0.343436  1.636766    -1.251595    100.000000   1.383140 0.722992        50.000000       50.000000        50.0       100.0
+          Yang2013              fm_po_dap5_KI__UGE_multi   training  2   26.575189  5.155113 0.151398  0.724692     0.249341    100.000000   1.165609 1.019926       100.000000      100.000000       100.0       100.0
+          Yang2013             fm_po_dap10_KI__UGE_multi   training  2  134.069925 11.578857 0.208253  0.907969     0.362331    100.000000   1.153210 0.884153        50.000000      100.000000       100.0       100.0
+--------------------------------------------------------------------------------
+
+
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+Optimization results: PD_20261020_014612__f2826
+--------------------------------------------------------------------------------
+   run  success    duration       cost  KI__RTG_E50  KI__RTG_gamma  KI__RTG_m_fpg  KI__RTG_max_inhibition                                message                                                  x                      x0
+0    2     True  183.399948  55.541914     0.000006       2.801079       1.990986                0.640014  Optimization terminated successfully.  [5.756297279633785e-06, 2.801078952624347, 1.9...  [4e-06, 1.5, 1.5, 0.7]
+1    0     True  170.799059  55.609436     0.000006       3.058330       1.966415                0.635735  Optimization terminated successfully.  [5.787022505458515e-06, 3.058329516371079, 1.9...  [4e-06, 1.5, 1.5, 0.7]
+2    1     True  231.432826  55.700436     0.000006       2.357062       2.013222                0.647444  Optimization terminated successfully.  [5.740609079442973e-06, 2.357062284041433, 2.0...  [4e-06, 1.5, 1.5, 0.7]
+--------------------------------------------------------------------------------
+Optimal parameters:
+	'KI__RTG_E50': Q(5.756297279633785e-06, 'mmol/l'),  # [1e-07 - 0.0001]
+	'KI__RTG_gamma': Q(2.801078952624347, 'dimensionless'),  # [1.0 - 4.0]
+	'KI__RTG_m_fpg': Q(1.9909861957557706, 'dimensionless'),  # [0.1 - 5]
+	'KI__RTG_max_inhibition': Q(0.6400139753517339, 'dimensionless'),  # [0.3 - 0.95]
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+Identifiability 'PD_20261020_014612__f2826'
+--------------------------------------------------------------------------------
+parameter set: PD_20261020_014612__f2826_0
+cost: 55.5419
+cost_min: 55.5419
+alpha: 0.95
+degrees of freedom: 1
+threshold: 57.4626
+reoptimize: True
+duration: 130.8 s
+
+             parameter    value          unit  lower_bound  upper_bound  ci_lower  ci_upper        identifiability  n_points  cost_min  converged
+           KI__RTG_E50 0.000006            mM 1.000000e-07       0.0001  0.000005  0.000007           identifiable        13 55.541914       True
+         KI__RTG_gamma 2.801079 dimensionless 1.000000e+00       4.0000  1.677290       NaN non_identifiable_upper        11 55.541914       True
+         KI__RTG_m_fpg 1.990986 dimensionless 1.000000e-01       5.0000  1.554547  2.441824           identifiable        15 55.541914       True
+KI__RTG_max_inhibition 0.640014 dimensionless 3.000000e-01       0.9500  0.618028  0.670270           identifiable         6 55.541914       True
+--------------------------------------------------------------------------------

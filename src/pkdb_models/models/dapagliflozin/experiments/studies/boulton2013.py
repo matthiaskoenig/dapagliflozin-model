@@ -1,98 +1,119 @@
-from typing import Dict
-from sbmlsim.data import DataSet, load_pkdb_dataframe
-from sbmlsim.fit import FitMapping, FitData
-from sbmlutils.console import console
-from pkdb_models.models.dapagliflozin.experiments.base_experiment import DapagliflozinSimulationExperiment
-from pkdb_models.models.dapagliflozin.experiments.metadata import Tissue, Route, Dosing, ApplicationForm, Health, \
-    Fasting, DapagliflozinMappingMetaData
+"""Simulation experiment of the study Boulton2013."""
+
+from typing import ClassVar, override
+
+from pkpdsim.metadata import (
+    ApplicationForm,
+    Dosing,
+    Fasting,
+    Health,
+    PKPDMappingMetaData,
+    Route,
+    Tissue,
+)
+from sbmlsim import Q
+from sbmlsim.data import DataSet
+from sbmlsim.fit import FitData, FitMapping
 from sbmlsim.plot import Axis, Figure
-from sbmlsim.simulation import Timecourse, TimecourseSim
-from pkdb_models.models.dapagliflozin.helpers import run_experiments
-from pathlib import Path
-import pkdb_models.models.dapagliflozin as dapagliflozin
+from sbmlsim.simulation import Change, Simulation
+
+from pkdb_models.models.dapagliflozin import MODEL
+from pkdb_models.models.dapagliflozin.experiments.base_experiment import (
+    DapagliflozinSimulationExperiment,
+)
 
 
 class Boulton2013(DapagliflozinSimulationExperiment):
-    """Simulation experiment of Boulton2013."""
+    """Simulation experiment of Boulton2013.
 
-    simulation_keys = ["po_iv_dap10", "iv_dap008"]
-    interventions = ["DAP10", "C14DAP008"]
-    colors = ["black", "tab:blue"]
+    Absolute bioavailability: 7 healthy men (body weight not reported) took
+    10 mg dapagliflozin orally after an overnight fast of at least 10 hr and
+    received about 80 µg [14C]-dapagliflozin as an intravenous infusion over
+    1 min at 1 hr (tmax of the oral dose). The unlabeled drug of the oral dose
+    is measured by LC-MS/MS (LLOQ 1 ng/ml), the intravenous dose by AMS (LLOQ
+    9 pg/ml); the AMS concentrations are expressed for the whole intravenous
+    dose (80 µg / AUCinf 6.8 ng*h/ml = 196 ml/min, reported CL 207 ml/min), so
+    the full 80 µg are simulated. The intravenous dose adds 0.8 % to the oral
+    curve. The intravenous tail of 36-49 hr is flat at about twice the LLOQ of
+    AMS (assay limited). Reported: F 78 %, CL 207 ml/min, Vss 118 l, t1/2
+    12.2 hr (i.v.) and 13.7 hr (oral).
+    """
 
-    def datasets(self) -> Dict[str, DataSet]:
+    simulation_keys: ClassVar[list[str]] = ["po_iv_dap10", "iv_dap008"]
+    interventions: ClassVar[list[str]] = ["DAP10", "C14DAP008"]
+    colors: ClassVar[list[str]] = ["black", "tab:blue"]
+
+    @override
+    def datasets(self) -> dict[str, DataSet]:
         dsets = {}
         for fig_id in ["Fig1"]:
-            df = load_pkdb_dataframe(f"{self.sid}_{fig_id}", data_path=self.data_path)
+            df = self.load_dataframe(fig_id)
             for label, df_label in df.groupby("label"):
+                label = str(label)
                 dset = DataSet.from_df(df_label, self.ureg)
                 # unit conversion
                 if label.startswith("dapagliflozin_"):
                     dset.unit_conversion("mean", 1 / self.Mr.dap)
-                dsets[f"{label}"] = dset
-        # console.print(dsets)
-        # console.print(dsets.keys())
+                dsets[label] = dset
         return dsets
 
-    def simulations(self) -> Dict[str, TimecourseSim]:
-        Q_ = self.Q_
-        tcsims = {}
+    @override
+    def simulations(self) -> dict[str, Simulation]:
+        simulations = {}
         # po followed by iv
-        tc0 = Timecourse(
-            start=0,
-            end=60,  # [min]
-            steps=500,
-            changes={
+        simulations["po_iv_dap10"] = Simulation(
+            time_unit="hr",
+            end=50,
+            preinit_changes={
                 **self.default_changes(),
                 # physiological changes
-                "BW": Q_(self.bodyweight_default, "kg"),
-                "[KI__glc_ext]": Q_(self.fpg_healthy, "mM"),
-                "GU__f_absorption": Q_(self.fasting_map["fasted"], "dimensionless"),
-                "f_cirrhosis": Q_(self.cirrhosis_map["Control"], "dimensionless"),
-                "KI__f_renal_function": Q_(self.renal_map["Normal renal function"], "dimensionless"),
+                "BW": Q(self.bodyweight_default, "kg"),
+                "[KI__fpg]": Q(self.fpg_healthy, "mM"),
+                "GU__fed": Q(self.fasting_map["fasted"], "dimensionless"),
+                "f_cirrhosis": Q(self.cirrhosis_map["Control"], "dimensionless"),
+                "KI__f_renal_function": Q(
+                    self.renal_map["Normal renal function"], "dimensionless"
+                ),
                 # dose (IVDOSE, PODOSE)
-                "PODOSE_dap": Q_(10, "mg"),
+                "PODOSE_dap": Q(10, "mg"),
             },
-        )
-        tc1 = Timecourse(
-            start=0,
-            end=49 * 60,  # [min]
-            steps=500,
-            changes={
-                "IVDOSE_dap": Q_(80, "µg"),  # 1.6 % labeled; 98.4% unlabeled
-            },
-        )
-        tcsims[f"po_iv_dap10"] = TimecourseSim(
-            [tc0, tc1],
+            changes=[
+                Change(
+                    1,
+                    {
+                        "IVDOSE_dap": Q(80, "µg"),  # 1.6 % labeled; 98.4% unlabeled
+                    },
+                ),
+            ],
         )
         # only iv at 1 hr
-        tc0_iv = Timecourse(
-            start=0,
-            end=60,  # [min]
-            steps=500,
-            changes={
+        simulations["iv_dap008"] = Simulation(
+            time_unit="hr",
+            end=50,
+            preinit_changes={
                 **self.default_changes(),
                 # physiological changes
-                "BW": Q_(self.bodyweight_default, "kg"),
-                "[KI__glc_ext]": Q_(self.fpg_healthy, "mM"),
-                "GU__f_absorption": Q_(self.fasting_map["fasted"], "dimensionless"),
-                "f_cirrhosis": Q_(self.cirrhosis_map["Control"], "dimensionless"),
-                "KI__f_renal_function": Q_(self.renal_map["Normal renal function"], "dimensionless"),
+                "BW": Q(self.bodyweight_default, "kg"),
+                "[KI__fpg]": Q(self.fpg_healthy, "mM"),
+                "GU__fed": Q(self.fasting_map["fasted"], "dimensionless"),
+                "f_cirrhosis": Q(self.cirrhosis_map["Control"], "dimensionless"),
+                "KI__f_renal_function": Q(
+                    self.renal_map["Normal renal function"], "dimensionless"
+                ),
             },
+            changes=[
+                Change(
+                    1,
+                    {
+                        "IVDOSE_dap": Q(80, "µg"),  # 1.6 % labeled; 98.4% unlabeled
+                    },
+                ),
+            ],
         )
-        tc1_iv = Timecourse(
-            start=0,
-            end=49 * 60,  # [min]
-            steps=500,
-            changes={
-                "IVDOSE_dap": Q_(80, "µg") #Q_(80*0.016, "µg"),  # 1.6 % labeled; 98.4% unlabeled
-            },
-        )
-        tcsims[f"iv_dap008"] = TimecourseSim(
-            [tc0_iv, tc1_iv]
-        )
-        return tcsims
+        return simulations
 
-    def fit_mappings(self) -> Dict[str, FitMapping]:
+    @override
+    def fit_mappings(self) -> dict[str, FitMapping]:
         mappings = {}
         for ks, sim_key in enumerate(self.simulation_keys):
             intervention = self.interventions[ks]
@@ -100,28 +121,34 @@ class Boulton2013(DapagliflozinSimulationExperiment):
                 self,
                 reference=FitData(
                     self,
-                    dataset=f"dapagliflozin_{self.interventions[ks]}",
+                    dataset=f"dapagliflozin_{intervention}",
                     xid="time",
                     yid="mean",
                     yid_sd="mean_sd",
                     count="count",
                 ),
                 observable=FitData(
-                    self, task=f"task_{sim_key}", xid="time", yid=f"[Cve_dap]",
+                    self,
+                    task=f"task_{sim_key}",
+                    xid="time",
+                    yid="[Cve_dap]",
                 ),
-                metadata=DapagliflozinMappingMetaData(
+                metadata=PKPDMappingMetaData(
                     tissue=Tissue.PLASMA,
                     route=Route.PO if intervention == "DAP10" else Route.IV,
-                    application_form=ApplicationForm.MIXED if intervention == "DAP10" else ApplicationForm.SOLUTION,
+                    # the oral curve is the unlabeled tablet dose (LC-MS/MS)
+                    application_form=ApplicationForm.TABLET
+                    if intervention == "DAP10"
+                    else ApplicationForm.SOLUTION,
                     dosing=Dosing.SINGLE,
                     health=Health.HEALTHY,
                     fasting=Fasting.FASTED,
                 ),
             )
-        # console.print(mappings)
         return mappings
 
-    def figures(self) -> Dict[str, Figure]:
+    @override
+    def figures(self) -> dict[str, Figure]:
         fig = Figure(
             experiment=self,
             sid="Fig1",
@@ -129,9 +156,12 @@ class Boulton2013(DapagliflozinSimulationExperiment):
             num_cols=2,
             name=f"{self.__class__.__name__} (Healthy)",
         )
-        plots = fig.create_plots(xaxis=Axis(self.label_time, unit=self.unit_time), legend=True)
-        plots[0].set_yaxis(self.label_dap_plasma, unit=self.unit_dap)
-        plots[1].set_yaxis(self.label_dap_plasma, unit=self.unit_dap)
+        plots = fig.create_plots(
+            xaxis=Axis(self.label_time, unit=self.unit_time), legend=True
+        )
+        # log scale as the source, the data spans 0.02-143 ng/ml
+        plots[0].set_yaxis(self.label_dap_plasma, unit=self.unit_dap, scale="log")
+        plots[1].set_yaxis(self.label_dap_plasma, unit=self.unit_dap, scale="log")
 
         for ks, sim_key in enumerate(self.simulation_keys):
             dose_label = "10 mg PO" if sim_key == "po_iv_dap10" else "80 µg IV"
@@ -139,8 +169,8 @@ class Boulton2013(DapagliflozinSimulationExperiment):
             plots[ks].add_data(
                 task=f"task_{sim_key}",
                 xid="time",
-                yid=f"[Cve_dap]",
-                label=f"{dose_label}",
+                yid="[Cve_dap]",
+                label=dose_label,
                 color=self.colors[ks],
             )
             # data
@@ -150,14 +180,12 @@ class Boulton2013(DapagliflozinSimulationExperiment):
                 yid="mean",
                 yid_sd="mean_sd",
                 count="count",
-                label=f"{dose_label}",
+                label=dose_label,
                 color=self.colors[ks],
             )
 
-        return {fig.sid: fig,}
+        return self.figures_by_sid(fig)
 
 
 if __name__ == "__main__":
-    out = dapagliflozin.RESULTS_PATH_SIMULATION / Boulton2013.__name__
-    out.mkdir(parents=True, exist_ok=True)
-    run_experiments(Boulton2013, output_dir=out)
+    MODEL.run_experiments(Boulton2013, output_dir=Boulton2013.__name__)

@@ -1,46 +1,46 @@
 study	class	condition	parameter	dose	dose_unit	substance	n	mean	sd	unit	comments	mean_unit_conv	sd_unit_conv	median	Q1	Q3	Min	Max	unit_new	diabetes	hba1c	fpg	day
 Boulton2013	dose	healthy	cmax	10.0	mg	dap	7	143.00	41.47	ng/ml		0.35	0.10						µmole/l	N	NR	NR	Day1
-Boulton2013	dose	healthy	aucinf	10.0	mg	dap	7	628.00	106.76	ng/ml*hr		1.54	0.26						µmole/l*hr	N	NR	NR	Day1
+Boulton2013	dose	healthy	auc_inf_obs	10.0	mg	dap	7	628.00	106.76	ng/ml*hr		1.54	0.26						µmole/l*hr	N	NR	NR	Day1
 Boulton2013	dose	healthy	thalf	10.0	mg	dap	7	13.70	3.44	hr		13.70	3.44						hr	N	NR	NR	Day1
 #																							
 Cho2021	dose	healthy	cmax	10.0	mg	dap	37	223.40	54.75	ng/ml		0.55	0.13						µmole/l	N	NR	NR	Day1
-Cho2021	dose	healthy	aucinf	10.0	mg	dap	37	626.20	160.50	ng/ml*hr		1.53	0.39						µmole/l*hr	N	NR	NR	Day1
+Cho2021	dose	healthy	auc_inf_obs	10.0	mg	dap	37	626.20	160.50	ng/ml*hr		1.53	0.39						µmole/l*hr	N	NR	NR	Day1
 Cho2021	dose	healthy	thalf	10.0	mg	dap	37	12.64	4.47	hr		12.64	4.47						hr	N	NR	NR	Day1
 #																							
 FDAMB102002	dose	healthy	cmax	2.5	mg	dap	6	27.00	6.21	ng/ml		0.07	0.02						µmole/l	N	NR	NR	Day1
-FDAMB102002	dose	healthy	aucinf	2.5	mg	dap	6	98.00	21.56	ng/ml*hr		0.24	0.05						µmole/l*hr	N	NR	NR	Day1
+FDAMB102002	dose	healthy	auc_inf_obs	2.5	mg	dap	6	98.00	21.56	ng/ml*hr		0.24	0.05						µmole/l*hr	N	NR	NR	Day1
 FDAMB102002	dose	healthy	cmax	10.0	mg	dap	6	106.00	33.92	ng/ml		0.26	0.08						µmole/l	N	NR	NR	Day1
-FDAMB102002	dose	healthy	aucinf	10.0	mg	dap	6	420.00	88.20	ng/ml*hr		1.03	0.22						µmole/l*hr	N	NR	NR	Day1
+FDAMB102002	dose	healthy	auc_inf_obs	10.0	mg	dap	6	420.00	88.20	ng/ml*hr		1.03	0.22						µmole/l*hr	N	NR	NR	Day1
 FDAMB102002	dose	healthy	cmax	20.0	mg	dap	6	236.00	174.60	ng/ml		0.58	0.43						µmole/l	N	NR	NR	Day1
-FDAMB102002	dose	healthy	aucinf	20.0	mg	dap	6	725.00	483.12	ng/ml*hr		1.77	1.18						µmole/l*hr	N	NR	NR	Day1
+FDAMB102002	dose	healthy	auc_inf_obs	20.0	mg	dap	6	725.00	483.12	ng/ml*hr		1.77	1.18						µmole/l*hr	N	NR	NR	Day1
 FDAMB102002	dose	healthy	cmax	50.0	mg	dap	6	582.00	8.06	ng/ml		1.42	0.02						µmole/l	N	NR	NR	Day1
-FDAMB102002	dose	healthy	aucinf	50.0	mg	dap	6	2013.00	16.38	ng/ml*hr		4.92	0.04						µmole/l*hr	N	NR	NR	Day1
+FDAMB102002	dose	healthy	auc_inf_obs	50.0	mg	dap	6	2013.00	16.38	ng/ml*hr		4.92	0.04						µmole/l*hr	N	NR	NR	Day1
 FDAMB102002	dose	healthy	cmax	100.0	mg	dap	6	977.00	97.70	ng/ml		2.39	0.24						µmole/l	N	NR	NR	Day1
-FDAMB102002	dose	healthy	aucinf	100.0	mg	dap	6	4299.00	429.90	ng/ml*hr		10.51	1.05						µmole/l*hr	N	NR	NR	Day1
+FDAMB102002	dose	healthy	auc_inf_obs	100.0	mg	dap	6	4299.00	429.90	ng/ml*hr		10.51	1.05						µmole/l*hr	N	NR	NR	Day1
 FDAMB102002	dose	healthy	cmax	2.5	mg	dap	6	31.00	8.06	ng/ml		0.08	0.02						µmole/l	N	NR	NR	Day7
-FDAMB102002	dose	healthy	aucinf	2.5	mg	dap	6	126.00	16.38	ng/ml*hr		0.31	0.04						µmole/l*hr	N	NR	NR	Day7
+FDAMB102002	dose	healthy	auc_inf_obs	2.5	mg	dap	6	126.00	16.38	ng/ml*hr		0.31	0.04						µmole/l*hr	N	NR	NR	Day7
 FDAMB102002	dose	healthy	cmax	10.0	mg	dap	6	120.00	46.80	ng/ml		0.29	0.11						µmole/l	N	NR	NR	Day7
-FDAMB102002	dose	healthy	aucinf	10.0	mg	dap	6	516.00	108.36	ng/ml*hr		1.26	0.27						µmole/l*hr	N	NR	NR	Day7
+FDAMB102002	dose	healthy	auc_inf_obs	10.0	mg	dap	6	516.00	108.36	ng/ml*hr		1.26	0.27						µmole/l*hr	N	NR	NR	Day7
 FDAMB102002	dose	healthy	cmax	20.0	mg	dap	6	246.00	49.20	ng/ml		0.60	0.12						µmole/l	N	NR	NR	Day7
-FDAMB102002	dose	healthy	aucinf	20.0	mg	dap	6	854.00	145.20	ng/ml*hr		2.09	0.36						µmole/l*hr	N	NR	NR	Day7
+FDAMB102002	dose	healthy	auc_inf_obs	20.0	mg	dap	6	854.00	145.20	ng/ml*hr		2.09	0.36						µmole/l*hr	N	NR	NR	Day7
 FDAMB102002	dose	healthy	cmax	50.0	mg	dap	6	707.00	98.98	ng/ml		1.73	0.24						µmole/l	N	NR	NR	Day7
-FDAMB102002	dose	healthy	aucinf	50.0	mg	dap	6	2389.00	573.40	ng/ml*hr		5.84	1.40						µmole/l*hr	N	NR	NR	Day7
+FDAMB102002	dose	healthy	auc_inf_obs	50.0	mg	dap	6	2389.00	573.40	ng/ml*hr		5.84	1.40						µmole/l*hr	N	NR	NR	Day7
 FDAMB102002	dose	healthy	cmax	100.0	mg	dap	6	1072.00	117.90	ng/ml		2.62	0.29						µmole/l	N	NR	NR	Day7
-FDAMB102002	dose	healthy	aucinf	100.0	mg	dap	6	5018.00	501.80	ng/ml*hr		12.27	1.23						µmole/l*hr	N	NR	NR	Day7
+FDAMB102002	dose	healthy	auc_inf_obs	100.0	mg	dap	6	5018.00	501.80	ng/ml*hr		12.27	1.23						µmole/l*hr	N	NR	NR	Day7
 FDAMB102002	dose	healthy	cmax	2.5	mg	dap	6	30.00	4.80	ng/ml		0.07	0.01						µmole/l	N	NR	NR	Day14
-FDAMB102002	dose	healthy	aucinf	2.5	mg	dap	6	126.00	18.90	ng/ml*hr		0.31	0.05						µmole/l*hr	N	NR	NR	Day14
+FDAMB102002	dose	healthy	auc_inf_obs	2.5	mg	dap	6	126.00	18.90	ng/ml*hr		0.31	0.05						µmole/l*hr	N	NR	NR	Day14
 FDAMB102002	dose	healthy	thalf	2.5	mg	dap	6	11.21	5.67	hr		11.21	5.67						hr	N	NR	NR	Day14
 FDAMB102002	dose	healthy	cmax	10.0	mg	dap	6	119.00	24.99	ng/ml		0.29	0.06						µmole/l	N	NR	NR	Day14
-FDAMB102002	dose	healthy	aucinf	10.0	mg	dap	6	506.00	101.20	ng/ml*hr		1.24	0.25						µmole/l*hr	N	NR	NR	Day14
+FDAMB102002	dose	healthy	auc_inf_obs	10.0	mg	dap	6	506.00	101.20	ng/ml*hr		1.24	0.25						µmole/l*hr	N	NR	NR	Day14
 FDAMB102002	dose	healthy	thalf	10.0	mg	dap	6	15.77	6.23	hr		15.77	6.23						hr	N	NR	NR	Day14
 FDAMB102002	dose	healthy	cmax	20.0	mg	dap	6	202.00	44.44	ng/ml		0.49	0.11						µmole/l	N	NR	NR	Day14
-FDAMB102002	dose	healthy	aucinf	20.0	mg	dap	6	910.00	136.50	ng/ml*hr		2.23	0.33						µmole/l*hr	N	NR	NR	Day14
+FDAMB102002	dose	healthy	auc_inf_obs	20.0	mg	dap	6	910.00	136.50	ng/ml*hr		2.23	0.33						µmole/l*hr	N	NR	NR	Day14
 FDAMB102002	dose	healthy	thalf	20.0	mg	dap	6	13.72	6.35	hr		13.72	6.35						hr	N	NR	NR	Day14
 FDAMB102002	dose	healthy	cmax	50.0	mg	dap	6	728.00	138.30	ng/ml		1.78	0.34						µmole/l	N	NR	NR	Day14
-FDAMB102002	dose	healthy	aucinf	50.0	mg	dap	6	2543.00	406.90	ng/ml*hr		6.22	1.00						µmole/l*hr	N	NR	NR	Day14
+FDAMB102002	dose	healthy	auc_inf_obs	50.0	mg	dap	6	2543.00	406.90	ng/ml*hr		6.22	1.00						µmole/l*hr	N	NR	NR	Day14
 FDAMB102002	dose	healthy	thalf	50.0	mg	dap	6	14.38	5.74	hr		14.38	5.74						hr	N	NR	NR	Day14
 FDAMB102002	dose	healthy	cmax	100.0	mg	dap	6	1237.00	284.50	ng/ml		3.03	0.70						µmole/l	N	NR	NR	Day14
-FDAMB102002	dose	healthy	aucinf	100.0	mg	dap	6	5599.00	503.90	ng/ml*hr		13.69	1.23						µmole/l*hr	N	NR	NR	Day14
+FDAMB102002	dose	healthy	auc_inf_obs	100.0	mg	dap	6	5599.00	503.90	ng/ml*hr		13.69	1.23						µmole/l*hr	N	NR	NR	Day14
 FDAMB102002	dose	healthy	thalf	100.0	mg	dap	6	16.55	8.05	hr		16.55	8.05						hr	N	NR	NR	Day14
 #																							
 FDAMB102002	dose	healthy	UGE	2.5	mg	glucose	6	17.92		g		17.92							g	N	NR	NR	Day14
@@ -55,17 +55,17 @@ FDAMB102002	dose	healthy	UGE	50.0	mg	glucose	6	53.41		g		53.41							g	N	NR	NR	D
 FDAMB102002	dose	healthy	UGE	100.0	mg	glucose	6	55.42		g		55.42							g	N	NR	NR	Day14
 #																							
 FDAMB102003	dose	t2dm	cmax	5.0	mg	dap	11	66.00		ng/ml		0.16							µmole/l	D2	NR	NR	Day1
-FDAMB102003	dose	t2dm	aucinf	5.0	mg	dap	11	220.00		ng/ml*hr		0.54							µmole/l*hr	D2	NR	NR	Day1
+FDAMB102003	dose	t2dm	auc_inf_obs	5.0	mg	dap	11	220.00		ng/ml*hr		0.54							µmole/l*hr	D2	NR	NR	Day1
 FDAMB102003	dose	t2dm	cmax	25.0	mg	dap	12	279.00		ng/ml		0.68							µmole/l	D2	NR	NR	Day1
-FDAMB102003	dose	t2dm	aucinf	25.0	mg	dap	12	1037.00		ng/ml*hr		2.54							µmole/l*hr	D2	NR	NR	Day1
+FDAMB102003	dose	t2dm	auc_inf_obs	25.0	mg	dap	12	1037.00		ng/ml*hr		2.54							µmole/l*hr	D2	NR	NR	Day1
 FDAMB102003	dose	t2dm	cmax	100.0	mg	dap	16	1490.00		ng/ml		3.64							µmole/l	D2	NR	NR	Day1
-FDAMB102003	dose	t2dm	aucinf	100.0	mg	dap	16	5427.00		ng/ml*hr		13.27							µmole/l*hr	D2	NR	NR	Day1
+FDAMB102003	dose	t2dm	auc_inf_obs	100.0	mg	dap	16	5427.00		ng/ml*hr		13.27							µmole/l*hr	D2	NR	NR	Day1
 FDAMB102003	dose	t2dm	cmax	5.0	mg	dap	11	68.00		ng/ml		0.17							µmole/l	D2	NR	NR	Day14
-FDAMB102003	dose	t2dm	aucinf	5.0	mg	dap	11	281.00		ng/ml*hr		0.69							µmole/l*hr	D2	NR	NR	Day14
+FDAMB102003	dose	t2dm	auc_inf_obs	5.0	mg	dap	11	281.00		ng/ml*hr		0.69							µmole/l*hr	D2	NR	NR	Day14
 FDAMB102003	dose	t2dm	cmax	25.0	mg	dap	12	288.00		ng/ml		0.70							µmole/l	D2	NR	NR	Day14
-FDAMB102003	dose	t2dm	aucinf	25.0	mg	dap	12	1373.00		ng/ml*hr		3.36							µmole/l*hr	D2	NR	NR	Day14
+FDAMB102003	dose	t2dm	auc_inf_obs	25.0	mg	dap	12	1373.00		ng/ml*hr		3.36							µmole/l*hr	D2	NR	NR	Day14
 FDAMB102003	dose	t2dm	cmax	100.0	mg	dap	16	1617.00		ng/ml		3.95							µmole/l	D2	NR	NR	Day14
-FDAMB102003	dose	t2dm	aucinf	100.0	mg	dap	16	7070.00		ng/ml*hr		17.29							µmole/l*hr	D2	NR	NR	Day14
+FDAMB102003	dose	t2dm	auc_inf_obs	100.0	mg	dap	16	7070.00		ng/ml*hr		17.29							µmole/l*hr	D2	NR	NR	Day14
 #																							
 FDAMB102003	dose	t2dm	UGE	5.0	mg	glucose	10	45.32		g		45.32							g	D2	NR	NR	Day1
 FDAMB102003	dose	t2dm	UGE	25.0	mg	glucose	12	75.37		g		75.37							g	D2	NR	NR	Day1
@@ -75,131 +75,131 @@ FDAMB102003	dose	t2dm	UGE	25.0	mg	glucose	12	70.22		g		70.22							g	D2	NR	NR	Da
 FDAMB102003	dose	t2dm	UGE	100.0	mg	glucose	14	69.25		g		69.25							g	D2	NR	NR	Day14
 #																							
 FDAMB102006	dose	NR	cmax	50.0	mg	daptot	6	1761.00	281.80	ng/ml		4.31	0.69						µmole/l	NR	NR	NR	Day1
-FDAMB102006	dose	NR	aucinf	50.0	mg	daptot	6	6952.00	1529.00	ng/ml*hr		17.00	3.74						µmole/l*hr	NR	NR	NR	Day1
+FDAMB102006	dose	NR	auc_inf_obs	50.0	mg	daptot	6	6952.00	1529.00	ng/ml*hr		17.00	3.74						µmole/l*hr	NR	NR	NR	Day1
 #																							
 Hwang2022a	dose	healthy	cmax	10.0	mg	dap	19	217.70	84.87	ng/ml		0.53	0.21						µmole/l	N	NR	NR	Day1
-Hwang2022a	dose	healthy	aucinf	10.0	mg	dap	19	631.80	176.70	ng/ml*hr		1.55	0.43						µmole/l*hr	N	NR	NR	Day1
+Hwang2022a	dose	healthy	auc_inf_obs	10.0	mg	dap	19	631.80	176.70	ng/ml*hr		1.55	0.43						µmole/l*hr	N	NR	NR	Day1
 Hwang2022a	dose	healthy	cmax	10.0	mg	dap	53	184.90	71.14	ng/ml		0.45	0.17						µmole/l	N	NR	NR	Day1
-Hwang2022a	dose	healthy	aucinf	10.0	mg	dap	53	561.60	147.90	ng/ml*hr		1.37	0.36						µmole/l*hr	N	NR	NR	Day1
+Hwang2022a	dose	healthy	auc_inf_obs	10.0	mg	dap	53	561.60	147.90	ng/ml*hr		1.37	0.36						µmole/l*hr	N	NR	NR	Day1
 Hwang2022a	dose	healthy	cmax	10.0	mg	dap	28	207.10	67.03	ng/ml		0.51	0.16						µmole/l	N	NR	NR	Day1
-Hwang2022a	dose	healthy	aucinf	10.0	mg	dap	28	590.50	146.50	ng/ml*hr		1.44	0.36						µmole/l*hr	N	NR	NR	Day1
+Hwang2022a	dose	healthy	auc_inf_obs	10.0	mg	dap	28	590.50	146.50	ng/ml*hr		1.44	0.36						µmole/l*hr	N	NR	NR	Day1
 Hwang2022a	dose	healthy	cmax	10.0	mg	dap	25	202.30	81.00	ng/ml		0.49	0.20						µmole/l	N	NR	NR	Day1
-Hwang2022a	dose	healthy	aucinf	10.0	mg	dap	25	587.70	165.80	ng/ml*hr		1.44	0.41						µmole/l*hr	N	NR	NR	Day1
+Hwang2022a	dose	healthy	auc_inf_obs	10.0	mg	dap	25	587.70	165.80	ng/ml*hr		1.44	0.41						µmole/l*hr	N	NR	NR	Day1
 Hwang2022a	dose	healthy	cmax	10.0	mg	dap	27	194.30	64.61	ng/ml		0.48	0.16						µmole/l	N	NR	NR	Day1
-Hwang2022a	dose	healthy	aucinf	10.0	mg	dap	27	573.10	141.10	ng/ml*hr		1.40	0.35						µmole/l*hr	N	NR	NR	Day1
+Hwang2022a	dose	healthy	auc_inf_obs	10.0	mg	dap	27	573.10	141.10	ng/ml*hr		1.40	0.35						µmole/l*hr	N	NR	NR	Day1
 Hwang2022a	dose	healthy	cmax	10.0	mg	dap	20	190.00	66.46	ng/ml		0.46	0.16						µmole/l	N	NR	NR	Day1
-Hwang2022a	dose	healthy	aucinf	10.0	mg	dap	20	598.40	185.00	ng/ml*hr		1.46	0.45						µmole/l*hr	N	NR	NR	Day1
+Hwang2022a	dose	healthy	auc_inf_obs	10.0	mg	dap	20	598.40	185.00	ng/ml*hr		1.46	0.45						µmole/l*hr	N	NR	NR	Day1
 Hwang2022a	dose	healthy	cmax	10.0	mg	dap	9	215.60	85.98	ng/ml		0.53	0.21						µmole/l	N	NR	NR	Day1
-Hwang2022a	dose	healthy	aucinf	10.0	mg	dap	9	631.80	151.90	ng/ml*hr		1.55	0.37						µmole/l*hr	N	NR	NR	Day1
+Hwang2022a	dose	healthy	auc_inf_obs	10.0	mg	dap	9	631.80	151.90	ng/ml*hr		1.55	0.37						µmole/l*hr	N	NR	NR	Day1
 Hwang2022a	dose	healthy	cmax	10.0	mg	dap	17	195.70	79.73	ng/ml		0.48	0.19						µmole/l	N	NR	NR	Day1
-Hwang2022a	dose	healthy	aucinf	10.0	mg	dap	17	545.30	126.70	ng/ml*hr		1.33	0.31						µmole/l*hr	N	NR	NR	Day1
+Hwang2022a	dose	healthy	auc_inf_obs	10.0	mg	dap	17	545.30	126.70	ng/ml*hr		1.33	0.31						µmole/l*hr	N	NR	NR	Day1
 Hwang2022a	dose	healthy	cmax	10.0	mg	dap	2	183.50		ng/ml		0.45							µmole/l	N	NR	NR	Day1
-Hwang2022a	dose	healthy	aucinf	10.0	mg	dap	2	600.60		ng/ml*hr		1.47							µmole/l*hr	N	NR	NR	Day1
+Hwang2022a	dose	healthy	auc_inf_obs	10.0	mg	dap	2	600.60		ng/ml*hr		1.47							µmole/l*hr	N	NR	NR	Day1
 Hwang2022a	dose	healthy	cmax	10.0	mg	dap	49	197.80	74.71	ng/ml		0.48	0.18						µmole/l	N	NR	NR	Day1
-Hwang2022a	dose	healthy	aucinf	10.0	mg	dap	49	578.90	157.70	ng/ml*hr		1.42	0.39						µmole/l*hr	N	NR	NR	Day1
+Hwang2022a	dose	healthy	auc_inf_obs	10.0	mg	dap	49	578.90	157.70	ng/ml*hr		1.42	0.39						µmole/l*hr	N	NR	NR	Day1
 Hwang2022a	dose	healthy	cmax	10.0	mg	dap	42	191.34	71.79	ng/ml		0.47	0.18						µmole/l	N	NR	NR	Day1
-Hwang2022a	dose	healthy	aucinf	10.0	mg	dap	42	568.17	153.00	ng/ml*hr		1.39	0.37						µmole/l*hr	N	NR	NR	Day1
+Hwang2022a	dose	healthy	auc_inf_obs	10.0	mg	dap	42	568.17	153.00	ng/ml*hr		1.39	0.37						µmole/l*hr	N	NR	NR	Day1
 Hwang2022a	dose	healthy	cmax	10.0	mg	dap	9	223.10	75.94	ng/ml		0.55	0.19						µmole/l	N	NR	NR	Day1
-Hwang2022a	dose	healthy	aucinf	10.0	mg	dap	9	673.60	118.20	ng/ml*hr		1.65	0.29						µmole/l*hr	N	NR	NR	Day1
+Hwang2022a	dose	healthy	auc_inf_obs	10.0	mg	dap	9	673.60	118.20	ng/ml*hr		1.65	0.29						µmole/l*hr	N	NR	NR	Day1
 #																							
 Imamura2013	dose	t2dm	cmax	10.0	mg	dap	20	180.00	50.4	ng/ml		0.44	0.12						µmole/l	D2	NR	10	Day1
-Imamura2013	dose	t2dm	aucinf	10.0	mg	dap	20	539.00	117	ng/ml*hr		1.32	0.29						µmole/l*hr	D2	NR	10	Day1
+Imamura2013	dose	t2dm	auc_inf_obs	10.0	mg	dap	20	539.00	117	ng/ml*hr		1.32	0.29						µmole/l*hr	D2	NR	10	Day1
 Imamura2013	dose	t2dm	thalf	10.0	mg	dap	20	13.90	7	hr		13.90	6.98						hr	D2	NR	10	Day1
 #																							
 Jang2020	dose	healthy	cmax	10.0	mg	dap	16	163.00	48.12	ng/ml		0.40	0.12						µmole/l	N	NR	NR	Day1
 Jang2020	dose	healthy	thalf	10.0	mg	dap	16	10.82	3.07	hr		10.82	3.07						hr	N	NR	NR	Day1
 #																							
 Kasichayanula2011c	dose	healthy	cmax	50.0	mg	dap	24	551.00		ng/ml		1.35							µmole/l	N	NR	NR	Day1
-Kasichayanula2011c	dose	healthy	aucinf	50.0	mg	dap	24	2303.00		ng/ml*hr		5.63							µmole/l*hr	N	NR	NR	Day1
+Kasichayanula2011c	dose	healthy	auc_inf_obs	50.0	mg	dap	24	2303.00		ng/ml*hr		5.63							µmole/l*hr	N	NR	NR	Day1
 Kasichayanula2011c	dose	healthy	cmax	20.0	mg	dap	18	134.00		ng/ml		0.33							µmole/l	N	NR	NR	Day1
-Kasichayanula2011c	dose	healthy	aucinf	20.0	mg	dap	18	947.00		ng/ml*hr		2.32							µmole/l*hr	N	NR	NR	Day1
+Kasichayanula2011c	dose	healthy	auc_inf_obs	20.0	mg	dap	18	947.00		ng/ml*hr		2.32							µmole/l*hr	N	NR	NR	Day1
 Kasichayanula2011c	dose	healthy	cmax	20.0	mg	dap	18	151.00		ng/ml		0.37							µmole/l	N	NR	NR	Day1
-Kasichayanula2011c	dose	healthy	aucinf	20.0	mg	dap	18	1139.00		ng/ml*hr		2.79							µmole/l*hr	N	NR	NR	Day1
+Kasichayanula2011c	dose	healthy	auc_inf_obs	20.0	mg	dap	18	1139.00		ng/ml*hr		2.79							µmole/l*hr	N	NR	NR	Day1
 #																							
 Kasichayanula2012	dose	healthy	cmax	20.0	mg	dap	23	251.00		ng/ml		0.61							µmole/l	N	NR	NR	Day1
-Kasichayanula2012	dose	healthy	aucinf	20.0	mg	dap	23	928.00		ng/ml*hr		2.27							µmole/l*hr	N	NR	NR	Day1
+Kasichayanula2012	dose	healthy	auc_inf_obs	20.0	mg	dap	23	928.00		ng/ml*hr		2.27							µmole/l*hr	N	NR	NR	Day1
 Kasichayanula2012	dose	healthy	thalf	20.0	mg	dap	23	16.10	7.60	hr		16.10	7.60						hr	N	NR	NR	Day1
 #																							
 Kasichayanula2013a	dose	healthy	cmax	10.0	mg	dap	14	160.00	54.40	ng/ml		0.39	0.13						µmole/l	N	NR	NR	Day1
-Kasichayanula2013a	dose	healthy	aucinf	10.0	mg	dap	14	635.00	93.54	ng/ml*hr		1.55	0.23						µmole/l*hr	N	NR	NR	Day1
+Kasichayanula2013a	dose	healthy	auc_inf_obs	10.0	mg	dap	14	635.00	93.54	ng/ml*hr		1.55	0.23						µmole/l*hr	N	NR	NR	Day1
 Kasichayanula2013a	dose	healthy	thalf	10.0	mg	dap	14	12.80	4.90	hr		12.80	4.90						hr	N	NR	NR	Day1
 Kasichayanula2013a	dose	healthy	cmax	10.0	mg	dap	16	193.00	65.62	ng/ml		0.47	0.16						µmole/l	N	NR	NR	Day1
-Kasichayanula2013a	dose	healthy	aucinf	10.0	mg	dap	16	905.00	112.00	ng/ml*hr		2.21	0.27						µmole/l*hr	N	NR	NR	Day1
+Kasichayanula2013a	dose	healthy	auc_inf_obs	10.0	mg	dap	16	905.00	112.00	ng/ml*hr		2.21	0.27						µmole/l*hr	N	NR	NR	Day1
 Kasichayanula2013a	dose	healthy	thalf	10.0	mg	dap	16	12.70	5.20	hr		12.70	5.20						hr	N	NR	NR	Day1
 #																							
 Kasichayanula2013a	dose	healthy	cmax	10.0	mg	d3g	14	168.00	57.12	ng/ml		0.29	0.10						µmole/l	N	NR	NR	Day1
-Kasichayanula2013a	dose	healthy	aucinf	10.0	mg	d3g	14	655.90	93.54	ng/ml*hr		1.12	0.16						µmole/l*hr	N	NR	NR	Day1
+Kasichayanula2013a	dose	healthy	auc_inf_obs	10.0	mg	d3g	14	655.90	93.54	ng/ml*hr		1.12	0.16						µmole/l*hr	N	NR	NR	Day1
 Kasichayanula2013a	dose	healthy	thalf	10.0	mg	d3g	14	3.20	1.00	hr		3.20	1.00						hr	N	NR	NR	Day1
 Kasichayanula2013a	dose	healthy	cmax	10.0	mg	d3g	16	202.90	68.99	ng/ml		0.35	0.12						µmole/l	N	NR	NR	Day1
-Kasichayanula2013a	dose	healthy	aucinf	10.0	mg	d3g	16	936.60	112.00	ng/ml*hr		1.60	0.19						µmole/l*hr	N	NR	NR	Day1
+Kasichayanula2013a	dose	healthy	auc_inf_obs	10.0	mg	d3g	16	936.60	112.00	ng/ml*hr		1.60	0.19						µmole/l*hr	N	NR	NR	Day1
 Kasichayanula2013a	dose	healthy	thalf	10.0	mg	d3g	16	13.30	5.20	hr		13.30	5.20						hr	N	NR	NR	Day1
 #																							
 Khomitskaya2018	dose	healthy	cmax	10.0	mg	dap	40	96.00	25.10	ng/ml		0.23	0.06						µmole/l	N	NR	NR	Day1
-Khomitskaya2018	dose	healthy	aucinf	10.0	mg	dap	40	532.60	144.80	ng/ml*hr		1.30	0.35						µmole/l*hr	N	NR	NR	Day1
+Khomitskaya2018	dose	healthy	auc_inf_obs	10.0	mg	dap	40	532.60	144.80	ng/ml*hr		1.30	0.35						µmole/l*hr	N	NR	NR	Day1
 Khomitskaya2018	dose	healthy	thalf	10	mg	dap	40	14.79		hr		14.79							hr	N	NR	NR	Day1
 #																							
 Kim2023	dose	healthy	cmax	10.0	mg	dap	18	170.56	37.54	ng/ml		0.42	0.09						µmole/l	N	NR	NR	Day1
-Kim2023	dose	healthy	aucinf	10.0	mg	dap	18	493.47	108.21	ng/ml*hr		1.21	0.26						µmole/l*hr	N	NR	NR	Day1
+Kim2023	dose	healthy	auc_inf_obs	10.0	mg	dap	18	493.47	108.21	ng/ml*hr		1.21	0.26						µmole/l*hr	N	NR	NR	Day1
 Kim2023	dose	healthy	thalf	10.0	mg	dap	18	10.34	3.17	hr		10.34	3.17						hr	N	NR	NR	Day1
 #																							
 Kim2023	dose	healthy	UGE	10.0	mg	glucose	18	47444.49	1305.33	mg		47.44	1.31						g	N	NR	NR	Day1
 #																							
 Kim2023a	dose	healthy	cmax	10.0	mg	dap	28	167.90	54.24	ng/ml		0.41	0.13						µmole/l	N	NR	5	Day1
-Kim2023a	dose	healthy	aucinf	10.0	mg	dap	28	540.09	115.61	ng/ml*hr		1.32	0.28						µmole/l*hr	N	NR	5	Day1
+Kim2023a	dose	healthy	auc_inf_obs	10.0	mg	dap	28	540.09	115.61	ng/ml*hr		1.32	0.28						µmole/l*hr	N	NR	5	Day1
 Kim2023a	dose	healthy	thalf	10.0	mg	dap	28	11.46	3.44	hr		11.46	3.44						hr	N	NR	5	Day1
 #																							
-Obermeier2010	dose	healthy	cmax	50.0	mg	dap	6	0.55	0.02	µmole/l		0.55	0.02						µmole/	N	NR	NR	Day1
-Obermeier2010	dose	healthy	aucinf	50.0	mg	dap	6	2.43	0.03	µmole/l*hr		2.43	0.03						µmole/l*hr	N	NR	NR	Day1
+Obermeier2010	dose	healthy	cmax	50.0	mg	dap	6	550.00	20.00	ng/ml		1.35	0.05						µmole/l	N	NR	NR	Day1
+Obermeier2010	dose	healthy	auc_inf_obs	50.0	mg	dap	6	2430.00	30.00	ng/ml*hr		5.94	0.07						µmole/l*hr	N	NR	NR	Day1
 Obermeier2010	dose	healthy	thalf	50.0	mg	dap	6	13.80	9.40	hr		13.80	9.40						hr	N	NR	NR	Day1
 #																							
 Watada2019	dose	t1dm	cmax	5.0	mg	dap	10	71.90	19.00	ng/ml		0.18	0.05						µmole/l	D1	8	7.94	Day7
 Watada2019	dose	t1dm	cmax	5.0	mg	d3g	10	64.50	20.60	ng/ml		0.11	0.05						µmole/l	D1	8	7.94	Day7
 #																							
 Yang2013	dose	healthy	cmax	5.0	mg	dap	14	93.60	27.14	ng/ml		0.23	0.07						µmole/l	N	NR	NR	Day1
-Yang2013	dose	healthy	aucinf	5.0	mg	dap	14	324.30	58.37	ng/ml*hr		0.79	0.14						µmole/l*hr	N	NR	NR	Day1
+Yang2013	dose	healthy	auc_inf_obs	5.0	mg	dap	14	324.30	58.37	ng/ml*hr		0.79	0.14						µmole/l*hr	N	NR	NR	Day1
 Yang2013	dose	healthy	thalf	5.0	mg	dap	14	12.20	6.30	hr		12.20	6.30						hr	N	NR	NR	Day1
 Yang2013	dose	healthy	cmax	5.0	mg	dap	14	96.40	18.32	ng/ml		0.24	0.04						µmole/l	N	NR	NR	Day10
 Yang2013	dose	healthy	thalf	5.0	mg	dap	14	12.30	4.90	hr		12.30	4.90						hr	N	NR	NR	Day10
 Yang2013	dose	healthy	cmax	10.0	mg	dap	14	173.10	48.47	ng/ml		0.42	0.12						µmole/l	N	NR	NR	Day1
-Yang2013	dose	healthy	aucinf	10.0	mg	dap	14	604.90	90.74	ng/ml*hr		1.48	0.22						µmole/l*hr	N	NR	NR	Day1
+Yang2013	dose	healthy	auc_inf_obs	10.0	mg	dap	14	604.90	90.74	ng/ml*hr		1.48	0.22						µmole/l*hr	N	NR	NR	Day1
 Yang2013	dose	healthy	thalf	10.0	mg	dap	14	12.30	6.00	hr		12.30	6.00						hr	N	NR	NR	Day1
 Yang2013	dose	healthy	cmax	10.0	mg	dap	13	199.80	39.96	ng/ml		0.49	0.10						µmole/l	N	NR	NR	Day10
 Yang2013	dose	healthy	thalf	10.0	mg	dap	13	10.30	3.50	hr		10.30	3.50						hr	N	NR	NR	Day10
 Yang2013	dose	healthy	cmax	5.0	mg	d3g	14	89.60	22.40	ng/ml		0.22	0.05						µmole/l	N	NR	NR	Day1
-Yang2013	dose	healthy	aucinf	5.0	mg	d3g	14	395.10	114.60	ng/ml*hr		0.97	0.28						µmole/l*hr	N	NR	NR	Day1
+Yang2013	dose	healthy	auc_inf_obs	5.0	mg	d3g	14	395.10	114.60	ng/ml*hr		0.97	0.28						µmole/l*hr	N	NR	NR	Day1
 Yang2013	dose	healthy	thalf	5.0	mg	d3g	14	11.30	6.30	hr		11.30	6.30						hr	N	NR	NR	Day1
 Yang2013	dose	healthy	cmax	5.0	mg	d3g	14	93.90	22.54	ng/ml		0.23	0.06						µmole/l	N	NR	NR	Day10
 Yang2013	dose	healthy	thalf	10.0	mg	d3g	14	12.10	5.30	hr		12.10	5.30						hr	N	NR	NR	Day10
 Yang2013	dose	healthy	cmax	10.0	mg	d3g	14	215.90	53.98	ng/ml		0.53	0.13						µmole/l	N	NR	NR	Day1
-Yang2013	dose	healthy	aucinf	10.0	mg	d3g	14	931.30	242.10	ng/ml*hr		2.28	0.59						µmole/l*hr	N	NR	NR	Day1
+Yang2013	dose	healthy	auc_inf_obs	10.0	mg	d3g	14	931.30	242.10	ng/ml*hr		2.28	0.59						µmole/l*hr	N	NR	NR	Day1
 Yang2013	dose	healthy	thalf	10.0	mg	d3g	14	11.90	6.10	hr		11.90	6.10						hr	N	NR	NR	Day1
 Yang2013	dose	healthy	cmax	10.0	mg	d3g	13	211.30	52.83	ng/ml		0.52	0.13						µmole/l	N	NR	NR	Day10
 Yang2013	dose	healthy	thalf	10.0	mg	d3g	13	10.70	3.80	hr		10.70	3.80						hr	N	NR	NR	Day10
 #																							
 Kasichayanula2011a	dose	t2dm	cmax	2.5	mg	dap	6	29	4.06	ng/ml		0.07	0.01						µmole/l	D2	NR	NR	Day1
-Kasichayanula2011a	dose	t2dm	aucinf	2.5	mg	dap	6	103	30.90	ng/ml*hr		0.25	0.08						µmole/l*hr	D2	NR	NR	Day1
+Kasichayanula2011a	dose	t2dm	auc_inf_obs	2.5	mg	dap	6	103	30.90	ng/ml*hr		0.25	0.08						µmole/l*hr	D2	NR	NR	Day1
 Kasichayanula2011a	dose	t2dm	thalf	2.5	mg	dap	6	8.1	4.80	hr		8.10	4.80						hr	D2	NR	NR	Day1
 Kasichayanula2011a	dose	t2dm	cmax	10.0	mg	dap	6	124	42.16	ng/ml		0.30	0.10						µmole/l	D2	NR	NR	Day1
-Kasichayanula2011a	dose	t2dm	aucinf	10.0	mg	dap	6	489	92.91	ng/ml*hr		1.20	0.23						µmole/l*hr	D2	NR	NR	Day1
+Kasichayanula2011a	dose	t2dm	auc_inf_obs	10.0	mg	dap	6	489	92.91	ng/ml*hr		1.20	0.23						µmole/l*hr	D2	NR	NR	Day1
 Kasichayanula2011a	dose	t2dm	thalf	10.0	mg	dap	6	12.1	7.80	hr		12.10	7.80						hr	D2	NR	NR	Day1
 Kasichayanula2011a	dose	t2dm	cmax	20.0	mg	dap	6	265	68.90	ng/ml		0.65	0.17						µmole/l	D2	NR	NR	Day1
-Kasichayanula2011a	dose	t2dm	aucinf	20.0	mg	dap	6	939	131.46	ng/ml*hr		2.30	0.32						µmole/l*hr	D2	NR	NR	Day1
+Kasichayanula2011a	dose	t2dm	auc_inf_obs	20.0	mg	dap	6	939	131.46	ng/ml*hr		2.30	0.32						µmole/l*hr	D2	NR	NR	Day1
 Kasichayanula2011a	dose	t2dm	thalf	20.0	mg	dap	6	12.2	4.70	hr		12.20	4.70						hr	D2	NR	NR	Day1
 Kasichayanula2011a	dose	t2dm	cmax	50.0	mg	dap	6	610	134.20	ng/ml		1.49	0.33						µmole/l	D2	NR	NR	Day1
-Kasichayanula2011a	dose	t2dm	aucinf	50.0	mg	dap	6	2093	502.32	ng/ml*hr		5.12	1.23						µmole/l*hr	D2	NR	NR	Day1
+Kasichayanula2011a	dose	t2dm	auc_inf_obs	50.0	mg	dap	6	2093	502.32	ng/ml*hr		5.12	1.23						µmole/l*hr	D2	NR	NR	Day1
 Kasichayanula2011a	dose	t2dm	thalf	50.0	mg	dap	6	12.1	7.00	hr		12.10	7.00						hr	D2	NR	NR	Day1
 Kasichayanula2011a	dose	t2dm	cmax	2.5	mg	dap	9	43	12.90	ng/ml		0.11	0.03						µmole/l	D2	NR	NR	Day1
-Kasichayanula2011a	dose	t2dm	aucinf	2.5	mg	dap	9	123	35.67	ng/ml*hr		0.30	0.09						µmole/l*hr	D2	NR	NR	Day1
+Kasichayanula2011a	dose	t2dm	auc_inf_obs	2.5	mg	dap	9	123	35.67	ng/ml*hr		0.30	0.09						µmole/l*hr	D2	NR	NR	Day1
 Kasichayanula2011a	dose	t2dm	cmax	10.0	mg	dap	9	188	50.76	ng/ml		0.46	0.12						µmole/l	D2	NR	NR	Day1
-Kasichayanula2011a	dose	t2dm	aucinf	10.0	mg	dap	9	602	128.46	ng/ml*hr		1.47	0.31						µmole/l*hr	D2	NR	NR	Day1
+Kasichayanula2011a	dose	t2dm	auc_inf_obs	10.0	mg	dap	9	602	128.46	ng/ml*hr		1.47	0.31						µmole/l*hr	D2	NR	NR	Day1
 Kasichayanula2011a	dose	t2dm	cmax	20.0	mg	dap	9	298	62.58	ng/ml		0.73	0.15						µmole/l	D2	NR	NR	Day1
-Kasichayanula2011a	dose	t2dm	aucinf	20.0	mg	dap	9	1027	154.05	ng/ml*hr		2.51	0.38						µmole/l*hr	D2	NR	NR	Day1
+Kasichayanula2011a	dose	t2dm	auc_inf_obs	20.0	mg	dap	9	1027	154.05	ng/ml*hr		2.51	0.38						µmole/l*hr	D2	NR	NR	Day1
 Kasichayanula2011a	dose	t2dm	cmax	2.5	mg	dap	9	48	12.96	ng/ml		0.12	0.03						µmole/l	D2	NR	NR	Day14
-Kasichayanula2011a	dose	t2dm	aucinf	2.5	mg	dap	9	157	42.39	ng/ml*hr		0.38	0.10						µmole/l*hr	D2	NR	NR	Day14
+Kasichayanula2011a	dose	t2dm	auc_inf_obs	2.5	mg	dap	9	157	42.39	ng/ml*hr		0.38	0.10						µmole/l*hr	D2	NR	NR	Day14
 Kasichayanula2011a	dose	t2dm	cmax	10.0	mg	dap	9	191	66.85	ng/ml		0.47	0.16						µmole/l	D2	NR	NR	Day14
-Kasichayanula2011a	dose	t2dm	aucinf	10.0	mg	dap	9	727	167.21	ng/ml*hr		1.78	0.41						µmole/l*hr	D2	NR	NR	Day14
+Kasichayanula2011a	dose	t2dm	auc_inf_obs	10.0	mg	dap	9	727	167.21	ng/ml*hr		1.78	0.41						µmole/l*hr	D2	NR	NR	Day14
 Kasichayanula2011a	dose	t2dm	cmax	20.0	mg	dap	9	305	94.55	ng/ml		0.75	0.23						µmole/l	D2	NR	NR	Day14
-Kasichayanula2011a	dose	t2dm	aucinf	20.0	mg	dap	9	1225	298.25	ng/ml*hr		3.00	0.73						µmole/l*hr	D2	NR	NR	Day14
+Kasichayanula2011a	dose	t2dm	auc_inf_obs	20.0	mg	dap	9	1225	298.25	ng/ml*hr		3.00	0.73						µmole/l*hr	D2	NR	NR	Day14
 #																							
 Kasichayanula2011a	dose	t2dm	UGE	2.5	mg	glucose	9	38	12.72	g		38	12.72						g	D2	NR	NR	Day1
 Kasichayanula2011a	dose	t2dm	UGE	10.0	mg	glucose	9	68	13.65	g		68	13.65						g	D2	NR	NR	Day1

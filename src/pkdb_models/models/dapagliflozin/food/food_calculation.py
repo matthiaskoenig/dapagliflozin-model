@@ -1,28 +1,36 @@
+"""Food effect on the pharmacokinetics of dapagliflozin in the studies.
+
+The ratios fed/fasted of Cmax and AUC of the studies with their significance
+(two-sided t-test of the means), as tables and figures. The data is the table
+`dapagliflozin_studies - food.tsv` next to this module. The script writes into
+`results/simulation/food_effect` of the model:
+
+    python -m pkdb_models.models.dapagliflozin.food.food_calculation
+"""
+
 from pathlib import Path
 from typing import Any
 
-import pandas as pd
-import numpy as np
-
-from sbmlutils.console import console
-import scipy.stats as stats
-import matplotlib.pyplot as plt
-import seaborn as sns
-
 import matplotlib
+import matplotlib.pyplot as plt
+import numpy as np
+import pandas as pd
+import scipy.stats as stats
+import seaborn as sns
+from sbmlutils.console import console
 
 SMALL_SIZE = 12
 MEDIUM_SIZE = 18
 BIGGER_SIZE = 25
 
-matplotlib.rc('font', size=SMALL_SIZE)          # controls default text sizes
-matplotlib.rc('axes', titlesize=SMALL_SIZE)     # fontsize of the axes title
-matplotlib.rc('axes', labelsize=MEDIUM_SIZE)    # fontsize of the x and y labels
-matplotlib.rc('xtick', labelsize=SMALL_SIZE)    # fontsize of the tick labels
-matplotlib.rc('ytick', labelsize=SMALL_SIZE)    # fontsize of the tick labels
-matplotlib.rc('legend', fontsize=SMALL_SIZE)    # legend fontsize
-matplotlib.rc('figure', titlesize=BIGGER_SIZE)  # fontsize of the figure title
-matplotlib.rc('figure', titlesize=BIGGER_SIZE)  # fontsize of the figure title
+matplotlib.rc("font", size=SMALL_SIZE)  # controls default text sizes
+matplotlib.rc("axes", titlesize=SMALL_SIZE)  # fontsize of the axes title
+matplotlib.rc("axes", labelsize=MEDIUM_SIZE)  # fontsize of the x and y labels
+matplotlib.rc("xtick", labelsize=SMALL_SIZE)  # fontsize of the tick labels
+matplotlib.rc("ytick", labelsize=SMALL_SIZE)  # fontsize of the tick labels
+matplotlib.rc("legend", fontsize=SMALL_SIZE)  # legend fontsize
+matplotlib.rc("figure", titlesize=BIGGER_SIZE)  # fontsize of the figure title
+matplotlib.rc("figure", titlesize=BIGGER_SIZE)  # fontsize of the figure title
 
 
 def food_effect(ratio: float) -> str:
@@ -30,24 +38,21 @@ def food_effect(ratio: float) -> str:
 
     E.g. mean(Cmax(fed))/mean(Cmax(fasted))
     """
-    if ratio>=5.0:
+    if ratio >= 5.0:
         return "strong induction"
-    elif 5.0 > ratio >= 2.0:
+    if 5.0 > ratio >= 2.0:
         return "moderate induction"
-    elif 2.0 > ratio >= 1.25:
+    if 2.0 > ratio >= 1.25:
         return "weak induction"
-    elif 1.25 > ratio >= 0.8:
+    if 1.25 > ratio >= 0.8:
         return "no effect"
-    elif 0.8 > ratio >= 0.5:
+    if 0.8 > ratio >= 0.5:
         return "weak inhibition"
-    elif 0.5 > ratio >= 0.2:
+    if 0.5 > ratio >= 0.2:
         return "moderate inhibition"
-    elif 0.2 > ratio:
+    if ratio < 0.2:
         return "strong inhibition"
-    if ratio < 0.0:
-        raise ValueError(f"Ratio of pharmacokinetic parameters must be > 0.0, but {ratio=}.")
-    else:
-        raise ValueError(f"Effect cannot be calculated for {ratio=}.")
+    raise ValueError(f"Effect cannot be calculated for {ratio=}.")
 
 
 def significance_for_pvalue(pvalue: float) -> str:
@@ -63,10 +68,17 @@ def significance_for_pvalue(pvalue: float) -> str:
     return significance
 
 
-def food_significance(mean_fasted: float, sd_fasted: float, n_fasted: int, mean_fed: float, sd_fed: float, n_fed: int) -> dict[str, Any]:
+def food_significance(
+    mean_fasted: pd.Series,
+    sd_fasted: pd.Series,
+    n_fasted: pd.Series,
+    mean_fed: pd.Series,
+    sd_fed: pd.Series,
+    n_fed: pd.Series,
+) -> dict[str, Any]:
     """Calculate significance of effect from mean and standard deviation.
 
-    Works on iterables of values.
+    Works on series of values, one per study.
 
     p-values: * = 0.05, ** = 0.01, *** = 0.001
     """
@@ -74,7 +86,7 @@ def food_significance(mean_fasted: float, sd_fasted: float, n_fasted: int, mean_
     mean2, sd2, n2 = mean_fed, sd_fed, n_fed
 
     # Calculate the pooled standard deviation
-    pooled_sd = np.sqrt(((n1 - 1) * sd1 ** 2 + (n2 - 1) * sd2 ** 2) / (n1 + n2 - 2))
+    pooled_sd = np.sqrt(((n1 - 1) * sd1**2 + (n2 - 1) * sd2**2) / (n1 + n2 - 2))
 
     # Calculate the t-statistic
     t_statistic = (mean1 - mean2) / (pooled_sd * np.sqrt(1 / n1 + 1 / n2))
@@ -88,7 +100,9 @@ def food_significance(mean_fasted: float, sd_fasted: float, n_fasted: int, mean_
     # Calculate effect size
     ratio = mean_fed / mean_fasted
     # Ratio SD (error propagation), worst case approximation
-    ratio_sd = ratio * np.sqrt(np.power((sd_fasted / mean_fasted), 2) + np.power((sd_fed / mean_fed), 2))
+    ratio_sd = ratio * np.sqrt(
+        np.power((sd_fasted / mean_fasted), 2) + np.power((sd_fed / mean_fed), 2)
+    )
     effect = [food_effect(ratio=r) for r in ratio]
 
     return {
@@ -104,7 +118,7 @@ def food_significance(mean_fasted: float, sd_fasted: float, n_fasted: int, mean_
 
 
 def load_food_data(tsv_path: Path, output_path: Path) -> dict[str, pd.DataFrame]:
-    """Load the DDI data for Cmax and AUC.
+    """Load the food effect data of Cmax and AUC and calculate the ratios fed/fasted.
 
     Data managed in google sheets: https://docs.google.com/spreadsheets/d/1ixcQzusK2JYn9Uz8xerJpZ6qr3HBGOV9nbrMDbUuYQA/edit?gid=790035504#gid=790035504
     """
@@ -115,14 +129,14 @@ def load_food_data(tsv_path: Path, output_path: Path) -> dict[str, pd.DataFrame]
     for key in keys:
         df = df_all[df_all.parameter == key].copy()
 
-        raw_data = dict(
-            mean_fasted=df[f"mean_fasted"],
-            sd_fasted=df[f"sd_fasted"],
-            n_fasted=df[f"n_fasted"],
-            mean_fed=df[f"mean_fed"],
-            sd_fed=df[f"sd_fed"],
-            n_fed=df[f"n_fed"]
-        )
+        raw_data = {
+            "mean_fasted": df["mean_fasted"],
+            "sd_fasted": df["sd_fasted"],
+            "n_fasted": df["n_fasted"],
+            "mean_fed": df["mean_fed"],
+            "sd_fed": df["sd_fed"],
+            "n_fed": df["n_fed"],
+        }
         food_ttest = food_significance(**raw_data)
         food_ttest = {
             "study": df["study"],
@@ -133,10 +147,7 @@ def load_food_data(tsv_path: Path, output_path: Path) -> dict[str, pd.DataFrame]
             **food_ttest,
         }
 
-        #sorting by values
-
         df_key = pd.DataFrame(food_ttest)
-        #df_key_sorted=df_key.sort_values(by = "ratio")
         data[key] = df_key
 
         # save
@@ -152,14 +163,14 @@ def load_food_data(tsv_path: Path, output_path: Path) -> dict[str, pd.DataFrame]
 
 def plot_food(data: dict[str, pd.DataFrame], output_dir: Path) -> None:
     """Plots the food effect for dapagliflozin."""
-
     spectral_color = sns.color_palette("Spectral_r", 12, as_cmap=False)
 
     for key, df_raw in data.items():
         df = df_raw[::-1].reset_index(drop=True)
-        #df = df.sort_values(by = "ratio")
 
-        fig, ax = plt.subplots(nrows=1, ncols=1, figsize=(9, 2), dpi=300, layout="constrained")
+        fig, ax = plt.subplots(
+            nrows=1, ncols=1, figsize=(9, 2), dpi=300, layout="constrained"
+        )
         alpha = 0.25
         ax.set_xscale("log")
         ax.axvspan(0.2, 0.5, facecolor=spectral_color[9], alpha=alpha)
@@ -168,27 +179,30 @@ def plot_food(data: dict[str, pd.DataFrame], output_dir: Path) -> None:
         ax.axvspan(1.25, 2, facecolor=spectral_color[5], alpha=alpha)
         ax.axvspan(2, 5, facecolor=spectral_color[3], alpha=alpha)
 
-        ax.set_xlim([0.1, 10])
+        ax.set_xlim((0.1, 10))
         left, right = ax.get_xlim()
         ax.axvspan(0.2, left, facecolor=spectral_color[11], alpha=alpha)
         ax.axvspan(5, right, facecolor=spectral_color[0], alpha=alpha)
 
         positions = [0.2, 0.5, 0.8, 1.25, 2, 5]
 
-        # ax2.set_xlim(right=right + 3)
         ax.set_xticks(positions)
-        ax.set_xticklabels(positions)
+        ax.set_xticklabels([str(p) for p in positions])
 
         # set ticks
         ax2 = ax.twiny()
         ax2.set_xscale("log")
         ax2.set_xlim(ax.get_xlim())
-        label_positions = [0.1,] + positions + [10.0]
-        label_positions = [ (label_positions[k] + label_positions[k+1])/2 for k in range( len(label_positions)-1)]
+        label_positions = [0.1, *positions, 10.0]
+        label_positions = [
+            (label_positions[k] + label_positions[k + 1]) / 2
+            for k in range(len(label_positions) - 1)
+        ]
         ax2.set_xticks(label_positions)
-        ax2.set_xticklabels(("strong", "moderate", "weak", "no effect", "weak", "moderate", "strong"))
+        ax2.set_xticklabels(
+            ("strong", "moderate", "weak", "no effect", "weak", "moderate", "strong")
+        )
 
-        # ax.set_title(f"Food effect", fontdict={"weight": "bold"})
         ax.axvline(x=1.0, linestyle="--", color="black")
         ax.errorbar(
             x=df.ratio,
@@ -198,18 +212,13 @@ def plot_food(data: dict[str, pd.DataFrame], output_dir: Path) -> None:
             ecolor="darkgrey",
             markeredgecolor="white",
             marker="s",
-            # markersize=10,
             linestyle="",
         )
         # significance stars
-        k = 0
-        for idx, row in df.iterrows():
+        for k, (_, row) in enumerate(df.iterrows()):
             significance = row["sig"]
-            y = k
             if significance:
-                xy = (row["ratio"], y)
-                ax.annotate(text=significance, xy=xy)
-            k = k + 1
+                ax.annotate(text=significance, xy=(row["ratio"], k))
 
         ax.set_xlabel(f"{key} ratio [-]", fontdict={"weight": "bold"})
         plt.show()
@@ -218,12 +227,13 @@ def plot_food(data: dict[str, pd.DataFrame], output_dir: Path) -> None:
 
 
 if __name__ == "__main__":
-    from pkdb_models.models.dapagliflozin import RESULTS_PATH_SIMULATION
+    from pkdb_models.models.dapagliflozin import MODEL
 
-    food_effect_path = RESULTS_PATH_SIMULATION / "food_effect"
-    food_effect_path.mkdir(exist_ok=True)
+    food_effect_path = MODEL.simulation_dir / "food_effect"
+    food_effect_path.mkdir(parents=True, exist_ok=True)
 
     tsv_path = Path(__file__).parent / "dapagliflozin_studies - food.tsv"
-    data: dict[str, pd.DataFrame] = load_food_data(tsv_path, output_path=food_effect_path)
+    data: dict[str, pd.DataFrame] = load_food_data(
+        tsv_path, output_path=food_effect_path
+    )
     plot_food(data, output_dir=food_effect_path)
-

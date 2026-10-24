@@ -1,7 +1,10 @@
 {
   "experiment_id": "Kasichayanula2011",
-  "base_path": "/home/mkoenig/git/pkdb_models/pkdb_models/models/dapagliflozin",
-  "data_path": "[PosixPath('/home/mkoenig/git/pkdb_models/pkdb_models/models/dapagliflozin/data/dapagliflozin'), PosixPath('/home/mkoenig/git/pkdb_models/pkdb_models/models/dapagliflozin/data/canagliflozin')]",
+  "base_path": "/home/mkoenig/git/dapagliflozin-model/src/pkdb_models/models/dapagliflozin",
+  "data_path": [
+    "/home/mkoenig/git/dapagliflozin-model/src/pkdb_models/models/dapagliflozin/data/dapagliflozin",
+    "/home/mkoenig/git/dapagliflozin-model/src/pkdb_models/models/dapagliflozin/data/canagliflozin"
+  ],
   "models": {
     "model": {
       "sid": null,
@@ -9,1065 +12,1682 @@
       "language": "SBML",
       "language_type": "SBML",
       "source": {
-        "source": "/home/mkoenig/git/pkdb_models/pkdb_models/models/dapagliflozin/models/results/models/dapagliflozin_body_flat.xml",
-        "path": "/home/mkoenig/git/pkdb_models/pkdb_models/models/dapagliflozin/models/results/models/dapagliflozin_body_flat.xml",
-        "content": "None"
+        "source": "/home/mkoenig/git/dapagliflozin-model/src/pkdb_models/models/dapagliflozin/models/output/models/dapagliflozin_body_flat.xml",
+        "path": "/home/mkoenig/git/dapagliflozin-model/src/pkdb_models/models/dapagliflozin/models/output/models/dapagliflozin_body_flat.xml",
+        "content": null
       },
-      "changes": {}
+      "base_path": null,
+      "changes": {},
+      "selections": [
+        "Afeces_dap",
+        "Afeces_daptot",
+        "Aurine_d3g",
+        "Aurine_dap",
+        "Aurine_dapmet",
+        "Aurine_daptot",
+        "GU__FED_f_absorption",
+        "GU__fed",
+        "IVDOSE_dap",
+        "KI__D3GEX",
+        "KI__DAPEX",
+        "KI__GFR",
+        "KI__GLCEX",
+        "KI__METEX",
+        "KI__RTG",
+        "KI__UGE",
+        "KI__f_renal_function",
+        "KI__glc_urine",
+        "KI__pg",
+        "PODOSE_dap",
+        "[Cve_d3g]",
+        "[Cve_dap]",
+        "[Cve_dapmet]",
+        "[Cve_daptot]",
+        "[KI__fpg]",
+        "f_cirrhosis",
+        "f_ugt1a9",
+        "time"
+      ],
+      "parameters": {}
     }
   },
   "tasks": {
     "task_po_dap10_healthy": {
+      "sid": "model__po_dap10_healthy",
+      "name": null,
       "model": "model",
-      "simulation": "po_dap10_healthy"
+      "simulation": "po_dap10_healthy",
+      "observables": []
     },
     "task_po_dap10_mild": {
+      "sid": "model__po_dap10_mild",
+      "name": null,
       "model": "model",
-      "simulation": "po_dap10_mild"
+      "simulation": "po_dap10_mild",
+      "observables": []
     },
     "task_po_dap10_moderate": {
+      "sid": "model__po_dap10_moderate",
+      "name": null,
       "model": "model",
-      "simulation": "po_dap10_moderate"
+      "simulation": "po_dap10_moderate",
+      "observables": []
     },
     "task_po_dap10_severe": {
+      "sid": "model__po_dap10_severe",
+      "name": null,
       "model": "model",
-      "simulation": "po_dap10_severe"
+      "simulation": "po_dap10_severe",
+      "observables": []
     }
   },
+  "observables": {},
   "simulations": {
     "po_dap10_healthy": {
-      "type": "TimecourseSim",
-      "selections": null,
-      "reset": true,
-      "time_offset": 0.0,
-      "timecourses": [
-        {
-          "start": 0,
-          "end": 3000,
-          "steps": 500,
-          "changes": {
-            "BW": {
-              "_magnitude": 81.8,
-              "_units": "kilogram"
-            },
-            "[KI__glc_ext]": {
-              "_magnitude": 5.0,
-              "_units": "KI__mmole / liter"
-            },
-            "GU__f_absorption": {
-              "_magnitude": 1.0,
-              "_units": "dimensionless"
-            },
-            "f_cirrhosis": {
-              "_magnitude": 0,
-              "_units": "dimensionless"
-            },
-            "KI__f_renal_function": {
-              "_magnitude": 1.383,
-              "_units": "dimensionless"
-            },
-            "PODOSE_dap": {
-              "_magnitude": 10,
-              "_units": "milligram"
-            }
-          },
-          "model_changes": {},
-          "model_manipulations": {},
-          "discard": false
+      "type": "Simulation",
+      "time_unit": "hr",
+      "start": 0.0,
+      "end": 50,
+      "preinit_changes": {
+        "BW": {
+          "value": 81.8,
+          "unit": "kilogram"
+        },
+        "[KI__fpg]": {
+          "value": 5.0,
+          "unit": "millimolar"
+        },
+        "GU__fed": {
+          "value": 0.0,
+          "unit": "dimensionless"
+        },
+        "f_cirrhosis": {
+          "value": 0,
+          "unit": "dimensionless"
+        },
+        "KI__f_renal_function": {
+          "value": 1.0,
+          "unit": "dimensionless"
+        },
+        "PODOSE_dap": {
+          "value": 10,
+          "unit": "milligram"
         }
-      ]
+      },
+      "changes": [],
+      "presimulation": null,
+      "times": null,
+      "steps": null,
+      "time_shift": 0.0
     },
     "po_dap10_mild": {
-      "type": "TimecourseSim",
-      "selections": null,
-      "reset": true,
-      "time_offset": 0.0,
-      "timecourses": [
-        {
-          "start": 0,
-          "end": 3000,
-          "steps": 500,
-          "changes": {
-            "BW": {
-              "_magnitude": 80.9,
-              "_units": "kilogram"
-            },
-            "[KI__glc_ext]": {
-              "_magnitude": 5.0,
-              "_units": "KI__mmole / liter"
-            },
-            "GU__f_absorption": {
-              "_magnitude": 1.0,
-              "_units": "dimensionless"
-            },
-            "f_cirrhosis": {
-              "_magnitude": 0.3994897959183674,
-              "_units": "dimensionless"
-            },
-            "KI__f_renal_function": {
-              "_magnitude": 1.278,
-              "_units": "dimensionless"
-            },
-            "PODOSE_dap": {
-              "_magnitude": 10,
-              "_units": "milligram"
-            }
-          },
-          "model_changes": {},
-          "model_manipulations": {},
-          "discard": false
+      "type": "Simulation",
+      "time_unit": "hr",
+      "start": 0.0,
+      "end": 50,
+      "preinit_changes": {
+        "BW": {
+          "value": 80.9,
+          "unit": "kilogram"
+        },
+        "[KI__fpg]": {
+          "value": 5.0,
+          "unit": "millimolar"
+        },
+        "GU__fed": {
+          "value": 0.0,
+          "unit": "dimensionless"
+        },
+        "f_cirrhosis": {
+          "value": 0.3994897959183674,
+          "unit": "dimensionless"
+        },
+        "KI__f_renal_function": {
+          "value": 1.0,
+          "unit": "dimensionless"
+        },
+        "PODOSE_dap": {
+          "value": 10,
+          "unit": "milligram"
         }
-      ]
+      },
+      "changes": [],
+      "presimulation": null,
+      "times": null,
+      "steps": null,
+      "time_shift": 0.0
     },
     "po_dap10_moderate": {
-      "type": "TimecourseSim",
-      "selections": null,
-      "reset": true,
-      "time_offset": 0.0,
-      "timecourses": [
-        {
-          "start": 0,
-          "end": 3000,
-          "steps": 500,
-          "changes": {
-            "BW": {
-              "_magnitude": 87.5,
-              "_units": "kilogram"
-            },
-            "[KI__glc_ext]": {
-              "_magnitude": 5.0,
-              "_units": "KI__mmole / liter"
-            },
-            "GU__f_absorption": {
-              "_magnitude": 1.0,
-              "_units": "dimensionless"
-            },
-            "f_cirrhosis": {
-              "_magnitude": 0.6979591836734694,
-              "_units": "dimensionless"
-            },
-            "KI__f_renal_function": {
-              "_magnitude": 1.5830000000000002,
-              "_units": "dimensionless"
-            },
-            "PODOSE_dap": {
-              "_magnitude": 10,
-              "_units": "milligram"
-            }
-          },
-          "model_changes": {},
-          "model_manipulations": {},
-          "discard": false
+      "type": "Simulation",
+      "time_unit": "hr",
+      "start": 0.0,
+      "end": 50,
+      "preinit_changes": {
+        "BW": {
+          "value": 87.5,
+          "unit": "kilogram"
+        },
+        "[KI__fpg]": {
+          "value": 5.0,
+          "unit": "millimolar"
+        },
+        "GU__fed": {
+          "value": 0.0,
+          "unit": "dimensionless"
+        },
+        "f_cirrhosis": {
+          "value": 0.6979591836734694,
+          "unit": "dimensionless"
+        },
+        "KI__f_renal_function": {
+          "value": 1.0,
+          "unit": "dimensionless"
+        },
+        "PODOSE_dap": {
+          "value": 10,
+          "unit": "milligram"
         }
-      ]
+      },
+      "changes": [],
+      "presimulation": null,
+      "times": null,
+      "steps": null,
+      "time_shift": 0.0
     },
     "po_dap10_severe": {
-      "type": "TimecourseSim",
-      "selections": null,
-      "reset": true,
-      "time_offset": 0.0,
-      "timecourses": [
-        {
-          "start": 0,
-          "end": 3000,
-          "steps": 500,
-          "changes": {
-            "BW": {
-              "_magnitude": 89.2,
-              "_units": "kilogram"
-            },
-            "[KI__glc_ext]": {
-              "_magnitude": 5.0,
-              "_units": "KI__mmole / liter"
-            },
-            "GU__f_absorption": {
-              "_magnitude": 1.0,
-              "_units": "dimensionless"
-            },
-            "f_cirrhosis": {
-              "_magnitude": 0.8127551020408164,
-              "_units": "dimensionless"
-            },
-            "KI__f_renal_function": {
-              "_magnitude": 1.4280000000000002,
-              "_units": "dimensionless"
-            },
-            "PODOSE_dap": {
-              "_magnitude": 10,
-              "_units": "milligram"
-            }
-          },
-          "model_changes": {},
-          "model_manipulations": {},
-          "discard": false
+      "type": "Simulation",
+      "time_unit": "hr",
+      "start": 0.0,
+      "end": 50,
+      "preinit_changes": {
+        "BW": {
+          "value": 89.2,
+          "unit": "kilogram"
+        },
+        "[KI__fpg]": {
+          "value": 5.0,
+          "unit": "millimolar"
+        },
+        "GU__fed": {
+          "value": 0.0,
+          "unit": "dimensionless"
+        },
+        "f_cirrhosis": {
+          "value": 0.8127551020408164,
+          "unit": "dimensionless"
+        },
+        "KI__f_renal_function": {
+          "value": 1.0,
+          "unit": "dimensionless"
+        },
+        "PODOSE_dap": {
+          "value": 10,
+          "unit": "milligram"
         }
-      ]
+      },
+      "changes": [],
+      "presimulation": null,
+      "times": null,
+      "steps": null,
+      "time_shift": 0.0
     }
   },
   "data": {
     "task_po_dap10_healthy__time": {
       "type": "TASK",
+      "sid": "task_po_dap10_healthy__time",
       "index": "time",
+      "selection": "time",
       "unit": null,
       "task": "task_po_dap10_healthy",
       "dataset": null,
       "function": null,
-      "variables": null
+      "variables": null,
+      "parameters": {},
+      "sel": null
     },
     "task_po_dap10_healthy__IVDOSE_dap": {
       "type": "TASK",
+      "sid": "task_po_dap10_healthy__IVDOSE_dap",
       "index": "IVDOSE_dap",
+      "selection": "IVDOSE_dap",
       "unit": null,
       "task": "task_po_dap10_healthy",
       "dataset": null,
       "function": null,
-      "variables": null
+      "variables": null,
+      "parameters": {},
+      "sel": null
     },
     "task_po_dap10_healthy__PODOSE_dap": {
       "type": "TASK",
+      "sid": "task_po_dap10_healthy__PODOSE_dap",
       "index": "PODOSE_dap",
+      "selection": "PODOSE_dap",
       "unit": null,
       "task": "task_po_dap10_healthy",
       "dataset": null,
       "function": null,
-      "variables": null
+      "variables": null,
+      "parameters": {},
+      "sel": null
     },
-    "task_po_dap10_healthy__Cve_daptot": {
+    "task_po_dap10_healthy__conc__Cve_daptot": {
       "type": "TASK",
+      "sid": "task_po_dap10_healthy__conc__Cve_daptot",
       "index": "Cve_daptot",
+      "selection": "[Cve_daptot]",
       "unit": null,
       "task": "task_po_dap10_healthy",
       "dataset": null,
       "function": null,
-      "variables": null
+      "variables": null,
+      "parameters": {},
+      "sel": null
     },
-    "task_po_dap10_healthy__Cve_dap": {
+    "task_po_dap10_healthy__conc__Cve_dap": {
       "type": "TASK",
+      "sid": "task_po_dap10_healthy__conc__Cve_dap",
       "index": "Cve_dap",
+      "selection": "[Cve_dap]",
       "unit": null,
       "task": "task_po_dap10_healthy",
       "dataset": null,
       "function": null,
-      "variables": null
+      "variables": null,
+      "parameters": {},
+      "sel": null
     },
-    "task_po_dap10_healthy__Cve_d3g": {
+    "task_po_dap10_healthy__conc__Cve_d3g": {
       "type": "TASK",
+      "sid": "task_po_dap10_healthy__conc__Cve_d3g",
       "index": "Cve_d3g",
+      "selection": "[Cve_d3g]",
       "unit": null,
       "task": "task_po_dap10_healthy",
       "dataset": null,
       "function": null,
-      "variables": null
+      "variables": null,
+      "parameters": {},
+      "sel": null
     },
-    "task_po_dap10_healthy__KI__glc_ext": {
+    "task_po_dap10_healthy__conc__Cve_dapmet": {
       "type": "TASK",
-      "index": "KI__glc_ext",
+      "sid": "task_po_dap10_healthy__conc__Cve_dapmet",
+      "index": "Cve_dapmet",
+      "selection": "[Cve_dapmet]",
       "unit": null,
       "task": "task_po_dap10_healthy",
       "dataset": null,
       "function": null,
-      "variables": null
-    },
-    "task_po_dap10_healthy__LI__dap": {
-      "type": "TASK",
-      "index": "LI__dap",
-      "unit": null,
-      "task": "task_po_dap10_healthy",
-      "dataset": null,
-      "function": null,
-      "variables": null
-    },
-    "task_po_dap10_healthy__LI__d3g": {
-      "type": "TASK",
-      "index": "LI__d3g",
-      "unit": null,
-      "task": "task_po_dap10_healthy",
-      "dataset": null,
-      "function": null,
-      "variables": null
+      "variables": null,
+      "parameters": {},
+      "sel": null
     },
     "task_po_dap10_healthy__Aurine_daptot": {
       "type": "TASK",
+      "sid": "task_po_dap10_healthy__Aurine_daptot",
       "index": "Aurine_daptot",
+      "selection": "Aurine_daptot",
       "unit": null,
       "task": "task_po_dap10_healthy",
       "dataset": null,
       "function": null,
-      "variables": null
+      "variables": null,
+      "parameters": {},
+      "sel": null
     },
     "task_po_dap10_healthy__Aurine_dap": {
       "type": "TASK",
+      "sid": "task_po_dap10_healthy__Aurine_dap",
       "index": "Aurine_dap",
+      "selection": "Aurine_dap",
       "unit": null,
       "task": "task_po_dap10_healthy",
       "dataset": null,
       "function": null,
-      "variables": null
+      "variables": null,
+      "parameters": {},
+      "sel": null
     },
     "task_po_dap10_healthy__Aurine_d3g": {
       "type": "TASK",
+      "sid": "task_po_dap10_healthy__Aurine_d3g",
       "index": "Aurine_d3g",
+      "selection": "Aurine_d3g",
       "unit": null,
       "task": "task_po_dap10_healthy",
       "dataset": null,
       "function": null,
-      "variables": null
+      "variables": null,
+      "parameters": {},
+      "sel": null
     },
-    "task_po_dap10_healthy__KI__glc_urine": {
+    "task_po_dap10_healthy__Aurine_dapmet": {
       "type": "TASK",
-      "index": "KI__glc_urine",
+      "sid": "task_po_dap10_healthy__Aurine_dapmet",
+      "index": "Aurine_dapmet",
+      "selection": "Aurine_dapmet",
       "unit": null,
       "task": "task_po_dap10_healthy",
       "dataset": null,
       "function": null,
-      "variables": null
-    },
-    "task_po_dap10_healthy__KI__UGE": {
-      "type": "TASK",
-      "index": "KI__UGE",
-      "unit": null,
-      "task": "task_po_dap10_healthy",
-      "dataset": null,
-      "function": null,
-      "variables": null
-    },
-    "task_po_dap10_healthy__KI__RTG": {
-      "type": "TASK",
-      "index": "KI__RTG",
-      "unit": null,
-      "task": "task_po_dap10_healthy",
-      "dataset": null,
-      "function": null,
-      "variables": null
+      "variables": null,
+      "parameters": {},
+      "sel": null
     },
     "task_po_dap10_healthy__Afeces_dap": {
       "type": "TASK",
+      "sid": "task_po_dap10_healthy__Afeces_dap",
       "index": "Afeces_dap",
+      "selection": "Afeces_dap",
       "unit": null,
       "task": "task_po_dap10_healthy",
       "dataset": null,
       "function": null,
-      "variables": null
+      "variables": null,
+      "parameters": {},
+      "sel": null
     },
     "task_po_dap10_healthy__Afeces_daptot": {
       "type": "TASK",
+      "sid": "task_po_dap10_healthy__Afeces_daptot",
       "index": "Afeces_daptot",
+      "selection": "Afeces_daptot",
       "unit": null,
       "task": "task_po_dap10_healthy",
       "dataset": null,
       "function": null,
-      "variables": null
+      "variables": null,
+      "parameters": {},
+      "sel": null
     },
-    "task_po_dap10_healthy__KI__D3GEX": {
+    "task_po_dap10_healthy__conc__KI__fpg": {
       "type": "TASK",
-      "index": "KI__D3GEX",
+      "sid": "task_po_dap10_healthy__conc__KI__fpg",
+      "index": "KI__fpg",
+      "selection": "[KI__fpg]",
       "unit": null,
       "task": "task_po_dap10_healthy",
       "dataset": null,
       "function": null,
-      "variables": null
+      "variables": null,
+      "parameters": {},
+      "sel": null
     },
-    "task_po_dap10_healthy__KI__DAPEX": {
+    "task_po_dap10_healthy__KI__pg": {
       "type": "TASK",
-      "index": "KI__DAPEX",
+      "sid": "task_po_dap10_healthy__KI__pg",
+      "index": "KI__pg",
+      "selection": "KI__pg",
       "unit": null,
       "task": "task_po_dap10_healthy",
       "dataset": null,
       "function": null,
-      "variables": null
+      "variables": null,
+      "parameters": {},
+      "sel": null
+    },
+    "task_po_dap10_healthy__KI__glc_urine": {
+      "type": "TASK",
+      "sid": "task_po_dap10_healthy__KI__glc_urine",
+      "index": "KI__glc_urine",
+      "selection": "KI__glc_urine",
+      "unit": null,
+      "task": "task_po_dap10_healthy",
+      "dataset": null,
+      "function": null,
+      "variables": null,
+      "parameters": {},
+      "sel": null
+    },
+    "task_po_dap10_healthy__KI__UGE": {
+      "type": "TASK",
+      "sid": "task_po_dap10_healthy__KI__UGE",
+      "index": "KI__UGE",
+      "selection": "KI__UGE",
+      "unit": null,
+      "task": "task_po_dap10_healthy",
+      "dataset": null,
+      "function": null,
+      "variables": null,
+      "parameters": {},
+      "sel": null
+    },
+    "task_po_dap10_healthy__KI__RTG": {
+      "type": "TASK",
+      "sid": "task_po_dap10_healthy__KI__RTG",
+      "index": "KI__RTG",
+      "selection": "KI__RTG",
+      "unit": null,
+      "task": "task_po_dap10_healthy",
+      "dataset": null,
+      "function": null,
+      "variables": null,
+      "parameters": {},
+      "sel": null
     },
     "task_po_dap10_healthy__KI__GLCEX": {
       "type": "TASK",
+      "sid": "task_po_dap10_healthy__KI__GLCEX",
       "index": "KI__GLCEX",
+      "selection": "KI__GLCEX",
       "unit": null,
       "task": "task_po_dap10_healthy",
       "dataset": null,
       "function": null,
-      "variables": null
+      "variables": null,
+      "parameters": {},
+      "sel": null
+    },
+    "task_po_dap10_healthy__KI__D3GEX": {
+      "type": "TASK",
+      "sid": "task_po_dap10_healthy__KI__D3GEX",
+      "index": "KI__D3GEX",
+      "selection": "KI__D3GEX",
+      "unit": null,
+      "task": "task_po_dap10_healthy",
+      "dataset": null,
+      "function": null,
+      "variables": null,
+      "parameters": {},
+      "sel": null
+    },
+    "task_po_dap10_healthy__KI__DAPEX": {
+      "type": "TASK",
+      "sid": "task_po_dap10_healthy__KI__DAPEX",
+      "index": "KI__DAPEX",
+      "selection": "KI__DAPEX",
+      "unit": null,
+      "task": "task_po_dap10_healthy",
+      "dataset": null,
+      "function": null,
+      "variables": null,
+      "parameters": {},
+      "sel": null
+    },
+    "task_po_dap10_healthy__KI__METEX": {
+      "type": "TASK",
+      "sid": "task_po_dap10_healthy__KI__METEX",
+      "index": "KI__METEX",
+      "selection": "KI__METEX",
+      "unit": null,
+      "task": "task_po_dap10_healthy",
+      "dataset": null,
+      "function": null,
+      "variables": null,
+      "parameters": {},
+      "sel": null
     },
     "task_po_dap10_healthy__KI__f_renal_function": {
       "type": "TASK",
+      "sid": "task_po_dap10_healthy__KI__f_renal_function",
       "index": "KI__f_renal_function",
+      "selection": "KI__f_renal_function",
       "unit": null,
       "task": "task_po_dap10_healthy",
       "dataset": null,
       "function": null,
-      "variables": null
+      "variables": null,
+      "parameters": {},
+      "sel": null
+    },
+    "task_po_dap10_healthy__KI__GFR": {
+      "type": "TASK",
+      "sid": "task_po_dap10_healthy__KI__GFR",
+      "index": "KI__GFR",
+      "selection": "KI__GFR",
+      "unit": null,
+      "task": "task_po_dap10_healthy",
+      "dataset": null,
+      "function": null,
+      "variables": null,
+      "parameters": {},
+      "sel": null
     },
     "task_po_dap10_healthy__f_cirrhosis": {
       "type": "TASK",
+      "sid": "task_po_dap10_healthy__f_cirrhosis",
       "index": "f_cirrhosis",
+      "selection": "f_cirrhosis",
       "unit": null,
       "task": "task_po_dap10_healthy",
       "dataset": null,
       "function": null,
-      "variables": null
+      "variables": null,
+      "parameters": {},
+      "sel": null
     },
-    "task_po_dap10_healthy__GU__f_absorption": {
+    "task_po_dap10_healthy__GU__fed": {
       "type": "TASK",
-      "index": "GU__f_absorption",
+      "sid": "task_po_dap10_healthy__GU__fed",
+      "index": "GU__fed",
+      "selection": "GU__fed",
       "unit": null,
       "task": "task_po_dap10_healthy",
       "dataset": null,
       "function": null,
-      "variables": null
+      "variables": null,
+      "parameters": {},
+      "sel": null
+    },
+    "task_po_dap10_healthy__GU__FED_f_absorption": {
+      "type": "TASK",
+      "sid": "task_po_dap10_healthy__GU__FED_f_absorption",
+      "index": "GU__FED_f_absorption",
+      "selection": "GU__FED_f_absorption",
+      "unit": null,
+      "task": "task_po_dap10_healthy",
+      "dataset": null,
+      "function": null,
+      "variables": null,
+      "parameters": {},
+      "sel": null
     },
     "task_po_dap10_healthy__f_ugt1a9": {
       "type": "TASK",
+      "sid": "task_po_dap10_healthy__f_ugt1a9",
       "index": "f_ugt1a9",
+      "selection": "f_ugt1a9",
       "unit": null,
       "task": "task_po_dap10_healthy",
       "dataset": null,
       "function": null,
-      "variables": null
+      "variables": null,
+      "parameters": {},
+      "sel": null
     },
     "task_po_dap10_mild__time": {
       "type": "TASK",
+      "sid": "task_po_dap10_mild__time",
       "index": "time",
+      "selection": "time",
       "unit": null,
       "task": "task_po_dap10_mild",
       "dataset": null,
       "function": null,
-      "variables": null
+      "variables": null,
+      "parameters": {},
+      "sel": null
     },
     "task_po_dap10_mild__IVDOSE_dap": {
       "type": "TASK",
+      "sid": "task_po_dap10_mild__IVDOSE_dap",
       "index": "IVDOSE_dap",
+      "selection": "IVDOSE_dap",
       "unit": null,
       "task": "task_po_dap10_mild",
       "dataset": null,
       "function": null,
-      "variables": null
+      "variables": null,
+      "parameters": {},
+      "sel": null
     },
     "task_po_dap10_mild__PODOSE_dap": {
       "type": "TASK",
+      "sid": "task_po_dap10_mild__PODOSE_dap",
       "index": "PODOSE_dap",
+      "selection": "PODOSE_dap",
       "unit": null,
       "task": "task_po_dap10_mild",
       "dataset": null,
       "function": null,
-      "variables": null
+      "variables": null,
+      "parameters": {},
+      "sel": null
     },
-    "task_po_dap10_mild__Cve_daptot": {
+    "task_po_dap10_mild__conc__Cve_daptot": {
       "type": "TASK",
+      "sid": "task_po_dap10_mild__conc__Cve_daptot",
       "index": "Cve_daptot",
+      "selection": "[Cve_daptot]",
       "unit": null,
       "task": "task_po_dap10_mild",
       "dataset": null,
       "function": null,
-      "variables": null
+      "variables": null,
+      "parameters": {},
+      "sel": null
     },
-    "task_po_dap10_mild__Cve_dap": {
+    "task_po_dap10_mild__conc__Cve_dap": {
       "type": "TASK",
+      "sid": "task_po_dap10_mild__conc__Cve_dap",
       "index": "Cve_dap",
+      "selection": "[Cve_dap]",
       "unit": null,
       "task": "task_po_dap10_mild",
       "dataset": null,
       "function": null,
-      "variables": null
+      "variables": null,
+      "parameters": {},
+      "sel": null
     },
-    "task_po_dap10_mild__Cve_d3g": {
+    "task_po_dap10_mild__conc__Cve_d3g": {
       "type": "TASK",
+      "sid": "task_po_dap10_mild__conc__Cve_d3g",
       "index": "Cve_d3g",
+      "selection": "[Cve_d3g]",
       "unit": null,
       "task": "task_po_dap10_mild",
       "dataset": null,
       "function": null,
-      "variables": null
+      "variables": null,
+      "parameters": {},
+      "sel": null
     },
-    "task_po_dap10_mild__KI__glc_ext": {
+    "task_po_dap10_mild__conc__Cve_dapmet": {
       "type": "TASK",
-      "index": "KI__glc_ext",
+      "sid": "task_po_dap10_mild__conc__Cve_dapmet",
+      "index": "Cve_dapmet",
+      "selection": "[Cve_dapmet]",
       "unit": null,
       "task": "task_po_dap10_mild",
       "dataset": null,
       "function": null,
-      "variables": null
-    },
-    "task_po_dap10_mild__LI__dap": {
-      "type": "TASK",
-      "index": "LI__dap",
-      "unit": null,
-      "task": "task_po_dap10_mild",
-      "dataset": null,
-      "function": null,
-      "variables": null
-    },
-    "task_po_dap10_mild__LI__d3g": {
-      "type": "TASK",
-      "index": "LI__d3g",
-      "unit": null,
-      "task": "task_po_dap10_mild",
-      "dataset": null,
-      "function": null,
-      "variables": null
+      "variables": null,
+      "parameters": {},
+      "sel": null
     },
     "task_po_dap10_mild__Aurine_daptot": {
       "type": "TASK",
+      "sid": "task_po_dap10_mild__Aurine_daptot",
       "index": "Aurine_daptot",
+      "selection": "Aurine_daptot",
       "unit": null,
       "task": "task_po_dap10_mild",
       "dataset": null,
       "function": null,
-      "variables": null
+      "variables": null,
+      "parameters": {},
+      "sel": null
     },
     "task_po_dap10_mild__Aurine_dap": {
       "type": "TASK",
+      "sid": "task_po_dap10_mild__Aurine_dap",
       "index": "Aurine_dap",
+      "selection": "Aurine_dap",
       "unit": null,
       "task": "task_po_dap10_mild",
       "dataset": null,
       "function": null,
-      "variables": null
+      "variables": null,
+      "parameters": {},
+      "sel": null
     },
     "task_po_dap10_mild__Aurine_d3g": {
       "type": "TASK",
+      "sid": "task_po_dap10_mild__Aurine_d3g",
       "index": "Aurine_d3g",
+      "selection": "Aurine_d3g",
       "unit": null,
       "task": "task_po_dap10_mild",
       "dataset": null,
       "function": null,
-      "variables": null
+      "variables": null,
+      "parameters": {},
+      "sel": null
     },
-    "task_po_dap10_mild__KI__glc_urine": {
+    "task_po_dap10_mild__Aurine_dapmet": {
       "type": "TASK",
-      "index": "KI__glc_urine",
+      "sid": "task_po_dap10_mild__Aurine_dapmet",
+      "index": "Aurine_dapmet",
+      "selection": "Aurine_dapmet",
       "unit": null,
       "task": "task_po_dap10_mild",
       "dataset": null,
       "function": null,
-      "variables": null
-    },
-    "task_po_dap10_mild__KI__UGE": {
-      "type": "TASK",
-      "index": "KI__UGE",
-      "unit": null,
-      "task": "task_po_dap10_mild",
-      "dataset": null,
-      "function": null,
-      "variables": null
-    },
-    "task_po_dap10_mild__KI__RTG": {
-      "type": "TASK",
-      "index": "KI__RTG",
-      "unit": null,
-      "task": "task_po_dap10_mild",
-      "dataset": null,
-      "function": null,
-      "variables": null
+      "variables": null,
+      "parameters": {},
+      "sel": null
     },
     "task_po_dap10_mild__Afeces_dap": {
       "type": "TASK",
+      "sid": "task_po_dap10_mild__Afeces_dap",
       "index": "Afeces_dap",
+      "selection": "Afeces_dap",
       "unit": null,
       "task": "task_po_dap10_mild",
       "dataset": null,
       "function": null,
-      "variables": null
+      "variables": null,
+      "parameters": {},
+      "sel": null
     },
     "task_po_dap10_mild__Afeces_daptot": {
       "type": "TASK",
+      "sid": "task_po_dap10_mild__Afeces_daptot",
       "index": "Afeces_daptot",
+      "selection": "Afeces_daptot",
       "unit": null,
       "task": "task_po_dap10_mild",
       "dataset": null,
       "function": null,
-      "variables": null
+      "variables": null,
+      "parameters": {},
+      "sel": null
     },
-    "task_po_dap10_mild__KI__D3GEX": {
+    "task_po_dap10_mild__conc__KI__fpg": {
       "type": "TASK",
-      "index": "KI__D3GEX",
+      "sid": "task_po_dap10_mild__conc__KI__fpg",
+      "index": "KI__fpg",
+      "selection": "[KI__fpg]",
       "unit": null,
       "task": "task_po_dap10_mild",
       "dataset": null,
       "function": null,
-      "variables": null
+      "variables": null,
+      "parameters": {},
+      "sel": null
     },
-    "task_po_dap10_mild__KI__DAPEX": {
+    "task_po_dap10_mild__KI__pg": {
       "type": "TASK",
-      "index": "KI__DAPEX",
+      "sid": "task_po_dap10_mild__KI__pg",
+      "index": "KI__pg",
+      "selection": "KI__pg",
       "unit": null,
       "task": "task_po_dap10_mild",
       "dataset": null,
       "function": null,
-      "variables": null
+      "variables": null,
+      "parameters": {},
+      "sel": null
+    },
+    "task_po_dap10_mild__KI__glc_urine": {
+      "type": "TASK",
+      "sid": "task_po_dap10_mild__KI__glc_urine",
+      "index": "KI__glc_urine",
+      "selection": "KI__glc_urine",
+      "unit": null,
+      "task": "task_po_dap10_mild",
+      "dataset": null,
+      "function": null,
+      "variables": null,
+      "parameters": {},
+      "sel": null
+    },
+    "task_po_dap10_mild__KI__UGE": {
+      "type": "TASK",
+      "sid": "task_po_dap10_mild__KI__UGE",
+      "index": "KI__UGE",
+      "selection": "KI__UGE",
+      "unit": null,
+      "task": "task_po_dap10_mild",
+      "dataset": null,
+      "function": null,
+      "variables": null,
+      "parameters": {},
+      "sel": null
+    },
+    "task_po_dap10_mild__KI__RTG": {
+      "type": "TASK",
+      "sid": "task_po_dap10_mild__KI__RTG",
+      "index": "KI__RTG",
+      "selection": "KI__RTG",
+      "unit": null,
+      "task": "task_po_dap10_mild",
+      "dataset": null,
+      "function": null,
+      "variables": null,
+      "parameters": {},
+      "sel": null
     },
     "task_po_dap10_mild__KI__GLCEX": {
       "type": "TASK",
+      "sid": "task_po_dap10_mild__KI__GLCEX",
       "index": "KI__GLCEX",
+      "selection": "KI__GLCEX",
       "unit": null,
       "task": "task_po_dap10_mild",
       "dataset": null,
       "function": null,
-      "variables": null
+      "variables": null,
+      "parameters": {},
+      "sel": null
+    },
+    "task_po_dap10_mild__KI__D3GEX": {
+      "type": "TASK",
+      "sid": "task_po_dap10_mild__KI__D3GEX",
+      "index": "KI__D3GEX",
+      "selection": "KI__D3GEX",
+      "unit": null,
+      "task": "task_po_dap10_mild",
+      "dataset": null,
+      "function": null,
+      "variables": null,
+      "parameters": {},
+      "sel": null
+    },
+    "task_po_dap10_mild__KI__DAPEX": {
+      "type": "TASK",
+      "sid": "task_po_dap10_mild__KI__DAPEX",
+      "index": "KI__DAPEX",
+      "selection": "KI__DAPEX",
+      "unit": null,
+      "task": "task_po_dap10_mild",
+      "dataset": null,
+      "function": null,
+      "variables": null,
+      "parameters": {},
+      "sel": null
+    },
+    "task_po_dap10_mild__KI__METEX": {
+      "type": "TASK",
+      "sid": "task_po_dap10_mild__KI__METEX",
+      "index": "KI__METEX",
+      "selection": "KI__METEX",
+      "unit": null,
+      "task": "task_po_dap10_mild",
+      "dataset": null,
+      "function": null,
+      "variables": null,
+      "parameters": {},
+      "sel": null
     },
     "task_po_dap10_mild__KI__f_renal_function": {
       "type": "TASK",
+      "sid": "task_po_dap10_mild__KI__f_renal_function",
       "index": "KI__f_renal_function",
+      "selection": "KI__f_renal_function",
       "unit": null,
       "task": "task_po_dap10_mild",
       "dataset": null,
       "function": null,
-      "variables": null
+      "variables": null,
+      "parameters": {},
+      "sel": null
+    },
+    "task_po_dap10_mild__KI__GFR": {
+      "type": "TASK",
+      "sid": "task_po_dap10_mild__KI__GFR",
+      "index": "KI__GFR",
+      "selection": "KI__GFR",
+      "unit": null,
+      "task": "task_po_dap10_mild",
+      "dataset": null,
+      "function": null,
+      "variables": null,
+      "parameters": {},
+      "sel": null
     },
     "task_po_dap10_mild__f_cirrhosis": {
       "type": "TASK",
+      "sid": "task_po_dap10_mild__f_cirrhosis",
       "index": "f_cirrhosis",
+      "selection": "f_cirrhosis",
       "unit": null,
       "task": "task_po_dap10_mild",
       "dataset": null,
       "function": null,
-      "variables": null
+      "variables": null,
+      "parameters": {},
+      "sel": null
     },
-    "task_po_dap10_mild__GU__f_absorption": {
+    "task_po_dap10_mild__GU__fed": {
       "type": "TASK",
-      "index": "GU__f_absorption",
+      "sid": "task_po_dap10_mild__GU__fed",
+      "index": "GU__fed",
+      "selection": "GU__fed",
       "unit": null,
       "task": "task_po_dap10_mild",
       "dataset": null,
       "function": null,
-      "variables": null
+      "variables": null,
+      "parameters": {},
+      "sel": null
+    },
+    "task_po_dap10_mild__GU__FED_f_absorption": {
+      "type": "TASK",
+      "sid": "task_po_dap10_mild__GU__FED_f_absorption",
+      "index": "GU__FED_f_absorption",
+      "selection": "GU__FED_f_absorption",
+      "unit": null,
+      "task": "task_po_dap10_mild",
+      "dataset": null,
+      "function": null,
+      "variables": null,
+      "parameters": {},
+      "sel": null
     },
     "task_po_dap10_mild__f_ugt1a9": {
       "type": "TASK",
+      "sid": "task_po_dap10_mild__f_ugt1a9",
       "index": "f_ugt1a9",
+      "selection": "f_ugt1a9",
       "unit": null,
       "task": "task_po_dap10_mild",
       "dataset": null,
       "function": null,
-      "variables": null
+      "variables": null,
+      "parameters": {},
+      "sel": null
     },
     "task_po_dap10_moderate__time": {
       "type": "TASK",
+      "sid": "task_po_dap10_moderate__time",
       "index": "time",
+      "selection": "time",
       "unit": null,
       "task": "task_po_dap10_moderate",
       "dataset": null,
       "function": null,
-      "variables": null
+      "variables": null,
+      "parameters": {},
+      "sel": null
     },
     "task_po_dap10_moderate__IVDOSE_dap": {
       "type": "TASK",
+      "sid": "task_po_dap10_moderate__IVDOSE_dap",
       "index": "IVDOSE_dap",
+      "selection": "IVDOSE_dap",
       "unit": null,
       "task": "task_po_dap10_moderate",
       "dataset": null,
       "function": null,
-      "variables": null
+      "variables": null,
+      "parameters": {},
+      "sel": null
     },
     "task_po_dap10_moderate__PODOSE_dap": {
       "type": "TASK",
+      "sid": "task_po_dap10_moderate__PODOSE_dap",
       "index": "PODOSE_dap",
+      "selection": "PODOSE_dap",
       "unit": null,
       "task": "task_po_dap10_moderate",
       "dataset": null,
       "function": null,
-      "variables": null
+      "variables": null,
+      "parameters": {},
+      "sel": null
     },
-    "task_po_dap10_moderate__Cve_daptot": {
+    "task_po_dap10_moderate__conc__Cve_daptot": {
       "type": "TASK",
+      "sid": "task_po_dap10_moderate__conc__Cve_daptot",
       "index": "Cve_daptot",
+      "selection": "[Cve_daptot]",
       "unit": null,
       "task": "task_po_dap10_moderate",
       "dataset": null,
       "function": null,
-      "variables": null
+      "variables": null,
+      "parameters": {},
+      "sel": null
     },
-    "task_po_dap10_moderate__Cve_dap": {
+    "task_po_dap10_moderate__conc__Cve_dap": {
       "type": "TASK",
+      "sid": "task_po_dap10_moderate__conc__Cve_dap",
       "index": "Cve_dap",
+      "selection": "[Cve_dap]",
       "unit": null,
       "task": "task_po_dap10_moderate",
       "dataset": null,
       "function": null,
-      "variables": null
+      "variables": null,
+      "parameters": {},
+      "sel": null
     },
-    "task_po_dap10_moderate__Cve_d3g": {
+    "task_po_dap10_moderate__conc__Cve_d3g": {
       "type": "TASK",
+      "sid": "task_po_dap10_moderate__conc__Cve_d3g",
       "index": "Cve_d3g",
+      "selection": "[Cve_d3g]",
       "unit": null,
       "task": "task_po_dap10_moderate",
       "dataset": null,
       "function": null,
-      "variables": null
+      "variables": null,
+      "parameters": {},
+      "sel": null
     },
-    "task_po_dap10_moderate__KI__glc_ext": {
+    "task_po_dap10_moderate__conc__Cve_dapmet": {
       "type": "TASK",
-      "index": "KI__glc_ext",
+      "sid": "task_po_dap10_moderate__conc__Cve_dapmet",
+      "index": "Cve_dapmet",
+      "selection": "[Cve_dapmet]",
       "unit": null,
       "task": "task_po_dap10_moderate",
       "dataset": null,
       "function": null,
-      "variables": null
-    },
-    "task_po_dap10_moderate__LI__dap": {
-      "type": "TASK",
-      "index": "LI__dap",
-      "unit": null,
-      "task": "task_po_dap10_moderate",
-      "dataset": null,
-      "function": null,
-      "variables": null
-    },
-    "task_po_dap10_moderate__LI__d3g": {
-      "type": "TASK",
-      "index": "LI__d3g",
-      "unit": null,
-      "task": "task_po_dap10_moderate",
-      "dataset": null,
-      "function": null,
-      "variables": null
+      "variables": null,
+      "parameters": {},
+      "sel": null
     },
     "task_po_dap10_moderate__Aurine_daptot": {
       "type": "TASK",
+      "sid": "task_po_dap10_moderate__Aurine_daptot",
       "index": "Aurine_daptot",
+      "selection": "Aurine_daptot",
       "unit": null,
       "task": "task_po_dap10_moderate",
       "dataset": null,
       "function": null,
-      "variables": null
+      "variables": null,
+      "parameters": {},
+      "sel": null
     },
     "task_po_dap10_moderate__Aurine_dap": {
       "type": "TASK",
+      "sid": "task_po_dap10_moderate__Aurine_dap",
       "index": "Aurine_dap",
+      "selection": "Aurine_dap",
       "unit": null,
       "task": "task_po_dap10_moderate",
       "dataset": null,
       "function": null,
-      "variables": null
+      "variables": null,
+      "parameters": {},
+      "sel": null
     },
     "task_po_dap10_moderate__Aurine_d3g": {
       "type": "TASK",
+      "sid": "task_po_dap10_moderate__Aurine_d3g",
       "index": "Aurine_d3g",
+      "selection": "Aurine_d3g",
       "unit": null,
       "task": "task_po_dap10_moderate",
       "dataset": null,
       "function": null,
-      "variables": null
+      "variables": null,
+      "parameters": {},
+      "sel": null
     },
-    "task_po_dap10_moderate__KI__glc_urine": {
+    "task_po_dap10_moderate__Aurine_dapmet": {
       "type": "TASK",
-      "index": "KI__glc_urine",
+      "sid": "task_po_dap10_moderate__Aurine_dapmet",
+      "index": "Aurine_dapmet",
+      "selection": "Aurine_dapmet",
       "unit": null,
       "task": "task_po_dap10_moderate",
       "dataset": null,
       "function": null,
-      "variables": null
-    },
-    "task_po_dap10_moderate__KI__UGE": {
-      "type": "TASK",
-      "index": "KI__UGE",
-      "unit": null,
-      "task": "task_po_dap10_moderate",
-      "dataset": null,
-      "function": null,
-      "variables": null
-    },
-    "task_po_dap10_moderate__KI__RTG": {
-      "type": "TASK",
-      "index": "KI__RTG",
-      "unit": null,
-      "task": "task_po_dap10_moderate",
-      "dataset": null,
-      "function": null,
-      "variables": null
+      "variables": null,
+      "parameters": {},
+      "sel": null
     },
     "task_po_dap10_moderate__Afeces_dap": {
       "type": "TASK",
+      "sid": "task_po_dap10_moderate__Afeces_dap",
       "index": "Afeces_dap",
+      "selection": "Afeces_dap",
       "unit": null,
       "task": "task_po_dap10_moderate",
       "dataset": null,
       "function": null,
-      "variables": null
+      "variables": null,
+      "parameters": {},
+      "sel": null
     },
     "task_po_dap10_moderate__Afeces_daptot": {
       "type": "TASK",
+      "sid": "task_po_dap10_moderate__Afeces_daptot",
       "index": "Afeces_daptot",
+      "selection": "Afeces_daptot",
       "unit": null,
       "task": "task_po_dap10_moderate",
       "dataset": null,
       "function": null,
-      "variables": null
+      "variables": null,
+      "parameters": {},
+      "sel": null
     },
-    "task_po_dap10_moderate__KI__D3GEX": {
+    "task_po_dap10_moderate__conc__KI__fpg": {
       "type": "TASK",
-      "index": "KI__D3GEX",
+      "sid": "task_po_dap10_moderate__conc__KI__fpg",
+      "index": "KI__fpg",
+      "selection": "[KI__fpg]",
       "unit": null,
       "task": "task_po_dap10_moderate",
       "dataset": null,
       "function": null,
-      "variables": null
+      "variables": null,
+      "parameters": {},
+      "sel": null
     },
-    "task_po_dap10_moderate__KI__DAPEX": {
+    "task_po_dap10_moderate__KI__pg": {
       "type": "TASK",
-      "index": "KI__DAPEX",
+      "sid": "task_po_dap10_moderate__KI__pg",
+      "index": "KI__pg",
+      "selection": "KI__pg",
       "unit": null,
       "task": "task_po_dap10_moderate",
       "dataset": null,
       "function": null,
-      "variables": null
+      "variables": null,
+      "parameters": {},
+      "sel": null
+    },
+    "task_po_dap10_moderate__KI__glc_urine": {
+      "type": "TASK",
+      "sid": "task_po_dap10_moderate__KI__glc_urine",
+      "index": "KI__glc_urine",
+      "selection": "KI__glc_urine",
+      "unit": null,
+      "task": "task_po_dap10_moderate",
+      "dataset": null,
+      "function": null,
+      "variables": null,
+      "parameters": {},
+      "sel": null
+    },
+    "task_po_dap10_moderate__KI__UGE": {
+      "type": "TASK",
+      "sid": "task_po_dap10_moderate__KI__UGE",
+      "index": "KI__UGE",
+      "selection": "KI__UGE",
+      "unit": null,
+      "task": "task_po_dap10_moderate",
+      "dataset": null,
+      "function": null,
+      "variables": null,
+      "parameters": {},
+      "sel": null
+    },
+    "task_po_dap10_moderate__KI__RTG": {
+      "type": "TASK",
+      "sid": "task_po_dap10_moderate__KI__RTG",
+      "index": "KI__RTG",
+      "selection": "KI__RTG",
+      "unit": null,
+      "task": "task_po_dap10_moderate",
+      "dataset": null,
+      "function": null,
+      "variables": null,
+      "parameters": {},
+      "sel": null
     },
     "task_po_dap10_moderate__KI__GLCEX": {
       "type": "TASK",
+      "sid": "task_po_dap10_moderate__KI__GLCEX",
       "index": "KI__GLCEX",
+      "selection": "KI__GLCEX",
       "unit": null,
       "task": "task_po_dap10_moderate",
       "dataset": null,
       "function": null,
-      "variables": null
+      "variables": null,
+      "parameters": {},
+      "sel": null
+    },
+    "task_po_dap10_moderate__KI__D3GEX": {
+      "type": "TASK",
+      "sid": "task_po_dap10_moderate__KI__D3GEX",
+      "index": "KI__D3GEX",
+      "selection": "KI__D3GEX",
+      "unit": null,
+      "task": "task_po_dap10_moderate",
+      "dataset": null,
+      "function": null,
+      "variables": null,
+      "parameters": {},
+      "sel": null
+    },
+    "task_po_dap10_moderate__KI__DAPEX": {
+      "type": "TASK",
+      "sid": "task_po_dap10_moderate__KI__DAPEX",
+      "index": "KI__DAPEX",
+      "selection": "KI__DAPEX",
+      "unit": null,
+      "task": "task_po_dap10_moderate",
+      "dataset": null,
+      "function": null,
+      "variables": null,
+      "parameters": {},
+      "sel": null
+    },
+    "task_po_dap10_moderate__KI__METEX": {
+      "type": "TASK",
+      "sid": "task_po_dap10_moderate__KI__METEX",
+      "index": "KI__METEX",
+      "selection": "KI__METEX",
+      "unit": null,
+      "task": "task_po_dap10_moderate",
+      "dataset": null,
+      "function": null,
+      "variables": null,
+      "parameters": {},
+      "sel": null
     },
     "task_po_dap10_moderate__KI__f_renal_function": {
       "type": "TASK",
+      "sid": "task_po_dap10_moderate__KI__f_renal_function",
       "index": "KI__f_renal_function",
+      "selection": "KI__f_renal_function",
       "unit": null,
       "task": "task_po_dap10_moderate",
       "dataset": null,
       "function": null,
-      "variables": null
+      "variables": null,
+      "parameters": {},
+      "sel": null
+    },
+    "task_po_dap10_moderate__KI__GFR": {
+      "type": "TASK",
+      "sid": "task_po_dap10_moderate__KI__GFR",
+      "index": "KI__GFR",
+      "selection": "KI__GFR",
+      "unit": null,
+      "task": "task_po_dap10_moderate",
+      "dataset": null,
+      "function": null,
+      "variables": null,
+      "parameters": {},
+      "sel": null
     },
     "task_po_dap10_moderate__f_cirrhosis": {
       "type": "TASK",
+      "sid": "task_po_dap10_moderate__f_cirrhosis",
       "index": "f_cirrhosis",
+      "selection": "f_cirrhosis",
       "unit": null,
       "task": "task_po_dap10_moderate",
       "dataset": null,
       "function": null,
-      "variables": null
+      "variables": null,
+      "parameters": {},
+      "sel": null
     },
-    "task_po_dap10_moderate__GU__f_absorption": {
+    "task_po_dap10_moderate__GU__fed": {
       "type": "TASK",
-      "index": "GU__f_absorption",
+      "sid": "task_po_dap10_moderate__GU__fed",
+      "index": "GU__fed",
+      "selection": "GU__fed",
       "unit": null,
       "task": "task_po_dap10_moderate",
       "dataset": null,
       "function": null,
-      "variables": null
+      "variables": null,
+      "parameters": {},
+      "sel": null
+    },
+    "task_po_dap10_moderate__GU__FED_f_absorption": {
+      "type": "TASK",
+      "sid": "task_po_dap10_moderate__GU__FED_f_absorption",
+      "index": "GU__FED_f_absorption",
+      "selection": "GU__FED_f_absorption",
+      "unit": null,
+      "task": "task_po_dap10_moderate",
+      "dataset": null,
+      "function": null,
+      "variables": null,
+      "parameters": {},
+      "sel": null
     },
     "task_po_dap10_moderate__f_ugt1a9": {
       "type": "TASK",
+      "sid": "task_po_dap10_moderate__f_ugt1a9",
       "index": "f_ugt1a9",
+      "selection": "f_ugt1a9",
       "unit": null,
       "task": "task_po_dap10_moderate",
       "dataset": null,
       "function": null,
-      "variables": null
+      "variables": null,
+      "parameters": {},
+      "sel": null
     },
     "task_po_dap10_severe__time": {
       "type": "TASK",
+      "sid": "task_po_dap10_severe__time",
       "index": "time",
+      "selection": "time",
       "unit": null,
       "task": "task_po_dap10_severe",
       "dataset": null,
       "function": null,
-      "variables": null
+      "variables": null,
+      "parameters": {},
+      "sel": null
     },
     "task_po_dap10_severe__IVDOSE_dap": {
       "type": "TASK",
+      "sid": "task_po_dap10_severe__IVDOSE_dap",
       "index": "IVDOSE_dap",
+      "selection": "IVDOSE_dap",
       "unit": null,
       "task": "task_po_dap10_severe",
       "dataset": null,
       "function": null,
-      "variables": null
+      "variables": null,
+      "parameters": {},
+      "sel": null
     },
     "task_po_dap10_severe__PODOSE_dap": {
       "type": "TASK",
+      "sid": "task_po_dap10_severe__PODOSE_dap",
       "index": "PODOSE_dap",
+      "selection": "PODOSE_dap",
       "unit": null,
       "task": "task_po_dap10_severe",
       "dataset": null,
       "function": null,
-      "variables": null
+      "variables": null,
+      "parameters": {},
+      "sel": null
     },
-    "task_po_dap10_severe__Cve_daptot": {
+    "task_po_dap10_severe__conc__Cve_daptot": {
       "type": "TASK",
+      "sid": "task_po_dap10_severe__conc__Cve_daptot",
       "index": "Cve_daptot",
+      "selection": "[Cve_daptot]",
       "unit": null,
       "task": "task_po_dap10_severe",
       "dataset": null,
       "function": null,
-      "variables": null
+      "variables": null,
+      "parameters": {},
+      "sel": null
     },
-    "task_po_dap10_severe__Cve_dap": {
+    "task_po_dap10_severe__conc__Cve_dap": {
       "type": "TASK",
+      "sid": "task_po_dap10_severe__conc__Cve_dap",
       "index": "Cve_dap",
+      "selection": "[Cve_dap]",
       "unit": null,
       "task": "task_po_dap10_severe",
       "dataset": null,
       "function": null,
-      "variables": null
+      "variables": null,
+      "parameters": {},
+      "sel": null
     },
-    "task_po_dap10_severe__Cve_d3g": {
+    "task_po_dap10_severe__conc__Cve_d3g": {
       "type": "TASK",
+      "sid": "task_po_dap10_severe__conc__Cve_d3g",
       "index": "Cve_d3g",
+      "selection": "[Cve_d3g]",
       "unit": null,
       "task": "task_po_dap10_severe",
       "dataset": null,
       "function": null,
-      "variables": null
+      "variables": null,
+      "parameters": {},
+      "sel": null
     },
-    "task_po_dap10_severe__KI__glc_ext": {
+    "task_po_dap10_severe__conc__Cve_dapmet": {
       "type": "TASK",
-      "index": "KI__glc_ext",
+      "sid": "task_po_dap10_severe__conc__Cve_dapmet",
+      "index": "Cve_dapmet",
+      "selection": "[Cve_dapmet]",
       "unit": null,
       "task": "task_po_dap10_severe",
       "dataset": null,
       "function": null,
-      "variables": null
-    },
-    "task_po_dap10_severe__LI__dap": {
-      "type": "TASK",
-      "index": "LI__dap",
-      "unit": null,
-      "task": "task_po_dap10_severe",
-      "dataset": null,
-      "function": null,
-      "variables": null
-    },
-    "task_po_dap10_severe__LI__d3g": {
-      "type": "TASK",
-      "index": "LI__d3g",
-      "unit": null,
-      "task": "task_po_dap10_severe",
-      "dataset": null,
-      "function": null,
-      "variables": null
+      "variables": null,
+      "parameters": {},
+      "sel": null
     },
     "task_po_dap10_severe__Aurine_daptot": {
       "type": "TASK",
+      "sid": "task_po_dap10_severe__Aurine_daptot",
       "index": "Aurine_daptot",
+      "selection": "Aurine_daptot",
       "unit": null,
       "task": "task_po_dap10_severe",
       "dataset": null,
       "function": null,
-      "variables": null
+      "variables": null,
+      "parameters": {},
+      "sel": null
     },
     "task_po_dap10_severe__Aurine_dap": {
       "type": "TASK",
+      "sid": "task_po_dap10_severe__Aurine_dap",
       "index": "Aurine_dap",
+      "selection": "Aurine_dap",
       "unit": null,
       "task": "task_po_dap10_severe",
       "dataset": null,
       "function": null,
-      "variables": null
+      "variables": null,
+      "parameters": {},
+      "sel": null
     },
     "task_po_dap10_severe__Aurine_d3g": {
       "type": "TASK",
+      "sid": "task_po_dap10_severe__Aurine_d3g",
       "index": "Aurine_d3g",
+      "selection": "Aurine_d3g",
       "unit": null,
       "task": "task_po_dap10_severe",
       "dataset": null,
       "function": null,
-      "variables": null
+      "variables": null,
+      "parameters": {},
+      "sel": null
     },
-    "task_po_dap10_severe__KI__glc_urine": {
+    "task_po_dap10_severe__Aurine_dapmet": {
       "type": "TASK",
-      "index": "KI__glc_urine",
+      "sid": "task_po_dap10_severe__Aurine_dapmet",
+      "index": "Aurine_dapmet",
+      "selection": "Aurine_dapmet",
       "unit": null,
       "task": "task_po_dap10_severe",
       "dataset": null,
       "function": null,
-      "variables": null
-    },
-    "task_po_dap10_severe__KI__UGE": {
-      "type": "TASK",
-      "index": "KI__UGE",
-      "unit": null,
-      "task": "task_po_dap10_severe",
-      "dataset": null,
-      "function": null,
-      "variables": null
-    },
-    "task_po_dap10_severe__KI__RTG": {
-      "type": "TASK",
-      "index": "KI__RTG",
-      "unit": null,
-      "task": "task_po_dap10_severe",
-      "dataset": null,
-      "function": null,
-      "variables": null
+      "variables": null,
+      "parameters": {},
+      "sel": null
     },
     "task_po_dap10_severe__Afeces_dap": {
       "type": "TASK",
+      "sid": "task_po_dap10_severe__Afeces_dap",
       "index": "Afeces_dap",
+      "selection": "Afeces_dap",
       "unit": null,
       "task": "task_po_dap10_severe",
       "dataset": null,
       "function": null,
-      "variables": null
+      "variables": null,
+      "parameters": {},
+      "sel": null
     },
     "task_po_dap10_severe__Afeces_daptot": {
       "type": "TASK",
+      "sid": "task_po_dap10_severe__Afeces_daptot",
       "index": "Afeces_daptot",
+      "selection": "Afeces_daptot",
       "unit": null,
       "task": "task_po_dap10_severe",
       "dataset": null,
       "function": null,
-      "variables": null
+      "variables": null,
+      "parameters": {},
+      "sel": null
     },
-    "task_po_dap10_severe__KI__D3GEX": {
+    "task_po_dap10_severe__conc__KI__fpg": {
       "type": "TASK",
-      "index": "KI__D3GEX",
+      "sid": "task_po_dap10_severe__conc__KI__fpg",
+      "index": "KI__fpg",
+      "selection": "[KI__fpg]",
       "unit": null,
       "task": "task_po_dap10_severe",
       "dataset": null,
       "function": null,
-      "variables": null
+      "variables": null,
+      "parameters": {},
+      "sel": null
     },
-    "task_po_dap10_severe__KI__DAPEX": {
+    "task_po_dap10_severe__KI__pg": {
       "type": "TASK",
-      "index": "KI__DAPEX",
+      "sid": "task_po_dap10_severe__KI__pg",
+      "index": "KI__pg",
+      "selection": "KI__pg",
       "unit": null,
       "task": "task_po_dap10_severe",
       "dataset": null,
       "function": null,
-      "variables": null
+      "variables": null,
+      "parameters": {},
+      "sel": null
+    },
+    "task_po_dap10_severe__KI__glc_urine": {
+      "type": "TASK",
+      "sid": "task_po_dap10_severe__KI__glc_urine",
+      "index": "KI__glc_urine",
+      "selection": "KI__glc_urine",
+      "unit": null,
+      "task": "task_po_dap10_severe",
+      "dataset": null,
+      "function": null,
+      "variables": null,
+      "parameters": {},
+      "sel": null
+    },
+    "task_po_dap10_severe__KI__UGE": {
+      "type": "TASK",
+      "sid": "task_po_dap10_severe__KI__UGE",
+      "index": "KI__UGE",
+      "selection": "KI__UGE",
+      "unit": null,
+      "task": "task_po_dap10_severe",
+      "dataset": null,
+      "function": null,
+      "variables": null,
+      "parameters": {},
+      "sel": null
+    },
+    "task_po_dap10_severe__KI__RTG": {
+      "type": "TASK",
+      "sid": "task_po_dap10_severe__KI__RTG",
+      "index": "KI__RTG",
+      "selection": "KI__RTG",
+      "unit": null,
+      "task": "task_po_dap10_severe",
+      "dataset": null,
+      "function": null,
+      "variables": null,
+      "parameters": {},
+      "sel": null
     },
     "task_po_dap10_severe__KI__GLCEX": {
       "type": "TASK",
+      "sid": "task_po_dap10_severe__KI__GLCEX",
       "index": "KI__GLCEX",
+      "selection": "KI__GLCEX",
       "unit": null,
       "task": "task_po_dap10_severe",
       "dataset": null,
       "function": null,
-      "variables": null
+      "variables": null,
+      "parameters": {},
+      "sel": null
+    },
+    "task_po_dap10_severe__KI__D3GEX": {
+      "type": "TASK",
+      "sid": "task_po_dap10_severe__KI__D3GEX",
+      "index": "KI__D3GEX",
+      "selection": "KI__D3GEX",
+      "unit": null,
+      "task": "task_po_dap10_severe",
+      "dataset": null,
+      "function": null,
+      "variables": null,
+      "parameters": {},
+      "sel": null
+    },
+    "task_po_dap10_severe__KI__DAPEX": {
+      "type": "TASK",
+      "sid": "task_po_dap10_severe__KI__DAPEX",
+      "index": "KI__DAPEX",
+      "selection": "KI__DAPEX",
+      "unit": null,
+      "task": "task_po_dap10_severe",
+      "dataset": null,
+      "function": null,
+      "variables": null,
+      "parameters": {},
+      "sel": null
+    },
+    "task_po_dap10_severe__KI__METEX": {
+      "type": "TASK",
+      "sid": "task_po_dap10_severe__KI__METEX",
+      "index": "KI__METEX",
+      "selection": "KI__METEX",
+      "unit": null,
+      "task": "task_po_dap10_severe",
+      "dataset": null,
+      "function": null,
+      "variables": null,
+      "parameters": {},
+      "sel": null
     },
     "task_po_dap10_severe__KI__f_renal_function": {
       "type": "TASK",
+      "sid": "task_po_dap10_severe__KI__f_renal_function",
       "index": "KI__f_renal_function",
+      "selection": "KI__f_renal_function",
       "unit": null,
       "task": "task_po_dap10_severe",
       "dataset": null,
       "function": null,
-      "variables": null
+      "variables": null,
+      "parameters": {},
+      "sel": null
+    },
+    "task_po_dap10_severe__KI__GFR": {
+      "type": "TASK",
+      "sid": "task_po_dap10_severe__KI__GFR",
+      "index": "KI__GFR",
+      "selection": "KI__GFR",
+      "unit": null,
+      "task": "task_po_dap10_severe",
+      "dataset": null,
+      "function": null,
+      "variables": null,
+      "parameters": {},
+      "sel": null
     },
     "task_po_dap10_severe__f_cirrhosis": {
       "type": "TASK",
+      "sid": "task_po_dap10_severe__f_cirrhosis",
       "index": "f_cirrhosis",
+      "selection": "f_cirrhosis",
       "unit": null,
       "task": "task_po_dap10_severe",
       "dataset": null,
       "function": null,
-      "variables": null
+      "variables": null,
+      "parameters": {},
+      "sel": null
     },
-    "task_po_dap10_severe__GU__f_absorption": {
+    "task_po_dap10_severe__GU__fed": {
       "type": "TASK",
-      "index": "GU__f_absorption",
+      "sid": "task_po_dap10_severe__GU__fed",
+      "index": "GU__fed",
+      "selection": "GU__fed",
       "unit": null,
       "task": "task_po_dap10_severe",
       "dataset": null,
       "function": null,
-      "variables": null
+      "variables": null,
+      "parameters": {},
+      "sel": null
+    },
+    "task_po_dap10_severe__GU__FED_f_absorption": {
+      "type": "TASK",
+      "sid": "task_po_dap10_severe__GU__FED_f_absorption",
+      "index": "GU__FED_f_absorption",
+      "selection": "GU__FED_f_absorption",
+      "unit": null,
+      "task": "task_po_dap10_severe",
+      "dataset": null,
+      "function": null,
+      "variables": null,
+      "parameters": {},
+      "sel": null
     },
     "task_po_dap10_severe__f_ugt1a9": {
       "type": "TASK",
+      "sid": "task_po_dap10_severe__f_ugt1a9",
       "index": "f_ugt1a9",
+      "selection": "f_ugt1a9",
       "unit": null,
       "task": "task_po_dap10_severe",
       "dataset": null,
       "function": null,
-      "variables": null
+      "variables": null,
+      "parameters": {},
+      "sel": null
     }
   },
   "figures": {
@@ -1076,8 +1696,11 @@
       "name": "Kasichayanula2011 (Hepatic)",
       "num_rows": 1,
       "num_cols": 2,
-      "width": 14.0,
-      "height": 5.0,
+      "width": null,
+      "height": null,
+      "settings": {
+        "legend_position": "outside"
+      },
       "subplots": [
         {
           "sid": null,
@@ -1118,9 +1741,10 @@
                 "sid": "Fig1__plot0_curve0",
                 "name": "healthy - 10 mg PO",
                 "x": "task_po_dap10_healthy__time",
-                "y": "task_po_dap10_healthy__Cve_dap",
+                "y": "task_po_dap10_healthy__conc__Cve_dap",
                 "xerr": null,
                 "yerr": null,
+                "over": [],
                 "yaxis_position": null,
                 "style": {
                   "sid": null,
@@ -1152,6 +1776,7 @@
                 "y": "dapagliflozin_DAP10_healthy__mean",
                 "xerr": null,
                 "yerr": "dapagliflozin_DAP10_healthy__mean_sd",
+                "over": [],
                 "yaxis_position": null,
                 "style": {
                   "sid": null,
@@ -1180,9 +1805,10 @@
                 "sid": "Fig1__plot0_curve2",
                 "name": "mild - 10 mg PO",
                 "x": "task_po_dap10_mild__time",
-                "y": "task_po_dap10_mild__Cve_dap",
+                "y": "task_po_dap10_mild__conc__Cve_dap",
                 "xerr": null,
                 "yerr": null,
+                "over": [],
                 "yaxis_position": null,
                 "style": {
                   "sid": null,
@@ -1214,6 +1840,7 @@
                 "y": "dapagliflozin_DAP10_mild__mean",
                 "xerr": null,
                 "yerr": "dapagliflozin_DAP10_mild__mean_sd",
+                "over": [],
                 "yaxis_position": null,
                 "style": {
                   "sid": null,
@@ -1242,9 +1869,10 @@
                 "sid": "Fig1__plot0_curve4",
                 "name": "moderate - 10 mg PO",
                 "x": "task_po_dap10_moderate__time",
-                "y": "task_po_dap10_moderate__Cve_dap",
+                "y": "task_po_dap10_moderate__conc__Cve_dap",
                 "xerr": null,
                 "yerr": null,
+                "over": [],
                 "yaxis_position": null,
                 "style": {
                   "sid": null,
@@ -1276,6 +1904,7 @@
                 "y": "dapagliflozin_DAP10_moderate__mean",
                 "xerr": null,
                 "yerr": "dapagliflozin_DAP10_moderate__mean_sd",
+                "over": [],
                 "yaxis_position": null,
                 "style": {
                   "sid": null,
@@ -1304,9 +1933,10 @@
                 "sid": "Fig1__plot0_curve6",
                 "name": "severe - 10 mg PO",
                 "x": "task_po_dap10_severe__time",
-                "y": "task_po_dap10_severe__Cve_dap",
+                "y": "task_po_dap10_severe__conc__Cve_dap",
                 "xerr": null,
                 "yerr": null,
+                "over": [],
                 "yaxis_position": null,
                 "style": {
                   "sid": null,
@@ -1338,6 +1968,7 @@
                 "y": "dapagliflozin_DAP10_severe__mean",
                 "xerr": null,
                 "yerr": "dapagliflozin_DAP10_severe__mean_sd",
+                "over": [],
                 "yaxis_position": null,
                 "style": {
                   "sid": null,
@@ -1363,7 +1994,8 @@
                 "order": 7
               }
             ],
-            "areas": []
+            "areas": [],
+            "bands": []
           },
           "row": 1,
           "col": 1,
@@ -1409,9 +2041,10 @@
                 "sid": "Fig1__plot1_curve0",
                 "name": "healthy - 10 mg PO",
                 "x": "task_po_dap10_healthy__time",
-                "y": "task_po_dap10_healthy__Cve_d3g",
+                "y": "task_po_dap10_healthy__conc__Cve_d3g",
                 "xerr": null,
                 "yerr": null,
+                "over": [],
                 "yaxis_position": null,
                 "style": {
                   "sid": null,
@@ -1439,10 +2072,11 @@
               {
                 "sid": "Fig1__plot1_curve1",
                 "name": "healthy - 10 mg PO\u00b1SD (n=6)",
-                "x": "dapagliflozin 3-o-glucuronide_DAP10_healthy__time",
-                "y": "dapagliflozin 3-o-glucuronide_DAP10_healthy__mean",
+                "x": "dapagliflozin_3_o_glucuronide_DAP10_healthy__time",
+                "y": "dapagliflozin_3_o_glucuronide_DAP10_healthy__mean",
                 "xerr": null,
-                "yerr": "dapagliflozin 3-o-glucuronide_DAP10_healthy__mean_sd",
+                "yerr": "dapagliflozin_3_o_glucuronide_DAP10_healthy__mean_sd",
+                "over": [],
                 "yaxis_position": null,
                 "style": {
                   "sid": null,
@@ -1471,9 +2105,10 @@
                 "sid": "Fig1__plot1_curve2",
                 "name": "mild - 10 mg PO",
                 "x": "task_po_dap10_mild__time",
-                "y": "task_po_dap10_mild__Cve_d3g",
+                "y": "task_po_dap10_mild__conc__Cve_d3g",
                 "xerr": null,
                 "yerr": null,
+                "over": [],
                 "yaxis_position": null,
                 "style": {
                   "sid": null,
@@ -1501,10 +2136,11 @@
               {
                 "sid": "Fig1__plot1_curve3",
                 "name": "mild - 10 mg PO\u00b1SD (n=6)",
-                "x": "dapagliflozin 3-o-glucuronide_DAP10_mild__time",
-                "y": "dapagliflozin 3-o-glucuronide_DAP10_mild__mean",
+                "x": "dapagliflozin_3_o_glucuronide_DAP10_mild__time",
+                "y": "dapagliflozin_3_o_glucuronide_DAP10_mild__mean",
                 "xerr": null,
-                "yerr": "dapagliflozin 3-o-glucuronide_DAP10_mild__mean_sd",
+                "yerr": "dapagliflozin_3_o_glucuronide_DAP10_mild__mean_sd",
+                "over": [],
                 "yaxis_position": null,
                 "style": {
                   "sid": null,
@@ -1533,9 +2169,10 @@
                 "sid": "Fig1__plot1_curve4",
                 "name": "moderate - 10 mg PO",
                 "x": "task_po_dap10_moderate__time",
-                "y": "task_po_dap10_moderate__Cve_d3g",
+                "y": "task_po_dap10_moderate__conc__Cve_d3g",
                 "xerr": null,
                 "yerr": null,
+                "over": [],
                 "yaxis_position": null,
                 "style": {
                   "sid": null,
@@ -1563,10 +2200,11 @@
               {
                 "sid": "Fig1__plot1_curve5",
                 "name": "moderate - 10 mg PO\u00b1SD (n=6)",
-                "x": "dapagliflozin 3-o-glucuronide_DAP10_moderate__time",
-                "y": "dapagliflozin 3-o-glucuronide_DAP10_moderate__mean",
+                "x": "dapagliflozin_3_o_glucuronide_DAP10_moderate__time",
+                "y": "dapagliflozin_3_o_glucuronide_DAP10_moderate__mean",
                 "xerr": null,
-                "yerr": "dapagliflozin 3-o-glucuronide_DAP10_moderate__mean_sd",
+                "yerr": "dapagliflozin_3_o_glucuronide_DAP10_moderate__mean_sd",
+                "over": [],
                 "yaxis_position": null,
                 "style": {
                   "sid": null,
@@ -1595,9 +2233,10 @@
                 "sid": "Fig1__plot1_curve6",
                 "name": "severe - 10 mg PO",
                 "x": "task_po_dap10_severe__time",
-                "y": "task_po_dap10_severe__Cve_d3g",
+                "y": "task_po_dap10_severe__conc__Cve_d3g",
                 "xerr": null,
                 "yerr": null,
+                "over": [],
                 "yaxis_position": null,
                 "style": {
                   "sid": null,
@@ -1625,10 +2264,11 @@
               {
                 "sid": "Fig1__plot1_curve7",
                 "name": "severe - 10 mg PO\u00b1SD (n=6)",
-                "x": "dapagliflozin 3-o-glucuronide_DAP10_severe__time",
-                "y": "dapagliflozin 3-o-glucuronide_DAP10_severe__mean",
+                "x": "dapagliflozin_3_o_glucuronide_DAP10_severe__time",
+                "y": "dapagliflozin_3_o_glucuronide_DAP10_severe__mean",
                 "xerr": null,
-                "yerr": "dapagliflozin 3-o-glucuronide_DAP10_severe__mean_sd",
+                "yerr": "dapagliflozin_3_o_glucuronide_DAP10_severe__mean_sd",
+                "over": [],
                 "yaxis_position": null,
                 "style": {
                   "sid": null,
@@ -1654,7 +2294,8 @@
                 "order": 7
               }
             ],
-            "areas": []
+            "areas": [],
+            "bands": []
           },
           "row": 1,
           "col": 2,

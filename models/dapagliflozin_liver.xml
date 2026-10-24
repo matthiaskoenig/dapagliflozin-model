@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<sbml xmlns="http://www.sbml.org/sbml/level3/version2/core" xmlns:comp="http://www.sbml.org/sbml/level3/version1/comp/version1" level="3" version="2" comp:required="true">
+<sbml xmlns="http://www.sbml.org/sbml/level3/version2/core" xmlns:comp="http://www.sbml.org/sbml/level3/version1/comp/version1" xmlns:distrib="http://www.sbml.org/sbml/level3/version1/distrib/version1" level="3" version="2" comp:required="true" distrib:required="true">
   <notes>
     <body xmlns="http://www.w3.org/1999/xhtml">
       <p>Created with <a href="https://github.com/matthiaskoenig/sbmlutils">https://github.com/matthiaskoenig/sbmlutils</a>.
@@ -7,24 +7,34 @@
         <img src="https://zenodo.org/badge/DOI/10.5281/zenodo.5525390.svg" alt="DOI"/></a></p>
       </body>
     </notes>
-  <model metaid="meta_dapagliflozin_liver" id="dapagliflozin_liver" name="Model for hepatic dapagliflozin metabolism." substanceUnits="mmole" timeUnits="min" volumeUnits="litre" areaUnits="m2" lengthUnits="metre" extentUnits="mmole">
+  <model metaid="meta_dapagliflozin_liver" id="dapagliflozin_liver" name="Model for the hepatic metabolism of dapagliflozin." substanceUnits="mmole" timeUnits="min" volumeUnits="litre" areaUnits="m2" lengthUnits="metre" extentUnits="mmole">
     <notes>
       <body xmlns="http://www.w3.org/1999/xhtml">
-        <p>Model for dapagliflozin metabolism.</p>
+        <p>Model for the hepatic metabolism of dapagliflozin.</p>
         <ul>
-          <li>UGT1A9: 90% [Callegari2021]; 79.9% [Jo2021]</li>
-          <li>UGT2B4/2B7: 10% [Callegari2021]; 8.9% [Jo2021]</li>
-          <li>CYP3A4: 9.8% [Jo2021]</li>
-          <li>in hepatic impairment: increase in AUC &amp; Cmax of dap and d3g [Kasichayanula2011]
-=&gt; only conversion dap -&gt; d3g [UGT1A9], no d2g in first version; only UGT1A9 included</li>
+          <li>Dapagliflozin is metabolized mainly by UGT1A9 to the inactive
+dapagliflozin-3-O-glucuronide (D3G, 61 % of an oral dose in the urine),
+and to a minor extent to the 2-O-glucuronide (UGT2B4/2B7) and oxidative
+metabolites (CYP3A4), about 13 % of the dose in the urine and 6 % in the
+feces [Obermeier2010]. Shares of the metabolism: UGT1A9 79.9 %, CYP3A4
+9.8 %, UGT2B4/2B7 8.9 % [Jo2021].</li>
+          <li>The metabolism is a first-order clearance of the plasma of the liver:
+the pharmacokinetics are dose proportional from 0.1 to 500 mg
+[Komoroski2009], far below the Km of UGT1A9 (479 µM in kidney microsomes
+[Kasichayanula2013]). It scales with the volume of the liver tissue, so
+with the tissue loss in cirrhosis.</li>
+          <li>The fraction <code>f_d3g</code> of the metabolism forms D3G, the rest the other
+metabolites (<code>dapmet</code>).</li>
+          <li>The exposure rises with the Child-Pugh class (AUC ratio 1.03, 1.36, 1.67
+[Kasichayanula2011]).</li>
         </ul>
         <p>The content of this model has been carefully created in a manual research effort.</p>
         <h2>Terms of use</h2>
         <p>Copyright © 2026 <a href="https://livermetabolism.com" title="Matthias König" target="_blank">Matthias König</a>.</p>
-        <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">
-          <img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by/4.0/88x31.png"/>
+        <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/">
+          <img alt="Creative Commons License" style="border-width:0" src="https://mirrors.creativecommons.org/presskit/buttons/88x31/png/by-sa.png"/>
         </a>
-        <br/>This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.
+        <br/>This work is licensed under a <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a>.
 <p>Redistribution and use of any part of this model, with or without modification, are permitted provided
 that the following conditions are met:</p>
         <ul>
@@ -68,41 +78,40 @@ implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.</p></bo
             </rdf:Bag>
           </dcterms:creator>
           <dcterms:created rdf:parseType="Resource">
-            <dcterms:W3CDTF>2026-03-16T12:03:46Z</dcterms:W3CDTF>
+            <dcterms:W3CDTF>2026-10-24T12:23:17Z</dcterms:W3CDTF>
           </dcterms:created>
           <dcterms:modified rdf:parseType="Resource">
-            <dcterms:W3CDTF>2026-03-16T12:03:46Z</dcterms:W3CDTF>
+            <dcterms:W3CDTF>2026-10-24T12:23:17Z</dcterms:W3CDTF>
           </dcterms:modified>
           <bqbiol:hasTaxon>
             <rdf:Bag>
-              <rdf:li rdf:resource="https://identifiers.org/taxonomy/9606"/>
-              <rdf:li rdf:resource="https://identifiers.org/snomedct/337915000"/>
+              <rdf:li rdf:resource="https://identifiers.org/taxonomy:9606"/>
+              <rdf:li rdf:resource="https://identifiers.org/snomedct:337915000"/>
             </rdf:Bag>
           </bqbiol:hasTaxon>
           <bqbiol:hasProperty>
             <rdf:Bag>
-              <rdf:li rdf:resource="https://identifiers.org/mamo/MAMO_0000046"/>
-              <rdf:li rdf:resource="https://identifiers.org/ncit/C78126"/>
-              <rdf:li rdf:resource="https://identifiers.org/ncit/C98083"/>
-              <rdf:li rdf:resource="https://identifiers.org/ncit/C15299"/>
-              <rdf:li rdf:resource="https://identifiers.org/ncit/C2985"/>
-              <rdf:li rdf:resource="https://identifiers.org/ncit/C99532"/>
-              <rdf:li rdf:resource="https://identifiers.org/ncit/C79371"/>
-              <rdf:li rdf:resource="https://identifiers.org/ncit/C79372"/>
+              <rdf:li rdf:resource="https://identifiers.org/mamo:MAMO_0000046"/>
+              <rdf:li rdf:resource="https://identifiers.org/ncit:C78126"/>
+              <rdf:li rdf:resource="https://identifiers.org/ncit:C98083"/>
+              <rdf:li rdf:resource="https://identifiers.org/ncit:C15299"/>
+              <rdf:li rdf:resource="https://identifiers.org/ncit:C2985"/>
+              <rdf:li rdf:resource="https://identifiers.org/ncit:C99532"/>
+              <rdf:li rdf:resource="https://identifiers.org/ncit:C79371"/>
             </rdf:Bag>
           </bqbiol:hasProperty>
           <bqbiol:isDescribedBy>
             <rdf:Bag>
-              <rdf:li rdf:resource="https://identifiers.org/doi/10.3390/pharmaceutics18030287"/>
-              <rdf:li rdf:resource="https://identifiers.org/doi/10.5281/10.36903/physiome.31368556"/>
-              <rdf:li rdf:resource="https://identifiers.org/doi/10.5281/zenodo.13987865"/>
+              <rdf:li rdf:resource="https://identifiers.org/doi:10.3390/pharmaceutics18030287"/>
+              <rdf:li rdf:resource="https://identifiers.org/doi:10.36903/physiome.31368556"/>
+              <rdf:li rdf:resource="https://identifiers.org/doi:10.5281/zenodo.13987865"/>
             </rdf:Bag>
           </bqbiol:isDescribedBy>
           <bqbiol:occursIn>
             <rdf:Bag>
               <rdf:li rdf:resource="https://identifiers.org/FMA:7197"/>
               <rdf:li rdf:resource="https://identifiers.org/BTO:0000759"/>
-              <rdf:li rdf:resource="https://identifiers.org/ncit/C12392"/>
+              <rdf:li rdf:resource="https://identifiers.org/ncit:C12392"/>
             </rdf:Bag>
           </bqbiol:occursIn>
         </rdf:Description>
@@ -185,14 +194,13 @@ implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.</p></bo
       </unitDefinition>
     </listOfUnitDefinitions>
     <listOfCompartments>
-      <compartment metaid="meta_Vext" sboTerm="SBO:0000290" id="Vext" name="plasma" spatialDimensions="3" size="1.5" units="litre" constant="true">
+      <compartment metaid="meta_Vext" sboTerm="SBO:0000290" id="Vext" name="plasma" size="1.5" units="litre" constant="true">
         <annotation>
           <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:vCard="http://www.w3.org/2001/vcard-rdf/3.0#" xmlns:vCard4="http://www.w3.org/2006/vcard/ns#" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/" xmlns:bqmodel="http://biomodels.net/model-qualifiers/">
             <rdf:Description rdf:about="#meta_Vext">
               <bqbiol:is>
                 <rdf:Bag>
-                  <rdf:li rdf:resource="https://identifiers.org/SBO:0000290"/>
-                  <rdf:li rdf:resource="https://identifiers.org/ncit/C13356"/>
+                  <rdf:li rdf:resource="https://identifiers.org/ncit:C13356"/>
                   <rdf:li rdf:resource="https://identifiers.org/BTO:0000131"/>
                 </rdf:Bag>
               </bqbiol:is>
@@ -200,32 +208,15 @@ implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.</p></bo
           </rdf:RDF>
         </annotation>
       </compartment>
-      <compartment metaid="meta_Vli" sboTerm="SBO:0000290" id="Vli" name="liver" spatialDimensions="3" size="1.5" units="litre" constant="true">
+      <compartment metaid="meta_Vli" sboTerm="SBO:0000290" id="Vli" name="liver" size="1.5" units="litre" constant="true">
         <annotation>
           <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:vCard="http://www.w3.org/2001/vcard-rdf/3.0#" xmlns:vCard4="http://www.w3.org/2006/vcard/ns#" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/" xmlns:bqmodel="http://biomodels.net/model-qualifiers/">
             <rdf:Description rdf:about="#meta_Vli">
               <bqbiol:is>
                 <rdf:Bag>
-                  <rdf:li rdf:resource="https://identifiers.org/SBO:0000290"/>
                   <rdf:li rdf:resource="https://identifiers.org/FMA:7197"/>
                   <rdf:li rdf:resource="https://identifiers.org/BTO:0000759"/>
-                  <rdf:li rdf:resource="https://identifiers.org/ncit/C12392"/>
-                </rdf:Bag>
-              </bqbiol:is>
-            </rdf:Description>
-          </rdf:RDF>
-        </annotation>
-      </compartment>
-      <compartment metaid="meta_Vmem" sboTerm="SBO:0000290" id="Vmem" name="plasma membrane" spatialDimensions="2" size="NaN" units="m2" constant="true">
-        <annotation>
-          <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:vCard="http://www.w3.org/2001/vcard-rdf/3.0#" xmlns:vCard4="http://www.w3.org/2006/vcard/ns#" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/" xmlns:bqmodel="http://biomodels.net/model-qualifiers/">
-            <rdf:Description rdf:about="#meta_Vmem">
-              <bqbiol:is>
-                <rdf:Bag>
-                  <rdf:li rdf:resource="https://identifiers.org/SBO:0000290"/>
-                  <rdf:li rdf:resource="https://identifiers.org/ncit/C13735"/>
-                  <rdf:li rdf:resource="https://identifiers.org/FMA:63841"/>
-                  <rdf:li rdf:resource="https://identifiers.org/GO:0005886"/>
+                  <rdf:li rdf:resource="https://identifiers.org/ncit:C12392"/>
                 </rdf:Bag>
               </bqbiol:is>
             </rdf:Description>
@@ -240,189 +231,111 @@ implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.</p></bo
             <rdf:Description rdf:about="#meta_dap_ext">
               <bqbiol:is>
                 <rdf:Bag>
-                  <rdf:li rdf:resource="https://identifiers.org/SBO:0000247"/>
                   <rdf:li rdf:resource="https://identifiers.org/CHEBI:85078"/>
-                  <rdf:li rdf:resource="https://identifiers.org/ncit/C78126"/>
+                  <rdf:li rdf:resource="https://identifiers.org/ncit:C78126"/>
                 </rdf:Bag>
               </bqbiol:is>
             </rdf:Description>
           </rdf:RDF>
         </annotation>
       </species>
-      <species metaid="meta_d3g_ext" sboTerm="SBO:0000247" id="d3g_ext" name="dapagliflozin-3-o-glucuronide (plasma)" compartment="Vext" initialConcentration="0" substanceUnits="mmole" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false">
+      <species metaid="meta_d3g_ext" sboTerm="SBO:0000247" id="d3g_ext" name="dapagliflozin-3-O-glucuronide (plasma)" compartment="Vext" initialConcentration="0" substanceUnits="mmole" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false">
         <annotation>
           <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:vCard="http://www.w3.org/2001/vcard-rdf/3.0#" xmlns:vCard4="http://www.w3.org/2006/vcard/ns#" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/" xmlns:bqmodel="http://biomodels.net/model-qualifiers/">
             <rdf:Description rdf:about="#meta_d3g_ext">
               <bqbiol:is>
                 <rdf:Bag>
-                  <rdf:li rdf:resource="https://identifiers.org/SBO:0000247"/>
-                  <rdf:li rdf:resource="https://identifiers.org/pubchem.compound/91617971"/>
-                  <rdf:li rdf:resource="https://identifiers.org/inchikey/ZYZULHSUKTZGTR-PTNNFGGUSA-N"/>
+                  <rdf:li rdf:resource="https://identifiers.org/pubchem.compound:91617971"/>
+                  <rdf:li rdf:resource="https://identifiers.org/inchikey:ZYZULHSUKTZGTR-PTNNFGGUSA-N"/>
                 </rdf:Bag>
               </bqbiol:is>
             </rdf:Description>
           </rdf:RDF>
         </annotation>
       </species>
-      <species metaid="meta_dap" sboTerm="SBO:0000247" id="dap" name="dapagliflozin (liver)" compartment="Vli" initialConcentration="0" substanceUnits="mmole" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false">
-        <annotation>
-          <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:vCard="http://www.w3.org/2001/vcard-rdf/3.0#" xmlns:vCard4="http://www.w3.org/2006/vcard/ns#" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/" xmlns:bqmodel="http://biomodels.net/model-qualifiers/">
-            <rdf:Description rdf:about="#meta_dap">
-              <bqbiol:is>
-                <rdf:Bag>
-                  <rdf:li rdf:resource="https://identifiers.org/SBO:0000247"/>
-                  <rdf:li rdf:resource="https://identifiers.org/CHEBI:85078"/>
-                  <rdf:li rdf:resource="https://identifiers.org/ncit/C78126"/>
-                </rdf:Bag>
-              </bqbiol:is>
-            </rdf:Description>
-          </rdf:RDF>
-        </annotation>
-      </species>
-      <species metaid="meta_d3g" sboTerm="SBO:0000247" id="d3g" name="dapagliflozin-3-o-glucuronide (liver)" compartment="Vli" initialConcentration="0" substanceUnits="mmole" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false">
-        <annotation>
-          <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:vCard="http://www.w3.org/2001/vcard-rdf/3.0#" xmlns:vCard4="http://www.w3.org/2006/vcard/ns#" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/" xmlns:bqmodel="http://biomodels.net/model-qualifiers/">
-            <rdf:Description rdf:about="#meta_d3g">
-              <bqbiol:is>
-                <rdf:Bag>
-                  <rdf:li rdf:resource="https://identifiers.org/SBO:0000247"/>
-                  <rdf:li rdf:resource="https://identifiers.org/pubchem.compound/91617971"/>
-                  <rdf:li rdf:resource="https://identifiers.org/inchikey/ZYZULHSUKTZGTR-PTNNFGGUSA-N"/>
-                </rdf:Bag>
-              </bqbiol:is>
-            </rdf:Description>
-          </rdf:RDF>
-        </annotation>
-      </species>
+      <species sboTerm="SBO:0000247" id="dapmet_ext" name="other dapagliflozin metabolites (plasma)" compartment="Vext" initialConcentration="0" substanceUnits="mmole" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false"/>
     </listOfSpecies>
     <listOfParameters>
-      <parameter metaid="meta_DAP2D3G_Vmax" sboTerm="SBO:0000186" id="DAP2D3G_Vmax" name="Vmax dapagliflozin conversion" value="0.04" units="mmole_per_min_l" constant="true">
-        <annotation>
-          <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:vCard="http://www.w3.org/2001/vcard-rdf/3.0#" xmlns:vCard4="http://www.w3.org/2006/vcard/ns#" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/" xmlns:bqmodel="http://biomodels.net/model-qualifiers/">
-            <rdf:Description rdf:about="#meta_DAP2D3G_Vmax">
-              <bqbiol:is>
-                <rdf:Bag>
-                  <rdf:li rdf:resource="https://identifiers.org/SBO:0000186"/>
-                </rdf:Bag>
-              </bqbiol:is>
-            </rdf:Description>
-          </rdf:RDF>
-        </annotation>
-      </parameter>
-      <parameter metaid="meta_DAP2D3G_Km_dap" sboTerm="SBO:0000027" id="DAP2D3G_Km_dap" name="Km dapagliflozin UGT1A9" value="0.479" units="mM" constant="true">
+      <parameter sboTerm="SBO:0000009" id="DAPMET_k" name="rate of the hepatic metabolism of dapagliflozin" value="0.0658712610363756" units="per_min" constant="true">
         <notes>
           <body xmlns="http://www.w3.org/1999/xhtml">
-            <p>Km apparent in kidney microsomes for dapagliflozin; 479 µM [Kasichaynula2013]
-Ki for UGT1A9 with other substrates 12-15 µM [Obermeier2010a].</p>
+            <p>First-order rate of the hepatic metabolism relative to the
+volume of the liver tissue; the whole-body model sets it.</p>
           </body>
         </notes>
-        <annotation>
-          <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:vCard="http://www.w3.org/2001/vcard-rdf/3.0#" xmlns:vCard4="http://www.w3.org/2006/vcard/ns#" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/" xmlns:bqmodel="http://biomodels.net/model-qualifiers/">
-            <rdf:Description rdf:about="#meta_DAP2D3G_Km_dap">
-              <bqbiol:is>
-                <rdf:Bag>
-                  <rdf:li rdf:resource="https://identifiers.org/SBO:0000027"/>
-                </rdf:Bag>
-              </bqbiol:is>
-            </rdf:Description>
-          </rdf:RDF>
-        </annotation>
+        <distrib:listOfUncertainties>
+          <distrib:uncertainty distrib:name="fit PK_20261020_002954__89bab">
+            <notes>
+              <body xmlns="http://www.w3.org/1999/xhtml">
+                <p>The value of <code>DAPMET_k</code> is the result of the fit <code>PK_20261020_002954__89bab</code>, its uncertainty is the profile likelihood of the fit.</p>
+                <p>| | |
+|---|---|
+| fit | <code>PK_20261020_002954__89bab</code> |
+| record | <code>PK_20261020_002954__89bab/</code> |
+| cost | 222.183 |
+| data points | 996 |
+| value | 0.0658713 1/(min) |
+| bounds | [0.001, 1] |
+| scale | LOG10 |
+| method | profile likelihood |
+| identifiability | identifiable |
+| 95 % confidence interval | [0.0604606, 0.075527] |
+| Fisher confidence interval | [0.0612821, 0.0708041] |
+| distribution of the draws | <code>lognormal(-2.7200530321925247, 0.05676049425062867, 0.001, 1.0)</code> |</p>
+              </body>
+            </notes>
+            <distrib:uncertSpan distrib:name="95 % confidence interval (profile likelihood)" distrib:units="per_min" distrib:type="confidenceInterval" distrib:valueLower="0.0604606432570805" distrib:valueUpper="0.0755269599261102"/>
+            <distrib:uncertParameter distrib:name="standard error (Fisher information)" distrib:value="0.00242403765709518" distrib:units="per_min" distrib:type="standardError"/>
+            <distrib:uncertParameter distrib:name="distribution of the draws" distrib:type="distribution">
+              <math xmlns="http://www.w3.org/1998/Math/MathML">
+                <apply>
+                  <csymbol encoding="text" definitionURL="http://www.sbml.org/sbml/symbols/distrib/lognormal"> lognormal </csymbol>
+                  <apply>
+                    <minus/>
+                    <cn> 2.72005303219252 </cn>
+                  </apply>
+                  <cn> 0.0567604942506287 </cn>
+                  <cn> 0.001 </cn>
+                  <cn> 1 </cn>
+                </apply>
+              </math>
+            </distrib:uncertParameter>
+          </distrib:uncertainty>
+        </distrib:listOfUncertainties>
       </parameter>
-      <parameter metaid="meta_f_ugt1a9" sboTerm="SBO:0000002" id="f_ugt1a9" name="scaling factor UGT1A9 activity" value="1" units="dimensionless" constant="true">
+      <parameter sboTerm="SBO:0000002" id="f_d3g" name="fraction of the metabolism to D3G" value="0.77" units="dimensionless" constant="true">
         <notes>
           <body xmlns="http://www.w3.org/1999/xhtml">
-            <p>Scaling factor to vary UGT1A9 activity.
-1.0: unchanged activity; &lt; 1.0 decreased activity; &gt;1.0 increased activity.</p>
+            <p>Fraction of the metabolism of dapagliflozin which forms D3G;
+the whole-body model sets it.</p>
           </body>
         </notes>
-        <annotation>
-          <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:vCard="http://www.w3.org/2001/vcard-rdf/3.0#" xmlns:vCard4="http://www.w3.org/2006/vcard/ns#" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/" xmlns:bqmodel="http://biomodels.net/model-qualifiers/">
-            <rdf:Description rdf:about="#meta_f_ugt1a9">
-              <bqbiol:is>
-                <rdf:Bag>
-                  <rdf:li rdf:resource="https://identifiers.org/SBO:0000002"/>
-                </rdf:Bag>
-              </bqbiol:is>
-            </rdf:Description>
-          </rdf:RDF>
-        </annotation>
       </parameter>
-      <parameter metaid="meta_DAPIM_Vmax" sboTerm="SBO:0000186" id="DAPIM_Vmax" name="Vmax dapagliflozin import" value="10" units="mmole_per_min_l" constant="true">
-        <annotation>
-          <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:vCard="http://www.w3.org/2001/vcard-rdf/3.0#" xmlns:vCard4="http://www.w3.org/2006/vcard/ns#" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/" xmlns:bqmodel="http://biomodels.net/model-qualifiers/">
-            <rdf:Description rdf:about="#meta_DAPIM_Vmax">
-              <bqbiol:is>
-                <rdf:Bag>
-                  <rdf:li rdf:resource="https://identifiers.org/SBO:0000186"/>
-                </rdf:Bag>
-              </bqbiol:is>
-            </rdf:Description>
-          </rdf:RDF>
-        </annotation>
-      </parameter>
-      <parameter metaid="meta_DAPIM_Km_dap" sboTerm="SBO:0000027" id="DAPIM_Km_dap" name="Vmax dapagliflozin import" value="0.033" units="mM" constant="true">
+      <parameter sboTerm="SBO:0000002" id="f_ugt1a9" name="scaling factor UGT1A9 activity" value="1" units="dimensionless" constant="true">
         <notes>
           <body xmlns="http://www.w3.org/1999/xhtml">
-            <p>Possibly catalyzed by OAT3 with Ki=33µM. [FDA]</p>
+            <p>Scaling factor of the UGT1A9 activity of the liver (and the
+kidney, the parameter of the whole-body model replaces both).
+1.0: normal activity; &lt;1.0 decreased activity; &gt;1.0 increased activity.</p>
           </body>
         </notes>
-        <annotation>
-          <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:vCard="http://www.w3.org/2001/vcard-rdf/3.0#" xmlns:vCard4="http://www.w3.org/2006/vcard/ns#" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/" xmlns:bqmodel="http://biomodels.net/model-qualifiers/">
-            <rdf:Description rdf:about="#meta_DAPIM_Km_dap">
-              <bqbiol:is>
-                <rdf:Bag>
-                  <rdf:li rdf:resource="https://identifiers.org/SBO:0000027"/>
-                </rdf:Bag>
-              </bqbiol:is>
-            </rdf:Description>
-          </rdf:RDF>
-        </annotation>
-      </parameter>
-      <parameter metaid="meta_D3GEX_Vmax" sboTerm="SBO:0000186" id="D3GEX_Vmax" name="Vmax dapagliflozinat export" value="10" units="mmole_per_min_l" constant="true">
-        <annotation>
-          <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:vCard="http://www.w3.org/2001/vcard-rdf/3.0#" xmlns:vCard4="http://www.w3.org/2006/vcard/ns#" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/" xmlns:bqmodel="http://biomodels.net/model-qualifiers/">
-            <rdf:Description rdf:about="#meta_D3GEX_Vmax">
-              <bqbiol:is>
-                <rdf:Bag>
-                  <rdf:li rdf:resource="https://identifiers.org/SBO:0000186"/>
-                </rdf:Bag>
-              </bqbiol:is>
-            </rdf:Description>
-          </rdf:RDF>
-        </annotation>
-      </parameter>
-      <parameter metaid="meta_D3GEX_Km_d3g" sboTerm="SBO:0000027" id="D3GEX_Km_d3g" name="Vmax dapagliflozinat export" value="0.115" units="mM" constant="true">
-        <notes>
-          <body xmlns="http://www.w3.org/1999/xhtml">
-            <p>Substrate of hOAT3 and its Km value for hOAT3-mediated uptake was 115µM [FDA].</p>
-          </body>
-        </notes>
-        <annotation>
-          <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:vCard="http://www.w3.org/2001/vcard-rdf/3.0#" xmlns:vCard4="http://www.w3.org/2006/vcard/ns#" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/" xmlns:bqmodel="http://biomodels.net/model-qualifiers/">
-            <rdf:Description rdf:about="#meta_D3GEX_Km_d3g">
-              <bqbiol:is>
-                <rdf:Bag>
-                  <rdf:li rdf:resource="https://identifiers.org/SBO:0000027"/>
-                </rdf:Bag>
-              </bqbiol:is>
-            </rdf:Description>
-          </rdf:RDF>
-        </annotation>
       </parameter>
     </listOfParameters>
     <listOfReactions>
-      <reaction metaid="meta_DAPIM" sboTerm="SBO:0000655" id="DAPIM" name="dapagliflozin import (DAPIM, OAT3)" reversible="true" compartment="Vmem">
+      <reaction metaid="meta_DAP2D3G" sboTerm="SBO:0000176" id="DAP2D3G" name="dapagliflozin glucuronidation (DAP2D3G, UGT1A9)" reversible="false" compartment="Vli">
         <notes>
           <body xmlns="http://www.w3.org/1999/xhtml">
-            <p>Possibly catalyzed by OAT3 with Ki=33µM. [FDA]</p>
+            <p>Uptake of the dapagliflozin of the plasma of the liver and its
+glucuronidation to D3G by UGT1A9; the export of D3G into the plasma is
+fast.</p>
           </body>
         </notes>
         <annotation>
           <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:vCard="http://www.w3.org/2001/vcard-rdf/3.0#" xmlns:vCard4="http://www.w3.org/2006/vcard/ns#" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/" xmlns:bqmodel="http://biomodels.net/model-qualifiers/">
-            <rdf:Description rdf:about="#meta_DAPIM">
+            <rdf:Description rdf:about="#meta_DAP2D3G">
               <bqbiol:is>
                 <rdf:Bag>
-                  <rdf:li rdf:resource="https://identifiers.org/SBO:0000655"/>
+                  <rdf:li rdf:resource="https://identifiers.org/uniprot:O60656"/>
                 </rdf:Bag>
               </bqbiol:is>
             </rdf:Description>
@@ -432,151 +345,61 @@ Ki for UGT1A9 with other substrates 12-15 µM [Obermeier2010a].</p>
           <speciesReference species="dap_ext" stoichiometry="1" constant="true"/>
         </listOfReactants>
         <listOfProducts>
-          <speciesReference species="dap" stoichiometry="1" constant="true"/>
-        </listOfProducts>
-        <kineticLaw>
-          <math xmlns="http://www.w3.org/1998/Math/MathML" xmlns:sbml="http://www.sbml.org/sbml/level3/version2/core">
-            <apply>
-              <divide/>
-              <apply>
-                <times/>
-                <apply>
-                  <divide/>
-                  <ci> DAPIM_Vmax </ci>
-                  <ci> DAPIM_Km_dap </ci>
-                </apply>
-                <ci> Vli </ci>
-                <apply>
-                  <minus/>
-                  <ci> dap_ext </ci>
-                  <ci> dap </ci>
-                </apply>
-              </apply>
-              <apply>
-                <plus/>
-                <cn sbml:units="dimensionless" type="integer"> 1 </cn>
-                <apply>
-                  <divide/>
-                  <ci> dap_ext </ci>
-                  <ci> DAPIM_Km_dap </ci>
-                </apply>
-                <apply>
-                  <divide/>
-                  <ci> dap </ci>
-                  <ci> DAPIM_Km_dap </ci>
-                </apply>
-              </apply>
-            </apply>
-          </math>
-        </kineticLaw>
-      </reaction>
-      <reaction metaid="meta_DAP2D3G" sboTerm="SBO:0000176" id="DAP2D3G" name="dapagliflozin conversion (DAP2D3G) UGT1A9" reversible="false" compartment="Vli">
-        <annotation>
-          <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:vCard="http://www.w3.org/2001/vcard-rdf/3.0#" xmlns:vCard4="http://www.w3.org/2006/vcard/ns#" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/" xmlns:bqmodel="http://biomodels.net/model-qualifiers/">
-            <rdf:Description rdf:about="#meta_DAP2D3G">
-              <bqbiol:is>
-                <rdf:Bag>
-                  <rdf:li rdf:resource="https://identifiers.org/SBO:0000176"/>
-                  <rdf:li rdf:resource="https://identifiers.org/uniprot/O60656"/>
-                </rdf:Bag>
-              </bqbiol:is>
-            </rdf:Description>
-          </rdf:RDF>
-        </annotation>
-        <listOfReactants>
-          <speciesReference species="dap" stoichiometry="1" constant="true"/>
-        </listOfReactants>
-        <listOfProducts>
-          <speciesReference species="d3g" stoichiometry="1" constant="true"/>
+          <speciesReference species="d3g_ext" stoichiometry="1" constant="true"/>
         </listOfProducts>
         <kineticLaw>
           <math xmlns="http://www.w3.org/1998/Math/MathML">
             <apply>
-              <divide/>
-              <apply>
-                <times/>
-                <ci> f_ugt1a9 </ci>
-                <ci> DAP2D3G_Vmax </ci>
-                <ci> Vli </ci>
-                <ci> dap </ci>
-              </apply>
-              <apply>
-                <plus/>
-                <ci> dap </ci>
-                <ci> DAP2D3G_Km_dap </ci>
-              </apply>
+              <times/>
+              <ci> f_ugt1a9 </ci>
+              <ci> f_d3g </ci>
+              <ci> DAPMET_k </ci>
+              <ci> Vli </ci>
+              <ci> dap_ext </ci>
             </apply>
           </math>
         </kineticLaw>
       </reaction>
-      <reaction metaid="meta_D3GEX" sboTerm="SBO:0000655" id="D3GEX" name="dapagliflozin-3-o-glucuronide export (D3GEX)" reversible="true" compartment="Vmem">
+      <reaction sboTerm="SBO:0000176" id="DAP2MET" name="dapagliflozin other metabolism (DAP2MET)" reversible="false" compartment="Vli">
         <notes>
           <body xmlns="http://www.w3.org/1999/xhtml">
-            <p>Possibly catalyzed by OAT3 with Km=115µM. [FDA]</p>
+            <p>The minor pathways of the metabolism of dapagliflozin, the
+2-O-glucuronide (UGT2B4/2B7) and the oxidative metabolites (CYP3A4),
+lumped into one metabolite.</p>
           </body>
         </notes>
-        <annotation>
-          <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:vCard="http://www.w3.org/2001/vcard-rdf/3.0#" xmlns:vCard4="http://www.w3.org/2006/vcard/ns#" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/" xmlns:bqmodel="http://biomodels.net/model-qualifiers/">
-            <rdf:Description rdf:about="#meta_D3GEX">
-              <bqbiol:is>
-                <rdf:Bag>
-                  <rdf:li rdf:resource="https://identifiers.org/SBO:0000655"/>
-                </rdf:Bag>
-              </bqbiol:is>
-            </rdf:Description>
-          </rdf:RDF>
-        </annotation>
         <listOfReactants>
-          <speciesReference species="d3g" stoichiometry="1" constant="true"/>
+          <speciesReference species="dap_ext" stoichiometry="1" constant="true"/>
         </listOfReactants>
         <listOfProducts>
-          <speciesReference species="d3g_ext" stoichiometry="1" constant="true"/>
+          <speciesReference species="dapmet_ext" stoichiometry="1" constant="true"/>
         </listOfProducts>
         <kineticLaw>
           <math xmlns="http://www.w3.org/1998/Math/MathML" xmlns:sbml="http://www.sbml.org/sbml/level3/version2/core">
             <apply>
-              <divide/>
+              <times/>
               <apply>
-                <times/>
-                <apply>
-                  <divide/>
-                  <ci> D3GEX_Vmax </ci>
-                  <ci> D3GEX_Km_d3g </ci>
-                </apply>
-                <ci> Vli </ci>
-                <apply>
-                  <minus/>
-                  <ci> d3g </ci>
-                  <ci> d3g_ext </ci>
-                </apply>
-              </apply>
-              <apply>
-                <plus/>
+                <minus/>
                 <cn sbml:units="dimensionless" type="integer"> 1 </cn>
-                <apply>
-                  <divide/>
-                  <ci> d3g </ci>
-                  <ci> D3GEX_Km_d3g </ci>
-                </apply>
-                <apply>
-                  <divide/>
-                  <ci> d3g_ext </ci>
-                  <ci> D3GEX_Km_d3g </ci>
-                </apply>
+                <ci> f_d3g </ci>
               </apply>
+              <ci> DAPMET_k </ci>
+              <ci> Vli </ci>
+              <ci> dap_ext </ci>
             </apply>
           </math>
         </kineticLaw>
       </reaction>
     </listOfReactions>
     <comp:listOfPorts>
-      <comp:port metaid="DAP2D3G_Vmax_port" sboTerm="SBO:0000599" comp:idRef="DAP2D3G_Vmax" comp:id="DAP2D3G_Vmax_port" comp:name="Port of DAP2D3G_Vmax"/>
-      <comp:port metaid="DAP2D3G_Km_dap_port" sboTerm="SBO:0000599" comp:idRef="DAP2D3G_Km_dap" comp:id="DAP2D3G_Km_dap_port" comp:name="Port of DAP2D3G_Km_dap"/>
+      <comp:port metaid="DAPMET_k_port" sboTerm="SBO:0000599" comp:idRef="DAPMET_k" comp:id="DAPMET_k_port" comp:name="Port of DAPMET_k"/>
+      <comp:port metaid="f_d3g_port" sboTerm="SBO:0000599" comp:idRef="f_d3g" comp:id="f_d3g_port" comp:name="Port of f_d3g"/>
       <comp:port metaid="f_ugt1a9_port" sboTerm="SBO:0000599" comp:idRef="f_ugt1a9" comp:id="f_ugt1a9_port" comp:name="Port of f_ugt1a9"/>
       <comp:port metaid="Vext_port" sboTerm="SBO:0000599" comp:idRef="Vext" comp:id="Vext_port" comp:name="Port of Vext"/>
       <comp:port metaid="Vli_port" sboTerm="SBO:0000599" comp:idRef="Vli" comp:id="Vli_port" comp:name="Port of Vli"/>
       <comp:port metaid="dap_ext_port" sboTerm="SBO:0000599" comp:idRef="dap_ext" comp:id="dap_ext_port" comp:name="Port of dap_ext"/>
       <comp:port metaid="d3g_ext_port" sboTerm="SBO:0000599" comp:idRef="d3g_ext" comp:id="d3g_ext_port" comp:name="Port of d3g_ext"/>
+      <comp:port metaid="dapmet_ext_port" sboTerm="SBO:0000599" comp:idRef="dapmet_ext" comp:id="dapmet_ext_port" comp:name="Port of dapmet_ext"/>
     </comp:listOfPorts>
   </model>
 </sbml>

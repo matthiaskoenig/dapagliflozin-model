@@ -1,129 +1,162 @@
-from typing import Dict
-from sbmlsim.data import DataSet, load_pkdb_dataframe
-from sbmlsim.fit import FitMapping, FitData
-from sbmlutils.console import console
+"""Simulation experiment of the study LaCreta2016."""
 
-import pkdb_models
-from pkdb_models.models import dapagliflozin
-from pkdb_models.models.dapagliflozin.experiments.base_experiment import DapagliflozinSimulationExperiment
-from pkdb_models.models.dapagliflozin.experiments.metadata import Tissue, Route, Dosing, ApplicationForm, Health, \
-    Fasting, DapagliflozinMappingMetaData
+from typing import ClassVar, override
+
+from pkpdsim.metadata import (
+    ApplicationForm,
+    Dosing,
+    Fasting,
+    Health,
+    PKPDMappingMetaData,
+    Route,
+    Tissue,
+)
+from sbmlsim import Q
+from sbmlsim.data import DataSet
+from sbmlsim.fit import FitData, FitMapping
 from sbmlsim.plot import Axis, Figure
-from sbmlsim.simulation import Timecourse, TimecourseSim
-from pkdb_models.models.dapagliflozin.helpers import run_experiments
-from pathlib import Path
-import pkdb_models.models.dapagliflozin as dapagliflozin
+from sbmlsim.simulation import Simulation
+
+from pkdb_models.models.dapagliflozin import MODEL
+from pkdb_models.models.dapagliflozin.experiments.base_experiment import (
+    DapagliflozinSimulationExperiment,
+)
 
 
 class LaCreta2016(DapagliflozinSimulationExperiment):
-    """Simulation experiment of LaCreta2016."""
+    """Simulation experiment of LaCreta2016.
 
-    conditions = ["fasted", "fed"]
-    groups = ["NH", "HS"]
-    doses = [2.5, 10]
-    bodyweights = {
-        2.5: 73.5,
-        10: 70.1,
-    }  # [kg]
+    Two randomized crossover bioequivalence studies in healthy subjects: single
+    doses of 10 mg (study 1: NH fasted, HS fasted, HS fed) and 2.5 mg (study 2:
+    NH and HS, fasted and fed) of non-heat-stressed (NH) and heat-stressed (HS)
+    dapagliflozin tablets; fed is a high-fat high-calorie breakfast 30 min
+    before the dose. The plasma of Fig 2 (mean + SD); the times of the 10 mg
+    panel before 4 hr are the sampling times (the curation read them one
+    sampling time late, the 0 of the x axis is offset in panel A).
+    """
 
-    def datasets(self) -> Dict[str, DataSet]:
+    conditions: ClassVar[list[str]] = ["fasted", "fed"]
+    groups: ClassVar[list[str]] = ["NH", "HS"]
+    doses: ClassVar[list[float]] = [2.5, 10]
+    #: the body weights of the studies: 10 mg study 1, 2.5 mg study 2 [kg]
+    bodyweights: ClassVar[dict[float, float]] = {
+        2.5: 70.1,
+        10: 73.5,
+    }
+
+    @override
+    def datasets(self) -> dict[str, DataSet]:
         dsets = {}
         for fig_id in ["Fig2"]:
-            df = load_pkdb_dataframe(f"{self.sid}_{fig_id}", data_path=self.data_path)
+            df = self.load_dataframe(fig_id)
             for label, df_label in df.groupby("label"):
+                label = str(label)
                 dset = DataSet.from_df(df_label, self.ureg)
                 # unit conversion to mole/l
                 if label.startswith("dapagliflozin_"):
                     dset.unit_conversion("mean", 1 / self.Mr.dap)
-                dsets[f"{label}"] = dset
-        # console.print(dsets)
-        # console.print(dsets.keys())
+                dsets[self.to_sid(label)] = dset
         return dsets
 
-    def simulations(self) -> Dict[str, TimecourseSim]:
-        Q_ = self.Q_
-        tcsims = {}
+    @override
+    def simulations(self) -> dict[str, Simulation]:
+        simulations = {}
         for condition in self.conditions:
-            for dose in [2.5, 10]:
-                tcsims[f"po_dap{dose}_{condition}"] = TimecourseSim(
-                    [Timecourse(
-                        start=0,
-                        end=50 * 60,  # [min]
-                        steps=500,
-                        changes={
-                            **self.default_changes(),
-                            # physiological changes
-                            "BW": Q_(self.bodyweights[dose], "kg"),
-                            "[KI__glc_ext]": Q_(self.fpg_healthy, "mM"),
-                            "GU__f_absorption": Q_(self.fasting_map[condition], "dimensionless"),
-                            "f_cirrhosis": Q_(self.cirrhosis_map["Control"], "dimensionless"),
-                            "KI__f_renal_function": Q_(self.renal_map["Normal renal function"], "dimensionless"),
-                            # dose (IVDOSE, PODOSE)
-                            "PODOSE_dap": Q_(dose, "mg"),
-                        },
-                    )]
+            for dose in self.doses:
+                simulations[self.to_sid(f"po_dap{dose}_{condition}")] = Simulation(
+                    time_unit="hr",
+                    end=50,
+                    preinit_changes={
+                        **self.default_changes(),
+                        # physiological changes
+                        "BW": Q(self.bodyweights[dose], "kg"),
+                        "[KI__fpg]": Q(self.fpg_healthy, "mM"),
+                        "GU__fed": Q(self.fasting_map[condition], "dimensionless"),
+                        "f_cirrhosis": Q(
+                            self.cirrhosis_map["Control"], "dimensionless"
+                        ),
+                        "KI__f_renal_function": Q(
+                            self.renal_map["Normal renal function"], "dimensionless"
+                        ),
+                        # dose (IVDOSE, PODOSE)
+                        "PODOSE_dap": Q(dose, "mg"),
+                    },
                 )
-        return tcsims
+        return simulations
 
-    def fit_mappings(self) -> Dict[str, FitMapping]:
+    @override
+    def fit_mappings(self) -> dict[str, FitMapping]:
         mappings = {}
         for condition in self.conditions:
             for group in self.groups:
                 for dose in self.doses:
                     if dose == 10 and condition == "fed" and group == "NH":
                         continue
-                    mappings[f"fm_po_dap{dose}_{group}_{condition}"] = FitMapping(
-                        self,
-                        reference=FitData(
+                    mappings[self.to_sid(f"fm_po_dap{dose}_{group}_{condition}")] = (
+                        FitMapping(
                             self,
-                            dataset=f"dapagliflozin_DAP{dose}_{group}_{condition}",
-                            xid="time",
-                            yid="mean",
-                            yid_sd="mean_sd",
-                            count="count",
-                        ),
-                        observable=FitData(
-                            self, task=f"task_po_dap{dose}_{condition}", xid="time", yid=f"[Cve_dap]",
-                        ),
-                        metadata=DapagliflozinMappingMetaData(
-                            tissue=Tissue.PLASMA,
-                            route=Route.PO,
-                            application_form=ApplicationForm.TABLET,
-                            dosing=Dosing.SINGLE,
-                            health=Health.HEALTHY,
-                            fasting=Fasting.FASTED if condition == "fasted" else Fasting.FED,
-                        ),
+                            reference=FitData(
+                                self,
+                                dataset=self.to_sid(
+                                    f"dapagliflozin_DAP{dose}_{group}_{condition}"
+                                ),
+                                xid="time",
+                                yid="mean",
+                                yid_sd="mean_sd",
+                                count="count",
+                            ),
+                            observable=FitData(
+                                self,
+                                task=self.to_sid(f"task_po_dap{dose}_{condition}"),
+                                xid="time",
+                                yid="[Cve_dap]",
+                            ),
+                            metadata=PKPDMappingMetaData(
+                                tissue=Tissue.PLASMA,
+                                route=Route.PO,
+                                application_form=ApplicationForm.TABLET,
+                                dosing=Dosing.SINGLE,
+                                health=Health.HEALTHY,
+                                fasting=Fasting.FASTED
+                                if condition == "fasted"
+                                else Fasting.FED,
+                            ),
+                        )
                     )
         return mappings
 
-    def figures(self) -> Dict[str, Figure]:
+    @override
+    def figures(self) -> dict[str, Figure]:
         fig = Figure(
             experiment=self,
-            sid="Fig1",
+            sid="Fig2",
             num_rows=1,
             num_cols=2,
             name=f"{self.__class__.__name__} (Healthy)",
         )
-        Figure.legend_fontsize = 11
-        plots = fig.create_plots(xaxis=Axis(self.label_time, unit=self.unit_time), legend=True)
+        plots = fig.create_plots(
+            xaxis=Axis(self.label_time, unit=self.unit_time), legend=True
+        )
         plots[0].set_yaxis(self.label_dap_plasma, unit=self.unit_dap)
         plots[1].set_yaxis(self.label_dap_plasma, unit=self.unit_dap)
         for k, dose in enumerate(self.doses):
             for condition in self.conditions:
+                # simulation
+                plots[k].add_data(
+                    task=self.to_sid(f"task_po_dap{dose}_{condition}"),
+                    xid="time",
+                    yid="[Cve_dap]",
+                    label=f"{condition} - {dose} mg PO",
+                    color=self.fasting_colors[condition],
+                )
                 for group in self.groups:
                     if dose == 10 and condition == "fed" and group == "NH":
                         continue
-                    # simulation
-                    plots[k].add_data(
-                        task=f"task_po_dap{dose}_{condition}",
-                        xid="time",
-                        yid=f"[Cve_dap]",
-                        label=f"{condition} - {dose} mg PO",
-                        color=self.fasting_colors[condition],
-                    )
                     # data
                     plots[k].add_data(
-                        dataset=f"dapagliflozin_DAP{dose}_{group}_{condition}",
+                        dataset=self.to_sid(
+                            f"dapagliflozin_DAP{dose}_{group}_{condition}"
+                        ),
                         xid="time",
                         yid="mean",
                         yid_sd="mean_sd",
@@ -132,10 +165,8 @@ class LaCreta2016(DapagliflozinSimulationExperiment):
                         color=self.fasting_colors[condition],
                         marker="s" if group == "NH" else "D",
                     )
-        return {fig.sid: fig}
+        return self.figures_by_sid(fig)
 
 
 if __name__ == "__main__":
-    out = dapagliflozin.RESULTS_PATH_SIMULATION / LaCreta2016.__name__
-    out.mkdir(parents=True, exist_ok=True)
-    run_experiments(LaCreta2016, output_dir=out)
+    MODEL.run_experiments(LaCreta2016, output_dir=LaCreta2016.__name__)

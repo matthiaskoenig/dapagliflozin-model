@@ -1,5 +1,11 @@
-.idea
-__pycache__
-*.pyc
-src/pkdb_models/models/dapagliflozin/results/
-results
+.venv/
+/results/
+__pycache__/
+*.py[cod]
+*.egg-info/
+/build/
+/dist/
+/site/
+.idea/
+.vscode/
+.DS_Store

@@ -1,17 +1,37 @@
 """Dapagliflozin body model."""
 
-from sbmlutils.cytoscape import visualize_sbml
-from sbmlutils.factory import *
-from sbmlutils.metadata import *
-from pkdb_models.models.dapagliflozin.models import annotations
-from pkdb_models.models.dapagliflozin.models import templates
+from typing import NotRequired, TypedDict
+
+import numpy as np
+from sbmlutils.factory import (
+    PORT_SUFFIX,
+    AssignmentRule,
+    Compartment,
+    ExternalModelDefinition,
+    Model,
+    Parameter,
+    RateRule,
+    Reaction,
+    ReplacedElement,
+    Species,
+    Submodel,
+    UnitDefinition,
+    create_model,
+)
+from sbmlutils.metadata import (
+    BQB,
+    SBO,
+)
+
+from pkdb_models.models.dapagliflozin.models import annotations, templates
+from pkdb_models.models.dapagliflozin.models.fits import FITS
 
 
 # -----------------------------------------------------------------------------
 # Whole Body Metabolism
 # -----------------------------------------------------------------------------
 class U(templates.U):
-    """UnitsDefinitions."""
+    """Units of the whole-body model."""
 
     cm = UnitDefinition("cm")
     hr = UnitDefinition("hr")
@@ -35,6 +55,7 @@ class U(templates.U):
 
     ml = UnitDefinition("ml")
     ml_per_l = UnitDefinition("ml_per_l", "ml/l")
+    ml_per_min = UnitDefinition("ml_per_min", "ml/min")
     ml_per_s = UnitDefinition("ml_per_s", "ml/s")
     ml_per_s_kg = UnitDefinition("ml_per_s_kg", "ml/s/kg")
 
@@ -58,37 +79,59 @@ _m = Model(
     name="Dapagliflozin body model",
     notes="""
     # Physiologically based pharmacokinetic/ pharmacodynamic (PBPK/PD) model of dapagliflozin
-    
+
     Dapagliflozin is an SGLT2 inhibitor prescribed for the management of type 2 diabetes mellitus. The drug lowers blood glucose levels by increasing urinary glucose excretion. Despite established efficacy, dapagliflozin demonstrates significant inter-individual variability in pharmacokinetics and pharmacodynamics, with potential impact on treatment outcomes. To evaluate the sources of variability, we developed a digital twin of dapagliflozin pharmacokinetics and pharmacodynamics built as a PBPK/PD model using curated data from 28 clinical studies. This constitutes a full mechanistic model that integrates absorption, metabolism, excretion, and pharmacodynamics. It accounts for key determinants of variability including renal and hepatic function, and food effects.
-    
-    metabolites:
-    dap: dapagliflozin
-    d3g: 3-0-glucuronide (~66%) [Callegari2021]
-    d2g: 2-0-glucuronide (~6%) [Callegari2021]
-    dox: oxid (~10%) [Callegari2021]
-    
+
+    Substances:
+    - dap: dapagliflozin
+    - d3g: dapagliflozin-3-O-glucuronide (D3G, about 61 % of an oral dose in
+      the urine [Obermeier2010]), formed by UGT1A9 in liver and kidney
+    - dapmet: the other metabolites, the 2-O-glucuronide (about 5 %) and the
+      oxidative metabolites (about 10 %) [Obermeier2010, Callegari2021],
+      lumped into one metabolite
+
     """
     + templates.terms_of_use,
     units=U,
     model_units=templates.model_units,
     creators=templates.creators,
     annotations=[
+        *annotations.model,
         # tissue
         (BQB.OCCURS_IN, "BTO:0001489"),  # whole body
         (BQB.OCCURS_IN, "FMA:256135"),  # body
-
-        (BQB.HAS_PROPERTY, "ncit/C79369"),  # Pharmacokinetics: Absorption
-        (BQB.HAS_PROPERTY, "ncit/C79371"),  # Pharmacokinetics: Metabolism
-        (BQB.HAS_PROPERTY, "ncit/C79372"),  # Pharmacokinetics: Excretion
-        (BQB.HAS_PROPERTY, "ncit/C79370"),  # Pharmacokinetics: Distribution
-    ] + templates.model_annotations
+        (BQB.HAS_PROPERTY, "NCIT:C79369"),  # Pharmacokinetics: Absorption
+        (BQB.HAS_PROPERTY, "NCIT:C79371"),  # Pharmacokinetics: Metabolism
+        (BQB.HAS_PROPERTY, "NCIT:C79372"),  # Pharmacokinetics: Excretion
+        (BQB.HAS_PROPERTY, "NCIT:C79370"),  # Pharmacokinetics: Distribution
+    ],
 )
 
 _m.ports = []
 _m.deletions = []
 _m.replaced_elements = []
 
-SUBSTANCES_BODY = {
+
+class SubstanceBody(TypedDict):
+    """Definition of a substance transported in the whole-body model."""
+
+    name: str
+    unit: UnitDefinition
+    cinit: float  # initial concentration [mmole/l]
+    Mr: float  # molecular weight [g/mole]
+    IVDOSE: NotRequired[float]  # intravenous dose [mg]
+    PODOSE: NotRequired[float]  # oral dose [mg]
+    #: distribution into the tissues: the exchange flow at `BW_ref`
+    #: (`ftissue_<sid>`) and the tissue/plasma partition coefficient
+    #: (`Kp_<sid>`), fitted, see `fits.FITS`
+    tissue_distribution: NotRequired[bool]
+    #: bound/free partition coefficient of the slow pool of the rest tissue [-]
+    Kpdeep: NotRequired[float]
+    #: rate of the exchange with the slow pool of the rest tissue [1/min]
+    kdeep: NotRequired[float]
+
+
+SUBSTANCES_BODY: dict[str, SubstanceBody] = {
     "dap": {
         "name": "dapagliflozin",
         "unit": U.mmole,
@@ -100,19 +143,36 @@ SUBSTANCES_BODY = {
         "IVDOSE": 0,  # venous plasma
         # oral absorption
         "PODOSE": 0,  # dose
-        'ftissue': 0.010000122747666328,  # [litre_per_min] distribution in tissues
-        "Kp": 25.517380513186023,  # [-] tissue/plasma partition coefficient
-        # logP = 2.7; P = 10^2.7 = 501 (drug bank,  MSDS)
-        # logP 2.52 (331); (drug bank, ALOGPS prediction)
-        # logP 2.11 (129); (drug bank, Chemaxon prediction)
+        # distribution into the tissues: Vss 118 l, t1/2 12.2 hr after an
+        # intravenous microdose [Boulton2013]; terminal half-life 12-14 hr
+        # after oral doses, accumulation below 40 % [Kasichayanula2013]. The
+        # concentrations fall fast in the first 12 hr after a dose and with
+        # the terminal half-life after it (biphasic): a fast pool of the
+        # tissues (ftissue, Kp, fitted) and a slow pool of the rest tissue
+        # (Kpdeep, kdeep). The fits do not identify the slow pool (the cost
+        # is flat in Kpdeep and kdeep, PK_20261019_231348__82b65); its values
+        # give the terminal half-life of 12-13 hr [Boulton2013,
+        # Komoroski2009] and the troughs of 10 mg once daily on day 1 and 14
+        # (3.9 and 5.8 ng/ml, accumulation 1.2-1.3 [Komoroski2009])
+        "tissue_distribution": True,
+        "Kpdeep": 0.5,
+        "kdeep": 0.002,
     },
     "d3g": {
-        "name": "dapagliflozin-3-o-glucuronide",
+        "name": "dapagliflozin-3-O-glucuronide",
         "unit": U.mmole,
         # initial concentration
         "cinit": 0.0,  # [mmole/l]
         # Molecular weight
-        "Mr": 585,  # [g/mole]
+        "Mr": 585.0,  # [g/mole]
+    },
+    "dapmet": {
+        "name": "other dapagliflozin metabolites",
+        "unit": U.mmole,
+        # initial concentration
+        "cinit": 0.0,  # [mmole/l]
+        # Molecular weight of the 2-O-glucuronide
+        "Mr": 585.0,  # [g/mole]
     },
 }
 
@@ -155,7 +215,7 @@ _m.external_model_definitions = [
         modelRef=liver_id,
     ),
     ExternalModelDefinition(
-         sid="gut", name="gut model definition", source=f"{gut_id}.xml", modelRef=gut_id
+        sid="gut", name="gut model definition", source=f"{gut_id}.xml", modelRef=gut_id
     ),
 ]
 
@@ -188,6 +248,16 @@ _m.compartments = [
         name="gut",
         sboTerm=SBO.PHYSICAL_COMPARTMENT,
         annotations=annotations.compartments["gu"],
+    ),
+    Compartment(
+        "Vlumen",
+        metaId="meta_Vlumen",
+        value=1,
+        unit=U.liter,
+        constant=False,
+        name="intestinal lumen (inner part of intestine)",
+        sboTerm=SBO.PHYSICAL_COMPARTMENT,
+        annotations=annotations.compartments["gu_lumen"],
     ),
     Compartment(
         "Vki",
@@ -259,16 +329,6 @@ _m.compartments = [
         sboTerm=SBO.PHYSICAL_COMPARTMENT,
         annotations=annotations.compartments["feces"],
     ),
-    # Compartment(
-    #     "Vstomach",
-    #     metaId="meta_Vstomach",
-    #     value=1,
-    #     unit=U.liter,
-    #     constant=True,
-    #     name="stomach",
-    #     sboTerm=SBO.PHYSICAL_COMPARTMENT,
-    #     annotations=annotations.compartments["stomach"],
-    # ),
     Compartment(
         "Vpo",
         metaId="meta_Vpo",
@@ -292,7 +352,7 @@ _m.compartments = [
 ]
 
 # create plasma and tissue compartments (for correct blood volume)
-for cid in COMPARTMENTS_BODY.keys():
+for cid in COMPARTMENTS_BODY:
     if cid not in ["ar", "ve", "po", "hv"]:
         _m.compartments.extend(
             [
@@ -385,6 +445,13 @@ _m.replaced_elements.extend(
             portRef=f"Vgu{PORT_SUFFIX}",
         ),
         ReplacedElement(
+            sid="Vlumen_RE",
+            metaId="Vlumen_RE",
+            elementRef="Vlumen",
+            submodelRef=SUBMODEL_SID_DICT["gu"],
+            portRef=f"Vlumen{PORT_SUFFIX}",
+        ),
+        ReplacedElement(
             sid="Vfeces_RE",
             metaId="Vfeces_RE",
             elementRef="Vfeces",
@@ -425,43 +492,67 @@ for sid, sdict in SUBSTANCES_BODY.items():
 
     # tissue species
     for cid, cname in COMPARTMENTS_BODY.items():
-        if "ftissue" in sdict:
-            if cid not in ["ve", "ar", "li", "ki", "gu", "po", "hv"]:
-                sid_ex = f"C{cid}_{sid}"
-                cid_ex = f"V{cid}_tissue"
+        if sdict.get("tissue_distribution") and cid not in [
+            "ve",
+            "ar",
+            "li",
+            "ki",
+            "gu",
+            "po",
+            "hv",
+        ]:
+            sid_ex = f"C{cid}_{sid}"
+            cid_ex = f"V{cid}_tissue"
 
-                _m.species.extend(
-                    [
-                        Species(
-                            sid_ex,
-                            metaId=f"meta_{sid_ex}",
-                            initialConcentration=sdict["cinit"],
-                            compartment=cid_ex,
-                            substanceUnit=sdict["unit"],
-                            name=f"{sdict['name']} ({cname})",
-                            hasOnlySubstanceUnits=False,
-                            port=True,
-                            sboTerm=SBO.SIMPLE_CHEMICAL,
-                            annotations=annotations.species[sid],
-                        )
-                    ]
+            _m.species.extend(
+                [
+                    Species(
+                        sid_ex,
+                        metaId=f"meta_{sid_ex}",
+                        initialConcentration=sdict["cinit"],
+                        compartment=cid_ex,
+                        substanceUnit=sdict["unit"],
+                        name=f"{sdict['name']} ({cname})",
+                        hasOnlySubstanceUnits=False,
+                        port=True,
+                        sboTerm=SBO.SIMPLE_CHEMICAL,
+                        annotations=annotations.species[sid],
+                    )
+                ]
+            )
+            if cid == "re" and "Kpdeep" in sdict:
+                # the slow pool of the rest tissue
+                _m.species.append(
+                    Species(
+                        f"C{cid}_deep_{sid}",
+                        metaId=f"meta_C{cid}_deep_{sid}",
+                        initialConcentration=sdict["cinit"],
+                        compartment=cid_ex,
+                        substanceUnit=sdict["unit"],
+                        name=f"{sdict['name']} slow pool ({cname})",
+                        hasOnlySubstanceUnits=False,
+                        sboTerm=SBO.SIMPLE_CHEMICAL,
+                        annotations=annotations.species[sid],
+                    )
                 )
 
-    # urine metabolites dummy species
-    if sid in ["dap", "d3g"]:
-        _m.species.extend([
-            Species(
-                f"Aurine_{sid}",
-                metaId=f"meta_Aurine_{sid}",
-                initialConcentration=0,
-                compartment="Vurine",
-                substanceUnit=sdict["unit"],
-                name=f"{sdict['name']} (urine)",
-                hasOnlySubstanceUnits=True,
-                sboTerm=SBO.SIMPLE_CHEMICAL,
-                annotations=annotations.species[sid],
-            ),
-        ])
+    # urine
+    if sid in ["dap", "d3g", "dapmet"]:
+        _m.species.extend(
+            [
+                Species(
+                    f"Aurine_{sid}",
+                    metaId=f"meta_Aurine_{sid}",
+                    initialConcentration=0,
+                    compartment="Vurine",
+                    substanceUnit=sdict["unit"],
+                    name=f"{sdict['name']} (urine)",
+                    hasOnlySubstanceUnits=True,
+                    sboTerm=SBO.SIMPLE_CHEMICAL,
+                    annotations=annotations.species[sid],
+                ),
+            ]
+        )
 
     # feces metabolites
     if sid in ["dap"]:
@@ -483,9 +574,9 @@ for sid, sdict in SUBSTANCES_BODY.items():
                 f"Cgu_{sid}",
                 metaId=f"meta_Cgu_{sid}",
                 initialConcentration=0,
-                compartment="Vgu",
+                compartment="Vlumen",
                 substanceUnit=sdict["unit"],
-                name=f"{sdict['name']} (gut)",
+                name=f"{sdict['name']} (intestinal lumen)",
                 hasOnlySubstanceUnits=False,
                 sboTerm=SBO.SIMPLE_CHEMICAL,
                 annotations=annotations.species[sid],
@@ -495,34 +586,40 @@ for sid, sdict in SUBSTANCES_BODY.items():
 _m.species.extend(
     [
         Species(
-            f"Cve_daptot",
-            metaId=f"meta_Cve_daptot",
+            "Cve_daptot",
+            metaId="meta_Cve_daptot",
             initialConcentration=0,
             compartment="Vve",
             substanceUnit=U.mmole,
-            name=f"total dapagliflozin (plasma)",
+            name="total dapagliflozin (plasma)",
+            notes="""Dapagliflozin and its metabolites in the plasma, compared
+            with the total radioactivity.""",
             hasOnlySubstanceUnits=False,
             sboTerm=SBO.SIMPLE_CHEMICAL,
             annotations=annotations.species["daptot"],
         ),
         Species(
-            f"Aurine_daptot",
-            metaId=f"meta_Aurine_daptot",
+            "Aurine_daptot",
+            metaId="meta_Aurine_daptot",
             initialConcentration=0,
             compartment="Vurine",
             substanceUnit=U.mmole,
-            name=f"total dapagliflozin (urine)",
+            name="total dapagliflozin (urine)",
+            notes="""Dapagliflozin and its metabolites in the urine, compared
+            with the total radioactivity.""",
             hasOnlySubstanceUnits=True,
             sboTerm=SBO.SIMPLE_CHEMICAL,
             annotations=annotations.species["daptot"],
         ),
         Species(
-            f"Afeces_daptot",
-            metaId=f"meta_Afeces_daptot",
+            "Afeces_daptot",
+            metaId="meta_Afeces_daptot",
             initialConcentration=0,
-            compartment="Vurine",
+            compartment="Vfeces",
             substanceUnit=U.mmole,
-            name=f"total dapagliflozin (feces)",
+            name="total dapagliflozin (feces)",
+            notes="""The dapagliflozin in the feces; the metabolites in the
+            feces (about 6 % of the dose [Obermeier2010]) are not described.""",
             hasOnlySubstanceUnits=True,
             sboTerm=SBO.SIMPLE_CHEMICAL,
             annotations=annotations.species["daptot"],
@@ -532,8 +629,8 @@ _m.species.extend(
 
 # replace species
 replaced_species = {
-    "li": ["dap", "d3g",],
-    "ki": ["dap", "d3g"],
+    "li": ["dap", "d3g", "dapmet"],
+    "ki": ["dap", "d3g", "dapmet"],
     "gu": ["dap"],
 }
 
@@ -553,7 +650,7 @@ for tkey, skey_list in replaced_species.items():
         )
 
 # urine species replacements
-for skey in ["dap", "d3g"]:
+for skey in ["dap", "d3g", "dapmet"]:
     _m.replaced_elements.append(
         ReplacedElement(
             sid=f"Aurine_{skey}_RE",
@@ -578,15 +675,17 @@ for skey in ["dap"]:
 
 # intestine species replacements
 for skey in ["dap"]:
-    _m.replaced_elements.extend([
-        ReplacedElement(
-            sid=f"Cgu_{skey}_RE",
-            metaId=f"Cgu_{skey}_RE",
-            elementRef=f"Cgu_{skey}",
-            submodelRef=SUBMODEL_SID_DICT["gu"],
-            portRef=f"{skey}_lumen{PORT_SUFFIX}",
-        ),
-    ])
+    _m.replaced_elements.extend(
+        [
+            ReplacedElement(
+                sid=f"Cgu_{skey}_RE",
+                metaId=f"Cgu_{skey}_RE",
+                elementRef=f"Cgu_{skey}",
+                submodelRef=SUBMODEL_SID_DICT["gu"],
+                portRef=f"{skey}_lumen{PORT_SUFFIX}",
+            ),
+        ]
+    )
 
 # -------------------------------------------------------------------------------------------------
 # Parameters
@@ -600,6 +699,20 @@ _m.parameters.extend(
             U.kg,
             name="body weight",
             sboTerm=SBO.QUANTITATIVE_SYSTEMS_DESCRIPTION_PARAMETER,
+        ),
+        Parameter(
+            "BW_ref",
+            75,
+            U.kg,
+            constant=True,
+            name="reference body weight [kg]",
+            sboTerm=SBO.QUANTITATIVE_SYSTEMS_DESCRIPTION_PARAMETER,
+            notes=(
+                "Body weight at which the exchange flows of the tissue "
+                "distribution (`ftissue_<sid>`) are given; they scale with the "
+                "body weight as the volumes, the blood flows and the renal "
+                "clearance do."
+            ),
         ),
         Parameter(
             "HEIGHT",
@@ -633,7 +746,7 @@ _m.parameters.extend(
             notes="""
             1.0: normal function;
             <1.0: reduced function as reduced cardiac output;
-            """
+            """,
         ),
         Parameter(
             "CO",
@@ -645,10 +758,10 @@ _m.parameters.extend(
         ),
         Parameter(
             "QC",
-            108.33 * 1000 * 60,
+            108.33 / 1000 * 60,
             U.l_per_min,
             constant=False,
-            name="cardiac output [L/hr]",
+            name="cardiac output [l/min]",
             sboTerm=SBO.QUANTITATIVE_SYSTEMS_DESCRIPTION_PARAMETER,
         ),
         # fractional tissue volumes
@@ -753,7 +866,7 @@ _m.parameters.extend(
             sboTerm=SBO.QUANTITATIVE_SYSTEMS_DESCRIPTION_PARAMETER,
             notes="""
         Assumed FQgu is the sum of FQgu + FQsp + FQpa for correct portal blood flow.
-        with FQgu=0.146, FQsp=0.017, FQpa=0.017 
+        with FQgu=0.146, FQsp=0.017, FQpa=0.017
         """,
         ),
         Parameter(
@@ -788,14 +901,6 @@ _m.parameters.extend(
             name="rest of body fractional tissue blood flow",
             sboTerm=SBO.QUANTITATIVE_SYSTEMS_DESCRIPTION_PARAMETER,
         ),
-        # Parameter(
-        #     "conversion_min_per_day",
-        #     1440,
-        #     U.min_per_day,
-        #     constant=True,
-        #     name="Conversion factor min to hours",
-        #     sboTerm=SBO.QUANTITATIVE_SYSTEMS_DESCRIPTION_PARAMETER,
-        # ),
         Parameter(
             "f_cirrhosis",
             0,
@@ -804,7 +909,7 @@ _m.parameters.extend(
             name="severity of cirrhosis [0, 0.95]",
             sboTerm=SBO.QUANTITATIVE_SYSTEMS_DESCRIPTION_PARAMETER,
             annotations=[
-                (BQB.IS, "ncit/C2951"),  # Cirrhosis
+                (BQB.IS, "NCIT:C2951"),  # Cirrhosis
                 (BQB.IS, "efo/0001422"),  # cirrhosis of liver
             ],
         ),
@@ -816,7 +921,10 @@ _m.parameters.extend(
             name="fraction of portal venous blood shunted by the liver",
             sboTerm=SBO.QUANTITATIVE_SYSTEMS_DESCRIPTION_PARAMETER,
             annotations=[
-                (BQB.IS, "hp/HP:0002629"),  # Gastrointestinal arteriovenous malformation
+                (
+                    BQB.IS,
+                    "hp/HP:0002629",
+                ),  # Gastrointestinal arteriovenous malformation
             ],
         ),
         Parameter(
@@ -827,74 +935,182 @@ _m.parameters.extend(
             name="fraction of lost parenchymal liver volume",
             sboTerm=SBO.QUANTITATIVE_SYSTEMS_DESCRIPTION_PARAMETER,
         ),
-        Parameter(
-            "DAP2D3G_Vmax",
-            0.01992005476805105,
-            U.mmole_per_min_l,
-            name="Vmax dap (UGT1A9)",
-            sboTerm=SBO.MAXIMAL_VELOCITY,
-            port=True,
-        ),
-        Parameter(
-            "DAP2D3G_Km_dap",
-            0.479,
-            U.mM,
-            name="Km dap (UGT1A9)",
-            sboTerm=SBO.MICHAELIS_CONSTANT,
-            port=True,
-            notes="""
-            Km apparent in kidney microsomes for dapagliflozin; 479 µM [Kasichaynula2013]
-            Ki for UGT1A9 with other substrates 12-15 µM [Obermeier2010a]."""
-        ),
-        Parameter(
-            "f_ugt1a9",
-            1,
-            U.dimensionless,
-            name="scaling factor UGT1A9 activity",
-            sboTerm=SBO.QUANTITATIVE_SYSTEMS_DESCRIPTION_PARAMETER,
-            port=True,
-            notes="""Scaling factor to vary UGT1A9 activity.
-            1.0: unchanged activity; < 1.0 decreased activity; >1.0 increased activity.
-            """
-        )
     ]
 )
 
+# renal function, the metabolism of liver and kidney and its activity
+_m.parameters.extend(
+    [
+        Parameter(
+            "f_GFR_Qki",
+            101 / 1.32354,
+            U.ml_per_l,
+            constant=True,
+            name="relationship GFR and Qki",
+            sboTerm=SBO.QUANTITATIVE_SYSTEMS_DESCRIPTION_PARAMETER,
+            notes="""
+            GFR per renal blood flow (76.3 ml/l, a ratio of 0.0763). Calibrated
+            so that the healthy GFR is 101 ml/min at the renal blood flow of
+            1.32354 l/min of 75 kg, the normal GFR of the classes of renal
+            impairment (`pkpdsim.impairment`).
+            """,
+        ),
+        Parameter(
+            "GFR_base",
+            np.nan,
+            U.ml_per_min,
+            constant=False,
+            name="glomerular filtration rate (healthy)",
+            sboTerm=SBO.QUANTITATIVE_SYSTEMS_DESCRIPTION_PARAMETER,
+            notes="""
+            The GFR of healthy kidneys, which scales with the renal blood flow
+            and so with the body weight; the GFR is `KI__f_renal_function`
+            times this rate.
+            """,
+        ),
+        Parameter(
+            "f_ugt1a9",
+            1.0,
+            U.dimensionless,
+            constant=True,
+            name="scaling factor UGT1A9 activity",
+            sboTerm=SBO.QUANTITATIVE_SYSTEMS_DESCRIPTION_PARAMETER,
+            notes="""
+            Scaling factor of the glucuronidation of dapagliflozin to D3G by
+            UGT1A9 of the liver and the kidney; an inducer (rifampicin) or
+            inhibitor (mefenamic acid) changes both.
+            1.0: normal activity; <1.0 decreased activity; >1.0 increased activity.
+            """,
+        ),
+        Parameter(
+            "DAPMET_k",
+            **FITS.parameter("DAPMET_k", unit=U.per_min),
+            constant=True,
+            name="rate of the hepatic metabolism of dapagliflozin",
+            sboTerm=SBO.KINETIC_CONSTANT,
+            notes="""
+            First-order rate of the hepatic metabolism of dapagliflozin,
+            relative to the volume of the liver tissue (`LI__DAPMET_k` of the
+            liver). Dapagliflozin is far below the Km of UGT1A9 (479 µM
+            [Kasichayanula2013]), its pharmacokinetics are dose proportional
+            from 0.1 to 500 mg [Komoroski2009]. The renal metabolism is
+            `f_met_renal` of the metabolism of both organs. The clearance of an
+            intravenous microdose is 207 ml/min [Boulton2013].
+            """,
+        ),
+        Parameter(
+            "f_met_renal",
+            0.6,
+            U.dimensionless,
+            constant=True,
+            name="renal fraction of the metabolism",
+            sboTerm=SBO.QUANTITATIVE_SYSTEMS_DESCRIPTION_PARAMETER,
+            notes="""
+            Fraction of the metabolism of dapagliflozin in the kidney at normal
+            renal and hepatic function, the rest is hepatic. The split is not
+            identified by the data of healthy subjects; it is set from the AUC
+            ratios of renal impairment (1.60, 2.07, 1.95 [Kasichayanula2013],
+            which need about 0.68) and of hepatic impairment (1.03, 1.36, 1.67
+            [Kasichayanula2011], which need about 0.4-0.68), validation data
+            both. The kidney has 8-fold the UGT1A9 mRNA and 3-fold the D3G
+            formation per mg microsomal protein of the liver
+            [Kasichayanula2013].
+            """,
+        ),
+        Parameter(
+            "DAPMET_k_renal",
+            np.nan,
+            U.per_min,
+            constant=False,
+            name="rate of the renal metabolism of dapagliflozin",
+            sboTerm=SBO.KINETIC_CONSTANT,
+            notes="""
+            First-order rate of the renal metabolism relative to the volume of
+            the kidney (`KI__DAPMET_k` of the kidney), from the hepatic rate and
+            the renal fraction `f_met_renal`.
+            """,
+        ),
+        Parameter(
+            "f_d3g",
+            0.77,
+            U.dimensionless,
+            constant=True,
+            name="fraction of the metabolism to D3G",
+            sboTerm=SBO.QUANTITATIVE_SYSTEMS_DESCRIPTION_PARAMETER,
+            notes="""
+            Fraction of the metabolism of dapagliflozin (liver and kidney) which
+            forms D3G, the rest forms the other metabolites (`dapmet`). After
+            50 mg of 14C-dapagliflozin 61 % of the dose is D3G in the urine,
+            75.2 % of the radioactivity is in the urine (1.2-1.6 % unchanged)
+            and 5.6 % are metabolites in the feces [Obermeier2010]: 61 / (75.2
+            - 1.6 + 5.6) = 0.77; UGT1A9 has 79.9 % of the metabolism [Jo2021].
+            """,
+        ),
+    ]
+)
+_m.replaced_elements.extend(
+    [
+        ReplacedElement(
+            sid="GFR_base_RE",
+            metaId="GFR_base_RE",
+            elementRef="GFR_base",
+            submodelRef=SUBMODEL_SID_DICT["ki"],
+            portRef=f"GFR_base{PORT_SUFFIX}",
+        ),
+        ReplacedElement(
+            sid="DAPMET_k_li_RE",
+            metaId="DAPMET_k_li_RE",
+            elementRef="DAPMET_k",
+            submodelRef=SUBMODEL_SID_DICT["li"],
+            portRef=f"DAPMET_k{PORT_SUFFIX}",
+        ),
+        ReplacedElement(
+            sid="DAPMET_k_ki_RE",
+            metaId="DAPMET_k_ki_RE",
+            elementRef="DAPMET_k_renal",
+            submodelRef=SUBMODEL_SID_DICT["ki"],
+            portRef=f"DAPMET_k{PORT_SUFFIX}",
+        ),
+    ]
+)
 
 for sid, sdict in SUBSTANCES_BODY.items():
     if "PODOSE" in sdict:
         # Parameter for intestine model
-        _m.parameters.extend([
-            Parameter(
-                f"PODOSE_{sid}",
-                sdict["PODOSE"],
-                U.mg,
-                constant=False,
-                sboTerm=SBO.QUANTITATIVE_SYSTEMS_DESCRIPTION_PARAMETER,
-                name=f"oral dose {sid} [mg]",
-            ),
+        _m.parameters.extend(
+            [
+                Parameter(
+                    f"PODOSE_{sid}",
+                    sdict["PODOSE"],
+                    U.mg,
+                    constant=False,
+                    sboTerm=SBO.QUANTITATIVE_SYSTEMS_DESCRIPTION_PARAMETER,
+                    name=f"oral dose {sid} [mg]",
+                ),
             ]
         )
-        _m.replaced_elements.extend([
-            ReplacedElement(
-                sid=f"PODOSE_{sid}_RE",
-                metaId=f"PODOSE_{sid}_RE",
-                elementRef=f"PODOSE_{sid}",
-                submodelRef=SUBMODEL_SID_DICT["gu"],
-                portRef=f"PODOSE_{sid}{PORT_SUFFIX}",
-            ),
+        _m.replaced_elements.extend(
+            [
+                ReplacedElement(
+                    sid=f"PODOSE_{sid}_RE",
+                    metaId=f"PODOSE_{sid}_RE",
+                    elementRef=f"PODOSE_{sid}",
+                    submodelRef=SUBMODEL_SID_DICT["gu"],
+                    portRef=f"PODOSE_{sid}{PORT_SUFFIX}",
+                ),
             ]
         )
 
-_m.rules = _m.rules + [
+_m.rules = [
+    *_m.rules,
     AssignmentRule("f_shunts", "f_cirrhosis", unit=U.dimensionless),
     AssignmentRule("f_tissue_loss", "f_cirrhosis", unit=U.dimensionless),
 ]
 
-replaced_parameters = {
-    "li": ["f_ugt1a9", "DAP2D3G_Vmax", "DAP2D3G_Km_dap"],
+replaced_parameters: dict[str, list[str]] = {
+    "li": ["f_ugt1a9", "f_d3g"],
     "gu": ["Mr_dap"],
-    "ki": ["f_ugt1a9", "DAP2D3G_Vmax", "DAP2D3G_Km_dap"],
+    "ki": ["f_ugt1a9", "f_d3g"],
 }
 
 for ckey, pids in replaced_parameters.items():
@@ -911,7 +1127,6 @@ for ckey, pids in replaced_parameters.items():
 
 # species specific parameters
 for sid, sdict in SUBSTANCES_BODY.items():
-
     if "PODOSE" in sdict or "IVDOSE" in sdict:
         _m.parameters.extend(
             [
@@ -928,25 +1143,59 @@ for sid, sdict in SUBSTANCES_BODY.items():
         )
 
     # tissue distribution
-    if "ftissue" in sdict:
-        _m.parameters.extend([
-            Parameter(
-                f"ftissue_{sid}",
-                sdict["ftissue"],
-                U.l_per_min,
-                constant=True,
-                sboTerm=SBO.QUANTITATIVE_SYSTEMS_DESCRIPTION_PARAMETER,
-                name=f"tissue distribution {sid}",
-            ),
-            Parameter(
-                f"Kp_{sid}",
-                sdict["Kp"],
-                U.dimensionless,
-                constant=True,
-                sboTerm=SBO.QUANTITATIVE_SYSTEMS_DESCRIPTION_PARAMETER,
-                name=f"tissue/plasma partition coefficient {sid}",
-            ),
-        ])
+    if sdict.get("tissue_distribution"):
+        _m.parameters.extend(
+            [
+                Parameter(
+                    f"ftissue_{sid}",
+                    **FITS.parameter(f"ftissue_{sid}", unit=U.l_per_min),
+                    constant=True,
+                    sboTerm=SBO.QUANTITATIVE_SYSTEMS_DESCRIPTION_PARAMETER,
+                    name=f"tissue distribution {sid}",
+                    notes="Exchange flow at the reference body weight `BW_ref`.",
+                ),
+                Parameter(
+                    f"Kp_{sid}",
+                    **FITS.parameter(f"Kp_{sid}", unit=U.dimensionless),
+                    constant=True,
+                    sboTerm=SBO.QUANTITATIVE_SYSTEMS_DESCRIPTION_PARAMETER,
+                    name=f"tissue/plasma partition coefficient {sid}",
+                ),
+            ]
+        )
+    if "Kpdeep" in sdict:
+        _m.parameters.extend(
+            [
+                Parameter(
+                    f"Kpdeep_{sid}",
+                    sdict["Kpdeep"],
+                    U.dimensionless,
+                    constant=True,
+                    sboTerm=SBO.QUANTITATIVE_SYSTEMS_DESCRIPTION_PARAMETER,
+                    name=f"slow pool/tissue partition coefficient {sid} (rest)",
+                    notes="""
+                    Ratio of the slow pool to the fast pool of the rest tissue
+                    in the equilibrium: the part of the volume of distribution
+                    which is reached slowly and sets the terminal phase.
+                    """,
+                ),
+                Parameter(
+                    f"kdeep_{sid}",
+                    sdict["kdeep"],
+                    U.per_min,
+                    constant=True,
+                    sboTerm=SBO.KINETIC_CONSTANT,
+                    name=f"rate of the slow pool {sid} (rest)",
+                    notes="""
+                    The exchange with the slow pool of the rest tissue: the
+                    concentrations fall fast in the first 12 hr after a dose
+                    (distribution into the fast pool, metabolism) and with a
+                    half-life of 12-13 hr after it [Boulton2013,
+                    Komoroski2009].
+                    """,
+                ),
+            ]
+        )
 
     # dosing
     if "IVDOSE" in sdict:
@@ -992,31 +1241,38 @@ for sid, sdict in SUBSTANCES_BODY.items():
 # -------------------------------------------------------------------------------------------------
 # AssignmentRules
 # -------------------------------------------------------------------------------------------------
-_m.rules = _m.rules + [
-
+_m.rules = [
+    *_m.rules,
     AssignmentRule(
         "Cve_daptot",
-        "Cve_dap + Cve_d3g",
+        "Cve_dap + Cve_d3g + Cve_dapmet",
         unit=U.mM,
-        name="Sum of dapagliflozin and d3g",
+        name="sum of dapagliflozin and its metabolites (plasma)",
     ),
     AssignmentRule(
         "Aurine_daptot",
-        "Aurine_dap + Aurine_d3g",
+        "Aurine_dap + Aurine_d3g + Aurine_dapmet",
         unit=U.mmole,
-        name="Sum of dapagliflozin and d3g urine",
+        name="sum of dapagliflozin and its metabolites (urine)",
     ),
     AssignmentRule(
         "Afeces_daptot",
         "Afeces_dap",
         unit=U.mmole,
-        name="Sum of dapagliflozin feces",
+        name="total dapagliflozin (feces)",
     ),
-
+    # the renal metabolism is f_met_renal of the metabolism of liver and
+    # kidney (at normal renal and hepatic function)
+    AssignmentRule(
+        "DAPMET_k_renal",
+        "DAPMET_k * FVli/FVki * f_met_renal/(1 dimensionless - f_met_renal)",
+        U.per_min,
+        name="rate of the renal metabolism of dapagliflozin",
+    ),
     # Rest body volume
     AssignmentRule(
         "FVre",
-        "1.0 l_per_kg - (FVgu + FVki + FVli + FVlu + FVve + FVar)",
+        "1.0 l_per_kg - (FVgu + FVki + FVli + FVlu + FVve + FVar + FVpo + FVhv)",
         U.l_per_kg,
     ),
     # Rest body perfusion
@@ -1068,12 +1324,25 @@ _m.rules = _m.rules + [
     AssignmentRule("Qlu", "QC*FQlu", U.l_per_min, name="lung blood flow"),
     AssignmentRule("Qre", "QC*FQre", U.l_per_min, name="rest of body blood flow"),
     AssignmentRule("Qpo", "Qgu", U.l_per_min, name="portal blood flow"),
+    # glomerular filtration rate of healthy kidneys
+    AssignmentRule(
+        "GFR_base",
+        "f_GFR_Qki * Qki",
+        U.ml_per_min,
+        name="glomerular filtration rate (healthy)",
+    ),
+    # the lumen is the inner part of the intestine
+    AssignmentRule(
+        "Vlumen",
+        "0.9 dimensionless * Vgu",
+        U.liter,
+        name="volume of the intestinal lumen",
+    ),
 ]
 
 # Volumes for explicit tissue models
 for cid, cname in COMPARTMENTS_BODY.items():
     if cid not in ["ve", "ar", "po", "hv"]:
-
         _m.rules.append(
             # plasma volume associated with tissue
             AssignmentRule(
@@ -1105,8 +1374,6 @@ for cid, cname in COMPARTMENTS_BODY.items():
             )
 
 for sid, sdict in SUBSTANCES_BODY.items():
-    sname = sdict["name"]
-
     # injection
     if "IVDOSE" in sdict:
         _m.rules.extend(
@@ -1135,15 +1402,15 @@ for sid, sdict in SUBSTANCES_BODY.items():
     # --------------------
     # tissue distribution
     # --------------------
-    if "ftissue" in sdict:
-        for cid in COMPARTMENTS_BODY.keys():
+    if sdict.get("tissue_distribution"):
+        for cid in COMPARTMENTS_BODY:
             if cid not in ["ve", "ar", "li", "gu", "ki", "po", "hv"]:
                 _m.reactions.append(
                     Reaction(
                         sid=f"transport_{cid}_{sid}",
                         name=f"transport {sname}",
                         formula=(
-                            f"ftissue_{sid} * (C{cid}_plasma_{sid}*Kp_{sid} - C{cid}_{sid})",
+                            f"ftissue_{sid} * BW/BW_ref * (C{cid}_plasma_{sid}*Kp_{sid} - C{cid}_{sid})",
                             U.mmole_per_min,
                         ),
                         equation=f"C{cid}_plasma_{sid} <-> C{cid}_{sid}",
@@ -1151,6 +1418,21 @@ for sid, sdict in SUBSTANCES_BODY.items():
                         sboTerm=SBO.TRANSPORT_REACTION,
                     ),
                 )
+                if cid == "re" and "Kpdeep" in sdict:
+                    _m.reactions.append(
+                        Reaction(
+                            sid=f"deep_{cid}_{sid}",
+                            name=f"slow pool {sname} (tissue)",
+                            formula=(
+                                f"kdeep_{sid} * V{cid}_tissue * "
+                                f"(Kpdeep_{sid} * C{cid}_{sid} - C{cid}_deep_{sid})",
+                                U.mmole_per_min,
+                            ),
+                            equation=f"C{cid}_{sid} <-> C{cid}_deep_{sid}",
+                            compartment=f"V{cid}_tissue",
+                            sboTerm=SBO.TRANSPORT_REACTION,
+                        ),
+                    )
 
     if "IVDOSE" in sdict:
         _m.reactions.extend(
@@ -1164,7 +1446,7 @@ for sid, sdict in SUBSTANCES_BODY.items():
                     formula=(f"Ki_{sid}*IVDOSE_{sid}/Mr_{sid}", U.mmole_per_min),
                     equation=f"-> Cve_{sid}",
                     sboTerm=SBO.TRANSPORT_REACTION,
-                    annotations=[(BQB.IS, "ncit/C38276")],
+                    annotations=[(BQB.IS, "NCIT:C38276")],
                     compartment="Vve",
                 ),
             ]
@@ -1288,16 +1570,15 @@ for sid, sdict in SUBSTANCES_BODY.items():
                     # shunted arterial flow
                     Reaction(
                         sid=f"Flow_arli_hv_{sid}",
-                        name=f"flow arterial shunts",
+                        name=f"flow arterial shunts {sname}",
                         formula=(f"f_shunts*Qha*Car_{sid}", U.mmole_per_min),
                         equation=f"Car_{sid} -> Chv_{sid}",
                         sboTerm=SBO.TRANSPORT_REACTION,
                     ),
-
                     # (unshunted) portal flow
                     Reaction(
                         sid=f"Flow_po_li_{sid}",
-                        name=f"outflow po {sname}",
+                        name=f"portal inflow liver {sname}",
                         formula=(
                             f"(1 dimensionless - f_shunts)*Qpo*Cpo_{sid}",
                             U.mmole_per_min,
@@ -1308,7 +1589,7 @@ for sid, sdict in SUBSTANCES_BODY.items():
                     # portal shunts
                     Reaction(
                         sid=f"Flow_po_hv_{sid}",
-                        name=f"flow portal shunts",
+                        name=f"flow portal shunts {sname}",
                         formula=(f"f_shunts*Qpo*Cpo_{sid}", U.mmole_per_min),
                         equation=f"Cpo_{sid} -> Chv_{sid}",
                         sboTerm=SBO.TRANSPORT_REACTION,
@@ -1355,8 +1636,9 @@ model_body: Model = _m
 if __name__ == "__main__":
     from pkdb_models.models.dapagliflozin import MODEL_BASE_PATH
 
-    result = create_model(
+    create_model(
         filepath=MODEL_BASE_PATH / f"{model_body.sid}.xml",
-        model=model_body, sbml_level=3, sbml_version=2
+        model=model_body,
+        sbml_level=3,
+        sbml_version=2,
     )
-    visualize_sbml(result.sbml_path, delete_session=False)

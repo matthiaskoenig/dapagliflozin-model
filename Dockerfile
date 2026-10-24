@@ -1,17 +1,9 @@
-# --------------------------------------------------------
-# Dockerfile
-# --------------------------------------------------------
-# Build and push image
-#   docker build -f Dockerfile -t matthiaskoenig/dapagliflozin:0.9.9 -t matthiaskoenig/dapagliflozin:latest .
-#   docker login
-#   docker push --all-tags matthiaskoenig/dapagliflozin
-# --------------------------------------------------------
+# The image is built and pushed by pkpd_release.
 
 FROM python:3.14-slim
 
 # install uv
-COPY --from=ghcr.io/astral-sh/uv:0.10.10 /uv /bin/uv
-ENV UV_SYSTEM_PYTHON=1
+COPY --from=ghcr.io/astral-sh/uv:0.13.4 /uv /bin/uv
 
 # install git
 RUN apt-get update && \
@@ -20,11 +12,12 @@ RUN apt-get update && \
 
 # copy code
 WORKDIR /code
-COPY .python-version /code/python-version.py
+COPY .python-version /code/.python-version
 COPY pyproject.toml /code/pyproject.toml
+COPY uv.lock /code/uv.lock
 COPY README.md /code/README.md
 COPY src /code/src
-COPY uv.lock /code/uv.lock
 
 # install package
-RUN uv pip install -e .
+RUN uv sync --locked --no-dev
+ENV PATH="/code/.venv/bin:$PATH"
